@@ -42,4 +42,59 @@ Public Module ExcelUtils
         Catch ex As Exception
         End Try
     End Sub
+
+    ''' <summary>
+    ''' Removes the "Auto Text Break" feature
+    ''' </summary>
+    Public Sub AutoTextBreakOff(ByVal selection As Range)
+        With selection
+            .HorizontalAlignment = Constants.xlGeneral
+            .VerticalAlignment = Constants.xlBottom
+            .WrapText = False
+            .Orientation = 0
+            .AddIndent = False
+            .IndentLevel = 0
+            .ShrinkToFit = False
+            .ReadingOrder = Constants.xlContext
+            .MergeCells = False
+        End With
+    End Sub
+
+    ''' <summary>
+    ''' Change Font Size
+    ''' </summary>
+    Public Sub ChangeFontSize(ByVal selection As Range, ByVal fontSize As Integer)
+        selection.Font.Size = fontSize
+    End Sub
+
+    ''' <summary>
+    ''' Changes alignment
+    ''' </summary>
+    Public Sub AlignRange(ByVal selection As Range, ByVal alignment As Constants)
+        With selection
+            .HorizontalAlignment = alignment
+            .VerticalAlignment = alignment
+        End With
+    End Sub
+
+    ''' <summary>
+    ''' Receives a 2-Dimensional Array and inserts it's data in the worksheet
+    ''' Note: This method is much faster than iterating through each excel row
+    ''' </summary>
+    Public Sub InsertDataBlock(ByRef worksheet As Worksheet, ByRef insertRange As String, ByVal data() As String)
+        worksheet.Range(insertRange).Value = data
+    End Sub
+
+    ''' <summary>
+    ''' Retrieves a String containing the cell value
+    ''' May be used when you're not sure if the cell has something or not (Might throw an exception if it's nothing
+    ''' </summary>
+    Public Function GetCellValue(ByRef worksheet As Worksheet, ByRef range As String) As String
+        Try
+            If (worksheet.Range(range).Value Is Nothing) Then Return ""
+            Return CStr(worksheet.Range(range).Value)
+        Catch ex As Exception : Return ""
+        End Try
+    End Function
+
 End Module
