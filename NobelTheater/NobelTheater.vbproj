@@ -46,15 +46,21 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MjpegProcessor">
+      <HintPath>MJPEG dlls\MjpegProcessor.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -70,13 +76,15 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums\StatusCadastro.vb" />
     <Compile Include="Enums\StatusCompra.vb" />
     <Compile Include="Enums\StatusPgto.vb" />
     <Compile Include="Enums\TipoFuncionario.vb" />
+    <Compile Include="Enums\TipoNotaFiscal.vb" />
+    <Compile Include="Enums\TipoPagamento.vb" />
     <Compile Include="Enums\TipoProduto.vb" />
     <Compile Include="Enums\StatusVenda.vb" />
     <Compile Include="Enums\TipoImovel.vb" />
+    <Compile Include="Enums\UnidadeProduto.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -84,18 +92,26 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Models\Alerta %28Empty%29.vb" />
-    <Compile Include="Models\Cliente.vb" />
-    <Compile Include="Models\Compra %28Empty%29.vb" />
+    <Compile Include="Forms\Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\Alerta.vb" />
+    <Compile Include="Models\ClientePF.vb" />
+    <Compile Include="Models\ClientePJ.vb" />
+    <Compile Include="Models\Compra.vb" />
     <Compile Include="Models\Endereco.vb" />
     <Compile Include="Models\Fornecedor.vb" />
     <Compile Include="Models\Funcionario.vb" />
     <Compile Include="Models\NotaFiscal.vb" />
+    <Compile Include="Models\Pagamento.vb" />
     <Compile Include="Models\Pessoa.vb" />
     <Compile Include="Models\PessoaFisica.vb" />
     <Compile Include="Models\PessoaJuridica.vb" />
     <Compile Include="Models\Produto.vb" />
-    <Compile Include="Models\Venda %28Empty%29.vb" />
+    <Compile Include="Models\Venda.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -116,6 +132,9 @@
     <Compile Include="Utils\WebServerUtils.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -138,7 +157,6 @@
   <ItemGroup>
     <Folder Include="BCs\" />
     <Folder Include="DAOs\" />
-    <Folder Include="Forms\" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

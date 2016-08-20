@@ -5,18 +5,25 @@ Public Class NotaFiscal
     Private _id As Long
     Private _numeroNF As Integer
     Private _emissao As Date
-    Private _produtos As List(Of Produto)
-    Private _fornecedor As Fornecedor
+    Private _produtos As New List(Of Produto)
+    Private _tipo As String
+    Private _compra As Compra
+    Private _venda As Venda
 
-    Public Sub New(numeroNF As Integer, emissao As Date, fornecedor As Fornecedor)
-        _fornecedor = fornecedor
+    Public Sub New(numeroNF As Integer, emissao As Date, compra As Compra)
         _numeroNF = numeroNF
         _emissao = emissao
-        _produtos = New List(Of Produto)
+        _tipo = TipoNotaFiscal.Entrada
+        _compra = compra
+        _venda = Nothing
     End Sub
 
-    Public Sub New()
-
+    Public Sub New(numeroNF As Integer, emissao As Date, venda As Venda)
+        _numeroNF = numeroNF
+        _emissao = emissao
+        _tipo = TipoNotaFiscal.Saida
+        _venda = venda
+        _compra = Nothing
     End Sub
 
     Property ID As Long
@@ -37,15 +44,6 @@ Public Class NotaFiscal
         End Set
     End Property
 
-    Property Fornecedor As Fornecedor
-        Get
-            Return _fornecedor
-        End Get
-        Set(value As Fornecedor)
-            _fornecedor = value
-        End Set
-    End Property
-
     Property Emissao As Date
         Get
             Return _emissao
@@ -63,4 +61,32 @@ Public Class NotaFiscal
             _produtos = value
         End Set
     End Property
+
+    Property Tipo As String
+        Get
+            Return _tipo
+        End Get
+        Set(value As String)
+            _tipo = value
+        End Set
+    End Property
+
+    Property Compra As Compra
+        Get
+            Return _compra
+        End Get
+        Set(value As Compra)
+            _compra = value
+        End Set
+    End Property
+
+    Property Venda As Venda
+        Get
+            Return _venda
+        End Get
+        Set(value As Venda)
+            _venda = value
+        End Set
+    End Property
+
 End Class

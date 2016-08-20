@@ -3,17 +3,18 @@ Option Strict On
 
 Public NotInheritable Class Endereco
     Private _id As Long
-    Private _cliente As Cliente
+    Private _clientePF As ClientePF
+    Private _clientePJ As ClientePJ
     Private _fornecedor As Fornecedor
     Private _logradouro As String
     Private _bairro As String
     Private _cidade As String
     Private _estado As String
     Private _cep As String
-    Private _tipoImovel As TipoImovel
+    Private _tipoImovel As String
 
-    Public Sub New(cliente As Cliente, logradouro As String, bairro As String, cidade As String, estado As String, cep As String, tipoImovel As TipoImovel)
-        _cliente = cliente
+    Public Sub New(clientePF As ClientePF, logradouro As String, bairro As String, cidade As String, estado As String, cep As String, tipoImovel As String)
+        _clientePF = clientePF
         _logradouro = logradouro
         _bairro = bairro
         _cidade = cidade
@@ -22,7 +23,17 @@ Public NotInheritable Class Endereco
         _tipoImovel = tipoImovel
     End Sub
 
-    Public Sub New(fornecedor As Fornecedor, logradouro As String, bairro As String, cidade As String, estado As String, cep As String, tipoImovel As TipoImovel)
+    Public Sub New(clientePJ As ClientePJ, logradouro As String, bairro As String, cidade As String, estado As String, cep As String, tipoImovel As String)
+        _clientePJ = clientePJ
+        _logradouro = logradouro
+        _bairro = bairro
+        _cidade = cidade
+        _estado = estado
+        _cep = cep
+        _tipoImovel = tipoImovel
+    End Sub
+
+    Public Sub New(fornecedor As Fornecedor, logradouro As String, bairro As String, cidade As String, estado As String, cep As String, tipoImovel As String)
         _fornecedor = fornecedor
         _logradouro = logradouro
         _bairro = bairro
@@ -30,10 +41,6 @@ Public NotInheritable Class Endereco
         _estado = estado
         _cep = cep
         _tipoImovel = tipoImovel
-    End Sub
-
-    Public Sub New()
-
     End Sub
 
     Property ID As Long
@@ -45,12 +52,21 @@ Public NotInheritable Class Endereco
         End Set
     End Property
 
-    Property Cliente As Cliente
+    Property ClientePF As ClientePF
         Get
-            Return _cliente
+            Return _clientePF
         End Get
-        Set(value As Cliente)
-            _cliente = value
+        Set(value As ClientePF)
+            _clientePF = value
+        End Set
+    End Property
+
+    Property ClientePJ As ClientePJ
+        Get
+            Return _clientePJ
+        End Get
+        Set(value As ClientePJ)
+            _clientePJ = value
         End Set
     End Property
 
@@ -108,11 +124,11 @@ Public NotInheritable Class Endereco
         End Set
     End Property
 
-    Property TipoImovel As TipoImovel
+    Property TipoImovel As String
         Get
             Return _tipoImovel
         End Get
-        Set(value As TipoImovel)
+        Set(value As String)
             _tipoImovel = value
         End Set
     End Property

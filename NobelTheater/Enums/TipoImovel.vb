@@ -13,6 +13,8 @@ Public NotInheritable Class TipoImovel
         list.Add(Casa)
         list.Add(Apartamento)
         list.Add(Sobrado)
+        list.Add(Fabrica)
+        list.Add(Escritorio)
         Return list
     End Function
 

@@ -1,15 +1,16 @@
 ﻿Option Explicit On
 Option Strict On
 
-Public Class Cliente : Inherits PessoaFisica
+Public Class ClientePF : Inherits PessoaFisica
+
     Private _id As Long
     Private _inicioRelacionamento As Date
     Private _status As String
 
-    Public Sub New(ByVal nome As String, ByVal cpf As String, ByVal endereco As Endereco, ByVal telefone As String)
+    Public Sub New(ByVal nome As String, ByVal cpf As String, ByVal endereco As Endereco, ByVal telefone As String, ByVal inicioRelac As Date)
         _nome = nome
-        _CPF = CleanString(cpf)
-        _inicioRelacionamento = Now
+        _CPF = AddZeros(CleanString(cpf), "CPF")
+        _inicioRelacionamento = inicioRelac
         _endereco = endereco
         _telefone = CleanString(telefone)
     End Sub
@@ -37,10 +38,7 @@ Public Class Cliente : Inherits PessoaFisica
             Return _status
         End Get
         Set(value As String)
-            If (StatusCadastro.GetStatusList().Contains(value)) Then
-                _status = value
-            Else : _status = StatusCadastro.Irregular
-            End If
+            _status = value
         End Set
     End Property
 

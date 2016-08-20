@@ -8,16 +8,18 @@ Public Class Funcionario : Inherits PessoaFisica
     Private _salario As Double
     Private _senha As String
 
-    Public Sub New(ByVal cpf As String, ByVal nome As String, ByVal matricula As String, ByVal perfil As String, ByVal salario As Double)
-        _CPF = CleanString(cpf)
+    Public Sub New(ByVal cpf As String, ByVal nome As String, ByVal matricula As String, ByVal perfil As String, ByVal salario As Double, ByVal endereco As Endereco, ByVal telefone As String)
+        _CPF = AddZeros(CleanString(cpf), "CPF")
         _nome = nome
         _matricula = matricula
         _perfil = perfil
         _salario = salario
+        _endereco = endereco
+        _telefone = telefone
     End Sub
 
-    Public Sub New(ByVal id As Integer, ByVal cpf As String, ByVal nome As String, ByVal matricula As String, ByVal perfil As String, ByVal salario As Double)
-        Me.New(cpf, nome, matricula, perfil, salario)
+    Public Sub New(ByVal id As Integer, ByVal cpf As String, ByVal nome As String, ByVal matricula As String, ByVal perfil As String, ByVal salario As Double, ByVal endereco As Endereco, ByVal telefone As String)
+        Me.New(cpf, nome, matricula, perfil, salario, endereco, telefone)
         _id = id
     End Sub
 

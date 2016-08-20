@@ -3,18 +3,14 @@ Option Strict On
 
 Public Class Fornecedor : Inherits PessoaJuridica
     Private _id As Long
-    Private _produtos As List(Of Produto)
+    Private _inscricaoEstadual As String
 
-    Public Sub New()
-        _produtos = New List(Of Produto)
-    End Sub
-
-    Public Sub New(razaoSocial As String, cnpj As String, endereco As Endereco, telefone As String)
-        Me.New()
+    Public Sub New(razaoSocial As String, cnpj As String, endereco As Endereco, telefone As String, inscricao As String)
         _razaoSocial = razaoSocial
-        _CNPJ = CleanString(cnpj)
+        _CNPJ = AddZeros(CleanString(cnpj), "CNPJ")
         _endereco = endereco
         _telefone = CleanString(telefone)
+        _inscricaoEstadual = inscricao
     End Sub
 
     Public Property ID As Long
@@ -26,12 +22,12 @@ Public Class Fornecedor : Inherits PessoaJuridica
         End Set
     End Property
 
-    Public Property Produtos As List(Of Produto)
+    Public Property InscricaoEstadual As String
         Get
-            Return _produtos
+            Return _inscricaoEstadual
         End Get
-        Set(value As List(Of Produto))
-            _produtos = value
+        Set(value As String)
+            _inscricaoEstadual = value
         End Set
     End Property
 
