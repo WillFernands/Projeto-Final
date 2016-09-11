@@ -92,10 +92,88 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <Compile Include="Forms\T05 - ControleFornecedor.Designer.vb">
+      <DependentUpon>T05 - ControleFornecedor.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form2.vb">
+    <Compile Include="Forms\T05 - ControleFornecedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\T01 - LoginUsuario.Designer.vb">
+      <DependentUpon>T01 - LoginUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\T01 - LoginUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\T02 - ControleAcessos.Designer.vb">
+      <DependentUpon>T02 - ControleAcessos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\T02 - ControleAcessos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\T03 - TrocarSenha.Designer.vb">
+      <DependentUpon>T03 - TrocarSenha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\T03 - TrocarSenha.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\T04 - ControleEstoque.Designer.vb">
+      <DependentUpon>T04 - ControleEstoque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\T04 - ControleEstoque.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\T06 - ControleVendas.Designer.vb">
+      <DependentUpon>T06 - ControleVendas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\T06 - ControleVendas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\T07 - InserirParecerObra.Designer.vb">
+      <DependentUpon>T07 - InserirParecerObra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\T07 - InserirParecerObra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\T08 - CriarVisitaTecnica.Designer.vb">
+      <DependentUpon>T08 - CriarVisitaTecnica.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\T08 - CriarVisitaTecnica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\T09 - RecuperarHistorico.Designer.vb">
+      <DependentUpon>T09 - RecuperarHistorico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\T09 - RecuperarHistorico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\T10 - BalancoDeCaixa.Designer.vb">
+      <DependentUpon>T10 - BalancoDeCaixa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\T10 - BalancoDeCaixa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\T11 - MonitorarAmbiente.Designer.vb">
+      <DependentUpon>T11 - MonitorarAmbiente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\T11 - MonitorarAmbiente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\T12 - ControleFuncionario.Designer.vb">
+      <DependentUpon>T12 - ControleFuncionario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\T12 - ControleFuncionario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\T13 - ControleCliente.Designer.vb">
+      <DependentUpon>T13 - ControleCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\T13 - ControleCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\T14 - MenuPrincipal.Designer.vb">
+      <DependentUpon>T14 - MenuPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\T14 - MenuPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Models\Alerta.vb" />
@@ -132,8 +210,47 @@
     <Compile Include="Utils\WebServerUtils.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\T01 - LoginUsuario.resx">
+      <DependentUpon>T01 - LoginUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\T02 - ControleAcessos.resx">
+      <DependentUpon>T02 - ControleAcessos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\T03 - TrocarSenha.resx">
+      <DependentUpon>T03 - TrocarSenha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\T04 - ControleEstoque.resx">
+      <DependentUpon>T04 - ControleEstoque.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\T05 - ControleFornecedor.resx">
+      <DependentUpon>T05 - ControleFornecedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\T06 - ControleVendas.resx">
+      <DependentUpon>T06 - ControleVendas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\T07 - InserirParecerObra.resx">
+      <DependentUpon>T07 - InserirParecerObra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\T08 - CriarVisitaTecnica.resx">
+      <DependentUpon>T08 - CriarVisitaTecnica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\T09 - RecuperarHistorico.resx">
+      <DependentUpon>T09 - RecuperarHistorico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\T10 - BalancoDeCaixa.resx">
+      <DependentUpon>T10 - BalancoDeCaixa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\T11 - MonitorarAmbiente.resx">
+      <DependentUpon>T11 - MonitorarAmbiente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\T12 - ControleFuncionario.resx">
+      <DependentUpon>T12 - ControleFuncionario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\T13 - ControleCliente.resx">
+      <DependentUpon>T13 - ControleCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\T14 - MenuPrincipal.resx">
+      <DependentUpon>T14 - MenuPrincipal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -186,6 +303,54 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nobel Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Busca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adicionar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Confirmar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\access control.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\balancodecaixa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\client.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\construction-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gerente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sales.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\suplier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warehouseicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\web-cam_blue.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
