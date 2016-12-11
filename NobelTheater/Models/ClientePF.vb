@@ -1,44 +1,21 @@
 ﻿Option Explicit On
 Option Strict On
 
-Public Class ClientePF : Inherits PessoaFisica
+Public Class ClientePF : Inherits Cliente
 
-    Private _id As Long
-    Private _inicioRelacionamento As Date
-    Private _status As String
+    Private _cpf As Long
 
-    Public Sub New(ByVal nome As String, ByVal cpf As String, ByVal endereco As Endereco, ByVal telefone As String, ByVal inicioRelac As Date)
-        _nome = nome
-        _CPF = AddZeros(CleanString(cpf), "CPF")
-        _inicioRelacionamento = inicioRelac
-        _endereco = endereco
-        _telefone = CleanString(telefone)
+    Public Sub New(id As Long, nome As String, telefone As String, dataCadastro As Date, cpf As Long)
+        MyBase.New(id, nome, telefone, dataCadastro)
+        _cpf = cpf
     End Sub
 
-    Property ID As Long
+    Property CPF As Long
         Get
-            Return _id
+            Return _cpf
         End Get
         Set(value As Long)
-            _id = value
-        End Set
-    End Property
-
-    Property InicioRelacionamento As Date
-        Get
-            Return _inicioRelacionamento
-        End Get
-        Set(value As Date)
-            _inicioRelacionamento = value
-        End Set
-    End Property
-
-    Property Status As String
-        Get
-            Return _status
-        End Get
-        Set(value As String)
-            _status = value
+            _cpf = value
         End Set
     End Property
 

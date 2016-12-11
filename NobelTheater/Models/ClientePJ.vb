@@ -1,44 +1,32 @@
 ﻿Option Explicit On
 Option Strict On
 
-Public Class ClientePJ : Inherits PessoaJuridica
+Public Class ClientePJ : Inherits Cliente
 
-    Private _id As Long
-    Private _inicioRelacionamento As Date
-    Private _status As String
+    Private _cnpj As Long
+    Private _razaoSocial As String
 
-    Public Sub New(ByVal razao As String, ByVal cnpj As String, ByVal endereco As Endereco, ByVal telefone As String, ByVal inicioRelac As Date)
-        _razaoSocial = razao
-        _CNPJ = AddZeros(CleanString(cnpj), "CNPJ")
-        _inicioRelacionamento = inicioRelac
-        _endereco = endereco
-        _telefone = CleanString(telefone)
+    Public Sub New(id As Long, nome As String, telefone As String, dataCadastro As Date, cnpj As Long, razaoSocial As String)
+        MyBase.New(id, nome, telefone, dataCadastro)
+        _cnpj = cnpj
+        _razaoSocial = razaoSocial
     End Sub
 
-    Property ID As Long
+    Property CNPJ As Long
         Get
-            Return _id
+            Return _cnpj
         End Get
         Set(value As Long)
-            _id = value
+            _cnpj = value
         End Set
     End Property
 
-    Property InicioRelacionamento As Date
+    Property RazaoSocial As String
         Get
-            Return _inicioRelacionamento
-        End Get
-        Set(value As Date)
-            _inicioRelacionamento = value
-        End Set
-    End Property
-
-    Property Status As String
-        Get
-            Return _status
+            Return _razaoSocial
         End Get
         Set(value As String)
-            _status = value
+            _razaoSocial = value
         End Set
     End Property
 

@@ -2,25 +2,15 @@
 Option Strict On
 
 Public NotInheritable Class Alerta
-    Private _id As Long
     Private _data As Date
     Private _observacao As String
-    Private _produto As Produto
+    Private _produto As Cliente
     
-    Public Sub New(data As Date, observacao As String, produto As Produto)
+    Public Sub New(data As Date, observacao As String, produto As Cliente)
         _data = data
         _observacao = observacao
         _produto = produto
     End Sub
-
-    Property ID As Long
-        Get
-            Return _id
-        End Get
-        Set(value As Long)
-            _id = value
-        End Set
-    End Property
 
     Property Data As Date
         Get
@@ -40,11 +30,11 @@ Public NotInheritable Class Alerta
         End Set
     End Property
 
-    Property Produto As Produto
+    Property Produto As Cliente
         Get
             Return _produto
         End Get
-        Set(value As Produto)
+        Set(value As Cliente)
             _produto = value
         End Set
     End Property

@@ -2,34 +2,32 @@
 Option Strict On
 
 Public Class Produto
-    Private _id As Long
+    Private _codigo As Long
     Private _nome As String
-    Private _tipo As String
-    Private _descricao As String
-    Private _marca As String
-    Private _notaFiscal As NotaFiscal
-    Private _quantidade As Integer
-    Private _unidade As String
     Private _precoUnit As Double
+    Private _descricao As String
     Private _imagem As Image
 
-    Public Sub New(nome As String, tipo As String, descricao As String, marca As String, notaFiscal As NotaFiscal, qtde As Integer, unidade As String, preco As Double)
+    Private _tipo As String
+    Private _unidade As String
+
+    Private _alertas As New List(Of Alerta)
+
+    Public Sub New(codigo As Long, nome As String, preco As Double, descricao As String, tipo As String, unidade As String)
+        _codigo = codigo
         _nome = nome
-        _descricao = descricao
-        _marca = marca
-        _notaFiscal = notaFiscal
-        _tipo = tipo
-        _quantidade = qtde
-        _unidade = unidade
         _precoUnit = preco
+        _descricao = descricao
+        _tipo = tipo
+        _unidade = unidade
     End Sub
 
-    Property ID As Long
+    Property Codigo As Long
         Get
-            Return _id
+            Return _codigo
         End Get
         Set(value As Long)
-            _id = value
+            _codigo = value
         End Set
     End Property
 
@@ -60,15 +58,6 @@ Public Class Produto
         End Set
     End Property
 
-    Property Quantidade As Integer
-        Get
-            Return _quantidade
-        End Get
-        Set(value As Integer)
-            _quantidade = value
-        End Set
-    End Property
-
     Property Unidade As String
         Get
             Return _unidade
@@ -87,15 +76,6 @@ Public Class Produto
         End Set
     End Property
 
-    Property Marca As String
-        Get
-            Return _marca
-        End Get
-        Set(value As String)
-            _marca = value
-        End Set
-    End Property
-
     Property Tipo As String
         Get
             Return _tipo
@@ -105,12 +85,4 @@ Public Class Produto
         End Set
     End Property
 
-    Property NotaFiscal As NotaFiscal
-        Get
-            Return _notaFiscal
-        End Get
-        Set(value As NotaFiscal)
-            _notaFiscal = value
-        End Set
-    End Property
 End Class
