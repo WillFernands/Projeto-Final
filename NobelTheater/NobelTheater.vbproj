@@ -77,7 +77,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BCs\CotacaoBC.vb" />
+    <Compile Include="BCs\FornecedorBC.vb" />
+    <Compile Include="BCs\ItemCotadoBC.vb" />
     <Compile Include="Enums\StatusCompra.vb" />
+    <Compile Include="Enums\StatusCotacao.vb" />
     <Compile Include="Enums\StatusPgto.vb" />
     <Compile Include="Enums\TipoFuncionario.vb" />
     <Compile Include="Enums\TipoPagamento.vb" />
@@ -87,6 +91,8 @@
     <Compile Include="Enums\UnidadeProduto.vb" />
     <Compile Include="Models\Cliente.vb" />
     <Compile Include="Models\Cotacao.vb" />
+    <Compile Include="Models\ItemComprado.vb" />
+    <Compile Include="Models\ItemCotado.vb" />
     <Compile Include="Models\PagamentoEfetuado.vb" />
     <Compile Include="Views\T05 - ControleFornecedor.Designer.vb">
       <DependentUpon>T05 - ControleFornecedor.vb</DependentUpon>
@@ -264,7 +270,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BCs\" />
     <Folder Include="DAOs\" />
   </ItemGroup>
   <ItemGroup>
