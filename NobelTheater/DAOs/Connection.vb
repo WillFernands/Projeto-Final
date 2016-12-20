@@ -1,4 +1,7 @@
-﻿Imports System.Data.SqlClient
+﻿Option Explicit On
+Option Strict On
+
+Imports System.Data.SqlClient
 
 Public Class Connection
 
@@ -12,7 +15,7 @@ Public Class Connection
         Query = New SqlCommand("", Me.Conn)
     End Sub
 
-    ReadOnly Property Connection
+    ReadOnly Property Connection As SqlConnection
         Get
             Return Conn
         End Get
@@ -61,7 +64,24 @@ Public Class Connection
         End Try
     End Function
 
-    Public Function AddParameter(tag As String, value As Object)
+    Public Function ExecuteScalar(ByVal cmd As String) As Object
+        Try
+            OpenConnection()
+
+            Query.CommandText = cmd
+            Query.Transaction = Conn.BeginTransaction()
+            Query.Transaction.Commit()
+
+            Return Query.ExecuteScalar()
+
+        Catch ex As Exception
+            Return Nothing
+        Finally
+            CloseConnection()
+        End Try
+    End Function
+
+    Public Function AddParameter(tag As String, value As Object) As Boolean
         Try
             Query.Parameters.Add(New SqlParameter(tag, value))
             Return True

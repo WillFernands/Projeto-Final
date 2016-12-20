@@ -95,6 +95,8 @@
     <Compile Include="BCs\CotacaoBC.vb" />
     <Compile Include="BCs\FornecedorBC.vb" />
     <Compile Include="BCs\ItemCotadoBC.vb" />
+    <Compile Include="DAOs\AlertaDAO.vb" />
+    <Compile Include="DAOs\ClientePFDAO.vb" />
     <Compile Include="DAOs\Connection.vb" />
     <Compile Include="Enums\StatusCompra.vb" />
     <Compile Include="Enums\StatusCotacao.vb" />
