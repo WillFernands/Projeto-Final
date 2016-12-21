@@ -10,7 +10,7 @@ Public Class ClientePFDAO
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("Insert INTO Cliente(Nome, Telefone, DataCadastro) ")
+        strSQL.Append("Insert INTO Clientes(Nome, Telefone, DataCadastro) ")
         strSQL.Append("VALUES(@nome, @telefone, @dataCadastro);")
 
         conn.AddParameter("@nome", cliente.Nome)
@@ -19,7 +19,8 @@ Public Class ClientePFDAO
 
         If (conn.ExecuteCommand(strSQL.ToString) = False) Then Return False
 
-        cliente.ID = CLng(conn.ExecuteScalar("SELECT TOP 1 FROM Cliente ORDER BY id DESC"))
+        conn = New Connection
+        cliente.ID = CLng(conn.ExecuteScalar("SELECT IDENT_CURRENT('Clientes')"))
 
         If (cliente.ID = 0) Then Return False
 

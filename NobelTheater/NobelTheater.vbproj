@@ -98,6 +98,7 @@
     <Compile Include="DAOs\AlertaDAO.vb" />
     <Compile Include="DAOs\ClientePFDAO.vb" />
     <Compile Include="DAOs\Connection.vb" />
+    <Compile Include="DAOs\ProdutoDAO.vb" />
     <Compile Include="Enums\StatusCompra.vb" />
     <Compile Include="Enums\StatusCotacao.vb" />
     <Compile Include="Enums\StatusPgto.vb" />
