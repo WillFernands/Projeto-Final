@@ -42,7 +42,7 @@ Public Class AlertaDAO
     'OK
     Public Function FindAll() As List(Of Alerta)
         Dim conn As New Connection
-
+        Dim produtoDAO As New ProdutoDAO
         Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM Alertas;")
 
         Dim alertas As New List(Of Alerta)
@@ -96,7 +96,7 @@ Public Class AlertaDAO
         conn.AddParameter("@data", data)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
-
+        Dim produtoDAO As New ProdutoDAO
         Dim alertas As New List(Of Alerta)
 
         For Each row As DataRow In dt.Rows
@@ -129,4 +129,3 @@ Public Class AlertaDAO
     End Function
 
 End Class
-
