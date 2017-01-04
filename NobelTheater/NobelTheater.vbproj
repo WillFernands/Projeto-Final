@@ -108,12 +108,15 @@
     <Compile Include="DAOs\ItemOrcadoDAO.vb" />
     <Compile Include="DAOs\ItemOrdemDAO.vb" />
     <Compile Include="DAOs\ItemVendidoDAO.vb" />
+    <Compile Include="DAOs\NotaFiscalCompraDAO.vb" />
     <Compile Include="DAOs\OrcamentoDAO.vb" />
+    <Compile Include="DAOs\OrdemServicoDAO.vb" />
     <Compile Include="DAOs\PagamentoEfetuadoDAO.vb" />
     <Compile Include="DAOs\PagamentoRecebidoDAO.vb" />
     <Compile Include="DAOs\ProdutoDAO.vb" />
     <Compile Include="DAOs\RegistroPontoDAO.vb" />
     <Compile Include="DAOs\SalarioDAO.vb" />
+    <Compile Include="DAOs\SolicitacaoEmprestimoDAO.vb" />
     <Compile Include="DAOs\VisitaTecnicaDAO.vb" />
     <Compile Include="Enums\StatusCompra.vb" />
     <Compile Include="Enums\StatusCotacao.vb" />

@@ -28,7 +28,7 @@ Public Class OrcamentoDAO
         Dim strSQL As New StringBuilder
 
         strSQL.Append("UPDATE Orcamentos ")
-        strSQL.Append("SET status = @status ")
+        strSQL.Append("SET statusOrcamento = @status ")
         strSQL.Append("WHERE id = @id;")
 
         conn.AddParameter("@id", orcamento.ID)
