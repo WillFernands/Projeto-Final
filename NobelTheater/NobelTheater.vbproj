@@ -102,6 +102,7 @@
     <Compile Include="DAOs\Connection.vb" />
     <Compile Include="DAOs\CotacaoDAO.vb" />
     <Compile Include="DAOs\EnderecoClienteDAO.vb" />
+    <Compile Include="DAOs\FornecedorDAO.vb" />
     <Compile Include="DAOs\ItemCompradoDAO.vb" />
     <Compile Include="DAOs\ItemCotadoDAO.vb" />
     <Compile Include="DAOs\ItemEmprestimoDAO.vb" />
@@ -109,6 +110,7 @@
     <Compile Include="DAOs\ItemOrdemDAO.vb" />
     <Compile Include="DAOs\ItemVendidoDAO.vb" />
     <Compile Include="DAOs\NotaFiscalCompraDAO.vb" />
+    <Compile Include="DAOs\NotaFiscalVendaDAO.vb" />
     <Compile Include="DAOs\OrcamentoDAO.vb" />
     <Compile Include="DAOs\OrdemServicoDAO.vb" />
     <Compile Include="DAOs\PagamentoEfetuadoDAO.vb" />
