@@ -103,6 +103,7 @@
     <Compile Include="DAOs\CotacaoDAO.vb" />
     <Compile Include="DAOs\EnderecoClienteDAO.vb" />
     <Compile Include="DAOs\FornecedorDAO.vb" />
+    <Compile Include="DAOs\FuncionarioDAO.vb" />
     <Compile Include="DAOs\ItemCompradoDAO.vb" />
     <Compile Include="DAOs\ItemCotadoDAO.vb" />
     <Compile Include="DAOs\ItemEmprestimoDAO.vb" />

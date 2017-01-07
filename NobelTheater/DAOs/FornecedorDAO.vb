@@ -49,7 +49,7 @@ Public Class FornecedorDAO
         strSQL.Append("cidade = @cidade, ")
         strSQL.Append("estado = @estado, ")
         strSQL.Append("cep = @cep, ")
-        strSQL.Append("tipoEndereco = @tipoEndereco ")
+        strSQL.Append("tipoEndereco = @tipoEndereco, ")
         strSQL.Append("cnpjAssistencia = @cnpjAssistencia ")
         strSQL.Append("WHERE cnpj = @cnpj;")
 
