@@ -3,11 +3,16 @@ Option Strict On
 
 Public Class Cotacao
 
+    Private _id As Long
     Private _dataCotacao As Date
     Private _status As String
 
     Private _fornecedor As Fornecedor
     Private _itens As List(Of ItemCotado)
+
+    Public Sub New()
+
+    End Sub
 
     Public Sub New(data As Date, fornecedor As Fornecedor, itens As List(Of ItemCotado))
         _dataCotacao = data
@@ -17,6 +22,15 @@ Public Class Cotacao
         '_fornedor = New Fornecedor()
         '_fornecedor.Cotacao = Me
     End Sub
+
+    Property ID As Long
+        Get
+            Return _id
+        End Get
+        Set(value As Long)
+            _id = value
+        End Set
+    End Property
 
     Property DataCotacao As Date
         Get

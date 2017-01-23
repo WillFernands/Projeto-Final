@@ -2,6 +2,13 @@
 Option Strict On
 
 Public Class CotacaoBC
+
+    Private Shared cotacaoDAO As CotacaoDAO
+
+    Public Sub New()
+        cotacaoDAO = New CotacaoDAO()
+    End Sub
+
     Public Shared Function Validate(cotacao As Cotacao) As Boolean
         If (cotacao Is Nothing) Then Return False
         If (cotacao.DataCotacao = Nothing) Then Return False
@@ -19,22 +26,32 @@ Public Class CotacaoBC
 
     Public Shared Function Insert(cotacao As Cotacao) As Boolean
         If (CotacaoBC.Validate(cotacao)) Then
-            Return CotacaoDAO.Insert(cotacao)
+            Return cotacaoDAO.Insert(cotacao)
         End If
         Return False
     End Function
 
-    Public Shared Function Update(cotacao As Cotacao) As Boolean
+    Public Shared Function UpdateStatus(cotacao As Cotacao) As Boolean
         If (CotacaoBC.Validate(cotacao)) Then
-            Return CotacaoDAO.Update(cotacao)
+            Return cotacaoDAO.UpdateStatus(cotacao)
         End If
         Return False
     End Function
 
-    Public Shared Function Delete(cotacao As Cotacao) As Boolean
-        If (CotacaoBC.Validate(cotacao)) Then
-            Return CotacaoDAO.Delete(cotacao)
-        End If
-        Return False
+    Public Shared Function FindAll() As List(Of Cotacao)
+        Return CotacaoDAO.FindAll()
     End Function
+
+    Public Shared Function FindByID(id As Long) As Cotacao
+        Return cotacaoDAO.FindByID(id)
+    End Function
+
+    Public Shared Function FindByData(data As Date) As List(Of Cotacao)
+        Return cotacaoDAO.FindByData(data)
+    End Function
+
+    Public Shared Function FindByStatus(status As String) As List(Of Cotacao)
+        Return cotacaoDAO.FindByStatus(status)
+    End Function
+
 End Class

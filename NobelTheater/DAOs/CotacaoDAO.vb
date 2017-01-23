@@ -50,7 +50,7 @@ Public Class CotacaoDAO
         For Each row As DataRow In dt.Rows
             Dim cotacao As New Cotacao()
             cotacao.ID = CLng(row.Item("id"))
-            cotacao.Data = CDate(row.Item("dataCotacao"))
+            cotacao.DataCotacao = CDate(row.Item("dataCotacao"))
             cotacao.Status = CStr(row.Item("statusCotacao"))
             cotacao.Fornecedor = fornecedorDAO.FindByCodigo(CStr(row.Item("cnpjFornecedor")))
             cotacoes.Add(Cotacao)
@@ -76,7 +76,7 @@ Public Class CotacaoDAO
 
         Dim cotacao As New Cotacao()
         cotacao.ID = CLng(dt.Rows(0).Item("id"))
-        cotacao.Data = CDate(dt.Rows(0).Item("dataCotacao"))
+        cotacao.DataCotacao = CDate(dt.Rows(0).Item("dataCotacao"))
         cotacao.Status = CStr(dt.Rows(0).Item("statusCotacao"))
         cotacao.Fornecedor = fornecedorDAO.FindByCNPJ(CStr(dt.Rows(0).Item("cnpjFornecedor")))
 
@@ -103,7 +103,7 @@ Public Class CotacaoDAO
         For Each row As DataRow In dt.Rows
             Dim cotacao As New Cotacao()
             cotacao.ID = CLng(row.Item("id"))
-            cotacao.Data = CDate(row.Item("dataCotacao"))
+            cotacao.DataCotacao = CDate(row.Item("dataCotacao"))
             cotacao.Status = CStr(row.Item("statusCotacao"))
             cotacao.Fornecedor = fornecedorDAO.FindByCNPJ(CStr(row.Item("cnpjFornecedor")))
             cotacoes.Add(cotacao)
@@ -132,7 +132,7 @@ Public Class CotacaoDAO
         For Each row As DataRow In dt.Rows
             Dim cotacao As New Cotacao()
             cotacao.ID = CLng(row.Item("id"))
-            cotacao.Data = CDate(row.Item("dataCotacao"))
+            cotacao.DataCotacao = CDate(row.Item("dataCotacao"))
             cotacao.Status = CStr(row.Item("statusCotacao"))
             cotacao.Fornecedor = fornecedorDAO.FindByCNPJ(CStr(row.Item("cnpjFornecedor")))
             cotacoes.Add(cotacao)
