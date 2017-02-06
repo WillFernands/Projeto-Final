@@ -15,7 +15,7 @@ Public Class AlertaDAO
 
         conn.AddParameter("@data", alerta.Data)
         conn.AddParameter("@observacao", alerta.Observacao)
-        conn.AddParameter("@codigo", alerta.Produto.ID)
+        conn.AddParameter("@codigo", alerta.Produto.Codigo)
 
         Return conn.ExecuteCommand(strSQL.ToString)
 
@@ -33,7 +33,7 @@ Public Class AlertaDAO
 
         conn.AddParameter("@data", alerta.Data)
         conn.AddParameter("@observacao", alerta.Observacao)
-        conn.AddParameter("@codigo", alerta.Produto.ID)
+        conn.AddParameter("@codigo", alerta.Produto.Codigo)
 
         Return conn.ExecuteCommand(strSQL.ToString)
 
@@ -123,7 +123,7 @@ Public Class AlertaDAO
 
         conn.AddParameter("@data", alerta.Data)
         conn.AddParameter("@observacao", alerta.Observacao)
-        conn.AddParameter("@codigo", alerta.Produto.ID)
+        conn.AddParameter("@codigo", alerta.Produto.Codigo)
 
         Return conn.ExecuteCommand(strSQL.ToString)
     End Function

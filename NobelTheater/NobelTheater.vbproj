@@ -92,6 +92,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BCs\AlertaBC.vb" />
     <Compile Include="BCs\CotacaoBC.vb" />
     <Compile Include="BCs\FornecedorBC.vb" />
     <Compile Include="BCs\ItemCotadoBC.vb" />
