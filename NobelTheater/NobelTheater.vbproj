@@ -136,6 +136,8 @@
     <Compile Include="Models\ItemComprado.vb" />
     <Compile Include="Models\ItemCotado.vb" />
     <Compile Include="Models\ItemEmprestimo.vb" />
+    <Compile Include="Models\ItemOrcado.vb" />
+    <Compile Include="Models\Orcamento.vb" />
     <Compile Include="Models\PagamentoEfetuado.vb" />
     <Compile Include="Views\T05 - ControleFornecedor.Designer.vb">
       <DependentUpon>T05 - ControleFornecedor.vb</DependentUpon>

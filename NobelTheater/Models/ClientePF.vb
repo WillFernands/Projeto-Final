@@ -10,6 +10,10 @@ Public Class ClientePF : Inherits Cliente
         _cpf = cpf
     End Sub
 
+    Public Sub New()
+
+    End Sub
+
     Property CPF As Long
         Get
             Return _cpf

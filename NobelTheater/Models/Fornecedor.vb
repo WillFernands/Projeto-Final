@@ -1,9 +1,14 @@
 ﻿Option Explicit On
 Option Strict On
+Imports NobelTheater
 
 Public Class Fornecedor : Inherits PessoaJuridica
     Private _id As Long
     Private _inscricaoEstadual As String
+
+    Public Sub New()
+
+    End Sub
 
     Public Sub New(razaoSocial As String, cnpj As String, endereco As EnderecoCliente, telefone As String, inscricao As String)
         _razaoSocial = razaoSocial

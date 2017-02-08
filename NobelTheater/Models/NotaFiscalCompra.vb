@@ -1,5 +1,6 @@
 ﻿Option Explicit On
 Option Strict On
+Imports NobelTheater
 
 Public Class NotaFiscalCompra
     Private _id As Long
@@ -13,8 +14,19 @@ Public Class NotaFiscalCompra
     Private _pagamentos As New List(Of PagamentoEfetuado)
     Private _items As New List(Of ItemComprado)
 
+    Public Sub New(id As Long, status As String, dataAprovacao As Date, numeroNF As Integer, emissaoNF As Date, cotacao As Cotacao, pagamentos As List(Of PagamentoEfetuado), items As List(Of ItemComprado))
+        _id = id
+        _status = status
+        _dataAprovacao = dataAprovacao
+        _numeroNF = numeroNF
+        _emissaoNF = emissaoNF
+        _cotacao = cotacao
+        _pagamentos = pagamentos
+        _items = items
+    End Sub
+
     Public Sub New()
-        'fazer construtor
+
     End Sub
 
     Property NumeroNF As Integer

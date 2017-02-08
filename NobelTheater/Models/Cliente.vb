@@ -17,6 +17,10 @@ Public Class Cliente
         _enderecos = New List(Of EnderecoCliente)
     End Sub
 
+    Public Sub New()
+
+    End Sub
+
     Property ID As Long
         Get
             Return _id

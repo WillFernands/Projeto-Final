@@ -1,13 +1,13 @@
 ﻿Imports NobelTheater
 
-Public Class ItemComprado
+Public Class ItemOrcado
     Private _produto As Produto
-    Private _NotaFiscal As NotaFiscalCompra
+    Private _orcamento As Orcamento
     Private _quantidade As Integer
 
-    Public Sub New(produto As Produto, NotaFiscal As NotaFiscalCompra, quantidade As Integer)
+    Public Sub New(produto As Produto, orcamento As Orcamento, quantidade As Integer)
         _produto = produto
-        _NotaFiscal = NotaFiscal
+        _orcamento = orcamento
         _quantidade = quantidade
     End Sub
 
@@ -24,12 +24,12 @@ Public Class ItemComprado
         End Set
     End Property
 
-    Public Property NotaFiscal As NotaFiscalCompra
+    Public Property Orcamento As Orcamento
         Get
-            Return _NotaFiscal
+            Return _orcamento
         End Get
-        Set(value As NotaFiscalCompra)
-            _NotaFiscal = value
+        Set(value As Orcamento)
+            _orcamento = value
         End Set
     End Property
 

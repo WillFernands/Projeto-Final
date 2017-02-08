@@ -12,6 +12,10 @@ Public Class ClientePJ : Inherits Cliente
         _razaoSocial = razaoSocial
     End Sub
 
+    Public Sub New()
+
+    End Sub
+
     Property CNPJ As Long
         Get
             Return _cnpj

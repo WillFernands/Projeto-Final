@@ -43,6 +43,10 @@ Public NotInheritable Class EnderecoCliente
         _tipoImovel = tipoImovel
     End Sub
 
+    Public Sub New()
+
+    End Sub
+
     Property ID As Long
         Get
             Return _id
