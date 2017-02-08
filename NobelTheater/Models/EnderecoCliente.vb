@@ -1,7 +1,7 @@
 ﻿Option Explicit On
 Option Strict On
 
-Public NotInheritable Class Endereco
+Public NotInheritable Class EnderecoCliente
     Private _id As Long
     Private _clientePF As ClientePF
     Private _clientePJ As ClientePJ

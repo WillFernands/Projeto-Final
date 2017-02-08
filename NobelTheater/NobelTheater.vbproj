@@ -135,6 +135,7 @@
     <Compile Include="Models\Cotacao.vb" />
     <Compile Include="Models\ItemComprado.vb" />
     <Compile Include="Models\ItemCotado.vb" />
+    <Compile Include="Models\ItemEmprestimo.vb" />
     <Compile Include="Models\PagamentoEfetuado.vb" />
     <Compile Include="Views\T05 - ControleFornecedor.Designer.vb">
       <DependentUpon>T05 - ControleFornecedor.vb</DependentUpon>
@@ -224,7 +225,7 @@
     <Compile Include="Models\ClientePF.vb" />
     <Compile Include="Models\ClientePJ.vb" />
     <Compile Include="Models\NotaFiscalCompra.vb" />
-    <Compile Include="Models\Endereco.vb" />
+    <Compile Include="Models\EnderecoCliente.vb" />
     <Compile Include="Models\Fornecedor.vb" />
     <Compile Include="Models\Funcionario.vb" />
     <Compile Include="Models\PagamentoRecebido.vb" />

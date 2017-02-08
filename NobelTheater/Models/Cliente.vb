@@ -7,14 +7,14 @@ Public Class Cliente
     Private _telefone As String
     Private _dataCadastro As Date
 
-    Private _enderecos As List(Of Endereco)
+    Private _enderecos As List(Of EnderecoCliente)
 
     Public Sub New(id As Long, nome As String, telefone As String, dataCadastro As Date)
         _id = id
         _nome = nome
         _telefone = telefone
         _dataCadastro = dataCadastro
-        _enderecos = New List(Of Endereco)
+        _enderecos = New List(Of EnderecoCliente)
     End Sub
 
     Property ID As Long
@@ -53,11 +53,11 @@ Public Class Cliente
         End Set
     End Property
 
-    Property Enderecos As List(Of Endereco)
+    Property Enderecos As List(Of EnderecoCliente)
         Get
             Return _enderecos
         End Get
-        Set(value As List(Of Endereco))
+        Set(value As List(Of EnderecoCliente))
             _enderecos = value
         End Set
     End Property
