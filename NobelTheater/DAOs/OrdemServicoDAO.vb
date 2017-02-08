@@ -15,7 +15,7 @@ Public Class OrdemServicoDAO
 
         conn.AddParameter("@cnpj", ordem.Fornecedor.CNPJ)
         conn.AddParameter("@idCliente", ordem.Cliente.ID)
-        conn.AddParameter("@data", ordem.Data)
+        conn.AddParameter("@data", ordem.DataSolicitacao)
         conn.AddParameter("@status", ordem.Status)
 
         Return conn.ExecuteCommand(strSQL.ToString)
@@ -58,7 +58,7 @@ Public Class OrdemServicoDAO
             Dim ordem As New OrdemServico()
             ordem.ID = CLng(row.Item("id"))
             ordem.DataSolicitacao = CDate(row.Item("dataSolicitacao"))
-            ordem.Fornecedor = fornecedorDAO.FindByCNPJ(CLng(row.Item("cnpjFornecedor")))
+            ordem.Fornecedor = fornecedorDAO.FindByCNPJ(CType(CLng(row.Item("cnpjFornecedor")), String))
             ordem.Cliente = cliente
             ordem.Status = CStr(row.Item("statusOrdem"))
             ordens.Add(ordem)

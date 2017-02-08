@@ -2,7 +2,6 @@
 Option Strict On
 
 Public Class ClientePJ : Inherits Cliente
-
     Private _cnpj As Long
     Private _razaoSocial As String
 

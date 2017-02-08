@@ -1,53 +1,35 @@
 ﻿Option Explicit On
 Option Strict On
+Imports NobelTheater
 
-Public NotInheritable Class EnderecoCliente
+Public Class EnderecoCliente
     Private _id As Long
-    Private _clientePF As ClientePF
-    Private _clientePJ As ClientePJ
-    Private _fornecedor As Fornecedor
+    Private _cliente As Cliente
     Private _logradouro As String
+    Private _numero As String
     Private _bairro As String
     Private _cidade As String
     Private _estado As String
     Private _cep As String
-    Private _tipoImovel As String
-
-    Public Sub New(clientePF As ClientePF, logradouro As String, bairro As String, cidade As String, estado As String, cep As String, tipoImovel As String)
-        _clientePF = clientePF
-        _logradouro = logradouro
-        _bairro = bairro
-        _cidade = cidade
-        _estado = estado
-        _cep = cep
-        _tipoImovel = tipoImovel
-    End Sub
-
-    Public Sub New(clientePJ As ClientePJ, logradouro As String, bairro As String, cidade As String, estado As String, cep As String, tipoImovel As String)
-        _clientePJ = clientePJ
-        _logradouro = logradouro
-        _bairro = bairro
-        _cidade = cidade
-        _estado = estado
-        _cep = cep
-        _tipoImovel = tipoImovel
-    End Sub
-
-    Public Sub New(fornecedor As Fornecedor, logradouro As String, bairro As String, cidade As String, estado As String, cep As String, tipoImovel As String)
-        _fornecedor = fornecedor
-        _logradouro = logradouro
-        _bairro = bairro
-        _cidade = cidade
-        _estado = estado
-        _cep = cep
-        _tipoImovel = tipoImovel
-    End Sub
+    Private _tipo As String
 
     Public Sub New()
 
     End Sub
 
-    Property ID As Long
+    Public Sub New(id As Long, cliente As Cliente, logradouro As String, numero As String, bairro As String, cidade As String, estado As String, cep As String, tipo As String)
+        _id = id
+        _cliente = cliente
+        _logradouro = logradouro
+        _numero = numero
+        _bairro = bairro
+        _cidade = cidade
+        _estado = estado
+        _cep = cep
+        _tipo = tipo
+    End Sub
+
+    Public Property Id As Long
         Get
             Return _id
         End Get
@@ -56,34 +38,16 @@ Public NotInheritable Class EnderecoCliente
         End Set
     End Property
 
-    Property ClientePF As ClientePF
+    Public Property Cliente As Cliente
         Get
-            Return _clientePF
+            Return _cliente
         End Get
-        Set(value As ClientePF)
-            _clientePF = value
+        Set(value As Cliente)
+            _cliente = value
         End Set
     End Property
 
-    Property ClientePJ As ClientePJ
-        Get
-            Return _clientePJ
-        End Get
-        Set(value As ClientePJ)
-            _clientePJ = value
-        End Set
-    End Property
-
-    Property Fornecedor As Fornecedor
-        Get
-            Return _fornecedor
-        End Get
-        Set(value As Fornecedor)
-            _fornecedor = value
-        End Set
-    End Property
-
-    Property Logradouro As String
+    Public Property Logradouro As String
         Get
             Return _logradouro
         End Get
@@ -92,7 +56,16 @@ Public NotInheritable Class EnderecoCliente
         End Set
     End Property
 
-    Property Bairro As String
+    Public Property Numero As String
+        Get
+            Return _numero
+        End Get
+        Set(value As String)
+            _numero = value
+        End Set
+    End Property
+
+    Public Property Bairro As String
         Get
             Return _bairro
         End Get
@@ -101,7 +74,7 @@ Public NotInheritable Class EnderecoCliente
         End Set
     End Property
 
-    Property Cidade As String
+    Public Property Cidade As String
         Get
             Return _cidade
         End Get
@@ -110,7 +83,7 @@ Public NotInheritable Class EnderecoCliente
         End Set
     End Property
 
-    Property Estado As String
+    Public Property Estado As String
         Get
             Return _estado
         End Get
@@ -119,7 +92,7 @@ Public NotInheritable Class EnderecoCliente
         End Set
     End Property
 
-    Property CEP As String
+    Public Property Cep As String
         Get
             Return _cep
         End Get
@@ -128,12 +101,13 @@ Public NotInheritable Class EnderecoCliente
         End Set
     End Property
 
-    Property TipoImovel As String
+    Public Property Tipo As String
         Get
-            Return _tipoImovel
+            Return _tipo
         End Get
         Set(value As String)
-            _tipoImovel = value
+            _tipo = value
         End Set
     End Property
 End Class
+

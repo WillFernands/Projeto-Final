@@ -77,7 +77,7 @@ Public Class EnderecoClienteDAO
             endereco.Estado = CStr(row.Item("estado"))
             endereco.CEP = CStr(row.Item("cep"))
             endereco.Tipo = CStr(row.Item("tipo"))
-            endereco.ID = CStr(row.Item("id"))
+            endereco.Id = CLng(CStr(row.Item("id")))
             endereco.Cliente = cliente
 
             enderecos.Add(endereco)

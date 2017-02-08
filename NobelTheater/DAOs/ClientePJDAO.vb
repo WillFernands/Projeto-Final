@@ -94,7 +94,7 @@ Public Class ClientePJDAO
         cliente.Nome = CStr(dt.Rows(0).Item("nome"))
         cliente.Telefone = CStr(dt.Rows(0).Item("telefone"))
         cliente.DataCadastro = CDate(dt.Rows(0).Item("dataCadastro"))
-        cliente.CNPJ = CStr(dt.Rows(0).Item("cnpj"))
+        cliente.CNPJ = CLng(CStr(dt.Rows(0).Item("cnpj")))
         cliente.RazaoSocial = CStr(dt.Rows(0).Item("razaoSocial"))
 
         Return cliente
@@ -120,7 +120,7 @@ Public Class ClientePJDAO
         cliente.Nome = CStr(dt.Rows(0).Item("nome"))
         cliente.Telefone = CStr(dt.Rows(0).Item("telefone"))
         cliente.DataCadastro = CDate(dt.Rows(0).Item("dataCadastro"))
-        cliente.CNPJ = CStr(dt.Rows(0).Item("cnpj"))
+        cliente.CNPJ = CLng(CStr(dt.Rows(0).Item("cnpj")))
         cliente.RazaoSocial = CStr(dt.Rows(0).Item("razaoSocial"))
 
         Return cliente
@@ -146,7 +146,7 @@ Public Class ClientePJDAO
         cliente.Nome = CStr(dt.Rows(0).Item("nome"))
         cliente.Telefone = CStr(dt.Rows(0).Item("telefone"))
         cliente.DataCadastro = CDate(dt.Rows(0).Item("dataCadastro"))
-        cliente.CNPJ = CStr(dt.Rows(0).Item("cnpj"))
+        cliente.CNPJ = CLng(CStr(dt.Rows(0).Item("cnpj")))
         cliente.RazaoSocial = CStr(dt.Rows(0).Item("razaoSocial"))
 
         Return cliente
@@ -172,7 +172,7 @@ Public Class ClientePJDAO
         cliente.Nome = CStr(dt.Rows(0).Item("nome"))
         cliente.Telefone = CStr(dt.Rows(0).Item("telefone"))
         cliente.DataCadastro = CDate(dt.Rows(0).Item("dataCadastro"))
-        cliente.CNPJ = CStr(dt.Rows(0).Item("cnpj"))
+        cliente.CNPJ = CLng(CStr(dt.Rows(0).Item("cnpj")))
         cliente.RazaoSocial = CStr(dt.Rows(0).Item("razaoSocial"))
 
         Return cliente
