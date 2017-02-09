@@ -12,7 +12,7 @@ Public Class SalarioDAO
         strSQL.Append("INSERT INTO Salarios(matriculaFuncionario, valor, inicio, fim, motivo) ")
         strSQL.Append("VALUES(@matricula, @valor, @inicio, @fim, @motivo);")
 
-        conn.AddParameter("@matricula", salario.Funcionario.Matricula)
+        conn.AddParameter("@matricula", salario.MatriculaFuncionario)
         conn.AddParameter("@valor", salario.Valor)
         conn.AddParameter("@inicio", salario.Inicio)
         conn.AddParameter("@fim", salario.Fim)
@@ -42,8 +42,8 @@ Public Class SalarioDAO
             salario.Valor = CDbl(row.Item("valor"))
             salario.Inicio = CDate(row.Item("inicio"))
             salario.Fim = CDate(row.Item("fim"))
-            salario.Motivo = CDate(row.Item("motivo"))
-            salario.Funcionario = FuncionarioDAO.FindByMatricula(CLng(row.Item("matriculaFuncionario")))
+            salario.Motivo = CType(CDate(row.Item("motivo")), String)
+            salario.MatriculaFuncionario = FuncionarioDAO.FindByMatricula(CLng(row.Item("matriculaFuncionario")))
             salarios.Add(salario)
         Next
 
@@ -71,8 +71,8 @@ Public Class SalarioDAO
             salario.Valor = CDbl(row.Item("valor"))
             salario.Inicio = CDate(row.Item("inicio"))
             salario.Fim = CDate(row.Item("fim"))
-            salario.Motivo = CDate(row.Item("motivo"))
-            salario.Funcionario = funcionario
+            salario.Motivo = CType(CDate(row.Item("motivo")), String)
+            salario.MatriculaFuncionario = funcionario
             salarios.Add(salario)
         Next
 

@@ -138,9 +138,14 @@
     <Compile Include="Models\ItemEmprestimo.vb" />
     <Compile Include="Models\ItemOrcado.vb" />
     <Compile Include="Models\ItemOrdem.vb" />
+    <Compile Include="Models\ItemVendido.vb" />
     <Compile Include="Models\Orcamento.vb" />
     <Compile Include="Models\OrdemServico.vb" />
     <Compile Include="Models\PagamentoEfetuado.vb" />
+    <Compile Include="Models\RegistroPonto.vb" />
+    <Compile Include="Models\Salario.vb" />
+    <Compile Include="Models\SolicitacaoEmprestimo.vb" />
+    <Compile Include="Models\VisitaTecnica.vb" />
     <Compile Include="Views\T05 - ControleFornecedor.Designer.vb">
       <DependentUpon>T05 - ControleFornecedor.vb</DependentUpon>
     </Compile>

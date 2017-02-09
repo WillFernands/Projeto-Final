@@ -13,7 +13,7 @@ Public Class SolicitacaoEmprestimoDAO
         strSQL.Append("INSERT INTO SolicitacoesEmprestimos(dataSolicitacao, idCliente, statusSolicitacao) ")
         strSQL.Append("VALUES(@data, @idCliente, @status);")
 
-        conn.AddParameter("@data", solicitacao.Data)
+        conn.AddParameter("@data", solicitacao.DataSolicitacao)
         conn.AddParameter("@idCliente", solicitacao.Cliente.ID)
         conn.AddParameter("@status", solicitacao.Status)
 

@@ -38,9 +38,9 @@ Public Class RegistroPontoDAO
 
         For Each row As DataRow In dt.Rows
             Dim registro As New RegistroPonto()
-            registro.Data = CDate(row.Item("dataRegistro"))
+            registro.DataRegistro = CDate(row.Item("dataRegistro"))
             registro.Tipo = CStr(row.Item("tipo"))
-            registro.Funcionario = FuncionarioDAO.FindByMatricula(CLng(row.Item("matriculaFuncionario")))
+            registro.MatriculaFuncionario = FuncionarioDAO.FindByMatricula(CLng(row.Item("matriculaFuncionario")))
             registros.Add(registro)
         Next
 
@@ -65,9 +65,9 @@ Public Class RegistroPontoDAO
 
         For Each row As DataRow In dt.Rows
             Dim registro As New RegistroPonto()
-            registro.Data = CDate(row.Item("dataRegistro"))
+            registro.DataRegistro = CDate(row.Item("dataRegistro"))
             registro.Tipo = CStr(row.Item("tipo"))
-            registro.Funcionario = funcionario
+            registro.MatriculaFuncionario = funcionario
             registros.Add(registro)
         Next
 
