@@ -1,32 +1,27 @@
 ﻿Imports NobelTheater
 
 Public Class ItemOrdem
-    Private _produto As Produto
     Private _quantidade As Integer
     Private _dataEntrega As Date
     Private _dataRecebimento As Date
     Private _dataDevolucao As Date
 
+    Private _ordemServico As OrdemServico
+
+    Private _produto As Produto
+
     Public Sub New()
 
     End Sub
 
-    Public Sub New(produto As Produto, quantidade As Integer, dataEntrega As Date, dataRecebimento As Date, dataDevolucao As Date)
-        _produto = produto
+    Public Sub New(quantidade As Integer, dataEntrega As Date, dataRecebimento As Date, dataDevolucao As Date, ordemServico As OrdemServico, produto As Produto)
         _quantidade = quantidade
         _dataEntrega = dataEntrega
         _dataRecebimento = dataRecebimento
         _dataDevolucao = dataDevolucao
+        _ordemServico = ordemServico
+        _produto = produto
     End Sub
-
-    Public Property Produto As Produto
-        Get
-            Return _produto
-        End Get
-        Set(value As Produto)
-            _produto = value
-        End Set
-    End Property
 
     Public Property Quantidade As Integer
         Get
@@ -64,4 +59,21 @@ Public Class ItemOrdem
         End Set
     End Property
 
+    Public Property OrdemServico As OrdemServico
+        Get
+            Return _ordemServico
+        End Get
+        Set(value As OrdemServico)
+            _ordemServico = value
+        End Set
+    End Property
+
+    Public Property Produto As Produto
+        Get
+            Return _produto
+        End Get
+        Set(value As Produto)
+            _produto = value
+        End Set
+    End Property
 End Class

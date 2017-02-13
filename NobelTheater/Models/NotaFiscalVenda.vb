@@ -1,68 +1,35 @@
 ﻿Option Explicit On
 Option Strict On
+Imports NobelTheater
 
 Public Class NotaFiscalVenda
     Private _id As Long
-    Private _dataOrcamento As Date
     Private _status As String
     Private _dataAprovacao As Date
     Private _dataFinalObra As Date
-    Private _dataPagamento As Date
-    Private _clientePF As ClientePF
-    Private _clientePJ As ClientePJ
-    Private _pagamentos As New List(Of PagamentoRecebido)
     Private _numeroNF As Integer
     Private _emissaoNF As Date
-    Private _produtos As New List(Of Cliente)
 
-    Public Sub New(dataOrcamento As Date, status As String, numeroNF As Integer, emissaoNF As Date, clientePF As ClientePF)
-        _dataOrcamento = dataOrcamento
-        _status = status
-        _numeroNF = numeroNF
-        _emissaoNF = emissaoNF
-        _clientePF = clientePF
-        _clientePJ = Nothing
+    Private _Orcamento As Orcamento
+
+    Private _pagamentoRecebido As New List(Of PagamentoRecebido)
+
+    Public Sub New()
+
     End Sub
 
-    Public Sub New(dataOrcamento As Date, status As String, numeroNF As Integer, emissaoNF As Date, clientePJ As ClientePJ)
-        _dataOrcamento = dataOrcamento
+    Public Sub New(id As Long, status As String, dataAprovacao As Date, dataFinalObra As Date, numeroNF As Integer, emissaoNF As Date, Orcamento As Orcamento, pagamentoRecebido As List(Of PagamentoRecebido))
+        _id = id
         _status = status
+        _dataAprovacao = dataAprovacao
+        _dataFinalObra = dataFinalObra
         _numeroNF = numeroNF
         _emissaoNF = emissaoNF
-        _clientePJ = clientePJ
-        _clientePF = Nothing
+        _Orcamento = Orcamento
+        _pagamentoRecebido = pagamentoRecebido
     End Sub
 
-    Property NumeroNF As Integer
-        Get
-            Return _numeroNF
-        End Get
-        Set(value As Integer)
-            _numeroNF = value
-        End Set
-    End Property
-
-    Property EmissaoNF As Date
-        Get
-            Return _emissaoNF
-        End Get
-        Set(value As Date)
-            _emissaoNF = value
-        End Set
-    End Property
-
-    Property Produtos As List(Of Cliente)
-        Get
-            Return _produtos
-        End Get
-        Set(value As List(Of Cliente))
-            _produtos = value
-        End Set
-    End Property
-
-
-
-    Property ID As Long
+    Public Property Id As Long
         Get
             Return _id
         End Get
@@ -71,43 +38,7 @@ Public Class NotaFiscalVenda
         End Set
     End Property
 
-    Property DataOrcamento As Date
-        Get
-            Return _dataOrcamento
-        End Get
-        Set(value As Date)
-            _dataOrcamento = value
-        End Set
-    End Property
-
-    Property DataAprovacao As Date
-        Get
-            Return _dataAprovacao
-        End Get
-        Set(value As Date)
-            _dataAprovacao = value
-        End Set
-    End Property
-
-    Property DataFinalObra As Date
-        Get
-            Return _dataFinalObra
-        End Get
-        Set(value As Date)
-            _dataFinalObra = value
-        End Set
-    End Property
-
-    Property DataPagamento As Date
-        Get
-            Return _dataPagamento
-        End Get
-        Set(value As Date)
-            _dataPagamento = value
-        End Set
-    End Property
-
-    Property Status As String
+    Public Property Status As String
         Get
             Return _status
         End Get
@@ -116,30 +47,57 @@ Public Class NotaFiscalVenda
         End Set
     End Property
 
-    Property ClientePF As ClientePF
+    Public Property DataAprovacao As Date
         Get
-            Return _clientePF
+            Return _dataAprovacao
         End Get
-        Set(value As ClientePF)
-            _clientePF = value
+        Set(value As Date)
+            _dataAprovacao = value
         End Set
     End Property
 
-    Property ClientePJ As ClientePJ
+    Public Property DataFinalObra As Date
         Get
-            Return _clientePJ
+            Return _dataFinalObra
         End Get
-        Set(value As ClientePJ)
-            _clientePJ = value
+        Set(value As Date)
+            _dataFinalObra = value
         End Set
     End Property
 
-    Property Pagamentos As List(Of PagamentoRecebido)
+    Public Property NumeroNF As Integer
         Get
-            Return _pagamentos
+            Return _numeroNF
+        End Get
+        Set(value As Integer)
+            _numeroNF = value
+        End Set
+    End Property
+
+    Public Property EmissaoNF As Date
+        Get
+            Return _emissaoNF
+        End Get
+        Set(value As Date)
+            _emissaoNF = value
+        End Set
+    End Property
+
+    Public Property Orcamento As Orcamento
+        Get
+            Return _Orcamento
+        End Get
+        Set(value As Orcamento)
+            _Orcamento = value
+        End Set
+    End Property
+
+    Public Property PagamentoRecebido As List(Of PagamentoRecebido)
+        Get
+            Return _pagamentoRecebido
         End Get
         Set(value As List(Of PagamentoRecebido))
-            _pagamentos = value
+            _pagamentoRecebido = value
         End Set
     End Property
 End Class

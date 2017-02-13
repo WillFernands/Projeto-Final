@@ -15,7 +15,7 @@ Public Class Fornecedor
     Private _bairro As String
     Private _cidade As String
     Private _estado As String
-    Private _cep As String
+    Private _cep As Long
     Private _tipoEndereco As String
     Private _Assistencia As String
 

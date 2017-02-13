@@ -2,33 +2,29 @@
 
 Public Class Orcamento
     Private _id As Long
-    Private _data As Date
-    Private _vendedor As Funcionario
-    Private _cliente As Cliente
     Private _status As String
     Private _dataOrcamento As Date
+
+    Private _vendedor As Funcionario
+
+    Private _cliente As Cliente
+
+    Private _itemOrcado As List(Of ItemOrcado)
+
 
     Public Sub New()
 
     End Sub
 
-    Public Sub New(id As Long, data As Date, vendedor As Funcionario, cliente As Cliente, status As String, dataOrcamento As Date)
+    Public Sub New(id As Long, vendedor As Funcionario, cliente As Cliente, status As String, dataOrcamento As Date, itemOrcado As List(Of ItemOrcado))
         _id = id
-        _data = data
         _vendedor = vendedor
         _cliente = cliente
         _status = status
         _dataOrcamento = dataOrcamento
+        _itemOrcado = itemOrcado
     End Sub
 
-    Public Property Data As Date
-        Get
-            Return _data
-        End Get
-        Set(value As Date)
-            _data = value
-        End Set
-    End Property
 
     Public Property Vendedor As Funcionario
         Get
@@ -72,6 +68,15 @@ Public Class Orcamento
         End Get
         Set(value As Date)
             _dataOrcamento = value
+        End Set
+    End Property
+
+    Public Property ItemOrcado As List(Of ItemOrcado)
+        Get
+            Return _itemOrcado
+        End Get
+        Set(value As List(Of ItemOrcado))
+            _itemOrcado = value
         End Set
     End Property
 End Class

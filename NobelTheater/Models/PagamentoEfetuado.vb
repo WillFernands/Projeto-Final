@@ -7,9 +7,14 @@ Public Class PagamentoEfetuado
     Private _valor As Double
     Private _data As Date
     Private _tipo As String
+
     Private _parcela As Integer
     Private _compra As NotaFiscalCompra
     Private _venda As NotaFiscalVenda
+
+    Public Sub New()
+
+    End Sub
 
     Public Sub New(status As String, valor As Double, data As Date, tipo As String, parcela As Integer, compra As NotaFiscalCompra)
         _status = status

@@ -26,8 +26,7 @@ Public Class Funcionario
 
     Public Sub New(ByVal matricula As Long, ByVal cpf As Long, ByVal nome As String, ByVal telefone As String, ByVal dataContratacao As Date,
 ByVal perfil As String, ByVal cargo As String, ByVal logradouro As String, ByVal numero As String,
-ByVal bairro As String, ByVal cidade As String, ByVal estado As String, ByVal cep As Long, ByVal tipoEndereco As String)
-
+ByVal bairro As String, ByVal cidade As String, ByVal estado As String, ByVal cep As Long, ByVal tipoEndereco As String, supervisor As Funcionario, salario As List(Of Salario), registroPonto As List(Of RegistroPonto))
         _matricula = matricula
         _cpf = cpf
         _nome = nome
@@ -42,6 +41,9 @@ ByVal bairro As String, ByVal cidade As String, ByVal estado As String, ByVal ce
         _estado = estado
         _cep = cep
         _tipoEndereco = tipoEndereco
+        _supervisor = supervisor
+        _salario = salario
+        _registroPonto = registroPonto
     End Sub
 
     Public Sub New()

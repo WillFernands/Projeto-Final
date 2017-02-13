@@ -1,16 +1,17 @@
 ﻿Option Explicit On
 Option Strict On
+Imports NobelTheater
 
 Public NotInheritable Class ItemEmprestimo
     Private _produto As Produto
-    Private _solicitacaoEmprestimo As Long
+    Private _solicitacaoEmprestimo As SolicitacaoEmprestimo
     Private _quantidade As Integer
     Private _dataEmprestimo As Date
     Private _dataDevolucao As Date
 
-    Public Sub New(produto As Produto, solicitacaoEmprestimo As Long, quantidade As Integer, DataEmprestimo As Date, DataDevolucao As Date)
+    Public Sub New(produto As Produto, solicitacaoEmprestimo As SolicitacaoEmprestimo, quantidade As Integer, DataEmprestimo As Date, DataDevolucao As Date)
         _produto = produto
-        _solicitacaoEmprestimo = solicitacaoEmprestimo
+        Me.SolicitacaoEmprestimo = solicitacaoEmprestimo
         _quantidade = quantidade
         _dataEmprestimo = DataEmprestimo
         _dataDevolucao = DataDevolucao
@@ -29,14 +30,6 @@ Public NotInheritable Class ItemEmprestimo
         End Set
     End Property
 
-    Public Property SolicitacaoEmprestimo As Long
-        Get
-            Return _solicitacaoEmprestimo
-        End Get
-        Set(value As Long)
-            _solicitacaoEmprestimo = value
-        End Set
-    End Property
 
     Public Property Quantidade As Integer
         Get
@@ -62,6 +55,15 @@ Public NotInheritable Class ItemEmprestimo
         End Get
         Set(value As Date)
             _dataDevolucao = value
+        End Set
+    End Property
+
+    Public Property SolicitacaoEmprestimo As SolicitacaoEmprestimo
+        Get
+            Return _solicitacaoEmprestimo
+        End Get
+        Set(value As SolicitacaoEmprestimo)
+            _solicitacaoEmprestimo = value
         End Set
     End Property
 End Class
