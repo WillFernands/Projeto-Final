@@ -1,7 +1,7 @@
 ﻿Option Explicit On
 Option Strict On
 
-Public NotInheritable Class TipoFuncionario
+Public NotInheritable Class TipoPerfilFuncionario
     Public Const Gerente As String = "Gerente"
     Public Const AssistenteAdm As String = "Assistente Administrativo"
     Public Const AssistenteCont As String = "Assistente Contabil"

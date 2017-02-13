@@ -1,7 +1,7 @@
 ﻿Option Explicit On
 Option Strict On
 
-Public NotInheritable Class StatusPgto
+Public NotInheritable Class StatusPagamento
     Public Const PgtoPendente As String = "Pagamento Pendente"
     Public Const Finalizado As String = "Finalizado"
 

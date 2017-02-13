@@ -2,7 +2,6 @@
 Option Strict On
 
 Public NotInheritable Class StatusCotacao
-
     Public Const Cotada As String = "Cotada"
     Public Const Aprovada As String = "Aprovada"
     Public Const Rejeitada As String = "Rejeitada"
