@@ -85,7 +85,11 @@ Public Class FuncionarioDAO
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
 
+        Dim registroPontoDAO As New RegistroPontoDAO
+        Dim salarioDAO As New SalarioDAO
+
         Dim funcionario As New Funcionario()
+        funcionario.Matricula = matricula
         funcionario.CPF = CStr(dt.Rows(0).Item("cpf"))
         funcionario.Nome = CStr(dt.Rows(0).Item("nome"))
         funcionario.Telefone = CStr(dt.Rows(0).Item("telefone"))
@@ -99,7 +103,9 @@ Public Class FuncionarioDAO
         funcionario.Estado = CStr(dt.Rows(0).Item("estado"))
         funcionario.CEP = CStr(dt.Rows(0).Item("cep"))
         funcionario.TipoEndereco = CStr(dt.Rows(0).Item("tipoEndereco"))
-        funcionario.Supervisor = FindFuncionarioByMatricula(CLng(dt.Rows(0).Item("matriculaSupervisor")))
+        funcionario.Supervisor = FindSupervisorByMatricula(CLng(dt.Rows(0).Item("matriculaSupervisor")))
+        funcionario.RegistroPontos = registroPontoDAO.FindByMatricula(funcionario.Matricula)
+        funcionario.Salarios = salarioDAO.FindByMatricula(funcionario.Matricula)
 
         Return funcionario
 
@@ -117,7 +123,11 @@ Public Class FuncionarioDAO
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
 
+        Dim registroPontoDAO As New RegistroPontoDAO
+        Dim salarioDAO As New SalarioDAO
+
         Dim funcionario As New Funcionario()
+        funcionario.Matricula = CLng(dt.Rows(0).Item("matricula"))
         funcionario.CPF = CStr(dt.Rows(0).Item("cpf"))
         funcionario.Nome = CStr(dt.Rows(0).Item("nome"))
         funcionario.Telefone = CStr(dt.Rows(0).Item("telefone"))
@@ -131,14 +141,16 @@ Public Class FuncionarioDAO
         funcionario.Estado = CStr(dt.Rows(0).Item("estado"))
         funcionario.CEP = CStr(dt.Rows(0).Item("cep"))
         funcionario.TipoEndereco = CStr(dt.Rows(0).Item("tipoEndereco"))
-        funcionario.Supervisor = FindFuncionarioByMatricula(CLng(dt.Rows(0).Item("matriculaSupervisor")))
+        funcionario.Supervisor = FindSupervisorByMatricula(CLng(dt.Rows(0).Item("matriculaSupervisor")))
+        funcionario.RegistroPontos = registroPontoDAO.FindByMatricula(funcionario.Matricula)
+        funcionario.Salarios = salarioDAO.FindByMatricula(funcionario.Matricula)
 
         Return funcionario
 
     End Function
 
     'OK
-    Public Function FindFuncionarioByMatricula(matricula As Long) As Funcionario
+    Public Function FindSupervisorByMatricula(matricula As Long) As Funcionario
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -150,7 +162,8 @@ Public Class FuncionarioDAO
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
 
         Dim funcionario As New Funcionario()
-        funcionario.CPF = CStr(dt.Rows(0).Item("cpf"))
+        funcionario.Matricula = CLng(dt.Rows(0).Item("matricula"))
+        funcionario.Cpf = CStr(dt.Rows(0).Item("cpf"))
         funcionario.Nome = CStr(dt.Rows(0).Item("nome"))
         funcionario.Telefone = CStr(dt.Rows(0).Item("telefone"))
         funcionario.DataContratacao = CDate(dt.Rows(0).Item("dataContratacao"))
@@ -161,7 +174,7 @@ Public Class FuncionarioDAO
         funcionario.Bairro = CStr(dt.Rows(0).Item("bairro"))
         funcionario.Cidade = CStr(dt.Rows(0).Item("cidade"))
         funcionario.Estado = CStr(dt.Rows(0).Item("estado"))
-        funcionario.CEP = CStr(dt.Rows(0).Item("cep"))
+        funcionario.Cep = CStr(dt.Rows(0).Item("cep"))
         funcionario.TipoEndereco = CStr(dt.Rows(0).Item("tipoEndereco"))
         funcionario.Supervisor = funcionario
 

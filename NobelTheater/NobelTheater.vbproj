@@ -93,9 +93,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BCs\AlertaBC.vb" />
+    <Compile Include="BCs\ClienteBC.vb" />
+    <Compile Include="BCs\ClientePFBC.vb" />
+    <Compile Include="BCs\ClientePJBC.vb" />
     <Compile Include="BCs\CotacaoBC.vb" />
+    <Compile Include="BCs\EnderecoClienteBC.vb" />
     <Compile Include="BCs\FornecedorBC.vb" />
+    <Compile Include="BCs\FuncionarioBC.vb" />
+    <Compile Include="BCs\ItemCompradoBC.vb" />
     <Compile Include="BCs\ItemCotadoBC.vb" />
+    <Compile Include="BCs\ItemEmprestimoBC.vb" />
+    <Compile Include="BCs\ItemOrcadoBC.vb" />
+    <Compile Include="BCs\ItemOrdemBC.vb" />
+    <Compile Include="BCs\ItemVendidoBC.vb" />
+    <Compile Include="BCs\OrcamentoBC.vb" />
+    <Compile Include="BCs\PagamentoEfetuadoBC.vb" />
+    <Compile Include="BCs\PagamentoRecebidoBC.vb" />
+    <Compile Include="BCs\ProdutoBC.vb" />
+    <Compile Include="BCs\RegistroPontoBC.vb" />
+    <Compile Include="BCs\SalarioBC.vb" />
+    <Compile Include="BCs\VisitaTecnicaBC.vb" />
     <Compile Include="DAOs\AlertaDAO.vb" />
     <Compile Include="DAOs\ClienteDAO.vb" />
     <Compile Include="DAOs\ClientePFDAO.vb" />
@@ -129,6 +146,7 @@
     <Compile Include="Enums\StatusOrdem.vb" />
     <Compile Include="Enums\StatusPagamento.vb" />
     <Compile Include="Enums\TipoCargo.vb" />
+    <Compile Include="Enums\TipoFornecedor.vb" />
     <Compile Include="Enums\TipoPerfilFuncionario.vb" />
     <Compile Include="Enums\TipoPagamento.vb" />
     <Compile Include="Enums\TipoProduto.vb" />

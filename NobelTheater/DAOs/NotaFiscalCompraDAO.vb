@@ -94,5 +94,31 @@ Public Class NotaFiscalCompraDAO
 
     End Function
 
+    'OK
+    Public Function FindByID(id As Long) As NotaFiscalCompra
+
+        Dim conn As New Connection
+        Dim strSQL As New StringBuilder
+
+        strSQL.Append("SELECT * FROM NotasFiscaisCompras WHERE id = @id;")
+
+        conn.AddParameter("@id", id)
+
+        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        Dim cotacaoDAO As New CotacaoDAO()
+
+        Dim notaFiscal As New NotaFiscalCompra()
+        notaFiscal.ID = CLng(dt.Rows(0).Item("id"))
+        notaFiscal.DataAprovacao = CDate(dt.Rows(0).Item("dataAprovacao"))
+        notaFiscal.Status = CStr(dt.Rows(0).Item("statusNF"))
+        notaFiscal.EmissaoNF = CDate(dt.Rows(0).Item("emissaoNF"))
+        notaFiscal.NumeroNF = CStr(dt.Rows(0).Item("numeroNF"))
+        notaFiscal.Cotacao = cotacaoDAO.FindByID(CLng(dt.Rows(0).Item("idCotacao")))
+
+        Return notaFiscal
+
+    End Function
+
 End Class
 

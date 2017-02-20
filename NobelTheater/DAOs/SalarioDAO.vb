@@ -4,7 +4,7 @@ Option Strict On
 Imports System.Text
 
 Public Class SalarioDAO
-    'OK
+    'Ao Inserir o novo salário inserir também Now no antigo 
     Public Function Insert(ByVal salario As Salario) As Boolean
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
@@ -12,7 +12,7 @@ Public Class SalarioDAO
         strSQL.Append("INSERT INTO Salarios(matriculaFuncionario, valor, inicio, fim, motivo) ")
         strSQL.Append("VALUES(@matricula, @valor, @inicio, @fim, @motivo);")
 
-        conn.AddParameter("@matricula", salario.MatriculaFuncionario)
+        conn.AddParameter("@matricula", salario.funcionario)
         conn.AddParameter("@valor", salario.Valor)
         conn.AddParameter("@inicio", salario.Inicio)
         conn.AddParameter("@fim", salario.Fim)
@@ -35,6 +35,8 @@ Public Class SalarioDAO
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
 
+        Dim funcionarioDAO As New FuncionarioDAO()
+
         Dim salarios As New List(Of Salario)
 
         For Each row As DataRow In dt.Rows
@@ -43,7 +45,7 @@ Public Class SalarioDAO
             salario.Inicio = CDate(row.Item("inicio"))
             salario.Fim = CDate(row.Item("fim"))
             salario.Motivo = CType(CDate(row.Item("motivo")), String)
-            salario.MatriculaFuncionario = FuncionarioDAO.FindByMatricula(CLng(row.Item("matriculaFuncionario")))
+            salario.funcionario = funcionarioDAO.FindByMatricula(CLng(row.Item("matriculaFuncionario")))
             salarios.Add(salario)
         Next
 
@@ -72,7 +74,7 @@ Public Class SalarioDAO
             salario.Inicio = CDate(row.Item("inicio"))
             salario.Fim = CDate(row.Item("fim"))
             salario.Motivo = CType(CDate(row.Item("motivo")), String)
-            salario.MatriculaFuncionario = funcionario
+            salario.funcionario = funcionario
             salarios.Add(salario)
         Next
 

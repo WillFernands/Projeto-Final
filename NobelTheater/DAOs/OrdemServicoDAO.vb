@@ -98,5 +98,32 @@ Public Class OrdemServicoDAO
 
     End Function
 
+    'OK
+    Public Function FindByID(id As Long) As OrdemServico
+        Dim conn As New Connection
+        Dim strSQL As New StringBuilder
+
+        strSQL.Append("SELECT * FROM OrdensServicos ")
+        strSQL.Append("WHERE id = @id;")
+
+        conn.AddParameter("@id", id)
+
+        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        Dim clienteDAO As New ClienteDAO
+        Dim fornecedorDAO As New FornecedorDAO
+
+
+        Dim ordem As New OrdemServico()
+        ordem.Id = CLng(dt.Rows(0).Item("id"))
+        ordem.DataSolicitacao = CDate(dt.Rows(0).Item("dataSolicitacao"))
+        ordem.Fornecedor = fornecedorDAO.FindByCNPJ(CType(CLng(dt.Rows(0).Item("cnpjFornecedor")), String))
+        ordem.Cliente = clienteDAO.FindByID(CLng(dt.Rows(0).Item("idCliente")))
+        ordem.Status = CStr(dt.Rows(0).Item("statusOrdem"))
+
+        Return ordem
+
+    End Function
+
 End Class
 

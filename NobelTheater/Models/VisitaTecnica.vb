@@ -6,7 +6,7 @@ Public Class VisitaTecnica
     Private _preco As Double
     Private _parecerObra As String
 
-    Private _matriculaSupervisor As Funcionario
+    Private _supervisor As Funcionario
 
     Private _notaFiscal As NotaFiscalVenda
 
@@ -14,12 +14,12 @@ Public Class VisitaTecnica
 
     End Sub
 
-    Public Sub New(data As Date, tipo As String, preco As Double, parecerObra As String, matriculaSupervisor As Funcionario, notaFiscal As NotaFiscalVenda)
+    Public Sub New(data As Date, tipo As String, preco As Double, parecerObra As String, supervisor As Funcionario, notaFiscal As NotaFiscalVenda)
         _data = data
         _tipo = tipo
         _preco = preco
         _parecerObra = parecerObra
-        _matriculaSupervisor = matriculaSupervisor
+        _supervisor = supervisor
         _notaFiscal = notaFiscal
     End Sub
 
@@ -68,12 +68,12 @@ Public Class VisitaTecnica
         End Set
     End Property
 
-    Public Property MatriculaSupervisor As Funcionario
+    Public Property Supervisor As Funcionario
         Get
-            Return _matriculaSupervisor
+            Return _supervisor
         End Get
         Set(value As Funcionario)
-            _matriculaSupervisor = value
+            _supervisor = value
         End Set
     End Property
 End Class

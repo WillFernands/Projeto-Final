@@ -52,7 +52,7 @@ Public Class CotacaoDAO
             cotacao.ID = CLng(row.Item("id"))
             cotacao.DataCotacao = CDate(row.Item("dataCotacao"))
             cotacao.Status = CStr(row.Item("statusCotacao"))
-            cotacao.Fornecedor = fornecedorDAO.FindByCodigo(CStr(row.Item("cnpjFornecedor")))
+            cotacao.Fornecedor = fornecedorDAO.FindByCNPJ(CStr(row.Item("cnpjFornecedor")))
             cotacoes.Add(Cotacao)
         Next
 

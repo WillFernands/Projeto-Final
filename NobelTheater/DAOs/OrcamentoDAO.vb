@@ -13,7 +13,7 @@ Public Class OrcamentoDAO
         strSQL.Append("INSERT INTO Orcamentos(dataOrcamento, matriculaVendedor, idCliente, statusOrcamento) ")
         strSQL.Append("VALUES(@data, @matricula, @idCliente, @status);")
 
-        conn.AddParameter("@data", orcamento.Data)
+        conn.AddParameter("@data", orcamento.DataOrcamento)
         conn.AddParameter("@matricula", orcamento.Vendedor.Matricula)
         conn.AddParameter("@idCliente", orcamento.Cliente.ID)
         conn.AddParameter("@status", orcamento.Status)
@@ -95,6 +95,33 @@ Public Class OrcamentoDAO
         Next
 
         Return orcamentos
+
+    End Function
+
+    'OK
+    Public Function FindByID(id As Long) As Orcamento
+        Dim conn As New Connection
+        Dim strSQL As New StringBuilder
+
+        strSQL.Append("SELECT * FROM Orcamentos ")
+        strSQL.Append("WHERE id = @id;")
+
+        conn.AddParameter("@id", id)
+
+        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        Dim clienteDAO As New ClienteDAO
+        Dim funcionarioDAO As New FuncionarioDAO
+
+
+        Dim orcamento As New Orcamento()
+        orcamento.Id = CLng(dt.Rows(0).Item("id"))
+        orcamento.DataOrcamento = CDate(dt.Rows(0).Item("dataOrcamento"))
+        orcamento.Vendedor = funcionarioDAO.FindByMatricula(CLng(dt.Rows(0).Item("matriculaVendedor")))
+        orcamento.Cliente = clienteDAO.FindByID(CLng(dt.Rows(0).Item("idCliente")))
+        orcamento.Status = CStr(dt.Rows(0).Item("statusOrcamento"))
+
+        Return orcamento
 
     End Function
 

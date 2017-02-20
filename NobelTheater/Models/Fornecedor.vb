@@ -15,15 +15,15 @@ Public Class Fornecedor
     Private _bairro As String
     Private _cidade As String
     Private _estado As String
-    Private _cep As Long
+    Private _cep As String
     Private _tipoEndereco As String
-    Private _Assistencia As String
+    Private _Assistencia As Fornecedor
 
     Public Sub New()
 
     End Sub
 
-    Public Sub New(id As Long, cnpj As String, razaoSocial As String, nomeFantasia As String, telefone As String, inicioRelacionamento As Date, tipoFornecedor As String, logradouro As String, numero As String, bairro As String, cidade As String, estado As String, cep As String, tipoEndereco As String, Assistencia As String)
+    Public Sub New(id As Long, cnpj As String, razaoSocial As String, nomeFantasia As String, telefone As String, inicioRelacionamento As Date, tipoFornecedor As String, logradouro As String, numero As String, bairro As String, cidade As String, estado As String, cep As String, tipoEndereco As String, Assistencia As Fornecedor)
         _id = id
         _cnpj = cnpj
         _razaoSocial = razaoSocial
@@ -167,11 +167,11 @@ Public Class Fornecedor
         End Set
     End Property
 
-    Public Property Assistencia As String
+    Public Property Assistencia As Fornecedor
         Get
             Return _Assistencia
         End Get
-        Set(value As String)
+        Set(value As Fornecedor)
             _Assistencia = value
         End Set
     End Property

@@ -22,6 +22,10 @@ Public Class Produto
         _unidade = unidade
     End Sub
 
+    Public Sub New()
+
+    End Sub
+
     Property Codigo As Long
         Get
             Return _codigo

@@ -69,7 +69,7 @@ Public Class PagamentoEfetuadoDAO
             pagamentos.Add(pagamento)
         Next
 
-        Return pagamento
+        Return pagamentos
 
     End Function
 

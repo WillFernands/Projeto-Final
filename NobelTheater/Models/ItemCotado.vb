@@ -11,7 +11,7 @@ Public Class ItemCotado
         _produto = produto
     End Sub
 
-    Private Sub New()
+    Public Sub New()
 
     End Sub
 

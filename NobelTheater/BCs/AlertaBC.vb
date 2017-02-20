@@ -13,7 +13,7 @@ Public Class AlertaBC
         If (alerta Is Nothing) Then Return False
         If (alerta.Data = Nothing) Then Return False
         If (alerta.Data > Now) Then Return False
-        If (alerta.Observacao Is Nothing) Then Return False
+        If (String.IsNullOrWhiteSpace(alerta.Observacao)) Then Return False
         If (alerta.Produto Is Nothing) Then Return False
         If (ProdutoBC.Validate(alerta.Produto) = False) Then Return False
 

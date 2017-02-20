@@ -49,8 +49,11 @@ Public Class NotaFiscalVendaDAO
 
         Dim notasFiscais As New List(Of NotaFiscalVenda)
 
+        Dim visitaDAO As New VisitaTecnicaDAO
+        Dim pagamentoDAO As New PagamentoRecebidoDAO
+
         For Each row As DataRow In dt.Rows
-            Dim notaFiscal As New NotaFiscalCompra()
+            Dim notaFiscal As New NotaFiscalVenda()
             notaFiscal.ID = CLng(row.Item("id"))
             notaFiscal.DataAprovacao = CDate(row.Item("dataAprovacao"))
             notaFiscal.DataFinalObra = CDate(row.Item("dataFinalObra"))
@@ -58,6 +61,8 @@ Public Class NotaFiscalVendaDAO
             notaFiscal.EmissaoNF = CDate(row.Item("emissaoNF"))
             notaFiscal.NumeroNF = CStr(row.Item("numeroNF"))
             notaFiscal.Orcamento = orcamentoDAO.FindByID(CLng(row.Item("idOrcamento")))
+            notaFiscal.VisitasTecnicas = visitaDAO.FindByNotaFiscal(notaFiscal)
+            notaFiscal.PagamentosRecebidos = pagamentoDAO.FindByNotaFiscal(notaFiscal)
             notasFiscais.Add(notaFiscal)
         Next
 
@@ -66,7 +71,7 @@ Public Class NotaFiscalVendaDAO
     End Function
 
     'OK
-    Public Function FindByStatus(status As String) As List(Of NotaFiscalCompra)
+    Public Function FindByStatus(status As String) As List(Of NotaFiscalVenda)
 
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
@@ -77,22 +82,60 @@ Public Class NotaFiscalVendaDAO
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
 
-        Dim cotacaoDAO As New CotacaoDAO()
+        Dim orcamentoDAO As New OrcamentoDAO()
 
-        Dim notasFiscais As New List(Of NotaFiscalCompra)
+        Dim notasFiscais As New List(Of NotaFiscalVenda)
+        Dim visitaDAO As New VisitaTecnicaDAO
+        Dim pagamentoDAO As New PagamentoRecebidoDAO
 
         For Each row As DataRow In dt.Rows
-            Dim notaFiscal As New NotaFiscalCompra()
-            notaFiscal.ID = CLng(row.Item("id"))
+            Dim notaFiscal As New NotaFiscalVenda()
+            notaFiscal.Id = CLng(row.Item("id"))
             notaFiscal.DataAprovacao = CDate(row.Item("dataAprovacao"))
+            notaFiscal.DataFinalObra = CDate(row.Item("dataFinalObra"))
             notaFiscal.Status = CStr(row.Item("statusNF"))
             notaFiscal.EmissaoNF = CDate(row.Item("emissaoNF"))
             notaFiscal.NumeroNF = CStr(row.Item("numeroNF"))
-            notaFiscal.Cotacao = cotacaoDAO.FindByID(CLng(row.Item("idCotacao")))
+            notaFiscal.Orcamento = OrcamentoDAO.FindByID(CLng(row.Item("idOrcamento")))
+            notaFiscal.VisitasTecnicas = visitaDAO.FindByNotaFiscal(notaFiscal)
+            notaFiscal.PagamentosRecebidos = pagamentoDAO.FindByNotaFiscal(notaFiscal)
             notasFiscais.Add(notaFiscal)
         Next
 
         Return notasFiscais
+
+    End Function
+
+    'OK
+    Public Function FindByID(id As Long) As NotaFiscalVenda
+
+        Dim conn As New Connection
+        Dim strSQL As New StringBuilder
+
+        strSQL.Append("SELECT * FROM NotasFiscaisCompras WHERE id = @id;")
+
+        conn.AddParameter("@id", id)
+
+        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        Dim orcamentoDAO As New OrcamentoDAO()
+
+        Dim notasFiscais As New List(Of NotaFiscalVenda)
+        Dim visitaDAO As New VisitaTecnicaDAO
+        Dim pagamentoDAO As New PagamentoRecebidoDAO
+
+        Dim notaFiscal As New NotaFiscalVenda()
+        notaFiscal.Id = CLng(dt.Rows(0).Item("id"))
+        notaFiscal.DataAprovacao = CDate(dt.Rows(0).Item("dataAprovacao"))
+        notaFiscal.DataFinalObra = CDate(dt.Rows(0).Item("dataFinalObra"))
+        notaFiscal.Status = CStr(dt.Rows(0).Item("statusNF"))
+        notaFiscal.EmissaoNF = CDate(dt.Rows(0).Item("emissaoNF"))
+        notaFiscal.NumeroNF = CStr(dt.Rows(0).Item("numeroNF"))
+        notaFiscal.Orcamento = orcamentoDAO.FindByID(CLng(dt.Rows(0).Item("idOrcamento")))
+        notaFiscal.VisitasTecnicas = visitaDAO.FindByNotaFiscal(notaFiscal)
+        notaFiscal.PagamentosRecebidos = pagamentoDAO.FindByNotaFiscal(notaFiscal)
+
+        Return notaFiscal
 
     End Function
 

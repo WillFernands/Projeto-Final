@@ -15,7 +15,7 @@ Public Class RegistroPontoDAO
 
         conn.AddParameter("@data", registro.DataRegistro)
         conn.AddParameter("@tipo", registro.Tipo)
-        conn.AddParameter("@matricula", registro.MatriculaFuncionario)
+        conn.AddParameter("@matricula", registro.Funcionario)
 
         Return conn.ExecuteCommand(strSQL.ToString)
 
@@ -34,13 +34,15 @@ Public Class RegistroPontoDAO
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
 
+        Dim funcionarioDAO As New FuncionarioDAO()
+
         Dim registros As New List(Of RegistroPonto)
 
         For Each row As DataRow In dt.Rows
             Dim registro As New RegistroPonto()
             registro.DataRegistro = CDate(row.Item("dataRegistro"))
             registro.Tipo = CStr(row.Item("tipo"))
-            registro.MatriculaFuncionario = FuncionarioDAO.FindByMatricula(CLng(row.Item("matriculaFuncionario")))
+            registro.Funcionario = funcionarioDAO.FindByMatricula(CLng(row.Item("matriculaFuncionario")))
             registros.Add(registro)
         Next
 
@@ -67,7 +69,7 @@ Public Class RegistroPontoDAO
             Dim registro As New RegistroPonto()
             registro.DataRegistro = CDate(row.Item("dataRegistro"))
             registro.Tipo = CStr(row.Item("tipo"))
-            registro.MatriculaFuncionario = funcionario
+            registro.Funcionario = funcionario
             registros.Add(registro)
         Next
 

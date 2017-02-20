@@ -65,5 +65,30 @@ Public Class SolicitacaoEmprestimoDAO
 
     End Function
 
+    'OK
+    Public Function FindByID(id As Long) As SolicitacaoEmprestimo
+        Dim conn As New Connection
+        Dim strSQL As New StringBuilder
+
+        strSQL.Append("SELECT * FROM SolicitacoesEmprestimos ")
+        strSQL.Append("WHERE id = @id;")
+
+        conn.AddParameter("@id", id)
+
+        Dim clientePFDAO As New ClientePFDAO
+
+        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+
+        Dim solicitacao As New SolicitacaoEmprestimo()
+        solicitacao.Id = CLng(dt.Rows(0).Item("id"))
+        solicitacao.DataSolicitacao = CDate(dt.Rows(0).Item("dataSolicitacao"))
+        solicitacao.Cliente = clientePFDAO.FindByID(CLng(dt.Rows(0).Item("idCliente")))
+        solicitacao.Status = CStr(dt.Rows(0).Item("statusSolicitacao"))
+
+        Return solicitacao
+
+    End Function
+
 End Class
 

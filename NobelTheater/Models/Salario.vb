@@ -5,18 +5,18 @@ Public Class Salario
     Private _inicio As Date
     Private _fim As Date
     Private _motivo As String
-    Private _matriculaFuncionario As Funcionario
+    Private _funcionario As Funcionario
 
     Public Sub New()
 
     End Sub
 
-    Public Sub New(valor As Double, inicio As Date, fim As Date, motivo As String, matriculaFuncionario As Funcionario)
+    Public Sub New(valor As Double, inicio As Date, fim As Date, motivo As String, funcionario As Funcionario)
         _valor = valor
         _inicio = inicio
         _fim = fim
         _motivo = motivo
-        _matriculaFuncionario = matriculaFuncionario
+        _funcionario = funcionario
     End Sub
 
     Public Property Valor As Double
@@ -55,12 +55,12 @@ Public Class Salario
         End Set
     End Property
 
-    Public Property MatriculaFuncionario As Funcionario
+    Public Property Funcionario As Funcionario
         Get
-            Return _matriculaFuncionario
+            Return _funcionario
         End Get
         Set(value As Funcionario)
-            _matriculaFuncionario = value
+            _funcionario = value
         End Set
     End Property
 End Class

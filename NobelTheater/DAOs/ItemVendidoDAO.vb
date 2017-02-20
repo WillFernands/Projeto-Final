@@ -36,10 +36,10 @@ Public Class ItemVendidoDAO
         Dim produtoDAO As New ProdutoDAO()
         Dim notaFiscalVendaDAO As New NotaFiscalVendaDAO()
 
-        Dim itens As New List(Of ItemComprado)
+        Dim itens As New List(Of ItemVendido)
 
         For Each row As DataRow In dt.Rows
-            Dim item As New ItemComprado()
+            Dim item As New ItemVendido()
             item.Produto = produtoDAO.FindByCodigo(CLng(row.Item("codigoProduto")))
             item.NotaFiscal = notaFiscalVendaDAO.FindByID(CLng(row.Item("idNotaFiscal")))
             item.Quantidade = CInt(row.Item("quantidade"))

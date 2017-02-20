@@ -6,7 +6,7 @@ Public Class NotaFiscalCompra
     Private _id As Long
     Private _status As String
     Private _dataAprovacao As Date
-    Private _numeroNF As Integer
+    Private _numeroNF As String
     Private _emissaoNF As Date
 
     Private _cotacao As Cotacao
@@ -14,7 +14,7 @@ Public Class NotaFiscalCompra
     Private _pagamentos As New List(Of PagamentoEfetuado)
     Private _items As New List(Of ItemComprado)
 
-    Public Sub New(id As Long, status As String, dataAprovacao As Date, numeroNF As Integer, emissaoNF As Date, cotacao As Cotacao, pagamentos As List(Of PagamentoEfetuado), items As List(Of ItemComprado))
+    Public Sub New(id As Long, status As String, dataAprovacao As Date, numeroNF As String, emissaoNF As Date, cotacao As Cotacao, pagamentos As List(Of PagamentoEfetuado), items As List(Of ItemComprado))
         _id = id
         _status = status
         _dataAprovacao = dataAprovacao
@@ -29,11 +29,11 @@ Public Class NotaFiscalCompra
 
     End Sub
 
-    Property NumeroNF As Integer
+    Property NumeroNF As String
         Get
             Return _numeroNF
         End Get
-        Set(value As Integer)
+        Set(value As String)
             _numeroNF = value
         End Set
     End Property
@@ -96,7 +96,7 @@ Public Class NotaFiscalCompra
         Get
             Return _cotacao
         End Get
-        Set(value As String)
+        Set(value As Cotacao)
             _cotacao = value
         End Set
     End Property

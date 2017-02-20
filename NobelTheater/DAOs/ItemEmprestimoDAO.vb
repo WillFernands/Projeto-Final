@@ -24,14 +24,14 @@ Public Class ItemEmprestimoDAO
     End Function
 
     'OK
-    Public Function FindBySolicitacao(solicitacao As SolicitacaoEmprestimoDAO) As List(Of ItemEmprestimo)
+    Public Function FindBySolicitacao(solicitacao As SolicitacaoEmprestimo) As List(Of ItemEmprestimo)
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
         strSQL.Append("SELECT * FROM ItensEmprestimos ")
         strSQL.Append("WHERE idSolicitacao = @idSolicitacao;")
 
-        conn.AddParameter("@idSolicitacao", solicitacao.ID)
+        conn.AddParameter("@idSolicitacao", solicitacao.Id)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
 

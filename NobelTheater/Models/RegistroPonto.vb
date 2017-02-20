@@ -3,16 +3,16 @@
 Public Class RegistroPonto
     Private _dataRegistro As Date
     Private _tipo As String
-    Private _matriculaFuncionario As Funcionario
+    Private _funcionario As Funcionario
 
     Public Sub New()
 
     End Sub
 
-    Public Sub New(dataRegistro As Date, tipo As String, matriculaFuncionario As Funcionario)
+    Public Sub New(dataRegistro As Date, tipo As String, funcionario As Funcionario)
         _dataRegistro = dataRegistro
         _tipo = tipo
-        _matriculaFuncionario = matriculaFuncionario
+        _funcionario = funcionario
     End Sub
 
     Public Property DataRegistro As Date
@@ -33,12 +33,12 @@ Public Class RegistroPonto
         End Set
     End Property
 
-    Public Property MatriculaFuncionario As Funcionario
+    Public Property Funcionario As Funcionario
         Get
-            Return _matriculaFuncionario
+            Return _funcionario
         End Get
         Set(value As Funcionario)
-            _matriculaFuncionario = value
+            _funcionario = value
         End Set
     End Property
 End Class

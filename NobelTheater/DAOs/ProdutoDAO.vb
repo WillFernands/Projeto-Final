@@ -114,18 +114,6 @@ Public Class ProdutoDAO
 
     End Function
 
-    'OK
-    Public Function Delete(ByVal produto As Produto) As Boolean
-        Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("DELETE Produtos WHERE codigo = @codigo")
-
-        conn.AddParameter("@codigo", produto.Codigo)
-
-        Return conn.ExecuteCommand(strSQL.ToString)
-    End Function
-
 End Class
 
 

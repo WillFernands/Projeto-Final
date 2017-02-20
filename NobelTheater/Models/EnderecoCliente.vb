@@ -10,7 +10,7 @@ Public Class EnderecoCliente
     Private _bairro As String
     Private _cidade As String
     Private _estado As String
-    Private _cep As Long
+    Private _cep As String
     Private _tipo As String
 
     Public Sub New()
