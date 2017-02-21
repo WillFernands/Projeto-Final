@@ -7,18 +7,18 @@ Public Class SolicitacaoEmprestimo
 
     Private _cliente As Cliente
 
-    Private _itemEmprestimo As List(Of ItemEmprestimo)
+    Private _itensEmprestimo As List(Of ItemEmprestimo)
 
     Public Sub New()
 
     End Sub
 
-    Public Sub New(id As Long, dataSolicitacao As Date, cliente As Cliente, status As String, itemEmprestimo As List(Of ItemEmprestimo))
+    Public Sub New(id As Long, dataSolicitacao As Date, cliente As Cliente, status As String)
         _id = id
         _dataSolicitacao = dataSolicitacao
         _cliente = cliente
         _status = status
-        _itemEmprestimo = itemEmprestimo
+        _itensEmprestimo = New List(Of ItemEmprestimo)
     End Sub
 
     Public Property Id As Long
@@ -57,12 +57,12 @@ Public Class SolicitacaoEmprestimo
         End Set
     End Property
 
-    Public Property ItemEmprestimo As List(Of ItemEmprestimo)
+    Public Property ItensEmprestimo As List(Of ItemEmprestimo)
         Get
-            Return _itemEmprestimo
+            Return _itensEmprestimo
         End Get
         Set(value As List(Of ItemEmprestimo))
-            _itemEmprestimo = value
+            _itensEmprestimo = value
         End Set
     End Property
 End Class

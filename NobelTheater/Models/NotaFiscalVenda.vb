@@ -14,6 +14,7 @@ Public Class NotaFiscalVenda
 
     Private _pagamentosRecebidos As New List(Of PagamentoRecebido)
     Private _visitasTecnicas As New List(Of VisitaTecnica)
+    Private _itensVendidos As New List(Of ItemVendido)
 
     Public Sub New()
 
@@ -89,6 +90,15 @@ Public Class NotaFiscalVenda
         End Get
         Set(value As Orcamento)
             _Orcamento = value
+        End Set
+    End Property
+
+    Public Property ItensVendidos As List(Of ItemVendido)
+        Get
+            Return _itensVendidos
+        End Get
+        Set(value As List(Of ItemVendido))
+            _itensVendidos = value
         End Set
     End Property
 

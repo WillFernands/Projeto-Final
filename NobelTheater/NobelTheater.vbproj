@@ -106,12 +106,16 @@
     <Compile Include="BCs\ItemOrcadoBC.vb" />
     <Compile Include="BCs\ItemOrdemBC.vb" />
     <Compile Include="BCs\ItemVendidoBC.vb" />
+    <Compile Include="BCs\NotaFiscalCompraBC.vb" />
+    <Compile Include="BCs\NotaFiscalVendaBC.vb" />
     <Compile Include="BCs\OrcamentoBC.vb" />
+    <Compile Include="BCs\OrdemServicoBC.vb" />
     <Compile Include="BCs\PagamentoEfetuadoBC.vb" />
     <Compile Include="BCs\PagamentoRecebidoBC.vb" />
     <Compile Include="BCs\ProdutoBC.vb" />
     <Compile Include="BCs\RegistroPontoBC.vb" />
     <Compile Include="BCs\SalarioBC.vb" />
+    <Compile Include="BCs\SolicitacaoEmprestimoBC.vb" />
     <Compile Include="BCs\VisitaTecnicaBC.vb" />
     <Compile Include="DAOs\AlertaDAO.vb" />
     <Compile Include="DAOs\ClienteDAO.vb" />
