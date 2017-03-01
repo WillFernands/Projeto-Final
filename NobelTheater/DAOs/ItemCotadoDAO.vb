@@ -23,6 +23,9 @@ Public Class ItemCotadoDAO
 
     'OK
     Public Function FindByCotacao(cotacao As Cotacao) As List(Of ItemCotado)
+
+        If (cotacao Is Nothing) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -32,6 +35,8 @@ Public Class ItemCotadoDAO
         conn.AddParameter("@idCotacao", cotacao.ID)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of ItemCotado)
 
         Dim produtoDAO As New ProdutoDAO()
         Dim cotacaoDAO As New CotacaoDAO()

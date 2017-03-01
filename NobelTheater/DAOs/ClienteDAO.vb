@@ -60,6 +60,8 @@ Public Class ClienteDAO
 
         Dim dt As DataTable = conn.ExecuteSelect(query.ToString)
 
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
+
         Dim cliente As New Cliente()
         cliente.ID = CLng(dt.Rows(0).Item("ID"))
         cliente.Nome = CStr(dt.Rows(0).Item("Nome"))

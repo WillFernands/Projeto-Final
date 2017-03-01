@@ -47,6 +47,9 @@ Public Class PagamentoEfetuadoDAO
 
     'OK
     Public Function FindByNotaFiscal(nota As NotaFiscalCompra) As List(Of PagamentoEfetuado)
+
+        If (nota Is Nothing) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -56,6 +59,8 @@ Public Class PagamentoEfetuadoDAO
         conn.AddParameter("@idNotaFiscal", nota.ID)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of PagamentoEfetuado)
 
         Dim pagamentos As New List(Of PagamentoEfetuado)
 

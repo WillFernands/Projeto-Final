@@ -45,6 +45,8 @@ Public Class NotaFiscalVendaDAO
         Dim conn As New Connection
         Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM NotasFiscaisVendas;")
 
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of NotaFiscalVenda)
+
         Dim orcamentoDAO As New OrcamentoDAO()
 
         Dim notasFiscais As New List(Of NotaFiscalVenda)
@@ -75,6 +77,8 @@ Public Class NotaFiscalVendaDAO
     'OK
     Public Function FindByStatus(status As String) As List(Of NotaFiscalVenda)
 
+        If (String.IsNullOrWhiteSpace(status)) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -83,6 +87,8 @@ Public Class NotaFiscalVendaDAO
         conn.AddParameter("@status", status)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of NotaFiscalVenda)
 
         Dim orcamentoDAO As New OrcamentoDAO()
 
@@ -113,6 +119,8 @@ Public Class NotaFiscalVendaDAO
     'OK
     Public Function FindByID(id As Long) As NotaFiscalVenda
 
+        If (id = 0) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -121,6 +129,8 @@ Public Class NotaFiscalVendaDAO
         conn.AddParameter("@id", id)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
 
         Dim orcamentoDAO As New OrcamentoDAO()
 

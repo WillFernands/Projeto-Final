@@ -40,6 +40,9 @@ Public Class OrcamentoDAO
 
     'OK
     Public Function FindByCliente(cliente As Cliente) As List(Of Orcamento)
+
+        If (cliente Is Nothing) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -49,6 +52,8 @@ Public Class OrcamentoDAO
         conn.AddParameter("@idCliente", cliente.ID)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Orcamento)
 
         Dim funcionarioDAO As New FuncionarioDAO
 
@@ -70,6 +75,9 @@ Public Class OrcamentoDAO
 
     'OK
     Public Function FindByVendedor(vendedor As Funcionario) As List(Of Orcamento)
+
+        If (vendedor Is Nothing) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -79,6 +87,8 @@ Public Class OrcamentoDAO
         conn.AddParameter("@vendedor", vendedor.Matricula)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Orcamento)
 
         Dim clienteDAO As New ClienteDAO
 
@@ -100,6 +110,9 @@ Public Class OrcamentoDAO
 
     'OK
     Public Function FindByID(id As Long) As Orcamento
+
+        If (id = 0) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -110,9 +123,10 @@ Public Class OrcamentoDAO
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
 
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
+
         Dim clienteDAO As New ClienteDAO
         Dim funcionarioDAO As New FuncionarioDAO
-
 
         Dim orcamento As New Orcamento()
         orcamento.Id = CLng(dt.Rows(0).Item("id"))

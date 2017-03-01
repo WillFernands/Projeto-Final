@@ -23,6 +23,9 @@ Public Class ItemVendidoDAO
 
     'OK
     Public Function FindByNotaFiscal(notaFiscal As NotaFiscalVenda) As List(Of ItemVendido)
+
+        If (notaFiscal Is Nothing) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -32,6 +35,8 @@ Public Class ItemVendidoDAO
         conn.AddParameter("@idNotaFiscal", notaFiscal.ID)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of ItemVendido)
 
         Dim produtoDAO As New ProdutoDAO()
         Dim notaFiscalVendaDAO As New NotaFiscalVendaDAO()

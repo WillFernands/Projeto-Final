@@ -1,4 +1,10 @@
-﻿Option Explicit On
+﻿' Observações !!
+' Se um parametro passado a uma DAO for Nothing/Inválido                -> Retorna Nothing
+' Se uma dt retornar Empty/Nothing e o retorno for um objeto            -> Retorna Nothing
+' Se uma dt retornar Empty/Nothing e o retorno for uma lista de objetos -> Retorna New List(Of Object) 
+
+
+Option Explicit On
 Option Strict On
 
 Imports System.Data.SqlClient

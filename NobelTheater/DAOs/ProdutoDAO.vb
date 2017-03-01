@@ -75,6 +75,8 @@ Public Class ProdutoDAO
 
         Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM Produtos;")
 
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Produto)
+
         Dim produtos As New List(Of Produto)
 
         For Each row As DataRow In dt.Rows
@@ -93,6 +95,9 @@ Public Class ProdutoDAO
 
     'OK
     Public Function FindByCodigo(codigo As Long) As Produto
+
+        If (codigo = 0) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -102,6 +107,8 @@ Public Class ProdutoDAO
         conn.AddParameter("@codigo", codigo)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
 
         Dim produto As New Produto()
         produto.Codigo = CLng(dt.Rows(0).Item("codigo"))

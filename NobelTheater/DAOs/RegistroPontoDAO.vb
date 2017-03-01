@@ -23,6 +23,9 @@ Public Class RegistroPontoDAO
 
     'OK
     Public Function FindByMatricula(matricula As Long) As List(Of RegistroPonto)
+
+        If (matricula = 0) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -33,6 +36,8 @@ Public Class RegistroPontoDAO
         conn.AddParameter("@matricula", matricula)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of RegistroPonto)
 
         Dim funcionarioDAO As New FuncionarioDAO()
 
@@ -52,6 +57,9 @@ Public Class RegistroPontoDAO
 
     'OK
     Public Function FindByMatricula(funcionario As Funcionario) As List(Of RegistroPonto)
+
+        If (funcionario Is Nothing) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -62,6 +70,8 @@ Public Class RegistroPontoDAO
         conn.AddParameter("@matricula", funcionario.Matricula)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of RegistroPonto)
 
         Dim registros As New List(Of RegistroPonto)
 

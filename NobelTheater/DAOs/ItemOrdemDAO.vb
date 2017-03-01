@@ -26,6 +26,8 @@ Public Class ItemOrdemDAO
 
     'OK
     Public Function FindByOrdem(ordem As OrdemServico) As List(Of ItemOrdem)
+        If (ordem Is Nothing) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -35,6 +37,8 @@ Public Class ItemOrdemDAO
         conn.AddParameter("@idOrdem", ordem.ID)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of ItemOrdem)
 
         Dim produtoDAO As New ProdutoDAO()
         Dim ordemServicoDAO As New OrdemServicoDAO()
