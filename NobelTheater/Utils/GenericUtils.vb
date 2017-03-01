@@ -213,13 +213,6 @@ Public Module GenericUtils
         End Try
     End Sub
 
-    Public Function GenerateMatricula() As String
-        Dim gen As New Random
-        Dim mat As String = ""
-        For cont = 1 To 6 : mat += gen.Next(0, 9).ToString() : Next
-        Return mat
-    End Function
-
     Public Function GenerateSenha() As String
         Dim gen As New Random
         Dim pass As String = ""

@@ -21,4 +21,9 @@
     Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
 
     End Sub
+
+    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
+        BuscaFuncionario.Caller = "ControleAcessos"
+        BuscaFuncionario.Show()
+    End Sub
 End Class

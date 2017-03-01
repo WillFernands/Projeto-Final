@@ -1,7 +1,11 @@
 ﻿Public Class MenuPrincipal
 
-    Private Sub MenuPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Shared funcionarioLogado As Funcionario
 
+    Private Sub MenuPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        NomeTF.Text = "Nome: " & funcionarioLogado.Nome
+        MatriculaTF.Text = "Matricula: " & funcionarioLogado.Matricula
+        PerfilTF.Text = "Perfil: " & funcionarioLogado.Perfil
     End Sub
 
     Private Sub AcessosClick(sender As Object, e As EventArgs) Handles AcessosIMG.Click, AcessosLB.Click, AcessosPanel.Click
@@ -44,7 +48,4 @@
         InserirParecerObra.Show()
     End Sub
 
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-
-    End Sub
 End Class

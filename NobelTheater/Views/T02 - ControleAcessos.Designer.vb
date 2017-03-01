@@ -119,6 +119,7 @@ Partial Class ControleAcessos
         '
         'PictureBox7
         '
+        Me.PictureBox7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox7.Image = Global.NobelTheater.My.Resources.Resources.Busca
         Me.PictureBox7.Location = New System.Drawing.Point(583, 32)
         Me.PictureBox7.Name = "PictureBox7"

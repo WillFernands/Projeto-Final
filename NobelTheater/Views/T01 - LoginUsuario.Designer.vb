@@ -17,8 +17,8 @@ Partial Class LoginUsuario
     Friend WithEvents LogoPictureBox As System.Windows.Forms.PictureBox
     Friend WithEvents UsernameLabel As System.Windows.Forms.Label
     Friend WithEvents PasswordLabel As System.Windows.Forms.Label
-    Friend WithEvents UsernameTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents PasswordTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents UserTF As System.Windows.Forms.TextBox
+    Friend WithEvents PasswordTF As System.Windows.Forms.TextBox
     Friend WithEvents OK As System.Windows.Forms.Button
 
     'Required by the Windows Form Designer
@@ -32,8 +32,8 @@ Partial Class LoginUsuario
         Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.UsernameLabel = New System.Windows.Forms.Label()
         Me.PasswordLabel = New System.Windows.Forms.Label()
-        Me.UsernameTextBox = New System.Windows.Forms.TextBox()
-        Me.PasswordTextBox = New System.Windows.Forms.TextBox()
+        Me.UserTF = New System.Windows.Forms.TextBox()
+        Me.PasswordTF = New System.Windows.Forms.TextBox()
         Me.OK = New System.Windows.Forms.Button()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
@@ -74,22 +74,20 @@ Partial Class LoginUsuario
         Me.PasswordLabel.Text = "Senha"
         Me.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'UsernameTextBox
+        'UserTF
         '
-        Me.UsernameTextBox.Location = New System.Drawing.Point(94, 121)
-        Me.UsernameTextBox.Name = "UsernameTextBox"
-        Me.UsernameTextBox.Size = New System.Drawing.Size(255, 20)
-        Me.UsernameTextBox.TabIndex = 1
-        Me.UsernameTextBox.Text = "02400"
+        Me.UserTF.Location = New System.Drawing.Point(94, 121)
+        Me.UserTF.Name = "UserTF"
+        Me.UserTF.Size = New System.Drawing.Size(255, 20)
+        Me.UserTF.TabIndex = 1
         '
-        'PasswordTextBox
+        'PasswordTF
         '
-        Me.PasswordTextBox.Location = New System.Drawing.Point(94, 162)
-        Me.PasswordTextBox.Name = "PasswordTextBox"
-        Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.PasswordTextBox.Size = New System.Drawing.Size(255, 20)
-        Me.PasswordTextBox.TabIndex = 3
-        Me.PasswordTextBox.Text = "Nobel123"
+        Me.PasswordTF.Location = New System.Drawing.Point(94, 162)
+        Me.PasswordTF.Name = "PasswordTF"
+        Me.PasswordTF.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.PasswordTF.Size = New System.Drawing.Size(255, 20)
+        Me.PasswordTF.TabIndex = 3
         '
         'OK
         '
@@ -191,8 +189,8 @@ Partial Class LoginUsuario
         Me.Controls.Add(Me.LinkLabel2)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.OK)
-        Me.Controls.Add(Me.PasswordTextBox)
-        Me.Controls.Add(Me.UsernameTextBox)
+        Me.Controls.Add(Me.PasswordTF)
+        Me.Controls.Add(Me.UserTF)
         Me.Controls.Add(Me.PasswordLabel)
         Me.Controls.Add(Me.UsernameLabel)
         Me.Controls.Add(Me.LogoPictureBox)
