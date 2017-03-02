@@ -3,13 +3,15 @@
     Private funcAtual As Funcionario
 
     Private Sub ControleAcessos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim list As New List(Of Object)
-        list.Add("02500") : list.Add("Bruno das Neves") : list.Add("15/04/2016") : list.Add("Resetar senha")
-        RevogadosDT.Rows.Add(list.ToArray()) : list.Clear()
-        list.Add("02515") : list.Add("Alisson Jr.") : list.Add("22/05/2016") : list.Add("Resetar senha")
-        RevogadosDT.Rows.Add(list.ToArray()) : list.Clear()
-        list.Add("02543") : list.Add("Bruna Oliveira") : list.Add("01/07/2016") : list.Add("Resetar senha")
-        RevogadosDT.Rows.Add(list.ToArray()) : list.Clear()
+
+        Dim revogados As List(Of Funcionario) = FuncionarioBC.FindAcessosRevogados(funcAtual)
+
+        For Each revogado As Funcionario In revogados
+            Dim list As New List(Of Object)
+            list.Add(revogado.Matricula) : list.Add(revogado.Nome) : list.Add(revogado.DataRevogacao) : list.Add("Resetar senha")
+            RevogadosDT.Rows.Add(list.ToArray())
+        Next
+
     End Sub
 
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click

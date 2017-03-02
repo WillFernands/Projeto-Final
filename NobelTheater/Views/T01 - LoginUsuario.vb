@@ -3,15 +3,15 @@
 
     Private Sub LoginUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'SQLTableManager.DropRegistrosPontos()
+        'SQLTableManager.DropSalarios()
         'SQLTableManager.DropFuncionarios()
         'SQLTableManager.CreateFuncionarios()
         'SQLTableManager.CreateRegistrosPontos()
-        'SQLTableManager.PopulateFuncionarios()
         'SQLTableManager.CreateSalarios()
+        'SQLTableManager.PopulateFuncionarios()
     End Sub
 
     Private Sub OK_Click(sender As Object, e As EventArgs) Handles OK.Click
-
 
         If (String.IsNullOrWhiteSpace(UserTF.Text)) Then
             MsgBox("Usuário não preenchido", vbInformation Or vbMsgBoxSetForeground)
@@ -103,6 +103,30 @@
 
             MsgBox("Ponto registrado com sucesso", vbInformation Or vbMsgBoxSetForeground)
 
+        Else
+            MsgBox("Funcionário não cadastrado", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        End If
+    End Sub
+
+    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
+        If (String.IsNullOrWhiteSpace(UserTF.Text)) Then
+            MsgBox("Usuário não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        End If
+
+        Dim funcionario As Funcionario
+
+        Try
+            funcionario = FuncionarioBC.FindByMatricula(CLng(UserTF.Text))
+        Catch ex As InvalidCastException
+            MsgBox("Matricula invalida", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        End Try
+
+        If (funcionario IsNot Nothing) Then
+            FuncionarioBC.RevogarAcesso(funcionario)
+            MsgBox("Solicitação de senha efetuada, aguarde até que seu supervisor resete e receba a nova senha", vbInformation Or vbMsgBoxSetForeground)
         Else
             MsgBox("Funcionário não cadastrado", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub

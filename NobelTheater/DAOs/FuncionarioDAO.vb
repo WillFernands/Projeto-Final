@@ -99,12 +99,40 @@ Public Class FuncionarioDAO
         Dim strSQL As New StringBuilder
 
         strSQL.Append("UPDATE funcionarios ")
-        strSQL.Append("SET revogado = 1 ")
+        strSQL.Append("SET revogado = 1, ")
+        strSQL.Append("dataRevogacao = @dataRevogacao, ")
+        strSQL.Append("senha = @senha, ")
+        strSQL.Append("WHERE matricula = @matricula;")
+
+        conn.AddParameter("@senha", GenericUtils.GenerateSenha)
+        conn.AddParameter("@dataRevogacao", Now)
+        conn.AddParameter("@matricula", funcionario.Matricula)
+
+        Return conn.ExecuteCommand(strSQL.ToString)
+
+    End Function
+
+    'OK
+    Public Function ResetarSenha(ByVal funcionario As Funcionario) As String
+        Dim conn As New Connection
+        Dim strSQL As New StringBuilder
+
+        strSQL.Append("UPDATE funcionarios ")
+        strSQL.Append("SET revogado = 0, ")
+        strSQL.Append("dataRevogacao = NULL ")
         strSQL.Append("WHERE matricula = @matricula;")
 
         conn.AddParameter("@matricula", funcionario.Matricula)
 
-        Return conn.ExecuteCommand(strSQL.ToString)
+        If (conn.ExecuteCommand(strSQL.ToString) = False) Then Return ""
+
+        strSQL.Clear()
+        conn = New Connection
+
+        strSQL.Append("SELECT senha FROM funcionarios where matricula = @mat")
+        conn.AddParameter("@matricula", funcionario.Matricula)
+
+        Return CStr(conn.ExecuteScalar(strSQL.ToString))
 
     End Function
 
@@ -143,6 +171,10 @@ Public Class FuncionarioDAO
         funcionario.Estado = CStr(dt.Rows(0).Item("estado"))
         funcionario.Cep = CStr(dt.Rows(0).Item("cep"))
         funcionario.TipoEndereco = CStr(dt.Rows(0).Item("tipoEndereco"))
+        funcionario.Revogado = CBool(dt.Rows(0).Item("revogado"))
+        If (funcionario.Revogado) Then
+            funcionario.DataRevogacao = CDate(dt.Rows(0).Item("dataRevogacao"))
+        End If
         funcionario.Supervisor = FindSupervisorByMatricula(CLng(dt.Rows(0).Item("matriculaSupervisor")))
         funcionario.RegistroPontos = registroPontoDAO.FindByMatricula(funcionario.Matricula)
         funcionario.Salarios = salarioDAO.FindByMatricula(funcionario.Matricula)
@@ -189,6 +221,62 @@ Public Class FuncionarioDAO
             funcionario.Estado = CStr(row.Item("estado"))
             funcionario.Cep = CStr(row.Item("cep"))
             funcionario.TipoEndereco = CStr(row.Item("tipoEndereco"))
+            funcionario.Revogado = CBool(dt.Rows(0).Item("revogado"))
+            If (funcionario.Revogado) Then
+                funcionario.DataRevogacao = CDate(dt.Rows(0).Item("dataRevogacao"))
+            End If
+            funcionario.Supervisor = supervisor
+            funcionario.RegistroPontos = registroPontoDAO.FindByMatricula(funcionario.Matricula)
+            funcionario.Salarios = salarioDAO.FindByMatricula(funcionario.Matricula)
+            funcionarios.Add(funcionario)
+        Next
+
+        Return funcionarios
+
+    End Function
+
+    'OK
+    Public Function FindAcessosRevogados(supervisor As Funcionario) As List(Of Funcionario)
+
+        If (supervisor Is Nothing) Then Return Nothing
+
+        Dim conn As New Connection
+        Dim strSQL As New StringBuilder
+
+        strSQL.Append("SELECT * FROM Funcionarios ")
+        strSQL.Append("WHERE matriculaSupervisor = @matricula AND revogado = 1;")
+
+        conn.AddParameter("@matricula", supervisor.Matricula)
+
+        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Funcionario)
+
+        Dim registroPontoDAO As New RegistroPontoDAO
+        Dim salarioDAO As New SalarioDAO
+
+        Dim funcionarios As New List(Of Funcionario)
+
+        For Each row As DataRow In dt.Rows
+            Dim funcionario As New Funcionario()
+            funcionario.Matricula = CLng(row.Item("matricula"))
+            funcionario.Cpf = CStr(row.Item("cpf"))
+            funcionario.Nome = CStr(row.Item("nome"))
+            funcionario.Telefone = CStr(row.Item("telefone"))
+            funcionario.DataContratacao = CDate(row.Item("dataContratacao"))
+            funcionario.Perfil = CStr(row.Item("perfil"))
+            funcionario.Cargo = CStr(row.Item("cargo"))
+            funcionario.Logradouro = CStr(row.Item("logradouro"))
+            funcionario.Numero = CStr(row.Item("numero"))
+            funcionario.Bairro = CStr(row.Item("bairro"))
+            funcionario.Cidade = CStr(row.Item("cidade"))
+            funcionario.Estado = CStr(row.Item("estado"))
+            funcionario.Cep = CStr(row.Item("cep"))
+            funcionario.TipoEndereco = CStr(row.Item("tipoEndereco"))
+            funcionario.Revogado = CBool(dt.Rows(0).Item("revogado"))
+            If (funcionario.Revogado) Then
+                funcionario.DataRevogacao = CDate(dt.Rows(0).Item("dataRevogacao"))
+            End If
             funcionario.Supervisor = supervisor
             funcionario.RegistroPontos = registroPontoDAO.FindByMatricula(funcionario.Matricula)
             funcionario.Salarios = salarioDAO.FindByMatricula(funcionario.Matricula)
@@ -231,6 +319,10 @@ Public Class FuncionarioDAO
             funcionario.Estado = CStr(row.Item("estado"))
             funcionario.Cep = CStr(row.Item("cep"))
             funcionario.TipoEndereco = CStr(row.Item("tipoEndereco"))
+            funcionario.Revogado = CBool(dt.Rows(0).Item("revogado"))
+            If (funcionario.Revogado) Then
+                funcionario.DataRevogacao = CDate(dt.Rows(0).Item("dataRevogacao"))
+            End If
             funcionario.Supervisor = FindSupervisorByMatricula(CLng(dt.Rows(0).Item("matriculaSupervisor")))
             funcionario.RegistroPontos = registroPontoDAO.FindByMatricula(funcionario.Matricula)
             funcionario.Salarios = salarioDAO.FindByMatricula(funcionario.Matricula)
@@ -276,6 +368,10 @@ Public Class FuncionarioDAO
         funcionario.Estado = CStr(dt.Rows(0).Item("estado"))
         funcionario.Cep = CStr(dt.Rows(0).Item("cep"))
         funcionario.TipoEndereco = CStr(dt.Rows(0).Item("tipoEndereco"))
+        funcionario.Revogado = CBool(dt.Rows(0).Item("revogado"))
+        If (funcionario.Revogado) Then
+            funcionario.DataRevogacao = CDate(dt.Rows(0).Item("dataRevogacao"))
+        End If
         funcionario.Supervisor = FindSupervisorByMatricula(CLng(dt.Rows(0).Item("matriculaSupervisor")))
         funcionario.RegistroPontos = registroPontoDAO.FindByMatricula(funcionario.Matricula)
         funcionario.Salarios = salarioDAO.FindByMatricula(funcionario.Matricula)
@@ -316,6 +412,10 @@ Public Class FuncionarioDAO
         funcionario.Estado = CStr(dt.Rows(0).Item("estado"))
         funcionario.Cep = CStr(dt.Rows(0).Item("cep"))
         funcionario.TipoEndereco = CStr(dt.Rows(0).Item("tipoEndereco"))
+        funcionario.Revogado = CBool(dt.Rows(0).Item("revogado"))
+        If (funcionario.Revogado) Then
+            funcionario.DataRevogacao = CDate(dt.Rows(0).Item("dataRevogacao"))
+        End If
         funcionario.Supervisor = funcionario
 
         Return funcionario

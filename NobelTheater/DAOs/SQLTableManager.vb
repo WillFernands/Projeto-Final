@@ -136,7 +136,7 @@ Public Module SQLTableManager
         strSQL.Append("nome VARCHAR(100) NOT NULL, ")
         strSQL.Append("telefone VARCHAR(20) NOT NULL, ")
         strSQL.Append("dataContratacao DATETIME NOT NULL, ")
-        strSQL.Append("perfil VARCHAR(20) NOT NULL, ")
+        strSQL.Append("perfil VARCHAR(40) NOT NULL, ")
         strSQL.Append("cargo VARCHAR(50) NOT NULL, ")
         strSQL.Append("logradouro VARCHAR(90) NOT NULL, ")
         strSQL.Append("numero VARCHAR(10) NOT NULL, ")
@@ -147,6 +147,7 @@ Public Module SQLTableManager
         strSQL.Append("tipoEndereco VARCHAR(20) NOT NULL, ")
         strSQL.Append("senha VARCHAR(20) NOT NULL, ")
         strSQL.Append("revogado INT NOT NULL DEFAULT 0, ")
+        strSQL.Append("dataRevogacao DATETIME NULL, ")
         strSQL.Append("matriculaSupervisor BIGINT NULL, ")
         strSQL.Append("CONSTRAINT Funcionarios_FK FOREIGN KEY (matriculaSupervisor) REFERENCES Funcionarios (matricula))")
 

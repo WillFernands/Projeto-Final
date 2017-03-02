@@ -71,6 +71,13 @@ Public Class FuncionarioBC
         Return False
     End Function
 
+    Public Shared Function ResetarSenha(funcionario As Funcionario) As String
+        If (FuncionarioBC.Validate(funcionario)) Then
+            Return funcionarioDAO.ResetarSenha(funcionario)
+        End If
+        Return ""
+    End Function
+
     Public Shared Function FindByMatricula(matricula As Long) As Funcionario
         Return funcionarioDAO.FindByMatricula(matricula)
     End Function
@@ -85,6 +92,10 @@ Public Class FuncionarioBC
 
     Public Shared Function FindBySupervisor(supervisor As Funcionario) As List(Of Funcionario)
         Return funcionarioDAO.FindBySupervisor(supervisor)
+    End Function
+
+    Public Shared Function FindAcessosRevogados(supervisor As Funcionario) As List(Of Funcionario)
+        Return funcionarioDAO.FindAcessosRevogados(supervisor)
     End Function
 
     Public Shared Function FindAll() As List(Of Funcionario)

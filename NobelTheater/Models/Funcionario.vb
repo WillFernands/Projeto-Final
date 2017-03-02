@@ -17,6 +17,8 @@ Public Class Funcionario
     Private _estado As String
     Private _cep As String
     Private _tipoEndereco As String
+    Private _dataRevogacao As Date
+    Private _revogado As Boolean
 
     Private _senha As String 'Esqueci no diagrama de classe e no DER
 
@@ -207,6 +209,24 @@ ByVal bairro As String, ByVal cidade As String, ByVal estado As String, ByVal ce
         End Get
         Set(value As List(Of RegistroPonto))
             _registrosPontos = value
+        End Set
+    End Property
+
+    Public Property DataRevogacao As Date
+        Get
+            Return _dataRevogacao
+        End Get
+        Set(value As Date)
+            _dataRevogacao = value
+        End Set
+    End Property
+
+    Public Property Revogado As Boolean
+        Get
+            Return _revogado
+        End Get
+        Set(value As Boolean)
+            _revogado = value
         End Set
     End Property
 End Class
