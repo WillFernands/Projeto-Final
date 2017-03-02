@@ -130,24 +130,25 @@ Public Module SQLTableManager
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("CREATE TABLE Funcionarios (
-  matricula BIGINT PRIMARY KEY IDENTITY NOT NULL,
-  cpf VARCHAR(11) NOT NULL UNIQUE,
-  nome VARCHAR(100) NOT NULL,
-  telefone VARCHAR(20) NOT NULL,
-  dataContratacao DATETIME NOT NULL,
-  perfil VARCHAR(20) NOT NULL,
-  cargo VARCHAR(50) NOT NULL,
-  logradouro VARCHAR(90) NOT NULL,
-  numero VARCHAR(10) NOT NULL,
-  bairro VARCHAR(30) NULL,
-  cidade VARCHAR(30) NOT NULL,
-  estado VARCHAR(2) NOT NULL,
-  cep VARCHAR(8) NOT NULL,
-  tipoEndereco VARCHAR(20) NOT NULL,
-  senha VARCHAR(20) NOT NULL,
-  matriculaSupervisor BIGINT NULL,
-  CONSTRAINT Funcionarios_FK FOREIGN KEY (matriculaSupervisor) REFERENCES Funcionarios (matricula))")
+        strSQL.Append("CREATE TABLE Funcionarios (")
+        strSQL.Append("matricula BIGINT PRIMARY KEY IDENTITY NOT NULL, ")
+        strSQL.Append("cpf VARCHAR(11) NOT NULL UNIQUE, ")
+        strSQL.Append("nome VARCHAR(100) NOT NULL, ")
+        strSQL.Append("telefone VARCHAR(20) NOT NULL, ")
+        strSQL.Append("dataContratacao DATETIME NOT NULL, ")
+        strSQL.Append("perfil VARCHAR(20) NOT NULL, ")
+        strSQL.Append("cargo VARCHAR(50) NOT NULL, ")
+        strSQL.Append("logradouro VARCHAR(90) NOT NULL, ")
+        strSQL.Append("numero VARCHAR(10) NOT NULL, ")
+        strSQL.Append("bairro VARCHAR(30) NULL, ")
+        strSQL.Append("cidade VARCHAR(30) NOT NULL, ")
+        strSQL.Append("estado VARCHAR(2) NOT NULL, ")
+        strSQL.Append("cep VARCHAR(8) NOT NULL, ")
+        strSQL.Append("tipoEndereco VARCHAR(20) NOT NULL, ")
+        strSQL.Append("senha VARCHAR(20) NOT NULL, ")
+        strSQL.Append("revogado INT NOT NULL DEFAULT 0, ")
+        strSQL.Append("matriculaSupervisor BIGINT NULL, ")
+        strSQL.Append("CONSTRAINT Funcionarios_FK FOREIGN KEY (matriculaSupervisor) REFERENCES Funcionarios (matricula))")
 
         Return conn.ExecuteCommand(strSQL.ToString)
     End Function
@@ -334,15 +335,14 @@ Public Module SQLTableManager
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("CREATE TABLE Salarios (
-  matriculaFuncionario BIGINT NOT NULL,
-  valor FLOAT NOT NULL,
-  inicio DATETIME NOT NULL,
-  fim DATETIME NULL,
-  motivo VARCHAR(500) NOT NULL,
-  PRIMARY KEY (matriculaFuncionario, valor, inicio),
-  CONSTRAINT Salarios_FK FOREIGN KEY (matriculaFuncionario) REFERENCES Funcionarios (matricula))
-")
+        strSQL.Append("CREATE TABLE Salarios (")
+        strSQL.Append("matriculaFuncionario BIGINT NOT NULL, ")
+        strSQL.Append("valor FLOAT NOT NULL, ")
+        strSQL.Append("inicio DATETIME NOT NULL, ")
+        strSQL.Append("fim DATETIME NULL, ")
+        strSQL.Append("motivo VARCHAR(500) NOT NULL, ")
+        strSQL.Append("PRIMARY KEY (matriculaFuncionario, valor, inicio), ")
+        strSQL.Append("CONSTRAINT Salarios_FK FOREIGN KEY (matriculaFuncionario) REFERENCES Funcionarios (matricula))")
 
         Return conn.ExecuteCommand(strSQL.ToString)
     End Function

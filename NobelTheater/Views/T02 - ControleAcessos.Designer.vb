@@ -25,10 +25,10 @@ Partial Class ControleAcessos
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.FuncionarioTF = New System.Windows.Forms.TextBox()
+        Me.PerfilAtualTF = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.NovoPerfilCB = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -103,10 +103,10 @@ Partial Class ControleAcessos
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.PictureBox7)
-        Me.TabPage1.Controls.Add(Me.TextBox4)
-        Me.TabPage1.Controls.Add(Me.TextBox1)
+        Me.TabPage1.Controls.Add(Me.FuncionarioTF)
+        Me.TabPage1.Controls.Add(Me.PerfilAtualTF)
         Me.TabPage1.Controls.Add(Me.Button1)
-        Me.TabPage1.Controls.Add(Me.ComboBox2)
+        Me.TabPage1.Controls.Add(Me.NovoPerfilCB)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
@@ -128,23 +128,21 @@ Partial Class ControleAcessos
         Me.PictureBox7.TabIndex = 18
         Me.PictureBox7.TabStop = False
         '
-        'TextBox4
+        'FuncionarioTF
         '
-        Me.TextBox4.Enabled = False
-        Me.TextBox4.Location = New System.Drawing.Point(252, 32)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(327, 20)
-        Me.TextBox4.TabIndex = 17
-        Me.TextBox4.Text = "002400 - Antonio Albuquerque"
+        Me.FuncionarioTF.Enabled = False
+        Me.FuncionarioTF.Location = New System.Drawing.Point(252, 32)
+        Me.FuncionarioTF.Name = "FuncionarioTF"
+        Me.FuncionarioTF.Size = New System.Drawing.Size(327, 20)
+        Me.FuncionarioTF.TabIndex = 17
         '
-        'TextBox1
+        'PerfilAtualTF
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(85, 79)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(154, 20)
-        Me.TextBox1.TabIndex = 5
-        Me.TextBox1.Text = "Assistente Administrativo"
+        Me.PerfilAtualTF.Enabled = False
+        Me.PerfilAtualTF.Location = New System.Drawing.Point(85, 79)
+        Me.PerfilAtualTF.Name = "PerfilAtualTF"
+        Me.PerfilAtualTF.Size = New System.Drawing.Size(154, 20)
+        Me.PerfilAtualTF.TabIndex = 5
         '
         'Button1
         '
@@ -155,14 +153,13 @@ Partial Class ControleAcessos
         Me.Button1.Text = "Salvar Alterações"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'ComboBox2
+        'NovoPerfilCB
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(252, 79)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(357, 21)
-        Me.ComboBox2.TabIndex = 3
-        Me.ComboBox2.Text = "Gerente"
+        Me.NovoPerfilCB.FormattingEnabled = True
+        Me.NovoPerfilCB.Location = New System.Drawing.Point(252, 79)
+        Me.NovoPerfilCB.Name = "NovoPerfilCB"
+        Me.NovoPerfilCB.Size = New System.Drawing.Size(357, 21)
+        Me.NovoPerfilCB.TabIndex = 3
         '
         'Label2
         '
@@ -550,7 +547,7 @@ Partial Class ControleAcessos
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
+    Friend WithEvents NovoPerfilCB As System.Windows.Forms.ComboBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
@@ -559,7 +556,7 @@ Partial Class ControleAcessos
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents PerfilAtualTF As System.Windows.Forms.TextBox
     Friend WithEvents RevogadosDT As System.Windows.Forms.DataGridView
     Friend WithEvents Matricula As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Funcionario As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -602,5 +599,5 @@ Partial Class ControleAcessos
     Friend WithEvents NovoClienteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AcompanharClienteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PictureBox7 As System.Windows.Forms.PictureBox
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents FuncionarioTF As System.Windows.Forms.TextBox
 End Class

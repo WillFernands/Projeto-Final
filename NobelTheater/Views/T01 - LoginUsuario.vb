@@ -1,4 +1,14 @@
 ﻿Public Class LoginUsuario
+    Private errorCounter As Integer = 0
+
+    Private Sub LoginUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'SQLTableManager.DropRegistrosPontos()
+        'SQLTableManager.DropFuncionarios()
+        'SQLTableManager.CreateFuncionarios()
+        'SQLTableManager.CreateRegistrosPontos()
+        'SQLTableManager.PopulateFuncionarios()
+        'SQLTableManager.CreateSalarios()
+    End Sub
 
     Private Sub OK_Click(sender As Object, e As EventArgs) Handles OK.Click
 
@@ -21,9 +31,25 @@
         End Try
 
         If (funcionario IsNot Nothing) Then
+
+            If (FuncionarioBC.IsRevogado(funcionario) = True) Then
+
+                MsgBox("Seu acesso está revogado. Solicite uma nova senha ao seu gerente ou entre em contato com o administrador do sistema", vbInformation Or vbMsgBoxSetForeground)
+
+                Exit Sub
+            End If
+
             funcionario.Senha = PasswordTF.Text
             If (FuncionarioBC.VerifyPassword(funcionario) = False) Then
-                MsgBox("Senha incorreta", vbInformation Or vbMsgBoxSetForeground)
+                errorCounter += 1
+
+                If (errorCounter = 3) Then
+                    FuncionarioBC.RevogarAcesso(funcionario)
+                    MsgBox("Senha incorreta. Após 3 tentativas de acesso sua senha foi revogada. Solicite uma nova senha ao seu gerente ou entre em contato com o administrador do sistema", vbInformation Or vbMsgBoxSetForeground)
+                Else
+                    MsgBox("Senha incorreta", vbInformation Or vbMsgBoxSetForeground)
+                End If
+
                 Exit Sub
             End If
             MenuPrincipal.funcionarioLogado = funcionario
@@ -35,9 +61,6 @@
         End If
     End Sub
 
-    Private Sub LoginUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 
     Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles EntradaRB.CheckedChanged
 

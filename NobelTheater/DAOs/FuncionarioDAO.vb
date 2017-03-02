@@ -94,6 +94,21 @@ Public Class FuncionarioDAO
     End Function
 
     'OK
+    Public Function RevogarAcesso(ByVal funcionario As Funcionario) As Boolean
+        Dim conn As New Connection
+        Dim strSQL As New StringBuilder
+
+        strSQL.Append("UPDATE funcionarios ")
+        strSQL.Append("SET revogado = 1 ")
+        strSQL.Append("WHERE matricula = @matricula;")
+
+        conn.AddParameter("@matricula", funcionario.Matricula)
+
+        Return conn.ExecuteCommand(strSQL.ToString)
+
+    End Function
+
+    'OK
     Public Function FindByMatricula(matricula As Long) As Funcionario
 
         If (matricula = 0) Then Return Nothing
@@ -129,8 +144,8 @@ Public Class FuncionarioDAO
         funcionario.Cep = CStr(dt.Rows(0).Item("cep"))
         funcionario.TipoEndereco = CStr(dt.Rows(0).Item("tipoEndereco"))
         funcionario.Supervisor = FindSupervisorByMatricula(CLng(dt.Rows(0).Item("matriculaSupervisor")))
-        'funcionario.RegistroPontos = registroPontoDAO.FindByMatricula(funcionario.Matricula)
-        'funcionario.Salarios = salarioDAO.FindByMatricula(funcionario.Matricula)
+        funcionario.RegistroPontos = registroPontoDAO.FindByMatricula(funcionario.Matricula)
+        funcionario.Salarios = salarioDAO.FindByMatricula(funcionario.Matricula)
 
         Return funcionario
 
@@ -175,8 +190,8 @@ Public Class FuncionarioDAO
             funcionario.Cep = CStr(row.Item("cep"))
             funcionario.TipoEndereco = CStr(row.Item("tipoEndereco"))
             funcionario.Supervisor = supervisor
-            'funcionario.RegistroPontos = registroPontoDAO.FindByMatricula(funcionario.Matricula)
-            'funcionario.Salarios = salarioDAO.FindByMatricula(funcionario.Matricula)
+            funcionario.RegistroPontos = registroPontoDAO.FindByMatricula(funcionario.Matricula)
+            funcionario.Salarios = salarioDAO.FindByMatricula(funcionario.Matricula)
             funcionarios.Add(funcionario)
         Next
 
@@ -217,8 +232,8 @@ Public Class FuncionarioDAO
             funcionario.Cep = CStr(row.Item("cep"))
             funcionario.TipoEndereco = CStr(row.Item("tipoEndereco"))
             funcionario.Supervisor = FindSupervisorByMatricula(CLng(dt.Rows(0).Item("matriculaSupervisor")))
-            'funcionario.RegistroPontos = registroPontoDAO.FindByMatricula(funcionario.Matricula)
-            'funcionario.Salarios = salarioDAO.FindByMatricula(funcionario.Matricula)
+            funcionario.RegistroPontos = registroPontoDAO.FindByMatricula(funcionario.Matricula)
+            funcionario.Salarios = salarioDAO.FindByMatricula(funcionario.Matricula)
             funcionarios.Add(funcionario)
         Next
 
@@ -262,8 +277,8 @@ Public Class FuncionarioDAO
         funcionario.Cep = CStr(dt.Rows(0).Item("cep"))
         funcionario.TipoEndereco = CStr(dt.Rows(0).Item("tipoEndereco"))
         funcionario.Supervisor = FindSupervisorByMatricula(CLng(dt.Rows(0).Item("matriculaSupervisor")))
-        'funcionario.RegistroPontos = registroPontoDAO.FindByMatricula(funcionario.Matricula)
-        'funcionario.Salarios = salarioDAO.FindByMatricula(funcionario.Matricula)
+        funcionario.RegistroPontos = registroPontoDAO.FindByMatricula(funcionario.Matricula)
+        funcionario.Salarios = salarioDAO.FindByMatricula(funcionario.Matricula)
 
         Return funcionario
 
@@ -319,6 +334,22 @@ Public Class FuncionarioDAO
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return False
 
         If (func.Senha.Equals(dt.Rows(0).Item("Senha"))) Then Return True
+
+        Return False
+    End Function
+
+    Public Function IsRevogado(ByVal func As Funcionario) As Boolean
+        Dim conn As New Connection
+
+        If (func Is Nothing OrElse func.Matricula = 0) Then Return True
+
+        conn.AddParameter("@mat", func.Matricula)
+
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT Revogado FROM Funcionarios WHERE Matricula = @mat")
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return True
+
+        If (CInt(dt.Rows(0).Item("Revogado")) = 1) Then Return True
 
         Return False
     End Function

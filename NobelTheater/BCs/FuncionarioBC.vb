@@ -64,6 +64,13 @@ Public Class FuncionarioBC
         Return False
     End Function
 
+    Public Shared Function RevogarAcesso(funcionario As Funcionario) As Boolean
+        If (FuncionarioBC.Validate(funcionario)) Then
+            Return funcionarioDAO.RevogarAcesso(funcionario)
+        End If
+        Return False
+    End Function
+
     Public Shared Function FindByMatricula(matricula As Long) As Funcionario
         Return funcionarioDAO.FindByMatricula(matricula)
     End Function
@@ -86,6 +93,10 @@ Public Class FuncionarioBC
 
     Public Shared Function VerifyPassword(funcionario As Funcionario) As Boolean
         Return funcionarioDAO.VerifyPassword(funcionario)
+    End Function
+
+    Public Shared Function IsRevogado(funcionario As Funcionario) As Boolean
+        Return funcionarioDAO.IsRevogado(funcionario)
     End Function
 
 End Class
