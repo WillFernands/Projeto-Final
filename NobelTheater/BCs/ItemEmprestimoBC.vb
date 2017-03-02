@@ -3,11 +3,7 @@ Option Strict On
 
 Public Class ItemEmprestimoBC
 
-    Private Shared itemEmprestimoDAO As ItemEmprestimoDAO
-
-    Public Sub New()
-        itemEmprestimoDAO = New ItemEmprestimoDAO()
-    End Sub
+    Private Shared itemEmprestimoDAO As New ItemEmprestimoDAO
 
     Public Shared Function Validate(itemEmprestimo As ItemEmprestimo) As Boolean
         If (itemEmprestimo Is Nothing) Then Return False

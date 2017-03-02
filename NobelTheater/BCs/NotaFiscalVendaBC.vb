@@ -3,11 +3,7 @@ Option Strict On
 
 Public Class NotaFiscalVendaBC
 
-    Private Shared notaFiscalVendaDAO As NotaFiscalVendaDAO
-
-    Public Sub New()
-        notaFiscalVendaDAO = New NotaFiscalVendaDAO()
-    End Sub
+    Private Shared notaFiscalVendaDAO As New NotaFiscalVendaDAO
 
     Public Shared Function Validate(notaFiscalVenda As NotaFiscalVenda) As Boolean
 

@@ -3,11 +3,7 @@ Option Strict On
 
 Public Class VisitaTecnicaBC
 
-    Private Shared visitaTecnicaDAO As VisitaTecnicaDAO
-
-    Public Sub New()
-        visitaTecnicaDAO = New VisitaTecnicaDAO()
-    End Sub
+    Private Shared visitaTecnicaDAO As New VisitaTecnicaDAO
 
     Public Shared Function Validate(visitaTecnica As VisitaTecnica) As Boolean
 

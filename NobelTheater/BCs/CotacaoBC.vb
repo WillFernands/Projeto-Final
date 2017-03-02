@@ -3,11 +3,8 @@ Option Strict On
 
 Public Class CotacaoBC
 
-    Private Shared cotacaoDAO As CotacaoDAO
+    Private Shared cotacaoDAO As New CotacaoDAO
 
-    Public Sub New()
-        cotacaoDAO = New CotacaoDAO()
-    End Sub
 
     Public Shared Function Validate(cotacao As Cotacao) As Boolean
         If (cotacao Is Nothing) Then Return False

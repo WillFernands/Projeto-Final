@@ -37,8 +37,8 @@ Partial Class LoginUsuario
         Me.OK = New System.Windows.Forms.Button()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.SaidaRB = New System.Windows.Forms.RadioButton()
+        Me.EntradaRB = New System.Windows.Forms.RadioButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -117,33 +117,33 @@ Partial Class LoginUsuario
         Me.LinkLabel2.TabStop = True
         Me.LinkLabel2.Text = "Esqueci a Senha"
         '
-        'RadioButton1
+        'SaidaRB
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(158, 19)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(54, 17)
-        Me.RadioButton1.TabIndex = 8
-        Me.RadioButton1.Text = "Saída"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.SaidaRB.AutoSize = True
+        Me.SaidaRB.Location = New System.Drawing.Point(158, 19)
+        Me.SaidaRB.Name = "SaidaRB"
+        Me.SaidaRB.Size = New System.Drawing.Size(54, 17)
+        Me.SaidaRB.TabIndex = 8
+        Me.SaidaRB.Text = "Saída"
+        Me.SaidaRB.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'EntradaRB
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Checked = True
-        Me.RadioButton2.Location = New System.Drawing.Point(18, 19)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(62, 17)
-        Me.RadioButton2.TabIndex = 9
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Entrada"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.EntradaRB.AutoSize = True
+        Me.EntradaRB.Checked = True
+        Me.EntradaRB.Location = New System.Drawing.Point(18, 19)
+        Me.EntradaRB.Name = "EntradaRB"
+        Me.EntradaRB.Size = New System.Drawing.Size(62, 17)
+        Me.EntradaRB.TabIndex = 9
+        Me.EntradaRB.TabStop = True
+        Me.EntradaRB.Text = "Entrada"
+        Me.EntradaRB.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.RadioButton2)
-        Me.GroupBox1.Controls.Add(Me.RadioButton1)
+        Me.GroupBox1.Controls.Add(Me.EntradaRB)
+        Me.GroupBox1.Controls.Add(Me.SaidaRB)
         Me.GroupBox1.Location = New System.Drawing.Point(15, 234)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(334, 49)
@@ -211,8 +211,8 @@ Partial Class LoginUsuario
     End Sub
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
     Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
-    Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
+    Friend WithEvents SaidaRB As System.Windows.Forms.RadioButton
+    Friend WithEvents EntradaRB As System.Windows.Forms.RadioButton
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label

@@ -3,11 +3,7 @@ Option Strict On
 
 Public Class FornecedorBC
 
-    Private Shared FornecedorDAO As FornecedorDAO
-
-    Public Sub New()
-        FornecedorDAO = New FornecedorDAO()
-    End Sub
+    Private Shared FornecedorDAO As New FornecedorDAO
 
     Public Shared Function Validate(fornecedor As Fornecedor) As Boolean
         If (fornecedor Is Nothing) Then Return False

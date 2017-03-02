@@ -3,11 +3,7 @@ Option Strict On
 
 Public Class ProdutoBC
 
-    Private Shared produtoDAO As ProdutoDAO
-
-    Public Sub New()
-        produtoDAO = New ProdutoDAO()
-    End Sub
+    Private Shared produtoDAO As New ProdutoDAO
 
     Public Shared Function Validate(produto As Produto, Optional validateImage As Boolean = False) As Boolean
 

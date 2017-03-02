@@ -3,11 +3,7 @@ Option Strict On
 
 Public Class ItemOrcadoBC
 
-    Private Shared itemOrcadoDAO As ItemOrcadoDAO
-
-    Public Sub New()
-        itemOrcadoDAO = New ItemOrcadoDAO()
-    End Sub
+    Private Shared itemOrcadoDAO As New ItemOrcadoDAO
 
     Public Shared Function Validate(itemOrcado As ItemOrcado) As Boolean
         If (itemOrcado Is Nothing) Then Return False

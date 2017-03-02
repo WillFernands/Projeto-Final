@@ -15,7 +15,7 @@ Public Class RegistroPontoDAO
 
         conn.AddParameter("@data", registro.DataRegistro)
         conn.AddParameter("@tipo", registro.Tipo)
-        conn.AddParameter("@matricula", registro.Funcionario)
+        conn.AddParameter("@matricula", registro.Funcionario.Matricula)
 
         Return conn.ExecuteCommand(strSQL.ToString)
 

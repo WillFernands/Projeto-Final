@@ -3,11 +3,7 @@ Option Strict On
 
 Public Class enderecoClienteBC
 
-    Private Shared enderecoClienteDAO As EnderecoClienteDAO
-
-    Public Sub New()
-        enderecoClienteDAO = New EnderecoClienteDAO()
-    End Sub
+    Private Shared enderecoClienteDAO As New EnderecoClienteDAO
 
     Public Shared Function Validate(enderecoCliente As EnderecoCliente) As Boolean
         If (enderecoCliente Is Nothing) Then Return False

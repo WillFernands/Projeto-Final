@@ -3,11 +3,7 @@ Option Strict On
 
 Public Class ClientePJBC
 
-    Private Shared clientePJDAO As ClientePJDAO
-
-    Public Sub New()
-        clientePJDAO = New ClientePJDAO()
-    End Sub
+    Private Shared clientePJDAO As New ClientePJDAO
 
     Public Shared Function Validate(clientePJ As ClientePJ) As Boolean
         If (clientePJ Is Nothing) Then Return False

@@ -3,11 +3,7 @@ Option Strict On
 
 Public Class ItemCotadoBC
 
-    Private Shared itemCotadoDAO As ItemCotadoDAO
-
-    Public Sub New()
-        itemCotadoDAO = New ItemCotadoDAO()
-    End Sub
+    Private Shared itemCotadoDAO As New ItemCotadoDAO
 
     Public Shared Function Validate(itemCotado As ItemCotado) As Boolean
         If (itemCotado Is Nothing) Then Return False

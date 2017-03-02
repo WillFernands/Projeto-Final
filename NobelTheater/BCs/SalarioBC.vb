@@ -3,11 +3,7 @@ Option Strict On
 
 Public Class SalarioBC
 
-    Private Shared salarioDAO As SalarioDAO
-
-    Public Sub New()
-        salarioDAO = New SalarioDAO()
-    End Sub
+    Private Shared salarioDAO As New SalarioDAO
 
     Public Shared Function Validate(salario As Salario) As Boolean
 

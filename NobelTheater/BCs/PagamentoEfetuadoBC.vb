@@ -3,11 +3,7 @@ Option Strict On
 
 Public Class PagamentoEfetuadoBC
 
-    Private Shared pagamentoEfetuadoDAO As PagamentoEfetuadoDAO
-
-    Public Sub New()
-        pagamentoEfetuadoDAO = New PagamentoEfetuadoDAO()
-    End Sub
+    Private Shared pagamentoEfetuadoDAO As New PagamentoEfetuadoDAO
 
     Public Shared Function Validate(pagamentoEfetuado As PagamentoEfetuado) As Boolean
         If (pagamentoEfetuado Is Nothing) Then Return False

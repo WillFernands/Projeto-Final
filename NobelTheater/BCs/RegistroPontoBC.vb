@@ -3,11 +3,7 @@ Option Strict On
 
 Public Class RegistroPontoBC
 
-    Private Shared registroPontoDAO As RegistroPontoDAO
-
-    Public Sub New()
-        registroPontoDAO = New RegistroPontoDAO()
-    End Sub
+    Private Shared registroPontoDAO As New RegistroPontoDAO
 
     Public Shared Function Validate(registroPonto As RegistroPonto) As Boolean
         If (registroPonto Is Nothing) Then Return False

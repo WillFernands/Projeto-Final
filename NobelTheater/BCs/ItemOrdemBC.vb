@@ -3,11 +3,7 @@ Option Strict On
 
 Public Class ItemOrdemBC
 
-    Private Shared itemOrdemDAO As ItemOrdemDAO
-
-    Public Sub New()
-        itemOrdemDAO = New ItemOrdemDAO()
-    End Sub
+    Private Shared itemOrdemDAO As New ItemOrdemDAO
 
     Public Shared Function Validate(itemOrdem As ItemOrdem) As Boolean
         If (itemOrdem Is Nothing) Then Return False

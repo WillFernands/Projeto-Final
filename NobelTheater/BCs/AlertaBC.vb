@@ -3,11 +3,7 @@ Option Strict On
 
 Public Class AlertaBC
 
-    Private Shared alertaDAO As AlertaDAO
-
-    Public Sub New()
-        alertaDAO = New AlertaDAO()
-    End Sub
+    Private Shared alertaDAO As New AlertaDAO
 
     Public Shared Function Validate(alerta As Alerta) As Boolean
         If (alerta Is Nothing) Then Return False

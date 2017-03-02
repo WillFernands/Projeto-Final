@@ -3,11 +3,7 @@ Option Strict On
 
 Public Class OrdemServicoBC
 
-    Private Shared ordemServicoDAO As OrdemServicoDAO
-
-    Public Sub New()
-        ordemServicoDAO = New OrdemServicoDAO()
-    End Sub
+    Private Shared ordemServicoDAO As New OrdemServicoDAO
 
     Public Shared Function Validate(ordemServico As OrdemServico) As Boolean
 

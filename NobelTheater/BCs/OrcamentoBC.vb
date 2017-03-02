@@ -3,11 +3,7 @@ Option Strict On
 
 Public Class OrcamentoBC
 
-    Private Shared orcamentoDAO As OrcamentoDAO
-
-    Public Sub New()
-        orcamentoDAO = New OrcamentoDAO()
-    End Sub
+    Private Shared orcamentoDAO As New OrcamentoDAO
 
     Public Shared Function Validate(orcamento As Orcamento) As Boolean
         If (orcamento Is Nothing) Then Return False

@@ -3,11 +3,7 @@ Option Strict On
 
 Public Class SolicitacaoEmprestimoBC
 
-    Private Shared solicitacaoEmprestimoDAO As SolicitacaoEmprestimoDAO
-
-    Public Sub New()
-        solicitacaoEmprestimoDAO = New SolicitacaoEmprestimoDAO()
-    End Sub
+    Private Shared solicitacaoEmprestimoDAO As New SolicitacaoEmprestimoDAO
 
     Public Shared Function Validate(solicitacaoEmprestimo As SolicitacaoEmprestimo) As Boolean
 
