@@ -102,10 +102,10 @@ Partial Class LoginUsuario
         Me.LinkLabel1.AutoSize = True
         Me.LinkLabel1.Location = New System.Drawing.Point(91, 203)
         Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(72, 13)
+        Me.LinkLabel1.Size = New System.Drawing.Size(71, 13)
         Me.LinkLabel1.TabIndex = 6
         Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Trocar Senha"
+        Me.LinkLabel1.Text = "Alterar Senha"
         '
         'LinkLabel2
         '

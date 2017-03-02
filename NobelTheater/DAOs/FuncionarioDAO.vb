@@ -118,11 +118,13 @@ Public Class FuncionarioDAO
         Dim strSQL As New StringBuilder
 
         strSQL.Append("UPDATE funcionarios ")
-        strSQL.Append("SET revogado = 0, ")
+        strSQL.Append("SET senha = @senha, ")
+        strSQL.Append("revogado = 0, ")
         strSQL.Append("dataRevogacao = NULL ")
         strSQL.Append("WHERE matricula = @matricula;")
 
         conn.AddParameter("@matricula", funcionario.Matricula)
+        conn.AddParameter("@senha", GenericUtils.GenerateSenha())
 
         If (conn.ExecuteCommand(strSQL.ToString) = False) Then Return ""
 
@@ -130,9 +132,25 @@ Public Class FuncionarioDAO
         conn = New Connection
 
         strSQL.Append("SELECT senha FROM funcionarios where matricula = @mat")
-        conn.AddParameter("@matricula", funcionario.Matricula)
+        conn.AddParameter("@mat", funcionario.Matricula)
 
         Return CStr(conn.ExecuteScalar(strSQL.ToString))
+
+    End Function
+
+    'OK
+    Public Function UpdateSenha(ByVal funcionario As Funcionario) As Boolean
+        Dim conn As New Connection
+        Dim strSQL As New StringBuilder
+
+        strSQL.Append("UPDATE funcionarios ")
+        strSQL.Append("SET senha = @senha ")
+        strSQL.Append("WHERE matricula = @matricula;")
+
+        conn.AddParameter("@matricula", funcionario.Matricula)
+        conn.AddParameter("@senha", funcionario.Senha)
+
+        Return conn.ExecuteCommand(strSQL.ToString)
 
     End Function
 

@@ -71,6 +71,13 @@ Public Class FuncionarioBC
         Return False
     End Function
 
+    Public Shared Function UpdateSenha(funcionario As Funcionario) As Boolean
+        If (FuncionarioBC.Validate(funcionario)) Then
+            Return funcionarioDAO.UpdateSenha(funcionario)
+        End If
+        Return False
+    End Function
+
     Public Shared Function ResetarSenha(funcionario As Funcionario) As String
         If (FuncionarioBC.Validate(funcionario)) Then
             Return funcionarioDAO.ResetarSenha(funcionario)

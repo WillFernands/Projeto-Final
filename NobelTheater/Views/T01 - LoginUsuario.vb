@@ -132,4 +132,31 @@
             Exit Sub
         End If
     End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        If (String.IsNullOrWhiteSpace(UserTF.Text)) Then
+            MsgBox("Usuário não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        End If
+
+        Dim funcionario As Funcionario
+
+        Try
+            funcionario = FuncionarioBC.FindByMatricula(CLng(UserTF.Text))
+        Catch ex As InvalidCastException
+            MsgBox("Matricula invalida", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        End Try
+
+        If (funcionario IsNot Nothing) Then
+
+            Dim alterarSenha As New AlterarSenha
+            alterarSenha.funcionario = funcionario
+            AlterarSenha.Show()
+
+        Else
+            MsgBox("Funcionário não cadastrado", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        End If
+    End Sub
 End Class
