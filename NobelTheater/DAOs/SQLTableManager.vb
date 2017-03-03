@@ -622,4 +622,34 @@ Public Module SQLTableManager
         f3.Matricula = FuncionarioBC.Insert(f3)
         FuncionarioBC.UpdateSupervisor(f3)
     End Sub
+
+    'OK
+    Public Sub PopulateRegistrosPontos()
+        Dim f1 As Funcionario = FuncionarioBC.FindByMatricula(1)
+        Dim f2 As Funcionario = FuncionarioBC.FindByMatricula(2)
+        Dim f3 As Funcionario = FuncionarioBC.FindByMatricula(3)
+
+        Dim r1 As New RegistroPonto(New Date(2017, 1, 15, 7, 0, 0), TipoRegistro.Entrada, f1)
+        Dim r2 As New RegistroPonto(New Date(2017, 1, 15, 16, 0, 0), TipoRegistro.Saida, f1)
+        Dim r3 As New RegistroPonto(New Date(2017, 1, 16, 7, 0, 0), TipoRegistro.Entrada, f1)
+        Dim r4 As New RegistroPonto(New Date(2017, 1, 16, 16, 0, 0), TipoRegistro.Saida, f1)
+        Dim r5 As New RegistroPonto(New Date(2017, 1, 17, 7, 0, 0), TipoRegistro.Entrada, f1)
+        Dim r6 As New RegistroPonto(New Date(2017, 1, 17, 16, 0, 0), TipoRegistro.Saida, f1)
+        Dim r7 As New RegistroPonto(New Date(2017, 1, 17, 7, 0, 0), TipoRegistro.Entrada, f2)
+        Dim r8 As New RegistroPonto(New Date(2017, 1, 17, 16, 0, 0), TipoRegistro.Saida, f2)
+        Dim r9 As New RegistroPonto(New Date(2017, 1, 17, 7, 0, 0), TipoRegistro.Entrada, f3)
+        Dim r10 As New RegistroPonto(New Date(2017, 1, 17, 16, 0, 0), TipoRegistro.Saida, f3)
+
+        RegistroPontoBC.Insert(r1)
+        RegistroPontoBC.Insert(r2)
+        RegistroPontoBC.Insert(r3)
+        RegistroPontoBC.Insert(r4)
+        RegistroPontoBC.Insert(r5)
+        RegistroPontoBC.Insert(r6)
+        RegistroPontoBC.Insert(r7)
+        RegistroPontoBC.Insert(r8)
+        RegistroPontoBC.Insert(r9)
+        RegistroPontoBC.Insert(r10)
+
+    End Sub
 End Module

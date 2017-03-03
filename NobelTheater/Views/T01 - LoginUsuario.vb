@@ -9,6 +9,7 @@
         'SQLTableManager.CreateRegistrosPontos()
         'SQLTableManager.CreateSalarios()
         'SQLTableManager.PopulateFuncionarios()
+        'SQLTableManager.PopulateRegistrosPontos()
     End Sub
 
     Private Sub OK_Click(sender As Object, e As EventArgs) Handles OK.Click

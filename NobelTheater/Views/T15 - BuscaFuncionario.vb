@@ -27,7 +27,10 @@
         If (Caller = "ControleAcessos") Then
             ControleAcessos.PopulateFuncionario(funcionario)
             Me.Close()
-        End If
+        ElseIf (Caller = "RecuperarHistorico") Then
+            RecuperarHistorico.PopulateFuncionario(funcionario)
+            Me.Close()
+            End If
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged

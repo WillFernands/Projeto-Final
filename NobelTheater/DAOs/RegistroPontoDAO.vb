@@ -22,7 +22,7 @@ Public Class RegistroPontoDAO
     End Function
 
     'OK
-    Public Function FindByMatricula(matricula As Long) As List(Of RegistroPonto)
+    Public Function FindByMatricula(matricula As Long, inicio As Date, fim As Date) As List(Of RegistroPonto)
 
         If (matricula = 0) Then Return Nothing
 
@@ -31,9 +31,14 @@ Public Class RegistroPontoDAO
 
         strSQL.Append("SELECT dataRegistro, tipo FROM RegistrosPontos ")
         strSQL.Append("WHERE matriculaFuncionario = @matricula ")
-        strSQL.Append("ORDER BY dataRegistro DESC")
+        strSQL.Append("AND Cast(dataRegistro As Date) >= Cast(@inicio As Date) ")
+        strSQL.Append("AND Cast(dataRegistro As Date) <= Cast(@fim As Date) ")
+
+        strSQL.Append("ORDER BY dataRegistro ASC")
 
         conn.AddParameter("@matricula", matricula)
+        conn.AddParameter("@inicio", inicio)
+        conn.AddParameter("@fim", fim)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
 
@@ -56,7 +61,7 @@ Public Class RegistroPontoDAO
     End Function
 
     'OK
-    Public Function FindByMatricula(funcionario As Funcionario) As List(Of RegistroPonto)
+    Public Function FindByMatricula(funcionario As Funcionario, inicio As Date, fim As Date) As List(Of RegistroPonto)
 
         If (funcionario Is Nothing) Then Return Nothing
 
@@ -65,9 +70,13 @@ Public Class RegistroPontoDAO
 
         strSQL.Append("SELECT dataRegistro, tipo FROM RegistrosPontos ")
         strSQL.Append("WHERE matriculaFuncionario = @matricula ")
-        strSQL.Append("ORDER BY dataRegistro DESC")
+        strSQL.Append("AND Cast(dataRegistro As Date) >= Cast(@inicio As Date) ")
+        strSQL.Append("AND Cast(dataRegistro As Date) <= Cast(@fim As Date) ")
+        strSQL.Append("ORDER BY dataRegistro ASC")
 
         conn.AddParameter("@matricula", funcionario.Matricula)
+        conn.AddParameter("@inicio", inicio)
+        conn.AddParameter("@fim", fim)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
 

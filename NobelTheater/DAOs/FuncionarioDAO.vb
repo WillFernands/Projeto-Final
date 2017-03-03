@@ -194,8 +194,6 @@ Public Class FuncionarioDAO
             funcionario.DataRevogacao = CDate(dt.Rows(0).Item("dataRevogacao"))
         End If
         funcionario.Supervisor = FindSupervisorByMatricula(CLng(dt.Rows(0).Item("matriculaSupervisor")))
-        funcionario.RegistroPontos = registroPontoDAO.FindByMatricula(funcionario.Matricula)
-        funcionario.Salarios = salarioDAO.FindByMatricula(funcionario.Matricula)
 
         Return funcionario
 
@@ -210,9 +208,10 @@ Public Class FuncionarioDAO
         Dim strSQL As New StringBuilder
 
         strSQL.Append("SELECT * FROM Funcionarios ")
-        strSQL.Append("WHERE matriculaSupervisor = @matricula;")
+        strSQL.Append("WHERE matriculaSupervisor = @matricula AND matricula != @matricula2;")
 
         conn.AddParameter("@matricula", supervisor.Matricula)
+        conn.AddParameter("@matricula2", supervisor.Matricula)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
 
@@ -244,8 +243,6 @@ Public Class FuncionarioDAO
                 funcionario.DataRevogacao = CDate(dt.Rows(0).Item("dataRevogacao"))
             End If
             funcionario.Supervisor = supervisor
-            funcionario.RegistroPontos = registroPontoDAO.FindByMatricula(funcionario.Matricula)
-            funcionario.Salarios = salarioDAO.FindByMatricula(funcionario.Matricula)
             funcionarios.Add(funcionario)
         Next
 
@@ -262,9 +259,10 @@ Public Class FuncionarioDAO
         Dim strSQL As New StringBuilder
 
         strSQL.Append("SELECT * FROM Funcionarios ")
-        strSQL.Append("WHERE matriculaSupervisor = @matricula AND revogado = 1;")
+        strSQL.Append("WHERE matriculaSupervisor = @matricula AND revogado = 1 AND matricula != @matricula2;")
 
         conn.AddParameter("@matricula", supervisor.Matricula)
+        conn.AddParameter("@matricula2", supervisor.Matricula)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
 
@@ -296,8 +294,6 @@ Public Class FuncionarioDAO
                 funcionario.DataRevogacao = CDate(dt.Rows(0).Item("dataRevogacao"))
             End If
             funcionario.Supervisor = supervisor
-            funcionario.RegistroPontos = registroPontoDAO.FindByMatricula(funcionario.Matricula)
-            funcionario.Salarios = salarioDAO.FindByMatricula(funcionario.Matricula)
             funcionarios.Add(funcionario)
         Next
 
@@ -342,8 +338,6 @@ Public Class FuncionarioDAO
                 funcionario.DataRevogacao = CDate(dt.Rows(0).Item("dataRevogacao"))
             End If
             funcionario.Supervisor = FindSupervisorByMatricula(CLng(dt.Rows(0).Item("matriculaSupervisor")))
-            funcionario.RegistroPontos = registroPontoDAO.FindByMatricula(funcionario.Matricula)
-            funcionario.Salarios = salarioDAO.FindByMatricula(funcionario.Matricula)
             funcionarios.Add(funcionario)
         Next
 
@@ -391,8 +385,6 @@ Public Class FuncionarioDAO
             funcionario.DataRevogacao = CDate(dt.Rows(0).Item("dataRevogacao"))
         End If
         funcionario.Supervisor = FindSupervisorByMatricula(CLng(dt.Rows(0).Item("matriculaSupervisor")))
-        funcionario.RegistroPontos = registroPontoDAO.FindByMatricula(funcionario.Matricula)
-        funcionario.Salarios = salarioDAO.FindByMatricula(funcionario.Matricula)
 
         Return funcionario
 

@@ -23,7 +23,7 @@ Public Module ExcelUtils
     End Function
 
     ''' <summary>
-    ''' Open a Windows Explorer window (Path must be a folder)
+    ''' Closes the excel application
     ''' </summary>
     Public Sub FinalizeExcelApp(ByVal excelApp As Application)
         Try

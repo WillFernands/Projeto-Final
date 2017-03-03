@@ -21,12 +21,12 @@ Public Class RegistroPontoBC
         Return False
     End Function
 
-    Public Shared Function FindByMatricula(matricula As Long) As List(Of RegistroPonto)
-        Return registroPontoDAO.FindByMatricula(matricula)
+    Public Shared Function FindByMatricula(matricula As Long, inicio As Date, fim As Date) As List(Of RegistroPonto)
+        Return registroPontoDAO.FindByMatricula(matricula, inicio, fim)
     End Function
 
-    Public Shared Function FindByMatricula(funcionario As Funcionario) As List(Of RegistroPonto)
-        Return registroPontoDAO.FindByMatricula(funcionario)
+    Public Shared Function FindByMatricula(funcionario As Funcionario, inicio As Date, fim As Date) As List(Of RegistroPonto)
+        Return registroPontoDAO.FindByMatricula(funcionario, inicio, fim)
     End Function
 
 End Class
