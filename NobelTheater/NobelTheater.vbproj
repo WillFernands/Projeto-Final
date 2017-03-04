@@ -293,12 +293,6 @@
     <Compile Include="Views\T15 - BuscaFuncionario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\T16 - AlterarSenha.Designer.vb">
-      <DependentUpon>T16 - AlterarSenha.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Views\T16 - AlterarSenha.vb">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\T01 - LoginUsuario.resx">
@@ -351,9 +345,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\T15 - BuscaFuncionario.resx">
       <DependentUpon>T15 - BuscaFuncionario.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\T16 - AlterarSenha.resx">
-      <DependentUpon>T16 - AlterarSenha.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

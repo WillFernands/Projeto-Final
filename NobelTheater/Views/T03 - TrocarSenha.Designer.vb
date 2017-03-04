@@ -22,46 +22,46 @@ Partial Class TrocarSenha
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.OK = New System.Windows.Forms.Button()
-        Me.PasswordTextBox = New System.Windows.Forms.TextBox()
-        Me.UsernameTextBox = New System.Windows.Forms.TextBox()
+        Me.ConfirmarBT = New System.Windows.Forms.Button()
+        Me.PasswordNewTF = New System.Windows.Forms.TextBox()
+        Me.PasswordTF = New System.Windows.Forms.TextBox()
         Me.PasswordLabel = New System.Windows.Forms.Label()
         Me.UsernameLabel = New System.Windows.Forms.Label()
         Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.ConfirmPasswordNewTF = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.UserTF = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'OK
+        'ConfirmarBT
         '
-        Me.OK.Location = New System.Drawing.Point(504, 43)
-        Me.OK.Name = "OK"
-        Me.OK.Size = New System.Drawing.Size(94, 48)
-        Me.OK.TabIndex = 18
-        Me.OK.Text = "Alterar"
+        Me.ConfirmarBT.Location = New System.Drawing.Point(506, 47)
+        Me.ConfirmarBT.Name = "ConfirmarBT"
+        Me.ConfirmarBT.Size = New System.Drawing.Size(94, 48)
+        Me.ConfirmarBT.TabIndex = 18
+        Me.ConfirmarBT.Text = "Confirmar"
         '
-        'PasswordTextBox
+        'PasswordNewTF
         '
-        Me.PasswordTextBox.Location = New System.Drawing.Point(338, 55)
-        Me.PasswordTextBox.Name = "PasswordTextBox"
-        Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.PasswordTextBox.Size = New System.Drawing.Size(148, 20)
-        Me.PasswordTextBox.TabIndex = 17
-        Me.PasswordTextBox.Text = "Nobel123"
+        Me.PasswordNewTF.Location = New System.Drawing.Point(348, 78)
+        Me.PasswordNewTF.Name = "PasswordNewTF"
+        Me.PasswordNewTF.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.PasswordNewTF.Size = New System.Drawing.Size(148, 20)
+        Me.PasswordNewTF.TabIndex = 17
         '
-        'UsernameTextBox
+        'PasswordTF
         '
-        Me.UsernameTextBox.Location = New System.Drawing.Point(338, 14)
-        Me.UsernameTextBox.Name = "UsernameTextBox"
-        Me.UsernameTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.UsernameTextBox.Size = New System.Drawing.Size(148, 20)
-        Me.UsernameTextBox.TabIndex = 15
-        Me.UsernameTextBox.Text = "Nobel123"
+        Me.PasswordTF.Location = New System.Drawing.Point(348, 45)
+        Me.PasswordTF.Name = "PasswordTF"
+        Me.PasswordTF.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.PasswordTF.Size = New System.Drawing.Size(148, 20)
+        Me.PasswordTF.TabIndex = 15
         '
         'PasswordLabel
         '
-        Me.PasswordLabel.Location = New System.Drawing.Point(247, 55)
+        Me.PasswordLabel.Location = New System.Drawing.Point(255, 77)
         Me.PasswordLabel.Name = "PasswordLabel"
         Me.PasswordLabel.Size = New System.Drawing.Size(220, 23)
         Me.PasswordLabel.TabIndex = 16
@@ -70,7 +70,7 @@ Partial Class TrocarSenha
         '
         'UsernameLabel
         '
-        Me.UsernameLabel.Location = New System.Drawing.Point(247, 12)
+        Me.UsernameLabel.Location = New System.Drawing.Point(255, 43)
         Me.UsernameLabel.Name = "UsernameLabel"
         Me.UsernameLabel.Size = New System.Drawing.Size(220, 23)
         Me.UsernameLabel.TabIndex = 13
@@ -80,40 +80,58 @@ Partial Class TrocarSenha
         'LogoPictureBox
         '
         Me.LogoPictureBox.Image = Global.NobelTheater.My.Resources.Resources.Nobel_Logo
-        Me.LogoPictureBox.Location = New System.Drawing.Point(12, 12)
+        Me.LogoPictureBox.Location = New System.Drawing.Point(12, 17)
         Me.LogoPictureBox.Name = "LogoPictureBox"
-        Me.LogoPictureBox.Size = New System.Drawing.Size(215, 104)
+        Me.LogoPictureBox.Size = New System.Drawing.Size(231, 105)
         Me.LogoPictureBox.TabIndex = 14
         Me.LogoPictureBox.TabStop = False
         '
-        'TextBox1
+        'ConfirmPasswordNewTF
         '
-        Me.TextBox1.Location = New System.Drawing.Point(338, 94)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBox1.Size = New System.Drawing.Size(148, 20)
-        Me.TextBox1.TabIndex = 25
-        Me.TextBox1.Text = "Nobel123"
+        Me.ConfirmPasswordNewTF.Location = New System.Drawing.Point(348, 113)
+        Me.ConfirmPasswordNewTF.Name = "ConfirmPasswordNewTF"
+        Me.ConfirmPasswordNewTF.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.ConfirmPasswordNewTF.Size = New System.Drawing.Size(148, 20)
+        Me.ConfirmPasswordNewTF.TabIndex = 25
         '
         'Label3
         '
-        Me.Label3.Location = New System.Drawing.Point(247, 94)
+        Me.Label3.Location = New System.Drawing.Point(255, 111)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(220, 23)
         Me.Label3.TabIndex = 24
         Me.Label3.Text = "Confirmar Senha"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'UserTF
+        '
+        Me.UserTF.Enabled = False
+        Me.UserTF.Location = New System.Drawing.Point(348, 9)
+        Me.UserTF.Name = "UserTF"
+        Me.UserTF.Size = New System.Drawing.Size(148, 20)
+        Me.UserTF.TabIndex = 27
+        '
+        'Label1
+        '
+        Me.Label1.Location = New System.Drawing.Point(255, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(220, 23)
+        Me.Label1.TabIndex = 26
+        Me.Label1.Text = "Funcionário:"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'TrocarSenha
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(612, 127)
-        Me.Controls.Add(Me.TextBox1)
+        Me.ClientSize = New System.Drawing.Size(612, 141)
+        Me.Controls.Add(Me.UserTF)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.ConfirmPasswordNewTF)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.OK)
-        Me.Controls.Add(Me.PasswordTextBox)
-        Me.Controls.Add(Me.UsernameTextBox)
+        Me.Controls.Add(Me.ConfirmarBT)
+        Me.Controls.Add(Me.PasswordNewTF)
+        Me.Controls.Add(Me.PasswordTF)
         Me.Controls.Add(Me.PasswordLabel)
         Me.Controls.Add(Me.UsernameLabel)
         Me.Controls.Add(Me.LogoPictureBox)
@@ -125,12 +143,14 @@ Partial Class TrocarSenha
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents OK As System.Windows.Forms.Button
-    Friend WithEvents PasswordTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents UsernameTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents ConfirmarBT As System.Windows.Forms.Button
+    Friend WithEvents PasswordNewTF As System.Windows.Forms.TextBox
+    Friend WithEvents PasswordTF As System.Windows.Forms.TextBox
     Friend WithEvents PasswordLabel As System.Windows.Forms.Label
     Friend WithEvents UsernameLabel As System.Windows.Forms.Label
     Friend WithEvents LogoPictureBox As System.Windows.Forms.PictureBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents ConfirmPasswordNewTF As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents UserTF As TextBox
+    Friend WithEvents Label1 As Label
 End Class

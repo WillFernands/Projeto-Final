@@ -151,9 +151,9 @@
 
         If (funcionario IsNot Nothing) Then
 
-            Dim alterarSenha As New AlterarSenha
-            alterarSenha.funcionario = funcionario
-            AlterarSenha.Show()
+            Dim trocarSenha As New TrocarSenha
+            trocarSenha.funcionario = funcionario
+            trocarSenha.Show()
 
         Else
             MsgBox("Funcionário não cadastrado", vbInformation Or vbMsgBoxSetForeground)

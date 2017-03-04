@@ -8,6 +8,7 @@ Public NotInheritable Class TipoPerfilFuncionario
     Public Const Vendedor As String = "Vendedor"
     Public Const Tecnico As String = "Tecnico"
     Public Const SupervisorObra As String = "Supervisor da Obra"
+    Public Const Patrocinador As String = "Patrocinador"
 
     Public Shared Function GetTiposList() As List(Of String)
         Dim list As New List(Of String)
@@ -17,6 +18,7 @@ Public NotInheritable Class TipoPerfilFuncionario
         list.Add(Vendedor)
         list.Add(Tecnico)
         list.Add(SupervisorObra)
+        list.Add(Patrocinador)
         Return list
     End Function
 End Class
