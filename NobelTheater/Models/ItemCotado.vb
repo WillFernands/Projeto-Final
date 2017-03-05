@@ -5,9 +5,8 @@ Public Class ItemCotado
     Private _cotacao As Cotacao
     Private _produto As Produto
 
-    Public Sub New(quantidade As Integer, cotacao As Cotacao, produto As Produto)
+    Public Sub New(quantidade As Integer, produto As Produto)
         _quantidade = quantidade
-        _cotacao = cotacao
         _produto = produto
     End Sub
 

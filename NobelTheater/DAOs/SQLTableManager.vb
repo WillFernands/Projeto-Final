@@ -79,6 +79,8 @@ Public Module SQLTableManager
         strSQL.Append("nome VARCHAR(100) NOT NULL, ")
         strSQL.Append("precoUnit FLOAT NOT NULL, ")
         strSQL.Append("descricao VARCHAR(500) NULL, ")
+        strSQL.Append("tipo VARCHAR(50) NULL, ")
+        strSQL.Append("unidade VARCHAR(50) NULL, ")
         strSQL.Append("imagem IMAGE NULL)")
 
         Return conn.ExecuteCommand(strSQL.ToString)
@@ -95,7 +97,6 @@ Public Module SQLTableManager
         strSQL.Append("codigoProduto BIGINT NOT NULL, ")
         strSQL.Append("PRIMARY KEY (codigoProduto, dataAlerta, observacao), ")
         strSQL.Append("CONSTRAINT Alertas_FK FOREIGN KEY (codigoProduto) REFERENCES Produtos (codigo))")
-        strSQL.Append("")
 
         Return conn.ExecuteCommand(strSQL.ToString)
     End Function
@@ -177,13 +178,12 @@ Public Module SQLTableManager
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("CREATE TABLE Cotacoes (
-  id BIGINT PRIMARY KEY IDENTITY NOT NULL,
-  dataCotacao DATETIME NOT NULL,
-  cnpjFornecedor VARCHAR(14) NOT NULL,
-  statusCotacao VARCHAR(20) NOT NULL,
-  CONSTRAINT Cotacoes_FK FOREIGN KEY (cnpjFornecedor) REFERENCES Fornecedores (cnpj))
-")
+        strSQL.Append("CREATE TABLE Cotacoes (")
+        strSQL.Append("id BIGINT PRIMARY KEY IDENTITY NOT NULL, ")
+        strSQL.Append("dataCotacao DATETIME Not NULL, ")
+        strSQL.Append("cnpjFornecedor VARCHAR(14) NOT NULL, ")
+        strSQL.Append("statusCotacao VARCHAR(20) NOT NULL, ")
+        strSQL.Append("CONSTRAINT Cotacoes_FK FOREIGN KEY (cnpjFornecedor) REFERENCES Fornecedores (cnpj))")
 
         Return conn.ExecuteCommand(strSQL.ToString)
     End Function
@@ -353,14 +353,13 @@ Public Module SQLTableManager
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("CREATE TABLE ItensCotados (
-  codigoProduto BIGINT NOT NULL,
-  idCotacao BIGINT NOT NULL,
-  quantidade INT NOT NULL,
-  PRIMARY KEY (codigoProduto, idCotacao),
-  CONSTRAINT ItensCotados_FK FOREIGN KEY (codigoProduto) REFERENCES Produtos (codigo),
-  CONSTRAINT ItensCotados_FK2 FOREIGN KEY (idCotacao) REFERENCES Cotacoes (id))
-")
+        strSQL.Append("CREATE TABLE ItensCotados ( ")
+        strSQL.Append("codigoProduto BIGINT Not NULL, ")
+        strSQL.Append("idCotacao BIGINT NOT NULL, ")
+        strSQL.Append("quantidade INT Not NULL, ")
+        strSQL.Append("PRIMARY KEY (codigoProduto, idCotacao), ")
+        strSQL.Append("CONSTRAINT ItensCotados_FK FOREIGN KEY (codigoProduto) REFERENCES Produtos (codigo), ")
+        strSQL.Append("CONSTRAINT ItensCotados_FK2 FOREIGN KEY (idCotacao) REFERENCES Cotacoes (id)) ")
 
         Return conn.ExecuteCommand(strSQL.ToString)
     End Function
@@ -621,6 +620,36 @@ Public Module SQLTableManager
         f3.Supervisor = f1
         f3.Matricula = FuncionarioBC.Insert(f3)
         FuncionarioBC.UpdateSupervisor(f3)
+    End Sub
+
+    'OK
+    Public Sub PopulateFornecedores()
+        Dim f1 As New Fornecedor("12345678901234", "Farinha LTDA", "Farinha", "998161345", Now, TipoFornecedor.FornecedorAssistencia, "Rua Teste 01", "100", "Boqueirão", "Curitiba", "PR", "81450920", TipoImovel.Escritorio)
+        f1.Assistencia = f1
+        FornecedorBC.Insert(f1)
+        FornecedorBC.UpdateAssistencia(f1)
+
+        Dim f2 As New Fornecedor("79845678901564", "Biscoito LTDA", "Biscoito", "998164589", Now, TipoFornecedor.FornecedorAssistencia, "Rua Teste 05", "780", "CIC", "Curitiba", "PR", "81450789", TipoImovel.Fabrica)
+        f2.Assistencia = f2
+        FornecedorBC.Insert(f2)
+        FornecedorBC.UpdateAssistencia(f2)
+
+        Dim f3 As New Fornecedor("41745678901951", "Peças S/A", "Peças", "998167894", Now, TipoFornecedor.FornecedorAssistencia, "Rua Teste 04", "500", "Santa Cândida", "Curitiba", "PR", "84789654", TipoImovel.Escritorio)
+        f3.Assistencia = f3
+        FornecedorBC.Insert(f3)
+        FornecedorBC.UpdateAssistencia(f3)
+    End Sub
+
+    'OK
+    Public Sub PopulateProdutos()
+        Dim p1 As New Produto("Cabo legal", 5.0, "Cabo", TipoProduto.Cabo, UnidadeProduto.Metro)
+        ProdutoBC.Insert(p1)
+
+        Dim p2 As New Produto("Roteador dos bons", 500.0, "Roteador", TipoProduto.Roteador, UnidadeProduto.Peca)
+        ProdutoBC.Insert(p2)
+
+        Dim p3 As New Produto("Projetor bacana", 850.0, "Projetor", TipoProduto.Projetor, UnidadeProduto.Peca)
+        ProdutoBC.Insert(p3)
     End Sub
 
     'OK

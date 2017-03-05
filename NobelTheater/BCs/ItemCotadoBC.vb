@@ -7,7 +7,6 @@ Public Class ItemCotadoBC
 
     Public Shared Function Validate(itemCotado As ItemCotado) As Boolean
         If (itemCotado Is Nothing) Then Return False
-        If (itemCotado.Cotacao Is Nothing) Then Return False
         If (itemCotado.Quantidade = 0) Then Return False
         If (ProdutoBC.Validate(itemCotado.Produto) = False) Then Return False
         Return True

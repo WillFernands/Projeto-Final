@@ -6,7 +6,7 @@ Imports System.Text
 Public Class CotacaoDAO
 
     'OK
-    Public Function Insert(ByVal cotacao As Cotacao) As Boolean
+    Public Function Insert(ByVal cotacao As Cotacao) As Long
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -14,10 +14,13 @@ Public Class CotacaoDAO
         strSQL.Append("VALUES(@data, @cnpj, @status);")
 
         conn.AddParameter("@data", cotacao.DataCotacao)
-        conn.AddParameter("@cnpj", cotacao.Fornecedor.CNPJ)
+        conn.AddParameter("@cnpj", cotacao.Fornecedor.Cnpj)
         conn.AddParameter("@status", cotacao.Status)
 
-        Return conn.ExecuteCommand(strSQL.ToString)
+        If (conn.ExecuteCommand(strSQL.ToString) = False) Then Return 0
+
+        conn = New Connection
+        Return CLng(conn.ExecuteScalar("SELECT IDENT_CURRENT('Cotacoes')"))
 
     End Function
 

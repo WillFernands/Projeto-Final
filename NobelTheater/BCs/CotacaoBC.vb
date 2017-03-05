@@ -21,11 +21,11 @@ Public Class CotacaoBC
         Return True
     End Function
 
-    Public Shared Function Insert(cotacao As Cotacao) As Boolean
+    Public Shared Function Insert(cotacao As Cotacao) As Long
         If (CotacaoBC.Validate(cotacao)) Then
             Return cotacaoDAO.Insert(cotacao)
         End If
-        Return False
+        Return 0
     End Function
 
     Public Shared Function UpdateStatus(cotacao As Cotacao) As Boolean

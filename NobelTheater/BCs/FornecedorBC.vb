@@ -56,8 +56,19 @@ Public Class FornecedorBC
         Return False
     End Function
 
+    Public Shared Function UpdateAssistencia(Fornecedor As Fornecedor) As Boolean
+        If (FornecedorBC.Validate(Fornecedor)) Then
+            Return FornecedorDAO.UpdateAssistencia(Fornecedor)
+        End If
+        Return False
+    End Function
+
     Public Shared Function FindByCNPJ(cnpj As String) As Fornecedor
         Return FornecedorDAO.FindByCNPJ(cnpj)
+    End Function
+
+    Public Shared Function FindAll() As List(Of Fornecedor)
+        Return FornecedorDAO.FindAll()
     End Function
 
     Public Shared Function FindByRazaoSocial(razao As String) As Fornecedor

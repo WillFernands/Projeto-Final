@@ -8,7 +8,6 @@ Public Class ProdutoBC
     Public Shared Function Validate(produto As Produto, Optional validateImage As Boolean = False) As Boolean
 
         If (produto Is Nothing) Then Return False
-        If (produto.Codigo = 0) Then Return False
         If (String.IsNullOrWhiteSpace(produto.Nome)) Then Return False
         If (produto.PrecoUnit = 0.0) Then Return False
         If (String.IsNullOrWhiteSpace(produto.Descricao)) Then Return False
@@ -19,11 +18,11 @@ Public Class ProdutoBC
         Return True
     End Function
 
-    Public Shared Function Insert(produto As Produto) As Boolean
+    Public Shared Function Insert(produto As Produto) As Long
         If (ProdutoBC.Validate(produto)) Then
             Return produtoDAO.Insert(produto)
         End If
-        Return False
+        Return 0
     End Function
 
     Public Shared Function Update(produto As Produto) As Boolean

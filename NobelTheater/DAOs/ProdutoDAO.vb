@@ -6,26 +6,27 @@ Imports System.Text
 Public Class ProdutoDAO
 
     'OK
-    Public Function Insert(ByVal produto As Produto) As Boolean
+    Public Function Insert(ByVal produto As Produto) As Long
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("INSERT INTO Produtos(nome, precoUnit, descricao) ")
-        strSQL.Append("VALUES(@nome, @precoUnit, @descricao);")
+        strSQL.Append("INSERT INTO Produtos(nome, precoUnit, descricao, tipo, unidade) ")
+        strSQL.Append("VALUES(@nome, @precoUnit, @descricao, @tipo, @unidade);")
 
         conn.AddParameter("@nome", produto.Nome)
         conn.AddParameter("@precoUnit", produto.PrecoUnit)
         conn.AddParameter("@descricao", produto.Descricao)
+        conn.AddParameter("@tipo", produto.Tipo)
+        conn.AddParameter("@unidade", produto.Unidade)
 
-        If (conn.ExecuteCommand(strSQL.ToString) = False) Then Return False
+        If (conn.ExecuteCommand(strSQL.ToString) = False) Then Return 0
 
         If (produto.Imagem IsNot Nothing) Then
-            conn = New Connection
-            produto.Codigo = CLng(conn.ExecuteScalar("SELECT IDENT_CURRENT('Produtos')"))
-            Return UpdateImage(produto)
+            UpdateImage(produto)
         End If
 
-        Return True
+        conn = New Connection
+        Return CLng(conn.ExecuteScalar("SELECT IDENT_CURRENT('Produtos')"))
 
     End Function
 
@@ -38,6 +39,8 @@ Public Class ProdutoDAO
         strSQL.Append("SET nome = @nome, ")
         strSQL.Append("precoUnit = @precoUnit, ")
         strSQL.Append("descricao = @descricao, ")
+        strSQL.Append("tipo = @tipo, ")
+        strSQL.Append("unidade = @unidade ")
         strSQL.Append("WHERE codigo = @codigo;")
 
         conn.AddParameter("@nome", produto.Nome)
@@ -85,7 +88,11 @@ Public Class ProdutoDAO
             produto.Nome = CStr(row.Item("nome"))
             produto.PrecoUnit = CDbl(row.Item("precoUnit"))
             produto.Descricao = CStr(row.Item("descricao"))
-            produto.Imagem = DirectCast(row.Item("imagem"), Image)
+            produto.Tipo = CStr(row.Item("tipo"))
+            produto.Unidade = CStr(row.Item("unidade"))
+            If (IsDBNull(row.Item("imagem")) = False) Then
+                produto.Imagem = DirectCast(row.Item("imagem"), Image)
+            End If
             produtos.Add(produto)
         Next
 
@@ -115,8 +122,11 @@ Public Class ProdutoDAO
         produto.Nome = CStr(dt.Rows(0).Item("nome"))
         produto.PrecoUnit = CDbl(dt.Rows(0).Item("precoUnit"))
         produto.Descricao = CStr(dt.Rows(0).Item("descricao"))
-        produto.Imagem = DirectCast(dt.Rows(0).Item("imagem"), Image)
-
+        produto.Tipo = CStr(dt.Rows(0).Item("tipo"))
+        produto.Unidade = CStr(dt.Rows(0).Item("unidade"))
+        If (IsDBNull(dt.Rows(0).Item("imagem")) = False) Then
+            produto.Imagem = DirectCast(dt.Rows(0).Item("imagem"), Image)
+        End If
         Return produto
 
     End Function

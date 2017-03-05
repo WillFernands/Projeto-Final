@@ -3,7 +3,6 @@ Option Strict On
 Imports NobelTheater
 
 Public Class Fornecedor
-    Private _id As Long
     Private _cnpj As String
     Private _razaoSocial As String
     Private _nomeFantasia As String
@@ -23,8 +22,7 @@ Public Class Fornecedor
 
     End Sub
 
-    Public Sub New(id As Long, cnpj As String, razaoSocial As String, nomeFantasia As String, telefone As String, inicioRelacionamento As Date, tipoFornecedor As String, logradouro As String, numero As String, bairro As String, cidade As String, estado As String, cep As String, tipoEndereco As String, Assistencia As Fornecedor)
-        _id = id
+    Public Sub New(cnpj As String, razaoSocial As String, nomeFantasia As String, telefone As String, inicioRelacionamento As Date, tipoFornecedor As String, logradouro As String, numero As String, bairro As String, cidade As String, estado As String, cep As String, tipoEndereco As String)
         _cnpj = cnpj
         _razaoSocial = razaoSocial
         _nomeFantasia = nomeFantasia
@@ -38,17 +36,7 @@ Public Class Fornecedor
         _estado = estado
         _cep = cep
         _tipoEndereco = tipoEndereco
-        _Assistencia = Assistencia
     End Sub
-
-    Public Property Id As Long
-        Get
-            Return _id
-        End Get
-        Set(value As Long)
-            _id = value
-        End Set
-    End Property
 
     Public Property Cnpj As String
         Get
