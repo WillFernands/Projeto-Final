@@ -30,6 +30,30 @@ Partial Class ControleFornecedor
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.TextBox16 = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.TextBox15 = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.TextBox14 = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.TextBox11 = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
@@ -92,12 +116,8 @@ Partial Class ControleFornecedor
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -179,6 +199,26 @@ Partial Class ControleFornecedor
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.ComboBox3)
+        Me.TabPage1.Controls.Add(Me.Label20)
+        Me.TabPage1.Controls.Add(Me.Button3)
+        Me.TabPage1.Controls.Add(Me.Button2)
+        Me.TabPage1.Controls.Add(Me.ComboBox2)
+        Me.TabPage1.Controls.Add(Me.Label19)
+        Me.TabPage1.Controls.Add(Me.ComboBox1)
+        Me.TabPage1.Controls.Add(Me.TextBox16)
+        Me.TabPage1.Controls.Add(Me.Label18)
+        Me.TabPage1.Controls.Add(Me.TextBox15)
+        Me.TabPage1.Controls.Add(Me.Label17)
+        Me.TabPage1.Controls.Add(Me.TextBox14)
+        Me.TabPage1.Controls.Add(Me.Label16)
+        Me.TabPage1.Controls.Add(Me.Label15)
+        Me.TabPage1.Controls.Add(Me.TextBox12)
+        Me.TabPage1.Controls.Add(Me.Label14)
+        Me.TabPage1.Controls.Add(Me.TextBox11)
+        Me.TabPage1.Controls.Add(Me.Label13)
+        Me.TabPage1.Controls.Add(Me.TextBox10)
+        Me.TabPage1.Controls.Add(Me.Label12)
         Me.TabPage1.Controls.Add(Me.TextBox9)
         Me.TabPage1.Controls.Add(Me.Label11)
         Me.TabPage1.Controls.Add(Me.TextBox8)
@@ -192,6 +232,204 @@ Partial Class ControleFornecedor
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Novo Fornecedor"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(352, 329)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 24
+        Me.Button3.Text = "Limpar"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button2.Location = New System.Drawing.Point(271, 329)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 23
+        Me.Button2.Text = "Salvar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(64, 157)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(167, 21)
+        Me.ComboBox2.TabIndex = 22
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(3, 196)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(95, 13)
+        Me.Label19.TabIndex = 21
+        Me.Label19.Text = "Tipo de Endereço:"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(121, 193)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(550, 21)
+        Me.ComboBox1.TabIndex = 20
+        '
+        'TextBox16
+        '
+        Me.TextBox16.Location = New System.Drawing.Point(289, 85)
+        Me.TextBox16.Name = "TextBox16"
+        Me.TextBox16.Size = New System.Drawing.Size(261, 20)
+        Me.TextBox16.TabIndex = 19
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(252, 88)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(31, 13)
+        Me.Label18.TabIndex = 18
+        Me.Label18.Text = "CEP:"
+        '
+        'TextBox15
+        '
+        Me.TextBox15.Location = New System.Drawing.Point(505, 157)
+        Me.TextBox15.Name = "TextBox15"
+        Me.TextBox15.Size = New System.Drawing.Size(166, 20)
+        Me.TextBox15.TabIndex = 17
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(462, 160)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(37, 13)
+        Me.Label17.TabIndex = 16
+        Me.Label17.Text = "Bairro:"
+        '
+        'TextBox14
+        '
+        Me.TextBox14.Location = New System.Drawing.Point(289, 157)
+        Me.TextBox14.Name = "TextBox14"
+        Me.TextBox14.Size = New System.Drawing.Size(167, 20)
+        Me.TextBox14.TabIndex = 15
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(240, 160)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(43, 13)
+        Me.Label16.TabIndex = 14
+        Me.Label16.Text = "Cidade:"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(3, 160)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(43, 13)
+        Me.Label15.TabIndex = 12
+        Me.Label15.Text = "Estado:"
+        '
+        'TextBox12
+        '
+        Me.TextBox12.Location = New System.Drawing.Point(584, 121)
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.Size = New System.Drawing.Size(87, 20)
+        Me.TextBox12.TabIndex = 11
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(556, 124)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(22, 13)
+        Me.Label14.TabIndex = 10
+        Me.Label14.Text = "Nº:"
+        '
+        'TextBox11
+        '
+        Me.TextBox11.Location = New System.Drawing.Point(64, 121)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.Size = New System.Drawing.Size(486, 20)
+        Me.TextBox11.TabIndex = 9
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(3, 124)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(56, 13)
+        Me.Label13.TabIndex = 8
+        Me.Label13.Text = "Endereço:"
+        '
+        'TextBox10
+        '
+        Me.TextBox10.Location = New System.Drawing.Point(64, 85)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.Size = New System.Drawing.Size(167, 20)
+        Me.TextBox10.TabIndex = 7
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(3, 88)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(52, 13)
+        Me.Label12.TabIndex = 6
+        Me.Label12.Text = "Telefone:"
+        '
+        'TextBox9
+        '
+        Me.TextBox9.Location = New System.Drawing.Point(64, 49)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(607, 20)
+        Me.TextBox9.TabIndex = 5
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(3, 52)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(50, 13)
+        Me.Label11.TabIndex = 4
+        Me.Label11.Text = "Fantasia:"
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(316, 13)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(355, 20)
+        Me.TextBox8.TabIndex = 3
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(237, 16)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(73, 13)
+        Me.Label10.TabIndex = 2
+        Me.Label10.Text = "Razão Social:"
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Location = New System.Drawing.Point(65, 13)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(166, 20)
+        Me.TextBox7.TabIndex = 1
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label9.Location = New System.Drawing.Point(3, 16)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(37, 13)
+        Me.Label9.TabIndex = 0
+        Me.Label9.Text = "CNPJ:"
         '
         'TabPage2
         '
@@ -659,54 +897,22 @@ Partial Class ControleFornecedor
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
-        'Label9
+        'Label20
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label9.Location = New System.Drawing.Point(6, 16)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(37, 13)
-        Me.Label9.TabIndex = 0
-        Me.Label9.Text = "CNPJ:"
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(3, 235)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(103, 13)
+        Me.Label20.TabIndex = 25
+        Me.Label20.Text = "Tipo de Fornecedor:"
         '
-        'TextBox7
+        'ComboBox3
         '
-        Me.TextBox7.Location = New System.Drawing.Point(49, 13)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(166, 20)
-        Me.TextBox7.TabIndex = 1
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(222, 16)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(73, 13)
-        Me.Label10.TabIndex = 2
-        Me.Label10.Text = "Razão Social:"
-        '
-        'TextBox8
-        '
-        Me.TextBox8.Location = New System.Drawing.Point(301, 13)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(338, 20)
-        Me.TextBox8.TabIndex = 3
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(6, 46)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(108, 13)
-        Me.Label11.TabIndex = 4
-        Me.Label11.Text = "Fantasia da empresa:"
-        '
-        'TextBox9
-        '
-        Me.TextBox9.Location = New System.Drawing.Point(120, 43)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(519, 20)
-        Me.TextBox9.TabIndex = 5
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Location = New System.Drawing.Point(121, 232)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(550, 21)
+        Me.ComboBox3.TabIndex = 26
         '
         'ControleFornecedor
         '
@@ -812,4 +1018,24 @@ Partial Class ControleFornecedor
     Friend WithEvents Label11 As Label
     Friend WithEvents TextBox8 As TextBox
     Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents TextBox10 As TextBox
+    Friend WithEvents TextBox11 As TextBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents Label19 As Label
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents TextBox16 As TextBox
+    Friend WithEvents Label18 As Label
+    Friend WithEvents TextBox15 As TextBox
+    Friend WithEvents Label17 As Label
+    Friend WithEvents TextBox14 As TextBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents TextBox12 As TextBox
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents Label20 As Label
 End Class
