@@ -23,18 +23,20 @@ Partial Class ControleFornecedor
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.PerfilTF = New System.Windows.Forms.Label()
+        Me.MatriculaTF = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TipoNovoFornecedorCB = New System.Windows.Forms.ComboBox()
+        Me.Label20 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.TipoEnderecoNovoFornecedorCB = New System.Windows.Forms.ComboBox()
         Me.TextBox16 = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.TextBox15 = New System.Windows.Forms.TextBox()
@@ -67,8 +69,6 @@ Partial Class ControleFornecedor
         Me.CEP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Remover = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -116,8 +116,6 @@ Partial Class ControleFornecedor
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -131,41 +129,41 @@ Partial Class ControleFornecedor
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.PerfilTF)
+        Me.Panel1.Controls.Add(Me.MatriculaTF)
+        Me.Panel1.Controls.Add(Me.Label21)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Location = New System.Drawing.Point(12, 32)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(705, 100)
         Me.Panel1.TabIndex = 5
         '
-        'Label5
+        'PerfilTF
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(140, 72)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(127, 13)
-        Me.Label5.TabIndex = 3
-        Me.Label5.Text = "Perfil de Acesso: Gerente"
+        Me.PerfilTF.AutoSize = True
+        Me.PerfilTF.Location = New System.Drawing.Point(140, 72)
+        Me.PerfilTF.Name = "PerfilTF"
+        Me.PerfilTF.Size = New System.Drawing.Size(86, 13)
+        Me.PerfilTF.TabIndex = 12
+        Me.PerfilTF.Text = "Perfil de Acesso:"
         '
-        'Label4
+        'MatriculaTF
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(140, 44)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(88, 13)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Matrícula: 00150"
+        Me.MatriculaTF.AutoSize = True
+        Me.MatriculaTF.Location = New System.Drawing.Point(140, 44)
+        Me.MatriculaTF.Name = "MatriculaTF"
+        Me.MatriculaTF.Size = New System.Drawing.Size(55, 13)
+        Me.MatriculaTF.TabIndex = 11
+        Me.MatriculaTF.Text = "Matrícula:"
         '
-        'Label3
+        'Label21
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(140, 16)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(120, 13)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Nome: Leonardo Nunes"
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(140, 16)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(38, 13)
+        Me.Label21.TabIndex = 10
+        Me.Label21.Text = "Nome:"
         '
         'PictureBox1
         '
@@ -199,13 +197,13 @@ Partial Class ControleFornecedor
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.ComboBox3)
+        Me.TabPage1.Controls.Add(Me.TipoNovoFornecedorCB)
         Me.TabPage1.Controls.Add(Me.Label20)
         Me.TabPage1.Controls.Add(Me.Button3)
         Me.TabPage1.Controls.Add(Me.Button2)
         Me.TabPage1.Controls.Add(Me.ComboBox2)
         Me.TabPage1.Controls.Add(Me.Label19)
-        Me.TabPage1.Controls.Add(Me.ComboBox1)
+        Me.TabPage1.Controls.Add(Me.TipoEnderecoNovoFornecedorCB)
         Me.TabPage1.Controls.Add(Me.TextBox16)
         Me.TabPage1.Controls.Add(Me.Label18)
         Me.TabPage1.Controls.Add(Me.TextBox15)
@@ -233,9 +231,26 @@ Partial Class ControleFornecedor
         Me.TabPage1.Text = "Novo Fornecedor"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'TipoNovoFornecedorCB
+        '
+        Me.TipoNovoFornecedorCB.FormattingEnabled = True
+        Me.TipoNovoFornecedorCB.Location = New System.Drawing.Point(505, 195)
+        Me.TipoNovoFornecedorCB.Name = "TipoNovoFornecedorCB"
+        Me.TipoNovoFornecedorCB.Size = New System.Drawing.Size(166, 21)
+        Me.TipoNovoFornecedorCB.TabIndex = 26
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(383, 199)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(103, 13)
+        Me.Label20.TabIndex = 25
+        Me.Label20.Text = "Tipo de Fornecedor:"
+        '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(352, 329)
+        Me.Button3.Location = New System.Drawing.Point(336, 285)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 24
@@ -245,7 +260,7 @@ Partial Class ControleFornecedor
         'Button2
         '
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Button2.Location = New System.Drawing.Point(271, 329)
+        Me.Button2.Location = New System.Drawing.Point(255, 285)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 23
@@ -269,13 +284,13 @@ Partial Class ControleFornecedor
         Me.Label19.TabIndex = 21
         Me.Label19.Text = "Tipo de Endereço:"
         '
-        'ComboBox1
+        'TipoEnderecoNovoFornecedorCB
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(121, 193)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(550, 21)
-        Me.ComboBox1.TabIndex = 20
+        Me.TipoEnderecoNovoFornecedorCB.FormattingEnabled = True
+        Me.TipoEnderecoNovoFornecedorCB.Location = New System.Drawing.Point(121, 193)
+        Me.TipoEnderecoNovoFornecedorCB.Name = "TipoEnderecoNovoFornecedorCB"
+        Me.TipoEnderecoNovoFornecedorCB.Size = New System.Drawing.Size(162, 21)
+        Me.TipoEnderecoNovoFornecedorCB.TabIndex = 20
         '
         'TextBox16
         '
@@ -437,8 +452,6 @@ Partial Class ControleFornecedor
         Me.TabPage2.Controls.Add(Me.TextBox6)
         Me.TabPage2.Controls.Add(Me.Label8)
         Me.TabPage2.Controls.Add(Me.EnderecosDT)
-        Me.TabPage2.Controls.Add(Me.TextBox5)
-        Me.TabPage2.Controls.Add(Me.Label7)
         Me.TabPage2.Controls.Add(Me.TextBox3)
         Me.TabPage2.Controls.Add(Me.Label6)
         Me.TabPage2.Controls.Add(Me.TextBox2)
@@ -472,7 +485,6 @@ Partial Class ControleFornecedor
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(81, 20)
         Me.TextBox6.TabIndex = 35
-        Me.TextBox6.Text = "(41) 3249-1000"
         '
         'Label8
         '
@@ -551,30 +563,12 @@ Partial Class ControleFornecedor
         Me.Remover.ReadOnly = True
         Me.Remover.Width = 75
         '
-        'TextBox5
-        '
-        Me.TextBox5.Location = New System.Drawing.Point(358, 121)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(120, 20)
-        Me.TextBox5.TabIndex = 32
-        Me.TextBox5.Text = "01.586.2512-6"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(240, 124)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(97, 13)
-        Me.Label7.TabIndex = 31
-        Me.Label7.Text = "Inscrição Estadual:"
-        '
         'TextBox3
         '
         Me.TextBox3.Location = New System.Drawing.Point(91, 121)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(120, 20)
         Me.TextBox3.TabIndex = 30
-        Me.TextBox3.Text = "015.862.51/0001-56"
         '
         'Label6
         '
@@ -592,7 +586,6 @@ Partial Class ControleFornecedor
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(41, 20)
         Me.TextBox2.TabIndex = 28
-        Me.TextBox2.Text = "072"
         '
         'TextBox1
         '
@@ -600,7 +593,6 @@ Partial Class ControleFornecedor
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(536, 20)
         Me.TextBox1.TabIndex = 27
-        Me.TextBox1.Text = "Minha Casa acessórios e equipamentos LTDA"
         '
         'Label2
         '
@@ -628,7 +620,6 @@ Partial Class ControleFornecedor
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(503, 20)
         Me.TextBox4.TabIndex = 24
-        Me.TextBox4.Text = "072 - Minha Casa acessórios e equipamentos LTDA"
         '
         'Button1
         '
@@ -897,23 +888,6 @@ Partial Class ControleFornecedor
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(3, 235)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(103, 13)
-        Me.Label20.TabIndex = 25
-        Me.Label20.Text = "Tipo de Fornecedor:"
-        '
-        'ComboBox3
-        '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(121, 232)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(550, 21)
-        Me.ComboBox3.TabIndex = 26
-        '
         'ControleFornecedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -942,9 +916,6 @@ Partial Class ControleFornecedor
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
@@ -994,8 +965,6 @@ Partial Class ControleFornecedor
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
-    Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents EnderecosDT As System.Windows.Forms.DataGridView
@@ -1025,7 +994,7 @@ Partial Class ControleFornecedor
     Friend WithEvents Label14 As Label
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents Label19 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents TipoEnderecoNovoFornecedorCB As ComboBox
     Friend WithEvents TextBox16 As TextBox
     Friend WithEvents Label18 As Label
     Friend WithEvents TextBox15 As TextBox
@@ -1036,6 +1005,9 @@ Partial Class ControleFornecedor
     Friend WithEvents TextBox12 As TextBox
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
-    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents TipoNovoFornecedorCB As ComboBox
     Friend WithEvents Label20 As Label
+    Friend WithEvents PerfilTF As Label
+    Friend WithEvents MatriculaTF As Label
+    Friend WithEvents Label21 As Label
 End Class

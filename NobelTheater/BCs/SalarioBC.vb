@@ -12,7 +12,7 @@ Public Class SalarioBC
         If (String.IsNullOrWhiteSpace(salario.Motivo)) Then Return False
         If (salario.Inicio = Nothing) Then Return False
         If (salario.Inicio > Now) Then Return False
-        If (salario.Valor = 0.0) Then Return False
+        If (salario.Valor < 0.0) Then Return False
 
         Return True
     End Function

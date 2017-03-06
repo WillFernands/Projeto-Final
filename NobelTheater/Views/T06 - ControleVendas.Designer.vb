@@ -102,6 +102,7 @@ Partial Class ControleVendas
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -179,6 +180,7 @@ Partial Class ControleVendas
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.AcompanharVendaTab)
         Me.TabControl1.Controls.Add(Me.TabPage2)
@@ -757,6 +759,15 @@ Partial Class ControleVendas
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
+        'TabPage4
+        '
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Size = New System.Drawing.Size(685, 335)
+        Me.TabPage4.TabIndex = 8
+        Me.TabPage4.Text = "Acompanhar Orcamentos"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
         'ControleVendas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -871,4 +882,5 @@ Partial Class ControleVendas
     Friend WithEvents Quantidade As DataGridViewTextBoxColumn
     Friend WithEvents PrecoTotal As DataGridViewTextBoxColumn
     Friend WithEvents Remover As DataGridViewButtonColumn
+    Friend WithEvents TabPage4 As TabPage
 End Class

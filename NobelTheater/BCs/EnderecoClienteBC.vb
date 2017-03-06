@@ -14,7 +14,7 @@ Public Class EnderecoClienteBC
         If (String.IsNullOrWhiteSpace(enderecoCliente.Cidade)) Then Return False
         If (String.IsNullOrWhiteSpace(enderecoCliente.Estado)) Then Return False
         If (String.IsNullOrWhiteSpace(enderecoCliente.Cep)) Then Return False
-        If (TipoImovel.GetTiposList.Contains(enderecoCliente.Tipo) = False) Then Return False
+        If (TipoEndereco.GetTiposList.Contains(enderecoCliente.Tipo) = False) Then Return False
         Return True
     End Function
 

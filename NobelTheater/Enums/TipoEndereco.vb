@@ -1,7 +1,7 @@
 ﻿Option Explicit On
 Option Strict On
 
-Public NotInheritable Class TipoImovel
+Public NotInheritable Class TipoEndereco
     Public Const Casa As String = "Casa"
     Public Const Apartamento As String = "Apartamento"
     Public Const Sobrado As String = "Sobrado"

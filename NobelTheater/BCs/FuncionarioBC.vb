@@ -18,7 +18,7 @@ Public Class FuncionarioBC
         If (String.IsNullOrWhiteSpace(funcionario.Cidade)) Then Return False
         If (String.IsNullOrWhiteSpace(funcionario.Estado)) Then Return False
         If (String.IsNullOrWhiteSpace(funcionario.Cep)) Then Return False
-        If (TipoImovel.GetTiposList.Contains(funcionario.TipoEndereco) = False) Then Return False
+        If (TipoEndereco.GetTiposList.Contains(funcionario.TipoEndereco) = False) Then Return False
         If (TipoPerfilFuncionario.GetTiposList.Contains(funcionario.Perfil) = False) Then Return False
 
         For Each item As Salario In funcionario.Salarios
@@ -115,6 +115,10 @@ Public Class FuncionarioBC
 
     Public Shared Function IsRevogado(funcionario As Funcionario) As Boolean
         Return funcionarioDAO.IsRevogado(funcionario)
+    End Function
+
+    Public Shared Function RetrieveSenha(funcionario As Funcionario) As String
+        Return funcionarioDAO.RetrieveSenha(funcionario)
     End Function
 
 End Class

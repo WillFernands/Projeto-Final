@@ -593,17 +593,17 @@ Public Module SQLTableManager
 
     'OK
     Public Sub PopulateFuncionarios()
-        Dim f1 As New Funcionario("08219004983", "Leonardo Nunes", "41998161345", Now, TipoPerfilFuncionario.Gerente, TipoCargo.GerenteAdm, "Rua Cidade de Maria Helena", "476", "CIC", "Curitiba", "PR", "81250360", TipoImovel.Casa)
+        Dim f1 As New Funcionario("08219004983", "Leonardo Nunes", "41998161345", Now, TipoPerfilFuncionario.Gerente, TipoCargo.GerenteAdm, "Rua Cidade de Maria Helena", "476", "CIC", "Curitiba", "PR", "81250360", TipoEndereco.Casa)
         f1.Supervisor = f1
         f1.Matricula = FuncionarioBC.Insert(f1)
         FuncionarioBC.UpdateSupervisor(f1)
 
-        Dim f2 As New Funcionario("04567812311", "Teste 02", "41998161346", Now, TipoPerfilFuncionario.AssistenteAdm, TipoCargo.AssistenteAdm, "Rua Cidade de Maria Helena", "S/N", "CIC", "Curitiba", "PR", "81250360", TipoImovel.Casa)
+        Dim f2 As New Funcionario("04567812311", "Teste 02", "41998161346", Now, TipoPerfilFuncionario.AssistenteAdm, TipoCargo.AssistenteAdm, "Rua Cidade de Maria Helena", "S/N", "CIC", "Curitiba", "PR", "81250360", TipoEndereco.Casa)
         f2.Supervisor = f1
         f2.Matricula = FuncionarioBC.Insert(f2)
         FuncionarioBC.UpdateSupervisor(f2)
 
-        Dim f3 As New Funcionario("04597513213", "Teste 03", "41998161347", Now, TipoPerfilFuncionario.SupervisorObra, TipoCargo.SupervisorObra, "Rua Cidade de Maria Helena", "S/N", "CIC", "Curitiba", "PR", "81250360", TipoImovel.Casa)
+        Dim f3 As New Funcionario("04597513213", "Teste 03", "41998161347", Now, TipoPerfilFuncionario.SupervisorObra, TipoCargo.SupervisorObra, "Rua Cidade de Maria Helena", "S/N", "CIC", "Curitiba", "PR", "81250360", TipoEndereco.Casa)
         f3.Supervisor = f1
         f3.Matricula = FuncionarioBC.Insert(f3)
         FuncionarioBC.UpdateSupervisor(f3)
@@ -611,17 +611,17 @@ Public Module SQLTableManager
 
     'OK
     Public Sub PopulateFornecedores()
-        Dim f1 As New Fornecedor("12345678901234", "Farinha LTDA", "Farinha", "998161345", Now, TipoFornecedor.FornecedorAssistencia, "Rua Teste 01", "100", "Boqueirão", "Curitiba", "PR", "81450920", TipoImovel.Escritorio)
+        Dim f1 As New Fornecedor("12345678901234", "Farinha LTDA", "Farinha", "998161345", Now, TipoFornecedor.FornecedorAssistencia, "Rua Teste 01", "100", "Boqueirão", "Curitiba", "PR", "81450920", TipoEndereco.Escritorio)
         f1.Assistencia = f1
         FornecedorBC.Insert(f1)
         FornecedorBC.UpdateAssistencia(f1)
 
-        Dim f2 As New Fornecedor("79845678901564", "Biscoito LTDA", "Biscoito", "998164589", Now, TipoFornecedor.FornecedorAssistencia, "Rua Teste 05", "780", "CIC", "Curitiba", "PR", "81450789", TipoImovel.Fabrica)
+        Dim f2 As New Fornecedor("79845678901564", "Biscoito LTDA", "Biscoito", "998164589", Now, TipoFornecedor.FornecedorAssistencia, "Rua Teste 05", "780", "CIC", "Curitiba", "PR", "81450789", TipoEndereco.Fabrica)
         f2.Assistencia = f2
         FornecedorBC.Insert(f2)
         FornecedorBC.UpdateAssistencia(f2)
 
-        Dim f3 As New Fornecedor("41745678901951", "Peças S/A", "Peças", "998167894", Now, TipoFornecedor.FornecedorAssistencia, "Rua Teste 04", "500", "Santa Cândida", "Curitiba", "PR", "84789654", TipoImovel.Escritorio)
+        Dim f3 As New Fornecedor("41745678901951", "Peças S/A", "Peças", "998167894", Now, TipoFornecedor.FornecedorAssistencia, "Rua Teste 04", "500", "Santa Cândida", "Curitiba", "PR", "84789654", TipoEndereco.Escritorio)
         f3.Assistencia = f3
         FornecedorBC.Insert(f3)
         FornecedorBC.UpdateAssistencia(f3)
@@ -672,7 +672,7 @@ Public Module SQLTableManager
     'OK
     Public Sub PopulateClientesPF()
         Dim c1 As New ClientePF("Leonardo Nunes", "998161345", Now, "08219004983")
-        Dim endereco As New EnderecoCliente(c1, "Rua Teste 01", "100", "Boqueirão", "Curitiba", "PR", "81450920", TipoImovel.Casa)
+        Dim endereco As New EnderecoCliente(c1, "Rua Teste 01", "100", "Boqueirão", "Curitiba", "PR", "81450920", TipoEndereco.Casa)
         c1.Enderecos.Add(endereco)
         ClientePFBC.Insert(c1)
         For Each enderecoCliente As EnderecoCliente In c1.Enderecos
@@ -680,7 +680,7 @@ Public Module SQLTableManager
         Next
 
         Dim c2 As New ClientePF("Teste 02", "998161345", Now, "48987546153")
-        Dim endereco2 As New EnderecoCliente(c2, "Rua Teste 01", "100", "Boqueirão", "Curitiba", "PR", "81450920", TipoImovel.Casa)
+        Dim endereco2 As New EnderecoCliente(c2, "Rua Teste 01", "100", "Boqueirão", "Curitiba", "PR", "81450920", TipoEndereco.Casa)
         c2.Enderecos.Add(endereco2)
         ClientePFBC.Insert(c2)
         For Each enderecoCliente As EnderecoCliente In c2.Enderecos
@@ -688,7 +688,7 @@ Public Module SQLTableManager
         Next
 
         Dim c3 As New ClientePF("Teste 03", "998161345", Now, "15987546413")
-        Dim endereco3 As New EnderecoCliente(c3, "Rua Teste 01", "100", "Boqueirão", "Curitiba", "PR", "81450920", TipoImovel.Casa)
+        Dim endereco3 As New EnderecoCliente(c3, "Rua Teste 01", "100", "Boqueirão", "Curitiba", "PR", "81450920", TipoEndereco.Casa)
         c3.Enderecos.Add(endereco3)
         ClientePFBC.Insert(c3)
         For Each enderecoCliente As EnderecoCliente In c3.Enderecos
@@ -699,7 +699,7 @@ Public Module SQLTableManager
     'OK
     Public Sub PopulateClientesPJ()
         Dim c1 As New ClientePJ("Biscoito LTDA", "998161245", Now, "12345678901234", "Biscoito")
-        Dim endereco As New EnderecoCliente(c1, "Rua Teste 01", "100", "Boqueirão", "Curitiba", "PR", "81450920", TipoImovel.Casa)
+        Dim endereco As New EnderecoCliente(c1, "Rua Teste 01", "100", "Boqueirão", "Curitiba", "PR", "81450920", TipoEndereco.Casa)
         c1.Enderecos.Add(endereco)
         ClientePJBC.Insert(c1)
         For Each enderecoCliente As EnderecoCliente In c1.Enderecos
@@ -707,7 +707,7 @@ Public Module SQLTableManager
         Next
 
         Dim c2 As New ClientePJ("Bolacha LTDA", "998161299", Now, "48945678901159", "Bolacha")
-        Dim endereco2 As New EnderecoCliente(c2, "Rua Teste 01", "100", "Boqueirão", "Curitiba", "PR", "81450920", TipoImovel.Casa)
+        Dim endereco2 As New EnderecoCliente(c2, "Rua Teste 01", "100", "Boqueirão", "Curitiba", "PR", "81450920", TipoEndereco.Casa)
         c2.Enderecos.Add(endereco2)
         ClientePJBC.Insert(c2)
         For Each enderecoCliente As EnderecoCliente In c2.Enderecos
@@ -715,7 +715,7 @@ Public Module SQLTableManager
         Next
 
         Dim c3 As New ClientePJ("Pão LTDA", "998161200", Now, "72445678901789", "Pão")
-        Dim endereco3 As New EnderecoCliente(c3, "Rua Teste 01", "100", "Boqueirão", "Curitiba", "PR", "81450920", TipoImovel.Casa)
+        Dim endereco3 As New EnderecoCliente(c3, "Rua Teste 01", "100", "Boqueirão", "Curitiba", "PR", "81450920", TipoEndereco.Casa)
         c3.Enderecos.Add(endereco3)
         ClientePJBC.Insert(c3)
         For Each enderecoCliente As EnderecoCliente In c3.Enderecos

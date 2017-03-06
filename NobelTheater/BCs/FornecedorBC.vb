@@ -18,7 +18,7 @@ Public Class FornecedorBC
         If (String.IsNullOrWhiteSpace(fornecedor.Cidade)) Then Return False
         If (String.IsNullOrWhiteSpace(fornecedor.Estado)) Then Return False
         If (String.IsNullOrWhiteSpace(fornecedor.Cep)) Then Return False
-        If (TipoImovel.GetTiposList.Contains(fornecedor.TipoEndereco) = False) Then Return False
+        If (TipoEndereco.GetTiposList.Contains(fornecedor.TipoEndereco) = False) Then Return False
         If (TipoFornecedor.GetTiposList.Contains(fornecedor.TipoFornecedor) = False) Then Return False
         If (FornecedorBC.ValidateAssistencia(fornecedor.Assistencia) = False) Then Return False
         Return True
@@ -37,7 +37,7 @@ Public Class FornecedorBC
         If (String.IsNullOrWhiteSpace(fornecedor.Cidade)) Then Return False
         If (String.IsNullOrWhiteSpace(fornecedor.Estado)) Then Return False
         If (String.IsNullOrWhiteSpace(fornecedor.Cep)) Then Return False
-        If (TipoImovel.GetTiposList.Contains(fornecedor.TipoEndereco) = False) Then Return False
+        If (TipoEndereco.GetTiposList.Contains(fornecedor.TipoEndereco) = False) Then Return False
         If (TipoFornecedor.GetTiposList.Contains(fornecedor.TipoFornecedor) = False) Then Return False
         Return True
     End Function

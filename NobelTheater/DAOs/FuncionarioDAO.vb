@@ -448,6 +448,21 @@ Public Class FuncionarioDAO
         Return False
     End Function
 
+    Public Function RetrieveSenha(ByVal func As Funcionario) As String
+        Dim conn As New Connection
+
+        If (func Is Nothing OrElse func.Matricula = 0) Then Return ""
+
+        conn.AddParameter("@mat", func.Matricula)
+
+        Dim senha As String = CStr(conn.ExecuteScalar("SELECT Senha FROM Funcionarios WHERE Matricula = @mat"))
+
+        If (senha Is Nothing) Then Return ""
+
+        Return senha
+
+    End Function
+
     Public Function IsRevogado(ByVal func As Funcionario) As Boolean
         Dim conn As New Connection
 

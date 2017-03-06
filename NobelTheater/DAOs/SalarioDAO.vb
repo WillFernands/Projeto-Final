@@ -12,10 +12,13 @@ Public Class SalarioDAO
         strSQL.Append("INSERT INTO Salarios(matriculaFuncionario, valor, inicio, fim, motivo) ")
         strSQL.Append("VALUES(@matricula, @valor, @inicio, @fim, @motivo);")
 
-        conn.AddParameter("@matricula", salario.funcionario)
+        conn.AddParameter("@matricula", salario.Funcionario.Matricula)
         conn.AddParameter("@valor", salario.Valor)
         conn.AddParameter("@inicio", salario.Inicio)
-        conn.AddParameter("@fim", salario.Fim)
+        If (salario.Fim = Nothing) Then
+            conn.AddParameter("@fim", DBNull.Value)
+        Else : conn.AddParameter("@fim", salario.Fim)
+        End If
         conn.AddParameter("@motivo", salario.Motivo)
 
         Return conn.ExecuteCommand(strSQL.ToString)

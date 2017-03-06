@@ -1,7 +1,7 @@
 ﻿Public NotInheritable Class TipoCargo
     Public Const GerenteAdm As String = "Gerente Administrativo"
     Public Const GerenteCont As String = "Gerente Contabil"
-    Public Const GerenteAlmox As String = "Gerente de Almoxerifado"
+    Public Const GerenteAlmox As String = "Gerente de Almoxarifado"
     Public Const AssistenteAdm As String = "Assistente Administrativo"
     Public Const AssistenteCont As String = "Assistente Contabil"
     Public Const Vendedor As String = "Vendedor"
