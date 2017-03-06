@@ -23,7 +23,7 @@ Public Class Fornecedor
 
     End Sub
 
-    Public Sub New(id As Long, cnpj As String, razaoSocial As String, nomeFantasia As String, telefone As String, inicioRelacionamento As Date, tipoFornecedor As String, logradouro As String, numero As String, bairro As String, cidade As String, estado As String, cep As String, tipoEndereco As String, Assistencia As String)
+    Public Sub New(id As Long, cnpj As String, razaoSocial As String, nomeFantasia As String, telefone As String, inicioRelacionamento As Date, tipoFornecedor As String, logradouro As String, numero As String, bairro As String, cidade As String, estado As String, cep As Long, tipoEndereco As String, Assistencia As String)
         _id = id
         _cnpj = cnpj
         _razaoSocial = razaoSocial
