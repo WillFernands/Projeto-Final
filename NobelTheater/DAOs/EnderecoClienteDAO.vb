@@ -56,6 +56,9 @@ Public Class EnderecoClienteDAO
 
     'OK
     Public Function FindByCliente(cliente As Cliente) As List(Of EnderecoCliente)
+
+        If (cliente Is Nothing) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -65,6 +68,8 @@ Public Class EnderecoClienteDAO
         conn.AddParameter("@idCliente", cliente.ID)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of EnderecoCliente)
 
         Dim enderecos As New List(Of EnderecoCliente)
 

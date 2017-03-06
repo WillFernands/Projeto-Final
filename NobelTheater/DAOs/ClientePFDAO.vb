@@ -55,6 +55,8 @@ Public Class ClientePFDAO
 
         Dim dt As DataTable = conn.ExecuteSelect(query.ToString)
 
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of ClientePF)
+
         Dim clientes As New List(Of ClientePF)
 
         For Each row As DataRow In dt.Rows
@@ -86,6 +88,8 @@ Public Class ClientePFDAO
 
         Dim dt As DataTable = conn.ExecuteSelect(query.ToString)
 
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
+
         Dim cliente As New ClientePF()
         cliente.ID = CLng(dt.Rows(0).Item("ID"))
         cliente.Nome = CStr(dt.Rows(0).Item("Nome"))
@@ -111,6 +115,8 @@ Public Class ClientePFDAO
 
         Dim dt As DataTable = conn.ExecuteSelect(query.ToString)
 
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
+
         Dim cliente As New ClientePF()
         cliente.ID = CLng(dt.Rows(0).Item("ID"))
         cliente.Nome = CStr(dt.Rows(0).Item("Nome"))
@@ -135,6 +141,8 @@ Public Class ClientePFDAO
         conn.AddParameter("@nome", nome)
 
         Dim dt As DataTable = conn.ExecuteSelect(query.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
 
         Dim cliente As New ClientePF()
         cliente.ID = CLng(dt.Rows(0).Item("ID"))

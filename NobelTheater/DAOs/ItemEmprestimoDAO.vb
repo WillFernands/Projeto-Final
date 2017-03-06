@@ -24,16 +24,21 @@ Public Class ItemEmprestimoDAO
     End Function
 
     'OK
-    Public Function FindBySolicitacao(solicitacao As SolicitacaoEmprestimoDAO) As List(Of ItemEmprestimo)
+    Public Function FindBySolicitacao(solicitacao As SolicitacaoEmprestimo) As List(Of ItemEmprestimo)
+
+        If (solicitacao Is Nothing) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
         strSQL.Append("SELECT * FROM ItensEmprestimos ")
         strSQL.Append("WHERE idSolicitacao = @idSolicitacao;")
 
-        conn.AddParameter("@idSolicitacao", solicitacao.ID)
+        conn.AddParameter("@idSolicitacao", solicitacao.Id)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of ItemEmprestimo)
 
         Dim produtoDAO As New ProdutoDAO()
         Dim solicitacaoEmprestimoDAO As New SolicitacaoEmprestimoDAO()

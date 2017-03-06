@@ -11,7 +11,7 @@ Public Class FornecedorDAO
         Dim strSQL As New StringBuilder
 
         strSQL.Append("INSERT INTO Fornecedores(cnpj, razaoSocial, nomeFantasia, telefone, inicioRelacionamento, tipoFornecedor, logradouro, numero, bairro, cidade, estado, cep, tipoEndereco, cnpjAssistencia) ")
-        strSQL.Append("VALUES(@cnpj, @razaoSocial, @nomeFantasia, @telefone, inicioRelacionamento, @tipoFornecedor, @logradouro, @numero, @bairro, @cidade, @estado, @cep, @tipoEndereco, @cnpjAssistencia);")
+        strSQL.Append("VALUES(@cnpj, @razaoSocial, @nomeFantasia, @telefone, @inicioRelacionamento, @tipoFornecedor, @logradouro, @numero, @bairro, @cidade, @estado, @cep, @tipoEndereco, @cnpjAssistencia);")
 
         conn.AddParameter("@cnpj", fornecedor.CNPJ)
         conn.AddParameter("@razaoSocial", fornecedor.RazaoSocial)
@@ -73,7 +73,26 @@ Public Class FornecedorDAO
     End Function
 
     'OK
+    Public Function UpdateAssistencia(ByVal fornecedor As Fornecedor) As Boolean
+        Dim conn As New Connection
+        Dim strSQL As New StringBuilder
+
+        strSQL.Append("UPDATE Fornecedores ")
+        strSQL.Append("SET cnpjAssistencia = @cnpjAssistencia ")
+        strSQL.Append("WHERE cnpj = @cnpj;")
+
+        conn.AddParameter("@cnpjAssistencia", fornecedor.Assistencia.Cnpj)
+        conn.AddParameter("@cnpj", fornecedor.Cnpj)
+
+        Return conn.ExecuteCommand(strSQL.ToString)
+
+    End Function
+
+    'OK
     Public Function FindByCNPJ(cnpj As String) As Fornecedor
+
+        If (String.IsNullOrWhiteSpace(cnpj)) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -84,8 +103,10 @@ Public Class FornecedorDAO
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
 
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
+
         Dim fornecedor As New Fornecedor()
-        fornecedor.CNPJ = CStr(dt.Rows(0).Item("cnpj"))
+        fornecedor.Cnpj = CStr(dt.Rows(0).Item("cnpj"))
         fornecedor.RazaoSocial = CStr(dt.Rows(0).Item("razaoSocial"))
         fornecedor.NomeFantasia = CStr(dt.Rows(0).Item("nomeFantasia"))
         fornecedor.Telefone = CStr(dt.Rows(0).Item("telefone"))
@@ -96,7 +117,7 @@ Public Class FornecedorDAO
         fornecedor.Bairro = CStr(dt.Rows(0).Item("bairro"))
         fornecedor.Cidade = CStr(dt.Rows(0).Item("cidade"))
         fornecedor.Estado = CStr(dt.Rows(0).Item("estado"))
-        fornecedor.CEP = CStr(dt.Rows(0).Item("cep"))
+        fornecedor.Cep = CStr(dt.Rows(0).Item("cep"))
         fornecedor.TipoEndereco = CStr(dt.Rows(0).Item("tipoEndereco"))
         fornecedor.Assistencia = FindAssistenciaByCNPJ(CStr(dt.Rows(0).Item("cnpjAssistencia")))
 
@@ -105,7 +126,44 @@ Public Class FornecedorDAO
     End Function
 
     'OK
+    Public Function FindAll() As List(Of Fornecedor)
+
+        Dim conn As New Connection
+
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM Fornecedores;")
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
+
+        Dim fornecedores As New List(Of Fornecedor)
+
+        For Each row As DataRow In dt.Rows
+            Dim fornecedor As New Fornecedor()
+            fornecedor.Cnpj = CStr(row.Item("cnpj"))
+            fornecedor.RazaoSocial = CStr(row.Item("razaoSocial"))
+            fornecedor.NomeFantasia = CStr(row.Item("nomeFantasia"))
+            fornecedor.Telefone = CStr(row.Item("telefone"))
+            fornecedor.InicioRelacionamento = CDate(row.Item("inicioRelacionamento"))
+            fornecedor.TipoFornecedor = CStr(row.Item("tipoFornecedor"))
+            fornecedor.Logradouro = CStr(row.Item("logradouro"))
+            fornecedor.Numero = CStr(row.Item("numero"))
+            fornecedor.Bairro = CStr(row.Item("bairro"))
+            fornecedor.Cidade = CStr(row.Item("cidade"))
+            fornecedor.Estado = CStr(row.Item("estado"))
+            fornecedor.Cep = CStr(row.Item("cep"))
+            fornecedor.TipoEndereco = CStr(row.Item("tipoEndereco"))
+            fornecedor.Assistencia = FindAssistenciaByCNPJ(CStr(row.Item("cnpjAssistencia")))
+            fornecedores.Add(fornecedor)
+        Next
+
+        Return fornecedores
+
+    End Function
+
+    'OK
     Public Function FindByRazaoSocial(razaoSocial As String) As Fornecedor
+
+        If (String.IsNullOrWhiteSpace(razaoSocial)) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -116,8 +174,10 @@ Public Class FornecedorDAO
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
 
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
+
         Dim fornecedor As New Fornecedor()
-        fornecedor.CNPJ = CStr(dt.Rows(0).Item("cnpj"))
+        fornecedor.Cnpj = CStr(dt.Rows(0).Item("cnpj"))
         fornecedor.RazaoSocial = CStr(dt.Rows(0).Item("razaoSocial"))
         fornecedor.NomeFantasia = CStr(dt.Rows(0).Item("nomeFantasia"))
         fornecedor.Telefone = CStr(dt.Rows(0).Item("telefone"))
@@ -128,7 +188,7 @@ Public Class FornecedorDAO
         fornecedor.Bairro = CStr(dt.Rows(0).Item("bairro"))
         fornecedor.Cidade = CStr(dt.Rows(0).Item("cidade"))
         fornecedor.Estado = CStr(dt.Rows(0).Item("estado"))
-        fornecedor.CEP = CStr(dt.Rows(0).Item("cep"))
+        fornecedor.Cep = CStr(dt.Rows(0).Item("cep"))
         fornecedor.TipoEndereco = CStr(dt.Rows(0).Item("tipoEndereco"))
         fornecedor.Assistencia = FindAssistenciaByCNPJ(CStr(dt.Rows(0).Item("cnpjAssistencia")))
 
@@ -138,6 +198,9 @@ Public Class FornecedorDAO
 
     'OK
     Public Function FindByNomeFantasia(nomeFantasia As String) As Fornecedor
+
+        If (String.IsNullOrWhiteSpace(nomeFantasia)) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -148,8 +211,10 @@ Public Class FornecedorDAO
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
 
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
+
         Dim fornecedor As New Fornecedor()
-        fornecedor.CNPJ = CStr(dt.Rows(0).Item("cnpj"))
+        fornecedor.Cnpj = CStr(dt.Rows(0).Item("cnpj"))
         fornecedor.RazaoSocial = CStr(dt.Rows(0).Item("razaoSocial"))
         fornecedor.NomeFantasia = CStr(dt.Rows(0).Item("nomeFantasia"))
         fornecedor.Telefone = CStr(dt.Rows(0).Item("telefone"))
@@ -160,7 +225,7 @@ Public Class FornecedorDAO
         fornecedor.Bairro = CStr(dt.Rows(0).Item("bairro"))
         fornecedor.Cidade = CStr(dt.Rows(0).Item("cidade"))
         fornecedor.Estado = CStr(dt.Rows(0).Item("estado"))
-        fornecedor.CEP = CStr(dt.Rows(0).Item("cep"))
+        fornecedor.Cep = CStr(dt.Rows(0).Item("cep"))
         fornecedor.TipoEndereco = CStr(dt.Rows(0).Item("tipoEndereco"))
         fornecedor.Assistencia = FindAssistenciaByCNPJ(CStr(dt.Rows(0).Item("cnpjAssistencia")))
 
@@ -170,6 +235,9 @@ Public Class FornecedorDAO
 
     'OK
     Public Function FindAssistenciaByCNPJ(cnpj As String) As Fornecedor
+
+        If (String.IsNullOrWhiteSpace(cnpj)) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -179,6 +247,8 @@ Public Class FornecedorDAO
         conn.AddParameter("@cnpj", cnpj)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
 
         Dim fornecedor As New Fornecedor()
         fornecedor.CNPJ = CStr(dt.Rows(0).Item("cnpj"))
@@ -199,6 +269,5 @@ Public Class FornecedorDAO
         Return fornecedor
 
     End Function
-
 
 End Class

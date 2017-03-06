@@ -3,11 +3,8 @@ Option Strict On
 
 Public Class CotacaoBC
 
-    Private Shared cotacaoDAO As CotacaoDAO
+    Private Shared cotacaoDAO As New CotacaoDAO
 
-    Public Sub New()
-        cotacaoDAO = New CotacaoDAO()
-    End Sub
 
     Public Shared Function Validate(cotacao As Cotacao) As Boolean
         If (cotacao Is Nothing) Then Return False
@@ -24,11 +21,11 @@ Public Class CotacaoBC
         Return True
     End Function
 
-    Public Shared Function Insert(cotacao As Cotacao) As Boolean
+    Public Shared Function Insert(cotacao As Cotacao) As Long
         If (CotacaoBC.Validate(cotacao)) Then
             Return cotacaoDAO.Insert(cotacao)
         End If
-        Return False
+        Return 0
     End Function
 
     Public Shared Function UpdateStatus(cotacao As Cotacao) As Boolean

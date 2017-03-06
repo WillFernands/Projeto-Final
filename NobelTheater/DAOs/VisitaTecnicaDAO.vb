@@ -18,7 +18,7 @@ Public Class VisitaTecnicaDAO
         conn.AddParameter("@tipo", visita.Tipo)
         conn.AddParameter("@preco", visita.Preco)
         conn.AddParameter("@parecerObra", visita.ParecerObra)
-        conn.AddParameter("@matriculaSupervisor", visita.MatriculaSupervisor)
+        conn.AddParameter("@matriculaSupervisor", visita.Supervisor.Matricula)
 
         Return conn.ExecuteCommand(strSQL.ToString)
 
@@ -40,7 +40,7 @@ Public Class VisitaTecnicaDAO
         conn.AddParameter("@data", visita.Data)
         conn.AddParameter("@tipo", visita.Tipo)
         conn.AddParameter("@parecerObra", visita.ParecerObra)
-        conn.AddParameter("@matriculaSupervisor", visita.MatriculaSupervisor)
+        conn.AddParameter("@matriculaSupervisor", visita.Supervisor.Matricula)
 
         Return conn.ExecuteCommand(strSQL.ToString)
 
@@ -48,6 +48,9 @@ Public Class VisitaTecnicaDAO
 
     'OK
     Public Function FindByNotaFiscal(nota As NotaFiscalVenda) As List(Of VisitaTecnica)
+
+        If (nota Is Nothing) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -58,6 +61,10 @@ Public Class VisitaTecnicaDAO
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
 
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of VisitaTecnica)
+
+        Dim funcionarioDAO As New FuncionarioDAO()
+
         Dim visitas As New List(Of VisitaTecnica)
 
         For Each row As DataRow In dt.Rows
@@ -66,12 +73,12 @@ Public Class VisitaTecnicaDAO
             visita.Tipo = CStr(row.Item("tipo"))
             visita.Preco = CDbl(row.Item("preco"))
             visita.ParecerObra = CStr(row.Item("parecerObra"))
-            visita.MatriculaSupervisor = CStr(row.Item("matriculaSupervisor"))
+            visita.Supervisor = funcionarioDAO.FindByMatricula(CLng(row.Item("matriculaSupervisor")))
             visita.NotaFiscal = nota
             visitas.Add(visita)
         Next
 
-        Return visita
+        Return visitas
 
     End Function
 

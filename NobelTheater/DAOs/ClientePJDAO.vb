@@ -57,6 +57,8 @@ Public Class ClientePJDAO
 
         Dim dt As DataTable = conn.ExecuteSelect(query.ToString)
 
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of ClientePJ)
+
         Dim clientes As New List(Of ClientePJ)
 
         For Each row As DataRow In dt.Rows
@@ -65,7 +67,7 @@ Public Class ClientePJDAO
             cliente.Nome = CStr(row.Item("nome"))
             cliente.Telefone = CStr(row.Item("telefone"))
             cliente.DataCadastro = CDate(row.Item("dataCadastro"))
-            cliente.CNPJ = CLng(row.Item("cnpj"))
+            cliente.CNPJ = CStr(row.Item("cnpj"))
             cliente.RazaoSocial = CStr(row.Item("razaoSocial"))
             clientes.Add(cliente)
         Next
@@ -89,12 +91,14 @@ Public Class ClientePJDAO
 
         Dim dt As DataTable = conn.ExecuteSelect(query.ToString)
 
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
+
         Dim cliente As New ClientePJ()
         cliente.ID = CLng(dt.Rows(0).Item("id"))
         cliente.Nome = CStr(dt.Rows(0).Item("nome"))
         cliente.Telefone = CStr(dt.Rows(0).Item("telefone"))
         cliente.DataCadastro = CDate(dt.Rows(0).Item("dataCadastro"))
-        cliente.CNPJ = CLng(CStr(dt.Rows(0).Item("cnpj")))
+        cliente.CNPJ = CStr(dt.Rows(0).Item("cnpj"))
         cliente.RazaoSocial = CStr(dt.Rows(0).Item("razaoSocial"))
 
         Return cliente
@@ -115,12 +119,14 @@ Public Class ClientePJDAO
 
         Dim dt As DataTable = conn.ExecuteSelect(query.ToString)
 
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
+
         Dim cliente As New ClientePJ()
         cliente.ID = CLng(dt.Rows(0).Item("id"))
         cliente.Nome = CStr(dt.Rows(0).Item("nome"))
         cliente.Telefone = CStr(dt.Rows(0).Item("telefone"))
         cliente.DataCadastro = CDate(dt.Rows(0).Item("dataCadastro"))
-        cliente.CNPJ = CLng(CStr(dt.Rows(0).Item("cnpj")))
+        cliente.CNPJ = CStr(dt.Rows(0).Item("cnpj"))
         cliente.RazaoSocial = CStr(dt.Rows(0).Item("razaoSocial"))
 
         Return cliente
@@ -141,12 +147,14 @@ Public Class ClientePJDAO
 
         Dim dt As DataTable = conn.ExecuteSelect(query.ToString)
 
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
+
         Dim cliente As New ClientePJ()
         cliente.ID = CLng(dt.Rows(0).Item("id"))
         cliente.Nome = CStr(dt.Rows(0).Item("nome"))
         cliente.Telefone = CStr(dt.Rows(0).Item("telefone"))
         cliente.DataCadastro = CDate(dt.Rows(0).Item("dataCadastro"))
-        cliente.CNPJ = CLng(CStr(dt.Rows(0).Item("cnpj")))
+        cliente.CNPJ = CStr(dt.Rows(0).Item("cnpj"))
         cliente.RazaoSocial = CStr(dt.Rows(0).Item("razaoSocial"))
 
         Return cliente
@@ -167,12 +175,14 @@ Public Class ClientePJDAO
 
         Dim dt As DataTable = conn.ExecuteSelect(query.ToString)
 
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
+
         Dim cliente As New ClientePJ()
         cliente.ID = CLng(dt.Rows(0).Item("id"))
         cliente.Nome = CStr(dt.Rows(0).Item("nome"))
         cliente.Telefone = CStr(dt.Rows(0).Item("telefone"))
         cliente.DataCadastro = CDate(dt.Rows(0).Item("dataCadastro"))
-        cliente.CNPJ = CLng(CStr(dt.Rows(0).Item("cnpj")))
+        cliente.CNPJ = CStr(dt.Rows(0).Item("cnpj"))
         cliente.RazaoSocial = CStr(dt.Rows(0).Item("razaoSocial"))
 
         Return cliente

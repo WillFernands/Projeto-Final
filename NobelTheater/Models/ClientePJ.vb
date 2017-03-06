@@ -2,10 +2,10 @@
 Option Strict On
 
 Public Class ClientePJ : Inherits Cliente
-    Private _cnpj As Long
+    Private _cnpj As String
     Private _razaoSocial As String
 
-    Public Sub New(id As Long, nome As String, telefone As String, dataCadastro As Date, cnpj As Long, razaoSocial As String)
+    Public Sub New(id As Long, nome As String, telefone As String, dataCadastro As Date, cnpj As String, razaoSocial As String)
         MyBase.New(id, nome, telefone, dataCadastro)
         _cnpj = cnpj
         _razaoSocial = razaoSocial
@@ -15,11 +15,11 @@ Public Class ClientePJ : Inherits Cliente
 
     End Sub
 
-    Property CNPJ As Long
+    Property CNPJ As String
         Get
             Return _cnpj
         End Get
-        Set(value As Long)
+        Set(value As String)
             _cnpj = value
         End Set
     End Property

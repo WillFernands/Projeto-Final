@@ -6,7 +6,7 @@ Imports System.Text
 Public Class CotacaoDAO
 
     'OK
-    Public Function Insert(ByVal cotacao As Cotacao) As Boolean
+    Public Function Insert(ByVal cotacao As Cotacao) As Long
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -14,10 +14,13 @@ Public Class CotacaoDAO
         strSQL.Append("VALUES(@data, @cnpj, @status);")
 
         conn.AddParameter("@data", cotacao.DataCotacao)
-        conn.AddParameter("@cnpj", cotacao.Fornecedor.CNPJ)
+        conn.AddParameter("@cnpj", cotacao.Fornecedor.Cnpj)
         conn.AddParameter("@status", cotacao.Status)
 
-        Return conn.ExecuteCommand(strSQL.ToString)
+        If (conn.ExecuteCommand(strSQL.ToString) = False) Then Return 0
+
+        conn = New Connection
+        Return CLng(conn.ExecuteScalar("SELECT IDENT_CURRENT('Cotacoes')"))
 
     End Function
 
@@ -43,6 +46,8 @@ Public Class CotacaoDAO
         Dim produtoDAO As New ProdutoDAO
         Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM Cotacoes;")
 
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Cotacao)
+
         Dim fornecedorDAO As New FornecedorDAO()
 
         Dim cotacoes As New List(Of Cotacao)
@@ -52,8 +57,8 @@ Public Class CotacaoDAO
             cotacao.ID = CLng(row.Item("id"))
             cotacao.DataCotacao = CDate(row.Item("dataCotacao"))
             cotacao.Status = CStr(row.Item("statusCotacao"))
-            cotacao.Fornecedor = fornecedorDAO.FindByCodigo(CStr(row.Item("cnpjFornecedor")))
-            cotacoes.Add(Cotacao)
+            cotacao.Fornecedor = fornecedorDAO.FindByCNPJ(CStr(row.Item("cnpjFornecedor")))
+            cotacoes.Add(cotacao)
         Next
 
         Return cotacoes
@@ -62,6 +67,9 @@ Public Class CotacaoDAO
 
     'OK
     Public Function FindByID(id As Long) As Cotacao
+
+        If (id = 0) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -72,6 +80,8 @@ Public Class CotacaoDAO
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
 
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
+
         Dim fornecedorDAO As New FornecedorDAO()
 
         Dim cotacao As New Cotacao()
@@ -80,12 +90,15 @@ Public Class CotacaoDAO
         cotacao.Status = CStr(dt.Rows(0).Item("statusCotacao"))
         cotacao.Fornecedor = fornecedorDAO.FindByCNPJ(CStr(dt.Rows(0).Item("cnpjFornecedor")))
 
-        Return Cotacao
+        Return cotacao
 
     End Function
 
     'OK
     Public Function FindByData(data As Date) As List(Of Cotacao)
+
+        If (data = Nothing) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -95,6 +108,8 @@ Public Class CotacaoDAO
         conn.AddParameter("@data", data)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Cotacao)
 
         Dim fornecedorDAO As New FornecedorDAO()
 
@@ -115,6 +130,9 @@ Public Class CotacaoDAO
 
     'OK
     Public Function FindByStatus(status As String) As List(Of Cotacao)
+
+        If (String.IsNullOrWhiteSpace(status)) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -124,6 +142,8 @@ Public Class CotacaoDAO
         conn.AddParameter("@status", status)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Cotacao)
 
         Dim fornecedorDAO As New FornecedorDAO()
 

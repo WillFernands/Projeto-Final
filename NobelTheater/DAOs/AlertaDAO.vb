@@ -45,13 +45,15 @@ Public Class AlertaDAO
         Dim produtoDAO As New ProdutoDAO
         Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM Alertas;")
 
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Alerta)
+
         Dim alertas As New List(Of Alerta)
 
         For Each row As DataRow In dt.Rows
             Dim alerta As New Alerta()
             alerta.Data = CDate(row.Item("dataAlerta"))
             alerta.Observacao = CStr(row.Item("observacao"))
-            alerta.Produto = ProdutoDAO.FindByCodigo(CInt(row.Item("codigoProduto")))
+            alerta.Produto = produtoDAO.FindByCodigo(CInt(row.Item("codigoProduto")))
             alertas.Add(alerta)
         Next
 
@@ -61,6 +63,9 @@ Public Class AlertaDAO
 
     'OK
     Public Function FindByProduto(produto As Produto) As List(Of Alerta)
+
+        If (produto Is Nothing) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -70,6 +75,8 @@ Public Class AlertaDAO
         conn.AddParameter("@codigo", produto.Codigo)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Alerta)
 
         Dim alertas As New List(Of Alerta)
 
@@ -87,6 +94,9 @@ Public Class AlertaDAO
 
     'OK
     Public Function FindByData(data As Date) As List(Of Alerta)
+
+        If (data = Nothing) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -96,6 +106,8 @@ Public Class AlertaDAO
         conn.AddParameter("@data", data)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Alerta)
         Dim produtoDAO As New ProdutoDAO
         Dim alertas As New List(Of Alerta)
 
@@ -103,7 +115,7 @@ Public Class AlertaDAO
             Dim alerta As New Alerta()
             alerta.Data = CDate(row.Item("dataAlerta"))
             alerta.Observacao = CStr(row.Item("observacao"))
-            alerta.Produto = ProdutoDAO.FindByCodigo(CInt(row.Item("codigoProduto")))
+            alerta.Produto = produtoDAO.FindByCodigo(CInt(row.Item("codigoProduto")))
             alertas.Add(alerta)
         Next
 

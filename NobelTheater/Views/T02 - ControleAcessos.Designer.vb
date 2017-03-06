@@ -25,10 +25,10 @@ Partial Class ControleAcessos
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.FuncionarioTF = New System.Windows.Forms.TextBox()
+        Me.PerfilAtualTF = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.NovoPerfilCB = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -38,9 +38,6 @@ Partial Class ControleAcessos
         Me.DataBloqueio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ResetarSenha = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -79,6 +76,9 @@ Partial Class ControleAcessos
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PerfilTF = New System.Windows.Forms.Label()
+        Me.MatriculaTF = New System.Windows.Forms.Label()
+        Me.NomeTF = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -103,10 +103,10 @@ Partial Class ControleAcessos
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.PictureBox7)
-        Me.TabPage1.Controls.Add(Me.TextBox4)
-        Me.TabPage1.Controls.Add(Me.TextBox1)
+        Me.TabPage1.Controls.Add(Me.FuncionarioTF)
+        Me.TabPage1.Controls.Add(Me.PerfilAtualTF)
         Me.TabPage1.Controls.Add(Me.Button1)
-        Me.TabPage1.Controls.Add(Me.ComboBox2)
+        Me.TabPage1.Controls.Add(Me.NovoPerfilCB)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
@@ -119,6 +119,7 @@ Partial Class ControleAcessos
         '
         'PictureBox7
         '
+        Me.PictureBox7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox7.Image = Global.NobelTheater.My.Resources.Resources.Busca
         Me.PictureBox7.Location = New System.Drawing.Point(583, 32)
         Me.PictureBox7.Name = "PictureBox7"
@@ -127,23 +128,21 @@ Partial Class ControleAcessos
         Me.PictureBox7.TabIndex = 18
         Me.PictureBox7.TabStop = False
         '
-        'TextBox4
+        'FuncionarioTF
         '
-        Me.TextBox4.Enabled = False
-        Me.TextBox4.Location = New System.Drawing.Point(252, 32)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(327, 20)
-        Me.TextBox4.TabIndex = 17
-        Me.TextBox4.Text = "002400 - Antonio Albuquerque"
+        Me.FuncionarioTF.Enabled = False
+        Me.FuncionarioTF.Location = New System.Drawing.Point(252, 32)
+        Me.FuncionarioTF.Name = "FuncionarioTF"
+        Me.FuncionarioTF.Size = New System.Drawing.Size(327, 20)
+        Me.FuncionarioTF.TabIndex = 17
         '
-        'TextBox1
+        'PerfilAtualTF
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(85, 79)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(154, 20)
-        Me.TextBox1.TabIndex = 5
-        Me.TextBox1.Text = "Assistente Administrativo"
+        Me.PerfilAtualTF.Enabled = False
+        Me.PerfilAtualTF.Location = New System.Drawing.Point(85, 79)
+        Me.PerfilAtualTF.Name = "PerfilAtualTF"
+        Me.PerfilAtualTF.Size = New System.Drawing.Size(154, 20)
+        Me.PerfilAtualTF.TabIndex = 5
         '
         'Button1
         '
@@ -154,14 +153,13 @@ Partial Class ControleAcessos
         Me.Button1.Text = "Salvar Alterações"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'ComboBox2
+        'NovoPerfilCB
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(252, 79)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(357, 21)
-        Me.ComboBox2.TabIndex = 3
-        Me.ComboBox2.Text = "Gerente"
+        Me.NovoPerfilCB.FormattingEnabled = True
+        Me.NovoPerfilCB.Location = New System.Drawing.Point(252, 79)
+        Me.NovoPerfilCB.Name = "NovoPerfilCB"
+        Me.NovoPerfilCB.Size = New System.Drawing.Size(357, 21)
+        Me.NovoPerfilCB.TabIndex = 3
         '
         'Label2
         '
@@ -234,41 +232,14 @@ Partial Class ControleAcessos
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.PerfilTF)
+        Me.Panel1.Controls.Add(Me.MatriculaTF)
+        Me.Panel1.Controls.Add(Me.NomeTF)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Location = New System.Drawing.Point(12, 32)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(660, 100)
         Me.Panel1.TabIndex = 1
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(140, 72)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(127, 13)
-        Me.Label5.TabIndex = 3
-        Me.Label5.Text = "Perfil de Acesso: Gerente"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(140, 44)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(88, 13)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Matrícula: 00150"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(140, 16)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(120, 13)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Nome: Leonardo Nunes"
         '
         'PictureBox1
         '
@@ -517,6 +488,33 @@ Partial Class ControleAcessos
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
+        'PerfilTF
+        '
+        Me.PerfilTF.AutoSize = True
+        Me.PerfilTF.Location = New System.Drawing.Point(140, 72)
+        Me.PerfilTF.Name = "PerfilTF"
+        Me.PerfilTF.Size = New System.Drawing.Size(86, 13)
+        Me.PerfilTF.TabIndex = 6
+        Me.PerfilTF.Text = "Perfil de Acesso:"
+        '
+        'MatriculaTF
+        '
+        Me.MatriculaTF.AutoSize = True
+        Me.MatriculaTF.Location = New System.Drawing.Point(140, 44)
+        Me.MatriculaTF.Name = "MatriculaTF"
+        Me.MatriculaTF.Size = New System.Drawing.Size(55, 13)
+        Me.MatriculaTF.TabIndex = 5
+        Me.MatriculaTF.Text = "Matrícula:"
+        '
+        'NomeTF
+        '
+        Me.NomeTF.AutoSize = True
+        Me.NomeTF.Location = New System.Drawing.Point(140, 16)
+        Me.NomeTF.Name = "NomeTF"
+        Me.NomeTF.Size = New System.Drawing.Size(38, 13)
+        Me.NomeTF.TabIndex = 4
+        Me.NomeTF.Text = "Nome:"
+        '
         'ControleAcessos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -549,16 +547,13 @@ Partial Class ControleAcessos
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
+    Friend WithEvents NovoPerfilCB As System.Windows.Forms.ComboBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents PerfilAtualTF As System.Windows.Forms.TextBox
     Friend WithEvents RevogadosDT As System.Windows.Forms.DataGridView
     Friend WithEvents Matricula As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Funcionario As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -601,5 +596,8 @@ Partial Class ControleAcessos
     Friend WithEvents NovoClienteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AcompanharClienteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PictureBox7 As System.Windows.Forms.PictureBox
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents FuncionarioTF As System.Windows.Forms.TextBox
+    Friend WithEvents PerfilTF As Label
+    Friend WithEvents MatriculaTF As Label
+    Friend WithEvents NomeTF As Label
 End Class

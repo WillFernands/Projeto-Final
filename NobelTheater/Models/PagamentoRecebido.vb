@@ -7,32 +7,20 @@ Public Class PagamentoRecebido
     Private _valor As Double
     Private _data As Date
     Private _tipo As String
-    Private _parcela As Integer
-    Private _compra As NotaFiscalCompra
-    Private _venda As NotaFiscalVenda
+
+    Private _notaFiscal As NotaFiscalVenda
 
     Public Sub New()
 
     End Sub
 
-    Public Sub New(status As String, valor As Double, data As Date, tipo As String, parcela As Integer, compra As NotaFiscalCompra)
-        _status = status
-        _valor = valor
-        _data = data
-        _tipo = tipo
-        _parcela = parcela
-        _compra = compra
-        _venda = Nothing
-    End Sub
 
-    Public Sub New(status As String, valor As Double, data As Date, tipo As String, parcela As Integer, venda As NotaFiscalVenda)
+    Public Sub New(status As String, valor As Double, data As Date, tipo As String, notaFiscal As NotaFiscalVenda)
         _status = status
         _valor = valor
         _data = data
         _tipo = tipo
-        _parcela = parcela
-        _compra = Nothing
-        _venda = venda
+        _notaFiscal = notaFiscal
     End Sub
 
     Property ID As Long
@@ -71,15 +59,6 @@ Public Class PagamentoRecebido
         End Set
     End Property
 
-    Property Parcela As Integer
-        Get
-            Return _parcela
-        End Get
-        Set(value As Integer)
-            _parcela = value
-        End Set
-    End Property
-
     Property Status As String
         Get
             Return _status
@@ -89,21 +68,12 @@ Public Class PagamentoRecebido
         End Set
     End Property
 
-    Property Compra As NotaFiscalCompra
+    Property NotaFiscal As NotaFiscalVenda
         Get
-            Return _compra
-        End Get
-        Set(value As NotaFiscalCompra)
-            _compra = value
-        End Set
-    End Property
-
-    Property Venda As NotaFiscalVenda
-        Get
-            Return _venda
+            Return _notaFiscal
         End Get
         Set(value As NotaFiscalVenda)
-            _venda = value
+            _notaFiscal = value
         End Set
     End Property
 End Class

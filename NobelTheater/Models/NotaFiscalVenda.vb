@@ -7,18 +7,20 @@ Public Class NotaFiscalVenda
     Private _status As String
     Private _dataAprovacao As Date
     Private _dataFinalObra As Date
-    Private _numeroNF As Integer
+    Private _numeroNF As String
     Private _emissaoNF As Date
 
     Private _Orcamento As Orcamento
 
-    Private _pagamentoRecebido As New List(Of PagamentoRecebido)
+    Private _pagamentosRecebidos As New List(Of PagamentoRecebido)
+    Private _visitasTecnicas As New List(Of VisitaTecnica)
+    Private _itensVendidos As New List(Of ItemVendido)
 
     Public Sub New()
 
     End Sub
 
-    Public Sub New(id As Long, status As String, dataAprovacao As Date, dataFinalObra As Date, numeroNF As Integer, emissaoNF As Date, Orcamento As Orcamento, pagamentoRecebido As List(Of PagamentoRecebido))
+    Public Sub New(id As Long, status As String, dataAprovacao As Date, dataFinalObra As Date, numeroNF As String, emissaoNF As Date, Orcamento As Orcamento)
         _id = id
         _status = status
         _dataAprovacao = dataAprovacao
@@ -26,7 +28,6 @@ Public Class NotaFiscalVenda
         _numeroNF = numeroNF
         _emissaoNF = emissaoNF
         _Orcamento = Orcamento
-        _pagamentoRecebido = pagamentoRecebido
     End Sub
 
     Public Property Id As Long
@@ -65,11 +66,11 @@ Public Class NotaFiscalVenda
         End Set
     End Property
 
-    Public Property NumeroNF As Integer
+    Public Property NumeroNF As String
         Get
             Return _numeroNF
         End Get
-        Set(value As Integer)
+        Set(value As String)
             _numeroNF = value
         End Set
     End Property
@@ -92,12 +93,30 @@ Public Class NotaFiscalVenda
         End Set
     End Property
 
-    Public Property PagamentoRecebido As List(Of PagamentoRecebido)
+    Public Property ItensVendidos As List(Of ItemVendido)
         Get
-            Return _pagamentoRecebido
+            Return _itensVendidos
+        End Get
+        Set(value As List(Of ItemVendido))
+            _itensVendidos = value
+        End Set
+    End Property
+
+    Public Property PagamentosRecebidos As List(Of PagamentoRecebido)
+        Get
+            Return _pagamentosRecebidos
         End Get
         Set(value As List(Of PagamentoRecebido))
-            _pagamentoRecebido = value
+            _pagamentosRecebidos = value
+        End Set
+    End Property
+
+    Public Property VisitasTecnicas As List(Of VisitaTecnica)
+        Get
+            Return _visitasTecnicas
+        End Get
+        Set(value As List(Of VisitaTecnica))
+            _visitasTecnicas = value
         End Set
     End Property
 End Class

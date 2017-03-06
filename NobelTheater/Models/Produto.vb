@@ -13,13 +13,16 @@ Public Class Produto
 
     Private _alertas As New List(Of Alerta)
 
-    Public Sub New(codigo As Long, nome As String, preco As Double, descricao As String, tipo As String, unidade As String)
-        _codigo = codigo
+    Public Sub New(nome As String, preco As Double, descricao As String, tipo As String, unidade As String)
         _nome = nome
         _precoUnit = preco
         _descricao = descricao
         _tipo = tipo
         _unidade = unidade
+    End Sub
+
+    Public Sub New()
+
     End Sub
 
     Property Codigo As Long

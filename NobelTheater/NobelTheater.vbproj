@@ -93,9 +93,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BCs\AlertaBC.vb" />
+    <Compile Include="BCs\ClienteBC.vb" />
+    <Compile Include="BCs\ClientePFBC.vb" />
+    <Compile Include="BCs\ClientePJBC.vb" />
     <Compile Include="BCs\CotacaoBC.vb" />
+    <Compile Include="BCs\EnderecoClienteBC.vb" />
     <Compile Include="BCs\FornecedorBC.vb" />
+    <Compile Include="BCs\FuncionarioBC.vb" />
+    <Compile Include="BCs\ItemCompradoBC.vb" />
     <Compile Include="BCs\ItemCotadoBC.vb" />
+    <Compile Include="BCs\ItemEmprestimoBC.vb" />
+    <Compile Include="BCs\ItemOrcadoBC.vb" />
+    <Compile Include="BCs\ItemOrdemBC.vb" />
+    <Compile Include="BCs\ItemVendidoBC.vb" />
+    <Compile Include="BCs\NotaFiscalCompraBC.vb" />
+    <Compile Include="BCs\NotaFiscalVendaBC.vb" />
+    <Compile Include="BCs\OrcamentoBC.vb" />
+    <Compile Include="BCs\OrdemServicoBC.vb" />
+    <Compile Include="BCs\PagamentoEfetuadoBC.vb" />
+    <Compile Include="BCs\PagamentoRecebidoBC.vb" />
+    <Compile Include="BCs\ProdutoBC.vb" />
+    <Compile Include="BCs\RegistroPontoBC.vb" />
+    <Compile Include="BCs\SalarioBC.vb" />
+    <Compile Include="BCs\SolicitacaoEmprestimoBC.vb" />
+    <Compile Include="BCs\VisitaTecnicaBC.vb" />
     <Compile Include="DAOs\AlertaDAO.vb" />
     <Compile Include="DAOs\ClienteDAO.vb" />
     <Compile Include="DAOs\ClientePFDAO.vb" />
@@ -121,6 +142,7 @@
     <Compile Include="DAOs\RegistroPontoDAO.vb" />
     <Compile Include="DAOs\SalarioDAO.vb" />
     <Compile Include="DAOs\SolicitacaoEmprestimoDAO.vb" />
+    <Compile Include="DAOs\SQLTableManager.vb" />
     <Compile Include="DAOs\VisitaTecnicaDAO.vb" />
     <Compile Include="Enums\StatusCompra.vb" />
     <Compile Include="Enums\StatusCotacao.vb" />
@@ -129,12 +151,14 @@
     <Compile Include="Enums\StatusOrdem.vb" />
     <Compile Include="Enums\StatusPagamento.vb" />
     <Compile Include="Enums\TipoCargo.vb" />
+    <Compile Include="Enums\TipoFornecedor.vb" />
     <Compile Include="Enums\TipoPerfilFuncionario.vb" />
     <Compile Include="Enums\TipoPagamento.vb" />
     <Compile Include="Enums\TipoProduto.vb" />
     <Compile Include="Enums\StatusVenda.vb" />
     <Compile Include="Enums\TipoImovel.vb" />
     <Compile Include="Enums\TipoRegistro.vb" />
+    <Compile Include="Enums\TipoVisita.vb" />
     <Compile Include="Enums\UnidadeProduto.vb" />
     <Compile Include="Models\Cliente.vb" />
     <Compile Include="Models\Cotacao.vb" />
@@ -151,6 +175,12 @@
     <Compile Include="Models\Salario.vb" />
     <Compile Include="Models\SolicitacaoEmprestimo.vb" />
     <Compile Include="Models\VisitaTecnica.vb" />
+    <Compile Include="Views\T16 - BuscaFornecedor.Designer.vb">
+      <DependentUpon>T16 - BuscaFornecedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\T16 - BuscaFornecedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\T05 - ControleFornecedor.Designer.vb">
       <DependentUpon>T05 - ControleFornecedor.vb</DependentUpon>
     </Compile>
@@ -263,6 +293,18 @@
     <Compile Include="Utils\ExcelUtils.vb" />
     <Compile Include="Utils\GenericUtils.vb" />
     <Compile Include="Utils\WebServerUtils.vb" />
+    <Compile Include="Views\T15 - BuscaFuncionario.Designer.vb">
+      <DependentUpon>T15 - BuscaFuncionario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\T15 - BuscaFuncionario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\T17 - BuscaProduto.Designer.vb">
+      <DependentUpon>T17 - BuscaProduto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\T17 - BuscaProduto.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\T01 - LoginUsuario.resx">
@@ -312,6 +354,15 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\T15 - BuscaFuncionario.resx">
+      <DependentUpon>T15 - BuscaFuncionario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\T16 - BuscaFornecedor.resx">
+      <DependentUpon>T16 - BuscaFornecedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\T17 - BuscaProduto.resx">
+      <DependentUpon>T17 - BuscaProduto.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

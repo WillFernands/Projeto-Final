@@ -40,6 +40,9 @@ Public Class OrdemServicoDAO
 
     'OK
     Public Function FindByCliente(cliente As Cliente) As List(Of OrdemServico)
+
+        If (cliente Is Nothing) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -49,6 +52,8 @@ Public Class OrdemServicoDAO
         conn.AddParameter("@idCliente", cliente.ID)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of OrdemServico)
 
         Dim fornecedorDAO As New FornecedorDAO
 
@@ -70,6 +75,9 @@ Public Class OrdemServicoDAO
 
     'OK
     Public Function FindByFornecedor(fornecedor As Fornecedor) As List(Of OrdemServico)
+
+        If (fornecedor Is Nothing) Then Return Nothing
+
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -79,6 +87,8 @@ Public Class OrdemServicoDAO
         conn.AddParameter("@cnpj", fornecedor.CNPJ)
 
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of OrdemServico)
 
         Dim clienteDAO As New ClienteDAO
 
@@ -95,6 +105,38 @@ Public Class OrdemServicoDAO
         Next
 
         Return ordens
+
+    End Function
+
+    'OK
+    Public Function FindByID(id As Long) As OrdemServico
+
+        If (id = 0) Then Return Nothing
+
+        Dim conn As New Connection
+        Dim strSQL As New StringBuilder
+
+        strSQL.Append("SELECT * FROM OrdensServicos ")
+        strSQL.Append("WHERE id = @id;")
+
+        conn.AddParameter("@id", id)
+
+        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
+
+        Dim clienteDAO As New ClienteDAO
+        Dim fornecedorDAO As New FornecedorDAO
+
+
+        Dim ordem As New OrdemServico()
+        ordem.Id = CLng(dt.Rows(0).Item("id"))
+        ordem.DataSolicitacao = CDate(dt.Rows(0).Item("dataSolicitacao"))
+        ordem.Fornecedor = fornecedorDAO.FindByCNPJ(CType(CLng(dt.Rows(0).Item("cnpjFornecedor")), String))
+        ordem.Cliente = clienteDAO.FindByID(CLng(dt.Rows(0).Item("idCliente")))
+        ordem.Status = CStr(dt.Rows(0).Item("statusOrdem"))
+
+        Return ordem
 
     End Function
 

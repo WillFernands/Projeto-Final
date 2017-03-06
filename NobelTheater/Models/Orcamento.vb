@@ -9,20 +9,20 @@ Public Class Orcamento
 
     Private _cliente As Cliente
 
-    Private _itemOrcado As List(Of ItemOrcado)
+    Private _itensOrcados As List(Of ItemOrcado)
 
 
     Public Sub New()
 
     End Sub
 
-    Public Sub New(id As Long, vendedor As Funcionario, cliente As Cliente, status As String, dataOrcamento As Date, itemOrcado As List(Of ItemOrcado))
+    Public Sub New(id As Long, vendedor As Funcionario, cliente As Cliente, status As String, dataOrcamento As Date, itensOrcados As List(Of ItemOrcado))
         _id = id
         _vendedor = vendedor
         _cliente = cliente
         _status = status
         _dataOrcamento = dataOrcamento
-        _itemOrcado = itemOrcado
+        _itensOrcados = itensOrcados
     End Sub
 
 
@@ -71,12 +71,12 @@ Public Class Orcamento
         End Set
     End Property
 
-    Public Property ItemOrcado As List(Of ItemOrcado)
+    Public Property ItensOrcados As List(Of ItemOrcado)
         Get
-            Return _itemOrcado
+            Return _itensOrcados
         End Get
         Set(value As List(Of ItemOrcado))
-            _itemOrcado = value
+            _itensOrcados = value
         End Set
     End Property
 End Class

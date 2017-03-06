@@ -59,29 +59,29 @@ Partial Class RecuperarHistorico
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.PerfilTF = New System.Windows.Forms.Label()
+        Me.MatriculaTF = New System.Windows.Forms.Label()
+        Me.NomeTF = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.DateTimePicker5 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker6 = New System.Windows.Forms.DateTimePicker()
+        Me.FimDT = New System.Windows.Forms.DateTimePicker()
+        Me.InicioDT = New System.Windows.Forms.DateTimePicker()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.FuncionariosDT = New System.Windows.Forms.DataGridView()
         Me.Matricula = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Funcionario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ResetarSenha = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.TodosFuncCB = New System.Windows.Forms.CheckBox()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.FuncionarioTF = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker4 = New System.Windows.Forms.DateTimePicker()
+        Me.FimFuncDT = New System.Windows.Forms.DateTimePicker()
+        Me.InicioFuncDT = New System.Windows.Forms.DateTimePicker()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -92,7 +92,7 @@ Partial Class RecuperarHistorico
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FuncionariosDT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -327,41 +327,41 @@ Partial Class RecuperarHistorico
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.PerfilTF)
+        Me.Panel1.Controls.Add(Me.MatriculaTF)
+        Me.Panel1.Controls.Add(Me.NomeTF)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Location = New System.Drawing.Point(12, 39)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(705, 100)
         Me.Panel1.TabIndex = 6
         '
-        'Label5
+        'PerfilTF
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(140, 72)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(127, 13)
-        Me.Label5.TabIndex = 3
-        Me.Label5.Text = "Perfil de Acesso: Gerente"
+        Me.PerfilTF.AutoSize = True
+        Me.PerfilTF.Location = New System.Drawing.Point(133, 71)
+        Me.PerfilTF.Name = "PerfilTF"
+        Me.PerfilTF.Size = New System.Drawing.Size(86, 13)
+        Me.PerfilTF.TabIndex = 6
+        Me.PerfilTF.Text = "Perfil de Acesso:"
         '
-        'Label4
+        'MatriculaTF
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(140, 44)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(88, 13)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Matrícula: 00150"
+        Me.MatriculaTF.AutoSize = True
+        Me.MatriculaTF.Location = New System.Drawing.Point(133, 43)
+        Me.MatriculaTF.Name = "MatriculaTF"
+        Me.MatriculaTF.Size = New System.Drawing.Size(55, 13)
+        Me.MatriculaTF.TabIndex = 5
+        Me.MatriculaTF.Text = "Matrícula:"
         '
-        'Label3
+        'NomeTF
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(140, 16)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(120, 13)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Nome: Leonardo Nunes"
+        Me.NomeTF.AutoSize = True
+        Me.NomeTF.Location = New System.Drawing.Point(133, 15)
+        Me.NomeTF.Name = "NomeTF"
+        Me.NomeTF.Size = New System.Drawing.Size(38, 13)
+        Me.NomeTF.TabIndex = 4
+        Me.NomeTF.Text = "Nome:"
         '
         'PictureBox1
         '
@@ -393,8 +393,8 @@ Partial Class RecuperarHistorico
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.DateTimePicker5)
-        Me.TabPage1.Controls.Add(Me.DateTimePicker6)
+        Me.TabPage1.Controls.Add(Me.FimDT)
+        Me.TabPage1.Controls.Add(Me.InicioDT)
         Me.TabPage1.Controls.Add(Me.Label8)
         Me.TabPage1.Controls.Add(Me.Label9)
         Me.TabPage1.Controls.Add(Me.Button2)
@@ -406,27 +406,27 @@ Partial Class RecuperarHistorico
         Me.TabPage1.Text = "Recuperar Histórico"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'DateTimePicker5
+        'FimDT
         '
-        Me.DateTimePicker5.CustomFormat = "dd/MM/yyyy"
-        Me.DateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker5.Location = New System.Drawing.Point(179, 17)
-        Me.DateTimePicker5.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
-        Me.DateTimePicker5.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
-        Me.DateTimePicker5.Name = "DateTimePicker5"
-        Me.DateTimePicker5.Size = New System.Drawing.Size(98, 20)
-        Me.DateTimePicker5.TabIndex = 29
+        Me.FimDT.CustomFormat = "dd/MM/yyyy"
+        Me.FimDT.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.FimDT.Location = New System.Drawing.Point(179, 17)
+        Me.FimDT.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
+        Me.FimDT.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
+        Me.FimDT.Name = "FimDT"
+        Me.FimDT.Size = New System.Drawing.Size(98, 20)
+        Me.FimDT.TabIndex = 29
         '
-        'DateTimePicker6
+        'InicioDT
         '
-        Me.DateTimePicker6.CustomFormat = "dd/MM/yyyy"
-        Me.DateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker6.Location = New System.Drawing.Point(43, 17)
-        Me.DateTimePicker6.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
-        Me.DateTimePicker6.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
-        Me.DateTimePicker6.Name = "DateTimePicker6"
-        Me.DateTimePicker6.Size = New System.Drawing.Size(98, 20)
-        Me.DateTimePicker6.TabIndex = 28
+        Me.InicioDT.CustomFormat = "dd/MM/yyyy"
+        Me.InicioDT.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.InicioDT.Location = New System.Drawing.Point(43, 17)
+        Me.InicioDT.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
+        Me.InicioDT.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
+        Me.InicioDT.Name = "InicioDT"
+        Me.InicioDT.Size = New System.Drawing.Size(98, 20)
+        Me.InicioDT.TabIndex = 28
         '
         'Label8
         '
@@ -457,13 +457,13 @@ Partial Class RecuperarHistorico
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.DataGridView1)
-        Me.TabPage2.Controls.Add(Me.CheckBox1)
+        Me.TabPage2.Controls.Add(Me.FuncionariosDT)
+        Me.TabPage2.Controls.Add(Me.TodosFuncCB)
         Me.TabPage2.Controls.Add(Me.PictureBox7)
-        Me.TabPage2.Controls.Add(Me.TextBox4)
+        Me.TabPage2.Controls.Add(Me.FuncionarioTF)
         Me.TabPage2.Controls.Add(Me.Label7)
-        Me.TabPage2.Controls.Add(Me.DateTimePicker3)
-        Me.TabPage2.Controls.Add(Me.DateTimePicker4)
+        Me.TabPage2.Controls.Add(Me.FimFuncDT)
+        Me.TabPage2.Controls.Add(Me.InicioFuncDT)
         Me.TabPage2.Controls.Add(Me.Button1)
         Me.TabPage2.Controls.Add(Me.Label2)
         Me.TabPage2.Controls.Add(Me.Label6)
@@ -475,19 +475,19 @@ Partial Class RecuperarHistorico
         Me.TabPage2.Text = "Recuperar Histórico dos Funcionários"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'FuncionariosDT
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Matricula, Me.Funcionario, Me.ResetarSenha})
-        Me.DataGridView1.Location = New System.Drawing.Point(21, 120)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.Size = New System.Drawing.Size(629, 157)
-        Me.DataGridView1.TabIndex = 30
+        Me.FuncionariosDT.AllowUserToAddRows = False
+        Me.FuncionariosDT.AllowUserToDeleteRows = False
+        Me.FuncionariosDT.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.FuncionariosDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.FuncionariosDT.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Matricula, Me.Funcionario, Me.ResetarSenha})
+        Me.FuncionariosDT.Location = New System.Drawing.Point(21, 120)
+        Me.FuncionariosDT.Name = "FuncionariosDT"
+        Me.FuncionariosDT.ReadOnly = True
+        Me.FuncionariosDT.RowHeadersVisible = False
+        Me.FuncionariosDT.Size = New System.Drawing.Size(629, 157)
+        Me.FuncionariosDT.TabIndex = 30
         '
         'Matricula
         '
@@ -508,15 +508,15 @@ Partial Class RecuperarHistorico
         Me.ResetarSenha.Name = "ResetarSenha"
         Me.ResetarSenha.ReadOnly = True
         '
-        'CheckBox1
+        'TodosFuncCB
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(21, 88)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(312, 17)
-        Me.CheckBox1.TabIndex = 29
-        Me.CheckBox1.Text = "Selecionar todos os funcionários sob minha responsabilidade"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.TodosFuncCB.AutoSize = True
+        Me.TodosFuncCB.Location = New System.Drawing.Point(21, 88)
+        Me.TodosFuncCB.Name = "TodosFuncCB"
+        Me.TodosFuncCB.Size = New System.Drawing.Size(312, 17)
+        Me.TodosFuncCB.TabIndex = 29
+        Me.TodosFuncCB.Text = "Selecionar todos os funcionários sob minha responsabilidade"
+        Me.TodosFuncCB.UseVisualStyleBackColor = True
         '
         'PictureBox7
         '
@@ -528,13 +528,12 @@ Partial Class RecuperarHistorico
         Me.PictureBox7.TabIndex = 28
         Me.PictureBox7.TabStop = False
         '
-        'TextBox4
+        'FuncionarioTF
         '
-        Me.TextBox4.Enabled = False
-        Me.TextBox4.Location = New System.Drawing.Point(143, 54)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(443, 20)
-        Me.TextBox4.TabIndex = 27
+        Me.FuncionarioTF.Location = New System.Drawing.Point(143, 54)
+        Me.FuncionarioTF.Name = "FuncionarioTF"
+        Me.FuncionarioTF.Size = New System.Drawing.Size(443, 20)
+        Me.FuncionarioTF.TabIndex = 27
         '
         'Label7
         '
@@ -545,27 +544,27 @@ Partial Class RecuperarHistorico
         Me.Label7.TabIndex = 26
         Me.Label7.Text = "Selecionar Funcionário:"
         '
-        'DateTimePicker3
+        'FimFuncDT
         '
-        Me.DateTimePicker3.CustomFormat = "dd/MM/yyyy"
-        Me.DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker3.Location = New System.Drawing.Point(190, 18)
-        Me.DateTimePicker3.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
-        Me.DateTimePicker3.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
-        Me.DateTimePicker3.Name = "DateTimePicker3"
-        Me.DateTimePicker3.Size = New System.Drawing.Size(98, 20)
-        Me.DateTimePicker3.TabIndex = 25
+        Me.FimFuncDT.CustomFormat = "dd/MM/yyyy"
+        Me.FimFuncDT.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.FimFuncDT.Location = New System.Drawing.Point(190, 18)
+        Me.FimFuncDT.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
+        Me.FimFuncDT.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
+        Me.FimFuncDT.Name = "FimFuncDT"
+        Me.FimFuncDT.Size = New System.Drawing.Size(98, 20)
+        Me.FimFuncDT.TabIndex = 25
         '
-        'DateTimePicker4
+        'InicioFuncDT
         '
-        Me.DateTimePicker4.CustomFormat = "dd/MM/yyyy"
-        Me.DateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker4.Location = New System.Drawing.Point(54, 18)
-        Me.DateTimePicker4.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
-        Me.DateTimePicker4.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
-        Me.DateTimePicker4.Name = "DateTimePicker4"
-        Me.DateTimePicker4.Size = New System.Drawing.Size(98, 20)
-        Me.DateTimePicker4.TabIndex = 24
+        Me.InicioFuncDT.CustomFormat = "dd/MM/yyyy"
+        Me.InicioFuncDT.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.InicioFuncDT.Location = New System.Drawing.Point(54, 18)
+        Me.InicioFuncDT.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
+        Me.InicioFuncDT.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
+        Me.InicioFuncDT.Name = "InicioFuncDT"
+        Me.InicioFuncDT.Size = New System.Drawing.Size(98, 20)
+        Me.InicioFuncDT.TabIndex = 24
         '
         'Button1
         '
@@ -616,7 +615,7 @@ Partial Class RecuperarHistorico
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FuncionariosDT, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -659,30 +658,30 @@ Partial Class RecuperarHistorico
     Friend WithEvents NovoClienteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AcompanharClienteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-    Friend WithEvents DateTimePicker5 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents DateTimePicker6 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents FimDT As System.Windows.Forms.DateTimePicker
+    Friend WithEvents InicioDT As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents DateTimePicker3 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents DateTimePicker4 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents FimFuncDT As System.Windows.Forms.DateTimePicker
+    Friend WithEvents InicioFuncDT As System.Windows.Forms.DateTimePicker
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents TodosFuncCB As System.Windows.Forms.CheckBox
     Friend WithEvents PictureBox7 As System.Windows.Forms.PictureBox
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents FuncionarioTF As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents FuncionariosDT As System.Windows.Forms.DataGridView
     Friend WithEvents Matricula As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Funcionario As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ResetarSenha As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents PerfilTF As Label
+    Friend WithEvents MatriculaTF As Label
+    Friend WithEvents NomeTF As Label
 End Class

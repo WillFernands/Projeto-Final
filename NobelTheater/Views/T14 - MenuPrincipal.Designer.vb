@@ -23,9 +23,9 @@ Partial Class MenuPrincipal
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.PerfilTF = New System.Windows.Forms.Label()
+        Me.MatriculaTF = New System.Windows.Forms.Label()
+        Me.NomeTF = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ParecerPanel = New System.Windows.Forms.Panel()
@@ -122,41 +122,41 @@ Partial Class MenuPrincipal
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.PerfilTF)
+        Me.Panel1.Controls.Add(Me.MatriculaTF)
+        Me.Panel1.Controls.Add(Me.NomeTF)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Location = New System.Drawing.Point(12, 32)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(651, 100)
         Me.Panel1.TabIndex = 5
         '
-        'Label5
+        'PerfilTF
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(140, 72)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(127, 13)
-        Me.Label5.TabIndex = 3
-        Me.Label5.Text = "Perfil de Acesso: Gerente"
+        Me.PerfilTF.AutoSize = True
+        Me.PerfilTF.Location = New System.Drawing.Point(140, 72)
+        Me.PerfilTF.Name = "PerfilTF"
+        Me.PerfilTF.Size = New System.Drawing.Size(86, 13)
+        Me.PerfilTF.TabIndex = 3
+        Me.PerfilTF.Text = "Perfil de Acesso:"
         '
-        'Label4
+        'MatriculaTF
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(140, 44)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(88, 13)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Matrícula: 00150"
+        Me.MatriculaTF.AutoSize = True
+        Me.MatriculaTF.Location = New System.Drawing.Point(140, 44)
+        Me.MatriculaTF.Name = "MatriculaTF"
+        Me.MatriculaTF.Size = New System.Drawing.Size(55, 13)
+        Me.MatriculaTF.TabIndex = 2
+        Me.MatriculaTF.Text = "Matrícula:"
         '
-        'Label3
+        'NomeTF
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(140, 16)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(120, 13)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Nome: Leonardo Nunes"
+        Me.NomeTF.AutoSize = True
+        Me.NomeTF.Location = New System.Drawing.Point(140, 16)
+        Me.NomeTF.Name = "NomeTF"
+        Me.NomeTF.Size = New System.Drawing.Size(38, 13)
+        Me.NomeTF.TabIndex = 1
+        Me.NomeTF.Text = "Nome:"
         '
         'PictureBox1
         '
@@ -784,9 +784,9 @@ Partial Class MenuPrincipal
 
     End Sub
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents PerfilTF As System.Windows.Forms.Label
+    Friend WithEvents MatriculaTF As System.Windows.Forms.Label
+    Friend WithEvents NomeTF As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents ParecerPanel As System.Windows.Forms.Panel

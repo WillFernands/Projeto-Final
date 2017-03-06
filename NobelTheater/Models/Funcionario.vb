@@ -4,7 +4,7 @@ Imports NobelTheater
 
 Public Class Funcionario
     Private _matricula As Long
-    Private _cpf As Long
+    Private _cpf As String
     Private _nome As String
     Private _telefone As String
     Private _dataContratacao As Date
@@ -15,19 +15,20 @@ Public Class Funcionario
     Private _bairro As String
     Private _cidade As String
     Private _estado As String
-    Private _cep As Long
+    Private _cep As String
     Private _tipoEndereco As String
+    Private _dataRevogacao As Date
+    Private _revogado As Boolean
 
     Private _senha As String 'Esqueci no diagrama de classe e no DER
 
     Private _supervisor As Funcionario
-    Private _salario As List(Of Salario)
-    Private _registroPonto As List(Of RegistroPonto)
+    Private _salarios As List(Of Salario)
+    Private _registrosPontos As List(Of RegistroPonto)
 
-    Public Sub New(ByVal matricula As Long, ByVal cpf As Long, ByVal nome As String, ByVal telefone As String, ByVal dataContratacao As Date,
+    Public Sub New(ByVal cpf As String, ByVal nome As String, ByVal telefone As String, ByVal dataContratacao As Date,
 ByVal perfil As String, ByVal cargo As String, ByVal logradouro As String, ByVal numero As String,
-ByVal bairro As String, ByVal cidade As String, ByVal estado As String, ByVal cep As Long, ByVal tipoEndereco As String, supervisor As Funcionario, salario As List(Of Salario), registroPonto As List(Of RegistroPonto))
-        _matricula = matricula
+ByVal bairro As String, ByVal cidade As String, ByVal estado As String, ByVal cep As String, ByVal tipoEndereco As String)
         _cpf = cpf
         _nome = nome
         _telefone = telefone
@@ -41,9 +42,8 @@ ByVal bairro As String, ByVal cidade As String, ByVal estado As String, ByVal ce
         _estado = estado
         _cep = cep
         _tipoEndereco = tipoEndereco
-        _supervisor = supervisor
-        _salario = salario
-        _registroPonto = registroPonto
+        _salarios = New List(Of Salario)
+        _registrosPontos = New List(Of RegistroPonto)
     End Sub
 
     Public Sub New()
@@ -59,11 +59,11 @@ ByVal bairro As String, ByVal cidade As String, ByVal estado As String, ByVal ce
         End Set
     End Property
 
-    Public Property Cpf As Long
+    Public Property Cpf As String
         Get
             Return _cpf
         End Get
-        Set(value As Long)
+        Set(value As String)
             _cpf = value
         End Set
     End Property
@@ -158,11 +158,11 @@ ByVal bairro As String, ByVal cidade As String, ByVal estado As String, ByVal ce
         End Set
     End Property
 
-    Public Property Cep As Long
+    Public Property Cep As String
         Get
             Return _cep
         End Get
-        Set(value As Long)
+        Set(value As String)
             _cep = value
         End Set
     End Property
@@ -194,21 +194,39 @@ ByVal bairro As String, ByVal cidade As String, ByVal estado As String, ByVal ce
         End Set
     End Property
 
-    Public Property Salario As List(Of Salario)
+    Public Property Salarios As List(Of Salario)
         Get
-            Return _salario
+            Return _salarios
         End Get
         Set(value As List(Of Salario))
-            _salario = value
+            _salarios = value
         End Set
     End Property
 
-    Public Property RegistroPonto As List(Of RegistroPonto)
+    Public Property RegistroPontos As List(Of RegistroPonto)
         Get
-            Return _registroPonto
+            Return _registrosPontos
         End Get
         Set(value As List(Of RegistroPonto))
-            _registroPonto = value
+            _registrosPontos = value
+        End Set
+    End Property
+
+    Public Property DataRevogacao As Date
+        Get
+            Return _dataRevogacao
+        End Get
+        Set(value As Date)
+            _dataRevogacao = value
+        End Set
+    End Property
+
+    Public Property Revogado As Boolean
+        Get
+            Return _revogado
+        End Get
+        Set(value As Boolean)
+            _revogado = value
         End Set
     End Property
 End Class
