@@ -11,8 +11,6 @@ Public Class ClienteBC
         If (cliente.DataCadastro > Now) Then Return False
         If (String.IsNullOrWhiteSpace(cliente.Nome)) Then Return False
         If (String.IsNullOrWhiteSpace(cliente.Telefone)) Then Return False
-        If (cliente.Enderecos Is Nothing) Then Return False
-        If (cliente.Enderecos.Count = 0) Then Return False
         For Each item As EnderecoCliente In cliente.Enderecos
             If (EnderecoClienteBC.Validate(item) = False) Then Return False
         Next

@@ -6,7 +6,7 @@ Imports System.Text
 Public Class OrcamentoDAO
 
     'OK
-    Public Function Insert(ByVal orcamento As Orcamento) As Boolean
+    Public Function Insert(ByVal orcamento As Orcamento) As Long
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -18,7 +18,10 @@ Public Class OrcamentoDAO
         conn.AddParameter("@idCliente", orcamento.Cliente.ID)
         conn.AddParameter("@status", orcamento.Status)
 
-        Return conn.ExecuteCommand(strSQL.ToString)
+        If (conn.ExecuteCommand(strSQL.ToString) = False) Then Return 0
+
+        conn = New Connection
+        Return CLng(conn.ExecuteScalar("SELECT IDENT_CURRENT('Orcamentos')"))
 
     End Function
 

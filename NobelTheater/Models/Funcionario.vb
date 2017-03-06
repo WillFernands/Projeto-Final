@@ -23,8 +23,8 @@ Public Class Funcionario
     Private _senha As String 'Esqueci no diagrama de classe e no DER
 
     Private _supervisor As Funcionario
-    Private _salarios As List(Of Salario)
-    Private _registrosPontos As List(Of RegistroPonto)
+    Private _salarios As New List(Of Salario)
+    Private _registrosPontos As New List(Of RegistroPonto)
 
     Public Sub New(ByVal cpf As String, ByVal nome As String, ByVal telefone As String, ByVal dataContratacao As Date,
 ByVal perfil As String, ByVal cargo As String, ByVal logradouro As String, ByVal numero As String,
@@ -42,8 +42,6 @@ ByVal bairro As String, ByVal cidade As String, ByVal estado As String, ByVal ce
         _estado = estado
         _cep = cep
         _tipoEndereco = tipoEndereco
-        _salarios = New List(Of Salario)
-        _registrosPontos = New List(Of RegistroPonto)
     End Sub
 
     Public Sub New()

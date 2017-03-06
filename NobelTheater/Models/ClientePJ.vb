@@ -5,8 +5,8 @@ Public Class ClientePJ : Inherits Cliente
     Private _cnpj As String
     Private _razaoSocial As String
 
-    Public Sub New(id As Long, nome As String, telefone As String, dataCadastro As Date, cnpj As String, razaoSocial As String)
-        MyBase.New(id, nome, telefone, dataCadastro)
+    Public Sub New(nome As String, telefone As String, dataCadastro As Date, cnpj As String, razaoSocial As String)
+        MyBase.New(nome, telefone, dataCadastro)
         _cnpj = cnpj
         _razaoSocial = razaoSocial
     End Sub

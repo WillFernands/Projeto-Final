@@ -15,21 +15,14 @@ Public Class OrcamentoBC
         If (FuncionarioBC.Validate(orcamento.Vendedor) = False) Then Return False
         If (ClienteBC.Validate(orcamento.Cliente) = False) Then Return False
 
-        If (orcamento.ItensOrcados Is Nothing) Then Return False
-        If (orcamento.ItensOrcados.Count = 0) Then Return False
-
-        For Each item As ItemOrcado In orcamento.ItensOrcados
-            If (ItemOrcadoBC.Validate(item) = False) Then Return False
-        Next
-
         Return True
     End Function
 
-    Public Shared Function Insert(orcamento As Orcamento) As Boolean
+    Public Shared Function Insert(orcamento As Orcamento) As Long
         If (OrcamentoBC.Validate(orcamento)) Then
             Return orcamentoDAO.Insert(orcamento)
         End If
-        Return False
+        Return 0
     End Function
 
     Public Shared Function UpdateStatus(orcamento As Orcamento) As Boolean

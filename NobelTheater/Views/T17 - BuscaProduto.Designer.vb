@@ -49,7 +49,7 @@ Partial Class BuscaProduto
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.TextBox1)
         Me.Name = "BuscaProduto"
-        Me.Text = "T17___BuscaProduto"
+        Me.Text = "Buscar Produto"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

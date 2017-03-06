@@ -20,6 +20,8 @@
 
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.DoubleClick
 
+        If (ListBox1.SelectedItem Is Nothing) Then Exit Sub
+
         Dim matricula As Long = CLng(Trim(DirectCast(ListBox1.SelectedItem, String).Split("-")(0)))
 
         Dim funcionario As Funcionario = funcionarios.Find(Function(func As Funcionario) func.Matricula = matricula)

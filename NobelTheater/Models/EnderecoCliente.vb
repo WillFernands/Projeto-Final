@@ -17,8 +17,7 @@ Public Class EnderecoCliente
 
     End Sub
 
-    Public Sub New(id As Long, cliente As Cliente, logradouro As String, numero As String, bairro As String, cidade As String, estado As String, cep As String, tipo As String)
-        _id = id
+    Public Sub New(cliente As Cliente, logradouro As String, numero As String, bairro As String, cidade As String, estado As String, cep As String, tipo As String)
         _cliente = cliente
         _logradouro = logradouro
         _numero = numero

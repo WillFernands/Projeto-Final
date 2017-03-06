@@ -9,18 +9,16 @@ Public Class Orcamento
 
     Private _cliente As Cliente
 
-    Private _itensOrcados As List(Of ItemOrcado)
-
+    Private _itensOrcados As New List(Of ItemOrcado)
 
     Public Sub New()
 
     End Sub
 
-    Public Sub New(id As Long, vendedor As Funcionario, cliente As Cliente, status As String, dataOrcamento As Date, itensOrcados As List(Of ItemOrcado))
-        _id = id
+    Public Sub New(dataOrcamento As Date, vendedor As Funcionario, cliente As Cliente, itensOrcados As List(Of ItemOrcado))
         _vendedor = vendedor
         _cliente = cliente
-        _status = status
+        _status = StatusVenda.OrcamentoPendente
         _dataOrcamento = dataOrcamento
         _itensOrcados = itensOrcados
     End Sub

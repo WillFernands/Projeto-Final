@@ -160,15 +160,14 @@ Public Module SQLTableManager
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("CREATE TABLE Orcamentos (
-  id BIGINT PRIMARY KEY IDENTITY NOT NULL,
-  dataOrcamento DATETIME NOT NULL,
-  matriculaVendedor BIGINT NOT NULL,
-  idCliente BIGINT NOT NULL,
-  statusOrcamento VARCHAR(20) NOT NULL,
-  CONSTRAINT Orcamentos_FK FOREIGN KEY (matriculaVendedor) REFERENCES Funcionarios (matricula),
-  CONSTRAINT Orcamentos_FK2 FOREIGN KEY (idCliente) REFERENCES Clientes (id))
-")
+        strSQL.Append("CREATE TABLE Orcamentos (")
+        strSQL.Append("id BIGINT PRIMARY KEY IDENTITY Not NULL, ")
+        strSQL.Append("dataOrcamento DATETIME NOT NULL, ")
+        strSQL.Append("matriculaVendedor BIGINT Not NULL, ")
+        strSQL.Append("idCliente BIGINT NOT NULL, ")
+        strSQL.Append("statusOrcamento VARCHAR(20) Not NULL, ")
+        strSQL.Append("CONSTRAINT Orcamentos_FK FOREIGN KEY (matriculaVendedor) REFERENCES Funcionarios (matricula), ")
+        strSQL.Append("CONSTRAINT Orcamentos_FK2 FOREIGN KEY (idCliente) REFERENCES Clientes (id))")
 
         Return conn.ExecuteCommand(strSQL.ToString)
     End Function
@@ -193,15 +192,14 @@ Public Module SQLTableManager
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("CREATE TABLE NotasFiscaisCompras (
-  id BIGINT PRIMARY KEY IDENTITY NOT NULL ,
-  statusNF VARCHAR(20) NOT NULL,
-  emissaoNF DATETIME NOT NULL,
-  numeroNF INT NOT NULL,
-  dataAprovacao DATETIME NOT NULL,
-  idCotacao BIGINT NOT NULL,
-  CONSTRAINT NotasFiscaisCompras_FK FOREIGN KEY (idCotacao) REFERENCES Cotacoes (id))
-")
+        strSQL.Append("CREATE TABLE NotasFiscaisCompras (")
+        strSQL.Append("id BIGINT PRIMARY KEY IDENTITY Not NULL , ")
+        strSQL.Append("statusNF VARCHAR(20) NOT NULL, ")
+        strSQL.Append("emissaoNF DATETIME Not NULL, ")
+        strSQL.Append("numeroNF INT NOT NULL, ")
+        strSQL.Append("dataAprovacao DATETIME Not NULL, ")
+        strSQL.Append("idCotacao BIGINT NOT NULL, ")
+        strSQL.Append("CONSTRAINT NotasFiscaisCompras_FK FOREIGN KEY (idCotacao) REFERENCES Cotacoes (id))")
 
         Return conn.ExecuteCommand(strSQL.ToString)
     End Function
@@ -211,16 +209,16 @@ Public Module SQLTableManager
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("CREATE TABLE NotasFiscaisVendas (
-  id BIGINT PRIMARY KEY IDENTITY NOT NULL,
-  statusNF VARCHAR(20) NOT NULL,
-  emissaoNF DATETIME NOT NULL,
-  numeroNF INT NOT NULL,
-  dataAprovacao DATETIME NOT NULL,
-  dataFinalObra DATETIME NULL,
-  idOrcamento BIGINT NOT NULL,
-  CONSTRAINT NotasFiscaisVendas_FK FOREIGN KEY (idOrcamento) REFERENCES Orcamentos (id))
-")
+        strSQL.Append("CREATE TABLE NotasFiscaisVendas (")
+        strSQL.Append("id BIGINT PRIMARY KEY IDENTITY Not NULL, ")
+        strSQL.Append("statusNF VARCHAR(20) NOT NULL, ")
+        strSQL.Append("emissaoNF DATETIME Not NULL, ")
+        strSQL.Append("numeroNF INT NOT NULL, ")
+        strSQL.Append("dataAprovacao DATETIME Not NULL, ")
+        strSQL.Append("dataFinalObra DATETIME NULL, ")
+        strSQL.Append("idOrcamento BIGINT Not NULL, ")
+        strSQL.Append("CONSTRAINT NotasFiscaisVendas_FK FOREIGN KEY (idOrcamento) REFERENCES Orcamentos (id))")
+
 
         Return conn.ExecuteCommand(strSQL.ToString)
     End Function
@@ -230,13 +228,12 @@ Public Module SQLTableManager
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("CREATE TABLE RegistrosPontos (
-  dataRegistro DATETIME NOT NULL,
-  tipo VARCHAR(20) NOT NULL,
-  matriculaFuncionario BIGINT NOT NULL,
-  PRIMARY KEY (matriculaFuncionario, dataRegistro, tipo),
-  CONSTRAINT RegistrosPontos_FK FOREIGN KEY (matriculaFuncionario) REFERENCES Funcionarios (matricula))
-")
+        strSQL.Append("CREATE TABLE RegistrosPontos (")
+        strSQL.Append("dataRegistro DATETIME Not NULL, ")
+        strSQL.Append("tipo VARCHAR(20) NOT NULL, ")
+        strSQL.Append("matriculaFuncionario BIGINT Not NULL, ")
+        strSQL.Append("PRIMARY KEY (matriculaFuncionario, dataRegistro, tipo), ")
+        strSQL.Append("CONSTRAINT RegistrosPontos_FK FOREIGN KEY (matriculaFuncionario) REFERENCES Funcionarios (matricula))")
 
         Return conn.ExecuteCommand(strSQL.ToString)
     End Function
@@ -246,17 +243,16 @@ Public Module SQLTableManager
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("CREATE TABLE VisitasTecnicas (
-  idNotaFiscal BIGINT NOT NULL,
-  dataVisita DATETIME NOT NULL,
-  tipo VARCHAR(20) NOT NULL,
-  preco FLOAT NOT NULL DEFAULT 0.0,
-  parecerObra VARCHAR(500) NOT NULL,
-  matriculaSupervisor BIGINT NOT NULL,
-  PRIMARY KEY (idNotaFiscal, dataVisita, tipo),
-  CONSTRAINT VisitasTecnicas_FK FOREIGN KEY (idNotaFiscal) REFERENCES NotasFiscaisVendas (id),
-  CONSTRAINT VisitasTecnicas_FK2 FOREIGN KEY (matriculaSupervisor) REFERENCES Funcionarios (matricula))
-")
+        strSQL.Append("CREATE TABLE VisitasTecnicas (")
+        strSQL.Append("idNotaFiscal BIGINT Not NULL, ")
+        strSQL.Append("dataVisita DATETIME NOT NULL, ")
+        strSQL.Append("tipo VARCHAR(20) Not NULL, ")
+        strSQL.Append("preco FLOAT NOT NULL DEFAULT 0.0, ")
+        strSQL.Append("parecerObra VARCHAR(500) Not NULL, ")
+        strSQL.Append("matriculaSupervisor BIGINT NOT NULL, ")
+        strSQL.Append("PRIMARY KEY (idNotaFiscal, dataVisita, tipo), ")
+        strSQL.Append("CONSTRAINT VisitasTecnicas_FK FOREIGN KEY (idNotaFiscal) REFERENCES NotasFiscaisVendas (id), ")
+        strSQL.Append("CONSTRAINT VisitasTecnicas_FK2 FOREIGN KEY (matriculaSupervisor) REFERENCES Funcionarios (matricula))")
 
         Return conn.ExecuteCommand(strSQL.ToString)
     End Function
@@ -266,15 +262,14 @@ Public Module SQLTableManager
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("CREATE TABLE OrdensServicos (
-  id BIGINT PRIMARY KEY IDENTITY NOT NULL,
-  cnpjFornecedor VARCHAR(14) NOT NULL,
-  idCliente BIGINT NOT NULL,
-  dataSolicitacao DATETIME NOT NULL,
-  statusOrdem VARCHAR(20) NOT NULL,
-  CONSTRAINT OrdensServicos_FK FOREIGN KEY (cnpjFornecedor) REFERENCES Fornecedores (cnpj),
-  CONSTRAINT OrdensServicos_FK2 FOREIGN KEY (idCliente) REFERENCES Clientes (id))
-")
+        strSQL.Append("CREATE TABLE OrdensServicos (")
+        strSQL.Append("id BIGINT PRIMARY KEY IDENTITY Not NULL, ")
+        strSQL.Append("cnpjFornecedor VARCHAR(14) NOT NULL, ")
+        strSQL.Append("idCliente BIGINT Not NULL, ")
+        strSQL.Append("dataSolicitacao DATETIME NOT NULL, ")
+        strSQL.Append("statusOrdem VARCHAR(20) Not NULL, ")
+        strSQL.Append("CONSTRAINT OrdensServicos_FK FOREIGN KEY (cnpjFornecedor) REFERENCES Fornecedores (cnpj), ")
+        strSQL.Append("CONSTRAINT OrdensServicos_FK2 FOREIGN KEY (idCliente) REFERENCES Clientes (id))")
 
         Return conn.ExecuteCommand(strSQL.ToString)
     End Function
@@ -284,13 +279,12 @@ Public Module SQLTableManager
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("CREATE TABLE SolicitacoesEmprestimos (
-  id BIGINT PRIMARY KEY IDENTITY NOT NULL, 
-  dataSolicitacao DATETIME NOT NULL,
-  idCliente BIGINT NOT NULL,
-  statusSolicitacao VARCHAR(20) NOT NULL,
-  CONSTRAINT SolicitacoesEmprestimos_FK FOREIGN KEY (idCliente) REFERENCES Clientes (id))
-")
+        strSQL.Append("CREATE TABLE SolicitacoesEmprestimos (")
+        strSQL.Append("id BIGINT PRIMARY KEY IDENTITY Not NULL, ")
+        strSQL.Append("dataSolicitacao DATETIME NOT NULL, ")
+        strSQL.Append("idCliente BIGINT Not NULL, ")
+        strSQL.Append("statusSolicitacao VARCHAR(20) NOT NULL, ")
+        strSQL.Append("CONSTRAINT SolicitacoesEmprestimos_FK FOREIGN KEY (idCliente) REFERENCES Clientes (id))")
 
         Return conn.ExecuteCommand(strSQL.ToString)
     End Function
@@ -300,15 +294,14 @@ Public Module SQLTableManager
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("CREATE TABLE PagamentosEfetuados (
-  idNotaFiscal BIGINT NOT NULL,
-  dataPagamento DATETIME NOT NULL,
-  valor FLOAT NOT NULL,
-  statusPagamento VARCHAR(20) NOT NULL,
-  tipo VARCHAR(20) NOT NULL,
-  PRIMARY KEY (idNotaFiscal, dataPagamento, valor),
-  CONSTRAINT PagamentosEfetuados_FK FOREIGN KEY (idNotaFiscal) REFERENCES NotasFiscaisCompras (id))
-")
+        strSQL.Append("CREATE TABLE PagamentosEfetuados (")
+        strSQL.Append("idNotaFiscal BIGINT Not NULL, ")
+        strSQL.Append("dataPagamento DATETIME NOT NULL, ")
+        strSQL.Append("valor FLOAT Not NULL, ")
+        strSQL.Append("statusPagamento VARCHAR(20) NOT NULL, ")
+        strSQL.Append("tipo VARCHAR(20) Not NULL, ")
+        strSQL.Append("PRIMARY KEY (idNotaFiscal, dataPagamento, valor), ")
+        strSQL.Append("CONSTRAINT PagamentosEfetuados_FK FOREIGN KEY (idNotaFiscal) REFERENCES NotasFiscaisCompras (id))")
 
         Return conn.ExecuteCommand(strSQL.ToString)
     End Function
@@ -318,15 +311,14 @@ Public Module SQLTableManager
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("CREATE TABLE PagamentosRecebidos (
-  idNotaFiscal BIGINT NOT NULL,
-  dataPagamento DATETIME NOT NULL,
-  valor FLOAT NOT NULL,
-  statusPagamento VARCHAR(20) NOT NULL,
-  tipo VARCHAR(20) NOT NULL,
-  PRIMARY KEY (idNotaFiscal, dataPagamento, valor),
-  CONSTRAINT PagamentosRealizados_FK FOREIGN KEY (idNotaFiscal) REFERENCES NotasFiscaisVendas (id))
-")
+        strSQL.Append("CREATE TABLE PagamentosRecebidos (")
+        strSQL.Append("idNotaFiscal BIGINT Not NULL, ")
+        strSQL.Append("dataPagamento DATETIME NOT NULL, ")
+        strSQL.Append("valor FLOAT Not NULL, ")
+        strSQL.Append("statusPagamento VARCHAR(20) NOT NULL, ")
+        strSQL.Append("tipo VARCHAR(20) Not NULL, ")
+        strSQL.Append("PRIMARY KEY (idNotaFiscal, dataPagamento, valor), ")
+        strSQL.Append("CONSTRAINT PagamentosRealizados_FK FOREIGN KEY (idNotaFiscal) REFERENCES NotasFiscaisVendas (id))")
 
         Return conn.ExecuteCommand(strSQL.ToString)
     End Function
@@ -369,14 +361,13 @@ Public Module SQLTableManager
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("CREATE TABLE ItensOrcados (
-  codigoProduto BIGINT NOT NULL,
-  idOrcamento BIGINT NOT NULL,
-  quantidade INT NOT NULL DEFAULT 1,
-  PRIMARY KEY (codigoProduto, idOrcamento),
-  CONSTRAINT ItensOrcados_FK FOREIGN KEY (codigoProduto) REFERENCES Produtos (codigo),
-  CONSTRAINT ItensOrcados_FK2 FOREIGN KEY (idOrcamento) REFERENCES Orcamentos (id))
-")
+        strSQL.Append("CREATE TABLE ItensOrcados (")
+        strSQL.Append("codigoProduto BIGINT Not NULL, ")
+        strSQL.Append("idOrcamento BIGINT NOT NULL, ")
+        strSQL.Append("quantidade INT Not NULL Default 1, ")
+        strSQL.Append("PRIMARY KEY (codigoProduto, idOrcamento), ")
+        strSQL.Append("CONSTRAINT ItensOrcados_FK FOREIGN KEY (codigoProduto) REFERENCES Produtos (codigo), ")
+        strSQL.Append("CONSTRAINT ItensOrcados_FK2 FOREIGN KEY (idOrcamento) REFERENCES Orcamentos (id))")
 
         Return conn.ExecuteCommand(strSQL.ToString)
     End Function
@@ -386,16 +377,15 @@ Public Module SQLTableManager
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("CREATE TABLE ItensEmprestimos (
-  codigoProduto BIGINT NOT NULL,
-  idSolicitacao BIGINT NOT NULL,
-  quantidade INT NOT NULL,
-  dataEmprestimo DATETIME NOT NULL,
-  dataDevolucao DATETIME NULL,
-  PRIMARY KEY (codigoProduto, idSolicitacao),
-  CONSTRAINT ItensEmprestimos_FK FOREIGN KEY (idSolicitacao) REFERENCES SolicitacoesEmprestimos (id),
-  CONSTRAINT ItensEmprestimos_FK2 FOREIGN KEY (codigoProduto) REFERENCES Produtos (codigo))
-")
+        strSQL.Append("CREATE TABLE ItensEmprestimos (")
+        strSQL.Append("codigoProduto BIGINT Not NULL, ")
+        strSQL.Append("idSolicitacao BIGINT NOT NULL, ")
+        strSQL.Append("quantidade INT Not NULL, ")
+        strSQL.Append("dataEmprestimo DATETIME NOT NULL, ")
+        strSQL.Append("dataDevolucao DATETIME NULL, ")
+        strSQL.Append("PRIMARY KEY (codigoProduto, idSolicitacao), ")
+        strSQL.Append("CONSTRAINT ItensEmprestimos_FK FOREIGN KEY (idSolicitacao) REFERENCES SolicitacoesEmprestimos (id), ")
+        strSQL.Append("CONSTRAINT ItensEmprestimos_FK2 FOREIGN KEY (codigoProduto) REFERENCES Produtos (codigo))")
 
         Return conn.ExecuteCommand(strSQL.ToString)
     End Function
@@ -405,17 +395,16 @@ Public Module SQLTableManager
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("CREATE TABLE ItensOrdens (
-  codigoProduto BIGINT NOT NULL,
-  idOrdem BIGINT NOT NULL,
-  quantidade INT NOT NULL,
-  dataEntrega DATETIME NOT NULL,
-  dataRecebimento DATETIME NULL,
-  dataDevolucao DATETIME NULL,
-  PRIMARY KEY (codigoProduto, idOrdem),
-  CONSTRAINT ItensOrdens_FK FOREIGN KEY (codigoProduto) REFERENCES Produtos (codigo),
-  CONSTRAINT ItensOrdens_FK2 FOREIGN KEY (idOrdem) REFERENCES OrdensServicos (id))
-")
+        strSQL.Append("CREATE TABLE ItensOrdens (")
+        strSQL.Append("codigoProduto BIGINT Not NULL, ")
+        strSQL.Append("idOrdem BIGINT NOT NULL, ")
+        strSQL.Append("quantidade INT Not NULL, ")
+        strSQL.Append("dataEntrega DATETIME NOT NULL, ")
+        strSQL.Append("dataRecebimento DATETIME NULL, ")
+        strSQL.Append("dataDevolucao DATETIME NULL, ")
+        strSQL.Append("PRIMARY KEY (codigoProduto, idOrdem), ")
+        strSQL.Append("CONSTRAINT ItensOrdens_FK FOREIGN KEY (codigoProduto) REFERENCES Produtos (codigo), ")
+        strSQL.Append("CONSTRAINT ItensOrdens_FK2 FOREIGN KEY (idOrdem) REFERENCES OrdensServicos (id))")
 
         Return conn.ExecuteCommand(strSQL.ToString)
     End Function
@@ -425,14 +414,13 @@ Public Module SQLTableManager
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("CREATE TABLE ItensComprados (
-  codigoProduto BIGINT NOT NULL,
-  idNotaFiscal BIGINT NOT NULL,
-  quantidade INT NOT NULL,
-  PRIMARY KEY (codigoProduto, idNotaFiscal),
-  CONSTRAINT ItensComprados_FK FOREIGN KEY (codigoProduto) REFERENCES Produtos (codigo),
-  CONSTRAINT ItensComprados_FK2 FOREIGN KEY (idNotaFiscal) REFERENCES NotasFiscaisCompras (id))
-")
+        strSQL.Append("CREATE TABLE ItensComprados (")
+        strSQL.Append("codigoProduto BIGINT Not NULL, ")
+        strSQL.Append("idNotaFiscal BIGINT NOT NULL, ")
+        strSQL.Append("quantidade INT Not NULL, ")
+        strSQL.Append("PRIMARY KEY (codigoProduto, idNotaFiscal), ")
+        strSQL.Append("CONSTRAINT ItensComprados_FK FOREIGN KEY (codigoProduto) REFERENCES Produtos (codigo), ")
+        strSQL.Append("CONSTRAINT ItensComprados_FK2 FOREIGN KEY (idNotaFiscal) REFERENCES NotasFiscaisCompras (id))")
 
         Return conn.ExecuteCommand(strSQL.ToString)
     End Function
@@ -442,14 +430,13 @@ Public Module SQLTableManager
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("CREATE TABLE ItensVendidos (
-  codigoProduto BIGINT NOT NULL,
-  idNotaFiscal BIGINT NOT NULL,
-  quantidade INT NOT NULL DEFAULT 1,
-  PRIMARY KEY (codigoProduto, idNotaFiscal),
-  CONSTRAINT ItensVendidos_FK FOREIGN KEY (idNotaFiscal) REFERENCES NotasFiscaisVendas (id),
-  CONSTRAINT ItensVendidos_FK2 FOREIGN KEY (codigoProduto) REFERENCES Produtos (codigo))
-")
+        strSQL.Append("CREATE TABLE ItensVendidos (")
+        strSQL.Append("codigoProduto BIGINT Not NULL, ")
+        strSQL.Append("idNotaFiscal BIGINT NOT NULL, ")
+        strSQL.Append("quantidade INT Not NULL Default 1, ")
+        strSQL.Append("PRIMARY KEY (codigoProduto, idNotaFiscal), ")
+        strSQL.Append("CONSTRAINT ItensVendidos_FK FOREIGN KEY (idNotaFiscal) REFERENCES NotasFiscaisVendas (id), ")
+        strSQL.Append("CONSTRAINT ItensVendidos_FK2 FOREIGN KEY (codigoProduto) REFERENCES Produtos (codigo))")
 
         Return conn.ExecuteCommand(strSQL.ToString)
     End Function
@@ -680,5 +667,59 @@ Public Module SQLTableManager
         RegistroPontoBC.Insert(r9)
         RegistroPontoBC.Insert(r10)
 
+    End Sub
+
+    'OK
+    Public Sub PopulateClientesPF()
+        Dim c1 As New ClientePF("Leonardo Nunes", "998161345", Now, "08219004983")
+        Dim endereco As New EnderecoCliente(c1, "Rua Teste 01", "100", "Boqueirão", "Curitiba", "PR", "81450920", TipoImovel.Casa)
+        c1.Enderecos.Add(endereco)
+        ClientePFBC.Insert(c1)
+        For Each enderecoCliente As EnderecoCliente In c1.Enderecos
+            EnderecoClienteBC.Insert(enderecoCliente)
+        Next
+
+        Dim c2 As New ClientePF("Teste 02", "998161345", Now, "48987546153")
+        Dim endereco2 As New EnderecoCliente(c2, "Rua Teste 01", "100", "Boqueirão", "Curitiba", "PR", "81450920", TipoImovel.Casa)
+        c2.Enderecos.Add(endereco2)
+        ClientePFBC.Insert(c2)
+        For Each enderecoCliente As EnderecoCliente In c2.Enderecos
+            EnderecoClienteBC.Insert(enderecoCliente)
+        Next
+
+        Dim c3 As New ClientePF("Teste 03", "998161345", Now, "15987546413")
+        Dim endereco3 As New EnderecoCliente(c3, "Rua Teste 01", "100", "Boqueirão", "Curitiba", "PR", "81450920", TipoImovel.Casa)
+        c3.Enderecos.Add(endereco3)
+        ClientePFBC.Insert(c3)
+        For Each enderecoCliente As EnderecoCliente In c3.Enderecos
+            EnderecoClienteBC.Insert(enderecoCliente)
+        Next
+    End Sub
+
+    'OK
+    Public Sub PopulateClientesPJ()
+        Dim c1 As New ClientePJ("Biscoito LTDA", "998161245", Now, "12345678901234", "Biscoito")
+        Dim endereco As New EnderecoCliente(c1, "Rua Teste 01", "100", "Boqueirão", "Curitiba", "PR", "81450920", TipoImovel.Casa)
+        c1.Enderecos.Add(endereco)
+        ClientePJBC.Insert(c1)
+        For Each enderecoCliente As EnderecoCliente In c1.Enderecos
+            EnderecoClienteBC.Insert(enderecoCliente)
+        Next
+
+        Dim c2 As New ClientePJ("Bolacha LTDA", "998161299", Now, "48945678901159", "Bolacha")
+        Dim endereco2 As New EnderecoCliente(c2, "Rua Teste 01", "100", "Boqueirão", "Curitiba", "PR", "81450920", TipoImovel.Casa)
+        c2.Enderecos.Add(endereco2)
+        ClientePJBC.Insert(c2)
+        For Each enderecoCliente As EnderecoCliente In c2.Enderecos
+            EnderecoClienteBC.Insert(enderecoCliente)
+        Next
+
+        Dim c3 As New ClientePJ("Pão LTDA", "998161200", Now, "72445678901789", "Pão")
+        Dim endereco3 As New EnderecoCliente(c3, "Rua Teste 01", "100", "Boqueirão", "Curitiba", "PR", "81450920", TipoImovel.Casa)
+        c3.Enderecos.Add(endereco3)
+        ClientePJBC.Insert(c3)
+        For Each enderecoCliente As EnderecoCliente In c3.Enderecos
+            EnderecoClienteBC.Insert(enderecoCliente)
+        Next
     End Sub
 End Module

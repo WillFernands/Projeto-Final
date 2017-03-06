@@ -7,14 +7,12 @@ Public Class Cliente
     Private _telefone As String
     Private _dataCadastro As Date
 
-    Private _enderecos As List(Of EnderecoCliente)
+    Private _enderecos As New List(Of EnderecoCliente)
 
-    Public Sub New(id As Long, nome As String, telefone As String, dataCadastro As Date)
-        _id = id
+    Public Sub New(nome As String, telefone As String, dataCadastro As Date)
         _nome = nome
         _telefone = telefone
         _dataCadastro = dataCadastro
-        _enderecos = New List(Of EnderecoCliente)
     End Sub
 
     Public Sub New()

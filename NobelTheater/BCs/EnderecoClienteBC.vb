@@ -1,7 +1,7 @@
 ﻿Option Explicit On
 Option Strict On
 
-Public Class enderecoClienteBC
+Public Class EnderecoClienteBC
 
     Private Shared enderecoClienteDAO As New EnderecoClienteDAO
 
@@ -18,15 +18,15 @@ Public Class enderecoClienteBC
         Return True
     End Function
 
-    Public Shared Function Insert(enderecoCliente As EnderecoCliente) As Boolean
-        If (enderecoClienteBC.Validate(enderecoCliente)) Then
+    Public Shared Function Insert(enderecoCliente As EnderecoCliente) As Long
+        If (EnderecoClienteBC.Validate(enderecoCliente)) Then
             Return enderecoClienteDAO.Insert(enderecoCliente)
         End If
-        Return False
+        Return 0
     End Function
 
     Public Shared Function Update(enderecoCliente As EnderecoCliente) As Boolean
-        If (enderecoClienteBC.Validate(enderecoCliente)) Then
+        If (EnderecoClienteBC.Validate(enderecoCliente)) Then
             Return enderecoClienteDAO.Update(enderecoCliente)
         End If
         Return False
@@ -37,7 +37,7 @@ Public Class enderecoClienteBC
     End Function
 
     Public Shared Function Delete(enderecoCliente As EnderecoCliente) As Boolean
-        If (enderecoClienteBC.Validate(enderecoCliente)) Then
+        If (EnderecoClienteBC.Validate(enderecoCliente)) Then
             Return enderecoClienteDAO.Delete(enderecoCliente)
         End If
         Return False

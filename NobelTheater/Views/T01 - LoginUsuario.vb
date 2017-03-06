@@ -23,6 +23,20 @@
         'SQLTableManager.CreateItensCotados()
         'SQLTableManager.PopulateProdutos()
         'SQLTableManager.CreateAlertas()
+        'SQLTableManager.DropEnderecosClientes()
+        'SQLTableManager.DropClientes()
+        'SQLTableManager.DropClientesPF()
+        'SQLTableManager.DropClientesPJ()
+        'SQLTableManager.CreateClientes()
+        'SQLTableManager.CreateClientesPF()
+        'SQLTableManager.CreateClientesPJ()
+        'SQLTableManager.CreateEnderecosClientes()
+        'SQLTableManager.PopulateClientesPF()
+        'SQLTableManager.PopulateClientesPJ()
+        'SQLTableManager.DropOrcamentos()
+        'SQLTableManager.DropItensOrcados()
+        'SQLTableManager.CreateOrcamentos()
+        'SQLTableManager.CreateItensOrcados()
     End Sub
 
     Private Sub OK_Click(sender As Object, e As EventArgs) Handles OK.Click

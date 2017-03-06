@@ -20,6 +20,8 @@
 
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.DoubleClick
 
+        If (ListBox1.SelectedItem Is Nothing) Then Exit Sub
+
         Dim cnpj As String = Trim(DirectCast(ListBox1.SelectedItem, String).Split("-")(0)).ToString
 
         Dim fornecedor As Fornecedor = fornecedores.Find(Function(forn As Fornecedor) forn.Cnpj = cnpj)
@@ -39,4 +41,5 @@ Back:   For Each item As String In ListBox1.Items
             End If
         Next
     End Sub
+
 End Class

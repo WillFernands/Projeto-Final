@@ -5,9 +5,8 @@ Public Class ItemOrcado
     Private _orcamento As Orcamento
     Private _quantidade As Integer
 
-    Public Sub New(produto As Produto, orcamento As Orcamento, quantidade As Integer)
+    Public Sub New(quantidade As Integer, produto As Produto)
         _produto = produto
-        _orcamento = orcamento
         _quantidade = quantidade
     End Sub
 

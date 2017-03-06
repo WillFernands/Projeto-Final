@@ -6,7 +6,7 @@ Imports System.Text
 Public Class EnderecoClienteDAO
 
     'OK
-    Public Function Insert(ByVal endereco As EnderecoCliente) As Boolean
+    Public Function Insert(ByVal endereco As EnderecoCliente) As Long
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -19,10 +19,13 @@ Public Class EnderecoClienteDAO
         conn.AddParameter("@bairro", endereco.Bairro)
         conn.AddParameter("@cidade", endereco.Cidade)
         conn.AddParameter("@estado", endereco.Estado)
-        conn.AddParameter("@cep", endereco.CEP)
+        conn.AddParameter("@cep", endereco.Cep)
         conn.AddParameter("@tipo", endereco.Tipo)
 
-        Return conn.ExecuteCommand(strSQL.ToString)
+        If (conn.ExecuteCommand(strSQL.ToString) = False) Then Return 0
+
+        conn = New Connection
+        Return CLng(conn.ExecuteScalar("SELECT IDENT_CURRENT('EnderecosClientes')"))
 
     End Function
 

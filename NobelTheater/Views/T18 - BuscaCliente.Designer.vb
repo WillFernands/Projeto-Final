@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class BuscaFornecedor
+Partial Class BuscaCliente
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -24,32 +24,58 @@ Partial Class BuscaFornecedor
     Private Sub InitializeComponent()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.PFRB = New System.Windows.Forms.RadioButton()
+        Me.PJRB = New System.Windows.Forms.RadioButton()
         Me.SuspendLayout()
         '
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(12, 56)
+        Me.ListBox1.Location = New System.Drawing.Point(23, 92)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(355, 212)
-        Me.ListBox1.TabIndex = 3
+        Me.ListBox1.TabIndex = 7
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(12, 21)
+        Me.TextBox1.Location = New System.Drawing.Point(23, 56)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(355, 20)
-        Me.TextBox1.TabIndex = 2
+        Me.TextBox1.Size = New System.Drawing.Size(268, 20)
+        Me.TextBox1.TabIndex = 6
         '
-        'BuscaFornecedor
+        'PFRB
+        '
+        Me.PFRB.AutoSize = True
+        Me.PFRB.Checked = True
+        Me.PFRB.Location = New System.Drawing.Point(297, 57)
+        Me.PFRB.Name = "PFRB"
+        Me.PFRB.Size = New System.Drawing.Size(38, 17)
+        Me.PFRB.TabIndex = 8
+        Me.PFRB.TabStop = True
+        Me.PFRB.Text = "PF"
+        Me.PFRB.UseVisualStyleBackColor = True
+        '
+        'PJRB
+        '
+        Me.PJRB.AutoSize = True
+        Me.PJRB.Location = New System.Drawing.Point(341, 58)
+        Me.PJRB.Name = "PJRB"
+        Me.PJRB.Size = New System.Drawing.Size(37, 17)
+        Me.PJRB.TabIndex = 9
+        Me.PJRB.Text = "PJ"
+        Me.PJRB.UseVisualStyleBackColor = True
+        '
+        'BuscaCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(401, 302)
+        Me.ClientSize = New System.Drawing.Size(403, 335)
+        Me.Controls.Add(Me.PJRB)
+        Me.Controls.Add(Me.PFRB)
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.TextBox1)
-        Me.Name = "BuscaFornecedor"
-        Me.Text = "Buscar Fornecedor"
+        Me.Name = "BuscaCliente"
+        Me.Text = "BuscaCliente"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -57,4 +83,6 @@ Partial Class BuscaFornecedor
 
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents PFRB As RadioButton
+    Friend WithEvents PJRB As RadioButton
 End Class

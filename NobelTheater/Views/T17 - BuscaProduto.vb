@@ -20,6 +20,8 @@
 
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.DoubleClick
 
+        If (ListBox1.SelectedItem Is Nothing) Then Exit Sub
+
         Dim codigo As Long = CLng(Trim(DirectCast(ListBox1.SelectedItem, String).Split("-")(0)))
 
         Dim produto As Produto = produtos.Find(Function(prod As Produto) prod.Codigo = codigo)
@@ -30,7 +32,11 @@
         ElseIf (Caller = "ControleEstoqueAlerta") Then
             ControleEstoque.PopulateProdutoAlerta(produto)
             Me.Close()
+        ElseIf (Caller = "ControleVendaOrcamento") Then
+            ControleVendas.PopulateProduto(produto)
+            Me.Close()
         End If
+
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged

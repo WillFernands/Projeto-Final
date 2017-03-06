@@ -5,8 +5,8 @@ Public Class ClientePF : Inherits Cliente
 
     Private _cpf As String
 
-    Public Sub New(id As Long, nome As String, telefone As String, dataCadastro As Date, cpf As String)
-        MyBase.New(id, nome, telefone, dataCadastro)
+    Public Sub New(nome As String, telefone As String, dataCadastro As Date, cpf As String)
+        MyBase.New(nome, telefone, dataCadastro)
         _cpf = cpf
     End Sub
 

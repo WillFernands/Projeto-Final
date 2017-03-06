@@ -13,7 +13,7 @@
         RefreshDTAlertas()
     End Sub
 
-    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles FornecedorIMG.Click
+    Private Sub FornecedorIMG_Click(sender As Object, e As EventArgs) Handles FornecedorIMG.Click
         Dim busca As New BuscaFornecedor()
         busca.Caller = "ControleEstoque"
         busca.Show()
@@ -94,10 +94,25 @@
         Dim cotacao As New Cotacao(Now, fornecedorAtual, itensCotados)
         cotacao.ID = CotacaoBC.Insert(cotacao)
 
+        If (cotacao.ID = 0) Then
+            MsgBox("Um problema ocorreu durante a criação da cotação", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        End If
+
         For Each item As ItemCotado In cotacao.Itens
             item.Cotacao = cotacao
-            ItemCotadoBC.Insert(item)
+
+            If (ItemCotadoBC.Insert(item) = False) Then
+                MsgBox("Um problema ocorreu durante a criação de um item cotado", vbInformation Or vbMsgBoxSetForeground)
+                Exit Sub
+            End If
         Next
+
+        MsgBox("Cotação Criada com sucesso !!", vbInformation Or vbMsgBoxSetForeground)
+        fornecedorAtual = Nothing
+        produtoAtual = Nothing
+        itensCotados = New List(Of ItemCotado)
+        ProdutosDT.Rows.Clear()
 
     End Sub
 
