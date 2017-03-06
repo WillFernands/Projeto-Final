@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ControleFornecedor
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class ControleFornecedor
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -31,9 +31,18 @@ Partial Class ControleFornecedor
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.EnderecosDT = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Quantidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecoTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CEP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Remover = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
@@ -83,19 +92,17 @@ Partial Class ControleFornecedor
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Quantidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecoTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CEP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Remover = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.EnderecosDT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -172,10 +179,16 @@ Partial Class ControleFornecedor
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.TextBox9)
+        Me.TabPage1.Controls.Add(Me.Label11)
+        Me.TabPage1.Controls.Add(Me.TextBox8)
+        Me.TabPage1.Controls.Add(Me.Label10)
+        Me.TabPage1.Controls.Add(Me.TextBox7)
+        Me.TabPage1.Controls.Add(Me.Label9)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(685, 335)
+        Me.TabPage1.Size = New System.Drawing.Size(685, 359)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Novo Fornecedor"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -205,6 +218,16 @@ Partial Class ControleFornecedor
         Me.TabPage2.Text = "Acompanhar Fornecedor"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(483, 159)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(188, 17)
+        Me.CheckBox1.TabIndex = 36
+        Me.CheckBox1.Text = "Víncular como assistência técnica"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
         'TextBox6
         '
         Me.TextBox6.Location = New System.Drawing.Point(593, 121)
@@ -232,6 +255,63 @@ Partial Class ControleFornecedor
         Me.EnderecosDT.RowHeadersVisible = False
         Me.EnderecosDT.Size = New System.Drawing.Size(661, 117)
         Me.EnderecosDT.TabIndex = 33
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Logradouro"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 150
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Número"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Width = 50
+        '
+        'Quantidade
+        '
+        Me.Quantidade.HeaderText = "Bairro"
+        Me.Quantidade.Name = "Quantidade"
+        Me.Quantidade.ReadOnly = True
+        Me.Quantidade.Width = 75
+        '
+        'PrecoTotal
+        '
+        Me.PrecoTotal.HeaderText = "Cidade"
+        Me.PrecoTotal.Name = "PrecoTotal"
+        Me.PrecoTotal.ReadOnly = True
+        Me.PrecoTotal.Width = 75
+        '
+        'Estado
+        '
+        Me.Estado.HeaderText = "Estado"
+        Me.Estado.Name = "Estado"
+        Me.Estado.ReadOnly = True
+        Me.Estado.Width = 50
+        '
+        'CEP
+        '
+        Me.CEP.HeaderText = "CEP"
+        Me.CEP.Name = "CEP"
+        Me.CEP.ReadOnly = True
+        Me.CEP.Width = 75
+        '
+        'Tipo
+        '
+        Me.Tipo.HeaderText = "Tipo"
+        Me.Tipo.Name = "Tipo"
+        Me.Tipo.ReadOnly = True
+        Me.Tipo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Tipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'Remover
+        '
+        Me.Remover.HeaderText = "Remover"
+        Me.Remover.Name = "Remover"
+        Me.Remover.ReadOnly = True
+        Me.Remover.Width = 75
         '
         'TextBox5
         '
@@ -335,7 +415,7 @@ Partial Class ControleFornecedor
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(685, 335)
+        Me.TabPage3.Size = New System.Drawing.Size(685, 359)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Nova Assistência Técnica"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -345,7 +425,7 @@ Partial Class ControleFornecedor
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(685, 335)
+        Me.TabPage4.Size = New System.Drawing.Size(685, 359)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Acompanhar Assistência Técnica"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -579,72 +659,54 @@ Partial Class ControleFornecedor
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
-        'CheckBox1
+        'Label9
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(483, 159)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(188, 17)
-        Me.CheckBox1.TabIndex = 36
-        Me.CheckBox1.Text = "Víncular como assistência técnica"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.Label9.AutoSize = True
+        Me.Label9.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label9.Location = New System.Drawing.Point(6, 16)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(37, 13)
+        Me.Label9.TabIndex = 0
+        Me.Label9.Text = "CNPJ:"
         '
-        'DataGridViewTextBoxColumn1
+        'TextBox7
         '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Logradouro"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 150
+        Me.TextBox7.Location = New System.Drawing.Point(49, 13)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(166, 20)
+        Me.TextBox7.TabIndex = 1
         '
-        'DataGridViewTextBoxColumn3
+        'Label10
         '
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Número"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        Me.DataGridViewTextBoxColumn3.Width = 50
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(222, 16)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(73, 13)
+        Me.Label10.TabIndex = 2
+        Me.Label10.Text = "Razão Social:"
         '
-        'Quantidade
+        'TextBox8
         '
-        Me.Quantidade.HeaderText = "Bairro"
-        Me.Quantidade.Name = "Quantidade"
-        Me.Quantidade.ReadOnly = True
-        Me.Quantidade.Width = 75
+        Me.TextBox8.Location = New System.Drawing.Point(301, 13)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(338, 20)
+        Me.TextBox8.TabIndex = 3
         '
-        'PrecoTotal
+        'Label11
         '
-        Me.PrecoTotal.HeaderText = "Cidade"
-        Me.PrecoTotal.Name = "PrecoTotal"
-        Me.PrecoTotal.ReadOnly = True
-        Me.PrecoTotal.Width = 75
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(6, 46)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(108, 13)
+        Me.Label11.TabIndex = 4
+        Me.Label11.Text = "Fantasia da empresa:"
         '
-        'Estado
+        'TextBox9
         '
-        Me.Estado.HeaderText = "Estado"
-        Me.Estado.Name = "Estado"
-        Me.Estado.ReadOnly = True
-        Me.Estado.Width = 50
-        '
-        'CEP
-        '
-        Me.CEP.HeaderText = "CEP"
-        Me.CEP.Name = "CEP"
-        Me.CEP.ReadOnly = True
-        Me.CEP.Width = 75
-        '
-        'Tipo
-        '
-        Me.Tipo.HeaderText = "Tipo"
-        Me.Tipo.Name = "Tipo"
-        Me.Tipo.ReadOnly = True
-        Me.Tipo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Tipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Remover
-        '
-        Me.Remover.HeaderText = "Remover"
-        Me.Remover.Name = "Remover"
-        Me.Remover.ReadOnly = True
-        Me.Remover.Width = 75
+        Me.TextBox9.Location = New System.Drawing.Point(120, 43)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(519, 20)
+        Me.TextBox9.TabIndex = 5
         '
         'ControleFornecedor
         '
@@ -662,6 +724,8 @@ Partial Class ControleFornecedor
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         CType(Me.EnderecosDT, System.ComponentModel.ISupportInitialize).EndInit()
@@ -672,12 +736,10 @@ Partial Class ControleFornecedor
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
@@ -742,4 +804,12 @@ Partial Class ControleFornecedor
     Friend WithEvents CEP As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Tipo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Remover As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents TextBox9 As TextBox
 End Class

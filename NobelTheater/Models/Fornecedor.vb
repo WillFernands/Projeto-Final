@@ -3,6 +3,7 @@ Option Strict On
 Imports NobelTheater
 
 Public Class Fornecedor
+    Private _id As Long
     Private _cnpj As String
     Private _razaoSocial As String
     Private _nomeFantasia As String
@@ -14,15 +15,16 @@ Public Class Fornecedor
     Private _bairro As String
     Private _cidade As String
     Private _estado As String
-    Private _cep As String
+    Private _cep As Long
     Private _tipoEndereco As String
-    Private _Assistencia As Fornecedor
+    Private _Assistencia As String
 
     Public Sub New()
 
     End Sub
 
-    Public Sub New(cnpj As String, razaoSocial As String, nomeFantasia As String, telefone As String, inicioRelacionamento As Date, tipoFornecedor As String, logradouro As String, numero As String, bairro As String, cidade As String, estado As String, cep As String, tipoEndereco As String)
+    Public Sub New(id As Long, cnpj As String, razaoSocial As String, nomeFantasia As String, telefone As String, inicioRelacionamento As Date, tipoFornecedor As String, logradouro As String, numero As String, bairro As String, cidade As String, estado As String, cep As Long, tipoEndereco As String, Assistencia As String)
+        _id = id
         _cnpj = cnpj
         _razaoSocial = razaoSocial
         _nomeFantasia = nomeFantasia
@@ -36,7 +38,17 @@ Public Class Fornecedor
         _estado = estado
         _cep = cep
         _tipoEndereco = tipoEndereco
+        _Assistencia = Assistencia
     End Sub
+
+    Public Property Id As Long
+        Get
+            Return _id
+        End Get
+        Set(value As Long)
+            _id = value
+        End Set
+    End Property
 
     Public Property Cnpj As String
         Get
@@ -155,11 +167,11 @@ Public Class Fornecedor
         End Set
     End Property
 
-    Public Property Assistencia As Fornecedor
+    Public Property Assistencia As String
         Get
             Return _Assistencia
         End Get
-        Set(value As Fornecedor)
+        Set(value As String)
             _Assistencia = value
         End Set
     End Property
