@@ -64,18 +64,18 @@ Partial Class CriarVisitaTecnica
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.CriarVisitaTecnicaBT = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.NaoCobrarVisitaCHECKBOX = New System.Windows.Forms.CheckBox()
+        Me.PrecoTF = New System.Windows.Forms.TextBox()
+        Me.PrecoLB = New System.Windows.Forms.Label()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.MotivoVisitaCB = New System.Windows.Forms.ComboBox()
+        Me.MotivoVisitaLB = New System.Windows.Forms.Label()
+        Me.ClienteTF = New System.Windows.Forms.TextBox()
+        Me.ClienteLB = New System.Windows.Forms.Label()
+        Me.SupervisorResponsavelTF = New System.Windows.Forms.TextBox()
+        Me.SupervisorResponsavelLB = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -363,22 +363,31 @@ Partial Class CriarVisitaTecnica
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.Button1)
+        Me.Panel2.Controls.Add(Me.CriarVisitaTecnicaBT)
         Me.Panel2.Controls.Add(Me.PictureBox2)
-        Me.Panel2.Controls.Add(Me.CheckBox1)
-        Me.Panel2.Controls.Add(Me.TextBox3)
-        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Controls.Add(Me.NaoCobrarVisitaCHECKBOX)
+        Me.Panel2.Controls.Add(Me.PrecoTF)
+        Me.Panel2.Controls.Add(Me.PrecoLB)
         Me.Panel2.Controls.Add(Me.PictureBox7)
-        Me.Panel2.Controls.Add(Me.ComboBox1)
-        Me.Panel2.Controls.Add(Me.Label7)
-        Me.Panel2.Controls.Add(Me.TextBox2)
-        Me.Panel2.Controls.Add(Me.Label6)
-        Me.Panel2.Controls.Add(Me.TextBox1)
-        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.MotivoVisitaCB)
+        Me.Panel2.Controls.Add(Me.MotivoVisitaLB)
+        Me.Panel2.Controls.Add(Me.ClienteTF)
+        Me.Panel2.Controls.Add(Me.ClienteLB)
+        Me.Panel2.Controls.Add(Me.SupervisorResponsavelTF)
+        Me.Panel2.Controls.Add(Me.SupervisorResponsavelLB)
         Me.Panel2.Location = New System.Drawing.Point(12, 144)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(705, 220)
         Me.Panel2.TabIndex = 16
+        '
+        'CriarVisitaTecnicaBT
+        '
+        Me.CriarVisitaTecnicaBT.Location = New System.Drawing.Point(312, 182)
+        Me.CriarVisitaTecnicaBT.Name = "CriarVisitaTecnicaBT"
+        Me.CriarVisitaTecnicaBT.Size = New System.Drawing.Size(125, 23)
+        Me.CriarVisitaTecnicaBT.TabIndex = 6
+        Me.CriarVisitaTecnicaBT.Text = "Criar Visita Técnica"
+        Me.CriarVisitaTecnicaBT.UseVisualStyleBackColor = True
         '
         'PictureBox2
         '
@@ -390,32 +399,31 @@ Partial Class CriarVisitaTecnica
         Me.PictureBox2.TabIndex = 21
         Me.PictureBox2.TabStop = False
         '
-        'CheckBox1
+        'NaoCobrarVisitaCHECKBOX
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(342, 146)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(144, 17)
-        Me.CheckBox1.TabIndex = 20
-        Me.CheckBox1.Text = "Não cobrar visita técnica"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.NaoCobrarVisitaCHECKBOX.AutoSize = True
+        Me.NaoCobrarVisitaCHECKBOX.Location = New System.Drawing.Point(484, 145)
+        Me.NaoCobrarVisitaCHECKBOX.Name = "NaoCobrarVisitaCHECKBOX"
+        Me.NaoCobrarVisitaCHECKBOX.Size = New System.Drawing.Size(144, 17)
+        Me.NaoCobrarVisitaCHECKBOX.TabIndex = 5
+        Me.NaoCobrarVisitaCHECKBOX.Text = "Não cobrar visita técnica"
+        Me.NaoCobrarVisitaCHECKBOX.UseVisualStyleBackColor = True
         '
-        'TextBox3
+        'PrecoTF
         '
-        Me.TextBox3.Location = New System.Drawing.Point(165, 144)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(147, 20)
-        Me.TextBox3.TabIndex = 19
-        Me.TextBox3.Text = "175,00"
+        Me.PrecoTF.Location = New System.Drawing.Point(143, 143)
+        Me.PrecoTF.Name = "PrecoTF"
+        Me.PrecoTF.Size = New System.Drawing.Size(147, 20)
+        Me.PrecoTF.TabIndex = 4
         '
-        'Label2
+        'PrecoLB
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(15, 147)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(38, 13)
-        Me.Label2.TabIndex = 18
-        Me.Label2.Text = "Preço:"
+        Me.PrecoLB.AutoSize = True
+        Me.PrecoLB.Location = New System.Drawing.Point(15, 146)
+        Me.PrecoLB.Name = "PrecoLB"
+        Me.PrecoLB.Size = New System.Drawing.Size(38, 13)
+        Me.PrecoLB.TabIndex = 18
+        Me.PrecoLB.Text = "Preço:"
         '
         'PictureBox7
         '
@@ -427,68 +435,56 @@ Partial Class CriarVisitaTecnica
         Me.PictureBox7.TabIndex = 17
         Me.PictureBox7.TabStop = False
         '
-        'ComboBox1
+        'MotivoVisitaCB
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(165, 107)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(523, 21)
-        Me.ComboBox1.TabIndex = 8
-        Me.ComboBox1.Text = "Orientação"
+        Me.MotivoVisitaCB.FormattingEnabled = True
+        Me.MotivoVisitaCB.Location = New System.Drawing.Point(143, 101)
+        Me.MotivoVisitaCB.Name = "MotivoVisitaCB"
+        Me.MotivoVisitaCB.Size = New System.Drawing.Size(485, 21)
+        Me.MotivoVisitaCB.TabIndex = 3
         '
-        'Label7
+        'MotivoVisitaLB
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(15, 110)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(85, 13)
-        Me.Label7.TabIndex = 6
-        Me.Label7.Text = "Motivo da Visita:"
+        Me.MotivoVisitaLB.AutoSize = True
+        Me.MotivoVisitaLB.Location = New System.Drawing.Point(15, 104)
+        Me.MotivoVisitaLB.Name = "MotivoVisitaLB"
+        Me.MotivoVisitaLB.Size = New System.Drawing.Size(85, 13)
+        Me.MotivoVisitaLB.TabIndex = 6
+        Me.MotivoVisitaLB.Text = "Motivo da Visita:"
         '
-        'TextBox2
+        'ClienteTF
         '
-        Me.TextBox2.Enabled = False
-        Me.TextBox2.Location = New System.Drawing.Point(165, 62)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(485, 20)
-        Me.TextBox2.TabIndex = 4
-        Me.TextBox2.Text = "00059 - Cristiano dos Santos"
+        Me.ClienteTF.Enabled = False
+        Me.ClienteTF.Location = New System.Drawing.Point(143, 59)
+        Me.ClienteTF.Name = "ClienteTF"
+        Me.ClienteTF.Size = New System.Drawing.Size(485, 20)
+        Me.ClienteTF.TabIndex = 2
         '
-        'Label6
+        'ClienteLB
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(15, 65)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(42, 13)
-        Me.Label6.TabIndex = 3
-        Me.Label6.Text = "Cliente:"
+        Me.ClienteLB.AutoSize = True
+        Me.ClienteLB.Location = New System.Drawing.Point(15, 62)
+        Me.ClienteLB.Name = "ClienteLB"
+        Me.ClienteLB.Size = New System.Drawing.Size(42, 13)
+        Me.ClienteLB.TabIndex = 3
+        Me.ClienteLB.Text = "Cliente:"
         '
-        'TextBox1
+        'SupervisorResponsavelTF
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(165, 17)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(485, 20)
-        Me.TextBox1.TabIndex = 1
-        Me.TextBox1.Text = "03250 - Ricardo Conceição Almeida"
+        Me.SupervisorResponsavelTF.Enabled = False
+        Me.SupervisorResponsavelTF.Location = New System.Drawing.Point(143, 17)
+        Me.SupervisorResponsavelTF.Name = "SupervisorResponsavelTF"
+        Me.SupervisorResponsavelTF.Size = New System.Drawing.Size(485, 20)
+        Me.SupervisorResponsavelTF.TabIndex = 1
         '
-        'Label1
+        'SupervisorResponsavelLB
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(15, 20)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(125, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Supervisor Responsável:"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(290, 182)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(125, 23)
-        Me.Button1.TabIndex = 22
-        Me.Button1.Text = "Criar Visita Técnica"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.SupervisorResponsavelLB.AutoSize = True
+        Me.SupervisorResponsavelLB.Location = New System.Drawing.Point(15, 20)
+        Me.SupervisorResponsavelLB.Name = "SupervisorResponsavelLB"
+        Me.SupervisorResponsavelLB.Size = New System.Drawing.Size(125, 13)
+        Me.SupervisorResponsavelLB.TabIndex = 0
+        Me.SupervisorResponsavelLB.Text = "Supervisor Responsável:"
         '
         'CriarVisitaTecnica
         '
@@ -556,16 +552,16 @@ Partial Class CriarVisitaTecnica
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents MotivoVisitaCB As System.Windows.Forms.ComboBox
+    Friend WithEvents MotivoVisitaLB As System.Windows.Forms.Label
+    Friend WithEvents ClienteTF As System.Windows.Forms.TextBox
+    Friend WithEvents ClienteLB As System.Windows.Forms.Label
+    Friend WithEvents SupervisorResponsavelTF As System.Windows.Forms.TextBox
+    Friend WithEvents SupervisorResponsavelLB As System.Windows.Forms.Label
     Friend WithEvents PictureBox7 As System.Windows.Forms.PictureBox
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents NaoCobrarVisitaCHECKBOX As System.Windows.Forms.CheckBox
+    Friend WithEvents PrecoTF As System.Windows.Forms.TextBox
+    Friend WithEvents PrecoLB As System.Windows.Forms.Label
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents CriarVisitaTecnicaBT As System.Windows.Forms.Button
 End Class

@@ -28,6 +28,23 @@ Partial Class BalancoDeCaixa
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.DiretorioPadraoCheckBox = New System.Windows.Forms.CheckBox()
+        Me.SelecionarDiretorioTF = New System.Windows.Forms.TextBox()
+        Me.SelecionarDiretorioLB = New System.Windows.Forms.Label()
+        Me.SelecionarTipoGB = New System.Windows.Forms.GroupBox()
+        Me.RelatorioDespesasRB = New System.Windows.Forms.RadioButton()
+        Me.RelatorioReceitaRB = New System.Windows.Forms.RadioButton()
+        Me.RelatorioBalancoRB = New System.Windows.Forms.RadioButton()
+        Me.SelecionarPeriodoGB = New System.Windows.Forms.GroupBox()
+        Me.RelatorioMensalRB = New System.Windows.Forms.RadioButton()
+        Me.DataAteDTP = New System.Windows.Forms.DateTimePicker()
+        Me.DataDeDTP = New System.Windows.Forms.DateTimePicker()
+        Me.RelatorioPersonalizadoRB = New System.Windows.Forms.RadioButton()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.RelatorioMesAnteriorRB = New System.Windows.Forms.RadioButton()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.RelatorioDiaAnteriorRB = New System.Windows.Forms.RadioButton()
+        Me.GerarRelatorioBT = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.OpcoesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -64,29 +81,12 @@ Partial Class BalancoDeCaixa
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker4 = New System.Windows.Forms.DateTimePicker()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton7 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton8 = New System.Windows.Forms.RadioButton()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        Me.SelecionarTipoGB.SuspendLayout()
+        Me.SelecionarPeriodoGB.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -98,7 +98,7 @@ Partial Class BalancoDeCaixa
         Me.Panel1.Location = New System.Drawing.Point(12, 32)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(705, 100)
-        Me.Panel1.TabIndex = 5
+        Me.Panel1.TabIndex = 13
         '
         'Label5
         '
@@ -139,16 +139,205 @@ Partial Class BalancoDeCaixa
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.CheckBox1)
-        Me.Panel2.Controls.Add(Me.TextBox4)
-        Me.Panel2.Controls.Add(Me.Label7)
-        Me.Panel2.Controls.Add(Me.GroupBox2)
-        Me.Panel2.Controls.Add(Me.GroupBox1)
-        Me.Panel2.Controls.Add(Me.Button3)
+        Me.Panel2.Controls.Add(Me.DiretorioPadraoCheckBox)
+        Me.Panel2.Controls.Add(Me.SelecionarDiretorioTF)
+        Me.Panel2.Controls.Add(Me.SelecionarDiretorioLB)
+        Me.Panel2.Controls.Add(Me.SelecionarTipoGB)
+        Me.Panel2.Controls.Add(Me.SelecionarPeriodoGB)
+        Me.Panel2.Controls.Add(Me.GerarRelatorioBT)
         Me.Panel2.Location = New System.Drawing.Point(12, 131)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(705, 334)
-        Me.Panel2.TabIndex = 6
+        Me.Panel2.TabIndex = 14
+        '
+        'DiretorioPadraoCheckBox
+        '
+        Me.DiretorioPadraoCheckBox.AutoSize = True
+        Me.DiretorioPadraoCheckBox.Checked = True
+        Me.DiretorioPadraoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.DiretorioPadraoCheckBox.Location = New System.Drawing.Point(583, 243)
+        Me.DiretorioPadraoCheckBox.Name = "DiretorioPadraoCheckBox"
+        Me.DiretorioPadraoCheckBox.Size = New System.Drawing.Size(101, 17)
+        Me.DiretorioPadraoCheckBox.TabIndex = 11
+        Me.DiretorioPadraoCheckBox.Text = "Diretório padrão"
+        Me.DiretorioPadraoCheckBox.UseVisualStyleBackColor = True
+        '
+        'SelecionarDiretorioTF
+        '
+        Me.SelecionarDiretorioTF.Enabled = False
+        Me.SelecionarDiretorioTF.Location = New System.Drawing.Point(143, 241)
+        Me.SelecionarDiretorioTF.Name = "SelecionarDiretorioTF"
+        Me.SelecionarDiretorioTF.Size = New System.Drawing.Size(431, 20)
+        Me.SelecionarDiretorioTF.TabIndex = 10
+        Me.SelecionarDiretorioTF.Text = "C:Users/Documents/NobelAPP/Relatorios/Rel-12-09-2016"
+        '
+        'SelecionarDiretorioLB
+        '
+        Me.SelecionarDiretorioLB.AutoSize = True
+        Me.SelecionarDiretorioLB.Location = New System.Drawing.Point(20, 244)
+        Me.SelecionarDiretorioLB.Name = "SelecionarDiretorioLB"
+        Me.SelecionarDiretorioLB.Size = New System.Drawing.Size(100, 13)
+        Me.SelecionarDiretorioLB.TabIndex = 44
+        Me.SelecionarDiretorioLB.Text = "Selecionar diretório:"
+        '
+        'SelecionarTipoGB
+        '
+        Me.SelecionarTipoGB.Controls.Add(Me.RelatorioDespesasRB)
+        Me.SelecionarTipoGB.Controls.Add(Me.RelatorioReceitaRB)
+        Me.SelecionarTipoGB.Controls.Add(Me.RelatorioBalancoRB)
+        Me.SelecionarTipoGB.Location = New System.Drawing.Point(21, 145)
+        Me.SelecionarTipoGB.Name = "SelecionarTipoGB"
+        Me.SelecionarTipoGB.Size = New System.Drawing.Size(663, 75)
+        Me.SelecionarTipoGB.TabIndex = 43
+        Me.SelecionarTipoGB.TabStop = False
+        Me.SelecionarTipoGB.Text = "Selecionar tipo do relatório"
+        '
+        'RelatorioDespesasRB
+        '
+        Me.RelatorioDespesasRB.AutoSize = True
+        Me.RelatorioDespesasRB.Location = New System.Drawing.Point(24, 32)
+        Me.RelatorioDespesasRB.Name = "RelatorioDespesasRB"
+        Me.RelatorioDespesasRB.Size = New System.Drawing.Size(130, 17)
+        Me.RelatorioDespesasRB.TabIndex = 7
+        Me.RelatorioDespesasRB.TabStop = True
+        Me.RelatorioDespesasRB.Text = "Relatório de despesas"
+        Me.RelatorioDespesasRB.UseVisualStyleBackColor = True
+        '
+        'RelatorioReceitaRB
+        '
+        Me.RelatorioReceitaRB.AutoSize = True
+        Me.RelatorioReceitaRB.Location = New System.Drawing.Point(247, 32)
+        Me.RelatorioReceitaRB.Name = "RelatorioReceitaRB"
+        Me.RelatorioReceitaRB.Size = New System.Drawing.Size(117, 17)
+        Me.RelatorioReceitaRB.TabIndex = 8
+        Me.RelatorioReceitaRB.TabStop = True
+        Me.RelatorioReceitaRB.Text = "Relatório de receita"
+        Me.RelatorioReceitaRB.UseVisualStyleBackColor = True
+        '
+        'RelatorioBalancoRB
+        '
+        Me.RelatorioBalancoRB.AutoSize = True
+        Me.RelatorioBalancoRB.Location = New System.Drawing.Point(423, 32)
+        Me.RelatorioBalancoRB.Name = "RelatorioBalancoRB"
+        Me.RelatorioBalancoRB.Size = New System.Drawing.Size(166, 17)
+        Me.RelatorioBalancoRB.TabIndex = 9
+        Me.RelatorioBalancoRB.TabStop = True
+        Me.RelatorioBalancoRB.Text = "Relatório de balanço de caixa"
+        Me.RelatorioBalancoRB.UseVisualStyleBackColor = True
+        '
+        'SelecionarPeriodoGB
+        '
+        Me.SelecionarPeriodoGB.Controls.Add(Me.RelatorioMensalRB)
+        Me.SelecionarPeriodoGB.Controls.Add(Me.DataAteDTP)
+        Me.SelecionarPeriodoGB.Controls.Add(Me.DataDeDTP)
+        Me.SelecionarPeriodoGB.Controls.Add(Me.RelatorioPersonalizadoRB)
+        Me.SelecionarPeriodoGB.Controls.Add(Me.Label2)
+        Me.SelecionarPeriodoGB.Controls.Add(Me.RelatorioMesAnteriorRB)
+        Me.SelecionarPeriodoGB.Controls.Add(Me.Label6)
+        Me.SelecionarPeriodoGB.Controls.Add(Me.RelatorioDiaAnteriorRB)
+        Me.SelecionarPeriodoGB.Location = New System.Drawing.Point(21, 19)
+        Me.SelecionarPeriodoGB.Name = "SelecionarPeriodoGB"
+        Me.SelecionarPeriodoGB.Size = New System.Drawing.Size(663, 120)
+        Me.SelecionarPeriodoGB.TabIndex = 42
+        Me.SelecionarPeriodoGB.TabStop = False
+        Me.SelecionarPeriodoGB.Text = "Selecionar período do relatório"
+        '
+        'RelatorioMensalRB
+        '
+        Me.RelatorioMensalRB.AutoSize = True
+        Me.RelatorioMensalRB.Location = New System.Drawing.Point(24, 32)
+        Me.RelatorioMensalRB.Name = "RelatorioMensalRB"
+        Me.RelatorioMensalRB.Size = New System.Drawing.Size(165, 17)
+        Me.RelatorioMensalRB.TabIndex = 1
+        Me.RelatorioMensalRB.TabStop = True
+        Me.RelatorioMensalRB.Text = "Relatório Mensal Atual (Dia-1)"
+        Me.RelatorioMensalRB.UseVisualStyleBackColor = True
+        '
+        'DataAteDTP
+        '
+        Me.DataAteDTP.CustomFormat = "dd/MM/yyyy"
+        Me.DataAteDTP.Enabled = False
+        Me.DataAteDTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DataAteDTP.Location = New System.Drawing.Point(559, 74)
+        Me.DataAteDTP.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
+        Me.DataAteDTP.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
+        Me.DataAteDTP.Name = "DataAteDTP"
+        Me.DataAteDTP.Size = New System.Drawing.Size(98, 20)
+        Me.DataAteDTP.TabIndex = 6
+        '
+        'DataDeDTP
+        '
+        Me.DataDeDTP.CustomFormat = "dd/MM/yyyy"
+        Me.DataDeDTP.Enabled = False
+        Me.DataDeDTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DataDeDTP.Location = New System.Drawing.Point(423, 74)
+        Me.DataDeDTP.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
+        Me.DataDeDTP.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
+        Me.DataDeDTP.Name = "DataDeDTP"
+        Me.DataDeDTP.Size = New System.Drawing.Size(98, 20)
+        Me.DataDeDTP.TabIndex = 5
+        '
+        'RelatorioPersonalizadoRB
+        '
+        Me.RelatorioPersonalizadoRB.AutoSize = True
+        Me.RelatorioPersonalizadoRB.Location = New System.Drawing.Point(247, 75)
+        Me.RelatorioPersonalizadoRB.Name = "RelatorioPersonalizadoRB"
+        Me.RelatorioPersonalizadoRB.Size = New System.Drawing.Size(135, 17)
+        Me.RelatorioPersonalizadoRB.TabIndex = 4
+        Me.RelatorioPersonalizadoRB.TabStop = True
+        Me.RelatorioPersonalizadoRB.Text = "Relatório personalizado"
+        Me.RelatorioPersonalizadoRB.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Enabled = False
+        Me.Label2.Location = New System.Drawing.Point(393, 77)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(24, 13)
+        Me.Label2.TabIndex = 31
+        Me.Label2.Text = "De:"
+        '
+        'RelatorioMesAnteriorRB
+        '
+        Me.RelatorioMesAnteriorRB.AutoSize = True
+        Me.RelatorioMesAnteriorRB.Location = New System.Drawing.Point(247, 32)
+        Me.RelatorioMesAnteriorRB.Name = "RelatorioMesAnteriorRB"
+        Me.RelatorioMesAnteriorRB.Size = New System.Drawing.Size(202, 17)
+        Me.RelatorioMesAnteriorRB.TabIndex = 2
+        Me.RelatorioMesAnteriorRB.TabStop = True
+        Me.RelatorioMesAnteriorRB.Text = "Relatório consolidado do mês anterior"
+        Me.RelatorioMesAnteriorRB.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Enabled = False
+        Me.Label6.Location = New System.Drawing.Point(527, 77)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(26, 13)
+        Me.Label6.TabIndex = 30
+        Me.Label6.Text = "Até:"
+        '
+        'RelatorioDiaAnteriorRB
+        '
+        Me.RelatorioDiaAnteriorRB.AutoSize = True
+        Me.RelatorioDiaAnteriorRB.Location = New System.Drawing.Point(24, 75)
+        Me.RelatorioDiaAnteriorRB.Name = "RelatorioDiaAnteriorRB"
+        Me.RelatorioDiaAnteriorRB.Size = New System.Drawing.Size(197, 17)
+        Me.RelatorioDiaAnteriorRB.TabIndex = 3
+        Me.RelatorioDiaAnteriorRB.TabStop = True
+        Me.RelatorioDiaAnteriorRB.Text = "Relatório consolidado do dia anterior"
+        Me.RelatorioDiaAnteriorRB.UseVisualStyleBackColor = True
+        '
+        'GerarRelatorioBT
+        '
+        Me.GerarRelatorioBT.Location = New System.Drawing.Point(297, 293)
+        Me.GerarRelatorioBT.Name = "GerarRelatorioBT"
+        Me.GerarRelatorioBT.Size = New System.Drawing.Size(106, 23)
+        Me.GerarRelatorioBT.TabIndex = 12
+        Me.GerarRelatorioBT.Text = "Gerar Relatório"
+        Me.GerarRelatorioBT.UseVisualStyleBackColor = True
         '
         'MenuStrip1
         '
@@ -379,195 +568,6 @@ Partial Class BalancoDeCaixa
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(297, 293)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(106, 23)
-        Me.Button3.TabIndex = 20
-        Me.Button3.Text = "Gerar Relatório"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'DateTimePicker3
-        '
-        Me.DateTimePicker3.CustomFormat = "dd/MM/yyyy"
-        Me.DateTimePicker3.Enabled = False
-        Me.DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker3.Location = New System.Drawing.Point(559, 74)
-        Me.DateTimePicker3.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
-        Me.DateTimePicker3.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
-        Me.DateTimePicker3.Name = "DateTimePicker3"
-        Me.DateTimePicker3.Size = New System.Drawing.Size(98, 20)
-        Me.DateTimePicker3.TabIndex = 33
-        '
-        'DateTimePicker4
-        '
-        Me.DateTimePicker4.CustomFormat = "dd/MM/yyyy"
-        Me.DateTimePicker4.Enabled = False
-        Me.DateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker4.Location = New System.Drawing.Point(423, 74)
-        Me.DateTimePicker4.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
-        Me.DateTimePicker4.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
-        Me.DateTimePicker4.Name = "DateTimePicker4"
-        Me.DateTimePicker4.Size = New System.Drawing.Size(98, 20)
-        Me.DateTimePicker4.TabIndex = 32
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Enabled = False
-        Me.Label2.Location = New System.Drawing.Point(393, 77)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(24, 13)
-        Me.Label2.TabIndex = 31
-        Me.Label2.Text = "De:"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Enabled = False
-        Me.Label6.Location = New System.Drawing.Point(527, 77)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(26, 13)
-        Me.Label6.TabIndex = 30
-        Me.Label6.Text = "Até:"
-        '
-        'RadioButton1
-        '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(24, 32)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(165, 17)
-        Me.RadioButton1.TabIndex = 38
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Relatório Mensal Atual (Dia-1)"
-        Me.RadioButton1.UseVisualStyleBackColor = True
-        '
-        'RadioButton2
-        '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(247, 32)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(202, 17)
-        Me.RadioButton2.TabIndex = 39
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Relatório consolidado do mês anterior"
-        Me.RadioButton2.UseVisualStyleBackColor = True
-        '
-        'RadioButton3
-        '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(24, 75)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(197, 17)
-        Me.RadioButton3.TabIndex = 40
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Relatório consolidado do dia anterior"
-        Me.RadioButton3.UseVisualStyleBackColor = True
-        '
-        'RadioButton4
-        '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Location = New System.Drawing.Point(247, 75)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(135, 17)
-        Me.RadioButton4.TabIndex = 41
-        Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "Relatório personalizado"
-        Me.RadioButton4.UseVisualStyleBackColor = True
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.RadioButton1)
-        Me.GroupBox1.Controls.Add(Me.DateTimePicker3)
-        Me.GroupBox1.Controls.Add(Me.DateTimePicker4)
-        Me.GroupBox1.Controls.Add(Me.RadioButton4)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.RadioButton2)
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.RadioButton3)
-        Me.GroupBox1.Location = New System.Drawing.Point(21, 19)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(663, 120)
-        Me.GroupBox1.TabIndex = 42
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Selecionar período do relatório"
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.RadioButton5)
-        Me.GroupBox2.Controls.Add(Me.RadioButton7)
-        Me.GroupBox2.Controls.Add(Me.RadioButton8)
-        Me.GroupBox2.Location = New System.Drawing.Point(21, 145)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(663, 75)
-        Me.GroupBox2.TabIndex = 43
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Selecionar tipo do relatório"
-        '
-        'RadioButton5
-        '
-        Me.RadioButton5.AutoSize = True
-        Me.RadioButton5.Location = New System.Drawing.Point(24, 32)
-        Me.RadioButton5.Name = "RadioButton5"
-        Me.RadioButton5.Size = New System.Drawing.Size(130, 17)
-        Me.RadioButton5.TabIndex = 38
-        Me.RadioButton5.TabStop = True
-        Me.RadioButton5.Text = "Relatório de despesas"
-        Me.RadioButton5.UseVisualStyleBackColor = True
-        '
-        'RadioButton7
-        '
-        Me.RadioButton7.AutoSize = True
-        Me.RadioButton7.Location = New System.Drawing.Point(247, 32)
-        Me.RadioButton7.Name = "RadioButton7"
-        Me.RadioButton7.Size = New System.Drawing.Size(117, 17)
-        Me.RadioButton7.TabIndex = 39
-        Me.RadioButton7.TabStop = True
-        Me.RadioButton7.Text = "Relatório de receita"
-        Me.RadioButton7.UseVisualStyleBackColor = True
-        '
-        'RadioButton8
-        '
-        Me.RadioButton8.AutoSize = True
-        Me.RadioButton8.Location = New System.Drawing.Point(423, 32)
-        Me.RadioButton8.Name = "RadioButton8"
-        Me.RadioButton8.Size = New System.Drawing.Size(166, 17)
-        Me.RadioButton8.TabIndex = 40
-        Me.RadioButton8.TabStop = True
-        Me.RadioButton8.Text = "Relatório de balanço de caixa"
-        Me.RadioButton8.UseVisualStyleBackColor = True
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Enabled = False
-        Me.TextBox4.Location = New System.Drawing.Point(143, 241)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(431, 20)
-        Me.TextBox4.TabIndex = 45
-        Me.TextBox4.Text = "C:Users/Documents/NobelAPP/Relatorios/Rel-12-09-2016"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(20, 244)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(100, 13)
-        Me.Label7.TabIndex = 44
-        Me.Label7.Text = "Selecionar diretório:"
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Checked = True
-        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox1.Location = New System.Drawing.Point(583, 243)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(101, 17)
-        Me.CheckBox1.TabIndex = 46
-        Me.CheckBox1.Text = "Diretório padrão"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
         'BalancoDeCaixa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -584,12 +584,12 @@ Partial Class BalancoDeCaixa
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.SelecionarTipoGB.ResumeLayout(False)
+        Me.SelecionarTipoGB.PerformLayout()
+        Me.SelecionarPeriodoGB.ResumeLayout(False)
+        Me.SelecionarPeriodoGB.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -636,21 +636,21 @@ Partial Class BalancoDeCaixa
     Friend WithEvents ClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NovoClienteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AcompanharClienteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents RadioButton4 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton3 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
-    Friend WithEvents DateTimePicker3 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents DateTimePicker4 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents GerarRelatorioBT As System.Windows.Forms.Button
+    Friend WithEvents RelatorioPersonalizadoRB As System.Windows.Forms.RadioButton
+    Friend WithEvents RelatorioDiaAnteriorRB As System.Windows.Forms.RadioButton
+    Friend WithEvents RelatorioMesAnteriorRB As System.Windows.Forms.RadioButton
+    Friend WithEvents RelatorioMensalRB As System.Windows.Forms.RadioButton
+    Friend WithEvents DataAteDTP As System.Windows.Forms.DateTimePicker
+    Friend WithEvents DataDeDTP As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents RadioButton5 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton7 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton8 As System.Windows.Forms.RadioButton
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
-    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents SelecionarPeriodoGB As System.Windows.Forms.GroupBox
+    Friend WithEvents SelecionarTipoGB As System.Windows.Forms.GroupBox
+    Friend WithEvents RelatorioDespesasRB As System.Windows.Forms.RadioButton
+    Friend WithEvents RelatorioReceitaRB As System.Windows.Forms.RadioButton
+    Friend WithEvents RelatorioBalancoRB As System.Windows.Forms.RadioButton
+    Friend WithEvents DiretorioPadraoCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents SelecionarDiretorioTF As System.Windows.Forms.TextBox
+    Friend WithEvents SelecionarDiretorioLB As System.Windows.Forms.Label
 End Class
