@@ -7,81 +7,81 @@
         MatriculaTF.Text = "Matricula: " & MenuPrincipal.funcionarioLogado.Matricula
         PerfilTF.Text = "Perfil: " & MenuPrincipal.funcionarioLogado.Perfil
 
-        EstadoNovoCB.Items.AddRange(EstadosEnum.GetEstadosList().ToArray())
-        TipoEnderecoNovoCB.Items.AddRange(TipoEndereco.GetTiposList().ToArray())
-        CargoNovoCB.Items.AddRange(TipoCargo.GetTiposList().ToArray())
-        PerfilNovoCB.Items.AddRange(TipoPerfilFuncionario.GetTiposList().ToArray())
-        NumeroNovoTF.Text = "S/N"
-        EstadoNovoCB.Text = "PR"
-        SalarioNovoTF.Text = "0.00"
+        EstadoNovoFuncionarioCB.Items.AddRange(EstadosEnum.GetEstadosList().ToArray())
+        TipoEnderecoNovoFuncionarioCB.Items.AddRange(TipoEndereco.GetTiposList().ToArray())
+        CargoNovoFuncionarioCB.Items.AddRange(TipoCargo.GetTiposList().ToArray())
+        PerfilNovoFuncionarioCB.Items.AddRange(TipoPerfilFuncionario.GetTiposList().ToArray())
+        NumeroNovoFuncionarioTF.Text = "S/N"
+        EstadoNovoFuncionarioCB.Text = "PR"
+        SalarioNovoFuncionarioTF.Text = "0.00"
     End Sub
 
-    Private Sub LimparNovoBT_Click(sender As Object, e As EventArgs) Handles LimparNovoBT.Click
+    Private Sub LimparNovoBT_Click(sender As Object, e As EventArgs) Handles LimparNovoFuncionarioBT.Click
         If (MsgBox("Essa ação limpará todos os campos, tem certeza que deseja prosseguir?", vbYes, vbInformation Or vbMsgBoxSetForeground) = vbYes) Then
             LimparCampos()
         End If
     End Sub
 
     Private Sub LimparCampos()
-        NomeNovoTF.Text = ""
-        CPFNovoTF.Text = ""
-        TelefoneNovoTF.Text = ""
-        CEPNovoTF.Text = ""
-        LogradouroNovoTF.Text = ""
-        NumeroNovoTF.Text = ""
-        BairroNovoTF.Text = ""
-        CidadeNovoTF.Text = ""
-        EstadoNovoCB.Text = ""
-        TipoEnderecoNovoCB.Text = ""
-        CargoNovoCB.Text = ""
-        PerfilNovoCB.Text = ""
-        SalarioNovoTF.Text = ""
+        NomeNovoFuncionarioTF.Text = ""
+        CPFNovoFuncionarioTF.Text = ""
+        TelefoneNovoFuncionarioTF.Text = ""
+        CEPNovoFuncionarioTF.Text = ""
+        LogradouroNovoFuncionarioTF.Text = ""
+        NumeroNovoFuncionarioTF.Text = ""
+        BairroNovoFuncionarioTF.Text = ""
+        CidadeNovoFuncionarioTF.Text = ""
+        EstadoNovoFuncionarioCB.Text = ""
+        TipoEnderecoNovoFuncionarioCB.Text = ""
+        CargoNovoFuncionarioCB.Text = ""
+        PerfilNovoFuncionarioCB.Text = ""
+        SalarioNovoFuncionarioTF.Text = ""
     End Sub
 
-    Private Sub SalvarNovoBT_Click(sender As Object, e As EventArgs) Handles SalvarNovoBT.Click
-        If (String.IsNullOrWhiteSpace(NomeNovoTF.Text)) Then
+    Private Sub SalvarNovoBT_Click(sender As Object, e As EventArgs) Handles SalvarNovoFuncionarioBT.Click
+        If (String.IsNullOrWhiteSpace(NomeNovoFuncionarioTF.Text)) Then
             MsgBox("Nome do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
-        ElseIf (String.IsNullOrWhiteSpace(CPFNovoTF.Text)) Then
+        ElseIf (String.IsNullOrWhiteSpace(CPFNovoFuncionarioTF.Text)) Then
             MsgBox("CPF do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
-        ElseIf (String.IsNullOrWhiteSpace(TelefoneNovoTF.Text)) Then
+        ElseIf (String.IsNullOrWhiteSpace(TelefoneNovoFuncionarioTF.Text)) Then
             MsgBox("Telefone do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
-        ElseIf (String.IsNullOrWhiteSpace(CEPNovoTF.Text)) Then
+        ElseIf (String.IsNullOrWhiteSpace(CEPNovoFuncionarioTF.Text)) Then
             MsgBox("CEP do endereço do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
-        ElseIf (String.IsNullOrWhiteSpace(LogradouroNovoTF.Text)) Then
+        ElseIf (String.IsNullOrWhiteSpace(LogradouroNovoFuncionarioTF.Text)) Then
             MsgBox("Logradouro do endereço do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
-        ElseIf (String.IsNullOrWhiteSpace(NumeroNovoTF.Text)) Then
+        ElseIf (String.IsNullOrWhiteSpace(NumeroNovoFuncionarioTF.Text)) Then
             MsgBox("Numero do endereço do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
-        ElseIf (String.IsNullOrWhiteSpace(CidadeNovoTF.Text)) Then
+        ElseIf (String.IsNullOrWhiteSpace(CidadeNovoFuncionarioTF.Text)) Then
             MsgBox("Cidade do endereço do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
-        ElseIf (String.IsNullOrWhiteSpace(EstadoNovoCB.Text)) Then
+        ElseIf (String.IsNullOrWhiteSpace(EstadoNovoFuncionarioCB.Text)) Then
             MsgBox("Estado do endereço do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
-        ElseIf (String.IsNullOrWhiteSpace(TipoEnderecoNovoCB.Text)) Then
+        ElseIf (String.IsNullOrWhiteSpace(TipoEnderecoNovoFuncionarioCB.Text)) Then
             MsgBox("Tipo do endereço do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
-        ElseIf (String.IsNullOrWhiteSpace(CargoNovoCB.Text)) Then
+        ElseIf (String.IsNullOrWhiteSpace(CargoNovoFuncionarioCB.Text)) Then
             MsgBox("Cargo do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
-        ElseIf (String.IsNullOrWhiteSpace(PerfilNovoCB.Text)) Then
+        ElseIf (String.IsNullOrWhiteSpace(PerfilNovoFuncionarioCB.Text)) Then
             MsgBox("Perfil do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
-        ElseIf (String.IsNullOrWhiteSpace(SalarioNovoTF.Text)) Then
+        ElseIf (String.IsNullOrWhiteSpace(SalarioNovoFuncionarioTF.Text)) Then
             MsgBox("Salário do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
         End If
 
-        Dim funcionario As New Funcionario(CPFNovoTF.Text, NomeNovoTF.Text, TelefoneNovoTF.Text, Now, PerfilNovoCB.Text, CargoNovoCB.Text, LogradouroNovoTF.Text, NumeroNovoTF.Text, BairroNovoTF.Text, CidadeNovoTF.Text, EstadoNovoCB.Text, CEPNovoTF.Text, TipoEnderecoNovoCB.Text)
+        Dim funcionario As New Funcionario(CPFNovoFuncionarioTF.Text, NomeNovoFuncionarioTF.Text, TelefoneNovoFuncionarioTF.Text, Now, PerfilNovoFuncionarioCB.Text, CargoNovoFuncionarioCB.Text, LogradouroNovoFuncionarioTF.Text, NumeroNovoFuncionarioTF.Text, BairroNovoFuncionarioTF.Text, CidadeNovoFuncionarioTF.Text, EstadoNovoFuncionarioCB.Text, CEPNovoFuncionarioTF.Text, TipoEnderecoNovoFuncionarioCB.Text)
         funcionario.Supervisor = supervisorAtual
         funcionario.Matricula = FuncionarioBC.Insert(funcionario)
         FuncionarioBC.UpdateSupervisor(funcionario)
-        funcionario.Salarios.Add(New Salario(SalarioNovoTF.Text, Now, Nothing, "Salário Inicial", funcionario))
+        funcionario.Salarios.Add(New Salario(SalarioNovoFuncionarioTF.Text, Now, Nothing, "Salário Inicial", funcionario))
         For Each salario As Salario In funcionario.Salarios
             SalarioBC.Insert(salario)
         Next
@@ -101,7 +101,11 @@
     End Sub
 
     Public Sub PopulateSupervisor(func As Funcionario)
-        SupervisorNovoTF.Text = func.Matricula & " - " & func.Nome
+        SupervisorNovoFuncionarioTF.Text = func.Matricula & " - " & func.Nome
         supervisorAtual = func
+    End Sub
+
+    Private Sub AcompanharFuncionarioDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles AcompanharFuncionarioDT.CellContentClick
+
     End Sub
 End Class
