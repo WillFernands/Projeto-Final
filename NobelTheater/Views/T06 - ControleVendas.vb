@@ -18,17 +18,17 @@
 
     Public Sub PopulateCliente(cliente As ClientePF)
         clienteAtual = cliente
-        ClienteTF.Text = cliente.CPF & " - " & clienteAtual.Nome
+        SelecionarClienteNovoOrcamentoTF.Text = cliente.CPF & " - " & clienteAtual.Nome
     End Sub
 
     Public Sub PopulateCliente(cliente As ClientePJ)
         clienteAtual = cliente
-        ClienteTF.Text = cliente.CNPJ & " - " & clienteAtual.Nome
+        SelecionarClienteNovoOrcamentoTF.Text = cliente.CNPJ & " - " & clienteAtual.Nome
     End Sub
 
     Public Sub PopulateProduto(produto As Produto)
         produtoAtual = produto
-        NomeProdutoTF.Text = produtoAtual.Nome
+        SelecionarProdutoNovoOrcamentoTF.Text = produtoAtual.Nome
         CodigoProdutoTF.Text = produtoAtual.Codigo
     End Sub
 
@@ -71,7 +71,7 @@
     End Sub
 
     Private Sub FinalizarBT_Click(sender As Object, e As EventArgs) Handles FinalizarBT.Click
-        If (String.IsNullOrWhiteSpace(ClienteTF.Text) OrElse clienteAtual Is Nothing) Then
+        If (String.IsNullOrWhiteSpace(SelecionarClienteNovoOrcamentoTF.Text) OrElse clienteAtual Is Nothing) Then
             MsgBox("Cliente não selecionado", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
         ElseIf (itensOrcados Is Nothing OrElse itensOrcados.Count = 0) Then
@@ -101,5 +101,9 @@
         produtoAtual = Nothing
         itensOrcados = New List(Of ItemOrcado)
         ProdutosDT.Rows.Clear()
+    End Sub
+
+    Private Sub EnderecosDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles EnderecosDT.CellContentClick
+
     End Sub
 End Class
