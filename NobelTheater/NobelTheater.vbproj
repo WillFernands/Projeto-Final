@@ -312,6 +312,12 @@
     <Compile Include="Views\T18 - BuscaCliente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\T19 - VerProdutos.Designer.vb">
+      <DependentUpon>T19 - VerProdutos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\T19 - VerProdutos.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\T01 - LoginUsuario.resx">
@@ -373,6 +379,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\T18 - BuscaCliente.resx">
       <DependentUpon>T18 - BuscaCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\T19 - VerProdutos.resx">
+      <DependentUpon>T19 - VerProdutos.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -57,6 +57,8 @@
     End Sub
 
     Private Sub RevogadosDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles RevogadosDT.CellContentClick
+        If (RevogadosDT.SelectedCells Is Nothing) Then Exit Sub
+
         If (RevogadosDT.SelectedCells.Item(0).Value = "Resetar senha" AndAlso e.ColumnIndex = 3) Then
             Dim funcionario As Funcionario = FuncionarioBC.FindByMatricula(RevogadosDT.Item(0, e.RowIndex).Value)
             Dim novaSenha As String = FuncionarioBC.ResetarSenha(funcionario)

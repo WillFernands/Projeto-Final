@@ -48,6 +48,8 @@
     End Sub
 
     Private Sub ProdutosDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ProdutosDT.CellContentClick
+        If (ProdutosDT.SelectedCells Is Nothing) Then Exit Sub
+
         If (ProdutosDT.SelectedCells.Item(0).Value = "Remover Produto" AndAlso e.ColumnIndex = 5) Then
             Dim item As ItemOrcado = itensOrcados.Find(Function(itemOrcado As ItemOrcado) itemOrcado.Produto.Codigo = ProdutosDT.Item(0, e.RowIndex).Value)
             itensOrcados.Remove(item)

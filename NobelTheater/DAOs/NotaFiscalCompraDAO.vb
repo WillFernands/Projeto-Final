@@ -46,8 +46,6 @@ Public Class NotaFiscalCompraDAO
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of NotaFiscalCompra)
 
-        Dim cotacaoDAO As New CotacaoDAO()
-
         Dim notasFiscais As New List(Of NotaFiscalCompra)
 
         For Each row As DataRow In dt.Rows
@@ -57,7 +55,9 @@ Public Class NotaFiscalCompraDAO
             notaFiscal.Status = CStr(row.Item("statusNF"))
             notaFiscal.EmissaoNF = CDate(row.Item("emissaoNF"))
             notaFiscal.NumeroNF = CStr(row.Item("numeroNF"))
-            notaFiscal.Cotacao = cotacaoDAO.FindByID(CLng(row.Item("idCotacao")))
+            notaFiscal.Cotacao = CotacaoBC.FindByID(CLng(row.Item("idCotacao")))
+            notaFiscal.Pagamentos = PagamentoEfetuadoBC.FindByNotaFiscal(notaFiscal)
+            notaFiscal.Items = ItemCompradoBC.FindByNotaFiscal(notaFiscal)
             notasFiscais.Add(notaFiscal)
         Next
 
@@ -71,17 +71,12 @@ Public Class NotaFiscalCompraDAO
         If (String.IsNullOrWhiteSpace(status)) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM NotasFiscaisCompras WHERE status = @status;")
 
         conn.AddParameter("@status", status)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM NotasFiscaisCompras WHERE status = @status;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of NotaFiscalCompra)
-
-        Dim cotacaoDAO As New CotacaoDAO()
 
         Dim notasFiscais As New List(Of NotaFiscalCompra)
 
@@ -92,7 +87,9 @@ Public Class NotaFiscalCompraDAO
             notaFiscal.Status = CStr(row.Item("statusNF"))
             notaFiscal.EmissaoNF = CDate(row.Item("emissaoNF"))
             notaFiscal.NumeroNF = CStr(row.Item("numeroNF"))
-            notaFiscal.Cotacao = cotacaoDAO.FindByID(CLng(row.Item("idCotacao")))
+            notaFiscal.Cotacao = CotacaoBC.FindByID(CLng(row.Item("idCotacao")))
+            notaFiscal.Pagamentos = PagamentoEfetuadoBC.FindByNotaFiscal(notaFiscal)
+            notaFiscal.Items = ItemCompradoBC.FindByNotaFiscal(notaFiscal)
             notasFiscais.Add(notaFiscal)
         Next
 
@@ -106,17 +103,12 @@ Public Class NotaFiscalCompraDAO
         If (id = 0) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM NotasFiscaisCompras WHERE id = @id;")
 
         conn.AddParameter("@id", id)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM NotasFiscaisCompras WHERE id = @id;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
-
-        Dim cotacaoDAO As New CotacaoDAO()
 
         Dim notaFiscal As New NotaFiscalCompra()
         notaFiscal.ID = CLng(dt.Rows(0).Item("id"))
@@ -124,7 +116,9 @@ Public Class NotaFiscalCompraDAO
         notaFiscal.Status = CStr(dt.Rows(0).Item("statusNF"))
         notaFiscal.EmissaoNF = CDate(dt.Rows(0).Item("emissaoNF"))
         notaFiscal.NumeroNF = CStr(dt.Rows(0).Item("numeroNF"))
-        notaFiscal.Cotacao = cotacaoDAO.FindByID(CLng(dt.Rows(0).Item("idCotacao")))
+        notaFiscal.Cotacao = CotacaoBC.FindByID(CLng(dt.Rows(0).Item("idCotacao")))
+        notaFiscal.Pagamentos = PagamentoEfetuadoBC.FindByNotaFiscal(notaFiscal)
+        notaFiscal.Items = ItemCompradoBC.FindByNotaFiscal(notaFiscal)
 
         Return notaFiscal
 

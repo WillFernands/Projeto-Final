@@ -160,19 +160,12 @@ Public Class FuncionarioDAO
         If (matricula = 0) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM funcionarios ")
-        strSQL.Append("WHERE matricula = @matricula;")
 
         conn.AddParameter("@matricula", matricula)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM funcionarios WHERE matricula = @matricula;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
-
-        Dim registroPontoDAO As New RegistroPontoDAO
-        Dim salarioDAO As New SalarioDAO
 
         Dim funcionario As New Funcionario()
         funcionario.Matricula = matricula
@@ -194,7 +187,6 @@ Public Class FuncionarioDAO
             funcionario.DataRevogacao = CDate(dt.Rows(0).Item("dataRevogacao"))
         End If
         funcionario.Supervisor = FindSupervisorByMatricula(CLng(dt.Rows(0).Item("matriculaSupervisor")))
-
         Return funcionario
 
     End Function
@@ -216,9 +208,6 @@ Public Class FuncionarioDAO
         Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Funcionario)
-
-        Dim registroPontoDAO As New RegistroPontoDAO
-        Dim salarioDAO As New SalarioDAO
 
         Dim funcionarios As New List(Of Funcionario)
 
@@ -268,9 +257,6 @@ Public Class FuncionarioDAO
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Funcionario)
 
-        Dim registroPontoDAO As New RegistroPontoDAO
-        Dim salarioDAO As New SalarioDAO
-
         Dim funcionarios As New List(Of Funcionario)
 
         For Each row As DataRow In dt.Rows
@@ -304,16 +290,10 @@ Public Class FuncionarioDAO
     'OK
     Public Function FindAll() As List(Of Funcionario)
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
 
-        strSQL.Append("SELECT * FROM Funcionarios;")
-
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM Funcionarios;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Funcionario)
-
-        Dim registroPontoDAO As New RegistroPontoDAO
-        Dim salarioDAO As New SalarioDAO
 
         Dim funcionarios As New List(Of Funcionario)
 
@@ -351,19 +331,12 @@ Public Class FuncionarioDAO
         If (String.IsNullOrWhiteSpace(cpf)) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM funcionarios ")
-        strSQL.Append("WHERE cpf = @cpf;")
 
         conn.AddParameter("@cpf", cpf)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM funcionarios WHERE cpf = @cpf;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
-
-        Dim registroPontoDAO As New RegistroPontoDAO
-        Dim salarioDAO As New SalarioDAO
 
         Dim funcionario As New Funcionario()
         funcionario.Matricula = CLng(dt.Rows(0).Item("matricula"))
@@ -396,14 +369,10 @@ Public Class FuncionarioDAO
         If (matricula = 0) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM funcionarios ")
-        strSQL.Append("WHERE matricula = @matricula;")
 
         conn.AddParameter("@matricula", matricula)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM funcionarios WHERE matricula = @matricula;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
 

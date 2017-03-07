@@ -63,14 +63,10 @@ Public Class EnderecoClienteDAO
         If (cliente Is Nothing) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM EnderecosClientes ")
-        strSQL.Append("WHERE idCliente = @idCliente;")
 
         conn.AddParameter("@idCliente", cliente.ID)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM EnderecosClientes WHERE idCliente = @idCliente;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of EnderecoCliente)
 
@@ -98,13 +94,10 @@ Public Class EnderecoClienteDAO
     'OK
     Public Function Delete(ByVal endereco As EnderecoCliente) As Boolean
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("DELETE EnderecosClientes WHERE id = @id;")
 
         conn.AddParameter("@id", endereco.ID)
 
-        Return conn.ExecuteCommand(strSQL.ToString)
+        Return conn.ExecuteCommand("DELETE EnderecosClientes WHERE id = @id;")
     End Function
 
 End Class

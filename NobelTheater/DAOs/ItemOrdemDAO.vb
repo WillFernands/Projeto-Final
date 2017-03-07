@@ -29,26 +29,19 @@ Public Class ItemOrdemDAO
         If (ordem Is Nothing) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM ItensOrcados ")
-        strSQL.Append("WHERE idOrdem = @idOrdem;")
 
         conn.AddParameter("@idOrdem", ordem.ID)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM ItensOrcados WHERE idOrdem = @idOrdem;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of ItemOrdem)
-
-        Dim produtoDAO As New ProdutoDAO()
-        Dim ordemServicoDAO As New OrdemServicoDAO()
 
         Dim itens As New List(Of ItemOrdem)
 
         For Each row As DataRow In dt.Rows
             Dim item As New ItemOrdem()
-            item.Produto = produtoDAO.FindByCodigo(CLng(row.Item("codigoProduto")))
-            item.OrdemServico = ordemServicoDAO.FindByID(CLng(row.Item("idOrdem")))
+            item.Produto = ProdutoBC.FindByCodigo(CLng(row.Item("codigoProduto")))
+            item.OrdemServico = ordem
             item.Quantidade = CInt(row.Item("quantidade"))
             item.DataEntrega = CDate(row.Item("dataEntrega"))
             item.DataRecebimento = CDate(row.Item("dataRecebimento"))

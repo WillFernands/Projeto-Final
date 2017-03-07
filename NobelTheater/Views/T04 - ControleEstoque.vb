@@ -51,6 +51,8 @@
     End Sub
 
     Private Sub ProdutosDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ProdutosDT.CellContentClick
+        If (ProdutosDT.SelectedCells Is Nothing) Then Exit Sub
+
         If (ProdutosDT.SelectedCells.Item(0).Value = "Remover Produto" AndAlso e.ColumnIndex = 5) Then
             Dim item As ItemCotado = itensCotados.Find(Function(itemCotado As ItemCotado) itemCotado.Produto.Codigo = ProdutosDT.Item(0, e.RowIndex).Value)
             itensCotados.Remove(item)
@@ -138,10 +140,38 @@
     End Sub
 
     Private Sub AlertasDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles AlertasDT.CellContentClick
+        If (AlertasDT.SelectedCells Is Nothing) Then Exit Sub
+
         If (AlertasDT.SelectedCells.Item(0).Value = "Remover" AndAlso e.ColumnIndex = 4) Then
             Dim alerta As New Alerta(AlertasDT.Item(0, e.RowIndex).Value, AlertasDT.Item(3, e.RowIndex).Value, ProdutoBC.FindByCodigo(CLng(AlertasDT.Item(1, e.RowIndex).Value)))
             AlertaBC.Delete(alerta)
             RefreshDTAlertas()
+            Exit Sub
+        End If
+    End Sub
+
+    Private Sub CotacoesAndamentoTab_GotFocus(sender As Object, e As EventArgs) Handles CotacoesAndamentoTab.Enter
+        RefreshDTCotacoes()
+    End Sub
+
+    Private Sub RefreshDTCotacoes()
+        CotacoesDT.Rows.Clear()
+
+        For Each cotacao As Cotacao In CotacaoBC.FindAll()
+            Dim list As New List(Of Object)
+            list.Add(cotacao.ID) : list.Add(cotacao.DataCotacao) : list.Add(cotacao.Status) : list.Add(cotacao.Fornecedor.Cnpj & " - " & cotacao.Fornecedor.NomeFantasia) : list.Add("Ver Produtos")
+            CotacoesDT.Rows.Add(list.ToArray())
+        Next
+
+    End Sub
+
+    Private Sub CotacoesDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles CotacoesDT.CellContentClick
+        If (CotacoesDT.SelectedCells Is Nothing) Then Exit Sub
+
+        If (CotacoesDT.SelectedCells.Item(0).Value = "Ver Produtos" AndAlso e.ColumnIndex = 4) Then
+            Dim visualizacao As New VerProdutos()
+            visualizacao.ProdutosList = CotacaoBC.FindByID(CotacoesDT.Item(0, e.RowIndex).Value).Itens
+            visualizacao.Show()
             Exit Sub
         End If
     End Sub

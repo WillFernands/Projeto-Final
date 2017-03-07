@@ -94,14 +94,10 @@ Public Class FornecedorDAO
         If (String.IsNullOrWhiteSpace(cnpj)) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM Fornecedores ")
-        strSQL.Append("WHERE cnpj = @cnpj;")
 
         conn.AddParameter("@cnpj", cnpj)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM Fornecedores WHERE cnpj = @cnpj;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
 
@@ -165,14 +161,9 @@ Public Class FornecedorDAO
         If (String.IsNullOrWhiteSpace(razaoSocial)) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM Fornecedores ")
-        strSQL.Append("WHERE razaoSocial = @razaoSocial;")
-
         conn.AddParameter("@razaoSocial", razaoSocial)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM Fornecedores WHERE razaoSocial = @razaoSocial;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
 
@@ -202,14 +193,10 @@ Public Class FornecedorDAO
         If (String.IsNullOrWhiteSpace(nomeFantasia)) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM Fornecedores ")
-        strSQL.Append("WHERE nomeFantasia = @nomeFantasia;")
 
         conn.AddParameter("@nomeFantasia", nomeFantasia)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM Fornecedores WHERE nomeFantasia = @nomeFantasia;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
 
@@ -239,14 +226,10 @@ Public Class FornecedorDAO
         If (String.IsNullOrWhiteSpace(cnpj)) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM Fornecedores ")
-        strSQL.Append("WHERE cnpj = @cnpj;")
 
         conn.AddParameter("@cnpj", cnpj)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM Fornecedores WHERE cnpj = @cnpj;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
 

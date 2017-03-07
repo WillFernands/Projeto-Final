@@ -44,18 +44,12 @@ Public Class OrdemServicoDAO
         If (cliente Is Nothing) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM OrdensServicos ")
-        strSQL.Append("WHERE idCliente = @idCliente;")
 
         conn.AddParameter("@idCliente", cliente.ID)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM OrdensServicos WHERE idCliente = @idCliente;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of OrdemServico)
-
-        Dim fornecedorDAO As New FornecedorDAO
 
         Dim ordens As New List(Of OrdemServico)
 
@@ -63,7 +57,7 @@ Public Class OrdemServicoDAO
             Dim ordem As New OrdemServico()
             ordem.ID = CLng(row.Item("id"))
             ordem.DataSolicitacao = CDate(row.Item("dataSolicitacao"))
-            ordem.Fornecedor = fornecedorDAO.FindByCNPJ(CType(CLng(row.Item("cnpjFornecedor")), String))
+            ordem.Fornecedor = FornecedorBC.FindByCNPJ(CStr(row.Item("cnpjFornecedor")))
             ordem.Cliente = cliente
             ordem.Status = CStr(row.Item("statusOrdem"))
             ordens.Add(ordem)
@@ -79,18 +73,12 @@ Public Class OrdemServicoDAO
         If (fornecedor Is Nothing) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM OrdensServicos ")
-        strSQL.Append("WHERE cnpjFornecedor = @cnpj;")
 
         conn.AddParameter("@cnpj", fornecedor.CNPJ)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM OrdensServicos WHERE cnpjFornecedor = @cnpj;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of OrdemServico)
-
-        Dim clienteDAO As New ClienteDAO
 
         Dim ordens As New List(Of OrdemServico)
 
@@ -99,7 +87,7 @@ Public Class OrdemServicoDAO
             ordem.ID = CLng(row.Item("id"))
             ordem.DataSolicitacao = CDate(row.Item("dataSolicitacao"))
             ordem.Fornecedor = fornecedor
-            ordem.Cliente = clienteDAO.FindByID(CLng(row.Item("idCliente")))
+            ordem.Cliente = ClienteBC.FindByID(CLng(row.Item("idCliente")))
             ordem.Status = CStr(row.Item("statusOrdem"))
             ordens.Add(ordem)
         Next
@@ -114,26 +102,18 @@ Public Class OrdemServicoDAO
         If (id = 0) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM OrdensServicos ")
-        strSQL.Append("WHERE id = @id;")
 
         conn.AddParameter("@id", id)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM OrdensServicos WHERE id = @id;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
-
-        Dim clienteDAO As New ClienteDAO
-        Dim fornecedorDAO As New FornecedorDAO
-
 
         Dim ordem As New OrdemServico()
         ordem.Id = CLng(dt.Rows(0).Item("id"))
         ordem.DataSolicitacao = CDate(dt.Rows(0).Item("dataSolicitacao"))
-        ordem.Fornecedor = fornecedorDAO.FindByCNPJ(CType(CLng(dt.Rows(0).Item("cnpjFornecedor")), String))
-        ordem.Cliente = clienteDAO.FindByID(CLng(dt.Rows(0).Item("idCliente")))
+        ordem.Fornecedor = FornecedorBC.FindByCNPJ(CStr(dt.Rows(0).Item("cnpjFornecedor")))
+        ordem.Cliente = ClienteBC.FindByID(CLng(dt.Rows(0).Item("idCliente")))
         ordem.Status = CStr(dt.Rows(0).Item("statusOrdem"))
 
         Return ordem

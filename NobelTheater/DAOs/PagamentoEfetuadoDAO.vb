@@ -51,14 +51,10 @@ Public Class PagamentoEfetuadoDAO
         If (nota Is Nothing) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM PagamentosEfetuados ")
-        strSQL.Append("WHERE idNotaFiscal = @idNotaFiscal;")
 
         conn.AddParameter("@idNotaFiscal", nota.ID)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM PagamentosEfetuados WHERE idNotaFiscal = @idNotaFiscal;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of PagamentoEfetuado)
 

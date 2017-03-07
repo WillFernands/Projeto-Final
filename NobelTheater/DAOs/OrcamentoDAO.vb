@@ -47,18 +47,12 @@ Public Class OrcamentoDAO
         If (cliente Is Nothing) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM Orcamentos ")
-        strSQL.Append("WHERE idCliente = @idCliente;")
 
         conn.AddParameter("@idCliente", cliente.ID)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM Orcamentos WHERE idCliente = @idCliente;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Orcamento)
-
-        Dim funcionarioDAO As New FuncionarioDAO
 
         Dim orcamentos As New List(Of Orcamento)
 
@@ -66,7 +60,7 @@ Public Class OrcamentoDAO
             Dim orcamento As New Orcamento()
             orcamento.ID = CLng(row.Item("id"))
             orcamento.DataOrcamento = CDate(row.Item("dataOrcamento"))
-            orcamento.Vendedor = FuncionarioDAO.FindByMatricula(CLng(row.Item("matriculaVendedor")))
+            orcamento.Vendedor = FuncionarioBC.FindByMatricula(CLng(row.Item("matriculaVendedor")))
             orcamento.Cliente = cliente
             orcamento.Status = CStr(row.Item("statusOrcamento"))
             orcamentos.Add(orcamento)
@@ -82,18 +76,12 @@ Public Class OrcamentoDAO
         If (vendedor Is Nothing) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM Orcamentos ")
-        strSQL.Append("WHERE matriculaVendedor = @vendedor;")
 
         conn.AddParameter("@vendedor", vendedor.Matricula)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM Orcamentos WHERE matriculaVendedor = @vendedor;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Orcamento)
-
-        Dim clienteDAO As New ClienteDAO
 
         Dim orcamentos As New List(Of Orcamento)
 
@@ -102,7 +90,7 @@ Public Class OrcamentoDAO
             orcamento.ID = CLng(row.Item("id"))
             orcamento.DataOrcamento = CDate(row.Item("dataOrcamento"))
             orcamento.Vendedor = vendedor
-            orcamento.Cliente = clienteDAO.FindByID(CLng(row.Item("idCliente")))
+            orcamento.Cliente = ClienteBC.FindByID(CLng(row.Item("idCliente")))
             orcamento.Status = CStr(row.Item("statusOrcamento"))
             orcamentos.Add(orcamento)
         Next
@@ -117,25 +105,18 @@ Public Class OrcamentoDAO
         If (id = 0) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM Orcamentos ")
-        strSQL.Append("WHERE id = @id;")
 
         conn.AddParameter("@id", id)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM Orcamentos WHERE id = @id;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
-
-        Dim clienteDAO As New ClienteDAO
-        Dim funcionarioDAO As New FuncionarioDAO
 
         Dim orcamento As New Orcamento()
         orcamento.Id = CLng(dt.Rows(0).Item("id"))
         orcamento.DataOrcamento = CDate(dt.Rows(0).Item("dataOrcamento"))
-        orcamento.Vendedor = funcionarioDAO.FindByMatricula(CLng(dt.Rows(0).Item("matriculaVendedor")))
-        orcamento.Cliente = clienteDAO.FindByID(CLng(dt.Rows(0).Item("idCliente")))
+        orcamento.Vendedor = FuncionarioBC.FindByMatricula(CLng(dt.Rows(0).Item("matriculaVendedor")))
+        orcamento.Cliente = ClienteBC.FindByID(CLng(dt.Rows(0).Item("idCliente")))
         orcamento.Status = CStr(dt.Rows(0).Item("statusOrcamento"))
 
         Return orcamento

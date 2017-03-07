@@ -72,6 +72,8 @@ Public Class RecuperarHistorico
     End Sub
 
     Private Sub FuncionariosDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles FuncionariosDT.CellContentClick
+        If (FuncionariosDT.SelectedCells Is Nothing) Then Exit Sub
+
         If (FuncionariosDT.SelectedCells.Item(0).Value = "Retirar" AndAlso e.ColumnIndex = 2) Then
             Dim funcionario As Funcionario = funcionarios.Find(Function(func As Funcionario) func.Matricula = FuncionariosDT.Item(0, e.RowIndex).Value)
             funcionarios.Remove(funcionario)

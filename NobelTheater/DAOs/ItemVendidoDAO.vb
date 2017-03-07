@@ -27,26 +27,19 @@ Public Class ItemVendidoDAO
         If (notaFiscal Is Nothing) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM ItensVendidos ")
-        strSQL.Append("WHERE idNotaFiscal = @idNotaFiscal;")
 
         conn.AddParameter("@idNotaFiscal", notaFiscal.ID)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM ItensVendidos WHERE idNotaFiscal = @idNotaFiscal;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of ItemVendido)
-
-        Dim produtoDAO As New ProdutoDAO()
-        Dim notaFiscalVendaDAO As New NotaFiscalVendaDAO()
 
         Dim itens As New List(Of ItemVendido)
 
         For Each row As DataRow In dt.Rows
             Dim item As New ItemVendido()
-            item.Produto = produtoDAO.FindByCodigo(CLng(row.Item("codigoProduto")))
-            item.NotaFiscal = notaFiscalVendaDAO.FindByID(CLng(row.Item("idNotaFiscal")))
+            item.Produto = ProdutoBC.FindByCodigo(CLng(row.Item("codigoProduto")))
+            item.NotaFiscal = notaFiscal
             item.Quantidade = CInt(row.Item("quantidade"))
             itens.Add(item)
         Next
