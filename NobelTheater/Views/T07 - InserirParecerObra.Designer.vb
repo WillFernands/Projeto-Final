@@ -64,15 +64,15 @@ Partial Class InserirParecerObra
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.SalvarParecerBT = New System.Windows.Forms.Button()
+        Me.MotivoVisitaParecerObraCB = New System.Windows.Forms.ComboBox()
+        Me.MotivoVisitaParecerObraLB = New System.Windows.Forms.Label()
+        Me.DescricaoParecerObraTF = New System.Windows.Forms.TextBox()
+        Me.ClienteParecerObraTF = New System.Windows.Forms.TextBox()
+        Me.ClienteParecerObraLB = New System.Windows.Forms.Label()
+        Me.DescricaoParecerObraLB = New System.Windows.Forms.Label()
+        Me.SupervisorResponsavelTF = New System.Windows.Forms.TextBox()
+        Me.SupervisorResponsavelLB = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -358,101 +358,96 @@ Partial Class InserirParecerObra
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.Button3)
-        Me.Panel2.Controls.Add(Me.ComboBox1)
-        Me.Panel2.Controls.Add(Me.Label7)
-        Me.Panel2.Controls.Add(Me.TextBox3)
-        Me.Panel2.Controls.Add(Me.TextBox2)
-        Me.Panel2.Controls.Add(Me.Label6)
-        Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Controls.Add(Me.TextBox1)
-        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.SalvarParecerBT)
+        Me.Panel2.Controls.Add(Me.MotivoVisitaParecerObraCB)
+        Me.Panel2.Controls.Add(Me.MotivoVisitaParecerObraLB)
+        Me.Panel2.Controls.Add(Me.DescricaoParecerObraTF)
+        Me.Panel2.Controls.Add(Me.ClienteParecerObraTF)
+        Me.Panel2.Controls.Add(Me.ClienteParecerObraLB)
+        Me.Panel2.Controls.Add(Me.DescricaoParecerObraLB)
+        Me.Panel2.Controls.Add(Me.SupervisorResponsavelTF)
+        Me.Panel2.Controls.Add(Me.SupervisorResponsavelLB)
         Me.Panel2.Location = New System.Drawing.Point(12, 138)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(705, 305)
         Me.Panel2.TabIndex = 13
         '
-        'ComboBox1
+        'SalvarParecerBT
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(165, 107)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(523, 21)
-        Me.ComboBox1.TabIndex = 8
-        Me.ComboBox1.Text = "Orientação"
+        Me.SalvarParecerBT.Location = New System.Drawing.Point(299, 269)
+        Me.SalvarParecerBT.Name = "SalvarParecerBT"
+        Me.SalvarParecerBT.Size = New System.Drawing.Size(106, 23)
+        Me.SalvarParecerBT.TabIndex = 11
+        Me.SalvarParecerBT.Text = "Finalizar Parecer"
+        Me.SalvarParecerBT.UseVisualStyleBackColor = True
         '
-        'Label7
+        'MotivoVisitaParecerObraCB
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(15, 110)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(85, 13)
-        Me.Label7.TabIndex = 6
-        Me.Label7.Text = "Motivo da Visita:"
+        Me.MotivoVisitaParecerObraCB.FormattingEnabled = True
+        Me.MotivoVisitaParecerObraCB.Location = New System.Drawing.Point(165, 107)
+        Me.MotivoVisitaParecerObraCB.Name = "MotivoVisitaParecerObraCB"
+        Me.MotivoVisitaParecerObraCB.Size = New System.Drawing.Size(523, 21)
+        Me.MotivoVisitaParecerObraCB.TabIndex = 3
         '
-        'TextBox3
+        'MotivoVisitaParecerObraLB
         '
-        Me.TextBox3.Location = New System.Drawing.Point(165, 152)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(523, 105)
-        Me.TextBox3.TabIndex = 5
-        Me.TextBox3.Text = "Cliente possuia dúvidas com relação a utilização da controladora instalada. Foram" & _
-    " passadas diversas instruções a fim de facilitar a utilização do equipamento."
+        Me.MotivoVisitaParecerObraLB.AutoSize = True
+        Me.MotivoVisitaParecerObraLB.Location = New System.Drawing.Point(15, 110)
+        Me.MotivoVisitaParecerObraLB.Name = "MotivoVisitaParecerObraLB"
+        Me.MotivoVisitaParecerObraLB.Size = New System.Drawing.Size(85, 13)
+        Me.MotivoVisitaParecerObraLB.TabIndex = 6
+        Me.MotivoVisitaParecerObraLB.Text = "Motivo da Visita:"
         '
-        'TextBox2
+        'DescricaoParecerObraTF
         '
-        Me.TextBox2.Enabled = False
-        Me.TextBox2.Location = New System.Drawing.Point(165, 62)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(523, 20)
-        Me.TextBox2.TabIndex = 4
-        Me.TextBox2.Text = "00059 - Cristiano dos Santos"
+        Me.DescricaoParecerObraTF.Location = New System.Drawing.Point(165, 152)
+        Me.DescricaoParecerObraTF.Multiline = True
+        Me.DescricaoParecerObraTF.Name = "DescricaoParecerObraTF"
+        Me.DescricaoParecerObraTF.Size = New System.Drawing.Size(523, 105)
+        Me.DescricaoParecerObraTF.TabIndex = 4
         '
-        'Label6
+        'ClienteParecerObraTF
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(15, 65)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(42, 13)
-        Me.Label6.TabIndex = 3
-        Me.Label6.Text = "Cliente:"
+        Me.ClienteParecerObraTF.Enabled = False
+        Me.ClienteParecerObraTF.Location = New System.Drawing.Point(165, 62)
+        Me.ClienteParecerObraTF.Name = "ClienteParecerObraTF"
+        Me.ClienteParecerObraTF.Size = New System.Drawing.Size(523, 20)
+        Me.ClienteParecerObraTF.TabIndex = 2
         '
-        'Label2
+        'ClienteParecerObraLB
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(15, 155)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(99, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Descrição da Obra:"
+        Me.ClienteParecerObraLB.AutoSize = True
+        Me.ClienteParecerObraLB.Location = New System.Drawing.Point(15, 65)
+        Me.ClienteParecerObraLB.Name = "ClienteParecerObraLB"
+        Me.ClienteParecerObraLB.Size = New System.Drawing.Size(42, 13)
+        Me.ClienteParecerObraLB.TabIndex = 0
+        Me.ClienteParecerObraLB.Text = "Cliente:"
         '
-        'TextBox1
+        'DescricaoParecerObraLB
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(165, 17)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(523, 20)
-        Me.TextBox1.TabIndex = 1
-        Me.TextBox1.Text = "03250 - Ricardo Conceição Almeida"
+        Me.DescricaoParecerObraLB.AutoSize = True
+        Me.DescricaoParecerObraLB.Location = New System.Drawing.Point(15, 155)
+        Me.DescricaoParecerObraLB.Name = "DescricaoParecerObraLB"
+        Me.DescricaoParecerObraLB.Size = New System.Drawing.Size(99, 13)
+        Me.DescricaoParecerObraLB.TabIndex = 2
+        Me.DescricaoParecerObraLB.Text = "Descrição da Obra:"
         '
-        'Label1
+        'SupervisorResponsavelTF
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(15, 20)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(125, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Supervisor Responsável:"
+        Me.SupervisorResponsavelTF.Enabled = False
+        Me.SupervisorResponsavelTF.Location = New System.Drawing.Point(165, 17)
+        Me.SupervisorResponsavelTF.Name = "SupervisorResponsavelTF"
+        Me.SupervisorResponsavelTF.Size = New System.Drawing.Size(523, 20)
+        Me.SupervisorResponsavelTF.TabIndex = 1
         '
-        'Button3
+        'SupervisorResponsavelLB
         '
-        Me.Button3.Location = New System.Drawing.Point(299, 269)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(106, 23)
-        Me.Button3.TabIndex = 11
-        Me.Button3.Text = "Finalizar Parecer"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.SupervisorResponsavelLB.AutoSize = True
+        Me.SupervisorResponsavelLB.Location = New System.Drawing.Point(15, 20)
+        Me.SupervisorResponsavelLB.Name = "SupervisorResponsavelLB"
+        Me.SupervisorResponsavelLB.Size = New System.Drawing.Size(125, 13)
+        Me.SupervisorResponsavelLB.TabIndex = 0
+        Me.SupervisorResponsavelLB.Text = "Supervisor Responsável:"
         '
         'InserirParecerObra
         '
@@ -518,13 +513,13 @@ Partial Class InserirParecerObra
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents DescricaoParecerObraTF As System.Windows.Forms.TextBox
+    Friend WithEvents ClienteParecerObraTF As System.Windows.Forms.TextBox
+    Friend WithEvents ClienteParecerObraLB As System.Windows.Forms.Label
+    Friend WithEvents DescricaoParecerObraLB As System.Windows.Forms.Label
+    Friend WithEvents SupervisorResponsavelTF As System.Windows.Forms.TextBox
+    Friend WithEvents SupervisorResponsavelLB As System.Windows.Forms.Label
+    Friend WithEvents MotivoVisitaParecerObraCB As System.Windows.Forms.ComboBox
+    Friend WithEvents MotivoVisitaParecerObraLB As System.Windows.Forms.Label
+    Friend WithEvents SalvarParecerBT As System.Windows.Forms.Button
 End Class
