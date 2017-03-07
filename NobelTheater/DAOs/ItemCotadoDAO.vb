@@ -46,7 +46,7 @@ Public Class ItemCotadoDAO
         For Each row As DataRow In dt.Rows
             Dim item As New ItemCotado()
             item.Produto = produtoDAO.FindByCodigo(CLng(row.Item("codigoProduto")))
-            item.Cotacao = cotacaoDAO.FindByID(CLng(row.Item("idCotacao")))
+            item.Cotacao = cotacao
             item.Quantidade = CInt(row.Item("quantidade"))
             itens.Add(item)
         Next

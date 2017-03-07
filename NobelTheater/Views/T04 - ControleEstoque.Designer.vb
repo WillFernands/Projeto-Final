@@ -64,12 +64,9 @@ Partial Class ControleEstoque
         Me.ProdutoAlertaTF = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.ProdutoAlertaIMG = New System.Windows.Forms.PictureBox()
-        Me.TabPage10 = New System.Windows.Forms.TabPage()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewButtonColumn1 = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.CotacoesAndamentoTab = New System.Windows.Forms.TabPage()
+        Me.CotacoesDT = New System.Windows.Forms.DataGridView()
+        Me.TabPage11 = New System.Windows.Forms.TabPage()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -121,7 +118,11 @@ Partial Class ControleEstoque
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TabPage11 = New System.Windows.Forms.TabPage()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewButtonColumn1 = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -137,8 +138,8 @@ Partial Class ControleEstoque
         Me.TabPage2.SuspendLayout()
         CType(Me.AlertasDT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProdutoAlertaIMG, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage10.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CotacoesAndamentoTab.SuspendLayout()
+        CType(Me.CotacoesDT, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -204,7 +205,7 @@ Partial Class ControleEstoque
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Controls.Add(Me.TabPage10)
+        Me.TabControl1.Controls.Add(Me.CotacoesAndamentoTab)
         Me.TabControl1.Controls.Add(Me.TabPage11)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage7)
@@ -543,57 +544,39 @@ Partial Class ControleEstoque
         Me.ProdutoAlertaIMG.TabIndex = 16
         Me.ProdutoAlertaIMG.TabStop = False
         '
-        'TabPage10
+        'CotacoesAndamentoTab
         '
-        Me.TabPage10.Controls.Add(Me.DataGridView1)
-        Me.TabPage10.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage10.Name = "TabPage10"
-        Me.TabPage10.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage10.Size = New System.Drawing.Size(685, 335)
-        Me.TabPage10.TabIndex = 9
-        Me.TabPage10.Text = "Cotacoes em Andamento"
-        Me.TabPage10.UseVisualStyleBackColor = True
+        Me.CotacoesAndamentoTab.Controls.Add(Me.CotacoesDT)
+        Me.CotacoesAndamentoTab.Location = New System.Drawing.Point(4, 22)
+        Me.CotacoesAndamentoTab.Name = "CotacoesAndamentoTab"
+        Me.CotacoesAndamentoTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.CotacoesAndamentoTab.Size = New System.Drawing.Size(685, 335)
+        Me.CotacoesAndamentoTab.TabIndex = 9
+        Me.CotacoesAndamentoTab.Text = "Cotacoes em Andamento"
+        Me.CotacoesAndamentoTab.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'CotacoesDT
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn13, Me.DataGridViewButtonColumn1})
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 6)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.Size = New System.Drawing.Size(673, 323)
-        Me.DataGridView1.TabIndex = 22
+        Me.CotacoesDT.AllowUserToAddRows = False
+        Me.CotacoesDT.AllowUserToDeleteRows = False
+        Me.CotacoesDT.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.CotacoesDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.CotacoesDT.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn13, Me.DataGridViewButtonColumn1})
+        Me.CotacoesDT.Location = New System.Drawing.Point(6, 6)
+        Me.CotacoesDT.Name = "CotacoesDT"
+        Me.CotacoesDT.ReadOnly = True
+        Me.CotacoesDT.RowHeadersVisible = False
+        Me.CotacoesDT.Size = New System.Drawing.Size(673, 323)
+        Me.CotacoesDT.TabIndex = 22
         '
-        'DataGridViewTextBoxColumn9
+        'TabPage11
         '
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Data da Cotação"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.ReadOnly = True
-        Me.DataGridViewTextBoxColumn9.Width = 75
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Status da Cotação"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        Me.DataGridViewTextBoxColumn10.ReadOnly = True
-        Me.DataGridViewTextBoxColumn10.Width = 150
-        '
-        'DataGridViewTextBoxColumn13
-        '
-        Me.DataGridViewTextBoxColumn13.HeaderText = "Fornecedor"
-        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
-        Me.DataGridViewTextBoxColumn13.ReadOnly = True
-        Me.DataGridViewTextBoxColumn13.Width = 300
-        '
-        'DataGridViewButtonColumn1
-        '
-        Me.DataGridViewButtonColumn1.HeaderText = "Ver Produtos"
-        Me.DataGridViewButtonColumn1.Name = "DataGridViewButtonColumn1"
-        Me.DataGridViewButtonColumn1.ReadOnly = True
+        Me.TabPage11.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage11.Name = "TabPage11"
+        Me.TabPage11.Size = New System.Drawing.Size(685, 335)
+        Me.TabPage11.TabIndex = 10
+        Me.TabPage11.Text = "Acompanhar Cotação"
+        Me.TabPage11.UseVisualStyleBackColor = True
         '
         'TabPage3
         '
@@ -953,14 +936,39 @@ Partial Class ControleEstoque
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
-        'TabPage11
+        'ID
         '
-        Me.TabPage11.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage11.Name = "TabPage11"
-        Me.TabPage11.Size = New System.Drawing.Size(685, 335)
-        Me.TabPage11.TabIndex = 10
-        Me.TabPage11.Text = "Acompanhar Cotação"
-        Me.TabPage11.UseVisualStyleBackColor = True
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        Me.ID.Width = 50
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Data da Cotação"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.ReadOnly = True
+        Me.DataGridViewTextBoxColumn9.Width = 75
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Status da Cotação"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.ReadOnly = True
+        Me.DataGridViewTextBoxColumn10.Width = 150
+        '
+        'DataGridViewTextBoxColumn13
+        '
+        Me.DataGridViewTextBoxColumn13.HeaderText = "Fornecedor"
+        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
+        Me.DataGridViewTextBoxColumn13.ReadOnly = True
+        Me.DataGridViewTextBoxColumn13.Width = 300
+        '
+        'DataGridViewButtonColumn1
+        '
+        Me.DataGridViewButtonColumn1.HeaderText = "Ver Produtos"
+        Me.DataGridViewButtonColumn1.Name = "DataGridViewButtonColumn1"
+        Me.DataGridViewButtonColumn1.ReadOnly = True
         '
         'ControleEstoque
         '
@@ -991,8 +999,8 @@ Partial Class ControleEstoque
         Me.TabPage2.PerformLayout()
         CType(Me.AlertasDT, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProdutoAlertaIMG, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage10.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CotacoesAndamentoTab.ResumeLayout(False)
+        CType(Me.CotacoesDT, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
@@ -1094,11 +1102,12 @@ Partial Class ControleEstoque
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents RemoverAlerta As DataGridViewButtonColumn
-    Friend WithEvents TabPage10 As TabPage
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents CotacoesAndamentoTab As TabPage
+    Friend WithEvents CotacoesDT As DataGridView
+    Friend WithEvents TabPage11 As TabPage
+    Friend WithEvents ID As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewButtonColumn1 As DataGridViewButtonColumn
-    Friend WithEvents TabPage11 As TabPage
 End Class

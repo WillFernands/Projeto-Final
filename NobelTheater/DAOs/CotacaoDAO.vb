@@ -44,7 +44,7 @@ Public Class CotacaoDAO
     Public Function FindAll() As List(Of Cotacao)
         Dim conn As New Connection
         Dim produtoDAO As New ProdutoDAO
-        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM Cotacoes;")
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM Cotacoes ORDER BY statusCotacao Asc, dataCotacao Asc;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Cotacao)
 
@@ -82,13 +82,12 @@ Public Class CotacaoDAO
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
 
-        Dim fornecedorDAO As New FornecedorDAO()
-
         Dim cotacao As New Cotacao()
         cotacao.ID = CLng(dt.Rows(0).Item("id"))
         cotacao.DataCotacao = CDate(dt.Rows(0).Item("dataCotacao"))
         cotacao.Status = CStr(dt.Rows(0).Item("statusCotacao"))
-        cotacao.Fornecedor = fornecedorDAO.FindByCNPJ(CStr(dt.Rows(0).Item("cnpjFornecedor")))
+        cotacao.Fornecedor = FornecedorBC.FindByCNPJ(CStr(dt.Rows(0).Item("cnpjFornecedor")))
+        cotacao.Itens = ItemCotadoBC.FindByCotacao(cotacao)
 
         Return cotacao
 
@@ -111,8 +110,6 @@ Public Class CotacaoDAO
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Cotacao)
 
-        Dim fornecedorDAO As New FornecedorDAO()
-
         Dim cotacoes As New List(Of Cotacao)
 
         For Each row As DataRow In dt.Rows
@@ -120,7 +117,8 @@ Public Class CotacaoDAO
             cotacao.ID = CLng(row.Item("id"))
             cotacao.DataCotacao = CDate(row.Item("dataCotacao"))
             cotacao.Status = CStr(row.Item("statusCotacao"))
-            cotacao.Fornecedor = fornecedorDAO.FindByCNPJ(CStr(row.Item("cnpjFornecedor")))
+            cotacao.Fornecedor = FornecedorBC.FindByCNPJ(CStr(row.Item("cnpjFornecedor")))
+            cotacao.Itens = ItemCotadoBC.FindByCotacao(cotacao)
             cotacoes.Add(cotacao)
         Next
 
@@ -145,7 +143,6 @@ Public Class CotacaoDAO
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Cotacao)
 
-        Dim fornecedorDAO As New FornecedorDAO()
 
         Dim cotacoes As New List(Of Cotacao)
 
@@ -154,7 +151,8 @@ Public Class CotacaoDAO
             cotacao.ID = CLng(row.Item("id"))
             cotacao.DataCotacao = CDate(row.Item("dataCotacao"))
             cotacao.Status = CStr(row.Item("statusCotacao"))
-            cotacao.Fornecedor = fornecedorDAO.FindByCNPJ(CStr(row.Item("cnpjFornecedor")))
+            cotacao.Fornecedor = FornecedorBC.FindByCNPJ(CStr(row.Item("cnpjFornecedor")))
+            cotacao.Itens = ItemCotadoBC.FindByCotacao(cotacao)
             cotacoes.Add(cotacao)
         Next
 
