@@ -29,26 +29,19 @@ Public Class ItemEmprestimoDAO
         If (solicitacao Is Nothing) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM ItensEmprestimos ")
-        strSQL.Append("WHERE idSolicitacao = @idSolicitacao;")
 
         conn.AddParameter("@idSolicitacao", solicitacao.Id)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM ItensEmprestimos WHERE idSolicitacao = @idSolicitacao;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of ItemEmprestimo)
-
-        Dim produtoDAO As New ProdutoDAO()
-        Dim solicitacaoEmprestimoDAO As New SolicitacaoEmprestimoDAO()
 
         Dim itens As New List(Of ItemEmprestimo)
 
         For Each row As DataRow In dt.Rows
             Dim item As New ItemEmprestimo()
-            item.Produto = produtoDAO.FindByCodigo(CLng(row.Item("codigoProduto")))
-            item.SolicitacaoEmprestimo = solicitacaoEmprestimoDAO.FindByID(CLng(row.Item("idSolicitacao")))
+            item.Produto = ProdutoBC.FindByCodigo(CLng(row.Item("codigoProduto")))
+            item.SolicitacaoEmprestimo = solicitacao
             item.Quantidade = CInt(row.Item("quantidade"))
             item.DataEmprestimo = CDate(row.Item("dataEmprestimo"))
             item.DataDevolucao = CDate(row.Item("dataDevolucao"))

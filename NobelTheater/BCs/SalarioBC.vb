@@ -24,10 +24,6 @@ Public Class SalarioBC
         Return False
     End Function
 
-    Public Shared Function FindByMatricula(matricula As Long) As List(Of Salario)
-        Return salarioDAO.FindByMatricula(matricula)
-    End Function
-
     Public Shared Function FindByMatricula(funcionario As Funcionario) As List(Of Salario)
         Return salarioDAO.FindByMatricula(funcionario)
     End Function

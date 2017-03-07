@@ -43,12 +43,9 @@ Public Class CotacaoDAO
     'OK
     Public Function FindAll() As List(Of Cotacao)
         Dim conn As New Connection
-        Dim produtoDAO As New ProdutoDAO
         Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM Cotacoes ORDER BY statusCotacao Asc, dataCotacao Asc;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Cotacao)
-
-        Dim fornecedorDAO As New FornecedorDAO()
 
         Dim cotacoes As New List(Of Cotacao)
 
@@ -57,7 +54,7 @@ Public Class CotacaoDAO
             cotacao.ID = CLng(row.Item("id"))
             cotacao.DataCotacao = CDate(row.Item("dataCotacao"))
             cotacao.Status = CStr(row.Item("statusCotacao"))
-            cotacao.Fornecedor = fornecedorDAO.FindByCNPJ(CStr(row.Item("cnpjFornecedor")))
+            cotacao.Fornecedor = FornecedorBC.FindByCNPJ(CStr(row.Item("cnpjFornecedor")))
             cotacoes.Add(cotacao)
         Next
 
@@ -71,14 +68,10 @@ Public Class CotacaoDAO
         If (id = 0) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM Cotacoes ")
-        strSQL.Append("WHERE id = @id;")
 
         conn.AddParameter("@id", id)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM Cotacoes WHERE id = @id;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
 
@@ -99,14 +92,10 @@ Public Class CotacaoDAO
         If (data = Nothing) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM Cotacoes ")
-        strSQL.Append("WHERE data = @data;")
 
         conn.AddParameter("@data", data)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM Cotacoes WHERE data = @data ORDER BY statusCotacao Asc, dataCotacao Asc;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Cotacao)
 
@@ -132,14 +121,10 @@ Public Class CotacaoDAO
         If (String.IsNullOrWhiteSpace(status)) Then Return Nothing
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("SELECT * FROM Cotacoes ")
-        strSQL.Append("WHERE status = @status;")
 
         conn.AddParameter("@status", status)
 
-        Dim dt As DataTable = conn.ExecuteSelect(strSQL.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM Cotacoes WHERE status = @status;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Cotacao)
 

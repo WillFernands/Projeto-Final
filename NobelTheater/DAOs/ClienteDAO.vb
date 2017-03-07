@@ -52,13 +52,9 @@ Public Class ClienteDAO
 
         Dim conn As New Connection
 
-        Dim query As New StringBuilder
-        query.Append("SELECT * FROM Clientes ")
-        query.Append("WHERE Clientes.Id = @id")
-
         conn.AddParameter("@id", id)
 
-        Dim dt As DataTable = conn.ExecuteSelect(query.ToString)
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM Clientes WHERE Clientes.Id = @id")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return Nothing
 

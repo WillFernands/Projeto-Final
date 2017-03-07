@@ -8,42 +8,30 @@ Public Class ClientePJDAO
     'OK
     Public Function Insert(ByVal cliente As ClientePJ) As Boolean
 
-        Dim clienteDAO As New ClienteDAO
-
-        cliente.ID = clienteDAO.Insert(cliente)
+        cliente.ID = ClienteBC.Insert(cliente)
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("Insert INTO ClientesPJ(cnpj, idCliente, razaoSocial) ")
-        strSQL.Append("VALUES(@cnpj, @idCliente, @razaoSocial);")
 
         conn.AddParameter("@cnpj", cliente.CNPJ)
         conn.AddParameter("@idCliente", cliente.ID)
-        conn.AddParameter("@razaoSocial", cliente.RazaoSocial)
+        conn.AddParameter("@razao", cliente.RazaoSocial)
 
-        Return conn.ExecuteCommand(strSQL.ToString)
+        Return conn.ExecuteCommand("Insert INTO ClientesPJ(cnpj, idCliente, razaoSocial) VALUES(@cnpj, @idCliente, @razao);")
 
     End Function
 
     'OK
     Public Function Update(ByVal cliente As ClientePJ) As Boolean
 
-        Dim clienteDAO As New ClienteDAO
-
-        If (clienteDAO.Update(cliente) = False) Then Return False
+        If (ClienteBC.Update(cliente) = False) Then Return False
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("UPDATE ClientesPJ SET cnpj = @cnpj, razaoSocial = @razaoSocial ")
-        strSQL.Append("WHERE idCliente = @idCliente;")
 
         conn.AddParameter("@cnpj", cliente.CNPJ)
         conn.AddParameter("@idCliente", cliente.ID)
-        conn.AddParameter("@razaoSocial", cliente.RazaoSocial)
+        conn.AddParameter("@razao", cliente.RazaoSocial)
 
-        Return conn.ExecuteCommand(strSQL.ToString)
+        Return conn.ExecuteCommand("UPDATE ClientesPJ SET cnpj = @cnpj, razaoSocial = @razao WHERE idCliente = @idCliente;")
 
     End Function
 

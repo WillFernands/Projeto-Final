@@ -8,40 +8,28 @@ Public Class ClientePFDAO
     'OK
     Public Function Insert(ByVal cliente As ClientePF) As Boolean
 
-        Dim clienteDAO As New ClienteDAO
-
-        cliente.ID = clienteDAO.Insert(cliente)
+        cliente.ID = ClienteBC.Insert(cliente)
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("Insert INTO ClientesPF(cpf, idCliente) ")
-        strSQL.Append("VALUES(@cpf, @idCliente);")
 
         conn.AddParameter("@cpf", cliente.CPF)
         conn.AddParameter("@idCliente", cliente.ID)
 
-        Return conn.ExecuteCommand(strSQL.ToString)
+        Return conn.ExecuteCommand("Insert INTO ClientesPF(cpf, idCliente) VALUES(@cpf, @idCliente);")
 
     End Function
 
     'OK
     Public Function Update(ByVal cliente As ClientePF) As Boolean
 
-        Dim clienteDAO As New ClienteDAO
-
-        If (clienteDAO.Update(cliente) = False) Then Return False
+        If (ClienteBC.Update(cliente) = False) Then Return False
 
         Dim conn As New Connection
-        Dim strSQL As New StringBuilder
-
-        strSQL.Append("UPDATE ClientesPF SET cpf = @cpf ")
-        strSQL.Append("WHERE idCliente = @idCliente;")
 
         conn.AddParameter("@cpf", cliente.CPF)
         conn.AddParameter("@idCliente", cliente.ID)
 
-        Return conn.ExecuteCommand(strSQL.ToString)
+        Return conn.ExecuteCommand("UPDATE ClientesPF SET cpf = @cpf WHERE idCliente = @idCliente;")
 
     End Function
 
