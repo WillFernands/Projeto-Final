@@ -43,6 +43,7 @@ Partial Class LoginUsuario
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -50,7 +51,7 @@ Partial Class LoginUsuario
         'LogoPictureBox
         '
         Me.LogoPictureBox.Image = Global.NobelTheater.My.Resources.Resources.Nobel_Logo
-        Me.LogoPictureBox.Location = New System.Drawing.Point(73, 0)
+        Me.LogoPictureBox.Location = New System.Drawing.Point(73, 5)
         Me.LogoPictureBox.Name = "LogoPictureBox"
         Me.LogoPictureBox.Size = New System.Drawing.Size(215, 104)
         Me.LogoPictureBox.TabIndex = 0
@@ -60,33 +61,33 @@ Partial Class LoginUsuario
         '
         Me.UsernameLabel.Location = New System.Drawing.Point(12, 119)
         Me.UsernameLabel.Name = "UsernameLabel"
-        Me.UsernameLabel.Size = New System.Drawing.Size(220, 23)
+        Me.UsernameLabel.Size = New System.Drawing.Size(63, 23)
         Me.UsernameLabel.TabIndex = 0
-        Me.UsernameLabel.Text = "Matrícula"
+        Me.UsernameLabel.Text = "Matrícula:"
         Me.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'PasswordLabel
         '
         Me.PasswordLabel.Location = New System.Drawing.Point(12, 162)
         Me.PasswordLabel.Name = "PasswordLabel"
-        Me.PasswordLabel.Size = New System.Drawing.Size(220, 23)
+        Me.PasswordLabel.Size = New System.Drawing.Size(63, 23)
         Me.PasswordLabel.TabIndex = 2
-        Me.PasswordLabel.Text = "Senha"
+        Me.PasswordLabel.Text = "Senha:"
         Me.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'UserTF
         '
-        Me.UserTF.Location = New System.Drawing.Point(94, 121)
+        Me.UserTF.Location = New System.Drawing.Point(73, 121)
         Me.UserTF.Name = "UserTF"
-        Me.UserTF.Size = New System.Drawing.Size(255, 20)
+        Me.UserTF.Size = New System.Drawing.Size(253, 20)
         Me.UserTF.TabIndex = 1
         '
         'PasswordTF
         '
-        Me.PasswordTF.Location = New System.Drawing.Point(94, 162)
+        Me.PasswordTF.Location = New System.Drawing.Point(73, 162)
         Me.PasswordTF.Name = "PasswordTF"
         Me.PasswordTF.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.PasswordTF.Size = New System.Drawing.Size(255, 20)
+        Me.PasswordTF.Size = New System.Drawing.Size(253, 20)
         Me.PasswordTF.TabIndex = 3
         '
         'OK
@@ -100,7 +101,7 @@ Partial Class LoginUsuario
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(91, 203)
+        Me.LinkLabel1.Location = New System.Drawing.Point(93, 203)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(71, 13)
         Me.LinkLabel1.TabIndex = 6
@@ -110,7 +111,7 @@ Partial Class LoginUsuario
         'LinkLabel2
         '
         Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Location = New System.Drawing.Point(261, 203)
+        Me.LinkLabel2.Location = New System.Drawing.Point(181, 203)
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(88, 13)
         Me.LinkLabel2.TabIndex = 7
@@ -120,7 +121,7 @@ Partial Class LoginUsuario
         'SaidaRB
         '
         Me.SaidaRB.AutoSize = True
-        Me.SaidaRB.Location = New System.Drawing.Point(158, 19)
+        Me.SaidaRB.Location = New System.Drawing.Point(88, 20)
         Me.SaidaRB.Name = "SaidaRB"
         Me.SaidaRB.Size = New System.Drawing.Size(54, 17)
         Me.SaidaRB.TabIndex = 8
@@ -131,7 +132,7 @@ Partial Class LoginUsuario
         '
         Me.EntradaRB.AutoSize = True
         Me.EntradaRB.Checked = True
-        Me.EntradaRB.Location = New System.Drawing.Point(18, 19)
+        Me.EntradaRB.Location = New System.Drawing.Point(13, 20)
         Me.EntradaRB.Name = "EntradaRB"
         Me.EntradaRB.Size = New System.Drawing.Size(62, 17)
         Me.EntradaRB.TabIndex = 9
@@ -144,16 +145,16 @@ Partial Class LoginUsuario
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.EntradaRB)
         Me.GroupBox1.Controls.Add(Me.SaidaRB)
-        Me.GroupBox1.Location = New System.Drawing.Point(15, 234)
+        Me.GroupBox1.Location = New System.Drawing.Point(38, 235)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(334, 49)
+        Me.GroupBox1.Size = New System.Drawing.Size(288, 49)
         Me.GroupBox1.TabIndex = 10
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Registro de Ponto"
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(234, 15)
+        Me.Button1.Location = New System.Drawing.Point(179, 17)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(94, 23)
         Me.Button1.TabIndex = 13
@@ -173,9 +174,18 @@ Partial Class LoginUsuario
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(10, 358)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(256, 13)
+        Me.Label2.Size = New System.Drawing.Size(283, 13)
         Me.Label2.TabIndex = 12
-        Me.Label2.Text = "Nobel HOME 2016 © - Todos os direitos reservados "
+        Me.Label2.Text = "Nobel HOME 2016-2017 © - Todos os direitos reservados "
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(167, 203)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(10, 13)
+        Me.Label3.TabIndex = 13
+        Me.Label3.Text = "-"
         '
         'LoginUsuario
         '
@@ -183,6 +193,7 @@ Partial Class LoginUsuario
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(361, 385)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
@@ -217,5 +228,5 @@ Partial Class LoginUsuario
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
-
+    Friend WithEvents Label3 As Label
 End Class

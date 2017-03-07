@@ -17,4 +17,7 @@
         EnderecosDT.Rows.Add(list.ToArray()) : list.Clear()
         End Sub
 
+    Private Sub RazaoSocialAcompanharFornecedorLB_Click(sender As Object, e As EventArgs) Handles RazaoSocialAcompanharFornecedorLB.Click
+
+    End Sub
 End Class
