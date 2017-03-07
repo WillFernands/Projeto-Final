@@ -108,4 +108,12 @@
     Private Sub AcompanharFuncionarioDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles AcompanharFuncionarioDT.CellContentClick
 
     End Sub
+
+    Private Sub DadosPessoaisNovoFuncionarioGB_Enter(sender As Object, e As EventArgs) Handles DadosPessoaisNovoFuncionarioGB.Enter
+
+    End Sub
+
+    Protected Overrides Sub Finalize()
+        MyBase.Finalize()
+    End Sub
 End Class

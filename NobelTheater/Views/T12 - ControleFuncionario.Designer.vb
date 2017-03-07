@@ -64,6 +64,30 @@ Partial Class ControleFuncionario
         Me.EstadoNovoFuncionarioCB = New System.Windows.Forms.ComboBox()
         Me.CEPNovoFuncionarioTF = New System.Windows.Forms.TextBox()
         Me.AcompanharFuncionarioTP = New System.Windows.Forms.TabPage()
+        Me.CPFAcompanharFuncionarioMT = New System.Windows.Forms.MaskedTextBox()
+        Me.TelefoneAcompanharFuncionarioTF = New System.Windows.Forms.TextBox()
+        Me.TelefoneAcompanharFuncionarioLB = New System.Windows.Forms.Label()
+        Me.AcompanharFuncionarioDT = New System.Windows.Forms.DataGridView()
+        Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CPF = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cargo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Supervisor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Perfil = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Telefone = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Quantidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecoTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CEP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Salario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Remover = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.CPFAcompanharFuncionarioLB = New System.Windows.Forms.Label()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.SelecionarFuncionarioTF = New System.Windows.Forms.TextBox()
+        Me.SalvarAcompanharFuncionarioBT = New System.Windows.Forms.Button()
+        Me.SelecionarFuncionarioLB = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.OpcoesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -100,30 +124,6 @@ Partial Class ControleFuncionario
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TelefoneAcompanharFuncionarioTF = New System.Windows.Forms.TextBox()
-        Me.TelefoneAcompanharFuncionarioLB = New System.Windows.Forms.Label()
-        Me.AcompanharFuncionarioDT = New System.Windows.Forms.DataGridView()
-        Me.CPFAcompanharFuncionarioLB = New System.Windows.Forms.Label()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.SelecionarFuncionarioTF = New System.Windows.Forms.TextBox()
-        Me.SalvarAcompanharFuncionarioBT = New System.Windows.Forms.Button()
-        Me.SelecionarFuncionarioLB = New System.Windows.Forms.Label()
-        Me.CPFAcompanharFuncionarioMT = New System.Windows.Forms.MaskedTextBox()
-        Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CPF = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cargo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Supervisor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Perfil = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Telefone = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Quantidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecoTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CEP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Salario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Remover = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -133,9 +133,9 @@ Partial Class ControleFuncionario
         CType(Me.SupervisorIMG, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DadosPessoaisNovoFuncionarioGB.SuspendLayout()
         Me.AcompanharFuncionarioTP.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
         CType(Me.AcompanharFuncionarioDT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -234,7 +234,7 @@ Partial Class ControleFuncionario
         Me.LimparNovoFuncionarioBT.Location = New System.Drawing.Point(345, 304)
         Me.LimparNovoFuncionarioBT.Name = "LimparNovoFuncionarioBT"
         Me.LimparNovoFuncionarioBT.Size = New System.Drawing.Size(75, 23)
-        Me.LimparNovoFuncionarioBT.TabIndex = 23
+        Me.LimparNovoFuncionarioBT.TabIndex = 16
         Me.LimparNovoFuncionarioBT.Text = "Limpar"
         Me.LimparNovoFuncionarioBT.UseVisualStyleBackColor = True
         '
@@ -243,7 +243,7 @@ Partial Class ControleFuncionario
         Me.SalvarNovoFuncionarioBT.Location = New System.Drawing.Point(264, 304)
         Me.SalvarNovoFuncionarioBT.Name = "SalvarNovoFuncionarioBT"
         Me.SalvarNovoFuncionarioBT.Size = New System.Drawing.Size(75, 23)
-        Me.SalvarNovoFuncionarioBT.TabIndex = 22
+        Me.SalvarNovoFuncionarioBT.TabIndex = 15
         Me.SalvarNovoFuncionarioBT.Text = "Salvar"
         Me.SalvarNovoFuncionarioBT.UseVisualStyleBackColor = True
         '
@@ -281,7 +281,7 @@ Partial Class ControleFuncionario
         Me.SupervisorNovoFuncionarioTF.Location = New System.Drawing.Point(419, 58)
         Me.SupervisorNovoFuncionarioTF.Name = "SupervisorNovoFuncionarioTF"
         Me.SupervisorNovoFuncionarioTF.Size = New System.Drawing.Size(218, 20)
-        Me.SupervisorNovoFuncionarioTF.TabIndex = 9
+        Me.SupervisorNovoFuncionarioTF.TabIndex = 14
         '
         'SupervisorNovoFuncionarioLB
         '
@@ -297,7 +297,7 @@ Partial Class ControleFuncionario
         Me.SalarioNovoFuncionarioTF.Location = New System.Drawing.Point(101, 58)
         Me.SalarioNovoFuncionarioTF.Name = "SalarioNovoFuncionarioTF"
         Me.SalarioNovoFuncionarioTF.Size = New System.Drawing.Size(232, 20)
-        Me.SalarioNovoFuncionarioTF.TabIndex = 7
+        Me.SalarioNovoFuncionarioTF.TabIndex = 13
         '
         'SalarioNovoFuncionarioLB
         '
@@ -314,7 +314,7 @@ Partial Class ControleFuncionario
         Me.PerfilNovoFuncionarioCB.Location = New System.Drawing.Point(389, 25)
         Me.PerfilNovoFuncionarioCB.Name = "PerfilNovoFuncionarioCB"
         Me.PerfilNovoFuncionarioCB.Size = New System.Drawing.Size(281, 21)
-        Me.PerfilNovoFuncionarioCB.TabIndex = 5
+        Me.PerfilNovoFuncionarioCB.TabIndex = 12
         '
         'PerfilNovoFuncionarioLB
         '
@@ -331,7 +331,7 @@ Partial Class ControleFuncionario
         Me.CargoNovoFuncionarioCB.Location = New System.Drawing.Point(101, 25)
         Me.CargoNovoFuncionarioCB.Name = "CargoNovoFuncionarioCB"
         Me.CargoNovoFuncionarioCB.Size = New System.Drawing.Size(232, 21)
-        Me.CargoNovoFuncionarioCB.TabIndex = 3
+        Me.CargoNovoFuncionarioCB.TabIndex = 11
         '
         'CargoNovoFuncionarioLB
         '
@@ -347,7 +347,7 @@ Partial Class ControleFuncionario
         Me.CidadeNovoFuncionarioTF.Location = New System.Drawing.Point(312, 123)
         Me.CidadeNovoFuncionarioTF.Name = "CidadeNovoFuncionarioTF"
         Me.CidadeNovoFuncionarioTF.Size = New System.Drawing.Size(150, 20)
-        Me.CidadeNovoFuncionarioTF.TabIndex = 17
+        Me.CidadeNovoFuncionarioTF.TabIndex = 8
         '
         'TipoEnderecoNovoFuncionarioCB
         '
@@ -355,7 +355,7 @@ Partial Class ControleFuncionario
         Me.TipoEnderecoNovoFuncionarioCB.Location = New System.Drawing.Point(107, 154)
         Me.TipoEnderecoNovoFuncionarioCB.Name = "TipoEnderecoNovoFuncionarioCB"
         Me.TipoEnderecoNovoFuncionarioCB.Size = New System.Drawing.Size(569, 21)
-        Me.TipoEnderecoNovoFuncionarioCB.TabIndex = 15
+        Me.TipoEnderecoNovoFuncionarioCB.TabIndex = 10
         '
         'TipoEnderecoNovoFuncionarioLB
         '
@@ -371,14 +371,14 @@ Partial Class ControleFuncionario
         Me.NumeroNovoFuncionarioTF.Location = New System.Drawing.Point(604, 92)
         Me.NumeroNovoFuncionarioTF.Name = "NumeroNovoFuncionarioTF"
         Me.NumeroNovoFuncionarioTF.Size = New System.Drawing.Size(72, 20)
-        Me.NumeroNovoFuncionarioTF.TabIndex = 11
+        Me.NumeroNovoFuncionarioTF.TabIndex = 6
         '
         'LogradouroNovoFuncionarioTF
         '
         Me.LogradouroNovoFuncionarioTF.Location = New System.Drawing.Point(107, 92)
         Me.LogradouroNovoFuncionarioTF.Name = "LogradouroNovoFuncionarioTF"
         Me.LogradouroNovoFuncionarioTF.Size = New System.Drawing.Size(464, 20)
-        Me.LogradouroNovoFuncionarioTF.TabIndex = 9
+        Me.LogradouroNovoFuncionarioTF.TabIndex = 5
         '
         'LogradouroNovoFuncionarioLB
         '
@@ -394,7 +394,7 @@ Partial Class ControleFuncionario
         Me.TelefoneNovoFuncionarioTF.Location = New System.Drawing.Point(107, 61)
         Me.TelefoneNovoFuncionarioTF.Name = "TelefoneNovoFuncionarioTF"
         Me.TelefoneNovoFuncionarioTF.Size = New System.Drawing.Size(150, 20)
-        Me.TelefoneNovoFuncionarioTF.TabIndex = 5
+        Me.TelefoneNovoFuncionarioTF.TabIndex = 3
         '
         'TelefoneNovoFuncionarioLB
         '
@@ -410,7 +410,7 @@ Partial Class ControleFuncionario
         Me.CPFNovoFuncionarioTF.Location = New System.Drawing.Point(478, 30)
         Me.CPFNovoFuncionarioTF.Name = "CPFNovoFuncionarioTF"
         Me.CPFNovoFuncionarioTF.Size = New System.Drawing.Size(198, 20)
-        Me.CPFNovoFuncionarioTF.TabIndex = 3
+        Me.CPFNovoFuncionarioTF.TabIndex = 2
         '
         'NomeNovoFuncionarioTF
         '
@@ -478,7 +478,7 @@ Partial Class ControleFuncionario
         Me.BairroNovoFuncionarioTF.Location = New System.Drawing.Point(101, 120)
         Me.BairroNovoFuncionarioTF.Name = "BairroNovoFuncionarioTF"
         Me.BairroNovoFuncionarioTF.Size = New System.Drawing.Size(150, 20)
-        Me.BairroNovoFuncionarioTF.TabIndex = 19
+        Me.BairroNovoFuncionarioTF.TabIndex = 7
         '
         'CEPNovoFuncionarioLB
         '
@@ -513,14 +513,14 @@ Partial Class ControleFuncionario
         Me.EstadoNovoFuncionarioCB.Location = New System.Drawing.Point(513, 119)
         Me.EstadoNovoFuncionarioCB.Name = "EstadoNovoFuncionarioCB"
         Me.EstadoNovoFuncionarioCB.Size = New System.Drawing.Size(150, 21)
-        Me.EstadoNovoFuncionarioCB.TabIndex = 20
+        Me.EstadoNovoFuncionarioCB.TabIndex = 9
         '
         'CEPNovoFuncionarioTF
         '
         Me.CEPNovoFuncionarioTF.Location = New System.Drawing.Point(472, 58)
         Me.CEPNovoFuncionarioTF.Name = "CEPNovoFuncionarioTF"
         Me.CEPNovoFuncionarioTF.Size = New System.Drawing.Size(198, 20)
-        Me.CEPNovoFuncionarioTF.TabIndex = 8
+        Me.CEPNovoFuncionarioTF.TabIndex = 4
         '
         'AcompanharFuncionarioTP
         '
@@ -540,6 +540,178 @@ Partial Class ControleFuncionario
         Me.AcompanharFuncionarioTP.TabIndex = 1
         Me.AcompanharFuncionarioTP.Text = "Acompanhar Funcionário"
         Me.AcompanharFuncionarioTP.UseVisualStyleBackColor = True
+        '
+        'CPFAcompanharFuncionarioMT
+        '
+        Me.CPFAcompanharFuncionarioMT.Location = New System.Drawing.Point(126, 52)
+        Me.CPFAcompanharFuncionarioMT.Name = "CPFAcompanharFuncionarioMT"
+        Me.CPFAcompanharFuncionarioMT.Size = New System.Drawing.Size(503, 20)
+        Me.CPFAcompanharFuncionarioMT.TabIndex = 2
+        '
+        'TelefoneAcompanharFuncionarioTF
+        '
+        Me.TelefoneAcompanharFuncionarioTF.Location = New System.Drawing.Point(126, 91)
+        Me.TelefoneAcompanharFuncionarioTF.Name = "TelefoneAcompanharFuncionarioTF"
+        Me.TelefoneAcompanharFuncionarioTF.Size = New System.Drawing.Size(168, 20)
+        Me.TelefoneAcompanharFuncionarioTF.TabIndex = 3
+        '
+        'TelefoneAcompanharFuncionarioLB
+        '
+        Me.TelefoneAcompanharFuncionarioLB.AutoSize = True
+        Me.TelefoneAcompanharFuncionarioLB.Location = New System.Drawing.Point(3, 94)
+        Me.TelefoneAcompanharFuncionarioLB.Name = "TelefoneAcompanharFuncionarioLB"
+        Me.TelefoneAcompanharFuncionarioLB.Size = New System.Drawing.Size(52, 13)
+        Me.TelefoneAcompanharFuncionarioLB.TabIndex = 46
+        Me.TelefoneAcompanharFuncionarioLB.Text = "Telefone:"
+        '
+        'AcompanharFuncionarioDT
+        '
+        Me.AcompanharFuncionarioDT.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.AcompanharFuncionarioDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.AcompanharFuncionarioDT.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nome, Me.CPF, Me.Cargo, Me.Supervisor, Me.Perfil, Me.Telefone, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn3, Me.Quantidade, Me.PrecoTotal, Me.Estado, Me.CEP, Me.Tipo, Me.Salario, Me.Remover})
+        Me.AcompanharFuncionarioDT.Cursor = System.Windows.Forms.Cursors.Default
+        Me.AcompanharFuncionarioDT.Location = New System.Drawing.Point(14, 128)
+        Me.AcompanharFuncionarioDT.Name = "AcompanharFuncionarioDT"
+        Me.AcompanharFuncionarioDT.RowHeadersVisible = False
+        Me.AcompanharFuncionarioDT.Size = New System.Drawing.Size(661, 168)
+        Me.AcompanharFuncionarioDT.TabIndex = 4
+        '
+        'Nome
+        '
+        Me.Nome.HeaderText = "Nome"
+        Me.Nome.Name = "Nome"
+        '
+        'CPF
+        '
+        Me.CPF.HeaderText = "CPF"
+        Me.CPF.Name = "CPF"
+        '
+        'Cargo
+        '
+        Me.Cargo.HeaderText = "Cargo"
+        Me.Cargo.Name = "Cargo"
+        '
+        'Supervisor
+        '
+        Me.Supervisor.HeaderText = "Supervisor"
+        Me.Supervisor.Name = "Supervisor"
+        '
+        'Perfil
+        '
+        Me.Perfil.HeaderText = "Perfil"
+        Me.Perfil.Name = "Perfil"
+        '
+        'Telefone
+        '
+        Me.Telefone.HeaderText = "Telefone"
+        Me.Telefone.Name = "Telefone"
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Logradouro"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 150
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Número"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Width = 50
+        '
+        'Quantidade
+        '
+        Me.Quantidade.HeaderText = "Bairro"
+        Me.Quantidade.Name = "Quantidade"
+        Me.Quantidade.ReadOnly = True
+        Me.Quantidade.Width = 75
+        '
+        'PrecoTotal
+        '
+        Me.PrecoTotal.HeaderText = "Cidade"
+        Me.PrecoTotal.Name = "PrecoTotal"
+        Me.PrecoTotal.ReadOnly = True
+        Me.PrecoTotal.Width = 75
+        '
+        'Estado
+        '
+        Me.Estado.HeaderText = "Estado"
+        Me.Estado.Name = "Estado"
+        Me.Estado.ReadOnly = True
+        Me.Estado.Width = 50
+        '
+        'CEP
+        '
+        Me.CEP.HeaderText = "CEP"
+        Me.CEP.Name = "CEP"
+        Me.CEP.ReadOnly = True
+        Me.CEP.Width = 75
+        '
+        'Tipo
+        '
+        Me.Tipo.HeaderText = "Tipo"
+        Me.Tipo.Name = "Tipo"
+        Me.Tipo.ReadOnly = True
+        Me.Tipo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Tipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'Salario
+        '
+        Me.Salario.HeaderText = "Salario"
+        Me.Salario.Name = "Salario"
+        '
+        'Remover
+        '
+        Me.Remover.HeaderText = "Remover"
+        Me.Remover.Name = "Remover"
+        Me.Remover.ReadOnly = True
+        Me.Remover.Width = 75
+        '
+        'CPFAcompanharFuncionarioLB
+        '
+        Me.CPFAcompanharFuncionarioLB.AutoSize = True
+        Me.CPFAcompanharFuncionarioLB.Location = New System.Drawing.Point(3, 55)
+        Me.CPFAcompanharFuncionarioLB.Name = "CPFAcompanharFuncionarioLB"
+        Me.CPFAcompanharFuncionarioLB.Size = New System.Drawing.Size(30, 13)
+        Me.CPFAcompanharFuncionarioLB.TabIndex = 43
+        Me.CPFAcompanharFuncionarioLB.Text = "CPF:"
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.PictureBox7.Location = New System.Drawing.Point(635, 13)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox7.TabIndex = 39
+        Me.PictureBox7.TabStop = False
+        '
+        'SelecionarFuncionarioTF
+        '
+        Me.SelecionarFuncionarioTF.Enabled = False
+        Me.SelecionarFuncionarioTF.Location = New System.Drawing.Point(126, 13)
+        Me.SelecionarFuncionarioTF.Name = "SelecionarFuncionarioTF"
+        Me.SelecionarFuncionarioTF.Size = New System.Drawing.Size(503, 20)
+        Me.SelecionarFuncionarioTF.TabIndex = 1
+        '
+        'SalvarAcompanharFuncionarioBT
+        '
+        Me.SalvarAcompanharFuncionarioBT.Location = New System.Drawing.Point(284, 304)
+        Me.SalvarAcompanharFuncionarioBT.Name = "SalvarAcompanharFuncionarioBT"
+        Me.SalvarAcompanharFuncionarioBT.Size = New System.Drawing.Size(125, 23)
+        Me.SalvarAcompanharFuncionarioBT.TabIndex = 5
+        Me.SalvarAcompanharFuncionarioBT.Text = "Salvar Alterações"
+        Me.SalvarAcompanharFuncionarioBT.UseVisualStyleBackColor = True
+        '
+        'SelecionarFuncionarioLB
+        '
+        Me.SelecionarFuncionarioLB.AutoSize = True
+        Me.SelecionarFuncionarioLB.Location = New System.Drawing.Point(3, 16)
+        Me.SelecionarFuncionarioLB.Name = "SelecionarFuncionarioLB"
+        Me.SelecionarFuncionarioLB.Size = New System.Drawing.Size(118, 13)
+        Me.SelecionarFuncionarioLB.TabIndex = 36
+        Me.SelecionarFuncionarioLB.Text = "Selecionar Funcionário:"
         '
         'MenuStrip1
         '
@@ -770,178 +942,6 @@ Partial Class ControleFuncionario
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
-        'TelefoneAcompanharFuncionarioTF
-        '
-        Me.TelefoneAcompanharFuncionarioTF.Location = New System.Drawing.Point(126, 91)
-        Me.TelefoneAcompanharFuncionarioTF.Name = "TelefoneAcompanharFuncionarioTF"
-        Me.TelefoneAcompanharFuncionarioTF.Size = New System.Drawing.Size(168, 20)
-        Me.TelefoneAcompanharFuncionarioTF.TabIndex = 47
-        '
-        'TelefoneAcompanharFuncionarioLB
-        '
-        Me.TelefoneAcompanharFuncionarioLB.AutoSize = True
-        Me.TelefoneAcompanharFuncionarioLB.Location = New System.Drawing.Point(3, 94)
-        Me.TelefoneAcompanharFuncionarioLB.Name = "TelefoneAcompanharFuncionarioLB"
-        Me.TelefoneAcompanharFuncionarioLB.Size = New System.Drawing.Size(52, 13)
-        Me.TelefoneAcompanharFuncionarioLB.TabIndex = 46
-        Me.TelefoneAcompanharFuncionarioLB.Text = "Telefone:"
-        '
-        'AcompanharFuncionarioDT
-        '
-        Me.AcompanharFuncionarioDT.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.AcompanharFuncionarioDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.AcompanharFuncionarioDT.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nome, Me.CPF, Me.Cargo, Me.Supervisor, Me.Perfil, Me.Telefone, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn3, Me.Quantidade, Me.PrecoTotal, Me.Estado, Me.CEP, Me.Tipo, Me.Salario, Me.Remover})
-        Me.AcompanharFuncionarioDT.Cursor = System.Windows.Forms.Cursors.Default
-        Me.AcompanharFuncionarioDT.Location = New System.Drawing.Point(14, 128)
-        Me.AcompanharFuncionarioDT.Name = "AcompanharFuncionarioDT"
-        Me.AcompanharFuncionarioDT.RowHeadersVisible = False
-        Me.AcompanharFuncionarioDT.Size = New System.Drawing.Size(661, 168)
-        Me.AcompanharFuncionarioDT.TabIndex = 45
-        '
-        'CPFAcompanharFuncionarioLB
-        '
-        Me.CPFAcompanharFuncionarioLB.AutoSize = True
-        Me.CPFAcompanharFuncionarioLB.Location = New System.Drawing.Point(3, 55)
-        Me.CPFAcompanharFuncionarioLB.Name = "CPFAcompanharFuncionarioLB"
-        Me.CPFAcompanharFuncionarioLB.Size = New System.Drawing.Size(30, 13)
-        Me.CPFAcompanharFuncionarioLB.TabIndex = 43
-        Me.CPFAcompanharFuncionarioLB.Text = "CPF:"
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.Image = Global.NobelTheater.My.Resources.Resources.Busca
-        Me.PictureBox7.Location = New System.Drawing.Point(635, 13)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(27, 20)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox7.TabIndex = 39
-        Me.PictureBox7.TabStop = False
-        '
-        'SelecionarFuncionarioTF
-        '
-        Me.SelecionarFuncionarioTF.Enabled = False
-        Me.SelecionarFuncionarioTF.Location = New System.Drawing.Point(126, 13)
-        Me.SelecionarFuncionarioTF.Name = "SelecionarFuncionarioTF"
-        Me.SelecionarFuncionarioTF.Size = New System.Drawing.Size(503, 20)
-        Me.SelecionarFuncionarioTF.TabIndex = 38
-        '
-        'SalvarAcompanharFuncionarioBT
-        '
-        Me.SalvarAcompanharFuncionarioBT.Location = New System.Drawing.Point(284, 304)
-        Me.SalvarAcompanharFuncionarioBT.Name = "SalvarAcompanharFuncionarioBT"
-        Me.SalvarAcompanharFuncionarioBT.Size = New System.Drawing.Size(125, 23)
-        Me.SalvarAcompanharFuncionarioBT.TabIndex = 37
-        Me.SalvarAcompanharFuncionarioBT.Text = "Salvar Alterações"
-        Me.SalvarAcompanharFuncionarioBT.UseVisualStyleBackColor = True
-        '
-        'SelecionarFuncionarioLB
-        '
-        Me.SelecionarFuncionarioLB.AutoSize = True
-        Me.SelecionarFuncionarioLB.Location = New System.Drawing.Point(3, 16)
-        Me.SelecionarFuncionarioLB.Name = "SelecionarFuncionarioLB"
-        Me.SelecionarFuncionarioLB.Size = New System.Drawing.Size(118, 13)
-        Me.SelecionarFuncionarioLB.TabIndex = 36
-        Me.SelecionarFuncionarioLB.Text = "Selecionar Funcionário:"
-        '
-        'CPFAcompanharFuncionarioMT
-        '
-        Me.CPFAcompanharFuncionarioMT.Location = New System.Drawing.Point(126, 52)
-        Me.CPFAcompanharFuncionarioMT.Name = "CPFAcompanharFuncionarioMT"
-        Me.CPFAcompanharFuncionarioMT.Size = New System.Drawing.Size(503, 20)
-        Me.CPFAcompanharFuncionarioMT.TabIndex = 48
-        '
-        'Nome
-        '
-        Me.Nome.HeaderText = "Nome"
-        Me.Nome.Name = "Nome"
-        '
-        'CPF
-        '
-        Me.CPF.HeaderText = "CPF"
-        Me.CPF.Name = "CPF"
-        '
-        'Cargo
-        '
-        Me.Cargo.HeaderText = "Cargo"
-        Me.Cargo.Name = "Cargo"
-        '
-        'Supervisor
-        '
-        Me.Supervisor.HeaderText = "Supervisor"
-        Me.Supervisor.Name = "Supervisor"
-        '
-        'Perfil
-        '
-        Me.Perfil.HeaderText = "Perfil"
-        Me.Perfil.Name = "Perfil"
-        '
-        'Telefone
-        '
-        Me.Telefone.HeaderText = "Telefone"
-        Me.Telefone.Name = "Telefone"
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Logradouro"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 150
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Número"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        Me.DataGridViewTextBoxColumn3.Width = 50
-        '
-        'Quantidade
-        '
-        Me.Quantidade.HeaderText = "Bairro"
-        Me.Quantidade.Name = "Quantidade"
-        Me.Quantidade.ReadOnly = True
-        Me.Quantidade.Width = 75
-        '
-        'PrecoTotal
-        '
-        Me.PrecoTotal.HeaderText = "Cidade"
-        Me.PrecoTotal.Name = "PrecoTotal"
-        Me.PrecoTotal.ReadOnly = True
-        Me.PrecoTotal.Width = 75
-        '
-        'Estado
-        '
-        Me.Estado.HeaderText = "Estado"
-        Me.Estado.Name = "Estado"
-        Me.Estado.ReadOnly = True
-        Me.Estado.Width = 50
-        '
-        'CEP
-        '
-        Me.CEP.HeaderText = "CEP"
-        Me.CEP.Name = "CEP"
-        Me.CEP.ReadOnly = True
-        Me.CEP.Width = 75
-        '
-        'Tipo
-        '
-        Me.Tipo.HeaderText = "Tipo"
-        Me.Tipo.Name = "Tipo"
-        Me.Tipo.ReadOnly = True
-        Me.Tipo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Tipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Salario
-        '
-        Me.Salario.HeaderText = "Salario"
-        Me.Salario.Name = "Salario"
-        '
-        'Remover
-        '
-        Me.Remover.HeaderText = "Remover"
-        Me.Remover.Name = "Remover"
-        Me.Remover.ReadOnly = True
-        Me.Remover.Width = 75
-        '
         'ControleFuncionario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -967,10 +967,10 @@ Partial Class ControleFuncionario
         Me.DadosPessoaisNovoFuncionarioGB.PerformLayout()
         Me.AcompanharFuncionarioTP.ResumeLayout(False)
         Me.AcompanharFuncionarioTP.PerformLayout()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         CType(Me.AcompanharFuncionarioDT, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
