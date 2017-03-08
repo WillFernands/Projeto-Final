@@ -4,6 +4,7 @@
     Private produtoAtual As Produto
     Private produtoAlertaAtual As Produto
     Private itensCotados As New List(Of ItemCotado)
+    Private cotacaoAtual As Cotacao
 
     Private Sub ControleEstoque_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         NomeTF.Text = "Nome: " & MenuPrincipal.funcionarioLogado.Nome
@@ -71,6 +72,18 @@
         Next
 
         ProdutosDT.Sort(ProdutosDT.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
+    End Sub
+
+    Private Sub RefreshDTProdutosAcompanharCotacao()
+        ProdutosAcompanharCotacaoDT.Rows.Clear()
+
+        For Each item As ItemCotado In cotacaoAtual.Itens
+            Dim list As New List(Of Object)
+            list.Add(item.Produto.Codigo) : list.Add(item.Produto.Nome) : list.Add(item.Produto.PrecoUnit) : list.Add(item.Quantidade) : list.Add(item.Produto.PrecoUnit * CInt(item.Quantidade)) : list.Add("Remover Produto")
+            ProdutosAcompanharCotacaoDT.Rows.Add(list.ToArray())
+        Next
+
+        ProdutosAcompanharCotacaoDT.Sort(ProdutosAcompanharCotacaoDT.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
     End Sub
 
     Private Sub RefreshDTAlertas()
@@ -168,12 +181,96 @@
     Private Sub CotacoesDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles CotacoesDT.CellContentClick
         If (CotacoesDT.SelectedCells Is Nothing) Then Exit Sub
 
-        If (CotacoesDT.SelectedCells.Item(0).Value = "Ver Produtos" AndAlso e.ColumnIndex = 4) Then
+        If (e.ColumnIndex = 4 AndAlso CotacoesDT.SelectedCells.Item(0).Value = "Ver Produtos") Then
             Dim visualizacao As New VerProdutos()
             visualizacao.ProdutosList = CotacaoBC.FindByID(CotacoesDT.Item(0, e.RowIndex).Value).Itens
             visualizacao.Show()
             Exit Sub
+        Else
+            If (MsgBox("Essa ação lhe redirecionará a aba de Acompanhar Cotação, continuar ?", vbYesNo Or vbInformation Or vbMsgBoxSetForeground) = vbYes) Then
+                ClearAcompanharCotacao()
+                cotacaoAtual = CotacaoBC.FindByID(CotacoesDT.Item(0, e.RowIndex).Value)
+                PopulateAcompanharCotacao()
+                TabControl1.SelectTab(3)
+            End If
         End If
     End Sub
 
+    Private Sub ClearAcompanharCotacao()
+        cotacaoAtual = Nothing
+        FornecedorAcompanharCotacaoTF.Text = ""
+        ProdutoAcompanharCotacaoTF.Text = ""
+        CodigoProdutoAcompanharCotacaoTF.Text = ""
+        QtdeProdutoAcompanharCotacaoTF.Value = 1
+        StatusCotacaoCB.Text = ""
+        NumeroNFCotacaoTF.Text = ""
+        DataEmissaoNFCotacaoTF.Text = ""
+        ProdutosAcompanharCotacaoDT.Rows.Clear()
+    End Sub
+
+    Private Sub PopulateAcompanharCotacao()
+        FornecedorAcompanharCotacaoTF.Text = cotacaoAtual.Fornecedor.Cnpj & " - " & cotacaoAtual.Fornecedor.NomeFantasia
+        StatusCotacaoCB.Text = cotacaoAtual.Status
+        ProdutosAcompanharCotacaoDT.Rows.Clear()
+
+        For Each item As ItemCotado In cotacaoAtual.Itens
+
+            Dim list As New List(Of Object)
+            list.Add(item.Produto.Codigo) : list.Add(item.Produto.Nome) : list.Add(item.Produto.PrecoUnit) : list.Add(item.Quantidade) : list.Add(item.Produto.PrecoUnit * CInt(item.Quantidade)) : list.Add("Remover Produto")
+            ProdutosAcompanharCotacaoDT.Rows.Add(list.ToArray())
+        Next
+
+        ProdutosAcompanharCotacaoDT.Sort(ProdutosAcompanharCotacaoDT.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
+    End Sub
+
+    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click, PictureBox2.Click
+        ControleFornecedor.Show()
+    End Sub
+
+    Private Sub AcompanharCotacaoTab_Enter(sender As Object, e As EventArgs) Handles AcompanharCotacaoTab.Enter
+        StatusCotacaoCB.Items.AddRange(StatusCotacao.GetStatusList().ToArray())
+        EnableNFControls()
+    End Sub
+
+    Private Sub StatusCotacaoCB_SelectedIndexChanged(sender As Object, e As EventArgs) Handles StatusCotacaoCB.SelectedIndexChanged
+        EnableNFControls()
+    End Sub
+
+    Private Sub EnableNFControls()
+        If (StatusCotacaoCB.SelectedItem = StatusCotacao.Aprovada) Then
+            NumeroNFCotacaoLB.Visible = True
+            NumeroNFCotacaoTF.Visible = True
+            DataEmissaoNFCotacaoLB.Visible = True
+            DataEmissaoNFCotacaoTF.Visible = True
+        Else
+            NumeroNFCotacaoLB.Visible = False
+            NumeroNFCotacaoTF.Visible = False
+            DataEmissaoNFCotacaoLB.Visible = False
+            DataEmissaoNFCotacaoTF.Visible = False
+            NumeroNFCotacaoTF.Text = ""
+            DataEmissaoNFCotacaoTF.Text = ""
+        End If
+    End Sub
+
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+        Dim busca As New BuscaFornecedor()
+        busca.Caller = "ControleEstoqueAcompanharCotacao"
+        busca.Show()
+    End Sub
+
+    Private Sub PopulateFornecedorCotacao(forn As Fornecedor)
+        cotacaoAtual.Fornecedor = forn
+        FornecedorAcompanharCotacaoTF.Text = cotacaoAtual.Fornecedor.Cnpj & " - " & cotacaoAtual.Fornecedor.NomeFantasia
+    End Sub
+
+    Private Sub ProdutosAcompanharCotacaoDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ProdutosAcompanharCotacaoDT.CellContentClick
+        If (ProdutosAcompanharCotacaoDT.SelectedCells Is Nothing) Then Exit Sub
+
+        If (ProdutosAcompanharCotacaoDT.SelectedCells.Item(0).Value = "Remover Produto" AndAlso e.ColumnIndex = 5) Then
+            Dim item As ItemCotado = cotacaoAtual.Itens.Find(Function(itemCotado As ItemCotado) itemCotado.Produto.Codigo = ProdutosAcompanharCotacaoDT.Item(0, e.RowIndex).Value)
+            cotacaoAtual.Itens.Remove(item)
+            RefreshDTProdutosAcompanharCotacao()
+            Exit Sub
+        End If
+    End Sub
 End Class

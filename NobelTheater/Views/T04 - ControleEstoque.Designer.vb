@@ -66,7 +66,38 @@ Partial Class ControleEstoque
         Me.ProdutoAlertaIMG = New System.Windows.Forms.PictureBox()
         Me.CotacoesAndamentoTab = New System.Windows.Forms.TabPage()
         Me.CotacoesDT = New System.Windows.Forms.DataGridView()
-        Me.TabPage11 = New System.Windows.Forms.TabPage()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewButtonColumn1 = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.AcompanharCotacaoTab = New System.Windows.Forms.TabPage()
+        Me.SalvarBT = New System.Windows.Forms.Button()
+        Me.StatusGB = New System.Windows.Forms.GroupBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.StatusCotacaoCB = New System.Windows.Forms.ComboBox()
+        Me.DataEmissaoNFCotacaoLB = New System.Windows.Forms.Label()
+        Me.NumeroNFCotacaoLB = New System.Windows.Forms.Label()
+        Me.DataEmissaoNFCotacaoTF = New System.Windows.Forms.TextBox()
+        Me.NumeroNFCotacaoTF = New System.Windows.Forms.TextBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.FornecedorAcompanharCotacaoTF = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.ConfimarProdutoAcompanharCotacaoTF = New System.Windows.Forms.PictureBox()
+        Me.QtdeProdutoAcompanharCotacaoTF = New System.Windows.Forms.NumericUpDown()
+        Me.CodigoProdutoAcompanharCotacaoTF = New System.Windows.Forms.TextBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.ProdutoAcompanharCotacaoTF = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.ProdutosAcompanharCotacaoDT = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewButtonColumn2 = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -118,11 +149,6 @@ Partial Class ControleEstoque
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewButtonColumn1 = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -140,6 +166,15 @@ Partial Class ControleEstoque
         CType(Me.ProdutoAlertaIMG, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CotacoesAndamentoTab.SuspendLayout()
         CType(Me.CotacoesDT, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.AcompanharCotacaoTab.SuspendLayout()
+        Me.StatusGB.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ConfimarProdutoAcompanharCotacaoTF, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.QtdeProdutoAcompanharCotacaoTF, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProdutosAcompanharCotacaoDT, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -206,7 +241,7 @@ Partial Class ControleEstoque
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.CotacoesAndamentoTab)
-        Me.TabControl1.Controls.Add(Me.TabPage11)
+        Me.TabControl1.Controls.Add(Me.AcompanharCotacaoTab)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage7)
         Me.TabControl1.Controls.Add(Me.TabPage8)
@@ -569,14 +604,291 @@ Partial Class ControleEstoque
         Me.CotacoesDT.Size = New System.Drawing.Size(673, 323)
         Me.CotacoesDT.TabIndex = 22
         '
-        'TabPage11
+        'ID
         '
-        Me.TabPage11.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage11.Name = "TabPage11"
-        Me.TabPage11.Size = New System.Drawing.Size(685, 335)
-        Me.TabPage11.TabIndex = 10
-        Me.TabPage11.Text = "Acompanhar Cotação"
-        Me.TabPage11.UseVisualStyleBackColor = True
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        Me.ID.Width = 50
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Data da Cotação"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.ReadOnly = True
+        Me.DataGridViewTextBoxColumn9.Width = 75
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Status da Cotação"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.ReadOnly = True
+        Me.DataGridViewTextBoxColumn10.Width = 150
+        '
+        'DataGridViewTextBoxColumn13
+        '
+        Me.DataGridViewTextBoxColumn13.HeaderText = "Fornecedor"
+        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
+        Me.DataGridViewTextBoxColumn13.ReadOnly = True
+        Me.DataGridViewTextBoxColumn13.Width = 300
+        '
+        'DataGridViewButtonColumn1
+        '
+        Me.DataGridViewButtonColumn1.HeaderText = "Ver Produtos"
+        Me.DataGridViewButtonColumn1.Name = "DataGridViewButtonColumn1"
+        Me.DataGridViewButtonColumn1.ReadOnly = True
+        '
+        'AcompanharCotacaoTab
+        '
+        Me.AcompanharCotacaoTab.Controls.Add(Me.SalvarBT)
+        Me.AcompanharCotacaoTab.Controls.Add(Me.StatusGB)
+        Me.AcompanharCotacaoTab.Controls.Add(Me.PictureBox2)
+        Me.AcompanharCotacaoTab.Controls.Add(Me.PictureBox4)
+        Me.AcompanharCotacaoTab.Controls.Add(Me.FornecedorAcompanharCotacaoTF)
+        Me.AcompanharCotacaoTab.Controls.Add(Me.Label3)
+        Me.AcompanharCotacaoTab.Controls.Add(Me.ConfimarProdutoAcompanharCotacaoTF)
+        Me.AcompanharCotacaoTab.Controls.Add(Me.QtdeProdutoAcompanharCotacaoTF)
+        Me.AcompanharCotacaoTab.Controls.Add(Me.CodigoProdutoAcompanharCotacaoTF)
+        Me.AcompanharCotacaoTab.Controls.Add(Me.PictureBox7)
+        Me.AcompanharCotacaoTab.Controls.Add(Me.PictureBox8)
+        Me.AcompanharCotacaoTab.Controls.Add(Me.ProdutoAcompanharCotacaoTF)
+        Me.AcompanharCotacaoTab.Controls.Add(Me.Label4)
+        Me.AcompanharCotacaoTab.Controls.Add(Me.ProdutosAcompanharCotacaoDT)
+        Me.AcompanharCotacaoTab.Location = New System.Drawing.Point(4, 22)
+        Me.AcompanharCotacaoTab.Name = "AcompanharCotacaoTab"
+        Me.AcompanharCotacaoTab.Size = New System.Drawing.Size(685, 335)
+        Me.AcompanharCotacaoTab.TabIndex = 10
+        Me.AcompanharCotacaoTab.Text = "Acompanhar Cotação"
+        Me.AcompanharCotacaoTab.UseVisualStyleBackColor = True
+        '
+        'SalvarBT
+        '
+        Me.SalvarBT.Location = New System.Drawing.Point(300, 300)
+        Me.SalvarBT.Name = "SalvarBT"
+        Me.SalvarBT.Size = New System.Drawing.Size(103, 23)
+        Me.SalvarBT.TabIndex = 31
+        Me.SalvarBT.Text = "Salvar Alterações"
+        Me.SalvarBT.UseVisualStyleBackColor = True
+        '
+        'StatusGB
+        '
+        Me.StatusGB.Controls.Add(Me.Label11)
+        Me.StatusGB.Controls.Add(Me.StatusCotacaoCB)
+        Me.StatusGB.Controls.Add(Me.DataEmissaoNFCotacaoLB)
+        Me.StatusGB.Controls.Add(Me.NumeroNFCotacaoLB)
+        Me.StatusGB.Controls.Add(Me.DataEmissaoNFCotacaoTF)
+        Me.StatusGB.Controls.Add(Me.NumeroNFCotacaoTF)
+        Me.StatusGB.Location = New System.Drawing.Point(12, 94)
+        Me.StatusGB.Name = "StatusGB"
+        Me.StatusGB.Size = New System.Drawing.Size(661, 38)
+        Me.StatusGB.TabIndex = 30
+        Me.StatusGB.TabStop = False
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(6, 15)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(83, 13)
+        Me.Label11.TabIndex = 5
+        Me.Label11.Text = "Status Cotação:"
+        '
+        'StatusCotacaoCB
+        '
+        Me.StatusCotacaoCB.FormattingEnabled = True
+        Me.StatusCotacaoCB.Location = New System.Drawing.Point(95, 12)
+        Me.StatusCotacaoCB.Name = "StatusCotacaoCB"
+        Me.StatusCotacaoCB.Size = New System.Drawing.Size(165, 21)
+        Me.StatusCotacaoCB.TabIndex = 4
+        '
+        'DataEmissaoNFCotacaoLB
+        '
+        Me.DataEmissaoNFCotacaoLB.AutoSize = True
+        Me.DataEmissaoNFCotacaoLB.Location = New System.Drawing.Point(457, 15)
+        Me.DataEmissaoNFCotacaoLB.Name = "DataEmissaoNFCotacaoLB"
+        Me.DataEmissaoNFCotacaoLB.Size = New System.Drawing.Size(92, 13)
+        Me.DataEmissaoNFCotacaoLB.TabIndex = 3
+        Me.DataEmissaoNFCotacaoLB.Text = "Data Emissão NF:"
+        '
+        'NumeroNFCotacaoLB
+        '
+        Me.NumeroNFCotacaoLB.AutoSize = True
+        Me.NumeroNFCotacaoLB.Location = New System.Drawing.Point(273, 15)
+        Me.NumeroNFCotacaoLB.Name = "NumeroNFCotacaoLB"
+        Me.NumeroNFCotacaoLB.Size = New System.Drawing.Size(64, 13)
+        Me.NumeroNFCotacaoLB.TabIndex = 2
+        Me.NumeroNFCotacaoLB.Text = "Número NF:"
+        '
+        'DataEmissaoNFCotacaoTF
+        '
+        Me.DataEmissaoNFCotacaoTF.Location = New System.Drawing.Point(555, 12)
+        Me.DataEmissaoNFCotacaoTF.Name = "DataEmissaoNFCotacaoTF"
+        Me.DataEmissaoNFCotacaoTF.Size = New System.Drawing.Size(100, 20)
+        Me.DataEmissaoNFCotacaoTF.TabIndex = 1
+        '
+        'NumeroNFCotacaoTF
+        '
+        Me.NumeroNFCotacaoTF.Location = New System.Drawing.Point(349, 12)
+        Me.NumeroNFCotacaoTF.Name = "NumeroNFCotacaoTF"
+        Me.NumeroNFCotacaoTF.Size = New System.Drawing.Size(100, 20)
+        Me.NumeroNFCotacaoTF.TabIndex = 0
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
+        Me.PictureBox2.Location = New System.Drawing.Point(12, 17)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 29
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox4.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.PictureBox4.Location = New System.Drawing.Point(613, 17)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 28
+        Me.PictureBox4.TabStop = False
+        '
+        'FornecedorAcompanharCotacaoTF
+        '
+        Me.FornecedorAcompanharCotacaoTF.Enabled = False
+        Me.FornecedorAcompanharCotacaoTF.Location = New System.Drawing.Point(166, 17)
+        Me.FornecedorAcompanharCotacaoTF.Name = "FornecedorAcompanharCotacaoTF"
+        Me.FornecedorAcompanharCotacaoTF.Size = New System.Drawing.Size(443, 20)
+        Me.FornecedorAcompanharCotacaoTF.TabIndex = 27
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(43, 20)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(117, 13)
+        Me.Label3.TabIndex = 26
+        Me.Label3.Text = "Selecionar Fornecedor:"
+        '
+        'ConfimarProdutoAcompanharCotacaoTF
+        '
+        Me.ConfimarProdutoAcompanharCotacaoTF.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ConfimarProdutoAcompanharCotacaoTF.Image = Global.NobelTheater.My.Resources.Resources.Confirmar
+        Me.ConfimarProdutoAcompanharCotacaoTF.Location = New System.Drawing.Point(646, 62)
+        Me.ConfimarProdutoAcompanharCotacaoTF.Name = "ConfimarProdutoAcompanharCotacaoTF"
+        Me.ConfimarProdutoAcompanharCotacaoTF.Size = New System.Drawing.Size(27, 20)
+        Me.ConfimarProdutoAcompanharCotacaoTF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ConfimarProdutoAcompanharCotacaoTF.TabIndex = 25
+        Me.ConfimarProdutoAcompanharCotacaoTF.TabStop = False
+        '
+        'QtdeProdutoAcompanharCotacaoTF
+        '
+        Me.QtdeProdutoAcompanharCotacaoTF.Location = New System.Drawing.Point(567, 62)
+        Me.QtdeProdutoAcompanharCotacaoTF.Name = "QtdeProdutoAcompanharCotacaoTF"
+        Me.QtdeProdutoAcompanharCotacaoTF.Size = New System.Drawing.Size(42, 20)
+        Me.QtdeProdutoAcompanharCotacaoTF.TabIndex = 24
+        Me.QtdeProdutoAcompanharCotacaoTF.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'CodigoProdutoAcompanharCotacaoTF
+        '
+        Me.CodigoProdutoAcompanharCotacaoTF.Enabled = False
+        Me.CodigoProdutoAcompanharCotacaoTF.Location = New System.Drawing.Point(525, 62)
+        Me.CodigoProdutoAcompanharCotacaoTF.Name = "CodigoProdutoAcompanharCotacaoTF"
+        Me.CodigoProdutoAcompanharCotacaoTF.Size = New System.Drawing.Size(37, 20)
+        Me.CodigoProdutoAcompanharCotacaoTF.TabIndex = 23
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
+        Me.PictureBox7.Location = New System.Drawing.Point(12, 62)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox7.TabIndex = 22
+        Me.PictureBox7.TabStop = False
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox8.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.PictureBox8.Location = New System.Drawing.Point(613, 62)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 21
+        Me.PictureBox8.TabStop = False
+        '
+        'ProdutoAcompanharCotacaoTF
+        '
+        Me.ProdutoAcompanharCotacaoTF.Enabled = False
+        Me.ProdutoAcompanharCotacaoTF.Location = New System.Drawing.Point(166, 62)
+        Me.ProdutoAcompanharCotacaoTF.Name = "ProdutoAcompanharCotacaoTF"
+        Me.ProdutoAcompanharCotacaoTF.Size = New System.Drawing.Size(355, 20)
+        Me.ProdutoAcompanharCotacaoTF.TabIndex = 20
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(43, 65)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(100, 13)
+        Me.Label4.TabIndex = 19
+        Me.Label4.Text = "Selecionar Produto:"
+        '
+        'ProdutosAcompanharCotacaoDT
+        '
+        Me.ProdutosAcompanharCotacaoDT.AllowUserToAddRows = False
+        Me.ProdutosAcompanharCotacaoDT.AllowUserToDeleteRows = False
+        Me.ProdutosAcompanharCotacaoDT.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ProdutosAcompanharCotacaoDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ProdutosAcompanharCotacaoDT.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewButtonColumn2})
+        Me.ProdutosAcompanharCotacaoDT.Location = New System.Drawing.Point(12, 142)
+        Me.ProdutosAcompanharCotacaoDT.Name = "ProdutosAcompanharCotacaoDT"
+        Me.ProdutosAcompanharCotacaoDT.ReadOnly = True
+        Me.ProdutosAcompanharCotacaoDT.RowHeadersVisible = False
+        Me.ProdutosAcompanharCotacaoDT.Size = New System.Drawing.Size(661, 142)
+        Me.ProdutosAcompanharCotacaoDT.TabIndex = 18
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.HeaderText = "Codigo"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        Me.DataGridViewTextBoxColumn11.ReadOnly = True
+        Me.DataGridViewTextBoxColumn11.Width = 50
+        '
+        'DataGridViewTextBoxColumn12
+        '
+        Me.DataGridViewTextBoxColumn12.HeaderText = "Nome"
+        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        Me.DataGridViewTextBoxColumn12.ReadOnly = True
+        Me.DataGridViewTextBoxColumn12.Width = 250
+        '
+        'DataGridViewTextBoxColumn14
+        '
+        Me.DataGridViewTextBoxColumn14.HeaderText = "Preço Unit"
+        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
+        Me.DataGridViewTextBoxColumn14.ReadOnly = True
+        Me.DataGridViewTextBoxColumn14.Width = 90
+        '
+        'DataGridViewTextBoxColumn15
+        '
+        Me.DataGridViewTextBoxColumn15.HeaderText = "Qtde"
+        Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
+        Me.DataGridViewTextBoxColumn15.ReadOnly = True
+        Me.DataGridViewTextBoxColumn15.Width = 50
+        '
+        'DataGridViewTextBoxColumn16
+        '
+        Me.DataGridViewTextBoxColumn16.HeaderText = "Preço Total"
+        Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
+        Me.DataGridViewTextBoxColumn16.ReadOnly = True
+        '
+        'DataGridViewButtonColumn2
+        '
+        Me.DataGridViewButtonColumn2.HeaderText = "Remover"
+        Me.DataGridViewButtonColumn2.Name = "DataGridViewButtonColumn2"
+        Me.DataGridViewButtonColumn2.ReadOnly = True
         '
         'TabPage3
         '
@@ -936,40 +1248,6 @@ Partial Class ControleEstoque
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
-        'ID
-        '
-        Me.ID.HeaderText = "ID"
-        Me.ID.Name = "ID"
-        Me.ID.ReadOnly = True
-        Me.ID.Width = 50
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Data da Cotação"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.ReadOnly = True
-        Me.DataGridViewTextBoxColumn9.Width = 75
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Status da Cotação"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        Me.DataGridViewTextBoxColumn10.ReadOnly = True
-        Me.DataGridViewTextBoxColumn10.Width = 150
-        '
-        'DataGridViewTextBoxColumn13
-        '
-        Me.DataGridViewTextBoxColumn13.HeaderText = "Fornecedor"
-        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
-        Me.DataGridViewTextBoxColumn13.ReadOnly = True
-        Me.DataGridViewTextBoxColumn13.Width = 300
-        '
-        'DataGridViewButtonColumn1
-        '
-        Me.DataGridViewButtonColumn1.HeaderText = "Ver Produtos"
-        Me.DataGridViewButtonColumn1.Name = "DataGridViewButtonColumn1"
-        Me.DataGridViewButtonColumn1.ReadOnly = True
-        '
         'ControleEstoque
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1001,6 +1279,17 @@ Partial Class ControleEstoque
         CType(Me.ProdutoAlertaIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CotacoesAndamentoTab.ResumeLayout(False)
         CType(Me.CotacoesDT, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.AcompanharCotacaoTab.ResumeLayout(False)
+        Me.AcompanharCotacaoTab.PerformLayout()
+        Me.StatusGB.ResumeLayout(False)
+        Me.StatusGB.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ConfimarProdutoAcompanharCotacaoTF, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.QtdeProdutoAcompanharCotacaoTF, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProdutosAcompanharCotacaoDT, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
@@ -1104,10 +1393,36 @@ Partial Class ControleEstoque
     Friend WithEvents RemoverAlerta As DataGridViewButtonColumn
     Friend WithEvents CotacoesAndamentoTab As TabPage
     Friend WithEvents CotacoesDT As DataGridView
-    Friend WithEvents TabPage11 As TabPage
+    Friend WithEvents AcompanharCotacaoTab As TabPage
     Friend WithEvents ID As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewButtonColumn1 As DataGridViewButtonColumn
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents FornecedorAcompanharCotacaoTF As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents ConfimarProdutoAcompanharCotacaoTF As PictureBox
+    Friend WithEvents QtdeProdutoAcompanharCotacaoTF As NumericUpDown
+    Friend WithEvents CodigoProdutoAcompanharCotacaoTF As TextBox
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents PictureBox8 As PictureBox
+    Friend WithEvents ProdutoAcompanharCotacaoTF As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents ProdutosAcompanharCotacaoDT As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn14 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn16 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewButtonColumn2 As DataGridViewButtonColumn
+    Friend WithEvents StatusGB As GroupBox
+    Friend WithEvents SalvarBT As Button
+    Friend WithEvents NumeroNFCotacaoLB As Label
+    Friend WithEvents DataEmissaoNFCotacaoTF As TextBox
+    Friend WithEvents NumeroNFCotacaoTF As TextBox
+    Friend WithEvents DataEmissaoNFCotacaoLB As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents StatusCotacaoCB As ComboBox
 End Class
