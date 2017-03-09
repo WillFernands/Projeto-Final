@@ -30,6 +30,9 @@ Partial Class ControleFornecedor
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.NovoFornecedorTP = New System.Windows.Forms.TabPage()
+        Me.TelefoneNovoFornecedorMT = New System.Windows.Forms.MaskedTextBox()
+        Me.CNPJNovoFornecedorMT = New System.Windows.Forms.MaskedTextBox()
+        Me.CEPNovoFornecedorMT = New System.Windows.Forms.MaskedTextBox()
         Me.TipoNovoFornecedorCB = New System.Windows.Forms.ComboBox()
         Me.TipoNovoFornecedorLB = New System.Windows.Forms.Label()
         Me.LimparNovoFornecedorBT = New System.Windows.Forms.Button()
@@ -76,7 +79,40 @@ Partial Class ControleFornecedor
         Me.Button1 = New System.Windows.Forms.Button()
         Me.SelecionarFornecedorLB = New System.Windows.Forms.Label()
         Me.NovaAssistenciaTP = New System.Windows.Forms.TabPage()
+        Me.BairroAssistenciaTF = New System.Windows.Forms.TextBox()
+        Me.CidadeAssistenciaTF = New System.Windows.Forms.TextBox()
+        Me.EstadoAssistenciaCB = New System.Windows.Forms.ComboBox()
+        Me.NumeroAssistenciaTF = New System.Windows.Forms.TextBox()
+        Me.LogradouroAssistenciaTF = New System.Windows.Forms.TextBox()
+        Me.CEPAssistenciaMT = New System.Windows.Forms.MaskedTextBox()
+        Me.TelefoneAssistenciaMT = New System.Windows.Forms.MaskedTextBox()
+        Me.FantasiaAssistenciaTF = New System.Windows.Forms.TextBox()
+        Me.LimparAssistenciaBT = New System.Windows.Forms.Button()
+        Me.SalvarAssistenciaBT = New System.Windows.Forms.Button()
+        Me.BairroAssistenciaLB = New System.Windows.Forms.Label()
+        Me.CidadeAssistenciaLB = New System.Windows.Forms.Label()
+        Me.EstadoAssistenciaLB = New System.Windows.Forms.Label()
+        Me.NumeroAssistenciaLB = New System.Windows.Forms.Label()
+        Me.LogradouroAssistenciaLB = New System.Windows.Forms.Label()
+        Me.CEPAssistenciaLB = New System.Windows.Forms.Label()
+        Me.TelefoneAssistenciaLB = New System.Windows.Forms.Label()
+        Me.FantasiaAssistenciaLB = New System.Windows.Forms.Label()
+        Me.RazaoSocialAssistenciaTF = New System.Windows.Forms.TextBox()
+        Me.RazaoSocialAssistenciaLB = New System.Windows.Forms.Label()
+        Me.CNPJAssistenciaMT = New System.Windows.Forms.MaskedTextBox()
+        Me.CNPJAssistenciaLB = New System.Windows.Forms.Label()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.SalvarAcompanharAssistenciaBT = New System.Windows.Forms.Button()
+        Me.CNPJAcompanharAssistenciaMT = New System.Windows.Forms.MaskedTextBox()
+        Me.TelefoneAcompanharAssistenciaTF = New System.Windows.Forms.TextBox()
+        Me.TelefoneAcompanharAssistenciaLB = New System.Windows.Forms.Label()
+        Me.CNPJAcompanharAssistenciaLB = New System.Windows.Forms.Label()
+        Me.RazaoSocialIDSelecionarAssistenciaTF = New System.Windows.Forms.TextBox()
+        Me.RazaoSocialSelecionarAcompanharAssistenciaTF = New System.Windows.Forms.TextBox()
+        Me.RazaoSocialSelecionarAcompanharAssistenciaLB = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.SelecionarAssistenciaTF = New System.Windows.Forms.TextBox()
+        Me.SelecionarAssistenciaLB = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.OpcoesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -113,52 +149,24 @@ Partial Class ControleFornecedor
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CEPNovoFornecedorMT = New System.Windows.Forms.MaskedTextBox()
-        Me.CNPJAssistenciaLB = New System.Windows.Forms.Label()
-        Me.CNPJNovoFornecedorMT = New System.Windows.Forms.MaskedTextBox()
-        Me.TelefoneNovoFornecedorMT = New System.Windows.Forms.MaskedTextBox()
-        Me.CNPJAssistenciaMT = New System.Windows.Forms.MaskedTextBox()
-        Me.RazaoSocialAssistenciaLB = New System.Windows.Forms.Label()
-        Me.RazaoSocialAssistenciaTF = New System.Windows.Forms.TextBox()
-        Me.FantasiaAssistenciaLB = New System.Windows.Forms.Label()
-        Me.TelefoneAssistenciaLB = New System.Windows.Forms.Label()
-        Me.CEPAssistenciaLB = New System.Windows.Forms.Label()
-        Me.LogradouroAssistenciaLB = New System.Windows.Forms.Label()
-        Me.NumeroAssistenciaLB = New System.Windows.Forms.Label()
-        Me.EstadoAssistenciaLB = New System.Windows.Forms.Label()
-        Me.CidadeAssistenciaLB = New System.Windows.Forms.Label()
-        Me.BairroAssistenciaLB = New System.Windows.Forms.Label()
-        Me.SalvarAssistenciaBT = New System.Windows.Forms.Button()
-        Me.LimparAssistenciaBT = New System.Windows.Forms.Button()
-        Me.FantasiaAssistenciaTF = New System.Windows.Forms.TextBox()
-        Me.TelefoneAssistenciaMT = New System.Windows.Forms.MaskedTextBox()
-        Me.CEPAssistenciaMT = New System.Windows.Forms.MaskedTextBox()
-        Me.LogradouroAssistenciaTF = New System.Windows.Forms.TextBox()
-        Me.NumeroAssistenciaTF = New System.Windows.Forms.TextBox()
-        Me.EstadoAssistenciaCB = New System.Windows.Forms.ComboBox()
-        Me.CidadeAssistenciaTF = New System.Windows.Forms.TextBox()
-        Me.BairroAssistenciaTF = New System.Windows.Forms.TextBox()
-        Me.SelecionarAssistenciaLB = New System.Windows.Forms.Label()
-        Me.SelecionarAssistenciaTF = New System.Windows.Forms.TextBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.VincularAssistenciaTecnicaCheckBox = New System.Windows.Forms.CheckBox()
-        Me.TelefoneAcompanharAssistenciaTF = New System.Windows.Forms.TextBox()
-        Me.TelefoneAcompanharAssistenciaLB = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewButtonColumn1 = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.CNPJAcompanharAssistenciaLB = New System.Windows.Forms.Label()
-        Me.RazaoSocialIDSelecionarAssistenciaTF = New System.Windows.Forms.TextBox()
-        Me.RazaoSocialSelecionarAcompanharAssistenciaTF = New System.Windows.Forms.TextBox()
-        Me.RazaoSocialSelecionarAcompanharAssistenciaLB = New System.Windows.Forms.Label()
-        Me.CNPJAcompanharAssistenciaMT = New System.Windows.Forms.MaskedTextBox()
-        Me.SalvarAcompanharAssistenciaBT = New System.Windows.Forms.Button()
+        Me.VincularFornecedorLB = New System.Windows.Forms.Label()
+        Me.VincularFornecedorTF = New System.Windows.Forms.TextBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.RemoverBT = New System.Windows.Forms.Button()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -169,9 +177,9 @@ Partial Class ControleFornecedor
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NovaAssistenciaTP.SuspendLayout()
         Me.TabPage4.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -277,6 +285,27 @@ Partial Class ControleFornecedor
         Me.NovoFornecedorTP.TabIndex = 0
         Me.NovoFornecedorTP.Text = "Novo Fornecedor"
         Me.NovoFornecedorTP.UseVisualStyleBackColor = True
+        '
+        'TelefoneNovoFornecedorMT
+        '
+        Me.TelefoneNovoFornecedorMT.Location = New System.Drawing.Point(64, 85)
+        Me.TelefoneNovoFornecedorMT.Name = "TelefoneNovoFornecedorMT"
+        Me.TelefoneNovoFornecedorMT.Size = New System.Drawing.Size(167, 20)
+        Me.TelefoneNovoFornecedorMT.TabIndex = 29
+        '
+        'CNPJNovoFornecedorMT
+        '
+        Me.CNPJNovoFornecedorMT.Location = New System.Drawing.Point(64, 13)
+        Me.CNPJNovoFornecedorMT.Name = "CNPJNovoFornecedorMT"
+        Me.CNPJNovoFornecedorMT.Size = New System.Drawing.Size(167, 20)
+        Me.CNPJNovoFornecedorMT.TabIndex = 28
+        '
+        'CEPNovoFornecedorMT
+        '
+        Me.CEPNovoFornecedorMT.Location = New System.Drawing.Point(289, 85)
+        Me.CEPNovoFornecedorMT.Name = "CEPNovoFornecedorMT"
+        Me.CEPNovoFornecedorMT.Size = New System.Drawing.Size(167, 20)
+        Me.CEPNovoFornecedorMT.TabIndex = 27
         '
         'TipoNovoFornecedorCB
         '
@@ -697,14 +726,209 @@ Partial Class ControleFornecedor
         Me.NovaAssistenciaTP.Text = "Nova Assistência Técnica"
         Me.NovaAssistenciaTP.UseVisualStyleBackColor = True
         '
+        'BairroAssistenciaTF
+        '
+        Me.BairroAssistenciaTF.Location = New System.Drawing.Point(505, 157)
+        Me.BairroAssistenciaTF.Name = "BairroAssistenciaTF"
+        Me.BairroAssistenciaTF.Size = New System.Drawing.Size(159, 20)
+        Me.BairroAssistenciaTF.TabIndex = 21
+        '
+        'CidadeAssistenciaTF
+        '
+        Me.CidadeAssistenciaTF.Location = New System.Drawing.Point(289, 157)
+        Me.CidadeAssistenciaTF.Name = "CidadeAssistenciaTF"
+        Me.CidadeAssistenciaTF.Size = New System.Drawing.Size(167, 20)
+        Me.CidadeAssistenciaTF.TabIndex = 20
+        '
+        'EstadoAssistenciaCB
+        '
+        Me.EstadoAssistenciaCB.FormattingEnabled = True
+        Me.EstadoAssistenciaCB.Location = New System.Drawing.Point(64, 157)
+        Me.EstadoAssistenciaCB.Name = "EstadoAssistenciaCB"
+        Me.EstadoAssistenciaCB.Size = New System.Drawing.Size(167, 21)
+        Me.EstadoAssistenciaCB.TabIndex = 19
+        '
+        'NumeroAssistenciaTF
+        '
+        Me.NumeroAssistenciaTF.Location = New System.Drawing.Point(584, 121)
+        Me.NumeroAssistenciaTF.Name = "NumeroAssistenciaTF"
+        Me.NumeroAssistenciaTF.Size = New System.Drawing.Size(80, 20)
+        Me.NumeroAssistenciaTF.TabIndex = 18
+        '
+        'LogradouroAssistenciaTF
+        '
+        Me.LogradouroAssistenciaTF.Location = New System.Drawing.Point(64, 121)
+        Me.LogradouroAssistenciaTF.Name = "LogradouroAssistenciaTF"
+        Me.LogradouroAssistenciaTF.Size = New System.Drawing.Size(486, 20)
+        Me.LogradouroAssistenciaTF.TabIndex = 17
+        '
+        'CEPAssistenciaMT
+        '
+        Me.CEPAssistenciaMT.Location = New System.Drawing.Point(289, 85)
+        Me.CEPAssistenciaMT.Name = "CEPAssistenciaMT"
+        Me.CEPAssistenciaMT.Size = New System.Drawing.Size(122, 20)
+        Me.CEPAssistenciaMT.TabIndex = 16
+        '
+        'TelefoneAssistenciaMT
+        '
+        Me.TelefoneAssistenciaMT.Location = New System.Drawing.Point(64, 85)
+        Me.TelefoneAssistenciaMT.Name = "TelefoneAssistenciaMT"
+        Me.TelefoneAssistenciaMT.Size = New System.Drawing.Size(167, 20)
+        Me.TelefoneAssistenciaMT.TabIndex = 15
+        '
+        'FantasiaAssistenciaTF
+        '
+        Me.FantasiaAssistenciaTF.Location = New System.Drawing.Point(64, 49)
+        Me.FantasiaAssistenciaTF.Name = "FantasiaAssistenciaTF"
+        Me.FantasiaAssistenciaTF.Size = New System.Drawing.Size(600, 20)
+        Me.FantasiaAssistenciaTF.TabIndex = 14
+        '
+        'LimparAssistenciaBT
+        '
+        Me.LimparAssistenciaBT.Location = New System.Drawing.Point(336, 285)
+        Me.LimparAssistenciaBT.Name = "LimparAssistenciaBT"
+        Me.LimparAssistenciaBT.Size = New System.Drawing.Size(75, 23)
+        Me.LimparAssistenciaBT.TabIndex = 13
+        Me.LimparAssistenciaBT.Text = "Limpar"
+        Me.LimparAssistenciaBT.UseVisualStyleBackColor = True
+        '
+        'SalvarAssistenciaBT
+        '
+        Me.SalvarAssistenciaBT.Location = New System.Drawing.Point(255, 285)
+        Me.SalvarAssistenciaBT.Name = "SalvarAssistenciaBT"
+        Me.SalvarAssistenciaBT.Size = New System.Drawing.Size(75, 23)
+        Me.SalvarAssistenciaBT.TabIndex = 12
+        Me.SalvarAssistenciaBT.Text = "Salvar"
+        Me.SalvarAssistenciaBT.UseVisualStyleBackColor = True
+        '
+        'BairroAssistenciaLB
+        '
+        Me.BairroAssistenciaLB.AutoSize = True
+        Me.BairroAssistenciaLB.Location = New System.Drawing.Point(462, 160)
+        Me.BairroAssistenciaLB.Name = "BairroAssistenciaLB"
+        Me.BairroAssistenciaLB.Size = New System.Drawing.Size(37, 13)
+        Me.BairroAssistenciaLB.TabIndex = 11
+        Me.BairroAssistenciaLB.Text = "Bairro:"
+        '
+        'CidadeAssistenciaLB
+        '
+        Me.CidadeAssistenciaLB.AutoSize = True
+        Me.CidadeAssistenciaLB.Location = New System.Drawing.Point(240, 160)
+        Me.CidadeAssistenciaLB.Name = "CidadeAssistenciaLB"
+        Me.CidadeAssistenciaLB.Size = New System.Drawing.Size(43, 13)
+        Me.CidadeAssistenciaLB.TabIndex = 10
+        Me.CidadeAssistenciaLB.Text = "Cidade:"
+        '
+        'EstadoAssistenciaLB
+        '
+        Me.EstadoAssistenciaLB.AutoSize = True
+        Me.EstadoAssistenciaLB.Location = New System.Drawing.Point(3, 160)
+        Me.EstadoAssistenciaLB.Name = "EstadoAssistenciaLB"
+        Me.EstadoAssistenciaLB.Size = New System.Drawing.Size(43, 13)
+        Me.EstadoAssistenciaLB.TabIndex = 9
+        Me.EstadoAssistenciaLB.Text = "Estado:"
+        '
+        'NumeroAssistenciaLB
+        '
+        Me.NumeroAssistenciaLB.AutoSize = True
+        Me.NumeroAssistenciaLB.Location = New System.Drawing.Point(556, 124)
+        Me.NumeroAssistenciaLB.Name = "NumeroAssistenciaLB"
+        Me.NumeroAssistenciaLB.Size = New System.Drawing.Size(22, 13)
+        Me.NumeroAssistenciaLB.TabIndex = 8
+        Me.NumeroAssistenciaLB.Text = "Nº:"
+        '
+        'LogradouroAssistenciaLB
+        '
+        Me.LogradouroAssistenciaLB.AutoSize = True
+        Me.LogradouroAssistenciaLB.Location = New System.Drawing.Point(3, 124)
+        Me.LogradouroAssistenciaLB.Name = "LogradouroAssistenciaLB"
+        Me.LogradouroAssistenciaLB.Size = New System.Drawing.Size(64, 13)
+        Me.LogradouroAssistenciaLB.TabIndex = 7
+        Me.LogradouroAssistenciaLB.Text = "Logradouro:"
+        '
+        'CEPAssistenciaLB
+        '
+        Me.CEPAssistenciaLB.AutoSize = True
+        Me.CEPAssistenciaLB.Location = New System.Drawing.Point(252, 88)
+        Me.CEPAssistenciaLB.Name = "CEPAssistenciaLB"
+        Me.CEPAssistenciaLB.Size = New System.Drawing.Size(31, 13)
+        Me.CEPAssistenciaLB.TabIndex = 6
+        Me.CEPAssistenciaLB.Text = "CEP:"
+        '
+        'TelefoneAssistenciaLB
+        '
+        Me.TelefoneAssistenciaLB.AutoSize = True
+        Me.TelefoneAssistenciaLB.Location = New System.Drawing.Point(3, 88)
+        Me.TelefoneAssistenciaLB.Name = "TelefoneAssistenciaLB"
+        Me.TelefoneAssistenciaLB.Size = New System.Drawing.Size(52, 13)
+        Me.TelefoneAssistenciaLB.TabIndex = 5
+        Me.TelefoneAssistenciaLB.Text = "Telefone:"
+        '
+        'FantasiaAssistenciaLB
+        '
+        Me.FantasiaAssistenciaLB.AutoSize = True
+        Me.FantasiaAssistenciaLB.Location = New System.Drawing.Point(3, 52)
+        Me.FantasiaAssistenciaLB.Name = "FantasiaAssistenciaLB"
+        Me.FantasiaAssistenciaLB.Size = New System.Drawing.Size(50, 13)
+        Me.FantasiaAssistenciaLB.TabIndex = 4
+        Me.FantasiaAssistenciaLB.Text = "Fantasia:"
+        '
+        'RazaoSocialAssistenciaTF
+        '
+        Me.RazaoSocialAssistenciaTF.Location = New System.Drawing.Point(316, 13)
+        Me.RazaoSocialAssistenciaTF.Name = "RazaoSocialAssistenciaTF"
+        Me.RazaoSocialAssistenciaTF.Size = New System.Drawing.Size(348, 20)
+        Me.RazaoSocialAssistenciaTF.TabIndex = 3
+        '
+        'RazaoSocialAssistenciaLB
+        '
+        Me.RazaoSocialAssistenciaLB.AutoSize = True
+        Me.RazaoSocialAssistenciaLB.Location = New System.Drawing.Point(237, 16)
+        Me.RazaoSocialAssistenciaLB.Name = "RazaoSocialAssistenciaLB"
+        Me.RazaoSocialAssistenciaLB.Size = New System.Drawing.Size(73, 13)
+        Me.RazaoSocialAssistenciaLB.TabIndex = 2
+        Me.RazaoSocialAssistenciaLB.Text = "Razão Social:"
+        '
+        'CNPJAssistenciaMT
+        '
+        Me.CNPJAssistenciaMT.Location = New System.Drawing.Point(64, 13)
+        Me.CNPJAssistenciaMT.Name = "CNPJAssistenciaMT"
+        Me.CNPJAssistenciaMT.Size = New System.Drawing.Size(167, 20)
+        Me.CNPJAssistenciaMT.TabIndex = 1
+        '
+        'CNPJAssistenciaLB
+        '
+        Me.CNPJAssistenciaLB.AutoSize = True
+        Me.CNPJAssistenciaLB.Location = New System.Drawing.Point(3, 16)
+        Me.CNPJAssistenciaLB.Name = "CNPJAssistenciaLB"
+        Me.CNPJAssistenciaLB.Size = New System.Drawing.Size(37, 13)
+        Me.CNPJAssistenciaLB.TabIndex = 0
+        Me.CNPJAssistenciaLB.Text = "CNPJ:"
+        '
         'TabPage4
         '
+        Me.TabPage4.Controls.Add(Me.TextBox4)
+        Me.TabPage4.Controls.Add(Me.TextBox5)
+        Me.TabPage4.Controls.Add(Me.ComboBox1)
+        Me.TabPage4.Controls.Add(Me.TextBox7)
+        Me.TabPage4.Controls.Add(Me.TextBox8)
+        Me.TabPage4.Controls.Add(Me.MaskedTextBox1)
+        Me.TabPage4.Controls.Add(Me.TextBox9)
+        Me.TabPage4.Controls.Add(Me.Label1)
+        Me.TabPage4.Controls.Add(Me.Label2)
+        Me.TabPage4.Controls.Add(Me.Label3)
+        Me.TabPage4.Controls.Add(Me.Label4)
+        Me.TabPage4.Controls.Add(Me.Label5)
+        Me.TabPage4.Controls.Add(Me.Label7)
+        Me.TabPage4.Controls.Add(Me.Label9)
+        Me.TabPage4.Controls.Add(Me.RemoverBT)
+        Me.TabPage4.Controls.Add(Me.PictureBox3)
+        Me.TabPage4.Controls.Add(Me.VincularFornecedorTF)
+        Me.TabPage4.Controls.Add(Me.VincularFornecedorLB)
         Me.TabPage4.Controls.Add(Me.SalvarAcompanharAssistenciaBT)
         Me.TabPage4.Controls.Add(Me.CNPJAcompanharAssistenciaMT)
-        Me.TabPage4.Controls.Add(Me.VincularAssistenciaTecnicaCheckBox)
         Me.TabPage4.Controls.Add(Me.TelefoneAcompanharAssistenciaTF)
         Me.TabPage4.Controls.Add(Me.TelefoneAcompanharAssistenciaLB)
-        Me.TabPage4.Controls.Add(Me.DataGridView1)
         Me.TabPage4.Controls.Add(Me.CNPJAcompanharAssistenciaLB)
         Me.TabPage4.Controls.Add(Me.RazaoSocialIDSelecionarAssistenciaTF)
         Me.TabPage4.Controls.Add(Me.RazaoSocialSelecionarAcompanharAssistenciaTF)
@@ -719,6 +943,98 @@ Partial Class ControleFornecedor
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Acompanhar Assistência Técnica"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'SalvarAcompanharAssistenciaBT
+        '
+        Me.SalvarAcompanharAssistenciaBT.Location = New System.Drawing.Point(208, 330)
+        Me.SalvarAcompanharAssistenciaBT.Name = "SalvarAcompanharAssistenciaBT"
+        Me.SalvarAcompanharAssistenciaBT.Size = New System.Drawing.Size(125, 23)
+        Me.SalvarAcompanharAssistenciaBT.TabIndex = 47
+        Me.SalvarAcompanharAssistenciaBT.Text = "Salvar Alterações"
+        Me.SalvarAcompanharAssistenciaBT.UseVisualStyleBackColor = True
+        '
+        'CNPJAcompanharAssistenciaMT
+        '
+        Me.CNPJAcompanharAssistenciaMT.Location = New System.Drawing.Point(126, 79)
+        Me.CNPJAcompanharAssistenciaMT.Name = "CNPJAcompanharAssistenciaMT"
+        Me.CNPJAcompanharAssistenciaMT.Size = New System.Drawing.Size(503, 20)
+        Me.CNPJAcompanharAssistenciaMT.TabIndex = 4
+        '
+        'TelefoneAcompanharAssistenciaTF
+        '
+        Me.TelefoneAcompanharAssistenciaTF.Location = New System.Drawing.Point(126, 113)
+        Me.TelefoneAcompanharAssistenciaTF.Name = "TelefoneAcompanharAssistenciaTF"
+        Me.TelefoneAcompanharAssistenciaTF.Size = New System.Drawing.Size(168, 20)
+        Me.TelefoneAcompanharAssistenciaTF.TabIndex = 5
+        '
+        'TelefoneAcompanharAssistenciaLB
+        '
+        Me.TelefoneAcompanharAssistenciaLB.AutoSize = True
+        Me.TelefoneAcompanharAssistenciaLB.Location = New System.Drawing.Point(3, 116)
+        Me.TelefoneAcompanharAssistenciaLB.Name = "TelefoneAcompanharAssistenciaLB"
+        Me.TelefoneAcompanharAssistenciaLB.Size = New System.Drawing.Size(52, 13)
+        Me.TelefoneAcompanharAssistenciaLB.TabIndex = 43
+        Me.TelefoneAcompanharAssistenciaLB.Text = "Telefone:"
+        '
+        'CNPJAcompanharAssistenciaLB
+        '
+        Me.CNPJAcompanharAssistenciaLB.AutoSize = True
+        Me.CNPJAcompanharAssistenciaLB.Location = New System.Drawing.Point(3, 82)
+        Me.CNPJAcompanharAssistenciaLB.Name = "CNPJAcompanharAssistenciaLB"
+        Me.CNPJAcompanharAssistenciaLB.Size = New System.Drawing.Size(37, 13)
+        Me.CNPJAcompanharAssistenciaLB.TabIndex = 40
+        Me.CNPJAcompanharAssistenciaLB.Text = "CNPJ:"
+        '
+        'RazaoSocialIDSelecionarAssistenciaTF
+        '
+        Me.RazaoSocialIDSelecionarAssistenciaTF.Enabled = False
+        Me.RazaoSocialIDSelecionarAssistenciaTF.Location = New System.Drawing.Point(126, 45)
+        Me.RazaoSocialIDSelecionarAssistenciaTF.Name = "RazaoSocialIDSelecionarAssistenciaTF"
+        Me.RazaoSocialIDSelecionarAssistenciaTF.Size = New System.Drawing.Size(41, 20)
+        Me.RazaoSocialIDSelecionarAssistenciaTF.TabIndex = 2
+        '
+        'RazaoSocialSelecionarAcompanharAssistenciaTF
+        '
+        Me.RazaoSocialSelecionarAcompanharAssistenciaTF.Location = New System.Drawing.Point(173, 45)
+        Me.RazaoSocialSelecionarAcompanharAssistenciaTF.Name = "RazaoSocialSelecionarAcompanharAssistenciaTF"
+        Me.RazaoSocialSelecionarAcompanharAssistenciaTF.Size = New System.Drawing.Size(456, 20)
+        Me.RazaoSocialSelecionarAcompanharAssistenciaTF.TabIndex = 3
+        '
+        'RazaoSocialSelecionarAcompanharAssistenciaLB
+        '
+        Me.RazaoSocialSelecionarAcompanharAssistenciaLB.AutoSize = True
+        Me.RazaoSocialSelecionarAcompanharAssistenciaLB.Location = New System.Drawing.Point(3, 48)
+        Me.RazaoSocialSelecionarAcompanharAssistenciaLB.Name = "RazaoSocialSelecionarAcompanharAssistenciaLB"
+        Me.RazaoSocialSelecionarAcompanharAssistenciaLB.Size = New System.Drawing.Size(73, 13)
+        Me.RazaoSocialSelecionarAcompanharAssistenciaLB.TabIndex = 37
+        Me.RazaoSocialSelecionarAcompanharAssistenciaLB.Text = "Razão Social:"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.PictureBox2.InitialImage = Nothing
+        Me.PictureBox2.Location = New System.Drawing.Point(635, 13)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 2
+        Me.PictureBox2.TabStop = False
+        '
+        'SelecionarAssistenciaTF
+        '
+        Me.SelecionarAssistenciaTF.Location = New System.Drawing.Point(126, 13)
+        Me.SelecionarAssistenciaTF.Name = "SelecionarAssistenciaTF"
+        Me.SelecionarAssistenciaTF.Size = New System.Drawing.Size(503, 20)
+        Me.SelecionarAssistenciaTF.TabIndex = 1
+        '
+        'SelecionarAssistenciaLB
+        '
+        Me.SelecionarAssistenciaLB.AutoSize = True
+        Me.SelecionarAssistenciaLB.Location = New System.Drawing.Point(3, 16)
+        Me.SelecionarAssistenciaLB.Name = "SelecionarAssistenciaLB"
+        Me.SelecionarAssistenciaLB.Size = New System.Drawing.Size(116, 13)
+        Me.SelecionarAssistenciaLB.TabIndex = 0
+        Me.SelecionarAssistenciaLB.Text = "Selecionar Assistencia:"
         '
         'MenuStrip1
         '
@@ -949,375 +1265,154 @@ Partial Class ControleFornecedor
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
-        'CEPNovoFornecedorMT
-        '
-        Me.CEPNovoFornecedorMT.Location = New System.Drawing.Point(289, 85)
-        Me.CEPNovoFornecedorMT.Name = "CEPNovoFornecedorMT"
-        Me.CEPNovoFornecedorMT.Size = New System.Drawing.Size(167, 20)
-        Me.CEPNovoFornecedorMT.TabIndex = 27
-        '
-        'CNPJAssistenciaLB
-        '
-        Me.CNPJAssistenciaLB.AutoSize = True
-        Me.CNPJAssistenciaLB.Location = New System.Drawing.Point(3, 16)
-        Me.CNPJAssistenciaLB.Name = "CNPJAssistenciaLB"
-        Me.CNPJAssistenciaLB.Size = New System.Drawing.Size(37, 13)
-        Me.CNPJAssistenciaLB.TabIndex = 0
-        Me.CNPJAssistenciaLB.Text = "CNPJ:"
-        '
-        'CNPJNovoFornecedorMT
-        '
-        Me.CNPJNovoFornecedorMT.Location = New System.Drawing.Point(64, 13)
-        Me.CNPJNovoFornecedorMT.Name = "CNPJNovoFornecedorMT"
-        Me.CNPJNovoFornecedorMT.Size = New System.Drawing.Size(167, 20)
-        Me.CNPJNovoFornecedorMT.TabIndex = 28
-        '
-        'TelefoneNovoFornecedorMT
-        '
-        Me.TelefoneNovoFornecedorMT.Location = New System.Drawing.Point(64, 85)
-        Me.TelefoneNovoFornecedorMT.Name = "TelefoneNovoFornecedorMT"
-        Me.TelefoneNovoFornecedorMT.Size = New System.Drawing.Size(167, 20)
-        Me.TelefoneNovoFornecedorMT.TabIndex = 29
-        '
-        'CNPJAssistenciaMT
-        '
-        Me.CNPJAssistenciaMT.Location = New System.Drawing.Point(64, 13)
-        Me.CNPJAssistenciaMT.Name = "CNPJAssistenciaMT"
-        Me.CNPJAssistenciaMT.Size = New System.Drawing.Size(167, 20)
-        Me.CNPJAssistenciaMT.TabIndex = 1
-        '
-        'RazaoSocialAssistenciaLB
-        '
-        Me.RazaoSocialAssistenciaLB.AutoSize = True
-        Me.RazaoSocialAssistenciaLB.Location = New System.Drawing.Point(237, 16)
-        Me.RazaoSocialAssistenciaLB.Name = "RazaoSocialAssistenciaLB"
-        Me.RazaoSocialAssistenciaLB.Size = New System.Drawing.Size(73, 13)
-        Me.RazaoSocialAssistenciaLB.TabIndex = 2
-        Me.RazaoSocialAssistenciaLB.Text = "Razão Social:"
-        '
-        'RazaoSocialAssistenciaTF
-        '
-        Me.RazaoSocialAssistenciaTF.Location = New System.Drawing.Point(316, 13)
-        Me.RazaoSocialAssistenciaTF.Name = "RazaoSocialAssistenciaTF"
-        Me.RazaoSocialAssistenciaTF.Size = New System.Drawing.Size(348, 20)
-        Me.RazaoSocialAssistenciaTF.TabIndex = 3
-        '
-        'FantasiaAssistenciaLB
-        '
-        Me.FantasiaAssistenciaLB.AutoSize = True
-        Me.FantasiaAssistenciaLB.Location = New System.Drawing.Point(3, 52)
-        Me.FantasiaAssistenciaLB.Name = "FantasiaAssistenciaLB"
-        Me.FantasiaAssistenciaLB.Size = New System.Drawing.Size(50, 13)
-        Me.FantasiaAssistenciaLB.TabIndex = 4
-        Me.FantasiaAssistenciaLB.Text = "Fantasia:"
-        '
-        'TelefoneAssistenciaLB
-        '
-        Me.TelefoneAssistenciaLB.AutoSize = True
-        Me.TelefoneAssistenciaLB.Location = New System.Drawing.Point(3, 88)
-        Me.TelefoneAssistenciaLB.Name = "TelefoneAssistenciaLB"
-        Me.TelefoneAssistenciaLB.Size = New System.Drawing.Size(52, 13)
-        Me.TelefoneAssistenciaLB.TabIndex = 5
-        Me.TelefoneAssistenciaLB.Text = "Telefone:"
-        '
-        'CEPAssistenciaLB
-        '
-        Me.CEPAssistenciaLB.AutoSize = True
-        Me.CEPAssistenciaLB.Location = New System.Drawing.Point(252, 88)
-        Me.CEPAssistenciaLB.Name = "CEPAssistenciaLB"
-        Me.CEPAssistenciaLB.Size = New System.Drawing.Size(31, 13)
-        Me.CEPAssistenciaLB.TabIndex = 6
-        Me.CEPAssistenciaLB.Text = "CEP:"
-        '
-        'LogradouroAssistenciaLB
-        '
-        Me.LogradouroAssistenciaLB.AutoSize = True
-        Me.LogradouroAssistenciaLB.Location = New System.Drawing.Point(3, 124)
-        Me.LogradouroAssistenciaLB.Name = "LogradouroAssistenciaLB"
-        Me.LogradouroAssistenciaLB.Size = New System.Drawing.Size(64, 13)
-        Me.LogradouroAssistenciaLB.TabIndex = 7
-        Me.LogradouroAssistenciaLB.Text = "Logradouro:"
+        'VincularFornecedorLB
+        '
+        Me.VincularFornecedorLB.AutoSize = True
+        Me.VincularFornecedorLB.Location = New System.Drawing.Point(300, 116)
+        Me.VincularFornecedorLB.Name = "VincularFornecedorLB"
+        Me.VincularFornecedorLB.Size = New System.Drawing.Size(105, 13)
+        Me.VincularFornecedorLB.TabIndex = 48
+        Me.VincularFornecedorLB.Text = "Vincular Fornecedor:"
         '
-        'NumeroAssistenciaLB
-        '
-        Me.NumeroAssistenciaLB.AutoSize = True
-        Me.NumeroAssistenciaLB.Location = New System.Drawing.Point(556, 124)
-        Me.NumeroAssistenciaLB.Name = "NumeroAssistenciaLB"
-        Me.NumeroAssistenciaLB.Size = New System.Drawing.Size(22, 13)
-        Me.NumeroAssistenciaLB.TabIndex = 8
-        Me.NumeroAssistenciaLB.Text = "Nº:"
-        '
-        'EstadoAssistenciaLB
-        '
-        Me.EstadoAssistenciaLB.AutoSize = True
-        Me.EstadoAssistenciaLB.Location = New System.Drawing.Point(3, 160)
-        Me.EstadoAssistenciaLB.Name = "EstadoAssistenciaLB"
-        Me.EstadoAssistenciaLB.Size = New System.Drawing.Size(43, 13)
-        Me.EstadoAssistenciaLB.TabIndex = 9
-        Me.EstadoAssistenciaLB.Text = "Estado:"
-        '
-        'CidadeAssistenciaLB
-        '
-        Me.CidadeAssistenciaLB.AutoSize = True
-        Me.CidadeAssistenciaLB.Location = New System.Drawing.Point(240, 160)
-        Me.CidadeAssistenciaLB.Name = "CidadeAssistenciaLB"
-        Me.CidadeAssistenciaLB.Size = New System.Drawing.Size(43, 13)
-        Me.CidadeAssistenciaLB.TabIndex = 10
-        Me.CidadeAssistenciaLB.Text = "Cidade:"
-        '
-        'BairroAssistenciaLB
-        '
-        Me.BairroAssistenciaLB.AutoSize = True
-        Me.BairroAssistenciaLB.Location = New System.Drawing.Point(462, 160)
-        Me.BairroAssistenciaLB.Name = "BairroAssistenciaLB"
-        Me.BairroAssistenciaLB.Size = New System.Drawing.Size(37, 13)
-        Me.BairroAssistenciaLB.TabIndex = 11
-        Me.BairroAssistenciaLB.Text = "Bairro:"
-        '
-        'SalvarAssistenciaBT
-        '
-        Me.SalvarAssistenciaBT.Location = New System.Drawing.Point(255, 285)
-        Me.SalvarAssistenciaBT.Name = "SalvarAssistenciaBT"
-        Me.SalvarAssistenciaBT.Size = New System.Drawing.Size(75, 23)
-        Me.SalvarAssistenciaBT.TabIndex = 12
-        Me.SalvarAssistenciaBT.Text = "Salvar"
-        Me.SalvarAssistenciaBT.UseVisualStyleBackColor = True
-        '
-        'LimparAssistenciaBT
-        '
-        Me.LimparAssistenciaBT.Location = New System.Drawing.Point(336, 285)
-        Me.LimparAssistenciaBT.Name = "LimparAssistenciaBT"
-        Me.LimparAssistenciaBT.Size = New System.Drawing.Size(75, 23)
-        Me.LimparAssistenciaBT.TabIndex = 13
-        Me.LimparAssistenciaBT.Text = "Limpar"
-        Me.LimparAssistenciaBT.UseVisualStyleBackColor = True
-        '
-        'FantasiaAssistenciaTF
-        '
-        Me.FantasiaAssistenciaTF.Location = New System.Drawing.Point(64, 49)
-        Me.FantasiaAssistenciaTF.Name = "FantasiaAssistenciaTF"
-        Me.FantasiaAssistenciaTF.Size = New System.Drawing.Size(600, 20)
-        Me.FantasiaAssistenciaTF.TabIndex = 14
-        '
-        'TelefoneAssistenciaMT
-        '
-        Me.TelefoneAssistenciaMT.Location = New System.Drawing.Point(64, 85)
-        Me.TelefoneAssistenciaMT.Name = "TelefoneAssistenciaMT"
-        Me.TelefoneAssistenciaMT.Size = New System.Drawing.Size(167, 20)
-        Me.TelefoneAssistenciaMT.TabIndex = 15
-        '
-        'CEPAssistenciaMT
-        '
-        Me.CEPAssistenciaMT.Location = New System.Drawing.Point(289, 85)
-        Me.CEPAssistenciaMT.Name = "CEPAssistenciaMT"
-        Me.CEPAssistenciaMT.Size = New System.Drawing.Size(122, 20)
-        Me.CEPAssistenciaMT.TabIndex = 16
-        '
-        'LogradouroAssistenciaTF
-        '
-        Me.LogradouroAssistenciaTF.Location = New System.Drawing.Point(64, 121)
-        Me.LogradouroAssistenciaTF.Name = "LogradouroAssistenciaTF"
-        Me.LogradouroAssistenciaTF.Size = New System.Drawing.Size(486, 20)
-        Me.LogradouroAssistenciaTF.TabIndex = 17
-        '
-        'NumeroAssistenciaTF
-        '
-        Me.NumeroAssistenciaTF.Location = New System.Drawing.Point(584, 121)
-        Me.NumeroAssistenciaTF.Name = "NumeroAssistenciaTF"
-        Me.NumeroAssistenciaTF.Size = New System.Drawing.Size(80, 20)
-        Me.NumeroAssistenciaTF.TabIndex = 18
-        '
-        'EstadoAssistenciaCB
-        '
-        Me.EstadoAssistenciaCB.FormattingEnabled = True
-        Me.EstadoAssistenciaCB.Location = New System.Drawing.Point(64, 157)
-        Me.EstadoAssistenciaCB.Name = "EstadoAssistenciaCB"
-        Me.EstadoAssistenciaCB.Size = New System.Drawing.Size(167, 21)
-        Me.EstadoAssistenciaCB.TabIndex = 19
-        '
-        'CidadeAssistenciaTF
-        '
-        Me.CidadeAssistenciaTF.Location = New System.Drawing.Point(289, 157)
-        Me.CidadeAssistenciaTF.Name = "CidadeAssistenciaTF"
-        Me.CidadeAssistenciaTF.Size = New System.Drawing.Size(167, 20)
-        Me.CidadeAssistenciaTF.TabIndex = 20
-        '
-        'BairroAssistenciaTF
-        '
-        Me.BairroAssistenciaTF.Location = New System.Drawing.Point(505, 157)
-        Me.BairroAssistenciaTF.Name = "BairroAssistenciaTF"
-        Me.BairroAssistenciaTF.Size = New System.Drawing.Size(159, 20)
-        Me.BairroAssistenciaTF.TabIndex = 21
-        '
-        'SelecionarAssistenciaLB
-        '
-        Me.SelecionarAssistenciaLB.AutoSize = True
-        Me.SelecionarAssistenciaLB.Location = New System.Drawing.Point(3, 16)
-        Me.SelecionarAssistenciaLB.Name = "SelecionarAssistenciaLB"
-        Me.SelecionarAssistenciaLB.Size = New System.Drawing.Size(116, 13)
-        Me.SelecionarAssistenciaLB.TabIndex = 0
-        Me.SelecionarAssistenciaLB.Text = "Selecionar Assistencia:"
+        'VincularFornecedorTF
+        '
+        Me.VincularFornecedorTF.Location = New System.Drawing.Point(411, 113)
+        Me.VincularFornecedorTF.Name = "VincularFornecedorTF"
+        Me.VincularFornecedorTF.Size = New System.Drawing.Size(218, 20)
+        Me.VincularFornecedorTF.TabIndex = 6
         '
-        'SelecionarAssistenciaTF
-        '
-        Me.SelecionarAssistenciaTF.Location = New System.Drawing.Point(126, 13)
-        Me.SelecionarAssistenciaTF.Name = "SelecionarAssistenciaTF"
-        Me.SelecionarAssistenciaTF.Size = New System.Drawing.Size(503, 20)
-        Me.SelecionarAssistenciaTF.TabIndex = 1
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.NobelTheater.My.Resources.Resources.Busca
-        Me.PictureBox2.InitialImage = Nothing
-        Me.PictureBox2.Location = New System.Drawing.Point(635, 13)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(27, 20)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 2
-        Me.PictureBox2.TabStop = False
-        '
-        'VincularAssistenciaTecnicaCheckBox
-        '
-        Me.VincularAssistenciaTecnicaCheckBox.AutoSize = True
-        Me.VincularAssistenciaTecnicaCheckBox.Location = New System.Drawing.Point(441, 112)
-        Me.VincularAssistenciaTecnicaCheckBox.Name = "VincularAssistenciaTecnicaCheckBox"
-        Me.VincularAssistenciaTecnicaCheckBox.Size = New System.Drawing.Size(188, 17)
-        Me.VincularAssistenciaTecnicaCheckBox.TabIndex = 45
-        Me.VincularAssistenciaTecnicaCheckBox.Text = "Víncular como assistência técnica"
-        Me.VincularAssistenciaTecnicaCheckBox.UseVisualStyleBackColor = True
-        '
-        'TelefoneAcompanharAssistenciaTF
-        '
-        Me.TelefoneAcompanharAssistenciaTF.Location = New System.Drawing.Point(126, 113)
-        Me.TelefoneAcompanharAssistenciaTF.Name = "TelefoneAcompanharAssistenciaTF"
-        Me.TelefoneAcompanharAssistenciaTF.Size = New System.Drawing.Size(168, 20)
-        Me.TelefoneAcompanharAssistenciaTF.TabIndex = 44
-        '
-        'TelefoneAcompanharAssistenciaLB
-        '
-        Me.TelefoneAcompanharAssistenciaLB.AutoSize = True
-        Me.TelefoneAcompanharAssistenciaLB.Location = New System.Drawing.Point(3, 116)
-        Me.TelefoneAcompanharAssistenciaLB.Name = "TelefoneAcompanharAssistenciaLB"
-        Me.TelefoneAcompanharAssistenciaLB.Size = New System.Drawing.Size(52, 13)
-        Me.TelefoneAcompanharAssistenciaLB.TabIndex = 43
-        Me.TelefoneAcompanharAssistenciaLB.Text = "Telefone:"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewButtonColumn1})
-        Me.DataGridView1.Location = New System.Drawing.Point(13, 143)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.Size = New System.Drawing.Size(661, 168)
-        Me.DataGridView1.TabIndex = 42
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Logradouro"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 150
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Número"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        Me.DataGridViewTextBoxColumn4.Width = 50
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Bairro"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        Me.DataGridViewTextBoxColumn5.Width = 75
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Cidade"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        Me.DataGridViewTextBoxColumn6.Width = 75
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Estado"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.ReadOnly = True
-        Me.DataGridViewTextBoxColumn7.Width = 50
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.HeaderText = "CEP"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.ReadOnly = True
-        Me.DataGridViewTextBoxColumn8.Width = 75
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Tipo"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.ReadOnly = True
-        Me.DataGridViewTextBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'DataGridViewButtonColumn1
-        '
-        Me.DataGridViewButtonColumn1.HeaderText = "Remover"
-        Me.DataGridViewButtonColumn1.Name = "DataGridViewButtonColumn1"
-        Me.DataGridViewButtonColumn1.ReadOnly = True
-        Me.DataGridViewButtonColumn1.Width = 75
-        '
-        'CNPJAcompanharAssistenciaLB
-        '
-        Me.CNPJAcompanharAssistenciaLB.AutoSize = True
-        Me.CNPJAcompanharAssistenciaLB.Location = New System.Drawing.Point(3, 82)
-        Me.CNPJAcompanharAssistenciaLB.Name = "CNPJAcompanharAssistenciaLB"
-        Me.CNPJAcompanharAssistenciaLB.Size = New System.Drawing.Size(37, 13)
-        Me.CNPJAcompanharAssistenciaLB.TabIndex = 40
-        Me.CNPJAcompanharAssistenciaLB.Text = "CNPJ:"
-        '
-        'RazaoSocialIDSelecionarAssistenciaTF
-        '
-        Me.RazaoSocialIDSelecionarAssistenciaTF.Enabled = False
-        Me.RazaoSocialIDSelecionarAssistenciaTF.Location = New System.Drawing.Point(126, 45)
-        Me.RazaoSocialIDSelecionarAssistenciaTF.Name = "RazaoSocialIDSelecionarAssistenciaTF"
-        Me.RazaoSocialIDSelecionarAssistenciaTF.Size = New System.Drawing.Size(41, 20)
-        Me.RazaoSocialIDSelecionarAssistenciaTF.TabIndex = 39
-        '
-        'RazaoSocialSelecionarAcompanharAssistenciaTF
-        '
-        Me.RazaoSocialSelecionarAcompanharAssistenciaTF.Location = New System.Drawing.Point(173, 45)
-        Me.RazaoSocialSelecionarAcompanharAssistenciaTF.Name = "RazaoSocialSelecionarAcompanharAssistenciaTF"
-        Me.RazaoSocialSelecionarAcompanharAssistenciaTF.Size = New System.Drawing.Size(456, 20)
-        Me.RazaoSocialSelecionarAcompanharAssistenciaTF.TabIndex = 38
-        '
-        'RazaoSocialSelecionarAcompanharAssistenciaLB
-        '
-        Me.RazaoSocialSelecionarAcompanharAssistenciaLB.AutoSize = True
-        Me.RazaoSocialSelecionarAcompanharAssistenciaLB.Location = New System.Drawing.Point(3, 48)
-        Me.RazaoSocialSelecionarAcompanharAssistenciaLB.Name = "RazaoSocialSelecionarAcompanharAssistenciaLB"
-        Me.RazaoSocialSelecionarAcompanharAssistenciaLB.Size = New System.Drawing.Size(73, 13)
-        Me.RazaoSocialSelecionarAcompanharAssistenciaLB.TabIndex = 37
-        Me.RazaoSocialSelecionarAcompanharAssistenciaLB.Text = "Razão Social:"
-        '
-        'CNPJAcompanharAssistenciaMT
-        '
-        Me.CNPJAcompanharAssistenciaMT.Location = New System.Drawing.Point(126, 79)
-        Me.CNPJAcompanharAssistenciaMT.Name = "CNPJAcompanharAssistenciaMT"
-        Me.CNPJAcompanharAssistenciaMT.Size = New System.Drawing.Size(503, 20)
-        Me.CNPJAcompanharAssistenciaMT.TabIndex = 46
-        '
-        'SalvarAcompanharAssistenciaBT
-        '
-        Me.SalvarAcompanharAssistenciaBT.Location = New System.Drawing.Point(280, 325)
-        Me.SalvarAcompanharAssistenciaBT.Name = "SalvarAcompanharAssistenciaBT"
-        Me.SalvarAcompanharAssistenciaBT.Size = New System.Drawing.Size(125, 23)
-        Me.SalvarAcompanharAssistenciaBT.TabIndex = 47
-        Me.SalvarAcompanharAssistenciaBT.Text = "Salvar Alterações"
-        Me.SalvarAcompanharAssistenciaBT.UseVisualStyleBackColor = True
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.PictureBox3.InitialImage = Nothing
+        Me.PictureBox3.Location = New System.Drawing.Point(635, 113)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 49
+        Me.PictureBox3.TabStop = False
+        '
+        'RemoverBT
+        '
+        Me.RemoverBT.Location = New System.Drawing.Point(339, 330)
+        Me.RemoverBT.Name = "RemoverBT"
+        Me.RemoverBT.Size = New System.Drawing.Size(125, 23)
+        Me.RemoverBT.TabIndex = 50
+        Me.RemoverBT.Text = "Remover"
+        Me.RemoverBT.UseVisualStyleBackColor = True
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(484, 222)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(159, 20)
+        Me.TextBox4.TabIndex = 64
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(268, 222)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(167, 20)
+        Me.TextBox5.TabIndex = 63
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(126, 222)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(87, 21)
+        Me.ComboBox1.TabIndex = 62
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Location = New System.Drawing.Point(591, 188)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(71, 20)
+        Me.TextBox7.TabIndex = 61
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(126, 188)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(431, 20)
+        Me.TextBox8.TabIndex = 60
+        '
+        'MaskedTextBox1
+        '
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(126, 258)
+        Me.MaskedTextBox1.Name = "MaskedTextBox1"
+        Me.MaskedTextBox1.Size = New System.Drawing.Size(143, 20)
+        Me.MaskedTextBox1.TabIndex = 59
+        '
+        'TextBox9
+        '
+        Me.TextBox9.Location = New System.Drawing.Point(126, 153)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(536, 20)
+        Me.TextBox9.TabIndex = 58
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(441, 223)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(37, 13)
+        Me.Label1.TabIndex = 57
+        Me.Label1.Text = "Bairro:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(219, 225)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(43, 13)
+        Me.Label2.TabIndex = 56
+        Me.Label2.Text = "Cidade:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(3, 225)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(43, 13)
+        Me.Label3.TabIndex = 55
+        Me.Label3.Text = "Estado:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(563, 191)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(22, 13)
+        Me.Label4.TabIndex = 54
+        Me.Label4.Text = "Nº:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(3, 192)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(64, 13)
+        Me.Label5.TabIndex = 53
+        Me.Label5.Text = "Logradouro:"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(3, 261)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(31, 13)
+        Me.Label7.TabIndex = 52
+        Me.Label7.Text = "CEP:"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(3, 156)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(50, 13)
+        Me.Label9.TabIndex = 51
+        Me.Label9.Text = "Fantasia:"
         '
         'ControleFornecedor
         '
@@ -1345,10 +1440,10 @@ Partial Class ControleFornecedor
         Me.NovaAssistenciaTP.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1474,20 +1569,28 @@ Partial Class ControleFornecedor
     Friend WithEvents SelecionarAssistenciaLB As Label
     Friend WithEvents SalvarAcompanharAssistenciaBT As Button
     Friend WithEvents CNPJAcompanharAssistenciaMT As MaskedTextBox
-    Friend WithEvents VincularAssistenciaTecnicaCheckBox As CheckBox
     Friend WithEvents TelefoneAcompanharAssistenciaTF As TextBox
     Friend WithEvents TelefoneAcompanharAssistenciaLB As Label
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewButtonColumn1 As DataGridViewButtonColumn
     Friend WithEvents CNPJAcompanharAssistenciaLB As Label
     Friend WithEvents RazaoSocialIDSelecionarAssistenciaTF As TextBox
     Friend WithEvents RazaoSocialSelecionarAcompanharAssistenciaTF As TextBox
     Friend WithEvents RazaoSocialSelecionarAcompanharAssistenciaLB As Label
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents MaskedTextBox1 As MaskedTextBox
+    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents RemoverBT As Button
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents VincularFornecedorTF As TextBox
+    Friend WithEvents VincularFornecedorLB As Label
 End Class
