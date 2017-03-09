@@ -174,7 +174,7 @@ Partial Class BalancoDeCaixa
         'SelecionarDiretorioLB
         '
         Me.SelecionarDiretorioLB.AutoSize = True
-        Me.SelecionarDiretorioLB.Location = New System.Drawing.Point(20, 244)
+        Me.SelecionarDiretorioLB.Location = New System.Drawing.Point(37, 243)
         Me.SelecionarDiretorioLB.Name = "SelecionarDiretorioLB"
         Me.SelecionarDiretorioLB.Size = New System.Drawing.Size(100, 13)
         Me.SelecionarDiretorioLB.TabIndex = 44

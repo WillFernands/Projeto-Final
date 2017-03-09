@@ -29,8 +29,33 @@ Partial Class ControleCliente
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.NovoClienteTP = New System.Windows.Forms.TabPage()
+        Me.LimparNovoClienteBT = New System.Windows.Forms.Button()
+        Me.SalvarNovoClienteBT = New System.Windows.Forms.Button()
+        Me.CNPJNovoClienteRB = New System.Windows.Forms.RadioButton()
+        Me.CPFNovoClienteRB = New System.Windows.Forms.RadioButton()
+        Me.DocumentoNovoClienteMT = New System.Windows.Forms.MaskedTextBox()
+        Me.DocumentoNovoClienteLB = New System.Windows.Forms.Label()
+        Me.TelefoneNovoClienteTF = New System.Windows.Forms.TextBox()
+        Me.DataCadastramentoNovoClienteTF = New System.Windows.Forms.TextBox()
+        Me.TipoDocumentoNovoClienteLB = New System.Windows.Forms.Label()
+        Me.DataCadastramentoNovoClienteLB = New System.Windows.Forms.Label()
+        Me.TelefoneNovoClienteLB = New System.Windows.Forms.Label()
+        Me.NomeNovoClienteTF = New System.Windows.Forms.TextBox()
+        Me.NomeNovoClienteLB = New System.Windows.Forms.Label()
+        Me.AcompanharClienteTP = New System.Windows.Forms.TabPage()
+        Me.CPFCNPJAcompanharClienteMT = New System.Windows.Forms.MaskedTextBox()
+        Me.AcompanharClienteDT = New System.Windows.Forms.DataGridView()
+        Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CPFCNPJ = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Telefone = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataCadastramento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Remover = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.CPFCNPJAcompanharClienteLB = New System.Windows.Forms.Label()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.SelecionarClienteTF = New System.Windows.Forms.TextBox()
+        Me.SalvarAcompanharFuncionarioBT = New System.Windows.Forms.Button()
+        Me.SelecionarClienteLB = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.OpcoesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -67,40 +92,15 @@ Partial Class ControleCliente
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NomeNovoClienteLB = New System.Windows.Forms.Label()
-        Me.NomeNovoClienteTF = New System.Windows.Forms.TextBox()
-        Me.TelefoneNovoClienteLB = New System.Windows.Forms.Label()
-        Me.DataCadastramentoNovoClienteLB = New System.Windows.Forms.Label()
-        Me.TipoDocumentoNovoClienteLB = New System.Windows.Forms.Label()
-        Me.DataCadastramentoNovoClienteTF = New System.Windows.Forms.TextBox()
-        Me.TelefoneNovoClienteTF = New System.Windows.Forms.TextBox()
-        Me.DocumentoNovoClienteLB = New System.Windows.Forms.Label()
-        Me.DocumentoNovoClienteMT = New System.Windows.Forms.MaskedTextBox()
-        Me.CPFNovoClienteRB = New System.Windows.Forms.RadioButton()
-        Me.CNPJNovoClienteRB = New System.Windows.Forms.RadioButton()
-        Me.SalvarNovoClienteBT = New System.Windows.Forms.Button()
-        Me.LimparNovoClienteBT = New System.Windows.Forms.Button()
-        Me.CPFCNPJAcompanharClienteMT = New System.Windows.Forms.MaskedTextBox()
-        Me.AcompanharClienteDT = New System.Windows.Forms.DataGridView()
-        Me.CPFCNPJAcompanharClienteLB = New System.Windows.Forms.Label()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.SelecionarClienteTF = New System.Windows.Forms.TextBox()
-        Me.SalvarAcompanharFuncionarioBT = New System.Windows.Forms.Button()
-        Me.SelecionarClienteLB = New System.Windows.Forms.Label()
-        Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CPFCNPJ = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Telefone = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataCadastramento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Remover = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
+        Me.NovoClienteTP.SuspendLayout()
+        Me.AcompanharClienteTP.SuspendLayout()
         CType(Me.AcompanharClienteDT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -161,53 +161,257 @@ Partial Class ControleCliente
         '
         'TabControl1
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.NovoClienteTP)
+        Me.TabControl1.Controls.Add(Me.AcompanharClienteTP)
         Me.TabControl1.Location = New System.Drawing.Point(9, 10)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(693, 361)
         Me.TabControl1.TabIndex = 0
         '
-        'TabPage1
+        'NovoClienteTP
         '
-        Me.TabPage1.Controls.Add(Me.LimparNovoClienteBT)
-        Me.TabPage1.Controls.Add(Me.SalvarNovoClienteBT)
-        Me.TabPage1.Controls.Add(Me.CNPJNovoClienteRB)
-        Me.TabPage1.Controls.Add(Me.CPFNovoClienteRB)
-        Me.TabPage1.Controls.Add(Me.DocumentoNovoClienteMT)
-        Me.TabPage1.Controls.Add(Me.DocumentoNovoClienteLB)
-        Me.TabPage1.Controls.Add(Me.TelefoneNovoClienteTF)
-        Me.TabPage1.Controls.Add(Me.DataCadastramentoNovoClienteTF)
-        Me.TabPage1.Controls.Add(Me.TipoDocumentoNovoClienteLB)
-        Me.TabPage1.Controls.Add(Me.DataCadastramentoNovoClienteLB)
-        Me.TabPage1.Controls.Add(Me.TelefoneNovoClienteLB)
-        Me.TabPage1.Controls.Add(Me.NomeNovoClienteTF)
-        Me.TabPage1.Controls.Add(Me.NomeNovoClienteLB)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(685, 335)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Novo Cliente"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.NovoClienteTP.Controls.Add(Me.LimparNovoClienteBT)
+        Me.NovoClienteTP.Controls.Add(Me.SalvarNovoClienteBT)
+        Me.NovoClienteTP.Controls.Add(Me.CNPJNovoClienteRB)
+        Me.NovoClienteTP.Controls.Add(Me.CPFNovoClienteRB)
+        Me.NovoClienteTP.Controls.Add(Me.DocumentoNovoClienteMT)
+        Me.NovoClienteTP.Controls.Add(Me.DocumentoNovoClienteLB)
+        Me.NovoClienteTP.Controls.Add(Me.TelefoneNovoClienteTF)
+        Me.NovoClienteTP.Controls.Add(Me.DataCadastramentoNovoClienteTF)
+        Me.NovoClienteTP.Controls.Add(Me.TipoDocumentoNovoClienteLB)
+        Me.NovoClienteTP.Controls.Add(Me.DataCadastramentoNovoClienteLB)
+        Me.NovoClienteTP.Controls.Add(Me.TelefoneNovoClienteLB)
+        Me.NovoClienteTP.Controls.Add(Me.NomeNovoClienteTF)
+        Me.NovoClienteTP.Controls.Add(Me.NomeNovoClienteLB)
+        Me.NovoClienteTP.Location = New System.Drawing.Point(4, 22)
+        Me.NovoClienteTP.Name = "NovoClienteTP"
+        Me.NovoClienteTP.Padding = New System.Windows.Forms.Padding(3)
+        Me.NovoClienteTP.Size = New System.Drawing.Size(685, 335)
+        Me.NovoClienteTP.TabIndex = 0
+        Me.NovoClienteTP.Text = "Novo Cliente"
+        Me.NovoClienteTP.UseVisualStyleBackColor = True
         '
-        'TabPage2
+        'LimparNovoClienteBT
         '
-        Me.TabPage2.Controls.Add(Me.CPFCNPJAcompanharClienteMT)
-        Me.TabPage2.Controls.Add(Me.AcompanharClienteDT)
-        Me.TabPage2.Controls.Add(Me.CPFCNPJAcompanharClienteLB)
-        Me.TabPage2.Controls.Add(Me.PictureBox7)
-        Me.TabPage2.Controls.Add(Me.SelecionarClienteTF)
-        Me.TabPage2.Controls.Add(Me.SalvarAcompanharFuncionarioBT)
-        Me.TabPage2.Controls.Add(Me.SelecionarClienteLB)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(685, 335)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Acompanhar Cliente"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.LimparNovoClienteBT.Location = New System.Drawing.Point(334, 155)
+        Me.LimparNovoClienteBT.Name = "LimparNovoClienteBT"
+        Me.LimparNovoClienteBT.Size = New System.Drawing.Size(75, 23)
+        Me.LimparNovoClienteBT.TabIndex = 13
+        Me.LimparNovoClienteBT.Text = "Limpar"
+        Me.LimparNovoClienteBT.UseVisualStyleBackColor = True
+        '
+        'SalvarNovoClienteBT
+        '
+        Me.SalvarNovoClienteBT.Location = New System.Drawing.Point(250, 155)
+        Me.SalvarNovoClienteBT.Name = "SalvarNovoClienteBT"
+        Me.SalvarNovoClienteBT.Size = New System.Drawing.Size(75, 23)
+        Me.SalvarNovoClienteBT.TabIndex = 12
+        Me.SalvarNovoClienteBT.Text = "Salvar"
+        Me.SalvarNovoClienteBT.UseVisualStyleBackColor = True
+        '
+        'CNPJNovoClienteRB
+        '
+        Me.CNPJNovoClienteRB.AutoSize = True
+        Me.CNPJNovoClienteRB.Location = New System.Drawing.Point(226, 97)
+        Me.CNPJNovoClienteRB.Name = "CNPJNovoClienteRB"
+        Me.CNPJNovoClienteRB.Size = New System.Drawing.Size(52, 17)
+        Me.CNPJNovoClienteRB.TabIndex = 11
+        Me.CNPJNovoClienteRB.TabStop = True
+        Me.CNPJNovoClienteRB.Text = "CNPJ"
+        Me.CNPJNovoClienteRB.UseVisualStyleBackColor = True
+        '
+        'CPFNovoClienteRB
+        '
+        Me.CPFNovoClienteRB.AutoSize = True
+        Me.CPFNovoClienteRB.Location = New System.Drawing.Point(146, 97)
+        Me.CPFNovoClienteRB.Name = "CPFNovoClienteRB"
+        Me.CPFNovoClienteRB.Size = New System.Drawing.Size(45, 17)
+        Me.CPFNovoClienteRB.TabIndex = 10
+        Me.CPFNovoClienteRB.TabStop = True
+        Me.CPFNovoClienteRB.Text = "CPF"
+        Me.CPFNovoClienteRB.UseVisualStyleBackColor = True
+        '
+        'DocumentoNovoClienteMT
+        '
+        Me.DocumentoNovoClienteMT.Location = New System.Drawing.Point(402, 94)
+        Me.DocumentoNovoClienteMT.Name = "DocumentoNovoClienteMT"
+        Me.DocumentoNovoClienteMT.Size = New System.Drawing.Size(257, 20)
+        Me.DocumentoNovoClienteMT.TabIndex = 9
+        '
+        'DocumentoNovoClienteLB
+        '
+        Me.DocumentoNovoClienteLB.AutoSize = True
+        Me.DocumentoNovoClienteLB.Location = New System.Drawing.Point(331, 97)
+        Me.DocumentoNovoClienteLB.Name = "DocumentoNovoClienteLB"
+        Me.DocumentoNovoClienteLB.Size = New System.Drawing.Size(65, 13)
+        Me.DocumentoNovoClienteLB.TabIndex = 8
+        Me.DocumentoNovoClienteLB.Text = "Documento:"
+        '
+        'TelefoneNovoClienteTF
+        '
+        Me.TelefoneNovoClienteTF.Location = New System.Drawing.Point(113, 54)
+        Me.TelefoneNovoClienteTF.Name = "TelefoneNovoClienteTF"
+        Me.TelefoneNovoClienteTF.Size = New System.Drawing.Size(212, 20)
+        Me.TelefoneNovoClienteTF.TabIndex = 6
+        '
+        'DataCadastramentoNovoClienteTF
+        '
+        Me.DataCadastramentoNovoClienteTF.Location = New System.Drawing.Point(459, 54)
+        Me.DataCadastramentoNovoClienteTF.Name = "DataCadastramentoNovoClienteTF"
+        Me.DataCadastramentoNovoClienteTF.Size = New System.Drawing.Size(200, 20)
+        Me.DataCadastramentoNovoClienteTF.TabIndex = 5
+        '
+        'TipoDocumentoNovoClienteLB
+        '
+        Me.TipoDocumentoNovoClienteLB.AutoSize = True
+        Me.TipoDocumentoNovoClienteLB.Location = New System.Drawing.Point(3, 97)
+        Me.TipoDocumentoNovoClienteLB.Name = "TipoDocumentoNovoClienteLB"
+        Me.TipoDocumentoNovoClienteLB.Size = New System.Drawing.Size(104, 13)
+        Me.TipoDocumentoNovoClienteLB.TabIndex = 4
+        Me.TipoDocumentoNovoClienteLB.Text = "Tipo de Documento:"
+        '
+        'DataCadastramentoNovoClienteLB
+        '
+        Me.DataCadastramentoNovoClienteLB.AutoSize = True
+        Me.DataCadastramentoNovoClienteLB.Location = New System.Drawing.Point(331, 57)
+        Me.DataCadastramentoNovoClienteLB.Name = "DataCadastramentoNovoClienteLB"
+        Me.DataCadastramentoNovoClienteLB.Size = New System.Drawing.Size(122, 13)
+        Me.DataCadastramentoNovoClienteLB.TabIndex = 3
+        Me.DataCadastramentoNovoClienteLB.Text = "Data de Cadastramento:"
+        '
+        'TelefoneNovoClienteLB
+        '
+        Me.TelefoneNovoClienteLB.AutoSize = True
+        Me.TelefoneNovoClienteLB.Location = New System.Drawing.Point(3, 57)
+        Me.TelefoneNovoClienteLB.Name = "TelefoneNovoClienteLB"
+        Me.TelefoneNovoClienteLB.Size = New System.Drawing.Size(52, 13)
+        Me.TelefoneNovoClienteLB.TabIndex = 2
+        Me.TelefoneNovoClienteLB.Text = "Telefone:"
+        '
+        'NomeNovoClienteTF
+        '
+        Me.NomeNovoClienteTF.Location = New System.Drawing.Point(113, 14)
+        Me.NomeNovoClienteTF.Name = "NomeNovoClienteTF"
+        Me.NomeNovoClienteTF.Size = New System.Drawing.Size(546, 20)
+        Me.NomeNovoClienteTF.TabIndex = 1
+        '
+        'NomeNovoClienteLB
+        '
+        Me.NomeNovoClienteLB.AutoSize = True
+        Me.NomeNovoClienteLB.Location = New System.Drawing.Point(3, 17)
+        Me.NomeNovoClienteLB.Name = "NomeNovoClienteLB"
+        Me.NomeNovoClienteLB.Size = New System.Drawing.Size(85, 13)
+        Me.NomeNovoClienteLB.TabIndex = 0
+        Me.NomeNovoClienteLB.Text = "Nome Completo:"
+        '
+        'AcompanharClienteTP
+        '
+        Me.AcompanharClienteTP.Controls.Add(Me.CPFCNPJAcompanharClienteMT)
+        Me.AcompanharClienteTP.Controls.Add(Me.AcompanharClienteDT)
+        Me.AcompanharClienteTP.Controls.Add(Me.CPFCNPJAcompanharClienteLB)
+        Me.AcompanharClienteTP.Controls.Add(Me.PictureBox7)
+        Me.AcompanharClienteTP.Controls.Add(Me.SelecionarClienteTF)
+        Me.AcompanharClienteTP.Controls.Add(Me.SalvarAcompanharFuncionarioBT)
+        Me.AcompanharClienteTP.Controls.Add(Me.SelecionarClienteLB)
+        Me.AcompanharClienteTP.Location = New System.Drawing.Point(4, 22)
+        Me.AcompanharClienteTP.Name = "AcompanharClienteTP"
+        Me.AcompanharClienteTP.Padding = New System.Windows.Forms.Padding(3)
+        Me.AcompanharClienteTP.Size = New System.Drawing.Size(685, 335)
+        Me.AcompanharClienteTP.TabIndex = 1
+        Me.AcompanharClienteTP.Text = "Acompanhar Cliente"
+        Me.AcompanharClienteTP.UseVisualStyleBackColor = True
+        '
+        'CPFCNPJAcompanharClienteMT
+        '
+        Me.CPFCNPJAcompanharClienteMT.Location = New System.Drawing.Point(129, 49)
+        Me.CPFCNPJAcompanharClienteMT.Name = "CPFCNPJAcompanharClienteMT"
+        Me.CPFCNPJAcompanharClienteMT.Size = New System.Drawing.Size(503, 20)
+        Me.CPFCNPJAcompanharClienteMT.TabIndex = 48
+        '
+        'AcompanharClienteDT
+        '
+        Me.AcompanharClienteDT.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.AcompanharClienteDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.AcompanharClienteDT.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nome, Me.CPFCNPJ, Me.Telefone, Me.DataCadastramento, Me.Remover})
+        Me.AcompanharClienteDT.Cursor = System.Windows.Forms.Cursors.Default
+        Me.AcompanharClienteDT.Location = New System.Drawing.Point(17, 87)
+        Me.AcompanharClienteDT.Name = "AcompanharClienteDT"
+        Me.AcompanharClienteDT.RowHeadersVisible = False
+        Me.AcompanharClienteDT.Size = New System.Drawing.Size(661, 206)
+        Me.AcompanharClienteDT.TabIndex = 50
+        '
+        'Nome
+        '
+        Me.Nome.HeaderText = "Nome"
+        Me.Nome.Name = "Nome"
+        '
+        'CPFCNPJ
+        '
+        Me.CPFCNPJ.HeaderText = "CPF / CNPJ"
+        Me.CPFCNPJ.Name = "CPFCNPJ"
+        '
+        'Telefone
+        '
+        Me.Telefone.HeaderText = "Telefone"
+        Me.Telefone.Name = "Telefone"
+        '
+        'DataCadastramento
+        '
+        Me.DataCadastramento.HeaderText = "Data de Cadastramento"
+        Me.DataCadastramento.Name = "DataCadastramento"
+        '
+        'Remover
+        '
+        Me.Remover.HeaderText = "Remover"
+        Me.Remover.Name = "Remover"
+        Me.Remover.ReadOnly = True
+        Me.Remover.Width = 75
+        '
+        'CPFCNPJAcompanharClienteLB
+        '
+        Me.CPFCNPJAcompanharClienteLB.AutoSize = True
+        Me.CPFCNPJAcompanharClienteLB.Location = New System.Drawing.Point(6, 52)
+        Me.CPFCNPJAcompanharClienteLB.Name = "CPFCNPJAcompanharClienteLB"
+        Me.CPFCNPJAcompanharClienteLB.Size = New System.Drawing.Size(30, 13)
+        Me.CPFCNPJAcompanharClienteLB.TabIndex = 54
+        Me.CPFCNPJAcompanharClienteLB.Text = "CPF:"
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.PictureBox7.Location = New System.Drawing.Point(638, 10)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox7.TabIndex = 53
+        Me.PictureBox7.TabStop = False
+        '
+        'SelecionarClienteTF
+        '
+        Me.SelecionarClienteTF.Enabled = False
+        Me.SelecionarClienteTF.Location = New System.Drawing.Point(129, 10)
+        Me.SelecionarClienteTF.Name = "SelecionarClienteTF"
+        Me.SelecionarClienteTF.Size = New System.Drawing.Size(503, 20)
+        Me.SelecionarClienteTF.TabIndex = 47
+        '
+        'SalvarAcompanharFuncionarioBT
+        '
+        Me.SalvarAcompanharFuncionarioBT.Location = New System.Drawing.Point(287, 301)
+        Me.SalvarAcompanharFuncionarioBT.Name = "SalvarAcompanharFuncionarioBT"
+        Me.SalvarAcompanharFuncionarioBT.Size = New System.Drawing.Size(125, 23)
+        Me.SalvarAcompanharFuncionarioBT.TabIndex = 51
+        Me.SalvarAcompanharFuncionarioBT.Text = "Salvar Alterações"
+        Me.SalvarAcompanharFuncionarioBT.UseVisualStyleBackColor = True
+        '
+        'SelecionarClienteLB
+        '
+        Me.SelecionarClienteLB.AutoSize = True
+        Me.SelecionarClienteLB.Location = New System.Drawing.Point(6, 13)
+        Me.SelecionarClienteLB.Name = "SelecionarClienteLB"
+        Me.SelecionarClienteLB.Size = New System.Drawing.Size(95, 13)
+        Me.SelecionarClienteLB.TabIndex = 52
+        Me.SelecionarClienteLB.Text = "Selecionar Cliente:"
         '
         'MenuStrip1
         '
@@ -438,210 +642,6 @@ Partial Class ControleCliente
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
-        'NomeNovoClienteLB
-        '
-        Me.NomeNovoClienteLB.AutoSize = True
-        Me.NomeNovoClienteLB.Location = New System.Drawing.Point(3, 17)
-        Me.NomeNovoClienteLB.Name = "NomeNovoClienteLB"
-        Me.NomeNovoClienteLB.Size = New System.Drawing.Size(85, 13)
-        Me.NomeNovoClienteLB.TabIndex = 0
-        Me.NomeNovoClienteLB.Text = "Nome Completo:"
-        '
-        'NomeNovoClienteTF
-        '
-        Me.NomeNovoClienteTF.Location = New System.Drawing.Point(113, 14)
-        Me.NomeNovoClienteTF.Name = "NomeNovoClienteTF"
-        Me.NomeNovoClienteTF.Size = New System.Drawing.Size(546, 20)
-        Me.NomeNovoClienteTF.TabIndex = 1
-        '
-        'TelefoneNovoClienteLB
-        '
-        Me.TelefoneNovoClienteLB.AutoSize = True
-        Me.TelefoneNovoClienteLB.Location = New System.Drawing.Point(3, 57)
-        Me.TelefoneNovoClienteLB.Name = "TelefoneNovoClienteLB"
-        Me.TelefoneNovoClienteLB.Size = New System.Drawing.Size(52, 13)
-        Me.TelefoneNovoClienteLB.TabIndex = 2
-        Me.TelefoneNovoClienteLB.Text = "Telefone:"
-        '
-        'DataCadastramentoNovoClienteLB
-        '
-        Me.DataCadastramentoNovoClienteLB.AutoSize = True
-        Me.DataCadastramentoNovoClienteLB.Location = New System.Drawing.Point(331, 57)
-        Me.DataCadastramentoNovoClienteLB.Name = "DataCadastramentoNovoClienteLB"
-        Me.DataCadastramentoNovoClienteLB.Size = New System.Drawing.Size(122, 13)
-        Me.DataCadastramentoNovoClienteLB.TabIndex = 3
-        Me.DataCadastramentoNovoClienteLB.Text = "Data de Cadastramento:"
-        '
-        'TipoDocumentoNovoClienteLB
-        '
-        Me.TipoDocumentoNovoClienteLB.AutoSize = True
-        Me.TipoDocumentoNovoClienteLB.Location = New System.Drawing.Point(3, 97)
-        Me.TipoDocumentoNovoClienteLB.Name = "TipoDocumentoNovoClienteLB"
-        Me.TipoDocumentoNovoClienteLB.Size = New System.Drawing.Size(104, 13)
-        Me.TipoDocumentoNovoClienteLB.TabIndex = 4
-        Me.TipoDocumentoNovoClienteLB.Text = "Tipo de Documento:"
-        '
-        'DataCadastramentoNovoClienteTF
-        '
-        Me.DataCadastramentoNovoClienteTF.Location = New System.Drawing.Point(459, 54)
-        Me.DataCadastramentoNovoClienteTF.Name = "DataCadastramentoNovoClienteTF"
-        Me.DataCadastramentoNovoClienteTF.Size = New System.Drawing.Size(200, 20)
-        Me.DataCadastramentoNovoClienteTF.TabIndex = 5
-        '
-        'TelefoneNovoClienteTF
-        '
-        Me.TelefoneNovoClienteTF.Location = New System.Drawing.Point(113, 54)
-        Me.TelefoneNovoClienteTF.Name = "TelefoneNovoClienteTF"
-        Me.TelefoneNovoClienteTF.Size = New System.Drawing.Size(212, 20)
-        Me.TelefoneNovoClienteTF.TabIndex = 6
-        '
-        'DocumentoNovoClienteLB
-        '
-        Me.DocumentoNovoClienteLB.AutoSize = True
-        Me.DocumentoNovoClienteLB.Location = New System.Drawing.Point(331, 97)
-        Me.DocumentoNovoClienteLB.Name = "DocumentoNovoClienteLB"
-        Me.DocumentoNovoClienteLB.Size = New System.Drawing.Size(65, 13)
-        Me.DocumentoNovoClienteLB.TabIndex = 8
-        Me.DocumentoNovoClienteLB.Text = "Documento:"
-        '
-        'DocumentoNovoClienteMT
-        '
-        Me.DocumentoNovoClienteMT.Location = New System.Drawing.Point(402, 94)
-        Me.DocumentoNovoClienteMT.Name = "DocumentoNovoClienteMT"
-        Me.DocumentoNovoClienteMT.Size = New System.Drawing.Size(257, 20)
-        Me.DocumentoNovoClienteMT.TabIndex = 9
-        '
-        'CPFNovoClienteRB
-        '
-        Me.CPFNovoClienteRB.AutoSize = True
-        Me.CPFNovoClienteRB.Location = New System.Drawing.Point(146, 97)
-        Me.CPFNovoClienteRB.Name = "CPFNovoClienteRB"
-        Me.CPFNovoClienteRB.Size = New System.Drawing.Size(45, 17)
-        Me.CPFNovoClienteRB.TabIndex = 10
-        Me.CPFNovoClienteRB.TabStop = True
-        Me.CPFNovoClienteRB.Text = "CPF"
-        Me.CPFNovoClienteRB.UseVisualStyleBackColor = True
-        '
-        'CNPJNovoClienteRB
-        '
-        Me.CNPJNovoClienteRB.AutoSize = True
-        Me.CNPJNovoClienteRB.Location = New System.Drawing.Point(226, 97)
-        Me.CNPJNovoClienteRB.Name = "CNPJNovoClienteRB"
-        Me.CNPJNovoClienteRB.Size = New System.Drawing.Size(52, 17)
-        Me.CNPJNovoClienteRB.TabIndex = 11
-        Me.CNPJNovoClienteRB.TabStop = True
-        Me.CNPJNovoClienteRB.Text = "CNPJ"
-        Me.CNPJNovoClienteRB.UseVisualStyleBackColor = True
-        '
-        'SalvarNovoClienteBT
-        '
-        Me.SalvarNovoClienteBT.Location = New System.Drawing.Point(250, 155)
-        Me.SalvarNovoClienteBT.Name = "SalvarNovoClienteBT"
-        Me.SalvarNovoClienteBT.Size = New System.Drawing.Size(75, 23)
-        Me.SalvarNovoClienteBT.TabIndex = 12
-        Me.SalvarNovoClienteBT.Text = "Salvar"
-        Me.SalvarNovoClienteBT.UseVisualStyleBackColor = True
-        '
-        'LimparNovoClienteBT
-        '
-        Me.LimparNovoClienteBT.Location = New System.Drawing.Point(334, 155)
-        Me.LimparNovoClienteBT.Name = "LimparNovoClienteBT"
-        Me.LimparNovoClienteBT.Size = New System.Drawing.Size(75, 23)
-        Me.LimparNovoClienteBT.TabIndex = 13
-        Me.LimparNovoClienteBT.Text = "Limpar"
-        Me.LimparNovoClienteBT.UseVisualStyleBackColor = True
-        '
-        'CPFCNPJAcompanharClienteMT
-        '
-        Me.CPFCNPJAcompanharClienteMT.Location = New System.Drawing.Point(129, 49)
-        Me.CPFCNPJAcompanharClienteMT.Name = "CPFCNPJAcompanharClienteMT"
-        Me.CPFCNPJAcompanharClienteMT.Size = New System.Drawing.Size(503, 20)
-        Me.CPFCNPJAcompanharClienteMT.TabIndex = 48
-        '
-        'AcompanharClienteDT
-        '
-        Me.AcompanharClienteDT.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.AcompanharClienteDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.AcompanharClienteDT.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nome, Me.CPFCNPJ, Me.Telefone, Me.DataCadastramento, Me.Remover})
-        Me.AcompanharClienteDT.Cursor = System.Windows.Forms.Cursors.Default
-        Me.AcompanharClienteDT.Location = New System.Drawing.Point(17, 87)
-        Me.AcompanharClienteDT.Name = "AcompanharClienteDT"
-        Me.AcompanharClienteDT.RowHeadersVisible = False
-        Me.AcompanharClienteDT.Size = New System.Drawing.Size(661, 206)
-        Me.AcompanharClienteDT.TabIndex = 50
-        '
-        'CPFCNPJAcompanharClienteLB
-        '
-        Me.CPFCNPJAcompanharClienteLB.AutoSize = True
-        Me.CPFCNPJAcompanharClienteLB.Location = New System.Drawing.Point(6, 52)
-        Me.CPFCNPJAcompanharClienteLB.Name = "CPFCNPJAcompanharClienteLB"
-        Me.CPFCNPJAcompanharClienteLB.Size = New System.Drawing.Size(30, 13)
-        Me.CPFCNPJAcompanharClienteLB.TabIndex = 54
-        Me.CPFCNPJAcompanharClienteLB.Text = "CPF:"
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.Image = Global.NobelTheater.My.Resources.Resources.Busca
-        Me.PictureBox7.Location = New System.Drawing.Point(638, 10)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(27, 20)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox7.TabIndex = 53
-        Me.PictureBox7.TabStop = False
-        '
-        'SelecionarClienteTF
-        '
-        Me.SelecionarClienteTF.Enabled = False
-        Me.SelecionarClienteTF.Location = New System.Drawing.Point(129, 10)
-        Me.SelecionarClienteTF.Name = "SelecionarClienteTF"
-        Me.SelecionarClienteTF.Size = New System.Drawing.Size(503, 20)
-        Me.SelecionarClienteTF.TabIndex = 47
-        '
-        'SalvarAcompanharFuncionarioBT
-        '
-        Me.SalvarAcompanharFuncionarioBT.Location = New System.Drawing.Point(287, 301)
-        Me.SalvarAcompanharFuncionarioBT.Name = "SalvarAcompanharFuncionarioBT"
-        Me.SalvarAcompanharFuncionarioBT.Size = New System.Drawing.Size(125, 23)
-        Me.SalvarAcompanharFuncionarioBT.TabIndex = 51
-        Me.SalvarAcompanharFuncionarioBT.Text = "Salvar Alterações"
-        Me.SalvarAcompanharFuncionarioBT.UseVisualStyleBackColor = True
-        '
-        'SelecionarClienteLB
-        '
-        Me.SelecionarClienteLB.AutoSize = True
-        Me.SelecionarClienteLB.Location = New System.Drawing.Point(6, 13)
-        Me.SelecionarClienteLB.Name = "SelecionarClienteLB"
-        Me.SelecionarClienteLB.Size = New System.Drawing.Size(95, 13)
-        Me.SelecionarClienteLB.TabIndex = 52
-        Me.SelecionarClienteLB.Text = "Selecionar Cliente:"
-        '
-        'Nome
-        '
-        Me.Nome.HeaderText = "Nome"
-        Me.Nome.Name = "Nome"
-        '
-        'CPFCNPJ
-        '
-        Me.CPFCNPJ.HeaderText = "CPF / CNPJ"
-        Me.CPFCNPJ.Name = "CPFCNPJ"
-        '
-        'Telefone
-        '
-        Me.Telefone.HeaderText = "Telefone"
-        Me.Telefone.Name = "Telefone"
-        '
-        'DataCadastramento
-        '
-        Me.DataCadastramento.HeaderText = "Data de Cadastramento"
-        Me.DataCadastramento.Name = "DataCadastramento"
-        '
-        'Remover
-        '
-        Me.Remover.HeaderText = "Remover"
-        Me.Remover.Name = "Remover"
-        Me.Remover.ReadOnly = True
-        Me.Remover.Width = 75
-        '
         'ControleCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -658,14 +658,14 @@ Partial Class ControleCliente
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
+        Me.NovoClienteTP.ResumeLayout(False)
+        Me.NovoClienteTP.PerformLayout()
+        Me.AcompanharClienteTP.ResumeLayout(False)
+        Me.AcompanharClienteTP.PerformLayout()
         CType(Me.AcompanharClienteDT, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -677,8 +677,8 @@ Partial Class ControleCliente
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
-    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents NovoClienteTP As System.Windows.Forms.TabPage
+    Friend WithEvents AcompanharClienteTP As System.Windows.Forms.TabPage
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents OpcoesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SairToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

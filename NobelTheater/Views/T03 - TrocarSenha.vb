@@ -13,13 +13,13 @@
         ElseIf (String.IsNullOrWhiteSpace(PasswordTF.Text)) Then
             MsgBox("Senha não preenchida", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
-        ElseIf (String.IsNullOrWhiteSpace(PasswordNewTF.Text)) Then
+        ElseIf (String.IsNullOrWhiteSpace(NewPasswordTF.Text)) Then
             MsgBox("Nova senha não preenchida", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
-        ElseIf (String.IsNullOrWhiteSpace(ConfirmPasswordNewTF.Text)) Then
+        ElseIf (String.IsNullOrWhiteSpace(ConfirmarSenhaTF.Text)) Then
             MsgBox("Nova senha não confirmada", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
-        ElseIf (PasswordNewTF.Text.Equals(ConfirmPasswordNewTF.Text) = False) Then
+        ElseIf (NewPasswordTF.Text.Equals(ConfirmarSenhaTF.Text) = False) Then
             MsgBox("Nova senha e confirmação estão divergentes", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
         End If
@@ -37,7 +37,7 @@
                 Exit Sub
             End If
 
-            funcionario.Senha = PasswordNewTF.Text
+            funcionario.Senha = NewPasswordTF.Text
 
             FuncionarioBC.UpdateSenha(funcionario)
 

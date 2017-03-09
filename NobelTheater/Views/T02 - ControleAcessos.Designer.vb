@@ -38,6 +38,9 @@ Partial Class ControleAcessos
         Me.DataBloqueio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ResetarSenha = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PerfilTF = New System.Windows.Forms.Label()
+        Me.MatriculaTF = New System.Windows.Forms.Label()
+        Me.NomeTF = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -76,9 +79,6 @@ Partial Class ControleAcessos
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PerfilTF = New System.Windows.Forms.Label()
-        Me.MatriculaTF = New System.Windows.Forms.Label()
-        Me.NomeTF = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -131,9 +131,9 @@ Partial Class ControleAcessos
         'FuncionarioTF
         '
         Me.FuncionarioTF.Enabled = False
-        Me.FuncionarioTF.Location = New System.Drawing.Point(252, 32)
+        Me.FuncionarioTF.Location = New System.Drawing.Point(143, 32)
         Me.FuncionarioTF.Name = "FuncionarioTF"
-        Me.FuncionarioTF.Size = New System.Drawing.Size(327, 20)
+        Me.FuncionarioTF.Size = New System.Drawing.Size(436, 20)
         Me.FuncionarioTF.TabIndex = 17
         '
         'PerfilAtualTF
@@ -201,7 +201,7 @@ Partial Class ControleAcessos
         Me.RevogadosDT.Name = "RevogadosDT"
         Me.RevogadosDT.ReadOnly = True
         Me.RevogadosDT.RowHeadersVisible = False
-        Me.RevogadosDT.Size = New System.Drawing.Size(629, 335)
+        Me.RevogadosDT.Size = New System.Drawing.Size(646, 335)
         Me.RevogadosDT.TabIndex = 0
         '
         'Matricula
@@ -240,6 +240,33 @@ Partial Class ControleAcessos
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(660, 100)
         Me.Panel1.TabIndex = 1
+        '
+        'PerfilTF
+        '
+        Me.PerfilTF.AutoSize = True
+        Me.PerfilTF.Location = New System.Drawing.Point(140, 72)
+        Me.PerfilTF.Name = "PerfilTF"
+        Me.PerfilTF.Size = New System.Drawing.Size(86, 13)
+        Me.PerfilTF.TabIndex = 6
+        Me.PerfilTF.Text = "Perfil de Acesso:"
+        '
+        'MatriculaTF
+        '
+        Me.MatriculaTF.AutoSize = True
+        Me.MatriculaTF.Location = New System.Drawing.Point(140, 44)
+        Me.MatriculaTF.Name = "MatriculaTF"
+        Me.MatriculaTF.Size = New System.Drawing.Size(55, 13)
+        Me.MatriculaTF.TabIndex = 5
+        Me.MatriculaTF.Text = "Matrícula:"
+        '
+        'NomeTF
+        '
+        Me.NomeTF.AutoSize = True
+        Me.NomeTF.Location = New System.Drawing.Point(140, 16)
+        Me.NomeTF.Name = "NomeTF"
+        Me.NomeTF.Size = New System.Drawing.Size(38, 13)
+        Me.NomeTF.TabIndex = 4
+        Me.NomeTF.Text = "Nome:"
         '
         'PictureBox1
         '
@@ -487,33 +514,6 @@ Partial Class ControleAcessos
         Me.AcompanharClienteToolStripMenuItem.Name = "AcompanharClienteToolStripMenuItem"
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
-        '
-        'PerfilTF
-        '
-        Me.PerfilTF.AutoSize = True
-        Me.PerfilTF.Location = New System.Drawing.Point(140, 72)
-        Me.PerfilTF.Name = "PerfilTF"
-        Me.PerfilTF.Size = New System.Drawing.Size(86, 13)
-        Me.PerfilTF.TabIndex = 6
-        Me.PerfilTF.Text = "Perfil de Acesso:"
-        '
-        'MatriculaTF
-        '
-        Me.MatriculaTF.AutoSize = True
-        Me.MatriculaTF.Location = New System.Drawing.Point(140, 44)
-        Me.MatriculaTF.Name = "MatriculaTF"
-        Me.MatriculaTF.Size = New System.Drawing.Size(55, 13)
-        Me.MatriculaTF.TabIndex = 5
-        Me.MatriculaTF.Text = "Matrícula:"
-        '
-        'NomeTF
-        '
-        Me.NomeTF.AutoSize = True
-        Me.NomeTF.Location = New System.Drawing.Point(140, 16)
-        Me.NomeTF.Name = "NomeTF"
-        Me.NomeTF.Size = New System.Drawing.Size(38, 13)
-        Me.NomeTF.TabIndex = 4
-        Me.NomeTF.Text = "Nome:"
         '
         'ControleAcessos
         '

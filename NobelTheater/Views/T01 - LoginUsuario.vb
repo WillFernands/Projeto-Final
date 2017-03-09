@@ -41,7 +41,7 @@
         'SQLTableManager.CreateSalarios()
     End Sub
 
-    Private Sub OK_Click(sender As Object, e As EventArgs) Handles OK.Click
+    Private Sub OK_Click(sender As Object, e As EventArgs) Handles LogarBT.Click
 
         If (String.IsNullOrWhiteSpace(UserTF.Text)) Then
             MsgBox("Usuário não preenchido", vbInformation Or vbMsgBoxSetForeground)
@@ -96,7 +96,7 @@
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles RegistrarPontoBT.Click
         If (String.IsNullOrWhiteSpace(UserTF.Text)) Then
             MsgBox("Usuário não preenchido", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
@@ -139,7 +139,7 @@
         End If
     End Sub
 
-    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
+    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles EsqueciSenhaLL.LinkClicked
         If (String.IsNullOrWhiteSpace(UserTF.Text)) Then
             MsgBox("Usuário não preenchido", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
@@ -163,7 +163,7 @@
         End If
     End Sub
 
-    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles AlterarSenhaLL.LinkClicked
         If (String.IsNullOrWhiteSpace(UserTF.Text)) Then
             MsgBox("Usuário não preenchido", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub

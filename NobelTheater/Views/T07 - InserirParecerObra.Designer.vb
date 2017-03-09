@@ -384,7 +384,7 @@ Partial Class InserirParecerObra
         'MotivoVisitaParecerObraCB
         '
         Me.MotivoVisitaParecerObraCB.FormattingEnabled = True
-        Me.MotivoVisitaParecerObraCB.Location = New System.Drawing.Point(165, 107)
+        Me.MotivoVisitaParecerObraCB.Location = New System.Drawing.Point(143, 107)
         Me.MotivoVisitaParecerObraCB.Name = "MotivoVisitaParecerObraCB"
         Me.MotivoVisitaParecerObraCB.Size = New System.Drawing.Size(523, 21)
         Me.MotivoVisitaParecerObraCB.TabIndex = 3
@@ -400,7 +400,7 @@ Partial Class InserirParecerObra
         '
         'DescricaoParecerObraTF
         '
-        Me.DescricaoParecerObraTF.Location = New System.Drawing.Point(165, 152)
+        Me.DescricaoParecerObraTF.Location = New System.Drawing.Point(143, 152)
         Me.DescricaoParecerObraTF.Multiline = True
         Me.DescricaoParecerObraTF.Name = "DescricaoParecerObraTF"
         Me.DescricaoParecerObraTF.Size = New System.Drawing.Size(523, 105)
@@ -409,7 +409,7 @@ Partial Class InserirParecerObra
         'ClienteParecerObraTF
         '
         Me.ClienteParecerObraTF.Enabled = False
-        Me.ClienteParecerObraTF.Location = New System.Drawing.Point(165, 62)
+        Me.ClienteParecerObraTF.Location = New System.Drawing.Point(143, 62)
         Me.ClienteParecerObraTF.Name = "ClienteParecerObraTF"
         Me.ClienteParecerObraTF.Size = New System.Drawing.Size(523, 20)
         Me.ClienteParecerObraTF.TabIndex = 2
@@ -435,7 +435,7 @@ Partial Class InserirParecerObra
         'SupervisorResponsavelTF
         '
         Me.SupervisorResponsavelTF.Enabled = False
-        Me.SupervisorResponsavelTF.Location = New System.Drawing.Point(165, 17)
+        Me.SupervisorResponsavelTF.Location = New System.Drawing.Point(143, 17)
         Me.SupervisorResponsavelTF.Name = "SupervisorResponsavelTF"
         Me.SupervisorResponsavelTF.Size = New System.Drawing.Size(523, 20)
         Me.SupervisorResponsavelTF.TabIndex = 1

@@ -65,13 +65,13 @@ Partial Class RecuperarHistorico
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.RecuperarHistoricoTP = New System.Windows.Forms.TabPage()
         Me.FimDT = New System.Windows.Forms.DateTimePicker()
         Me.InicioDT = New System.Windows.Forms.DateTimePicker()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.RecuperarHistoricoFuncionariosTP = New System.Windows.Forms.TabPage()
         Me.FuncionariosDT = New System.Windows.Forms.DataGridView()
         Me.Matricula = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Funcionario = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -82,7 +82,7 @@ Partial Class RecuperarHistorico
         Me.Label7 = New System.Windows.Forms.Label()
         Me.FimFuncDT = New System.Windows.Forms.DateTimePicker()
         Me.InicioFuncDT = New System.Windows.Forms.DateTimePicker()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.GerarRelatorioBT = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
@@ -90,8 +90,8 @@ Partial Class RecuperarHistorico
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
+        Me.RecuperarHistoricoTP.SuspendLayout()
+        Me.RecuperarHistoricoFuncionariosTP.SuspendLayout()
         CType(Me.FuncionariosDT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -383,28 +383,28 @@ Partial Class RecuperarHistorico
         '
         'TabControl1
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.RecuperarHistoricoTP)
+        Me.TabControl1.Controls.Add(Me.RecuperarHistoricoFuncionariosTP)
         Me.TabControl1.Location = New System.Drawing.Point(9, 10)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(693, 361)
         Me.TabControl1.TabIndex = 0
         '
-        'TabPage1
+        'RecuperarHistoricoTP
         '
-        Me.TabPage1.Controls.Add(Me.FimDT)
-        Me.TabPage1.Controls.Add(Me.InicioDT)
-        Me.TabPage1.Controls.Add(Me.Label8)
-        Me.TabPage1.Controls.Add(Me.Label9)
-        Me.TabPage1.Controls.Add(Me.Button2)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(685, 335)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Recuperar Histórico"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.RecuperarHistoricoTP.Controls.Add(Me.FimDT)
+        Me.RecuperarHistoricoTP.Controls.Add(Me.InicioDT)
+        Me.RecuperarHistoricoTP.Controls.Add(Me.Label8)
+        Me.RecuperarHistoricoTP.Controls.Add(Me.Label9)
+        Me.RecuperarHistoricoTP.Controls.Add(Me.Button2)
+        Me.RecuperarHistoricoTP.Location = New System.Drawing.Point(4, 22)
+        Me.RecuperarHistoricoTP.Name = "RecuperarHistoricoTP"
+        Me.RecuperarHistoricoTP.Padding = New System.Windows.Forms.Padding(3)
+        Me.RecuperarHistoricoTP.Size = New System.Drawing.Size(685, 335)
+        Me.RecuperarHistoricoTP.TabIndex = 0
+        Me.RecuperarHistoricoTP.Text = "Recuperar Histórico"
+        Me.RecuperarHistoricoTP.UseVisualStyleBackColor = True
         '
         'FimDT
         '
@@ -455,25 +455,25 @@ Partial Class RecuperarHistorico
         Me.Button2.Text = "Gerar Relatório"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'TabPage2
+        'RecuperarHistoricoFuncionariosTP
         '
-        Me.TabPage2.Controls.Add(Me.FuncionariosDT)
-        Me.TabPage2.Controls.Add(Me.TodosFuncCB)
-        Me.TabPage2.Controls.Add(Me.PictureBox7)
-        Me.TabPage2.Controls.Add(Me.FuncionarioTF)
-        Me.TabPage2.Controls.Add(Me.Label7)
-        Me.TabPage2.Controls.Add(Me.FimFuncDT)
-        Me.TabPage2.Controls.Add(Me.InicioFuncDT)
-        Me.TabPage2.Controls.Add(Me.Button1)
-        Me.TabPage2.Controls.Add(Me.Label2)
-        Me.TabPage2.Controls.Add(Me.Label6)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(685, 335)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Recuperar Histórico dos Funcionários"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.RecuperarHistoricoFuncionariosTP.Controls.Add(Me.FuncionariosDT)
+        Me.RecuperarHistoricoFuncionariosTP.Controls.Add(Me.TodosFuncCB)
+        Me.RecuperarHistoricoFuncionariosTP.Controls.Add(Me.PictureBox7)
+        Me.RecuperarHistoricoFuncionariosTP.Controls.Add(Me.FuncionarioTF)
+        Me.RecuperarHistoricoFuncionariosTP.Controls.Add(Me.Label7)
+        Me.RecuperarHistoricoFuncionariosTP.Controls.Add(Me.FimFuncDT)
+        Me.RecuperarHistoricoFuncionariosTP.Controls.Add(Me.InicioFuncDT)
+        Me.RecuperarHistoricoFuncionariosTP.Controls.Add(Me.GerarRelatorioBT)
+        Me.RecuperarHistoricoFuncionariosTP.Controls.Add(Me.Label2)
+        Me.RecuperarHistoricoFuncionariosTP.Controls.Add(Me.Label6)
+        Me.RecuperarHistoricoFuncionariosTP.Location = New System.Drawing.Point(4, 22)
+        Me.RecuperarHistoricoFuncionariosTP.Name = "RecuperarHistoricoFuncionariosTP"
+        Me.RecuperarHistoricoFuncionariosTP.Padding = New System.Windows.Forms.Padding(3)
+        Me.RecuperarHistoricoFuncionariosTP.Size = New System.Drawing.Size(685, 335)
+        Me.RecuperarHistoricoFuncionariosTP.TabIndex = 1
+        Me.RecuperarHistoricoFuncionariosTP.Text = "Recuperar Histórico dos Funcionários"
+        Me.RecuperarHistoricoFuncionariosTP.UseVisualStyleBackColor = True
         '
         'FuncionariosDT
         '
@@ -566,14 +566,14 @@ Partial Class RecuperarHistorico
         Me.InicioFuncDT.Size = New System.Drawing.Size(98, 20)
         Me.InicioFuncDT.TabIndex = 24
         '
-        'Button1
+        'GerarRelatorioBT
         '
-        Me.Button1.Location = New System.Drawing.Point(294, 295)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(103, 23)
-        Me.Button1.TabIndex = 23
-        Me.Button1.Text = "Gerar Relatório"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.GerarRelatorioBT.Location = New System.Drawing.Point(294, 295)
+        Me.GerarRelatorioBT.Name = "GerarRelatorioBT"
+        Me.GerarRelatorioBT.Size = New System.Drawing.Size(103, 23)
+        Me.GerarRelatorioBT.TabIndex = 23
+        Me.GerarRelatorioBT.Text = "Gerar Relatório"
+        Me.GerarRelatorioBT.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -611,10 +611,10 @@ Partial Class RecuperarHistorico
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
+        Me.RecuperarHistoricoTP.ResumeLayout(False)
+        Me.RecuperarHistoricoTP.PerformLayout()
+        Me.RecuperarHistoricoFuncionariosTP.ResumeLayout(False)
+        Me.RecuperarHistoricoFuncionariosTP.PerformLayout()
         CType(Me.FuncionariosDT, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -661,16 +661,16 @@ Partial Class RecuperarHistorico
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
-    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
+    Friend WithEvents RecuperarHistoricoTP As System.Windows.Forms.TabPage
     Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents RecuperarHistoricoFuncionariosTP As System.Windows.Forms.TabPage
     Friend WithEvents FimDT As System.Windows.Forms.DateTimePicker
     Friend WithEvents InicioDT As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents FimFuncDT As System.Windows.Forms.DateTimePicker
     Friend WithEvents InicioFuncDT As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents GerarRelatorioBT As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents TodosFuncCB As System.Windows.Forms.CheckBox

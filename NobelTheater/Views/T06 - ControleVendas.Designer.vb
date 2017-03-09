@@ -29,7 +29,7 @@ Partial Class ControleVendas
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.CriarNovoOrcamentoTP = New System.Windows.Forms.TabPage()
         Me.FinalizarBT = New System.Windows.Forms.Button()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.ClienteIMG = New System.Windows.Forms.PictureBox()
@@ -51,7 +51,7 @@ Partial Class ControleVendas
         Me.ProdutoOrcamentoIMG = New System.Windows.Forms.PictureBox()
         Me.SelecionarProdutoNovoOrcamentoTF = New System.Windows.Forms.TextBox()
         Me.SelecionarProdutoNovoOrcamentoLB = New System.Windows.Forms.Label()
-        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.AcompanharOrcamentosTP = New System.Windows.Forms.TabPage()
         Me.SelecionarOrcamentoPorGB = New System.Windows.Forms.GroupBox()
         Me.AcomapanharOrcamentoTF = New System.Windows.Forms.TextBox()
         Me.VendedorAcomapanharOrcamentoRB = New System.Windows.Forms.RadioButton()
@@ -67,7 +67,7 @@ Partial Class ControleVendas
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.SelecionarFornecedorLB = New System.Windows.Forms.Label()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.VendarEmAndamentoTP = New System.Windows.Forms.TabPage()
         Me.VendasAndamentoDG = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -77,7 +77,7 @@ Partial Class ControleVendas
         Me.NotaFiscal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VerProd = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.VerPgto = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.AcompanharVendaTab = New System.Windows.Forms.TabPage()
+        Me.AcompanharVendaTP = New System.Windows.Forms.TabPage()
         Me.AcompanharVendaDG = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -87,9 +87,9 @@ Partial Class ControleVendas
         Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewButtonColumn4 = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.DataGridViewButtonColumn5 = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.AteAcompanharVendaDT = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.DeAcompanharVendaDT = New System.Windows.Forms.DateTimePicker()
         Me.DataAcompanharVendaLB = New System.Windows.Forms.Label()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.VendedorAcompanharVendaTF = New System.Windows.Forms.TextBox()
@@ -101,7 +101,7 @@ Partial Class ControleVendas
         Me.ClienteCNPJCPFAcompanharVendaLB = New System.Windows.Forms.Label()
         Me.SelecionarPorAcompanharVendaLB = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.VisualizarInfoVisitaTP = New System.Windows.Forms.TabPage()
         Me.InfoVisitaTecnicaDG = New System.Windows.Forms.DataGridView()
         Me.ClienteVisitaTecnica = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataVisita = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -119,7 +119,7 @@ Partial Class ControleVendas
         Me.ClienteNomeVisitaLB = New System.Windows.Forms.Label()
         Me.ClienteDocumentoVisitaLB = New System.Windows.Forms.Label()
         Me.SelecionarPorAcompanharVisitaLB = New System.Windows.Forms.Label()
-        Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.EnviarProdutoAssistenciaTP = New System.Windows.Forms.TabPage()
         Me.LimparProdutoAssistenciaBT = New System.Windows.Forms.Button()
         Me.EnviarProdutoAssistenciaBT = New System.Windows.Forms.Button()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
@@ -132,7 +132,7 @@ Partial Class ControleVendas
         Me.ResponsavelEnvioProdutoAssistenciaLB = New System.Windows.Forms.Label()
         Me.SelecionarAssistenciaLB = New System.Windows.Forms.Label()
         Me.SelecionarProdutoEnvioAssistenciaLB = New System.Windows.Forms.Label()
-        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.ExtrairRelatoriosVendasTP = New System.Windows.Forms.TabPage()
         Me.FimDT = New System.Windows.Forms.DateTimePicker()
         Me.InicioDT = New System.Windows.Forms.DateTimePicker()
         Me.DeLB = New System.Windows.Forms.Label()
@@ -178,7 +178,7 @@ Partial Class ControleVendas
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
+        Me.CriarNovoOrcamentoTP.SuspendLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClienteIMG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConfirmaProdutoIMG, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -186,24 +186,24 @@ Partial Class ControleVendas
         CType(Me.ProdutosDT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProdutoOrcamentoIMG, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage4.SuspendLayout()
+        Me.AcompanharOrcamentosTP.SuspendLayout()
         Me.SelecionarOrcamentoPorGB.SuspendLayout()
         CType(Me.EnderecosDG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage3.SuspendLayout()
+        Me.VendarEmAndamentoTP.SuspendLayout()
         CType(Me.VendasAndamentoDG, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.AcompanharVendaTab.SuspendLayout()
+        Me.AcompanharVendaTP.SuspendLayout()
         CType(Me.AcompanharVendaDG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage2.SuspendLayout()
+        Me.VisualizarInfoVisitaTP.SuspendLayout()
         CType(Me.InfoVisitaTecnicaDG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage6.SuspendLayout()
+        Me.EnviarProdutoAssistenciaTP.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage5.SuspendLayout()
+        Me.ExtrairRelatoriosVendasTP.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -265,43 +265,43 @@ Partial Class ControleVendas
         '
         'TabControl1
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage4)
-        Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Controls.Add(Me.AcompanharVendaTab)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Controls.Add(Me.TabPage6)
-        Me.TabControl1.Controls.Add(Me.TabPage5)
+        Me.TabControl1.Controls.Add(Me.CriarNovoOrcamentoTP)
+        Me.TabControl1.Controls.Add(Me.AcompanharOrcamentosTP)
+        Me.TabControl1.Controls.Add(Me.VendarEmAndamentoTP)
+        Me.TabControl1.Controls.Add(Me.AcompanharVendaTP)
+        Me.TabControl1.Controls.Add(Me.VisualizarInfoVisitaTP)
+        Me.TabControl1.Controls.Add(Me.EnviarProdutoAssistenciaTP)
+        Me.TabControl1.Controls.Add(Me.ExtrairRelatoriosVendasTP)
         Me.TabControl1.Location = New System.Drawing.Point(9, 10)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(693, 361)
         Me.TabControl1.TabIndex = 0
         '
-        'TabPage1
+        'CriarNovoOrcamentoTP
         '
-        Me.TabPage1.Controls.Add(Me.FinalizarBT)
-        Me.TabPage1.Controls.Add(Me.PictureBox6)
-        Me.TabPage1.Controls.Add(Me.ClienteIMG)
-        Me.TabPage1.Controls.Add(Me.SelecionarClienteNovoOrcamentoTF)
-        Me.TabPage1.Controls.Add(Me.SelecionarClienteNovoOrcamentoLB)
-        Me.TabPage1.Controls.Add(Me.ConfirmaProdutoIMG)
-        Me.TabPage1.Controls.Add(Me.QtdeTF)
-        Me.TabPage1.Controls.Add(Me.Label6)
-        Me.TabPage1.Controls.Add(Me.Label2)
-        Me.TabPage1.Controls.Add(Me.CodigoProdutoTF)
-        Me.TabPage1.Controls.Add(Me.ProdutosDT)
-        Me.TabPage1.Controls.Add(Me.PictureBox3)
-        Me.TabPage1.Controls.Add(Me.ProdutoOrcamentoIMG)
-        Me.TabPage1.Controls.Add(Me.SelecionarProdutoNovoOrcamentoTF)
-        Me.TabPage1.Controls.Add(Me.SelecionarProdutoNovoOrcamentoLB)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(685, 335)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Criar Novo Orçamento"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.CriarNovoOrcamentoTP.Controls.Add(Me.FinalizarBT)
+        Me.CriarNovoOrcamentoTP.Controls.Add(Me.PictureBox6)
+        Me.CriarNovoOrcamentoTP.Controls.Add(Me.ClienteIMG)
+        Me.CriarNovoOrcamentoTP.Controls.Add(Me.SelecionarClienteNovoOrcamentoTF)
+        Me.CriarNovoOrcamentoTP.Controls.Add(Me.SelecionarClienteNovoOrcamentoLB)
+        Me.CriarNovoOrcamentoTP.Controls.Add(Me.ConfirmaProdutoIMG)
+        Me.CriarNovoOrcamentoTP.Controls.Add(Me.QtdeTF)
+        Me.CriarNovoOrcamentoTP.Controls.Add(Me.Label6)
+        Me.CriarNovoOrcamentoTP.Controls.Add(Me.Label2)
+        Me.CriarNovoOrcamentoTP.Controls.Add(Me.CodigoProdutoTF)
+        Me.CriarNovoOrcamentoTP.Controls.Add(Me.ProdutosDT)
+        Me.CriarNovoOrcamentoTP.Controls.Add(Me.PictureBox3)
+        Me.CriarNovoOrcamentoTP.Controls.Add(Me.ProdutoOrcamentoIMG)
+        Me.CriarNovoOrcamentoTP.Controls.Add(Me.SelecionarProdutoNovoOrcamentoTF)
+        Me.CriarNovoOrcamentoTP.Controls.Add(Me.SelecionarProdutoNovoOrcamentoLB)
+        Me.CriarNovoOrcamentoTP.Location = New System.Drawing.Point(4, 22)
+        Me.CriarNovoOrcamentoTP.Name = "CriarNovoOrcamentoTP"
+        Me.CriarNovoOrcamentoTP.Padding = New System.Windows.Forms.Padding(3)
+        Me.CriarNovoOrcamentoTP.Size = New System.Drawing.Size(685, 335)
+        Me.CriarNovoOrcamentoTP.TabIndex = 0
+        Me.CriarNovoOrcamentoTP.Text = "Criar Novo Orçamento"
+        Me.CriarNovoOrcamentoTP.UseVisualStyleBackColor = True
         '
         'FinalizarBT
         '
@@ -336,9 +336,9 @@ Partial Class ControleVendas
         'SelecionarClienteNovoOrcamentoTF
         '
         Me.SelecionarClienteNovoOrcamentoTF.Enabled = False
-        Me.SelecionarClienteNovoOrcamentoTF.Location = New System.Drawing.Point(172, 16)
+        Me.SelecionarClienteNovoOrcamentoTF.Location = New System.Drawing.Point(150, 16)
         Me.SelecionarClienteNovoOrcamentoTF.Name = "SelecionarClienteNovoOrcamentoTF"
-        Me.SelecionarClienteNovoOrcamentoTF.Size = New System.Drawing.Size(443, 20)
+        Me.SelecionarClienteNovoOrcamentoTF.Size = New System.Drawing.Size(463, 20)
         Me.SelecionarClienteNovoOrcamentoTF.TabIndex = 1
         '
         'SelecionarClienteNovoOrcamentoLB
@@ -473,9 +473,9 @@ Partial Class ControleVendas
         'SelecionarProdutoNovoOrcamentoTF
         '
         Me.SelecionarProdutoNovoOrcamentoTF.Enabled = False
-        Me.SelecionarProdutoNovoOrcamentoTF.Location = New System.Drawing.Point(172, 61)
+        Me.SelecionarProdutoNovoOrcamentoTF.Location = New System.Drawing.Point(150, 61)
         Me.SelecionarProdutoNovoOrcamentoTF.Name = "SelecionarProdutoNovoOrcamentoTF"
-        Me.SelecionarProdutoNovoOrcamentoTF.Size = New System.Drawing.Size(355, 20)
+        Me.SelecionarProdutoNovoOrcamentoTF.Size = New System.Drawing.Size(375, 20)
         Me.SelecionarProdutoNovoOrcamentoTF.TabIndex = 2
         '
         'SelecionarProdutoNovoOrcamentoLB
@@ -487,19 +487,19 @@ Partial Class ControleVendas
         Me.SelecionarProdutoNovoOrcamentoLB.TabIndex = 3
         Me.SelecionarProdutoNovoOrcamentoLB.Text = "Selecionar Produto:"
         '
-        'TabPage4
+        'AcompanharOrcamentosTP
         '
-        Me.TabPage4.Controls.Add(Me.SelecionarOrcamentoPorGB)
-        Me.TabPage4.Controls.Add(Me.EnderecosDG)
-        Me.TabPage4.Controls.Add(Me.PictureBox7)
-        Me.TabPage4.Controls.Add(Me.Button2)
-        Me.TabPage4.Controls.Add(Me.SelecionarFornecedorLB)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(685, 335)
-        Me.TabPage4.TabIndex = 8
-        Me.TabPage4.Text = "Acompanhar Orcamentos"
-        Me.TabPage4.UseVisualStyleBackColor = True
+        Me.AcompanharOrcamentosTP.Controls.Add(Me.SelecionarOrcamentoPorGB)
+        Me.AcompanharOrcamentosTP.Controls.Add(Me.EnderecosDG)
+        Me.AcompanharOrcamentosTP.Controls.Add(Me.PictureBox7)
+        Me.AcompanharOrcamentosTP.Controls.Add(Me.Button2)
+        Me.AcompanharOrcamentosTP.Controls.Add(Me.SelecionarFornecedorLB)
+        Me.AcompanharOrcamentosTP.Location = New System.Drawing.Point(4, 22)
+        Me.AcompanharOrcamentosTP.Name = "AcompanharOrcamentosTP"
+        Me.AcompanharOrcamentosTP.Size = New System.Drawing.Size(685, 335)
+        Me.AcompanharOrcamentosTP.TabIndex = 8
+        Me.AcompanharOrcamentosTP.Text = "Acompanhar Orcamentos"
+        Me.AcompanharOrcamentosTP.UseVisualStyleBackColor = True
         '
         'SelecionarOrcamentoPorGB
         '
@@ -626,16 +626,16 @@ Partial Class ControleVendas
         Me.SelecionarFornecedorLB.TabIndex = 37
         Me.SelecionarFornecedorLB.Text = "Selecionar Orçamento por:"
         '
-        'TabPage3
+        'VendarEmAndamentoTP
         '
-        Me.TabPage3.Controls.Add(Me.VendasAndamentoDG)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(685, 335)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Vendas em Andamento"
-        Me.TabPage3.UseVisualStyleBackColor = True
+        Me.VendarEmAndamentoTP.Controls.Add(Me.VendasAndamentoDG)
+        Me.VendarEmAndamentoTP.Location = New System.Drawing.Point(4, 22)
+        Me.VendarEmAndamentoTP.Name = "VendarEmAndamentoTP"
+        Me.VendarEmAndamentoTP.Padding = New System.Windows.Forms.Padding(3)
+        Me.VendarEmAndamentoTP.Size = New System.Drawing.Size(685, 335)
+        Me.VendarEmAndamentoTP.TabIndex = 2
+        Me.VendarEmAndamentoTP.Text = "Vendas em Andamento"
+        Me.VendarEmAndamentoTP.UseVisualStyleBackColor = True
         '
         'VendasAndamentoDG
         '
@@ -705,30 +705,30 @@ Partial Class ControleVendas
         Me.VerPgto.Name = "VerPgto"
         Me.VerPgto.ReadOnly = True
         '
-        'AcompanharVendaTab
+        'AcompanharVendaTP
         '
-        Me.AcompanharVendaTab.Controls.Add(Me.AcompanharVendaDG)
-        Me.AcompanharVendaTab.Controls.Add(Me.DateTimePicker2)
-        Me.AcompanharVendaTab.Controls.Add(Me.Label1)
-        Me.AcompanharVendaTab.Controls.Add(Me.DateTimePicker1)
-        Me.AcompanharVendaTab.Controls.Add(Me.DataAcompanharVendaLB)
-        Me.AcompanharVendaTab.Controls.Add(Me.PictureBox9)
-        Me.AcompanharVendaTab.Controls.Add(Me.VendedorAcompanharVendaTF)
-        Me.AcompanharVendaTab.Controls.Add(Me.VendedorAcompanharVendaLB)
-        Me.AcompanharVendaTab.Controls.Add(Me.ClienteCNPJCPFAcompanharVendaMT)
-        Me.AcompanharVendaTab.Controls.Add(Me.PictureBox10)
-        Me.AcompanharVendaTab.Controls.Add(Me.ClienteNomeAcompanharVendaTF)
-        Me.AcompanharVendaTab.Controls.Add(Me.ClienteNomeAcompanharVendaLB)
-        Me.AcompanharVendaTab.Controls.Add(Me.ClienteCNPJCPFAcompanharVendaLB)
-        Me.AcompanharVendaTab.Controls.Add(Me.SelecionarPorAcompanharVendaLB)
-        Me.AcompanharVendaTab.Controls.Add(Me.Button1)
-        Me.AcompanharVendaTab.Location = New System.Drawing.Point(4, 22)
-        Me.AcompanharVendaTab.Name = "AcompanharVendaTab"
-        Me.AcompanharVendaTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.AcompanharVendaTab.Size = New System.Drawing.Size(685, 335)
-        Me.AcompanharVendaTab.TabIndex = 6
-        Me.AcompanharVendaTab.Text = "Acompanhar Venda"
-        Me.AcompanharVendaTab.UseVisualStyleBackColor = True
+        Me.AcompanharVendaTP.Controls.Add(Me.AcompanharVendaDG)
+        Me.AcompanharVendaTP.Controls.Add(Me.AteAcompanharVendaDT)
+        Me.AcompanharVendaTP.Controls.Add(Me.Label1)
+        Me.AcompanharVendaTP.Controls.Add(Me.DeAcompanharVendaDT)
+        Me.AcompanharVendaTP.Controls.Add(Me.DataAcompanharVendaLB)
+        Me.AcompanharVendaTP.Controls.Add(Me.PictureBox9)
+        Me.AcompanharVendaTP.Controls.Add(Me.VendedorAcompanharVendaTF)
+        Me.AcompanharVendaTP.Controls.Add(Me.VendedorAcompanharVendaLB)
+        Me.AcompanharVendaTP.Controls.Add(Me.ClienteCNPJCPFAcompanharVendaMT)
+        Me.AcompanharVendaTP.Controls.Add(Me.PictureBox10)
+        Me.AcompanharVendaTP.Controls.Add(Me.ClienteNomeAcompanharVendaTF)
+        Me.AcompanharVendaTP.Controls.Add(Me.ClienteNomeAcompanharVendaLB)
+        Me.AcompanharVendaTP.Controls.Add(Me.ClienteCNPJCPFAcompanharVendaLB)
+        Me.AcompanharVendaTP.Controls.Add(Me.SelecionarPorAcompanharVendaLB)
+        Me.AcompanharVendaTP.Controls.Add(Me.Button1)
+        Me.AcompanharVendaTP.Location = New System.Drawing.Point(4, 22)
+        Me.AcompanharVendaTP.Name = "AcompanharVendaTP"
+        Me.AcompanharVendaTP.Padding = New System.Windows.Forms.Padding(3)
+        Me.AcompanharVendaTP.Size = New System.Drawing.Size(685, 335)
+        Me.AcompanharVendaTP.TabIndex = 6
+        Me.AcompanharVendaTP.Text = "Acompanhar Venda"
+        Me.AcompanharVendaTP.UseVisualStyleBackColor = True
         '
         'AcompanharVendaDG
         '
@@ -798,12 +798,12 @@ Partial Class ControleVendas
         Me.DataGridViewButtonColumn5.Name = "DataGridViewButtonColumn5"
         Me.DataGridViewButtonColumn5.ReadOnly = True
         '
-        'DateTimePicker2
+        'AteAcompanharVendaDT
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(518, 71)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(109, 20)
-        Me.DateTimePicker2.TabIndex = 36
+        Me.AteAcompanharVendaDT.Location = New System.Drawing.Point(518, 71)
+        Me.AteAcompanharVendaDT.Name = "AteAcompanharVendaDT"
+        Me.AteAcompanharVendaDT.Size = New System.Drawing.Size(109, 20)
+        Me.AteAcompanharVendaDT.TabIndex = 36
         '
         'Label1
         '
@@ -814,12 +814,12 @@ Partial Class ControleVendas
         Me.Label1.TabIndex = 35
         Me.Label1.Text = "Até:"
         '
-        'DateTimePicker1
+        'DeAcompanharVendaDT
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(373, 71)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(107, 20)
-        Me.DateTimePicker1.TabIndex = 34
+        Me.DeAcompanharVendaDT.Location = New System.Drawing.Point(373, 71)
+        Me.DeAcompanharVendaDT.Name = "DeAcompanharVendaDT"
+        Me.DeAcompanharVendaDT.Size = New System.Drawing.Size(107, 20)
+        Me.DeAcompanharVendaDT.TabIndex = 34
         '
         'DataAcompanharVendaLB
         '
@@ -918,25 +918,25 @@ Partial Class ControleVendas
         Me.Button1.Text = "Criar nova visita técnica"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'TabPage2
+        'VisualizarInfoVisitaTP
         '
-        Me.TabPage2.Controls.Add(Me.InfoVisitaTecnicaDG)
-        Me.TabPage2.Controls.Add(Me.PictureBox8)
-        Me.TabPage2.Controls.Add(Me.SupervisorVisitaTF)
-        Me.TabPage2.Controls.Add(Me.SupervisorVisitaLB)
-        Me.TabPage2.Controls.Add(Me.ClienteDocumentoVisitaMT)
-        Me.TabPage2.Controls.Add(Me.PictureBox5)
-        Me.TabPage2.Controls.Add(Me.ClienteNomeVisitaTF)
-        Me.TabPage2.Controls.Add(Me.ClienteNomeVisitaLB)
-        Me.TabPage2.Controls.Add(Me.ClienteDocumentoVisitaLB)
-        Me.TabPage2.Controls.Add(Me.SelecionarPorAcompanharVisitaLB)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(685, 335)
-        Me.TabPage2.TabIndex = 5
-        Me.TabPage2.Text = "Visualizar Informações da Visita"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.VisualizarInfoVisitaTP.Controls.Add(Me.InfoVisitaTecnicaDG)
+        Me.VisualizarInfoVisitaTP.Controls.Add(Me.PictureBox8)
+        Me.VisualizarInfoVisitaTP.Controls.Add(Me.SupervisorVisitaTF)
+        Me.VisualizarInfoVisitaTP.Controls.Add(Me.SupervisorVisitaLB)
+        Me.VisualizarInfoVisitaTP.Controls.Add(Me.ClienteDocumentoVisitaMT)
+        Me.VisualizarInfoVisitaTP.Controls.Add(Me.PictureBox5)
+        Me.VisualizarInfoVisitaTP.Controls.Add(Me.ClienteNomeVisitaTF)
+        Me.VisualizarInfoVisitaTP.Controls.Add(Me.ClienteNomeVisitaLB)
+        Me.VisualizarInfoVisitaTP.Controls.Add(Me.ClienteDocumentoVisitaLB)
+        Me.VisualizarInfoVisitaTP.Controls.Add(Me.SelecionarPorAcompanharVisitaLB)
+        Me.VisualizarInfoVisitaTP.Location = New System.Drawing.Point(4, 22)
+        Me.VisualizarInfoVisitaTP.Name = "VisualizarInfoVisitaTP"
+        Me.VisualizarInfoVisitaTP.Padding = New System.Windows.Forms.Padding(3)
+        Me.VisualizarInfoVisitaTP.Size = New System.Drawing.Size(685, 335)
+        Me.VisualizarInfoVisitaTP.TabIndex = 5
+        Me.VisualizarInfoVisitaTP.Text = "Visualizar Informações da Visita"
+        Me.VisualizarInfoVisitaTP.UseVisualStyleBackColor = True
         '
         'InfoVisitaTecnicaDG
         '
@@ -1068,27 +1068,27 @@ Partial Class ControleVendas
         Me.SelecionarPorAcompanharVisitaLB.TabIndex = 0
         Me.SelecionarPorAcompanharVisitaLB.Text = "Selecionar por:"
         '
-        'TabPage6
+        'EnviarProdutoAssistenciaTP
         '
-        Me.TabPage6.Controls.Add(Me.LimparProdutoAssistenciaBT)
-        Me.TabPage6.Controls.Add(Me.EnviarProdutoAssistenciaBT)
-        Me.TabPage6.Controls.Add(Me.PictureBox4)
-        Me.TabPage6.Controls.Add(Me.PictureBox2)
-        Me.TabPage6.Controls.Add(Me.SelecionarAssistenciaTF)
-        Me.TabPage6.Controls.Add(Me.SelecionarProdutoEnvioAssistenciaTF)
-        Me.TabPage6.Controls.Add(Me.ResponsavelEnvioProdutoAssistenciaTF)
-        Me.TabPage6.Controls.Add(Me.DataEnvioProdutoAssistenciaTF)
-        Me.TabPage6.Controls.Add(Me.DataEnvioProdutoAssistenciaLB)
-        Me.TabPage6.Controls.Add(Me.ResponsavelEnvioProdutoAssistenciaLB)
-        Me.TabPage6.Controls.Add(Me.SelecionarAssistenciaLB)
-        Me.TabPage6.Controls.Add(Me.SelecionarProdutoEnvioAssistenciaLB)
-        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage6.Size = New System.Drawing.Size(685, 335)
-        Me.TabPage6.TabIndex = 7
-        Me.TabPage6.Text = "Enviar Produto a Assistência"
-        Me.TabPage6.UseVisualStyleBackColor = True
+        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.LimparProdutoAssistenciaBT)
+        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.EnviarProdutoAssistenciaBT)
+        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.PictureBox4)
+        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.PictureBox2)
+        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.SelecionarAssistenciaTF)
+        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.SelecionarProdutoEnvioAssistenciaTF)
+        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.ResponsavelEnvioProdutoAssistenciaTF)
+        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.DataEnvioProdutoAssistenciaTF)
+        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.DataEnvioProdutoAssistenciaLB)
+        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.ResponsavelEnvioProdutoAssistenciaLB)
+        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.SelecionarAssistenciaLB)
+        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.SelecionarProdutoEnvioAssistenciaLB)
+        Me.EnviarProdutoAssistenciaTP.Location = New System.Drawing.Point(4, 22)
+        Me.EnviarProdutoAssistenciaTP.Name = "EnviarProdutoAssistenciaTP"
+        Me.EnviarProdutoAssistenciaTP.Padding = New System.Windows.Forms.Padding(3)
+        Me.EnviarProdutoAssistenciaTP.Size = New System.Drawing.Size(685, 335)
+        Me.EnviarProdutoAssistenciaTP.TabIndex = 7
+        Me.EnviarProdutoAssistenciaTP.Text = "Enviar Produto a Assistência"
+        Me.EnviarProdutoAssistenciaTP.UseVisualStyleBackColor = True
         '
         'LimparProdutoAssistenciaBT
         '
@@ -1196,20 +1196,20 @@ Partial Class ControleVendas
         Me.SelecionarProdutoEnvioAssistenciaLB.TabIndex = 0
         Me.SelecionarProdutoEnvioAssistenciaLB.Text = "Selecione o Produto:"
         '
-        'TabPage5
+        'ExtrairRelatoriosVendasTP
         '
-        Me.TabPage5.Controls.Add(Me.FimDT)
-        Me.TabPage5.Controls.Add(Me.InicioDT)
-        Me.TabPage5.Controls.Add(Me.DeLB)
-        Me.TabPage5.Controls.Add(Me.AteLB)
-        Me.TabPage5.Controls.Add(Me.GerarRelatorioVendaBT)
-        Me.TabPage5.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(685, 335)
-        Me.TabPage5.TabIndex = 4
-        Me.TabPage5.Text = "Extrair Relatórios de Vendas"
-        Me.TabPage5.UseVisualStyleBackColor = True
+        Me.ExtrairRelatoriosVendasTP.Controls.Add(Me.FimDT)
+        Me.ExtrairRelatoriosVendasTP.Controls.Add(Me.InicioDT)
+        Me.ExtrairRelatoriosVendasTP.Controls.Add(Me.DeLB)
+        Me.ExtrairRelatoriosVendasTP.Controls.Add(Me.AteLB)
+        Me.ExtrairRelatoriosVendasTP.Controls.Add(Me.GerarRelatorioVendaBT)
+        Me.ExtrairRelatoriosVendasTP.Location = New System.Drawing.Point(4, 22)
+        Me.ExtrairRelatoriosVendasTP.Name = "ExtrairRelatoriosVendasTP"
+        Me.ExtrairRelatoriosVendasTP.Padding = New System.Windows.Forms.Padding(3)
+        Me.ExtrairRelatoriosVendasTP.Size = New System.Drawing.Size(685, 335)
+        Me.ExtrairRelatoriosVendasTP.TabIndex = 4
+        Me.ExtrairRelatoriosVendasTP.Text = "Extrair Relatórios de Vendas"
+        Me.ExtrairRelatoriosVendasTP.UseVisualStyleBackColor = True
         '
         'FimDT
         '
@@ -1505,8 +1505,8 @@ Partial Class ControleVendas
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
+        Me.CriarNovoOrcamentoTP.ResumeLayout(False)
+        Me.CriarNovoOrcamentoTP.PerformLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClienteIMG, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConfirmaProdutoIMG, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1514,30 +1514,30 @@ Partial Class ControleVendas
         CType(Me.ProdutosDT, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProdutoOrcamentoIMG, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage4.ResumeLayout(False)
-        Me.TabPage4.PerformLayout()
+        Me.AcompanharOrcamentosTP.ResumeLayout(False)
+        Me.AcompanharOrcamentosTP.PerformLayout()
         Me.SelecionarOrcamentoPorGB.ResumeLayout(False)
         Me.SelecionarOrcamentoPorGB.PerformLayout()
         CType(Me.EnderecosDG, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage3.ResumeLayout(False)
+        Me.VendarEmAndamentoTP.ResumeLayout(False)
         CType(Me.VendasAndamentoDG, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.AcompanharVendaTab.ResumeLayout(False)
-        Me.AcompanharVendaTab.PerformLayout()
+        Me.AcompanharVendaTP.ResumeLayout(False)
+        Me.AcompanharVendaTP.PerformLayout()
         CType(Me.AcompanharVendaDG, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
+        Me.VisualizarInfoVisitaTP.ResumeLayout(False)
+        Me.VisualizarInfoVisitaTP.PerformLayout()
         CType(Me.InfoVisitaTecnicaDG, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage6.ResumeLayout(False)
-        Me.TabPage6.PerformLayout()
+        Me.EnviarProdutoAssistenciaTP.ResumeLayout(False)
+        Me.EnviarProdutoAssistenciaTP.PerformLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage5.ResumeLayout(False)
-        Me.TabPage5.PerformLayout()
+        Me.ExtrairRelatoriosVendasTP.ResumeLayout(False)
+        Me.ExtrairRelatoriosVendasTP.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -1548,7 +1548,7 @@ Partial Class ControleVendas
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
-    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
+    Friend WithEvents CriarNovoOrcamentoTP As System.Windows.Forms.TabPage
     Friend WithEvents FinalizarBT As System.Windows.Forms.Button
     Friend WithEvents PictureBox6 As System.Windows.Forms.PictureBox
     Friend WithEvents ClienteIMG As System.Windows.Forms.PictureBox
@@ -1564,9 +1564,9 @@ Partial Class ControleVendas
     Friend WithEvents ProdutoOrcamentoIMG As System.Windows.Forms.PictureBox
     Friend WithEvents SelecionarProdutoNovoOrcamentoTF As System.Windows.Forms.TextBox
     Friend WithEvents SelecionarProdutoNovoOrcamentoLB As System.Windows.Forms.Label
-    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
+    Friend WithEvents VendarEmAndamentoTP As System.Windows.Forms.TabPage
     Friend WithEvents VendasAndamentoDG As System.Windows.Forms.DataGridView
-    Friend WithEvents TabPage5 As System.Windows.Forms.TabPage
+    Friend WithEvents ExtrairRelatoriosVendasTP As System.Windows.Forms.TabPage
     Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -1575,9 +1575,9 @@ Partial Class ControleVendas
     Friend WithEvents NotaFiscal As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents VerProd As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents VerPgto As System.Windows.Forms.DataGridViewButtonColumn
-    Friend WithEvents AcompanharVendaTab As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage6 As System.Windows.Forms.TabPage
+    Friend WithEvents AcompanharVendaTP As System.Windows.Forms.TabPage
+    Friend WithEvents VisualizarInfoVisitaTP As System.Windows.Forms.TabPage
+    Friend WithEvents EnviarProdutoAssistenciaTP As System.Windows.Forms.TabPage
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents OpcoesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SairToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -1624,7 +1624,7 @@ Partial Class ControleVendas
     Friend WithEvents Quantidade As DataGridViewTextBoxColumn
     Friend WithEvents PrecoTotal As DataGridViewTextBoxColumn
     Friend WithEvents Remover As DataGridViewButtonColumn
-    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents AcompanharOrcamentosTP As TabPage
     Friend WithEvents SelecionarOrcamentoPorGB As GroupBox
     Friend WithEvents AcomapanharOrcamentoTF As TextBox
     Friend WithEvents VendedorAcomapanharOrcamentoRB As RadioButton
@@ -1692,8 +1692,8 @@ Partial Class ControleVendas
     Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewButtonColumn4 As DataGridViewButtonColumn
     Friend WithEvents DataGridViewButtonColumn5 As DataGridViewButtonColumn
-    Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents AteAcompanharVendaDT As DateTimePicker
     Friend WithEvents Label1 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents DeAcompanharVendaDT As DateTimePicker
     Friend WithEvents DataAcompanharVendaLB As Label
 End Class

@@ -19,7 +19,7 @@ Partial Class LoginUsuario
     Friend WithEvents PasswordLabel As System.Windows.Forms.Label
     Friend WithEvents UserTF As System.Windows.Forms.TextBox
     Friend WithEvents PasswordTF As System.Windows.Forms.TextBox
-    Friend WithEvents OK As System.Windows.Forms.Button
+    Friend WithEvents LogarBT As System.Windows.Forms.Button
 
     'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
@@ -34,13 +34,13 @@ Partial Class LoginUsuario
         Me.PasswordLabel = New System.Windows.Forms.Label()
         Me.UserTF = New System.Windows.Forms.TextBox()
         Me.PasswordTF = New System.Windows.Forms.TextBox()
-        Me.OK = New System.Windows.Forms.Button()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
+        Me.LogarBT = New System.Windows.Forms.Button()
+        Me.AlterarSenhaLL = New System.Windows.Forms.LinkLabel()
+        Me.EsqueciSenhaLL = New System.Windows.Forms.LinkLabel()
         Me.SaidaRB = New System.Windows.Forms.RadioButton()
         Me.EntradaRB = New System.Windows.Forms.RadioButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.RegistrarPontoBT = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -90,33 +90,33 @@ Partial Class LoginUsuario
         Me.PasswordTF.Size = New System.Drawing.Size(253, 20)
         Me.PasswordTF.TabIndex = 3
         '
-        'OK
+        'LogarBT
         '
-        Me.OK.Location = New System.Drawing.Point(133, 306)
-        Me.OK.Name = "OK"
-        Me.OK.Size = New System.Drawing.Size(94, 23)
-        Me.OK.TabIndex = 4
-        Me.OK.Text = "Logar"
+        Me.LogarBT.Location = New System.Drawing.Point(133, 306)
+        Me.LogarBT.Name = "LogarBT"
+        Me.LogarBT.Size = New System.Drawing.Size(94, 23)
+        Me.LogarBT.TabIndex = 4
+        Me.LogarBT.Text = "Logar"
         '
-        'LinkLabel1
+        'AlterarSenhaLL
         '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(93, 203)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(71, 13)
-        Me.LinkLabel1.TabIndex = 6
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Alterar Senha"
+        Me.AlterarSenhaLL.AutoSize = True
+        Me.AlterarSenhaLL.Location = New System.Drawing.Point(93, 203)
+        Me.AlterarSenhaLL.Name = "AlterarSenhaLL"
+        Me.AlterarSenhaLL.Size = New System.Drawing.Size(71, 13)
+        Me.AlterarSenhaLL.TabIndex = 6
+        Me.AlterarSenhaLL.TabStop = True
+        Me.AlterarSenhaLL.Text = "Alterar Senha"
         '
-        'LinkLabel2
+        'EsqueciSenhaLL
         '
-        Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Location = New System.Drawing.Point(181, 203)
-        Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New System.Drawing.Size(88, 13)
-        Me.LinkLabel2.TabIndex = 7
-        Me.LinkLabel2.TabStop = True
-        Me.LinkLabel2.Text = "Esqueci a Senha"
+        Me.EsqueciSenhaLL.AutoSize = True
+        Me.EsqueciSenhaLL.Location = New System.Drawing.Point(181, 203)
+        Me.EsqueciSenhaLL.Name = "EsqueciSenhaLL"
+        Me.EsqueciSenhaLL.Size = New System.Drawing.Size(88, 13)
+        Me.EsqueciSenhaLL.TabIndex = 7
+        Me.EsqueciSenhaLL.TabStop = True
+        Me.EsqueciSenhaLL.Text = "Esqueci a Senha"
         '
         'SaidaRB
         '
@@ -142,7 +142,7 @@ Partial Class LoginUsuario
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.RegistrarPontoBT)
         Me.GroupBox1.Controls.Add(Me.EntradaRB)
         Me.GroupBox1.Controls.Add(Me.SaidaRB)
         Me.GroupBox1.Location = New System.Drawing.Point(38, 235)
@@ -152,13 +152,13 @@ Partial Class LoginUsuario
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Registro de Ponto"
         '
-        'Button1
+        'RegistrarPontoBT
         '
-        Me.Button1.Location = New System.Drawing.Point(179, 17)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(94, 23)
-        Me.Button1.TabIndex = 13
-        Me.Button1.Text = "Registrar"
+        Me.RegistrarPontoBT.Location = New System.Drawing.Point(179, 17)
+        Me.RegistrarPontoBT.Name = "RegistrarPontoBT"
+        Me.RegistrarPontoBT.Size = New System.Drawing.Size(94, 23)
+        Me.RegistrarPontoBT.TabIndex = 13
+        Me.RegistrarPontoBT.Text = "Registrar"
         '
         'Label1
         '
@@ -189,7 +189,7 @@ Partial Class LoginUsuario
         '
         'LoginUsuario
         '
-        Me.AcceptButton = Me.OK
+        Me.AcceptButton = Me.LogarBT
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(361, 385)
@@ -197,9 +197,9 @@ Partial Class LoginUsuario
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.LinkLabel2)
-        Me.Controls.Add(Me.LinkLabel1)
-        Me.Controls.Add(Me.OK)
+        Me.Controls.Add(Me.EsqueciSenhaLL)
+        Me.Controls.Add(Me.AlterarSenhaLL)
+        Me.Controls.Add(Me.LogarBT)
         Me.Controls.Add(Me.PasswordTF)
         Me.Controls.Add(Me.UserTF)
         Me.Controls.Add(Me.PasswordLabel)
@@ -220,13 +220,13 @@ Partial Class LoginUsuario
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
-    Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
+    Friend WithEvents AlterarSenhaLL As System.Windows.Forms.LinkLabel
+    Friend WithEvents EsqueciSenhaLL As System.Windows.Forms.LinkLabel
     Friend WithEvents SaidaRB As System.Windows.Forms.RadioButton
     Friend WithEvents EntradaRB As System.Windows.Forms.RadioButton
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents RegistrarPontoBT As System.Windows.Forms.Button
     Friend WithEvents Label3 As Label
 End Class

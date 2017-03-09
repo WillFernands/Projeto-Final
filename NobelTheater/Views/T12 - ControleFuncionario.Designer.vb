@@ -29,7 +29,7 @@ Partial Class ControleFuncionario
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.NovoFuncionarioTP = New System.Windows.Forms.TabPage()
         Me.LimparNovoFuncionarioBT = New System.Windows.Forms.Button()
         Me.SalvarNovoFuncionarioBT = New System.Windows.Forms.Button()
         Me.DadosProfNovoFuncionarioGB = New System.Windows.Forms.GroupBox()
@@ -128,7 +128,7 @@ Partial Class ControleFuncionario
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
+        Me.NovoFuncionarioTP.SuspendLayout()
         Me.DadosProfNovoFuncionarioGB.SuspendLayout()
         CType(Me.SupervisorIMG, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DadosPessoaisNovoFuncionarioGB.SuspendLayout()
@@ -196,7 +196,7 @@ Partial Class ControleFuncionario
         '
         'TabControl1
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.NovoFuncionarioTP)
         Me.TabControl1.Controls.Add(Me.AcompanharFuncionarioTP)
         Me.TabControl1.Location = New System.Drawing.Point(9, 10)
         Me.TabControl1.Name = "TabControl1"
@@ -204,30 +204,30 @@ Partial Class ControleFuncionario
         Me.TabControl1.Size = New System.Drawing.Size(693, 361)
         Me.TabControl1.TabIndex = 0
         '
-        'TabPage1
+        'NovoFuncionarioTP
         '
-        Me.TabPage1.Controls.Add(Me.LimparNovoFuncionarioBT)
-        Me.TabPage1.Controls.Add(Me.SalvarNovoFuncionarioBT)
-        Me.TabPage1.Controls.Add(Me.DadosProfNovoFuncionarioGB)
-        Me.TabPage1.Controls.Add(Me.CidadeNovoFuncionarioTF)
-        Me.TabPage1.Controls.Add(Me.TipoEnderecoNovoFuncionarioCB)
-        Me.TabPage1.Controls.Add(Me.TipoEnderecoNovoFuncionarioLB)
-        Me.TabPage1.Controls.Add(Me.NumeroNovoFuncionarioTF)
-        Me.TabPage1.Controls.Add(Me.LogradouroNovoFuncionarioTF)
-        Me.TabPage1.Controls.Add(Me.LogradouroNovoFuncionarioLB)
-        Me.TabPage1.Controls.Add(Me.TelefoneNovoFuncionarioTF)
-        Me.TabPage1.Controls.Add(Me.TelefoneNovoFuncionarioLB)
-        Me.TabPage1.Controls.Add(Me.CPFNovoFuncionarioTF)
-        Me.TabPage1.Controls.Add(Me.NomeNovoFuncionarioTF)
-        Me.TabPage1.Controls.Add(Me.NomeNovoFuncionarioLB)
-        Me.TabPage1.Controls.Add(Me.DadosPessoaisNovoFuncionarioGB)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(685, 335)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Novo Funcionário"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.NovoFuncionarioTP.Controls.Add(Me.LimparNovoFuncionarioBT)
+        Me.NovoFuncionarioTP.Controls.Add(Me.SalvarNovoFuncionarioBT)
+        Me.NovoFuncionarioTP.Controls.Add(Me.DadosProfNovoFuncionarioGB)
+        Me.NovoFuncionarioTP.Controls.Add(Me.CidadeNovoFuncionarioTF)
+        Me.NovoFuncionarioTP.Controls.Add(Me.TipoEnderecoNovoFuncionarioCB)
+        Me.NovoFuncionarioTP.Controls.Add(Me.TipoEnderecoNovoFuncionarioLB)
+        Me.NovoFuncionarioTP.Controls.Add(Me.NumeroNovoFuncionarioTF)
+        Me.NovoFuncionarioTP.Controls.Add(Me.LogradouroNovoFuncionarioTF)
+        Me.NovoFuncionarioTP.Controls.Add(Me.LogradouroNovoFuncionarioLB)
+        Me.NovoFuncionarioTP.Controls.Add(Me.TelefoneNovoFuncionarioTF)
+        Me.NovoFuncionarioTP.Controls.Add(Me.TelefoneNovoFuncionarioLB)
+        Me.NovoFuncionarioTP.Controls.Add(Me.CPFNovoFuncionarioTF)
+        Me.NovoFuncionarioTP.Controls.Add(Me.NomeNovoFuncionarioTF)
+        Me.NovoFuncionarioTP.Controls.Add(Me.NomeNovoFuncionarioLB)
+        Me.NovoFuncionarioTP.Controls.Add(Me.DadosPessoaisNovoFuncionarioGB)
+        Me.NovoFuncionarioTP.Location = New System.Drawing.Point(4, 22)
+        Me.NovoFuncionarioTP.Name = "NovoFuncionarioTP"
+        Me.NovoFuncionarioTP.Padding = New System.Windows.Forms.Padding(3)
+        Me.NovoFuncionarioTP.Size = New System.Drawing.Size(685, 335)
+        Me.NovoFuncionarioTP.TabIndex = 0
+        Me.NovoFuncionarioTP.Text = "Novo Funcionário"
+        Me.NovoFuncionarioTP.UseVisualStyleBackColor = True
         '
         'LimparNovoFuncionarioBT
         '
@@ -311,9 +311,9 @@ Partial Class ControleFuncionario
         'PerfilNovoFuncionarioCB
         '
         Me.PerfilNovoFuncionarioCB.FormattingEnabled = True
-        Me.PerfilNovoFuncionarioCB.Location = New System.Drawing.Point(389, 25)
+        Me.PerfilNovoFuncionarioCB.Location = New System.Drawing.Point(419, 25)
         Me.PerfilNovoFuncionarioCB.Name = "PerfilNovoFuncionarioCB"
-        Me.PerfilNovoFuncionarioCB.Size = New System.Drawing.Size(281, 21)
+        Me.PerfilNovoFuncionarioCB.Size = New System.Drawing.Size(251, 21)
         Me.PerfilNovoFuncionarioCB.TabIndex = 12
         '
         'PerfilNovoFuncionarioLB
@@ -512,7 +512,7 @@ Partial Class ControleFuncionario
         Me.EstadoNovoFuncionarioCB.FormattingEnabled = True
         Me.EstadoNovoFuncionarioCB.Location = New System.Drawing.Point(513, 119)
         Me.EstadoNovoFuncionarioCB.Name = "EstadoNovoFuncionarioCB"
-        Me.EstadoNovoFuncionarioCB.Size = New System.Drawing.Size(150, 21)
+        Me.EstadoNovoFuncionarioCB.Size = New System.Drawing.Size(157, 21)
         Me.EstadoNovoFuncionarioCB.TabIndex = 9
         '
         'CEPNovoFuncionarioTF
@@ -958,8 +958,8 @@ Partial Class ControleFuncionario
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
+        Me.NovoFuncionarioTP.ResumeLayout(False)
+        Me.NovoFuncionarioTP.PerformLayout()
         Me.DadosProfNovoFuncionarioGB.ResumeLayout(False)
         Me.DadosProfNovoFuncionarioGB.PerformLayout()
         CType(Me.SupervisorIMG, System.ComponentModel.ISupportInitialize).EndInit()
@@ -977,7 +977,7 @@ Partial Class ControleFuncionario
     End Sub
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
-    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
+    Friend WithEvents NovoFuncionarioTP As System.Windows.Forms.TabPage
     Friend WithEvents AcompanharFuncionarioTP As System.Windows.Forms.TabPage
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents OpcoesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
