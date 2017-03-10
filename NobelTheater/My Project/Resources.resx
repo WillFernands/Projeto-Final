@@ -118,35 +118,35 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="client" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\client.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Busca" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Busca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="access_control" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\access control.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Adicionar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Adicionar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sales" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sales.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="balancodecaixa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\balancodecaixa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Busca" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Busca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="camblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\camblue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="suplier" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\suplier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="client" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\client.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Confirmar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Confirmar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="warehouseicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\warehouseicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="construction_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\construction-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="access_control" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\access control.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="employee" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\employee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gerente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gerente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,46 +154,16 @@
   <data name="Nobel_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Nobel Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="employee" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\employee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sales" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sales.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Clock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Clock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="suplier" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\suplier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warehouseicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warehouseicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="web_cam_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\web-cam_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="construction_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\construction-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ControleDeAcessosMain" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ControleDeAcessosMain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ControleDeClientesMain" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\..\..\..\Downloads\png\Usefull\ControleDeClientesMain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ControleDeEstoqueMain" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\..\..\..\Downloads\png\Usefull\ControleDeEstoqueMain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ControleDeFornecedorMain" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\..\..\..\Downloads\png\Usefull\ControleDeFornecedorMain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ControleDeFuncionariosMain" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\..\..\..\Downloads\png\Usefull\ControleDeFuncionariosMain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ControleDeVendasMain" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\..\..\..\Downloads\png\Usefull\ControleDeVendasMain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HistoricoDePontoMain" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\..\..\..\Downloads\png\Usefull\HistoricoDePontoMain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MonitoramentoDeAmbienteMain" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\..\..\..\Downloads\png\Usefull\MonitoramentoDeAmbienteMain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ParecerDaObraMain" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\..\..\..\Downloads\png\Usefull\ParecerDaObraMain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BalancoDeCaixaMain" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\..\..\..\Downloads\png\Usefull\BalancoDeCaixa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
