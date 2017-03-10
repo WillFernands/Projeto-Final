@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -176,11 +176,6 @@
     <Compile Include="Models\Salario.vb" />
     <Compile Include="Models\SolicitacaoEmprestimo.vb" />
     <Compile Include="Models\VisitaTecnica.vb" />
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Views\T16 - BuscaFornecedor.Designer.vb">
       <DependentUpon>T16 - BuscaFornecedor.vb</DependentUpon>
     </Compile>
@@ -366,7 +361,6 @@
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\T15 - BuscaFuncionario.resx">
       <DependentUpon>T15 - BuscaFuncionario.vb</DependentUpon>
@@ -404,6 +398,18 @@
       <DependentUpon>NobelTheater.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\BalancoDeCaixaMain.png" />
+    <Content Include="Resources\Bitmap1.bmp" />
+    <Content Include="Resources\ControleDeClientesMain.png" />
+    <Content Include="Resources\ControleDeEstoqueMain.png" />
+    <Content Include="Resources\ControleDeFornecedorMain.png" />
+    <Content Include="Resources\ControleDeFuncionariosMain.png" />
+    <Content Include="Resources\ControleDeVendasMain.png" />
+    <Content Include="Resources\HistoricoDePontoMain.png" />
+    <Content Include="Resources\MonitoramentoDeAmbienteMain.png" />
+    <Content Include="Resources\ParecerDaObraMain.png" />
+    <None Include="Resources\ControleDeEstoque.png" />
+    <None Include="Resources\ControleDeAcessosMain.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

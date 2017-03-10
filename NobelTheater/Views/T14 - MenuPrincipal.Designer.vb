@@ -26,26 +26,37 @@ Partial Class MenuPrincipal
         Me.PerfilTF = New System.Windows.Forms.Label()
         Me.MatriculaTF = New System.Windows.Forms.Label()
         Me.NomeTF = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ParecerPanel = New System.Windows.Forms.Panel()
+        Me.ParecerIMG = New System.Windows.Forms.PictureBox()
         Me.ParecerLB = New System.Windows.Forms.Label()
         Me.FuncionariosPanel = New System.Windows.Forms.Panel()
+        Me.FuncionariosIMG = New System.Windows.Forms.PictureBox()
         Me.FuncionariosLB = New System.Windows.Forms.Label()
         Me.PontoPanel = New System.Windows.Forms.Panel()
+        Me.PontoIMG = New System.Windows.Forms.PictureBox()
         Me.PontoLB = New System.Windows.Forms.Label()
         Me.AcessosPanel = New System.Windows.Forms.Panel()
+        Me.AcessosIMG = New System.Windows.Forms.PictureBox()
         Me.AcessosLB = New System.Windows.Forms.Label()
         Me.ClientesPanel = New System.Windows.Forms.Panel()
+        Me.ClientesIMG = New System.Windows.Forms.PictureBox()
         Me.ClientesLB = New System.Windows.Forms.Label()
         Me.VendasPanel = New System.Windows.Forms.Panel()
+        Me.VendasIMG = New System.Windows.Forms.PictureBox()
         Me.VendasLB = New System.Windows.Forms.Label()
         Me.FornecedoresPanel = New System.Windows.Forms.Panel()
+        Me.FornecedoresIMG = New System.Windows.Forms.PictureBox()
         Me.FornecedoresLB = New System.Windows.Forms.Label()
         Me.CaixaPanel = New System.Windows.Forms.Panel()
+        Me.CaixaIMG = New System.Windows.Forms.PictureBox()
         Me.CaixaLB = New System.Windows.Forms.Label()
         Me.MonitoramentoPanel = New System.Windows.Forms.Panel()
+        Me.MonitoramentoIMG = New System.Windows.Forms.PictureBox()
         Me.MonitoramentoLB = New System.Windows.Forms.Label()
         Me.EstoquePanel = New System.Windows.Forms.Panel()
+        Me.EstoqueIMG = New System.Windows.Forms.PictureBox()
         Me.EstoqueLB = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.OpcoesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -83,41 +94,30 @@ Partial Class MenuPrincipal
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.ParecerIMG = New System.Windows.Forms.PictureBox()
-        Me.FuncionariosIMG = New System.Windows.Forms.PictureBox()
-        Me.PontoIMG = New System.Windows.Forms.PictureBox()
-        Me.AcessosIMG = New System.Windows.Forms.PictureBox()
-        Me.ClientesIMG = New System.Windows.Forms.PictureBox()
-        Me.VendasIMG = New System.Windows.Forms.PictureBox()
-        Me.FornecedoresIMG = New System.Windows.Forms.PictureBox()
-        Me.CaixaIMG = New System.Windows.Forms.PictureBox()
-        Me.MonitoramentoIMG = New System.Windows.Forms.PictureBox()
-        Me.EstoqueIMG = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.ParecerPanel.SuspendLayout()
-        Me.FuncionariosPanel.SuspendLayout()
-        Me.PontoPanel.SuspendLayout()
-        Me.AcessosPanel.SuspendLayout()
-        Me.ClientesPanel.SuspendLayout()
-        Me.VendasPanel.SuspendLayout()
-        Me.FornecedoresPanel.SuspendLayout()
-        Me.CaixaPanel.SuspendLayout()
-        Me.MonitoramentoPanel.SuspendLayout()
-        Me.EstoquePanel.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ParecerIMG, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FuncionariosPanel.SuspendLayout()
         CType(Me.FuncionariosIMG, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PontoPanel.SuspendLayout()
         CType(Me.PontoIMG, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.AcessosPanel.SuspendLayout()
         CType(Me.AcessosIMG, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ClientesPanel.SuspendLayout()
         CType(Me.ClientesIMG, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.VendasPanel.SuspendLayout()
         CType(Me.VendasIMG, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FornecedoresPanel.SuspendLayout()
         CType(Me.FornecedoresIMG, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CaixaPanel.SuspendLayout()
         CType(Me.CaixaIMG, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MonitoramentoPanel.SuspendLayout()
         CType(Me.MonitoramentoIMG, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.EstoquePanel.SuspendLayout()
         CType(Me.EstoqueIMG, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -158,6 +158,15 @@ Partial Class MenuPrincipal
         Me.NomeTF.TabIndex = 1
         Me.NomeTF.Text = "Nome:"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(116, 100)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.ParecerPanel)
@@ -186,6 +195,16 @@ Partial Class MenuPrincipal
         Me.ParecerPanel.Size = New System.Drawing.Size(80, 90)
         Me.ParecerPanel.TabIndex = 1
         '
+        'ParecerIMG
+        '
+        Me.ParecerIMG.Image = Global.NobelTheater.My.Resources.Resources.ParecerDaObraMain
+        Me.ParecerIMG.Location = New System.Drawing.Point(17, 31)
+        Me.ParecerIMG.Name = "ParecerIMG"
+        Me.ParecerIMG.Size = New System.Drawing.Size(45, 45)
+        Me.ParecerIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ParecerIMG.TabIndex = 1
+        Me.ParecerIMG.TabStop = False
+        '
         'ParecerLB
         '
         Me.ParecerLB.AutoSize = True
@@ -207,6 +226,15 @@ Partial Class MenuPrincipal
         Me.FuncionariosPanel.Name = "FuncionariosPanel"
         Me.FuncionariosPanel.Size = New System.Drawing.Size(80, 90)
         Me.FuncionariosPanel.TabIndex = 0
+        '
+        'FuncionariosIMG
+        '
+        Me.FuncionariosIMG.Location = New System.Drawing.Point(17, 31)
+        Me.FuncionariosIMG.Name = "FuncionariosIMG"
+        Me.FuncionariosIMG.Size = New System.Drawing.Size(45, 45)
+        Me.FuncionariosIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.FuncionariosIMG.TabIndex = 1
+        Me.FuncionariosIMG.TabStop = False
         '
         'FuncionariosLB
         '
@@ -230,6 +258,15 @@ Partial Class MenuPrincipal
         Me.PontoPanel.Size = New System.Drawing.Size(80, 90)
         Me.PontoPanel.TabIndex = 2
         '
+        'PontoIMG
+        '
+        Me.PontoIMG.Location = New System.Drawing.Point(17, 31)
+        Me.PontoIMG.Name = "PontoIMG"
+        Me.PontoIMG.Size = New System.Drawing.Size(45, 45)
+        Me.PontoIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PontoIMG.TabIndex = 1
+        Me.PontoIMG.TabStop = False
+        '
         'PontoLB
         '
         Me.PontoLB.AutoSize = True
@@ -251,6 +288,15 @@ Partial Class MenuPrincipal
         Me.AcessosPanel.Name = "AcessosPanel"
         Me.AcessosPanel.Size = New System.Drawing.Size(80, 90)
         Me.AcessosPanel.TabIndex = 0
+        '
+        'AcessosIMG
+        '
+        Me.AcessosIMG.Location = New System.Drawing.Point(17, 31)
+        Me.AcessosIMG.Name = "AcessosIMG"
+        Me.AcessosIMG.Size = New System.Drawing.Size(45, 45)
+        Me.AcessosIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.AcessosIMG.TabIndex = 1
+        Me.AcessosIMG.TabStop = False
         '
         'AcessosLB
         '
@@ -274,6 +320,15 @@ Partial Class MenuPrincipal
         Me.ClientesPanel.Size = New System.Drawing.Size(80, 90)
         Me.ClientesPanel.TabIndex = 1
         '
+        'ClientesIMG
+        '
+        Me.ClientesIMG.Location = New System.Drawing.Point(17, 31)
+        Me.ClientesIMG.Name = "ClientesIMG"
+        Me.ClientesIMG.Size = New System.Drawing.Size(45, 45)
+        Me.ClientesIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ClientesIMG.TabIndex = 1
+        Me.ClientesIMG.TabStop = False
+        '
         'ClientesLB
         '
         Me.ClientesLB.AutoSize = True
@@ -295,6 +350,15 @@ Partial Class MenuPrincipal
         Me.VendasPanel.Name = "VendasPanel"
         Me.VendasPanel.Size = New System.Drawing.Size(80, 90)
         Me.VendasPanel.TabIndex = 0
+        '
+        'VendasIMG
+        '
+        Me.VendasIMG.Location = New System.Drawing.Point(17, 31)
+        Me.VendasIMG.Name = "VendasIMG"
+        Me.VendasIMG.Size = New System.Drawing.Size(45, 45)
+        Me.VendasIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.VendasIMG.TabIndex = 1
+        Me.VendasIMG.TabStop = False
         '
         'VendasLB
         '
@@ -318,6 +382,15 @@ Partial Class MenuPrincipal
         Me.FornecedoresPanel.Size = New System.Drawing.Size(80, 90)
         Me.FornecedoresPanel.TabIndex = 3
         '
+        'FornecedoresIMG
+        '
+        Me.FornecedoresIMG.Location = New System.Drawing.Point(17, 31)
+        Me.FornecedoresIMG.Name = "FornecedoresIMG"
+        Me.FornecedoresIMG.Size = New System.Drawing.Size(45, 45)
+        Me.FornecedoresIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.FornecedoresIMG.TabIndex = 1
+        Me.FornecedoresIMG.TabStop = False
+        '
         'FornecedoresLB
         '
         Me.FornecedoresLB.AutoSize = True
@@ -340,6 +413,15 @@ Partial Class MenuPrincipal
         Me.CaixaPanel.Size = New System.Drawing.Size(80, 90)
         Me.CaixaPanel.TabIndex = 2
         '
+        'CaixaIMG
+        '
+        Me.CaixaIMG.Location = New System.Drawing.Point(17, 31)
+        Me.CaixaIMG.Name = "CaixaIMG"
+        Me.CaixaIMG.Size = New System.Drawing.Size(45, 45)
+        Me.CaixaIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.CaixaIMG.TabIndex = 1
+        Me.CaixaIMG.TabStop = False
+        '
         'CaixaLB
         '
         Me.CaixaLB.AutoSize = True
@@ -361,6 +443,16 @@ Partial Class MenuPrincipal
         Me.MonitoramentoPanel.Size = New System.Drawing.Size(80, 90)
         Me.MonitoramentoPanel.TabIndex = 1
         '
+        'MonitoramentoIMG
+        '
+        Me.MonitoramentoIMG.Image = Global.NobelTheater.My.Resources.Resources.MonitoramentoDeAmbienteMain
+        Me.MonitoramentoIMG.Location = New System.Drawing.Point(17, 31)
+        Me.MonitoramentoIMG.Name = "MonitoramentoIMG"
+        Me.MonitoramentoIMG.Size = New System.Drawing.Size(45, 45)
+        Me.MonitoramentoIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.MonitoramentoIMG.TabIndex = 1
+        Me.MonitoramentoIMG.TabStop = False
+        '
         'MonitoramentoLB
         '
         Me.MonitoramentoLB.AutoSize = True
@@ -381,6 +473,15 @@ Partial Class MenuPrincipal
         Me.EstoquePanel.Name = "EstoquePanel"
         Me.EstoquePanel.Size = New System.Drawing.Size(80, 90)
         Me.EstoquePanel.TabIndex = 0
+        '
+        'EstoqueIMG
+        '
+        Me.EstoqueIMG.Location = New System.Drawing.Point(17, 31)
+        Me.EstoqueIMG.Name = "EstoqueIMG"
+        Me.EstoqueIMG.Size = New System.Drawing.Size(45, 45)
+        Me.EstoqueIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.EstoqueIMG.TabIndex = 1
+        Me.EstoqueIMG.TabStop = False
         '
         'EstoqueLB
         '
@@ -622,105 +723,6 @@ Partial Class MenuPrincipal
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(116, 100)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'ParecerIMG
-        '
-        Me.ParecerIMG.Location = New System.Drawing.Point(17, 31)
-        Me.ParecerIMG.Name = "ParecerIMG"
-        Me.ParecerIMG.Size = New System.Drawing.Size(45, 45)
-        Me.ParecerIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ParecerIMG.TabIndex = 1
-        Me.ParecerIMG.TabStop = False
-        '
-        'FuncionariosIMG
-        '
-        Me.FuncionariosIMG.Location = New System.Drawing.Point(17, 31)
-        Me.FuncionariosIMG.Name = "FuncionariosIMG"
-        Me.FuncionariosIMG.Size = New System.Drawing.Size(45, 45)
-        Me.FuncionariosIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.FuncionariosIMG.TabIndex = 1
-        Me.FuncionariosIMG.TabStop = False
-        '
-        'PontoIMG
-        '
-        Me.PontoIMG.Location = New System.Drawing.Point(17, 31)
-        Me.PontoIMG.Name = "PontoIMG"
-        Me.PontoIMG.Size = New System.Drawing.Size(45, 45)
-        Me.PontoIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PontoIMG.TabIndex = 1
-        Me.PontoIMG.TabStop = False
-        '
-        'AcessosIMG
-        '
-        Me.AcessosIMG.Location = New System.Drawing.Point(17, 31)
-        Me.AcessosIMG.Name = "AcessosIMG"
-        Me.AcessosIMG.Size = New System.Drawing.Size(45, 45)
-        Me.AcessosIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.AcessosIMG.TabIndex = 1
-        Me.AcessosIMG.TabStop = False
-        '
-        'ClientesIMG
-        '
-        Me.ClientesIMG.Location = New System.Drawing.Point(17, 31)
-        Me.ClientesIMG.Name = "ClientesIMG"
-        Me.ClientesIMG.Size = New System.Drawing.Size(45, 45)
-        Me.ClientesIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ClientesIMG.TabIndex = 1
-        Me.ClientesIMG.TabStop = False
-        '
-        'VendasIMG
-        '
-        Me.VendasIMG.Location = New System.Drawing.Point(17, 31)
-        Me.VendasIMG.Name = "VendasIMG"
-        Me.VendasIMG.Size = New System.Drawing.Size(45, 45)
-        Me.VendasIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.VendasIMG.TabIndex = 1
-        Me.VendasIMG.TabStop = False
-        '
-        'FornecedoresIMG
-        '
-        Me.FornecedoresIMG.Location = New System.Drawing.Point(17, 31)
-        Me.FornecedoresIMG.Name = "FornecedoresIMG"
-        Me.FornecedoresIMG.Size = New System.Drawing.Size(45, 45)
-        Me.FornecedoresIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.FornecedoresIMG.TabIndex = 1
-        Me.FornecedoresIMG.TabStop = False
-        '
-        'CaixaIMG
-        '
-        Me.CaixaIMG.Location = New System.Drawing.Point(17, 31)
-        Me.CaixaIMG.Name = "CaixaIMG"
-        Me.CaixaIMG.Size = New System.Drawing.Size(45, 45)
-        Me.CaixaIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.CaixaIMG.TabIndex = 1
-        Me.CaixaIMG.TabStop = False
-        '
-        'MonitoramentoIMG
-        '
-        Me.MonitoramentoIMG.Location = New System.Drawing.Point(17, 31)
-        Me.MonitoramentoIMG.Name = "MonitoramentoIMG"
-        Me.MonitoramentoIMG.Size = New System.Drawing.Size(45, 45)
-        Me.MonitoramentoIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.MonitoramentoIMG.TabIndex = 1
-        Me.MonitoramentoIMG.TabStop = False
-        '
-        'EstoqueIMG
-        '
-        Me.EstoqueIMG.Location = New System.Drawing.Point(17, 31)
-        Me.EstoqueIMG.Name = "EstoqueIMG"
-        Me.EstoqueIMG.Size = New System.Drawing.Size(45, 45)
-        Me.EstoqueIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.EstoqueIMG.TabIndex = 1
-        Me.EstoqueIMG.TabStop = False
-        '
         'MenuPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -734,40 +736,40 @@ Partial Class MenuPrincipal
         Me.Text = "Menu Principal"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.ParecerPanel.ResumeLayout(False)
         Me.ParecerPanel.PerformLayout()
+        CType(Me.ParecerIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FuncionariosPanel.ResumeLayout(False)
         Me.FuncionariosPanel.PerformLayout()
+        CType(Me.FuncionariosIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PontoPanel.ResumeLayout(False)
         Me.PontoPanel.PerformLayout()
+        CType(Me.PontoIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.AcessosPanel.ResumeLayout(False)
         Me.AcessosPanel.PerformLayout()
+        CType(Me.AcessosIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ClientesPanel.ResumeLayout(False)
         Me.ClientesPanel.PerformLayout()
+        CType(Me.ClientesIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.VendasPanel.ResumeLayout(False)
         Me.VendasPanel.PerformLayout()
+        CType(Me.VendasIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FornecedoresPanel.ResumeLayout(False)
         Me.FornecedoresPanel.PerformLayout()
+        CType(Me.FornecedoresIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CaixaPanel.ResumeLayout(False)
         Me.CaixaPanel.PerformLayout()
+        CType(Me.CaixaIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MonitoramentoPanel.ResumeLayout(False)
         Me.MonitoramentoPanel.PerformLayout()
+        CType(Me.MonitoramentoIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.EstoquePanel.ResumeLayout(False)
         Me.EstoquePanel.PerformLayout()
+        CType(Me.EstoqueIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ParecerIMG, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FuncionariosIMG, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PontoIMG, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AcessosIMG, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ClientesIMG, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.VendasIMG, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FornecedoresIMG, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CaixaIMG, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MonitoramentoIMG, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EstoqueIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
