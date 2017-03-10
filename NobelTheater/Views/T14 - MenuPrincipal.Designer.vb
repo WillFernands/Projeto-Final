@@ -624,6 +624,7 @@ Partial Class MenuPrincipal
         '
         'PictureBox1
         '
+        Me.PictureBox1.Image = Global.NobelTheater.My.Resources.Resources.gerente
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(116, 100)
@@ -633,6 +634,7 @@ Partial Class MenuPrincipal
         '
         'ParecerIMG
         '
+        Me.ParecerIMG.Image = Global.NobelTheater.My.Resources.Resources.ParecerDaObraMain
         Me.ParecerIMG.Location = New System.Drawing.Point(17, 31)
         Me.ParecerIMG.Name = "ParecerIMG"
         Me.ParecerIMG.Size = New System.Drawing.Size(45, 45)
@@ -642,6 +644,7 @@ Partial Class MenuPrincipal
         '
         'FuncionariosIMG
         '
+        Me.FuncionariosIMG.Image = Global.NobelTheater.My.Resources.Resources.ControleDeFuncionariosMain
         Me.FuncionariosIMG.Location = New System.Drawing.Point(17, 31)
         Me.FuncionariosIMG.Name = "FuncionariosIMG"
         Me.FuncionariosIMG.Size = New System.Drawing.Size(45, 45)
@@ -651,6 +654,7 @@ Partial Class MenuPrincipal
         '
         'PontoIMG
         '
+        Me.PontoIMG.Image = Global.NobelTheater.My.Resources.Resources.HistoricoDePontoMain
         Me.PontoIMG.Location = New System.Drawing.Point(17, 31)
         Me.PontoIMG.Name = "PontoIMG"
         Me.PontoIMG.Size = New System.Drawing.Size(45, 45)
@@ -660,6 +664,7 @@ Partial Class MenuPrincipal
         '
         'AcessosIMG
         '
+        Me.AcessosIMG.Image = Global.NobelTheater.My.Resources.Resources.ControleDeAcessosMain
         Me.AcessosIMG.Location = New System.Drawing.Point(17, 31)
         Me.AcessosIMG.Name = "AcessosIMG"
         Me.AcessosIMG.Size = New System.Drawing.Size(45, 45)
@@ -669,6 +674,7 @@ Partial Class MenuPrincipal
         '
         'ClientesIMG
         '
+        Me.ClientesIMG.Image = Global.NobelTheater.My.Resources.Resources.ControleDeClientesMain
         Me.ClientesIMG.Location = New System.Drawing.Point(17, 31)
         Me.ClientesIMG.Name = "ClientesIMG"
         Me.ClientesIMG.Size = New System.Drawing.Size(45, 45)
@@ -678,6 +684,7 @@ Partial Class MenuPrincipal
         '
         'VendasIMG
         '
+        Me.VendasIMG.Image = Global.NobelTheater.My.Resources.Resources.ControleDeVendasMain
         Me.VendasIMG.Location = New System.Drawing.Point(17, 31)
         Me.VendasIMG.Name = "VendasIMG"
         Me.VendasIMG.Size = New System.Drawing.Size(45, 45)
@@ -687,6 +694,7 @@ Partial Class MenuPrincipal
         '
         'FornecedoresIMG
         '
+        Me.FornecedoresIMG.Image = Global.NobelTheater.My.Resources.Resources.ControleDeFornecedorMain
         Me.FornecedoresIMG.Location = New System.Drawing.Point(17, 31)
         Me.FornecedoresIMG.Name = "FornecedoresIMG"
         Me.FornecedoresIMG.Size = New System.Drawing.Size(45, 45)
@@ -696,6 +704,7 @@ Partial Class MenuPrincipal
         '
         'CaixaIMG
         '
+        Me.CaixaIMG.Image = Global.NobelTheater.My.Resources.Resources.balancodecaixa
         Me.CaixaIMG.Location = New System.Drawing.Point(17, 31)
         Me.CaixaIMG.Name = "CaixaIMG"
         Me.CaixaIMG.Size = New System.Drawing.Size(45, 45)
@@ -705,6 +714,7 @@ Partial Class MenuPrincipal
         '
         'MonitoramentoIMG
         '
+        Me.MonitoramentoIMG.Image = Global.NobelTheater.My.Resources.Resources.MonitoramentoDeAmbienteMain
         Me.MonitoramentoIMG.Location = New System.Drawing.Point(17, 31)
         Me.MonitoramentoIMG.Name = "MonitoramentoIMG"
         Me.MonitoramentoIMG.Size = New System.Drawing.Size(45, 45)
@@ -714,6 +724,7 @@ Partial Class MenuPrincipal
         '
         'EstoqueIMG
         '
+        Me.EstoqueIMG.Image = Global.NobelTheater.My.Resources.Resources.ControleDeEstoqueMain
         Me.EstoqueIMG.Location = New System.Drawing.Point(17, 31)
         Me.EstoqueIMG.Name = "EstoqueIMG"
         Me.EstoqueIMG.Size = New System.Drawing.Size(45, 45)

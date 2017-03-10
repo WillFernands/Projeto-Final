@@ -404,6 +404,17 @@
       <DependentUpon>NobelTheater.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\ParecerDaObraMain.png" />
+    <None Include="Resources\MonitoramentoDeAmbienteMain.png" />
+    <None Include="Resources\HistoricoDePontoMain.png" />
+    <None Include="Resources\ControleDeVendasMain.png" />
+    <None Include="Resources\ControleDeFuncionariosMain.png" />
+    <None Include="Resources\ControleDeFornecedorMain.png" />
+    <None Include="Resources\ControleDeEstoqueMain.png" />
+    <None Include="Resources\ControleDeClientesMain.png" />
+    <None Include="Resources\ControleDeAcessosMain.png" />
+    <None Include="Resources\BalancoDeCaixaMain2.png" />
+    <None Include="Resources\BalancoDeCaixa.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
@@ -448,9 +459,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\access control.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\balancodecaixa.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\camblue.png" />
