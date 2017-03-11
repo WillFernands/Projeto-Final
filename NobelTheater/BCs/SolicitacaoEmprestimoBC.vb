@@ -25,11 +25,11 @@ Public Class SolicitacaoEmprestimoBC
         Return True
     End Function
 
-    Public Shared Function Insert(solicitacaoEmprestimo As SolicitacaoEmprestimo) As Boolean
+    Public Shared Function Insert(solicitacaoEmprestimo As SolicitacaoEmprestimo) As Long
         If (SolicitacaoEmprestimoBC.Validate(solicitacaoEmprestimo)) Then
             Return solicitacaoEmprestimoDAO.Insert(solicitacaoEmprestimo)
         End If
-        Return False
+        Return 0
     End Function
 
     Public Shared Function UpdateStatus(solicitacaoEmprestimo As SolicitacaoEmprestimo) As Boolean

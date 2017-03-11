@@ -4,9 +4,12 @@
     Private produtoAtual As Produto
     Private produtoAlertaAtual As Produto
     Private produtoCotacaoAtual As Produto
+    Private produtoEmprestimoAtual As Produto
     Private itensCotados As New List(Of ItemCotado)
+    Private itensEmprestimos As New List(Of ItemEmprestimo)
     Private cotacaoAtual As Cotacao
     Private compraAtual As NotaFiscalCompra
+    Private clienteAtual As Cliente
 
     Private Sub ControleEstoque_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         NomeTF.Text = "Nome: " & MenuPrincipal.funcionarioLogado.Nome
@@ -42,6 +45,12 @@
         produtoCotacaoAtual = produto
         ProdutoAcompanharCotacaoTF.Text = produtoCotacaoAtual.Nome
         CodigoProdutoAcompanharCotacaoTF.Text = produtoCotacaoAtual.Codigo
+    End Sub
+
+    Public Sub PopulateProdutoEmprestimo(produto As Produto)
+        produtoEmprestimoAtual = produto
+        NomeProdutoEmprestarProdutoTF.Text = produtoEmprestimoAtual.Nome
+        CodigoProdutoEmprestarProdutoTF.Text = produtoEmprestimoAtual.Codigo
     End Sub
 
     Private Sub ProdutoIMG_Click(sender As Object, e As EventArgs) Handles ProdutoCotacaoIMG.Click
@@ -380,5 +389,97 @@
         Dim busca As New BuscaProduto()
         busca.Caller = "ControleEstoqueProdutoCotacao"
         busca.Show()
+    End Sub
+
+    Private Sub PictureBox12_Click(sender As Object, e As EventArgs) Handles BuscarClienteEmprestarProdutoIMG.Click
+        Dim busca As New BuscaCliente()
+        busca.Caller = "ControleEstoqueEmprestarProduto"
+        busca.Show()
+    End Sub
+
+    Public Sub PopulateClienteEmprestarProduto(cliente As ClientePF)
+        clienteAtual = cliente
+        ClienteEmprestarProdutoTF.Text = cliente.CPF & " - " & cliente.Nome
+    End Sub
+
+    Public Sub PopulateClienteEmprestarProduto(cliente As ClientePJ)
+        clienteAtual = cliente
+        ClienteEmprestarProdutoTF.Text = cliente.CNPJ & " - " & cliente.Nome
+    End Sub
+
+    Private Sub BuscarProdutoEmprestarProdutoIMG_Click(sender As Object, e As EventArgs) Handles BuscarProdutoEmprestarProdutoIMG.Click
+        Dim busca As New BuscaProduto()
+        busca.Caller = "ControleEstoqueEmprestarProduto"
+        busca.Show()
+    End Sub
+
+    Private Sub ConfirmarProdutoEmprestarProdutoIMG_Click(sender As Object, e As EventArgs) Handles ConfirmarProdutoEmprestarProdutoIMG.Click
+        Dim item As New ItemEmprestimo(produtoEmprestimoAtual, QtdeEmprestarProdutoTF.Value, Now)
+        Dim itemInserido As ItemEmprestimo = itensEmprestimos.Find(Function(itemEmprestimo As ItemEmprestimo) itemEmprestimo.Produto.Codigo = item.Produto.Codigo)
+        If (itemInserido Is Nothing) Then
+            itensEmprestimos.Add(item)
+            RefreshDTEmprestimos()
+            produtoEmprestimoAtual = Nothing
+            QtdeEmprestarProdutoTF.Value = 1
+            CodigoProdutoEmprestarProdutoTF.Text = ""
+            NomeProdutoEmprestarProdutoTF.Text = ""
+        End If
+    End Sub
+
+    Private Sub RefreshDTEmprestimos()
+        ProdutosEmprestimoDT.Rows.Clear()
+
+        For Each item As ItemEmprestimo In itensEmprestimos
+            Dim list As New List(Of Object)
+            list.Add(item.Produto.Codigo) : list.Add(item.Produto.Nome) : list.Add(item.Quantidade) : list.Add("Remover Produto")
+            ProdutosEmprestimoDT.Rows.Add(list.ToArray())
+        Next
+
+        ProdutosEmprestimoDT.Sort(ProdutosEmprestimoDT.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
+    End Sub
+
+    Private Sub ProdutosEmprestimoDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ProdutosEmprestimoDT.CellContentClick
+        If (ProdutosEmprestimoDT.SelectedCells Is Nothing) Then Exit Sub
+
+        If (ProdutosEmprestimoDT.SelectedCells.Item(0).Value = "Remover Produto" AndAlso e.ColumnIndex = 3) Then
+            Dim item As ItemEmprestimo = itensEmprestimos.Find(Function(itemEmprestimo As ItemEmprestimo) itemEmprestimo.Produto.Codigo = ProdutosEmprestimoDT.Item(0, e.RowIndex).Value)
+            itensEmprestimos.Remove(item)
+            RefreshDTEmprestimos()
+            Exit Sub
+        End If
+    End Sub
+
+    Private Sub FinalizarEmprestimoBT_Click(sender As Object, e As EventArgs) Handles FinalizarEmprestimoBT.Click
+        If (String.IsNullOrWhiteSpace(ClienteEmprestarProdutoTF.Text) OrElse clienteAtual Is Nothing) Then
+            MsgBox("Cliente não selecionado", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (itensEmprestimos Is Nothing OrElse itensEmprestimos.Count = 0) Then
+            MsgBox("Solicitação sem produtos", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        End If
+
+        Dim solicitacao As New SolicitacaoEmprestimo(Now, clienteAtual, itensEmprestimos)
+        solicitacao.Id = SolicitacaoEmprestimoBC.Insert(solicitacao)
+
+        If (solicitacao.Id = 0) Then
+            MsgBox("Um problema ocorreu durante a criação da solicitação", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        End If
+
+        For Each item As ItemEmprestimo In solicitacao.ItensEmprestimo
+            item.SolicitacaoEmprestimo = solicitacao
+
+            If (ItemEmprestimoBC.Insert(item) = False) Then
+                MsgBox("Um problema ocorreu durante a criação de um item do empréstimo", vbInformation Or vbMsgBoxSetForeground)
+                Exit Sub
+            End If
+        Next
+
+        MsgBox("Solicitação Criada com sucesso !!", vbInformation Or vbMsgBoxSetForeground)
+        clienteAtual = Nothing
+        ClienteEmprestarProdutoTF.Text = ""
+        produtoEmprestimoAtual = Nothing
+        itensEmprestimos = New List(Of ItemEmprestimo)
+        ProdutosEmprestimoDT.Rows.Clear()
     End Sub
 End Class

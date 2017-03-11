@@ -283,7 +283,7 @@ Public Module SQLTableManager
         strSQL.Append("id BIGINT PRIMARY KEY IDENTITY Not NULL, ")
         strSQL.Append("dataSolicitacao DATETIME NOT NULL, ")
         strSQL.Append("idCliente BIGINT Not NULL, ")
-        strSQL.Append("statusSolicitacao VARCHAR(20) NOT NULL, ")
+        strSQL.Append("statusSolicitacao VARCHAR(50) NOT NULL, ")
         strSQL.Append("CONSTRAINT SolicitacoesEmprestimos_FK FOREIGN KEY (idCliente) REFERENCES Clientes (id))")
 
         Return conn.ExecuteCommand(strSQL.ToString)

@@ -13,12 +13,11 @@ Public Class SolicitacaoEmprestimo
 
     End Sub
 
-    Public Sub New(id As Long, dataSolicitacao As Date, cliente As Cliente, status As String)
-        _id = id
+    Public Sub New(dataSolicitacao As Date, cliente As Cliente, itens As List(Of ItemEmprestimo))
         _dataSolicitacao = dataSolicitacao
         _cliente = cliente
-        _status = status
-        _itensEmprestimo = New List(Of ItemEmprestimo)
+        _status = StatusEmprestimo.Solicitado
+        _itensEmprestimo = itens
     End Sub
 
     Public Property Id As Long

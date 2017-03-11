@@ -7,7 +7,6 @@ Public Class ItemEmprestimoBC
 
     Public Shared Function Validate(itemEmprestimo As ItemEmprestimo) As Boolean
         If (itemEmprestimo Is Nothing) Then Return False
-        If (itemEmprestimo.SolicitacaoEmprestimo Is Nothing) Then Return False
         If (itemEmprestimo.Quantidade = 0) Then Return False
         If (itemEmprestimo.DataEmprestimo = Nothing) Then Return False
         If (itemEmprestimo.DataEmprestimo > Now) Then Return False

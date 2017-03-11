@@ -6,7 +6,7 @@ Imports System.Text
 Public Class SolicitacaoEmprestimoDAO
 
     'OK
-    Public Function Insert(ByVal solicitacao As SolicitacaoEmprestimo) As Boolean
+    Public Function Insert(ByVal solicitacao As SolicitacaoEmprestimo) As Long
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -17,7 +17,10 @@ Public Class SolicitacaoEmprestimoDAO
         conn.AddParameter("@idCliente", solicitacao.Cliente.ID)
         conn.AddParameter("@status", solicitacao.Status)
 
-        Return conn.ExecuteCommand(strSQL.ToString)
+        If (conn.ExecuteCommand(strSQL.ToString) = False) Then Return 0
+
+        conn = New Connection
+        Return CLng(conn.ExecuteScalar("SELECT IDENT_CURRENT('SolicitacoesEmprestimos')"))
 
     End Function
 

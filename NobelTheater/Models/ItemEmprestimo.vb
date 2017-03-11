@@ -9,12 +9,10 @@ Public NotInheritable Class ItemEmprestimo
     Private _dataEmprestimo As Date
     Private _dataDevolucao As Date
 
-    Public Sub New(produto As Produto, solicitacaoEmprestimo As SolicitacaoEmprestimo, quantidade As Integer, DataEmprestimo As Date, DataDevolucao As Date)
+    Public Sub New(produto As Produto, quantidade As Integer, DataEmprestimo As Date)
         _produto = produto
-        Me.SolicitacaoEmprestimo = solicitacaoEmprestimo
         _quantidade = quantidade
         _dataEmprestimo = DataEmprestimo
-        _dataDevolucao = DataDevolucao
     End Sub
 
     Public Sub New()

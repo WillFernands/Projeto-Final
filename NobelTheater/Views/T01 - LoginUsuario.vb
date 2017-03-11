@@ -41,6 +41,10 @@
         'SQLTableManager.CreateSalarios()
         'SQLTableManager.DropItensComprados()
         'SQLTableManager.CreateItensComprados()
+        'SQLTableManager.DropSolicitacoesEmprestimos()
+        'SQLTableManager.CreateSolicitacoesEmprestimos()
+        'SQLTableManager.DropItensEmprestimos()
+        'SQLTableManager.CreateItensEmprestimos()
     End Sub
 
     Private Sub OK_Click(sender As Object, e As EventArgs) Handles LogarBT.Click

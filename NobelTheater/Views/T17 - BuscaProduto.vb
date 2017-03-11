@@ -38,6 +38,9 @@
         ElseIf (Caller = "ControleEstoqueProdutoCotacao") Then
             ControleEstoque.PopulateProdutoCotacao(produto)
             Me.Close()
+        ElseIf (Caller = "ControleEstoqueEmprestarProduto") Then
+            ControleEstoque.PopulateProdutoEmprestimo(produto)
+            Me.Close()
         End If
 
     End Sub
