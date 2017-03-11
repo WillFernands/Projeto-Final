@@ -171,6 +171,10 @@
         End If
     End Sub
 
+    Private Sub ComprasAndamentoTab_GotFocus(sender As Object, e As EventArgs) Handles ComprasAndamentoTab.Enter
+        RefreshDTCompras()
+    End Sub
+
     Private Sub CotacoesAndamentoTab_GotFocus(sender As Object, e As EventArgs) Handles CotacoesAndamentoTab.Enter
         RefreshDTCotacoes()
     End Sub
@@ -183,7 +187,16 @@
             list.Add(cotacao.ID) : list.Add(cotacao.DataCotacao) : list.Add(cotacao.Status) : list.Add(cotacao.Fornecedor.Cnpj & " - " & cotacao.Fornecedor.NomeFantasia) : list.Add("Ver Produtos")
             CotacoesDT.Rows.Add(list.ToArray())
         Next
+    End Sub
 
+    Private Sub RefreshDTCompras()
+        ComprasDT.Rows.Clear()
+
+        For Each compra As NotaFiscalCompra In NotaFiscalCompraBC.FindAll()
+            Dim list As New List(Of Object)
+            list.Add(compra.Cotacao.DataCotacao) : list.Add(compra.Status) : list.Add(compra.DataAprovacao) : list.Add(compra.Cotacao.Fornecedor.Cnpj & " - " & compra.Cotacao.Fornecedor.NomeFantasia) : list.Add(compra.NumeroNF) : list.Add("Ver Produtos") : list.Add("Ver Pagamentos")
+            ComprasDT.Rows.Add(list.ToArray())
+        Next
     End Sub
 
     Private Sub CotacoesDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles CotacoesDT.CellContentClick

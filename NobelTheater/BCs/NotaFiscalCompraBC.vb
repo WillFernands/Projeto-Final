@@ -49,7 +49,7 @@ Public Class NotaFiscalCompraBC
         Return notaFiscalCompraDAO.FindByID(id)
     End Function
 
-    Public Shared Function FindByAll() As List(Of NotaFiscalCompra)
+    Public Shared Function FindAll() As List(Of NotaFiscalCompra)
         Return notaFiscalCompraDAO.FindAll()
     End Function
 

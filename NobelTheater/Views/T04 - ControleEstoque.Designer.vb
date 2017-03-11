@@ -96,16 +96,8 @@ Partial Class ControleEstoque
         Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewButtonColumn2 = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataUltPgto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fornecedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NotaFiscal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.VerProd = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.VerPgto = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.ComprasAndamentoTab = New System.Windows.Forms.TabPage()
+        Me.ComprasDT = New System.Windows.Forms.DataGridView()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.DataGridView4 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -205,6 +197,13 @@ Partial Class ControleEstoque
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fornecedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NotaFiscal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.VerProd = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.VerPgto = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -229,8 +228,8 @@ Partial Class ControleEstoque
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProdutosAcompanharCotacaoDT, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage3.SuspendLayout()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ComprasAndamentoTab.SuspendLayout()
+        CType(Me.ComprasDT, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage7.SuspendLayout()
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -309,7 +308,7 @@ Partial Class ControleEstoque
         Me.ControleEstoqueTab.Controls.Add(Me.TabPage2)
         Me.ControleEstoqueTab.Controls.Add(Me.CotacoesAndamentoTab)
         Me.ControleEstoqueTab.Controls.Add(Me.AcompanharCotacaoTab)
-        Me.ControleEstoqueTab.Controls.Add(Me.TabPage3)
+        Me.ControleEstoqueTab.Controls.Add(Me.ComprasAndamentoTab)
         Me.ControleEstoqueTab.Controls.Add(Me.TabPage7)
         Me.ControleEstoqueTab.Controls.Add(Me.TabPage8)
         Me.ControleEstoqueTab.Controls.Add(Me.TabPage4)
@@ -934,84 +933,30 @@ Partial Class ControleEstoque
         Me.DataGridViewButtonColumn2.Name = "DataGridViewButtonColumn2"
         Me.DataGridViewButtonColumn2.ReadOnly = True
         '
-        'TabPage3
+        'ComprasAndamentoTab
         '
-        Me.TabPage3.Controls.Add(Me.DataGridView3)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(685, 335)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Compras em Andamento"
-        Me.TabPage3.UseVisualStyleBackColor = True
+        Me.ComprasAndamentoTab.Controls.Add(Me.ComprasDT)
+        Me.ComprasAndamentoTab.Location = New System.Drawing.Point(4, 22)
+        Me.ComprasAndamentoTab.Name = "ComprasAndamentoTab"
+        Me.ComprasAndamentoTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.ComprasAndamentoTab.Size = New System.Drawing.Size(685, 335)
+        Me.ComprasAndamentoTab.TabIndex = 2
+        Me.ComprasAndamentoTab.Text = "Compras em Andamento"
+        Me.ComprasAndamentoTab.UseVisualStyleBackColor = True
         '
-        'DataGridView3
+        'ComprasDT
         '
-        Me.DataGridView3.AllowUserToAddRows = False
-        Me.DataGridView3.AllowUserToDeleteRows = False
-        Me.DataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataUltPgto, Me.Fornecedor, Me.NotaFiscal, Me.VerProd, Me.VerPgto})
-        Me.DataGridView3.Location = New System.Drawing.Point(6, 6)
-        Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.ReadOnly = True
-        Me.DataGridView3.RowHeadersVisible = False
-        Me.DataGridView3.Size = New System.Drawing.Size(673, 323)
-        Me.DataGridView3.TabIndex = 21
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Data da Cotação"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        Me.DataGridViewTextBoxColumn6.Width = 75
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Status da Compra"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.ReadOnly = True
-        Me.DataGridViewTextBoxColumn7.Width = 75
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Data Aprovação"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.ReadOnly = True
-        Me.DataGridViewTextBoxColumn8.Width = 75
-        '
-        'DataUltPgto
-        '
-        Me.DataUltPgto.HeaderText = "Data Ult. Pgto"
-        Me.DataUltPgto.Name = "DataUltPgto"
-        Me.DataUltPgto.ReadOnly = True
-        Me.DataUltPgto.Width = 75
-        '
-        'Fornecedor
-        '
-        Me.Fornecedor.HeaderText = "Fornecedor"
-        Me.Fornecedor.Name = "Fornecedor"
-        Me.Fornecedor.ReadOnly = True
-        Me.Fornecedor.Width = 75
-        '
-        'NotaFiscal
-        '
-        Me.NotaFiscal.HeaderText = "NotaFiscal"
-        Me.NotaFiscal.Name = "NotaFiscal"
-        Me.NotaFiscal.ReadOnly = True
-        Me.NotaFiscal.Width = 75
-        '
-        'VerProd
-        '
-        Me.VerProd.HeaderText = "Ver Produtos"
-        Me.VerProd.Name = "VerProd"
-        Me.VerProd.ReadOnly = True
-        '
-        'VerPgto
-        '
-        Me.VerPgto.HeaderText = "Ver Pagamentos"
-        Me.VerPgto.Name = "VerPgto"
-        Me.VerPgto.ReadOnly = True
+        Me.ComprasDT.AllowUserToAddRows = False
+        Me.ComprasDT.AllowUserToDeleteRows = False
+        Me.ComprasDT.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ComprasDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ComprasDT.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.Fornecedor, Me.NotaFiscal, Me.VerProd, Me.VerPgto})
+        Me.ComprasDT.Location = New System.Drawing.Point(6, 6)
+        Me.ComprasDT.Name = "ComprasDT"
+        Me.ComprasDT.ReadOnly = True
+        Me.ComprasDT.RowHeadersVisible = False
+        Me.ComprasDT.Size = New System.Drawing.Size(673, 323)
+        Me.ComprasDT.TabIndex = 21
         '
         'TabPage7
         '
@@ -1812,6 +1757,53 @@ Partial Class ControleEstoque
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Data da Cotação"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        Me.DataGridViewTextBoxColumn6.Width = 75
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Status da Compra"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
+        Me.DataGridViewTextBoxColumn7.Width = 75
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Data Aprovação"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.ReadOnly = True
+        Me.DataGridViewTextBoxColumn8.Width = 75
+        '
+        'Fornecedor
+        '
+        Me.Fornecedor.HeaderText = "Fornecedor"
+        Me.Fornecedor.Name = "Fornecedor"
+        Me.Fornecedor.ReadOnly = True
+        Me.Fornecedor.Width = 75
+        '
+        'NotaFiscal
+        '
+        Me.NotaFiscal.HeaderText = "NotaFiscal"
+        Me.NotaFiscal.Name = "NotaFiscal"
+        Me.NotaFiscal.ReadOnly = True
+        Me.NotaFiscal.Width = 75
+        '
+        'VerProd
+        '
+        Me.VerProd.HeaderText = "Ver Produtos"
+        Me.VerProd.Name = "VerProd"
+        Me.VerProd.ReadOnly = True
+        '
+        'VerPgto
+        '
+        Me.VerPgto.HeaderText = "Ver Pagamentos"
+        Me.VerPgto.Name = "VerPgto"
+        Me.VerPgto.ReadOnly = True
+        '
         'ControleEstoque
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1852,8 +1844,8 @@ Partial Class ControleEstoque
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProdutosAcompanharCotacaoDT, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage3.ResumeLayout(False)
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ComprasAndamentoTab.ResumeLayout(False)
+        CType(Me.ComprasDT, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage7.ResumeLayout(False)
         Me.TabPage7.PerformLayout()
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1903,16 +1895,8 @@ Partial Class ControleEstoque
     Friend WithEvents ProdutoAlertaIMG As System.Windows.Forms.PictureBox
     Friend WithEvents ProdutoAlertaTF As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
-    Friend WithEvents DataGridView3 As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataUltPgto As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Fornecedor As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents NotaFiscal As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents VerProd As System.Windows.Forms.DataGridViewButtonColumn
-    Friend WithEvents VerPgto As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents ComprasAndamentoTab As System.Windows.Forms.TabPage
+    Friend WithEvents ComprasDT As System.Windows.Forms.DataGridView
     Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage5 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage6 As System.Windows.Forms.TabPage
@@ -2059,4 +2043,11 @@ Partial Class ControleEstoque
     Friend WithEvents EmprestarEmprestarProdutoBT As Button
     Friend WithEvents FornecedorIMG As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents Fornecedor As DataGridViewTextBoxColumn
+    Friend WithEvents NotaFiscal As DataGridViewTextBoxColumn
+    Friend WithEvents VerProd As DataGridViewButtonColumn
+    Friend WithEvents VerPgto As DataGridViewButtonColumn
 End Class
