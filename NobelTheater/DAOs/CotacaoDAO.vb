@@ -30,7 +30,7 @@ Public Class CotacaoDAO
         Dim strSQL As New StringBuilder
 
         strSQL.Append("UPDATE Cotacoes ")
-        strSQL.Append("SET status = @status ")
+        strSQL.Append("SET statusCotacao = @status ")
         strSQL.Append("WHERE id = @id;")
 
         conn.AddParameter("@status", cotacao.Status)

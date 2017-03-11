@@ -35,6 +35,9 @@
         ElseIf (Caller = "ControleVendaOrcamento") Then
             ControleVendas.PopulateProduto(produto)
             Me.Close()
+        ElseIf (Caller = "ControleEstoqueProdutoCotacao") Then
+            ControleEstoque.PopulateProdutoCotacao(produto)
+            Me.Close()
         End If
 
     End Sub

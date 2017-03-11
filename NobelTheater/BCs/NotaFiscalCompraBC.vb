@@ -20,30 +20,22 @@ Public Class NotaFiscalCompraBC
 
         If (CotacaoBC.Validate(notaFiscalCompra.Cotacao) = False) Then Return False
 
-        If (notaFiscalCompra.Items Is Nothing) Then Return False
-        If (notaFiscalCompra.Items.Count = 0) Then Return False
-
         For Each item As ItemComprado In notaFiscalCompra.Items
             If (ItemCompradoBC.Validate(item) = False) Then Return False
         Next
 
-        If (notaFiscalCompra.Pagamentos IsNot Nothing) Then
-            For Each item As PagamentoEfetuado In notaFiscalCompra.Pagamentos
-                If (PagamentoEfetuadoBC.Validate(item) = False) Then Return False
-            Next
-
-        End If
-
-
+        For Each item As PagamentoEfetuado In notaFiscalCompra.Pagamentos
+            If (PagamentoEfetuadoBC.Validate(item) = False) Then Return False
+        Next
 
         Return True
     End Function
 
-    Public Shared Function Insert(notaFiscalCompra As NotaFiscalCompra) As Boolean
+    Public Shared Function Insert(notaFiscalCompra As NotaFiscalCompra) As Long
         If (NotaFiscalCompraBC.Validate(notaFiscalCompra)) Then
             Return notaFiscalCompraDAO.Insert(notaFiscalCompra)
         End If
-        Return False
+        Return 0
     End Function
 
     Public Shared Function UpdateStatus(notaFiscalCompra As NotaFiscalCompra) As Boolean

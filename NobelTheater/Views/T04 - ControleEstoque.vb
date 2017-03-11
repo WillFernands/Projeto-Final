@@ -3,8 +3,10 @@
     Private fornecedorAtual As Fornecedor
     Private produtoAtual As Produto
     Private produtoAlertaAtual As Produto
+    Private produtoCotacaoAtual As Produto
     Private itensCotados As New List(Of ItemCotado)
     Private cotacaoAtual As Cotacao
+    Private compraAtual As NotaFiscalCompra
 
     Private Sub ControleEstoque_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         NomeTF.Text = "Nome: " & MenuPrincipal.funcionarioLogado.Nome
@@ -34,6 +36,12 @@
     Public Sub PopulateProdutoAlerta(produto As Produto)
         produtoAlertaAtual = produto
         ProdutoAlertaTF.Text = produtoAlertaAtual.Codigo & " - " & produtoAlertaAtual.Nome
+    End Sub
+
+    Public Sub PopulateProdutoCotacao(produto As Produto)
+        produtoCotacaoAtual = produto
+        ProdutoAcompanharCotacaoTF.Text = produtoCotacaoAtual.Nome
+        CodigoProdutoAcompanharCotacaoTF.Text = produtoCotacaoAtual.Codigo
     End Sub
 
     Private Sub ProdutoIMG_Click(sender As Object, e As EventArgs) Handles ProdutoCotacaoIMG.Click
@@ -191,7 +199,7 @@
                 ClearAcompanharCotacao()
                 cotacaoAtual = CotacaoBC.FindByID(CotacoesDT.Item(0, e.RowIndex).Value)
                 PopulateAcompanharCotacao()
-                TabControl1.SelectTab(3)
+                ControleEstoqueTab.SelectTab(3)
             End If
         End If
     End Sub
@@ -223,7 +231,7 @@
         ProdutosAcompanharCotacaoDT.Sort(ProdutosAcompanharCotacaoDT.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
     End Sub
 
-    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click, PictureBox2.Click
+    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
         ControleFornecedor.Show()
     End Sub
 
@@ -252,12 +260,6 @@
         End If
     End Sub
 
-    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
-        Dim busca As New BuscaFornecedor()
-        busca.Caller = "ControleEstoqueAcompanharCotacao"
-        busca.Show()
-    End Sub
-
     Private Sub PopulateFornecedorCotacao(forn As Fornecedor)
         cotacaoAtual.Fornecedor = forn
         FornecedorAcompanharCotacaoTF.Text = cotacaoAtual.Fornecedor.Cnpj & " - " & cotacaoAtual.Fornecedor.NomeFantasia
@@ -272,5 +274,98 @@
             RefreshDTProdutosAcompanharCotacao()
             Exit Sub
         End If
+    End Sub
+
+    Private Sub ConfimarProdutoAcompanharCotacaoTF_Click(sender As Object, e As EventArgs) Handles ConfimarProdutoAcompanharCotacaoTF.Click
+        Dim item As New ItemCotado(QtdeProdutoAcompanharCotacaoTF.Value, produtoCotacaoAtual)
+        Dim itemInserido As ItemCotado = cotacaoAtual.Itens.Find(Function(itemCotado As ItemCotado) itemCotado.Produto.Codigo = item.Produto.Codigo)
+        If (itemInserido Is Nothing) Then
+            cotacaoAtual.Itens.Add(item)
+            RefreshDTProdutosAcompanharCotacao()
+            produtoCotacaoAtual = Nothing
+            QtdeProdutoAcompanharCotacaoTF.Value = 1
+            CodigoProdutoAcompanharCotacaoTF.Text = ""
+            ProdutoAcompanharCotacaoTF.Text = ""
+        End If
+    End Sub
+
+    Private Sub PictureBox8_Click(sender As Object, e As EventArgs)
+        Dim busca As New BuscaProduto()
+        busca.Caller = "ControleEstoqueProdutoCotacao"
+        busca.Show()
+    End Sub
+
+    Private Sub SalvarBT_Click(sender As Object, e As EventArgs) Handles SalvarBT.Click
+        cotacaoAtual.Status = StatusCotacaoCB.Text
+        If (cotacaoAtual.Itens Is Nothing OrElse cotacaoAtual.Itens.Count = 0) Then
+            MsgBox("Cotação sem produtos", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (cotacaoAtual.Status = StatusCotacao.Aprovada) Then
+            If (MsgBox("Ao aprovar a cotação, uma nota fiscal de compra será criada, deseja prosseguir ?", vbYesNo Or vbInformation Or vbMsgBoxSetForeground) = vbYes) Then
+                If (NumeroNFCotacaoTF.Text = "") Then
+                    MsgBox("Numero da NF não preenchida", vbInformation Or vbMsgBoxSetForeground)
+                    Exit Sub
+                ElseIf (DataEmissaoNFCotacaoTF.Text = "") Then
+                    MsgBox("Data de emissão da NF não preenchida", vbInformation Or vbMsgBoxSetForeground)
+                    Exit Sub
+                End If
+            Else Exit Sub
+            End If
+        End If
+
+        ItemCotadoBC.DeleteByCotacao(cotacaoAtual)
+
+        CotacaoBC.UpdateStatus(cotacaoAtual)
+
+        For Each item As ItemCotado In cotacaoAtual.Itens
+            item.Cotacao = cotacaoAtual
+
+            If (ItemCotadoBC.Insert(item) = False) Then
+                MsgBox("Um problema ocorreu durante a criação de um item cotado", vbInformation Or vbMsgBoxSetForeground)
+                Exit Sub
+            End If
+        Next
+
+
+
+        If (cotacaoAtual.Status = StatusCotacao.Aprovada) Then
+            Dim nfCompra As New NotaFiscalCompra(StatusCompra.APagar, Now, NumeroNFCotacaoTF.Text, DataEmissaoNFCotacaoTF.Text, cotacaoAtual)
+            nfCompra.ID = NotaFiscalCompraBC.Insert(nfCompra)
+
+            For Each item As ItemCotado In cotacaoAtual.Itens
+                Dim itemComprado As New ItemComprado(item.Produto, nfCompra, item.Quantidade)
+                nfCompra.Items.Add(itemComprado)
+            Next
+
+            For Each item As ItemComprado In nfCompra.Items
+                ItemCompradoBC.Insert(item)
+            Next
+
+            cotacaoAtual = Nothing
+            FornecedorAcompanharCotacaoTF.Text = ""
+            ProdutoAcompanharCotacaoTF.Text = ""
+            CodigoProdutoAcompanharCotacaoTF.Text = ""
+            QtdeProdutoAcompanharCotacaoTF.Value = 1
+            StatusCotacaoCB.Text = ""
+            NumeroNFCotacaoTF.Text = ""
+            DataEmissaoNFCotacaoTF.Text = ""
+            ProdutosAcompanharCotacaoDT.Rows.Clear()
+
+            MsgBox("Cotação Atualizada com sucesso. Uma nota fiscal foi aberta a partir dessa cotação, você será redirecionado a tela de Acompanhar Compra.", vbInformation Or vbMsgBoxSetForeground)
+
+            compraAtual = nfCompra
+
+            ControleEstoqueTab.SelectTab(5)
+
+            'Aguardar a criação dos componentes em Acompanhar Compra
+        Else : MsgBox("Cotação Atualizada com sucesso !!", vbInformation Or vbMsgBoxSetForeground)
+        End If
+
+    End Sub
+
+    Private Sub PictureBox8_Click_1(sender As Object, e As EventArgs) Handles PictureBox8.Click
+        Dim busca As New BuscaProduto()
+        busca.Caller = "ControleEstoqueProdutoCotacao"
+        busca.Show()
     End Sub
 End Class

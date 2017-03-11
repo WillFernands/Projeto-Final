@@ -14,15 +14,12 @@ Public Class NotaFiscalCompra
     Private _pagamentos As New List(Of PagamentoEfetuado)
     Private _items As New List(Of ItemComprado)
 
-    Public Sub New(id As Long, status As String, dataAprovacao As Date, numeroNF As String, emissaoNF As Date, cotacao As Cotacao, pagamentos As List(Of PagamentoEfetuado), items As List(Of ItemComprado))
-        _id = id
+    Public Sub New(status As String, dataAprovacao As Date, numeroNF As String, emissaoNF As Date, cotacao As Cotacao)
         _status = status
         _dataAprovacao = dataAprovacao
         _numeroNF = numeroNF
         _emissaoNF = emissaoNF
         _cotacao = cotacao
-        _pagamentos = pagamentos
-        _items = items
     End Sub
 
     Public Sub New()

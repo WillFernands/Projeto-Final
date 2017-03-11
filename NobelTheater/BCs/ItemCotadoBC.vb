@@ -23,4 +23,8 @@ Public Class ItemCotadoBC
         Return itemCotadoDAO.FindByCotacao(cotacao)
     End Function
 
+    Public Shared Function DeleteByCotacao(cotacao As Cotacao) As Boolean
+        Return itemCotadoDAO.DeleteByCotacao(cotacao)
+    End Function
+
 End Class

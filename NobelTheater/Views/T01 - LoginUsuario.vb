@@ -39,6 +39,8 @@
         'SQLTableManager.CreateItensOrcados()
         'SQLTableManager.DropSalarios()
         'SQLTableManager.CreateSalarios()
+        'SQLTableManager.DropItensComprados()
+        'SQLTableManager.CreateItensComprados()
     End Sub
 
     Private Sub OK_Click(sender As Object, e As EventArgs) Handles LogarBT.Click

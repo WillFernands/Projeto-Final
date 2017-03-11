@@ -48,5 +48,18 @@ Public Class ItemCotadoDAO
 
     End Function
 
+    'OK
+    Public Function DeleteByCotacao(cotacao As Cotacao) As Boolean
+
+        If (cotacao Is Nothing) Then Return False
+
+        Dim conn As New Connection
+
+        conn.AddParameter("@idCotacao", cotacao.ID)
+
+        Return conn.ExecuteCommand("DELETE FROM ItensCotados WHERE idCotacao = @idCotacao;")
+
+    End Function
+
 End Class
 

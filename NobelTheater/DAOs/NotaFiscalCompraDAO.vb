@@ -6,7 +6,7 @@ Imports System.Text
 Public Class NotaFiscalCompraDAO
 
     'OK
-    Public Function Insert(ByVal notaFiscal As NotaFiscalCompra) As Boolean
+    Public Function Insert(ByVal notaFiscal As NotaFiscalCompra) As Long
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
@@ -19,7 +19,10 @@ Public Class NotaFiscalCompraDAO
         conn.AddParameter("@data", notaFiscal.DataAprovacao)
         conn.AddParameter("@idCotacao", notaFiscal.Cotacao.ID)
 
-        Return conn.ExecuteCommand(strSQL.ToString)
+        If (conn.ExecuteCommand(strSQL.ToString) = False) Then Return 0
+
+        conn = New Connection
+        Return CLng(conn.ExecuteScalar("SELECT IDENT_CURRENT('NotasFiscaisCompras')"))
 
     End Function
 
