@@ -106,11 +106,6 @@ Partial Class ControleEstoque
         Me.VerProd = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.VerPgto = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
-        Me.DataGridView4 = New System.Windows.Forms.DataGridView()
-        Me.AteAcompanharCompraDT = New System.Windows.Forms.DateTimePicker()
-        Me.AteAcompanharCompraLB = New System.Windows.Forms.Label()
-        Me.DeAcompanharCompraDT = New System.Windows.Forms.DateTimePicker()
-        Me.DeAcompanharCompraLB = New System.Windows.Forms.Label()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.NotaFiscalAcompanharCompraTF = New System.Windows.Forms.TextBox()
         Me.NotaFiscalAcompanharCompraLB = New System.Windows.Forms.Label()
@@ -208,16 +203,16 @@ Partial Class ControleEstoque
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.StatusAcompanharCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dataAprovacaoAcompanharCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.numeroNFAcompanharCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.emissaoNFAcompanharCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dataCotacaoAcompanharCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FornecedorAcompanharCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.itemsAcompanharCompra = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.pagamentosAcompanharCompra = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.EditarAcompanharCompra = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.RemoverAcompanharCompra = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.StatusAcompanharCompraLB = New System.Windows.Forms.Label()
+        Me.StatusAcompanharCompraCB = New System.Windows.Forms.ComboBox()
+        Me.EmissaoNFAcompanharCompraLB = New System.Windows.Forms.Label()
+        Me.EmissaoNFAcompanharCompraMT = New System.Windows.Forms.MaskedTextBox()
+        Me.DataCotacaoAcompanharComprasMT = New System.Windows.Forms.MaskedTextBox()
+        Me.DataCotacaoAcompanharComprasLB = New System.Windows.Forms.Label()
+        Me.SalvarAcompanharComprasBT = New System.Windows.Forms.Button()
+        Me.LimparAcompanharComprasBT = New System.Windows.Forms.Button()
+        Me.VisualizarPagamentosAcompanharComprasBT = New System.Windows.Forms.Button()
+        Me.VisualizarItemAcompanharComprasBT = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -245,7 +240,6 @@ Partial Class ControleEstoque
         Me.ComprasAndamentoTab.SuspendLayout()
         CType(Me.ComprasDT, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage7.SuspendLayout()
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1028,11 +1022,16 @@ Partial Class ControleEstoque
         '
         'TabPage7
         '
-        Me.TabPage7.Controls.Add(Me.DataGridView4)
-        Me.TabPage7.Controls.Add(Me.AteAcompanharCompraDT)
-        Me.TabPage7.Controls.Add(Me.AteAcompanharCompraLB)
-        Me.TabPage7.Controls.Add(Me.DeAcompanharCompraDT)
-        Me.TabPage7.Controls.Add(Me.DeAcompanharCompraLB)
+        Me.TabPage7.Controls.Add(Me.VisualizarItemAcompanharComprasBT)
+        Me.TabPage7.Controls.Add(Me.VisualizarPagamentosAcompanharComprasBT)
+        Me.TabPage7.Controls.Add(Me.LimparAcompanharComprasBT)
+        Me.TabPage7.Controls.Add(Me.SalvarAcompanharComprasBT)
+        Me.TabPage7.Controls.Add(Me.DataCotacaoAcompanharComprasMT)
+        Me.TabPage7.Controls.Add(Me.DataCotacaoAcompanharComprasLB)
+        Me.TabPage7.Controls.Add(Me.EmissaoNFAcompanharCompraMT)
+        Me.TabPage7.Controls.Add(Me.EmissaoNFAcompanharCompraLB)
+        Me.TabPage7.Controls.Add(Me.StatusAcompanharCompraCB)
+        Me.TabPage7.Controls.Add(Me.StatusAcompanharCompraLB)
         Me.TabPage7.Controls.Add(Me.PictureBox10)
         Me.TabPage7.Controls.Add(Me.NotaFiscalAcompanharCompraTF)
         Me.TabPage7.Controls.Add(Me.NotaFiscalAcompanharCompraLB)
@@ -1050,57 +1049,11 @@ Partial Class ControleEstoque
         Me.TabPage7.Text = "Acompanhar Compra"
         Me.TabPage7.UseVisualStyleBackColor = True
         '
-        'DataGridView4
-        '
-        Me.DataGridView4.AllowUserToAddRows = False
-        Me.DataGridView4.AllowUserToDeleteRows = False
-        Me.DataGridView4.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView4.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.StatusAcompanharCompra, Me.dataAprovacaoAcompanharCompra, Me.numeroNFAcompanharCompra, Me.emissaoNFAcompanharCompra, Me.dataCotacaoAcompanharCompra, Me.FornecedorAcompanharCompra, Me.itemsAcompanharCompra, Me.pagamentosAcompanharCompra, Me.EditarAcompanharCompra, Me.RemoverAcompanharCompra})
-        Me.DataGridView4.Location = New System.Drawing.Point(6, 88)
-        Me.DataGridView4.Name = "DataGridView4"
-        Me.DataGridView4.ReadOnly = True
-        Me.DataGridView4.RowHeadersVisible = False
-        Me.DataGridView4.Size = New System.Drawing.Size(673, 241)
-        Me.DataGridView4.TabIndex = 31
-        '
-        'AteAcompanharCompraDT
-        '
-        Me.AteAcompanharCompraDT.Location = New System.Drawing.Point(358, 61)
-        Me.AteAcompanharCompraDT.Name = "AteAcompanharCompraDT"
-        Me.AteAcompanharCompraDT.Size = New System.Drawing.Size(159, 20)
-        Me.AteAcompanharCompraDT.TabIndex = 30
-        '
-        'AteAcompanharCompraLB
-        '
-        Me.AteAcompanharCompraLB.AutoSize = True
-        Me.AteAcompanharCompraLB.Location = New System.Drawing.Point(328, 65)
-        Me.AteAcompanharCompraLB.Name = "AteAcompanharCompraLB"
-        Me.AteAcompanharCompraLB.Size = New System.Drawing.Size(26, 13)
-        Me.AteAcompanharCompraLB.TabIndex = 29
-        Me.AteAcompanharCompraLB.Text = "Até:"
-        '
-        'DeAcompanharCompraDT
-        '
-        Me.DeAcompanharCompraDT.Location = New System.Drawing.Point(163, 62)
-        Me.DeAcompanharCompraDT.Name = "DeAcompanharCompraDT"
-        Me.DeAcompanharCompraDT.Size = New System.Drawing.Size(159, 20)
-        Me.DeAcompanharCompraDT.TabIndex = 28
-        '
-        'DeAcompanharCompraLB
-        '
-        Me.DeAcompanharCompraLB.AutoSize = True
-        Me.DeAcompanharCompraLB.Location = New System.Drawing.Point(133, 65)
-        Me.DeAcompanharCompraLB.Name = "DeAcompanharCompraLB"
-        Me.DeAcompanharCompraLB.Size = New System.Drawing.Size(24, 13)
-        Me.DeAcompanharCompraLB.TabIndex = 27
-        Me.DeAcompanharCompraLB.Text = "De:"
-        '
         'PictureBox10
         '
         Me.PictureBox10.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox10.Image = Global.NobelTheater.My.Resources.Resources.Busca
-        Me.PictureBox10.Location = New System.Drawing.Point(601, 28)
+        Me.PictureBox10.Location = New System.Drawing.Point(601, 40)
         Me.PictureBox10.Name = "PictureBox10"
         Me.PictureBox10.Size = New System.Drawing.Size(27, 20)
         Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1110,7 +1063,7 @@ Partial Class ControleEstoque
         'NotaFiscalAcompanharCompraTF
         '
         Me.NotaFiscalAcompanharCompraTF.Enabled = False
-        Me.NotaFiscalAcompanharCompraTF.Location = New System.Drawing.Point(358, 28)
+        Me.NotaFiscalAcompanharCompraTF.Location = New System.Drawing.Point(358, 40)
         Me.NotaFiscalAcompanharCompraTF.Name = "NotaFiscalAcompanharCompraTF"
         Me.NotaFiscalAcompanharCompraTF.Size = New System.Drawing.Size(237, 20)
         Me.NotaFiscalAcompanharCompraTF.TabIndex = 25
@@ -1118,7 +1071,7 @@ Partial Class ControleEstoque
         'NotaFiscalAcompanharCompraLB
         '
         Me.NotaFiscalAcompanharCompraLB.AutoSize = True
-        Me.NotaFiscalAcompanharCompraLB.Location = New System.Drawing.Point(289, 31)
+        Me.NotaFiscalAcompanharCompraLB.Location = New System.Drawing.Point(289, 43)
         Me.NotaFiscalAcompanharCompraLB.Name = "NotaFiscalAcompanharCompraLB"
         Me.NotaFiscalAcompanharCompraLB.Size = New System.Drawing.Size(63, 13)
         Me.NotaFiscalAcompanharCompraLB.TabIndex = 24
@@ -1128,7 +1081,7 @@ Partial Class ControleEstoque
         '
         Me.PictureBox9.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox9.Image = Global.NobelTheater.My.Resources.Resources.Busca
-        Me.PictureBox9.Location = New System.Drawing.Point(256, 28)
+        Me.PictureBox9.Location = New System.Drawing.Point(256, 40)
         Me.PictureBox9.Name = "PictureBox9"
         Me.PictureBox9.Size = New System.Drawing.Size(27, 20)
         Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1139,7 +1092,7 @@ Partial Class ControleEstoque
         '
         Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox5.Image = Global.NobelTheater.My.Resources.Resources.Busca
-        Me.PictureBox5.Location = New System.Drawing.Point(601, 4)
+        Me.PictureBox5.Location = New System.Drawing.Point(601, 7)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(27, 20)
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1149,7 +1102,7 @@ Partial Class ControleEstoque
         'FornecedorAcompanharCompraTF
         '
         Me.FornecedorAcompanharCompraTF.Enabled = False
-        Me.FornecedorAcompanharCompraTF.Location = New System.Drawing.Point(76, 4)
+        Me.FornecedorAcompanharCompraTF.Location = New System.Drawing.Point(76, 7)
         Me.FornecedorAcompanharCompraTF.Name = "FornecedorAcompanharCompraTF"
         Me.FornecedorAcompanharCompraTF.Size = New System.Drawing.Size(519, 20)
         Me.FornecedorAcompanharCompraTF.TabIndex = 21
@@ -1157,7 +1110,7 @@ Partial Class ControleEstoque
         'FornecedorAcompanharCompraLB
         '
         Me.FornecedorAcompanharCompraLB.AutoSize = True
-        Me.FornecedorAcompanharCompraLB.Location = New System.Drawing.Point(6, 7)
+        Me.FornecedorAcompanharCompraLB.Location = New System.Drawing.Point(6, 10)
         Me.FornecedorAcompanharCompraLB.Name = "FornecedorAcompanharCompraLB"
         Me.FornecedorAcompanharCompraLB.Size = New System.Drawing.Size(64, 13)
         Me.FornecedorAcompanharCompraLB.TabIndex = 20
@@ -1166,7 +1119,7 @@ Partial Class ControleEstoque
         'ProdutoAcompanharCompraTF
         '
         Me.ProdutoAcompanharCompraTF.Enabled = False
-        Me.ProdutoAcompanharCompraTF.Location = New System.Drawing.Point(76, 28)
+        Me.ProdutoAcompanharCompraTF.Location = New System.Drawing.Point(76, 40)
         Me.ProdutoAcompanharCompraTF.Name = "ProdutoAcompanharCompraTF"
         Me.ProdutoAcompanharCompraTF.Size = New System.Drawing.Size(174, 20)
         Me.ProdutoAcompanharCompraTF.TabIndex = 18
@@ -1174,7 +1127,7 @@ Partial Class ControleEstoque
         'ProdutoAcompanharCompraLB
         '
         Me.ProdutoAcompanharCompraLB.AutoSize = True
-        Me.ProdutoAcompanharCompraLB.Location = New System.Drawing.Point(6, 31)
+        Me.ProdutoAcompanharCompraLB.Location = New System.Drawing.Point(6, 43)
         Me.ProdutoAcompanharCompraLB.Name = "ProdutoAcompanharCompraLB"
         Me.ProdutoAcompanharCompraLB.Size = New System.Drawing.Size(47, 13)
         Me.ProdutoAcompanharCompraLB.TabIndex = 17
@@ -1907,65 +1860,90 @@ Partial Class ControleEstoque
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
-        'StatusAcompanharCompra
+        'StatusAcompanharCompraLB
         '
-        Me.StatusAcompanharCompra.HeaderText = "Status"
-        Me.StatusAcompanharCompra.Name = "StatusAcompanharCompra"
-        Me.StatusAcompanharCompra.ReadOnly = True
+        Me.StatusAcompanharCompraLB.AutoSize = True
+        Me.StatusAcompanharCompraLB.Location = New System.Drawing.Point(6, 76)
+        Me.StatusAcompanharCompraLB.Name = "StatusAcompanharCompraLB"
+        Me.StatusAcompanharCompraLB.Size = New System.Drawing.Size(40, 13)
+        Me.StatusAcompanharCompraLB.TabIndex = 27
+        Me.StatusAcompanharCompraLB.Text = "Status:"
         '
-        'dataAprovacaoAcompanharCompra
+        'StatusAcompanharCompraCB
         '
-        Me.dataAprovacaoAcompanharCompra.HeaderText = "Data da Aprovação"
-        Me.dataAprovacaoAcompanharCompra.Name = "dataAprovacaoAcompanharCompra"
-        Me.dataAprovacaoAcompanharCompra.ReadOnly = True
+        Me.StatusAcompanharCompraCB.FormattingEnabled = True
+        Me.StatusAcompanharCompraCB.Location = New System.Drawing.Point(76, 73)
+        Me.StatusAcompanharCompraCB.Name = "StatusAcompanharCompraCB"
+        Me.StatusAcompanharCompraCB.Size = New System.Drawing.Size(207, 21)
+        Me.StatusAcompanharCompraCB.TabIndex = 28
         '
-        'numeroNFAcompanharCompra
+        'EmissaoNFAcompanharCompraLB
         '
-        Me.numeroNFAcompanharCompra.HeaderText = "Número da NF"
-        Me.numeroNFAcompanharCompra.Name = "numeroNFAcompanharCompra"
-        Me.numeroNFAcompanharCompra.ReadOnly = True
+        Me.EmissaoNFAcompanharCompraLB.AutoSize = True
+        Me.EmissaoNFAcompanharCompraLB.Location = New System.Drawing.Point(289, 76)
+        Me.EmissaoNFAcompanharCompraLB.Name = "EmissaoNFAcompanharCompraLB"
+        Me.EmissaoNFAcompanharCompraLB.Size = New System.Drawing.Size(122, 13)
+        Me.EmissaoNFAcompanharCompraLB.TabIndex = 29
+        Me.EmissaoNFAcompanharCompraLB.Text = "Data da Emissão da NF:"
         '
-        'emissaoNFAcompanharCompra
+        'EmissaoNFAcompanharCompraMT
         '
-        Me.emissaoNFAcompanharCompra.HeaderText = "Data da Emissão da NF"
-        Me.emissaoNFAcompanharCompra.Name = "emissaoNFAcompanharCompra"
-        Me.emissaoNFAcompanharCompra.ReadOnly = True
+        Me.EmissaoNFAcompanharCompraMT.Location = New System.Drawing.Point(417, 73)
+        Me.EmissaoNFAcompanharCompraMT.Name = "EmissaoNFAcompanharCompraMT"
+        Me.EmissaoNFAcompanharCompraMT.Size = New System.Drawing.Size(211, 20)
+        Me.EmissaoNFAcompanharCompraMT.TabIndex = 30
         '
-        'dataCotacaoAcompanharCompra
+        'DataCotacaoAcompanharComprasMT
         '
-        Me.dataCotacaoAcompanharCompra.HeaderText = "Data da Cotação"
-        Me.dataCotacaoAcompanharCompra.Name = "dataCotacaoAcompanharCompra"
-        Me.dataCotacaoAcompanharCompra.ReadOnly = True
+        Me.DataCotacaoAcompanharComprasMT.Location = New System.Drawing.Point(417, 105)
+        Me.DataCotacaoAcompanharComprasMT.Name = "DataCotacaoAcompanharComprasMT"
+        Me.DataCotacaoAcompanharComprasMT.Size = New System.Drawing.Size(211, 20)
+        Me.DataCotacaoAcompanharComprasMT.TabIndex = 32
         '
-        'FornecedorAcompanharCompra
+        'DataCotacaoAcompanharComprasLB
         '
-        Me.FornecedorAcompanharCompra.HeaderText = "Fornecedor"
-        Me.FornecedorAcompanharCompra.Name = "FornecedorAcompanharCompra"
-        Me.FornecedorAcompanharCompra.ReadOnly = True
+        Me.DataCotacaoAcompanharComprasLB.AutoSize = True
+        Me.DataCotacaoAcompanharComprasLB.Location = New System.Drawing.Point(289, 108)
+        Me.DataCotacaoAcompanharComprasLB.Name = "DataCotacaoAcompanharComprasLB"
+        Me.DataCotacaoAcompanharComprasLB.Size = New System.Drawing.Size(91, 13)
+        Me.DataCotacaoAcompanharComprasLB.TabIndex = 31
+        Me.DataCotacaoAcompanharComprasLB.Text = "Data da Cotação:"
         '
-        'itemsAcompanharCompra
+        'SalvarAcompanharComprasBT
         '
-        Me.itemsAcompanharCompra.HeaderText = "Ver Items"
-        Me.itemsAcompanharCompra.Name = "itemsAcompanharCompra"
-        Me.itemsAcompanharCompra.ReadOnly = True
+        Me.SalvarAcompanharComprasBT.Location = New System.Drawing.Point(230, 306)
+        Me.SalvarAcompanharComprasBT.Name = "SalvarAcompanharComprasBT"
+        Me.SalvarAcompanharComprasBT.Size = New System.Drawing.Size(100, 23)
+        Me.SalvarAcompanharComprasBT.TabIndex = 33
+        Me.SalvarAcompanharComprasBT.Text = "Salvar Alterações"
+        Me.SalvarAcompanharComprasBT.UseVisualStyleBackColor = True
         '
-        'pagamentosAcompanharCompra
+        'LimparAcompanharComprasBT
         '
-        Me.pagamentosAcompanharCompra.HeaderText = "Ver Pagamentos"
-        Me.pagamentosAcompanharCompra.Name = "pagamentosAcompanharCompra"
-        Me.pagamentosAcompanharCompra.ReadOnly = True
+        Me.LimparAcompanharComprasBT.Location = New System.Drawing.Point(336, 306)
+        Me.LimparAcompanharComprasBT.Name = "LimparAcompanharComprasBT"
+        Me.LimparAcompanharComprasBT.Size = New System.Drawing.Size(75, 23)
+        Me.LimparAcompanharComprasBT.TabIndex = 34
+        Me.LimparAcompanharComprasBT.Text = "Limpar"
+        Me.LimparAcompanharComprasBT.UseVisualStyleBackColor = True
         '
-        'EditarAcompanharCompra
+        'VisualizarPagamentosAcompanharComprasBT
         '
-        Me.EditarAcompanharCompra.HeaderText = "Editar"
-        Me.EditarAcompanharCompra.Name = "EditarAcompanharCompra"
-        Me.EditarAcompanharCompra.ReadOnly = True
+        Me.VisualizarPagamentosAcompanharComprasBT.Location = New System.Drawing.Point(195, 176)
+        Me.VisualizarPagamentosAcompanharComprasBT.Name = "VisualizarPagamentosAcompanharComprasBT"
+        Me.VisualizarPagamentosAcompanharComprasBT.Size = New System.Drawing.Size(128, 23)
+        Me.VisualizarPagamentosAcompanharComprasBT.TabIndex = 35
+        Me.VisualizarPagamentosAcompanharComprasBT.Text = "Visualizar Pagamentos"
+        Me.VisualizarPagamentosAcompanharComprasBT.UseVisualStyleBackColor = True
         '
-        'RemoverAcompanharCompra
+        'VisualizarItemAcompanharComprasBT
         '
-        Me.RemoverAcompanharCompra.HeaderText = "Remover"
-        Me.RemoverAcompanharCompra.Name = "RemoverAcompanharCompra"
-        Me.RemoverAcompanharCompra.ReadOnly = True
+        Me.VisualizarItemAcompanharComprasBT.Location = New System.Drawing.Point(329, 176)
+        Me.VisualizarItemAcompanharComprasBT.Name = "VisualizarItemAcompanharComprasBT"
+        Me.VisualizarItemAcompanharComprasBT.Size = New System.Drawing.Size(128, 23)
+        Me.VisualizarItemAcompanharComprasBT.TabIndex = 36
+        Me.VisualizarItemAcompanharComprasBT.Text = "Visualizar Items Cotado"
+        Me.VisualizarItemAcompanharComprasBT.UseVisualStyleBackColor = True
         '
         'ControleEstoque
         '
@@ -2011,7 +1989,6 @@ Partial Class ControleEstoque
         CType(Me.ComprasDT, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage7.ResumeLayout(False)
         Me.TabPage7.PerformLayout()
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2168,11 +2145,6 @@ Partial Class ControleEstoque
     Friend WithEvents ResponsavelAssistencia As DataGridViewTextBoxColumn
     Friend WithEvents EditarProdutoAssistencia As DataGridViewButtonColumn
     Friend WithEvents RemoverProdutoAssistencia As DataGridViewButtonColumn
-    Friend WithEvents DataGridView4 As DataGridView
-    Friend WithEvents AteAcompanharCompraDT As DateTimePicker
-    Friend WithEvents AteAcompanharCompraLB As Label
-    Friend WithEvents DeAcompanharCompraDT As DateTimePicker
-    Friend WithEvents DeAcompanharCompraLB As Label
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents NotaFiscalAcompanharCompraTF As TextBox
     Friend WithEvents NotaFiscalAcompanharCompraLB As Label
@@ -2225,14 +2197,14 @@ Partial Class ControleEstoque
     Friend WithEvents DataEmprestimo As DataGridViewCheckBoxColumn
     Friend WithEvents VerProdutos As DataGridViewButtonColumn
     Friend WithEvents FinalizarSolicitacao As DataGridViewButtonColumn
-    Friend WithEvents StatusAcompanharCompra As DataGridViewTextBoxColumn
-    Friend WithEvents dataAprovacaoAcompanharCompra As DataGridViewTextBoxColumn
-    Friend WithEvents numeroNFAcompanharCompra As DataGridViewTextBoxColumn
-    Friend WithEvents emissaoNFAcompanharCompra As DataGridViewTextBoxColumn
-    Friend WithEvents dataCotacaoAcompanharCompra As DataGridViewTextBoxColumn
-    Friend WithEvents FornecedorAcompanharCompra As DataGridViewTextBoxColumn
-    Friend WithEvents itemsAcompanharCompra As DataGridViewButtonColumn
-    Friend WithEvents pagamentosAcompanharCompra As DataGridViewButtonColumn
-    Friend WithEvents EditarAcompanharCompra As DataGridViewButtonColumn
-    Friend WithEvents RemoverAcompanharCompra As DataGridViewButtonColumn
+    Friend WithEvents VisualizarItemAcompanharComprasBT As Button
+    Friend WithEvents VisualizarPagamentosAcompanharComprasBT As Button
+    Friend WithEvents LimparAcompanharComprasBT As Button
+    Friend WithEvents SalvarAcompanharComprasBT As Button
+    Friend WithEvents DataCotacaoAcompanharComprasMT As MaskedTextBox
+    Friend WithEvents DataCotacaoAcompanharComprasLB As Label
+    Friend WithEvents EmissaoNFAcompanharCompraMT As MaskedTextBox
+    Friend WithEvents EmissaoNFAcompanharCompraLB As Label
+    Friend WithEvents StatusAcompanharCompraCB As ComboBox
+    Friend WithEvents StatusAcompanharCompraLB As Label
 End Class
