@@ -203,7 +203,7 @@
 
         For Each compra As NotaFiscalCompra In NotaFiscalCompraBC.FindAll()
             Dim list As New List(Of Object)
-            list.Add(compra.Cotacao.DataCotacao) : list.Add(compra.Status) : list.Add(compra.DataAprovacao) : list.Add(compra.Cotacao.Fornecedor.Cnpj & " - " & compra.Cotacao.Fornecedor.NomeFantasia) : list.Add(compra.NumeroNF) : list.Add("Ver Produtos") : list.Add("Ver Pagamentos")
+            list.Add(compra.ID) : list.Add(compra.Cotacao.DataCotacao) : list.Add(compra.Status) : list.Add(compra.DataAprovacao) : list.Add(compra.Cotacao.Fornecedor.Cnpj & " - " & compra.Cotacao.Fornecedor.NomeFantasia) : list.Add(compra.NumeroNF) : list.Add("Ver Produtos") : list.Add("Ver Pagamentos")
             ComprasDT.Rows.Add(list.ToArray())
         Next
     End Sub
@@ -212,7 +212,7 @@
         If (CotacoesDT.SelectedCells Is Nothing) Then Exit Sub
 
         If (e.ColumnIndex = 4 AndAlso CotacoesDT.SelectedCells.Item(0).Value = "Ver Produtos") Then
-            Dim visualizacao As New VerProdutos()
+            Dim visualizacao As New VerItensCotados()
             visualizacao.ProdutosList = CotacaoBC.FindByID(CotacoesDT.Item(0, e.RowIndex).Value).Itens
             visualizacao.Show()
             Exit Sub
@@ -481,5 +481,67 @@
         produtoEmprestimoAtual = Nothing
         itensEmprestimos = New List(Of ItemEmprestimo)
         ProdutosEmprestimoDT.Rows.Clear()
+    End Sub
+
+    Private Sub AcompanharCompraTab_Enter(sender As Object, e As EventArgs) Handles AcompanharCompraTab.Enter
+        StatusCompraAcompanharCompraCB.Items.AddRange(StatusCompra.GetStatusList().ToArray)
+        TipoPagamentoCB.Items.AddRange(TipoPagamento.GetTiposList().ToArray)
+        PopulateAcompanharCompraTab()
+    End Sub
+
+    Private Sub PopulateAcompanharCompraTab()
+        If (compraAtual IsNot Nothing) Then
+            FornecedorAcompanharCompraTF.Text = compraAtual.Cotacao.Fornecedor.Cnpj & " " & compraAtual.Cotacao.Fornecedor.NomeFantasia
+            DataCotacaoAcompanharCompraTF.Text = compraAtual.Cotacao.DataCotacao
+            NumeroNFAcompanharCompraTF.Text = compraAtual.NumeroNF
+            DataEmissaoAcompanharCompraTF.Text = compraAtual.EmissaoNF
+            DataAprovacaoAcompanharCompraTF.Text = compraAtual.DataAprovacao
+            StatusCompraAcompanharCompraCB.Text = compraAtual.Status
+            RefreshDTPagamentos()
+        End If
+    End Sub
+
+    Private Sub RefreshDTPagamentos()
+        PagamentosDT.Rows.Clear()
+
+        For Each pgto As PagamentoEfetuado In compraAtual.Pagamentos
+            Dim list As New List(Of Object)
+            list.Add(pgto.ID) : list.Add(pgto.Data) : list.Add(pgto.Tipo) : list.Add(pgto.Status) : list.Add(pgto.Valor) : list.Add("Remover Pgto")
+            PagamentosDT.Rows.Add(list.ToArray())
+        Next
+
+        PagamentosDT.Sort(PagamentosDT.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
+    End Sub
+
+    Private Sub ComprasDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ComprasDT.CellContentClick
+        If (ComprasDT.SelectedCells Is Nothing OrElse e.RowIndex = -1) Then Exit Sub
+
+        If (e.ColumnIndex = 6 AndAlso ComprasDT.SelectedCells.Item(0).Value = "Ver Produtos") Then
+            Dim visualizacao As New VerItensComprados()
+            visualizacao.ProdutosList = NotaFiscalCompraBC.FindByID(ComprasDT.Item(0, e.RowIndex).Value).Items
+            visualizacao.Show()
+            Exit Sub
+        Else
+            If (MsgBox("Essa ação lhe redirecionará a aba de Acompanhar Compra, continuar ?", vbYesNo Or vbInformation Or vbMsgBoxSetForeground) = vbYes) Then
+                ClearAcompanharCompra()
+                compraAtual = NotaFiscalCompraBC.FindByID(ComprasDT.Item(0, e.RowIndex).Value)
+                PopulateAcompanharCompraTab()
+                ControleEstoqueTab.SelectTab(5)
+            End If
+        End If
+    End Sub
+
+    Private Sub ClearAcompanharCompra()
+        compraAtual = Nothing
+        FornecedorAcompanharCompraTF.Text = ""
+        DataCotacaoAcompanharCompraTF.Text = ""
+        NumeroNFAcompanharCompraTF.Text = ""
+        DataEmissaoAcompanharCompraTF.Text = ""
+        DataAprovacaoAcompanharCompraTF.Text = ""
+        StatusCompraAcompanharCompraCB.Text = ""
+        DataPagamentoTF.Text = ""
+        TipoPagamentoCB.Text = ""
+        ValorPgtoTF.Text = ""
+        PagamentosDT.Rows.Clear()
     End Sub
 End Class

@@ -312,10 +312,16 @@
     <Compile Include="Views\T18 - BuscaCliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\T19 - VerProdutos.Designer.vb">
-      <DependentUpon>T19 - VerProdutos.vb</DependentUpon>
+    <Compile Include="Views\T19 - VerItensCotados.Designer.vb">
+      <DependentUpon>T19 - VerItensCotados.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\T19 - VerProdutos.vb">
+    <Compile Include="Views\T19 - VerItensCotados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\T20 - VerItensComprados.Designer.vb">
+      <DependentUpon>T20 - VerItensComprados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\T20 - VerItensComprados.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -380,8 +386,11 @@
     <EmbeddedResource Include="Views\T18 - BuscaCliente.resx">
       <DependentUpon>T18 - BuscaCliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\T19 - VerProdutos.resx">
-      <DependentUpon>T19 - VerProdutos.vb</DependentUpon>
+    <EmbeddedResource Include="Views\T19 - VerItensCotados.resx">
+      <DependentUpon>T19 - VerItensCotados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\T20 - VerItensComprados.resx">
+      <DependentUpon>T20 - VerItensComprados.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

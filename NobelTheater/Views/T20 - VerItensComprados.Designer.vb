@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class VerProdutos
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class VerItensComprados
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class VerProdutos
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.ProdutosDT = New System.Windows.Forms.DataGridView()
         Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -44,7 +44,7 @@ Partial Class VerProdutos
         Me.ProdutosDT.ReadOnly = True
         Me.ProdutosDT.RowHeadersVisible = False
         Me.ProdutosDT.Size = New System.Drawing.Size(661, 318)
-        Me.ProdutosDT.TabIndex = 9
+        Me.ProdutosDT.TabIndex = 10
         '
         'Codigo
         '
@@ -86,14 +86,14 @@ Partial Class VerProdutos
         Me.PrecoTotal.Name = "PrecoTotal"
         Me.PrecoTotal.ReadOnly = True
         '
-        'VerProdutos
+        'T20___VerItensComprados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(671, 321)
         Me.Controls.Add(Me.ProdutosDT)
-        Me.Name = "VerProdutos"
-        Me.Text = "VerProdutos"
+        Me.Name = "T20___VerItensComprados"
+        Me.Text = "T20___VerItensComprados"
         CType(Me.ProdutosDT, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
