@@ -107,16 +107,6 @@ Partial Class ControleEstoque
         Me.VerPgto = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.DataGridView4 = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewButtonColumn3 = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.DataGridViewButtonColumn4 = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.EditarAcompanharCompra = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.RemoverAcompanharCompra = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.AteAcompanharCompraDT = New System.Windows.Forms.DateTimePicker()
         Me.AteAcompanharCompraLB = New System.Windows.Forms.Label()
         Me.DeAcompanharCompraDT = New System.Windows.Forms.DateTimePicker()
@@ -218,6 +208,16 @@ Partial Class ControleEstoque
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StatusAcompanharCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dataAprovacaoAcompanharCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.numeroNFAcompanharCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.emissaoNFAcompanharCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dataCotacaoAcompanharCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FornecedorAcompanharCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.itemsAcompanharCompra = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.pagamentosAcompanharCompra = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.EditarAcompanharCompra = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.RemoverAcompanharCompra = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -1056,79 +1056,13 @@ Partial Class ControleEstoque
         Me.DataGridView4.AllowUserToDeleteRows = False
         Me.DataGridView4.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView4.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn21, Me.DataGridViewTextBoxColumn22, Me.DataGridViewButtonColumn3, Me.DataGridViewButtonColumn4, Me.EditarAcompanharCompra, Me.RemoverAcompanharCompra})
+        Me.DataGridView4.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.StatusAcompanharCompra, Me.dataAprovacaoAcompanharCompra, Me.numeroNFAcompanharCompra, Me.emissaoNFAcompanharCompra, Me.dataCotacaoAcompanharCompra, Me.FornecedorAcompanharCompra, Me.itemsAcompanharCompra, Me.pagamentosAcompanharCompra, Me.EditarAcompanharCompra, Me.RemoverAcompanharCompra})
         Me.DataGridView4.Location = New System.Drawing.Point(6, 88)
         Me.DataGridView4.Name = "DataGridView4"
         Me.DataGridView4.ReadOnly = True
         Me.DataGridView4.RowHeadersVisible = False
         Me.DataGridView4.Size = New System.Drawing.Size(673, 241)
         Me.DataGridView4.TabIndex = 31
-        '
-        'DataGridViewTextBoxColumn17
-        '
-        Me.DataGridViewTextBoxColumn17.HeaderText = "Data da Cotação"
-        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
-        Me.DataGridViewTextBoxColumn17.ReadOnly = True
-        Me.DataGridViewTextBoxColumn17.Width = 75
-        '
-        'DataGridViewTextBoxColumn18
-        '
-        Me.DataGridViewTextBoxColumn18.HeaderText = "Status da Compra"
-        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
-        Me.DataGridViewTextBoxColumn18.ReadOnly = True
-        Me.DataGridViewTextBoxColumn18.Width = 75
-        '
-        'DataGridViewTextBoxColumn19
-        '
-        Me.DataGridViewTextBoxColumn19.HeaderText = "Data Aprovação"
-        Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
-        Me.DataGridViewTextBoxColumn19.ReadOnly = True
-        Me.DataGridViewTextBoxColumn19.Width = 75
-        '
-        'DataGridViewTextBoxColumn20
-        '
-        Me.DataGridViewTextBoxColumn20.HeaderText = "Data Ult. Pgto"
-        Me.DataGridViewTextBoxColumn20.Name = "DataGridViewTextBoxColumn20"
-        Me.DataGridViewTextBoxColumn20.ReadOnly = True
-        Me.DataGridViewTextBoxColumn20.Width = 75
-        '
-        'DataGridViewTextBoxColumn21
-        '
-        Me.DataGridViewTextBoxColumn21.HeaderText = "Fornecedor"
-        Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
-        Me.DataGridViewTextBoxColumn21.ReadOnly = True
-        Me.DataGridViewTextBoxColumn21.Width = 75
-        '
-        'DataGridViewTextBoxColumn22
-        '
-        Me.DataGridViewTextBoxColumn22.HeaderText = "NotaFiscal"
-        Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
-        Me.DataGridViewTextBoxColumn22.ReadOnly = True
-        Me.DataGridViewTextBoxColumn22.Width = 75
-        '
-        'DataGridViewButtonColumn3
-        '
-        Me.DataGridViewButtonColumn3.HeaderText = "Ver Produtos"
-        Me.DataGridViewButtonColumn3.Name = "DataGridViewButtonColumn3"
-        Me.DataGridViewButtonColumn3.ReadOnly = True
-        '
-        'DataGridViewButtonColumn4
-        '
-        Me.DataGridViewButtonColumn4.HeaderText = "Ver Pagamentos"
-        Me.DataGridViewButtonColumn4.Name = "DataGridViewButtonColumn4"
-        Me.DataGridViewButtonColumn4.ReadOnly = True
-        '
-        'EditarAcompanharCompra
-        '
-        Me.EditarAcompanharCompra.HeaderText = "Editar"
-        Me.EditarAcompanharCompra.Name = "EditarAcompanharCompra"
-        Me.EditarAcompanharCompra.ReadOnly = True
-        '
-        'RemoverAcompanharCompra
-        '
-        Me.RemoverAcompanharCompra.HeaderText = "Remover"
-        Me.RemoverAcompanharCompra.Name = "RemoverAcompanharCompra"
-        Me.RemoverAcompanharCompra.ReadOnly = True
         '
         'AteAcompanharCompraDT
         '
@@ -1973,6 +1907,66 @@ Partial Class ControleEstoque
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
+        'StatusAcompanharCompra
+        '
+        Me.StatusAcompanharCompra.HeaderText = "Status"
+        Me.StatusAcompanharCompra.Name = "StatusAcompanharCompra"
+        Me.StatusAcompanharCompra.ReadOnly = True
+        '
+        'dataAprovacaoAcompanharCompra
+        '
+        Me.dataAprovacaoAcompanharCompra.HeaderText = "Data da Aprovação"
+        Me.dataAprovacaoAcompanharCompra.Name = "dataAprovacaoAcompanharCompra"
+        Me.dataAprovacaoAcompanharCompra.ReadOnly = True
+        '
+        'numeroNFAcompanharCompra
+        '
+        Me.numeroNFAcompanharCompra.HeaderText = "Número da NF"
+        Me.numeroNFAcompanharCompra.Name = "numeroNFAcompanharCompra"
+        Me.numeroNFAcompanharCompra.ReadOnly = True
+        '
+        'emissaoNFAcompanharCompra
+        '
+        Me.emissaoNFAcompanharCompra.HeaderText = "Data da Emissão da NF"
+        Me.emissaoNFAcompanharCompra.Name = "emissaoNFAcompanharCompra"
+        Me.emissaoNFAcompanharCompra.ReadOnly = True
+        '
+        'dataCotacaoAcompanharCompra
+        '
+        Me.dataCotacaoAcompanharCompra.HeaderText = "Data da Cotação"
+        Me.dataCotacaoAcompanharCompra.Name = "dataCotacaoAcompanharCompra"
+        Me.dataCotacaoAcompanharCompra.ReadOnly = True
+        '
+        'FornecedorAcompanharCompra
+        '
+        Me.FornecedorAcompanharCompra.HeaderText = "Fornecedor"
+        Me.FornecedorAcompanharCompra.Name = "FornecedorAcompanharCompra"
+        Me.FornecedorAcompanharCompra.ReadOnly = True
+        '
+        'itemsAcompanharCompra
+        '
+        Me.itemsAcompanharCompra.HeaderText = "Ver Items"
+        Me.itemsAcompanharCompra.Name = "itemsAcompanharCompra"
+        Me.itemsAcompanharCompra.ReadOnly = True
+        '
+        'pagamentosAcompanharCompra
+        '
+        Me.pagamentosAcompanharCompra.HeaderText = "Ver Pagamentos"
+        Me.pagamentosAcompanharCompra.Name = "pagamentosAcompanharCompra"
+        Me.pagamentosAcompanharCompra.ReadOnly = True
+        '
+        'EditarAcompanharCompra
+        '
+        Me.EditarAcompanharCompra.HeaderText = "Editar"
+        Me.EditarAcompanharCompra.Name = "EditarAcompanharCompra"
+        Me.EditarAcompanharCompra.ReadOnly = True
+        '
+        'RemoverAcompanharCompra
+        '
+        Me.RemoverAcompanharCompra.HeaderText = "Remover"
+        Me.RemoverAcompanharCompra.Name = "RemoverAcompanharCompra"
+        Me.RemoverAcompanharCompra.ReadOnly = True
+        '
         'ControleEstoque
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2175,16 +2169,6 @@ Partial Class ControleEstoque
     Friend WithEvents EditarProdutoAssistencia As DataGridViewButtonColumn
     Friend WithEvents RemoverProdutoAssistencia As DataGridViewButtonColumn
     Friend WithEvents DataGridView4 As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn18 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn19 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn20 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn21 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn22 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewButtonColumn3 As DataGridViewButtonColumn
-    Friend WithEvents DataGridViewButtonColumn4 As DataGridViewButtonColumn
-    Friend WithEvents EditarAcompanharCompra As DataGridViewButtonColumn
-    Friend WithEvents RemoverAcompanharCompra As DataGridViewButtonColumn
     Friend WithEvents AteAcompanharCompraDT As DateTimePicker
     Friend WithEvents AteAcompanharCompraLB As Label
     Friend WithEvents DeAcompanharCompraDT As DateTimePicker
@@ -2241,4 +2225,14 @@ Partial Class ControleEstoque
     Friend WithEvents DataEmprestimo As DataGridViewCheckBoxColumn
     Friend WithEvents VerProdutos As DataGridViewButtonColumn
     Friend WithEvents FinalizarSolicitacao As DataGridViewButtonColumn
+    Friend WithEvents StatusAcompanharCompra As DataGridViewTextBoxColumn
+    Friend WithEvents dataAprovacaoAcompanharCompra As DataGridViewTextBoxColumn
+    Friend WithEvents numeroNFAcompanharCompra As DataGridViewTextBoxColumn
+    Friend WithEvents emissaoNFAcompanharCompra As DataGridViewTextBoxColumn
+    Friend WithEvents dataCotacaoAcompanharCompra As DataGridViewTextBoxColumn
+    Friend WithEvents FornecedorAcompanharCompra As DataGridViewTextBoxColumn
+    Friend WithEvents itemsAcompanharCompra As DataGridViewButtonColumn
+    Friend WithEvents pagamentosAcompanharCompra As DataGridViewButtonColumn
+    Friend WithEvents EditarAcompanharCompra As DataGridViewButtonColumn
+    Friend WithEvents RemoverAcompanharCompra As DataGridViewButtonColumn
 End Class
