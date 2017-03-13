@@ -544,4 +544,10 @@
         ValorPgtoTF.Text = ""
         PagamentosDT.Rows.Clear()
     End Sub
+
+    Private Sub VerItensAcompanharCompraBT_Click(sender As Object, e As EventArgs) Handles VerItensAcompanharCompraBT.Click
+        Dim visualizacao As New VerItensComprados()
+        visualizacao.ProdutosList = NotaFiscalCompraBC.FindByID(compraAtual.ID).Items
+        visualizacao.Show()
+    End Sub
 End Class

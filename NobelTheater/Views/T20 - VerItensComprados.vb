@@ -1,10 +1,10 @@
 ﻿Public Class VerItensComprados
 
-    Private Sub T20___VerItensComprados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Public ProdutosList As List(Of ItemComprado)
+
+    Private Sub VerItensComprados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        RefreshDTProdutos()
+    End Sub
 
     Private Sub RefreshDTProdutos()
         ProdutosDT.Rows.Clear()
