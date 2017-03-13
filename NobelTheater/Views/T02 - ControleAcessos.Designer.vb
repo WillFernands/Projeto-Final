@@ -270,7 +270,7 @@ Partial Class ControleAcessos
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.NobelTheater.My.Resources.Resources.access_control
+        Me.PictureBox1.Image = Global.NobelTheater.My.Resources.Resources.ControleDeAcessosMain
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(116, 100)

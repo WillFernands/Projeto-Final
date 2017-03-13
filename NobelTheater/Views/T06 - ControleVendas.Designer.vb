@@ -247,7 +247,7 @@ Partial Class ControleVendas
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.NobelTheater.My.Resources.Resources.sales
+        Me.PictureBox1.Image = Global.NobelTheater.My.Resources.Resources.ControleDeVendasMain
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(116, 100)

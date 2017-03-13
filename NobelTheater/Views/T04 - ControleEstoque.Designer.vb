@@ -307,7 +307,7 @@ Partial Class ControleEstoque
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.NobelTheater.My.Resources.Resources.warehouseicon
+        Me.PictureBox1.Image = Global.NobelTheater.My.Resources.Resources.ControleDeEstoqueMain
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(116, 100)

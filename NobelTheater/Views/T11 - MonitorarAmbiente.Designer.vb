@@ -132,7 +132,7 @@ Partial Class MonitorarAmbiente
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.NobelTheater.My.Resources.Resources.web_cam_blue
+        Me.PictureBox1.Image = Global.NobelTheater.My.Resources.Resources.MonitoramentoDeAmbienteMain
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(116, 100)
