@@ -1,7 +1,27 @@
 ﻿Public Class LoginUsuario
+    Implements IMessageFilter 'Allows an application to capture a message before it is dispatched to a control or form
+
     Private errorCounter As Integer = 0
+    Public Shared secondsCount As Integer = 0 'Counts innactivity
+
+    Public Function PreFilterMessage(ByRef m As Message) As Boolean Implements IMessageFilter.PreFilterMessage
+        Dim mouse As Boolean = (m.Msg >= &H200 AndAlso m.Msg <= &H20D) OrElse (m.Msg >= &HA0 AndAlso m.Msg <= &HAD) 'Check for mouse movements and / or clicks
+        Dim kbd As Boolean = (m.Msg >= &H100 AndAlso m.Msg <= &H109) 'Check for keyboard button presses
+        If mouse Or kbd Then secondsCount = 0
+        Return False
+    End Function
+
+    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+        If secondsCount > 900 Then '15 Minutes
+            Timer1.Enabled = False
+            MsgBox("Aplicação será encerrada após 15 minutos de inatividade", vbInformation)
+            Application.Exit()
+        Else secondsCount += 1
+        End If
+    End Sub
 
     Private Sub LoginUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Application.AddMessageFilter(Me)
         'SQLTableManager.DropRegistrosPontos()
         'SQLTableManager.DropSalarios()
         'SQLTableManager.DropFuncionarios()

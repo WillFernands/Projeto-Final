@@ -30,9 +30,9 @@ Partial Class ControleFornecedor
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.NovoFornecedorTP = New System.Windows.Forms.TabPage()
-        Me.TelefoneNovoFornecedorMT = New System.Windows.Forms.MaskedTextBox()
-        Me.CNPJNovoFornecedorMT = New System.Windows.Forms.MaskedTextBox()
-        Me.CEPNovoFornecedorMT = New System.Windows.Forms.MaskedTextBox()
+        Me.TelefoneNovoFornecedorMTF = New System.Windows.Forms.MaskedTextBox()
+        Me.CNPJNovoFornecedorMTF = New System.Windows.Forms.MaskedTextBox()
+        Me.CEPNovoFornecedorMTF = New System.Windows.Forms.MaskedTextBox()
         Me.TipoNovoFornecedorCB = New System.Windows.Forms.ComboBox()
         Me.TipoNovoFornecedorLB = New System.Windows.Forms.Label()
         Me.LimparNovoFornecedorBT = New System.Windows.Forms.Button()
@@ -53,7 +53,7 @@ Partial Class ControleFornecedor
         Me.TelefoneNovoFornecedorLB = New System.Windows.Forms.Label()
         Me.FantasiaNovoFornecedorTF = New System.Windows.Forms.TextBox()
         Me.FantasiaNovoFornecedorLB = New System.Windows.Forms.Label()
-        Me.RazaoSociaNovoFornecedorlTF = New System.Windows.Forms.TextBox()
+        Me.RazaoSociaNovoFornecedorTF = New System.Windows.Forms.TextBox()
         Me.RazaoSocialNovoFornecedorLB = New System.Windows.Forms.Label()
         Me.CNPJNovoFornecedorLB = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -252,9 +252,9 @@ Partial Class ControleFornecedor
         '
         'NovoFornecedorTP
         '
-        Me.NovoFornecedorTP.Controls.Add(Me.TelefoneNovoFornecedorMT)
-        Me.NovoFornecedorTP.Controls.Add(Me.CNPJNovoFornecedorMT)
-        Me.NovoFornecedorTP.Controls.Add(Me.CEPNovoFornecedorMT)
+        Me.NovoFornecedorTP.Controls.Add(Me.TelefoneNovoFornecedorMTF)
+        Me.NovoFornecedorTP.Controls.Add(Me.CNPJNovoFornecedorMTF)
+        Me.NovoFornecedorTP.Controls.Add(Me.CEPNovoFornecedorMTF)
         Me.NovoFornecedorTP.Controls.Add(Me.TipoNovoFornecedorCB)
         Me.NovoFornecedorTP.Controls.Add(Me.TipoNovoFornecedorLB)
         Me.NovoFornecedorTP.Controls.Add(Me.LimparNovoFornecedorBT)
@@ -275,7 +275,7 @@ Partial Class ControleFornecedor
         Me.NovoFornecedorTP.Controls.Add(Me.TelefoneNovoFornecedorLB)
         Me.NovoFornecedorTP.Controls.Add(Me.FantasiaNovoFornecedorTF)
         Me.NovoFornecedorTP.Controls.Add(Me.FantasiaNovoFornecedorLB)
-        Me.NovoFornecedorTP.Controls.Add(Me.RazaoSociaNovoFornecedorlTF)
+        Me.NovoFornecedorTP.Controls.Add(Me.RazaoSociaNovoFornecedorTF)
         Me.NovoFornecedorTP.Controls.Add(Me.RazaoSocialNovoFornecedorLB)
         Me.NovoFornecedorTP.Controls.Add(Me.CNPJNovoFornecedorLB)
         Me.NovoFornecedorTP.Location = New System.Drawing.Point(4, 22)
@@ -286,31 +286,31 @@ Partial Class ControleFornecedor
         Me.NovoFornecedorTP.Text = "Novo Fornecedor"
         Me.NovoFornecedorTP.UseVisualStyleBackColor = True
         '
-        'TelefoneNovoFornecedorMT
+        'TelefoneNovoFornecedorMTF
         '
-        Me.TelefoneNovoFornecedorMT.Location = New System.Drawing.Point(64, 85)
-        Me.TelefoneNovoFornecedorMT.Name = "TelefoneNovoFornecedorMT"
-        Me.TelefoneNovoFornecedorMT.Size = New System.Drawing.Size(167, 20)
-        Me.TelefoneNovoFornecedorMT.TabIndex = 29
+        Me.TelefoneNovoFornecedorMTF.Location = New System.Drawing.Point(78, 120)
+        Me.TelefoneNovoFornecedorMTF.Name = "TelefoneNovoFornecedorMTF"
+        Me.TelefoneNovoFornecedorMTF.Size = New System.Drawing.Size(158, 20)
+        Me.TelefoneNovoFornecedorMTF.TabIndex = 29
         '
-        'CNPJNovoFornecedorMT
+        'CNPJNovoFornecedorMTF
         '
-        Me.CNPJNovoFornecedorMT.Location = New System.Drawing.Point(64, 13)
-        Me.CNPJNovoFornecedorMT.Name = "CNPJNovoFornecedorMT"
-        Me.CNPJNovoFornecedorMT.Size = New System.Drawing.Size(167, 20)
-        Me.CNPJNovoFornecedorMT.TabIndex = 28
+        Me.CNPJNovoFornecedorMTF.Location = New System.Drawing.Point(78, 19)
+        Me.CNPJNovoFornecedorMTF.Name = "CNPJNovoFornecedorMTF"
+        Me.CNPJNovoFornecedorMTF.Size = New System.Drawing.Size(158, 20)
+        Me.CNPJNovoFornecedorMTF.TabIndex = 28
         '
-        'CEPNovoFornecedorMT
+        'CEPNovoFornecedorMTF
         '
-        Me.CEPNovoFornecedorMT.Location = New System.Drawing.Point(289, 85)
-        Me.CEPNovoFornecedorMT.Name = "CEPNovoFornecedorMT"
-        Me.CEPNovoFornecedorMT.Size = New System.Drawing.Size(167, 20)
-        Me.CEPNovoFornecedorMT.TabIndex = 27
+        Me.CEPNovoFornecedorMTF.Location = New System.Drawing.Point(78, 269)
+        Me.CEPNovoFornecedorMTF.Name = "CEPNovoFornecedorMTF"
+        Me.CEPNovoFornecedorMTF.Size = New System.Drawing.Size(158, 20)
+        Me.CEPNovoFornecedorMTF.TabIndex = 27
         '
         'TipoNovoFornecedorCB
         '
         Me.TipoNovoFornecedorCB.FormattingEnabled = True
-        Me.TipoNovoFornecedorCB.Location = New System.Drawing.Point(505, 193)
+        Me.TipoNovoFornecedorCB.Location = New System.Drawing.Point(510, 119)
         Me.TipoNovoFornecedorCB.Name = "TipoNovoFornecedorCB"
         Me.TipoNovoFornecedorCB.Size = New System.Drawing.Size(166, 21)
         Me.TipoNovoFornecedorCB.TabIndex = 26
@@ -318,7 +318,7 @@ Partial Class ControleFornecedor
         'TipoNovoFornecedorLB
         '
         Me.TipoNovoFornecedorLB.AutoSize = True
-        Me.TipoNovoFornecedorLB.Location = New System.Drawing.Point(396, 196)
+        Me.TipoNovoFornecedorLB.Location = New System.Drawing.Point(401, 122)
         Me.TipoNovoFornecedorLB.Name = "TipoNovoFornecedorLB"
         Me.TipoNovoFornecedorLB.Size = New System.Drawing.Size(103, 13)
         Me.TipoNovoFornecedorLB.TabIndex = 25
@@ -326,7 +326,7 @@ Partial Class ControleFornecedor
         '
         'LimparNovoFornecedorBT
         '
-        Me.LimparNovoFornecedorBT.Location = New System.Drawing.Point(336, 285)
+        Me.LimparNovoFornecedorBT.Location = New System.Drawing.Point(365, 311)
         Me.LimparNovoFornecedorBT.Name = "LimparNovoFornecedorBT"
         Me.LimparNovoFornecedorBT.Size = New System.Drawing.Size(75, 23)
         Me.LimparNovoFornecedorBT.TabIndex = 24
@@ -336,7 +336,7 @@ Partial Class ControleFornecedor
         'SalvarNovoFornecedorBT
         '
         Me.SalvarNovoFornecedorBT.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.SalvarNovoFornecedorBT.Location = New System.Drawing.Point(255, 285)
+        Me.SalvarNovoFornecedorBT.Location = New System.Drawing.Point(244, 311)
         Me.SalvarNovoFornecedorBT.Name = "SalvarNovoFornecedorBT"
         Me.SalvarNovoFornecedorBT.Size = New System.Drawing.Size(75, 23)
         Me.SalvarNovoFornecedorBT.TabIndex = 23
@@ -346,15 +346,15 @@ Partial Class ControleFornecedor
         'EstadoCB
         '
         Me.EstadoCB.FormattingEnabled = True
-        Me.EstadoCB.Location = New System.Drawing.Point(64, 157)
+        Me.EstadoCB.Location = New System.Drawing.Point(589, 219)
         Me.EstadoCB.Name = "EstadoCB"
-        Me.EstadoCB.Size = New System.Drawing.Size(167, 21)
+        Me.EstadoCB.Size = New System.Drawing.Size(87, 21)
         Me.EstadoCB.TabIndex = 22
         '
         'TipoEnderecoNovoFornecedorLB
         '
         Me.TipoEnderecoNovoFornecedorLB.AutoSize = True
-        Me.TipoEnderecoNovoFornecedorLB.Location = New System.Drawing.Point(3, 196)
+        Me.TipoEnderecoNovoFornecedorLB.Location = New System.Drawing.Point(413, 272)
         Me.TipoEnderecoNovoFornecedorLB.Name = "TipoEnderecoNovoFornecedorLB"
         Me.TipoEnderecoNovoFornecedorLB.Size = New System.Drawing.Size(95, 13)
         Me.TipoEnderecoNovoFornecedorLB.TabIndex = 21
@@ -363,7 +363,7 @@ Partial Class ControleFornecedor
         'TipoEnderecoNovoFornecedorCB
         '
         Me.TipoEnderecoNovoFornecedorCB.FormattingEnabled = True
-        Me.TipoEnderecoNovoFornecedorCB.Location = New System.Drawing.Point(104, 193)
+        Me.TipoEnderecoNovoFornecedorCB.Location = New System.Drawing.Point(514, 269)
         Me.TipoEnderecoNovoFornecedorCB.Name = "TipoEnderecoNovoFornecedorCB"
         Me.TipoEnderecoNovoFornecedorCB.Size = New System.Drawing.Size(162, 21)
         Me.TipoEnderecoNovoFornecedorCB.TabIndex = 20
@@ -371,7 +371,7 @@ Partial Class ControleFornecedor
         'CEPNovoFornecedorLB
         '
         Me.CEPNovoFornecedorLB.AutoSize = True
-        Me.CEPNovoFornecedorLB.Location = New System.Drawing.Point(252, 88)
+        Me.CEPNovoFornecedorLB.Location = New System.Drawing.Point(8, 272)
         Me.CEPNovoFornecedorLB.Name = "CEPNovoFornecedorLB"
         Me.CEPNovoFornecedorLB.Size = New System.Drawing.Size(31, 13)
         Me.CEPNovoFornecedorLB.TabIndex = 18
@@ -379,15 +379,15 @@ Partial Class ControleFornecedor
         '
         'BairroTF
         '
-        Me.BairroTF.Location = New System.Drawing.Point(505, 157)
+        Me.BairroTF.Location = New System.Drawing.Point(78, 219)
         Me.BairroTF.Name = "BairroTF"
-        Me.BairroTF.Size = New System.Drawing.Size(166, 20)
+        Me.BairroTF.Size = New System.Drawing.Size(157, 20)
         Me.BairroTF.TabIndex = 17
         '
         'BairroLB
         '
         Me.BairroLB.AutoSize = True
-        Me.BairroLB.Location = New System.Drawing.Point(462, 160)
+        Me.BairroLB.Location = New System.Drawing.Point(8, 222)
         Me.BairroLB.Name = "BairroLB"
         Me.BairroLB.Size = New System.Drawing.Size(37, 13)
         Me.BairroLB.TabIndex = 16
@@ -395,7 +395,7 @@ Partial Class ControleFornecedor
         '
         'CidadeTF
         '
-        Me.CidadeTF.Location = New System.Drawing.Point(289, 157)
+        Me.CidadeTF.Location = New System.Drawing.Point(294, 219)
         Me.CidadeTF.Name = "CidadeTF"
         Me.CidadeTF.Size = New System.Drawing.Size(167, 20)
         Me.CidadeTF.TabIndex = 15
@@ -403,7 +403,7 @@ Partial Class ControleFornecedor
         'CidadeLB
         '
         Me.CidadeLB.AutoSize = True
-        Me.CidadeLB.Location = New System.Drawing.Point(240, 160)
+        Me.CidadeLB.Location = New System.Drawing.Point(245, 222)
         Me.CidadeLB.Name = "CidadeLB"
         Me.CidadeLB.Size = New System.Drawing.Size(43, 13)
         Me.CidadeLB.TabIndex = 14
@@ -412,7 +412,7 @@ Partial Class ControleFornecedor
         'EstadoLB
         '
         Me.EstadoLB.AutoSize = True
-        Me.EstadoLB.Location = New System.Drawing.Point(3, 160)
+        Me.EstadoLB.Location = New System.Drawing.Point(540, 222)
         Me.EstadoLB.Name = "EstadoLB"
         Me.EstadoLB.Size = New System.Drawing.Size(43, 13)
         Me.EstadoLB.TabIndex = 12
@@ -420,7 +420,7 @@ Partial Class ControleFornecedor
         '
         'NumeroNovoFornecedorTF
         '
-        Me.NumeroNovoFornecedorTF.Location = New System.Drawing.Point(584, 121)
+        Me.NumeroNovoFornecedorTF.Location = New System.Drawing.Point(589, 169)
         Me.NumeroNovoFornecedorTF.Name = "NumeroNovoFornecedorTF"
         Me.NumeroNovoFornecedorTF.Size = New System.Drawing.Size(87, 20)
         Me.NumeroNovoFornecedorTF.TabIndex = 11
@@ -428,7 +428,7 @@ Partial Class ControleFornecedor
         'NumeroNovoFornecedorLB
         '
         Me.NumeroNovoFornecedorLB.AutoSize = True
-        Me.NumeroNovoFornecedorLB.Location = New System.Drawing.Point(556, 124)
+        Me.NumeroNovoFornecedorLB.Location = New System.Drawing.Point(561, 172)
         Me.NumeroNovoFornecedorLB.Name = "NumeroNovoFornecedorLB"
         Me.NumeroNovoFornecedorLB.Size = New System.Drawing.Size(22, 13)
         Me.NumeroNovoFornecedorLB.TabIndex = 10
@@ -436,15 +436,15 @@ Partial Class ControleFornecedor
         '
         'LogradouroNovoFornecedorTF
         '
-        Me.LogradouroNovoFornecedorTF.Location = New System.Drawing.Point(64, 121)
+        Me.LogradouroNovoFornecedorTF.Location = New System.Drawing.Point(78, 169)
         Me.LogradouroNovoFornecedorTF.Name = "LogradouroNovoFornecedorTF"
-        Me.LogradouroNovoFornecedorTF.Size = New System.Drawing.Size(486, 20)
+        Me.LogradouroNovoFornecedorTF.Size = New System.Drawing.Size(477, 20)
         Me.LogradouroNovoFornecedorTF.TabIndex = 9
         '
         'LogradouroNovoForncedorLB
         '
         Me.LogradouroNovoForncedorLB.AutoSize = True
-        Me.LogradouroNovoForncedorLB.Location = New System.Drawing.Point(3, 124)
+        Me.LogradouroNovoForncedorLB.Location = New System.Drawing.Point(8, 172)
         Me.LogradouroNovoForncedorLB.Name = "LogradouroNovoForncedorLB"
         Me.LogradouroNovoForncedorLB.Size = New System.Drawing.Size(64, 13)
         Me.LogradouroNovoForncedorLB.TabIndex = 8
@@ -453,7 +453,7 @@ Partial Class ControleFornecedor
         'TelefoneNovoFornecedorLB
         '
         Me.TelefoneNovoFornecedorLB.AutoSize = True
-        Me.TelefoneNovoFornecedorLB.Location = New System.Drawing.Point(3, 88)
+        Me.TelefoneNovoFornecedorLB.Location = New System.Drawing.Point(8, 122)
         Me.TelefoneNovoFornecedorLB.Name = "TelefoneNovoFornecedorLB"
         Me.TelefoneNovoFornecedorLB.Size = New System.Drawing.Size(52, 13)
         Me.TelefoneNovoFornecedorLB.TabIndex = 6
@@ -461,31 +461,31 @@ Partial Class ControleFornecedor
         '
         'FantasiaNovoFornecedorTF
         '
-        Me.FantasiaNovoFornecedorTF.Location = New System.Drawing.Point(64, 49)
+        Me.FantasiaNovoFornecedorTF.Location = New System.Drawing.Point(78, 69)
         Me.FantasiaNovoFornecedorTF.Name = "FantasiaNovoFornecedorTF"
-        Me.FantasiaNovoFornecedorTF.Size = New System.Drawing.Size(607, 20)
+        Me.FantasiaNovoFornecedorTF.Size = New System.Drawing.Size(598, 20)
         Me.FantasiaNovoFornecedorTF.TabIndex = 5
         '
         'FantasiaNovoFornecedorLB
         '
         Me.FantasiaNovoFornecedorLB.AutoSize = True
-        Me.FantasiaNovoFornecedorLB.Location = New System.Drawing.Point(3, 52)
+        Me.FantasiaNovoFornecedorLB.Location = New System.Drawing.Point(8, 72)
         Me.FantasiaNovoFornecedorLB.Name = "FantasiaNovoFornecedorLB"
         Me.FantasiaNovoFornecedorLB.Size = New System.Drawing.Size(50, 13)
         Me.FantasiaNovoFornecedorLB.TabIndex = 4
         Me.FantasiaNovoFornecedorLB.Text = "Fantasia:"
         '
-        'RazaoSociaNovoFornecedorlTF
+        'RazaoSociaNovoFornecedorTF
         '
-        Me.RazaoSociaNovoFornecedorlTF.Location = New System.Drawing.Point(316, 13)
-        Me.RazaoSociaNovoFornecedorlTF.Name = "RazaoSociaNovoFornecedorlTF"
-        Me.RazaoSociaNovoFornecedorlTF.Size = New System.Drawing.Size(355, 20)
-        Me.RazaoSociaNovoFornecedorlTF.TabIndex = 3
+        Me.RazaoSociaNovoFornecedorTF.Location = New System.Drawing.Point(321, 19)
+        Me.RazaoSociaNovoFornecedorTF.Name = "RazaoSociaNovoFornecedorTF"
+        Me.RazaoSociaNovoFornecedorTF.Size = New System.Drawing.Size(355, 20)
+        Me.RazaoSociaNovoFornecedorTF.TabIndex = 3
         '
         'RazaoSocialNovoFornecedorLB
         '
         Me.RazaoSocialNovoFornecedorLB.AutoSize = True
-        Me.RazaoSocialNovoFornecedorLB.Location = New System.Drawing.Point(237, 16)
+        Me.RazaoSocialNovoFornecedorLB.Location = New System.Drawing.Point(242, 22)
         Me.RazaoSocialNovoFornecedorLB.Name = "RazaoSocialNovoFornecedorLB"
         Me.RazaoSocialNovoFornecedorLB.Size = New System.Drawing.Size(73, 13)
         Me.RazaoSocialNovoFornecedorLB.TabIndex = 2
@@ -495,7 +495,7 @@ Partial Class ControleFornecedor
         '
         Me.CNPJNovoFornecedorLB.AutoSize = True
         Me.CNPJNovoFornecedorLB.Cursor = System.Windows.Forms.Cursors.Default
-        Me.CNPJNovoFornecedorLB.Location = New System.Drawing.Point(3, 16)
+        Me.CNPJNovoFornecedorLB.Location = New System.Drawing.Point(8, 22)
         Me.CNPJNovoFornecedorLB.Name = "CNPJNovoFornecedorLB"
         Me.CNPJNovoFornecedorLB.Size = New System.Drawing.Size(37, 13)
         Me.CNPJNovoFornecedorLB.TabIndex = 0
@@ -1516,7 +1516,7 @@ Partial Class ControleFornecedor
     Friend WithEvents Panel2 As Panel
     Friend WithEvents RazaoSocialNovoFornecedorLB As Label
     Friend WithEvents FantasiaNovoFornecedorLB As Label
-    Friend WithEvents RazaoSociaNovoFornecedorlTF As TextBox
+    Friend WithEvents RazaoSociaNovoFornecedorTF As TextBox
     Friend WithEvents FantasiaNovoFornecedorTF As TextBox
     Friend WithEvents TelefoneNovoFornecedorLB As Label
     Friend WithEvents LogradouroNovoFornecedorTF As TextBox
@@ -1539,10 +1539,10 @@ Partial Class ControleFornecedor
     Friend WithEvents PerfilTF As Label
     Friend WithEvents MatriculaTF As Label
     Friend WithEvents Label21 As Label
-    Friend WithEvents CEPNovoFornecedorMT As MaskedTextBox
+    Friend WithEvents CEPNovoFornecedorMTF As MaskedTextBox
     Friend WithEvents CNPJAssistenciaLB As Label
-    Friend WithEvents TelefoneNovoFornecedorMT As MaskedTextBox
-    Friend WithEvents CNPJNovoFornecedorMT As MaskedTextBox
+    Friend WithEvents TelefoneNovoFornecedorMTF As MaskedTextBox
+    Friend WithEvents CNPJNovoFornecedorMTF As MaskedTextBox
     Friend WithEvents LogradouroAssistenciaLB As Label
     Friend WithEvents CEPAssistenciaLB As Label
     Friend WithEvents TelefoneAssistenciaLB As Label

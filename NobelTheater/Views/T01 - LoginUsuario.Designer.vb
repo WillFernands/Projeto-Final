@@ -29,6 +29,7 @@ Partial Class LoginUsuario
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.UsernameLabel = New System.Windows.Forms.Label()
         Me.PasswordLabel = New System.Windows.Forms.Label()
@@ -44,6 +45,7 @@ Partial Class LoginUsuario
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -187,6 +189,10 @@ Partial Class LoginUsuario
         Me.Label3.TabIndex = 13
         Me.Label3.Text = "-"
         '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1000
+        '
         'LoginUsuario
         '
         Me.AcceptButton = Me.LogarBT
@@ -229,4 +235,5 @@ Partial Class LoginUsuario
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents RegistrarPontoBT As System.Windows.Forms.Button
     Friend WithEvents Label3 As Label
+    Friend WithEvents Timer1 As Timer
 End Class
