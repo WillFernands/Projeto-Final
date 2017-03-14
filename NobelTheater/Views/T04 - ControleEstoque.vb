@@ -641,11 +641,22 @@
     Private Sub ProdutosEmprestadosDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ProdutosEmprestadosDT.CellContentClick
         If (ProdutosEmprestadosDT.SelectedCells Is Nothing OrElse e.RowIndex = -1) Then Exit Sub
 
-        If (e.ColumnIndex = 4 AndAlso ProdutosEmprestadosDT.SelectedCells.Item(0).Value = "Ver Produtos") Then
+        If (e.ColumnIndex = 4 AndAlso ProdutosEmprestadosDT.SelectedCells.Item(0).Value = "Ver produtos") Then
             Dim visualizacao As New VerItensEmprestados()
             visualizacao.ProdutosList = SolicitacaoEmprestimoBC.FindByID(ProdutosEmprestadosDT.Item(0, e.RowIndex).Value).ItensEmprestimo
             visualizacao.Show()
-            Exit Sub
+        ElseIf (e.ColumnIndex = 5 AndAlso ProdutosEmprestadosDT.SelectedCells.Item(0).Value = "Finalizar") Then
+            If (MsgBox("Essa ação encerrará a solicitação e atualizará os produtos ao estoque novamente, continuar ?", vbYesNo Or vbInformation Or vbMsgBoxSetForeground) = vbYes) Then
+                Dim solicitacao As SolicitacaoEmprestimo = SolicitacaoEmprestimoBC.FindByID(ProdutosEmprestadosDT.Item(0, e.RowIndex).Value)
+                solicitacao.Status = StatusEmprestimo.Finalizada
+                For Each item As ItemEmprestimo In solicitacao.ItensEmprestimo
+                    item.DataDevolucao = Now
+                    item.SolicitacaoEmprestimo = solicitacao
+                    ItemEmprestimoBC.UpdateDataDevolucao(item)
+                Next
+                SolicitacaoEmprestimoBC.UpdateStatus(solicitacao)
+                RefreshDTProdutosEmprestados()
+            End If
         End If
     End Sub
 

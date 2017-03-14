@@ -21,6 +21,13 @@ Public Class ItemEmprestimoBC
         Return False
     End Function
 
+    Public Shared Function UpdateDataDevolucao(itemEmprestimo As ItemEmprestimo) As Boolean
+        If (ItemEmprestimoBC.Validate(itemEmprestimo)) Then
+            Return itemEmprestimoDAO.UpdateDataDevolucao(itemEmprestimo)
+        End If
+        Return False
+    End Function
+
     Public Shared Function FindBySolicitacao(solicitacao As SolicitacaoEmprestimo) As List(Of ItemEmprestimo)
         Return itemEmprestimoDAO.FindBySolicitacao(solicitacao)
     End Function

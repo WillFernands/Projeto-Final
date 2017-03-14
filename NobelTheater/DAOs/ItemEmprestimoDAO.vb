@@ -23,6 +23,26 @@ Public Class ItemEmprestimoDAO
     End Function
 
     'OK
+    Public Function UpdateDataDevolucao(ByVal item As ItemEmprestimo) As Boolean
+        Dim conn As New Connection
+        Dim strSQL As New StringBuilder
+
+        strSQL.Append("UPDATE ItensEmprestimos ")
+        strSQL.Append("SET dataDevolucao = @data ")
+        strSQL.Append("WHERE codigoProduto = @codigo ")
+        strSQL.Append("AND idSolicitacao = @idSolicitacao ")
+        strSQL.Append("AND dataEmprestimo = @dataEmprestimo;")
+
+        conn.AddParameter("@data", item.DataDevolucao)
+        conn.AddParameter("@codigo", item.Produto.Codigo)
+        conn.AddParameter("@idSolicitacao", item.SolicitacaoEmprestimo.Id)
+        conn.AddParameter("@dataEmprestimo", item.DataEmprestimo)
+
+        Return conn.ExecuteCommand(strSQL.ToString)
+
+    End Function
+
+    'OK
     Public Function FindBySolicitacao(solicitacao As SolicitacaoEmprestimo) As List(Of ItemEmprestimo)
 
         If (solicitacao Is Nothing) Then Return Nothing
