@@ -159,17 +159,17 @@ Partial Class ControleEstoque
         Me.ProdutosEmprestadosTab = New System.Windows.Forms.TabPage()
         Me.BuscaAllRB = New System.Windows.Forms.RadioButton()
         Me.BuscaIDRB = New System.Windows.Forms.RadioButton()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.IDEmprestimoTF = New System.Windows.Forms.TextBox()
         Me.BuscaProdutoRB = New System.Windows.Forms.RadioButton()
         Me.BuscaClienteRB = New System.Windows.Forms.RadioButton()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.CodigoProdutoEmprestimoTF = New System.Windows.Forms.TextBox()
+        Me.NomeProdutoEmprestimoTF = New System.Windows.Forms.TextBox()
+        Me.ClienteEmprestimoTF = New System.Windows.Forms.TextBox()
+        Me.ProdutosEmprestadosDT = New System.Windows.Forms.DataGridView()
         Me.IDSolicitacao = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StatusSolicitacao = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ClienteProdutoEmprestado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataEmprestimo = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.DataEmprestimo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VerProdutos = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.FinalizarSolicitacao = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.PictureBox14 = New System.Windows.Forms.PictureBox()
@@ -264,7 +264,7 @@ Partial Class ControleEstoque
         CType(Me.BuscarProdutoEmprestarProdutoIMG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BuscarClienteEmprestarProdutoIMG, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ProdutosEmprestadosTab.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProdutosEmprestadosDT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage6.SuspendLayout()
@@ -1514,13 +1514,13 @@ Partial Class ControleEstoque
         '
         Me.ProdutosEmprestadosTab.Controls.Add(Me.BuscaAllRB)
         Me.ProdutosEmprestadosTab.Controls.Add(Me.BuscaIDRB)
-        Me.ProdutosEmprestadosTab.Controls.Add(Me.TextBox7)
+        Me.ProdutosEmprestadosTab.Controls.Add(Me.IDEmprestimoTF)
         Me.ProdutosEmprestadosTab.Controls.Add(Me.BuscaProdutoRB)
         Me.ProdutosEmprestadosTab.Controls.Add(Me.BuscaClienteRB)
-        Me.ProdutosEmprestadosTab.Controls.Add(Me.TextBox3)
-        Me.ProdutosEmprestadosTab.Controls.Add(Me.TextBox4)
-        Me.ProdutosEmprestadosTab.Controls.Add(Me.TextBox6)
-        Me.ProdutosEmprestadosTab.Controls.Add(Me.DataGridView1)
+        Me.ProdutosEmprestadosTab.Controls.Add(Me.CodigoProdutoEmprestimoTF)
+        Me.ProdutosEmprestadosTab.Controls.Add(Me.NomeProdutoEmprestimoTF)
+        Me.ProdutosEmprestadosTab.Controls.Add(Me.ClienteEmprestimoTF)
+        Me.ProdutosEmprestadosTab.Controls.Add(Me.ProdutosEmprestadosDT)
         Me.ProdutosEmprestadosTab.Controls.Add(Me.PictureBox14)
         Me.ProdutosEmprestadosTab.Controls.Add(Me.PictureBox15)
         Me.ProdutosEmprestadosTab.Location = New System.Drawing.Point(4, 22)
@@ -1534,12 +1534,10 @@ Partial Class ControleEstoque
         'BuscaAllRB
         '
         Me.BuscaAllRB.AutoSize = True
-        Me.BuscaAllRB.Checked = True
         Me.BuscaAllRB.Location = New System.Drawing.Point(463, 10)
         Me.BuscaAllRB.Name = "BuscaAllRB"
         Me.BuscaAllRB.Size = New System.Drawing.Size(209, 17)
         Me.BuscaAllRB.TabIndex = 51
-        Me.BuscaAllRB.TabStop = True
         Me.BuscaAllRB.Text = "Buscar todas as solicitações em aberto"
         Me.BuscaAllRB.UseVisualStyleBackColor = True
         '
@@ -1553,12 +1551,12 @@ Partial Class ControleEstoque
         Me.BuscaIDRB.Text = "Busca por ID de empréstimo:"
         Me.BuscaIDRB.UseVisualStyleBackColor = True
         '
-        'TextBox7
+        'IDEmprestimoTF
         '
-        Me.TextBox7.Location = New System.Drawing.Point(197, 9)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(67, 20)
-        Me.TextBox7.TabIndex = 48
+        Me.IDEmprestimoTF.Location = New System.Drawing.Point(197, 9)
+        Me.IDEmprestimoTF.Name = "IDEmprestimoTF"
+        Me.IDEmprestimoTF.Size = New System.Drawing.Size(67, 20)
+        Me.IDEmprestimoTF.TabIndex = 48
         '
         'BuscaProdutoRB
         '
@@ -1580,43 +1578,43 @@ Partial Class ControleEstoque
         Me.BuscaClienteRB.Text = "Busca por cliente:"
         Me.BuscaClienteRB.UseVisualStyleBackColor = True
         '
-        'TextBox3
+        'CodigoProdutoEmprestimoTF
         '
-        Me.TextBox3.Enabled = False
-        Me.TextBox3.Location = New System.Drawing.Point(601, 85)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(37, 20)
-        Me.TextBox3.TabIndex = 45
+        Me.CodigoProdutoEmprestimoTF.Enabled = False
+        Me.CodigoProdutoEmprestimoTF.Location = New System.Drawing.Point(601, 85)
+        Me.CodigoProdutoEmprestimoTF.Name = "CodigoProdutoEmprestimoTF"
+        Me.CodigoProdutoEmprestimoTF.Size = New System.Drawing.Size(37, 20)
+        Me.CodigoProdutoEmprestimoTF.TabIndex = 45
         '
-        'TextBox4
+        'NomeProdutoEmprestimoTF
         '
-        Me.TextBox4.Enabled = False
-        Me.TextBox4.Location = New System.Drawing.Point(197, 85)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(398, 20)
-        Me.TextBox4.TabIndex = 43
+        Me.NomeProdutoEmprestimoTF.Enabled = False
+        Me.NomeProdutoEmprestimoTF.Location = New System.Drawing.Point(197, 85)
+        Me.NomeProdutoEmprestimoTF.Name = "NomeProdutoEmprestimoTF"
+        Me.NomeProdutoEmprestimoTF.Size = New System.Drawing.Size(398, 20)
+        Me.NomeProdutoEmprestimoTF.TabIndex = 43
         '
-        'TextBox6
+        'ClienteEmprestimoTF
         '
-        Me.TextBox6.Enabled = False
-        Me.TextBox6.Location = New System.Drawing.Point(197, 47)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(441, 20)
-        Me.TextBox6.TabIndex = 40
+        Me.ClienteEmprestimoTF.Enabled = False
+        Me.ClienteEmprestimoTF.Location = New System.Drawing.Point(197, 47)
+        Me.ClienteEmprestimoTF.Name = "ClienteEmprestimoTF"
+        Me.ClienteEmprestimoTF.Size = New System.Drawing.Size(441, 20)
+        Me.ClienteEmprestimoTF.TabIndex = 40
         '
-        'DataGridView1
+        'ProdutosEmprestadosDT
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDSolicitacao, Me.StatusSolicitacao, Me.ClienteProdutoEmprestado, Me.DataEmprestimo, Me.VerProdutos, Me.FinalizarSolicitacao})
-        Me.DataGridView1.Location = New System.Drawing.Point(11, 115)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.Size = New System.Drawing.Size(661, 209)
-        Me.DataGridView1.TabIndex = 22
+        Me.ProdutosEmprestadosDT.AllowUserToAddRows = False
+        Me.ProdutosEmprestadosDT.AllowUserToDeleteRows = False
+        Me.ProdutosEmprestadosDT.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ProdutosEmprestadosDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ProdutosEmprestadosDT.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDSolicitacao, Me.StatusSolicitacao, Me.ClienteProdutoEmprestado, Me.DataEmprestimo, Me.VerProdutos, Me.FinalizarSolicitacao})
+        Me.ProdutosEmprestadosDT.Location = New System.Drawing.Point(11, 115)
+        Me.ProdutosEmprestadosDT.Name = "ProdutosEmprestadosDT"
+        Me.ProdutosEmprestadosDT.ReadOnly = True
+        Me.ProdutosEmprestadosDT.RowHeadersVisible = False
+        Me.ProdutosEmprestadosDT.Size = New System.Drawing.Size(661, 209)
+        Me.ProdutosEmprestadosDT.TabIndex = 22
         '
         'IDSolicitacao
         '
@@ -1641,9 +1639,11 @@ Partial Class ControleEstoque
         '
         'DataEmprestimo
         '
-        Me.DataEmprestimo.HeaderText = "Data do Emprestimo"
+        Me.DataEmprestimo.HeaderText = "Data da Solicitação"
         Me.DataEmprestimo.Name = "DataEmprestimo"
         Me.DataEmprestimo.ReadOnly = True
+        Me.DataEmprestimo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataEmprestimo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         Me.DataEmprestimo.Width = 150
         '
         'VerProdutos
@@ -2101,7 +2101,7 @@ Partial Class ControleEstoque
         CType(Me.BuscarClienteEmprestarProdutoIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ProdutosEmprestadosTab.ResumeLayout(False)
         Me.ProdutosEmprestadosTab.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProdutosEmprestadosDT, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage6.ResumeLayout(False)
@@ -2230,7 +2230,7 @@ Partial Class ControleEstoque
     Friend WithEvents DataEmissaoNFCotacaoLB As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents StatusCotacaoCB As ComboBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents ProdutosEmprestadosDT As DataGridView
     Friend WithEvents FimDT As DateTimePicker
     Friend WithEvents InicioDT As DateTimePicker
     Friend WithEvents DeLB As Label
@@ -2263,22 +2263,16 @@ Partial Class ControleEstoque
     Friend WithEvents DataGridViewTextBoxColumn26 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewButtonColumn5 As DataGridViewButtonColumn
     Friend WithEvents PictureBox13 As PictureBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents CodigoProdutoEmprestimoTF As TextBox
     Friend WithEvents PictureBox14 As PictureBox
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents NomeProdutoEmprestimoTF As TextBox
     Friend WithEvents PictureBox15 As PictureBox
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents ClienteEmprestimoTF As TextBox
     Friend WithEvents BuscaProdutoRB As RadioButton
     Friend WithEvents BuscaClienteRB As RadioButton
     Friend WithEvents BuscaIDRB As RadioButton
-    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents IDEmprestimoTF As TextBox
     Friend WithEvents BuscaAllRB As RadioButton
-    Friend WithEvents IDSolicitacao As DataGridViewTextBoxColumn
-    Friend WithEvents StatusSolicitacao As DataGridViewTextBoxColumn
-    Friend WithEvents ClienteProdutoEmprestado As DataGridViewTextBoxColumn
-    Friend WithEvents DataEmprestimo As DataGridViewCheckBoxColumn
-    Friend WithEvents VerProdutos As DataGridViewButtonColumn
-    Friend WithEvents FinalizarSolicitacao As DataGridViewButtonColumn
     Friend WithEvents Button1 As Button
     Friend WithEvents PagamentosDT As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
@@ -2316,4 +2310,10 @@ Partial Class ControleEstoque
     Friend WithEvents Fornecedor As DataGridViewTextBoxColumn
     Friend WithEvents NotaFiscal As DataGridViewTextBoxColumn
     Friend WithEvents VerProd As DataGridViewButtonColumn
+    Friend WithEvents IDSolicitacao As DataGridViewTextBoxColumn
+    Friend WithEvents StatusSolicitacao As DataGridViewTextBoxColumn
+    Friend WithEvents ClienteProdutoEmprestado As DataGridViewTextBoxColumn
+    Friend WithEvents DataEmprestimo As DataGridViewTextBoxColumn
+    Friend WithEvents VerProdutos As DataGridViewButtonColumn
+    Friend WithEvents FinalizarSolicitacao As DataGridViewButtonColumn
 End Class

@@ -43,7 +43,9 @@ Public Class ItemEmprestimoDAO
             item.SolicitacaoEmprestimo = solicitacao
             item.Quantidade = CInt(row.Item("quantidade"))
             item.DataEmprestimo = CDate(row.Item("dataEmprestimo"))
-            item.DataDevolucao = CDate(row.Item("dataDevolucao"))
+            If (IsDBNull(row.Item("dataDevolucao")) = False) Then
+                item.DataDevolucao = CDate(row.Item("dataDevolucao"))
+            End If
             itens.Add(item)
         Next
 

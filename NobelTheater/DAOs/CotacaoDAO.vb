@@ -55,6 +55,7 @@ Public Class CotacaoDAO
             cotacao.DataCotacao = CDate(row.Item("dataCotacao"))
             cotacao.Status = CStr(row.Item("statusCotacao"))
             cotacao.Fornecedor = FornecedorBC.FindByCNPJ(CStr(row.Item("cnpjFornecedor")))
+            cotacao.Itens = ItemCotadoBC.FindByCotacao(cotacao)
             cotacoes.Add(cotacao)
         Next
 

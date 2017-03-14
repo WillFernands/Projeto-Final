@@ -39,6 +39,9 @@
             ControleEstoque.PopulateProdutoCotacao(produto)
             Me.Close()
         ElseIf (Caller = "ControleEstoqueEmprestarProduto") Then
+            ControleEstoque.PopulateProdutoEmprestimoAtual(produto)
+            Me.Close()
+        ElseIf (Caller = "ControleEstoqueProdutosEmprestados") Then
             ControleEstoque.PopulateProdutoEmprestimo(produto)
             Me.Close()
         End If

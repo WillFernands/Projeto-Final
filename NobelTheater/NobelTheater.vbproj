@@ -324,6 +324,12 @@
     <Compile Include="Views\T20 - VerItensComprados.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\T21 - VerItensEmprestados.Designer.vb">
+      <DependentUpon>T21 - VerItensEmprestados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\T21 - VerItensEmprestados.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\T01 - LoginUsuario.resx">
@@ -391,6 +397,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\T20 - VerItensComprados.resx">
       <DependentUpon>T20 - VerItensComprados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\T21 - VerItensEmprestados.resx">
+      <DependentUpon>T21 - VerItensEmprestados.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -47,4 +47,8 @@ Public Class SolicitacaoEmprestimoBC
         Return solicitacaoEmprestimoDAO.FindByCliente(cliente)
     End Function
 
+    Public Shared Function FindAll() As List(Of SolicitacaoEmprestimo)
+        Return solicitacaoEmprestimoDAO.FindAll()
+    End Function
+
 End Class

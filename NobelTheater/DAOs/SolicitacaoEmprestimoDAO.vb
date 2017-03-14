@@ -61,6 +61,31 @@ Public Class SolicitacaoEmprestimoDAO
             solicitacao.DataSolicitacao = CDate(row.Item("dataSolicitacao"))
             solicitacao.Cliente = cliente
             solicitacao.Status = CStr(row.Item("statusSolicitacao"))
+            solicitacao.ItensEmprestimo = ItemEmprestimoBC.FindBySolicitacao(solicitacao)
+            solicitacoes.Add(solicitacao)
+        Next
+
+        Return solicitacoes
+
+    End Function
+
+    'OK
+    Public Function FindAll() As List(Of SolicitacaoEmprestimo)
+        Dim conn As New Connection
+
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM SolicitacoesEmprestimos;")
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of SolicitacaoEmprestimo)
+
+        Dim solicitacoes As New List(Of SolicitacaoEmprestimo)
+
+        For Each row As DataRow In dt.Rows
+            Dim solicitacao As New SolicitacaoEmprestimo()
+            solicitacao.Id = CLng(row.Item("id"))
+            solicitacao.DataSolicitacao = CDate(row.Item("dataSolicitacao"))
+            solicitacao.Cliente = ClienteBC.FindByID(CLng(row.Item("idCliente")))
+            solicitacao.Status = CStr(row.Item("statusSolicitacao"))
+            solicitacao.ItensEmprestimo = ItemEmprestimoBC.FindBySolicitacao(solicitacao)
             solicitacoes.Add(solicitacao)
         Next
 
@@ -86,6 +111,7 @@ Public Class SolicitacaoEmprestimoDAO
         solicitacao.DataSolicitacao = CDate(dt.Rows(0).Item("dataSolicitacao"))
         solicitacao.Cliente = ClientePFBC.FindByID(CLng(dt.Rows(0).Item("idCliente")))
         solicitacao.Status = CStr(dt.Rows(0).Item("statusSolicitacao"))
+        solicitacao.ItensEmprestimo = ItemEmprestimoBC.FindBySolicitacao(solicitacao)
 
         Return solicitacao
 

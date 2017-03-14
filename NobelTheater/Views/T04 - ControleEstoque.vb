@@ -5,11 +5,13 @@
     Private produtoAlertaAtual As Produto
     Private produtoCotacaoAtual As Produto
     Private produtoEmprestimoAtual As Produto
+    Private produtoEmprestimo As Produto
     Private itensCotados As New List(Of ItemCotado)
     Private itensEmprestimos As New List(Of ItemEmprestimo)
     Private cotacaoAtual As Cotacao
     Private compraAtual As NotaFiscalCompra
     Private clienteAtual As Cliente
+    Private clienteEmprestimo As Cliente
 
     Private Sub ControleEstoque_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         NomeTF.Text = "Nome: " & MenuPrincipal.funcionarioLogado.Nome
@@ -36,6 +38,22 @@
         CodigoProdutoTF.Text = produtoAtual.Codigo
     End Sub
 
+    Public Sub PopulateProdutoEmprestimo(produto As Produto)
+        produtoEmprestimo = produto
+        NomeProdutoEmprestimoTF.Text = produto.Nome
+        CodigoProdutoEmprestimoTF.Text = produto.Codigo
+    End Sub
+
+    Public Sub PopulateClienteEmprestimo(cliente As ClientePF)
+        clienteEmprestimo = cliente
+        ClienteEmprestimoTF.Text = cliente.CPF & " " & cliente.Nome
+    End Sub
+
+    Public Sub PopulateClienteEmprestimo(cliente As ClientePJ)
+        clienteEmprestimo = cliente
+        ClienteEmprestimoTF.Text = cliente.CNPJ & " " & cliente.Nome
+    End Sub
+
     Public Sub PopulateProdutoAlerta(produto As Produto)
         produtoAlertaAtual = produto
         ProdutoAlertaTF.Text = produtoAlertaAtual.Codigo & " - " & produtoAlertaAtual.Nome
@@ -47,7 +65,7 @@
         CodigoProdutoAcompanharCotacaoTF.Text = produtoCotacaoAtual.Codigo
     End Sub
 
-    Public Sub PopulateProdutoEmprestimo(produto As Produto)
+    Public Sub PopulateProdutoEmprestimoAtual(produto As Produto)
         produtoEmprestimoAtual = produto
         NomeProdutoEmprestarProdutoTF.Text = produtoEmprestimoAtual.Nome
         CodigoProdutoEmprestarProdutoTF.Text = produtoEmprestimoAtual.Codigo
@@ -491,7 +509,7 @@
 
     Private Sub PopulateAcompanharCompraTab()
         If (compraAtual IsNot Nothing) Then
-            FornecedorAcompanharCompraTF.Text = compraAtual.Cotacao.Fornecedor.Cnpj & " " & compraAtual.Cotacao.Fornecedor.NomeFantasia
+            FornecedorAcompanharCompraTF.Text = compraAtual.Cotacao.Fornecedor.Cnpj & " - " & compraAtual.Cotacao.Fornecedor.NomeFantasia
             DataCotacaoAcompanharCompraTF.Text = compraAtual.Cotacao.DataCotacao
             NumeroNFAcompanharCompraTF.Text = compraAtual.NumeroNF
             DataEmissaoAcompanharCompraTF.Text = compraAtual.EmissaoNF
@@ -549,5 +567,89 @@
         Dim visualizacao As New VerItensComprados()
         visualizacao.ProdutosList = NotaFiscalCompraBC.FindByID(compraAtual.ID).Items
         visualizacao.Show()
+    End Sub
+
+    Private Sub ProdutosEmprestadosTab_Enter(sender As Object, e As EventArgs) Handles ProdutosEmprestadosTab.Enter
+        BuscaAllRB.Checked = True
+        RefreshDTProdutosEmprestados()
+    End Sub
+
+    Private Sub RefreshDTProdutosEmprestados()
+        ProdutosEmprestadosDT.Rows.Clear()
+
+        If (BuscaAllRB.Checked) Then
+            For Each solicitacao As SolicitacaoEmprestimo In SolicitacaoEmprestimoBC.FindAll()
+                Dim list As New List(Of Object)
+                list.Add(solicitacao.Id) : list.Add(solicitacao.Status) : list.Add(solicitacao.Cliente.ID & " - " & solicitacao.Cliente.Nome) : list.Add(solicitacao.DataSolicitacao) : list.Add("Ver produtos") : list.Add("Finalizar")
+                ProdutosEmprestadosDT.Rows.Add(list.ToArray())
+            Next
+        ElseIf (BuscaIDRB.Checked AndAlso String.IsNullOrWhiteSpace(IDEmprestimoTF.Text) = False) Then
+            Dim solicitacao As SolicitacaoEmprestimo = SolicitacaoEmprestimoBC.FindByID(IDEmprestimoTF.Text)
+            Dim list As New List(Of Object)
+            list.Add(solicitacao.Id) : list.Add(solicitacao.Status) : list.Add(solicitacao.Cliente.ID & " - " & solicitacao.Cliente.Nome) : list.Add(solicitacao.DataSolicitacao) : list.Add("Ver produtos") : list.Add("Finalizar")
+            ProdutosEmprestadosDT.Rows.Add(list.ToArray())
+        ElseIf (BuscaClienteRB.Checked AndAlso String.IsNullOrWhiteSpace(ClienteEmprestimoTF.Text) = False) Then
+            For Each solicitacao As SolicitacaoEmprestimo In SolicitacaoEmprestimoBC.FindByCliente(clienteEmprestimo)
+                Dim list As New List(Of Object)
+                list.Add(solicitacao.Id) : list.Add(solicitacao.Status) : list.Add(solicitacao.Cliente.ID & " - " & solicitacao.Cliente.Nome) : list.Add(solicitacao.DataSolicitacao) : list.Add("Ver produtos") : list.Add("Finalizar")
+                ProdutosEmprestadosDT.Rows.Add(list.ToArray())
+            Next
+        ElseIf (BuscaProdutoRB.Checked AndAlso String.IsNullOrWhiteSpace(NomeProdutoEmprestimoTF.Text) = False) Then
+            For Each solicitacao As SolicitacaoEmprestimo In SolicitacaoEmprestimoBC.FindAll()
+                For Each item As ItemEmprestimo In solicitacao.ItensEmprestimo
+                    If (item.Produto.Codigo = produtoEmprestimo.Codigo) Then
+                        Dim list As New List(Of Object)
+                        list.Add(solicitacao.Id) : list.Add(solicitacao.Status) : list.Add(solicitacao.Cliente.ID & " - " & solicitacao.Cliente.Nome) : list.Add(solicitacao.DataSolicitacao) : list.Add("Ver produtos") : list.Add("Finalizar")
+                        ProdutosEmprestadosDT.Rows.Add(list.ToArray())
+                        Continue For
+                    End If
+                Next
+            Next
+        End If
+
+        ProdutosEmprestadosDT.Sort(ProdutosEmprestadosDT.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
+    End Sub
+
+    Private Sub BuscaAllRB_CheckedChanged(sender As Object, e As EventArgs) Handles BuscaAllRB.CheckedChanged
+        RefreshDTProdutosEmprestados()
+    End Sub
+
+    Private Sub BuscaIDRB_CheckedChanged(sender As Object, e As EventArgs) Handles BuscaIDRB.CheckedChanged, IDEmprestimoTF.TextChanged
+        RefreshDTProdutosEmprestados()
+    End Sub
+
+    Private Sub BuscaClienteRB_CheckedChanged(sender As Object, e As EventArgs) Handles BuscaClienteRB.CheckedChanged, ClienteEmprestimoTF.TextChanged
+        RefreshDTProdutosEmprestados()
+    End Sub
+
+    Private Sub BuscaProdutoRB_CheckedChanged(sender As Object, e As EventArgs) Handles BuscaProdutoRB.CheckedChanged, CodigoProdutoEmprestimoTF.TextChanged
+        RefreshDTProdutosEmprestados()
+    End Sub
+
+    Private Sub PictureBox15_Click(sender As Object, e As EventArgs) Handles PictureBox15.Click
+        Dim busca As New BuscaCliente()
+        busca.Caller = "ControleEstoqueProdutosEmprestados"
+        busca.Show()
+    End Sub
+
+    Private Sub PictureBox14_Click(sender As Object, e As EventArgs) Handles PictureBox14.Click
+        Dim busca As New BuscaProduto()
+        busca.Caller = "ControleEstoqueProdutosEmprestados"
+        busca.Show()
+    End Sub
+
+    Private Sub ProdutosEmprestadosDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ProdutosEmprestadosDT.CellContentClick
+        If (ProdutosEmprestadosDT.SelectedCells Is Nothing OrElse e.RowIndex = -1) Then Exit Sub
+
+        If (e.ColumnIndex = 4 AndAlso ProdutosEmprestadosDT.SelectedCells.Item(0).Value = "Ver Produtos") Then
+            Dim visualizacao As New VerItensEmprestados()
+            visualizacao.ProdutosList = SolicitacaoEmprestimoBC.FindByID(ProdutosEmprestadosDT.Item(0, e.RowIndex).Value).ItensEmprestimo
+            visualizacao.Show()
+            Exit Sub
+        End If
+    End Sub
+
+    Private Sub PagamentosDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles PagamentosDT.CellContentClick
+
     End Sub
 End Class
