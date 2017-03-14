@@ -1,6 +1,7 @@
 ﻿Public Class ControleFornecedor
 
     Private fornecedorAtual As Fornecedor
+    Private fornecedorAtualNovaAssistencia As Fornecedor
 
     Private Sub ControleFornecedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TipoNovoFornecedorCB.Items.Add(TipoFornecedor.Fornecedor)
@@ -8,6 +9,10 @@
         TipoEnderecoNovoFornecedorCB.Items.AddRange(TipoEndereco.GetTiposList().ToArray())
         TipoFornecedorAcompanharFornecedorCB.Items.AddRange(TipoFornecedor.GetTiposList().ToArray())
         TipoEnderecoAcompanharFornecedorCB.Items.AddRange(TipoEndereco.GetTiposList().ToArray())
+        TipoEnderecoNovaAssistenciaCB.Items.AddRange(TipoEndereco.GetTiposList().ToArray())
+        EstadoCB.Items.AddRange(EstadosEnum.GetEstadosList().ToArray())
+        EstadoNovaAssistenciaCB.Items.AddRange(EstadosEnum.GetEstadosList().ToArray())
+        EstadoAcompanharFornecedorCB.Items.AddRange(EstadosEnum.GetEstadosList().ToArray())
     End Sub
 
     Private Sub LimparNovoFornecedorBT_Click(sender As Object, e As EventArgs) Handles LimparNovoFornecedorBT.Click
@@ -188,5 +193,83 @@
         EstadoAcompanharFornecedorCB.Text = ""
         CEPAcompanharFornecedorMTF.Text = ""
         TipoEnderecoAcompanharFornecedorCB.Text = ""
+    End Sub
+
+    Private Sub SalvarNovaAssistenciaBT_Click(sender As Object, e As EventArgs) Handles SalvarNovaAssistenciaBT.Click
+        If (String.IsNullOrWhiteSpace(CNPJNovaAssistenciaMTF.Text)) Then
+            MsgBox("CNPJ da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(RazaoNovaAssistenciaTF.Text)) Then
+            MsgBox("Razão social da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(FantasiaNovaAssistenciaTF.Text)) Then
+            MsgBox("Nome fantasia da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(TelefoneNovaAssistenciaMTF.Text)) Then
+            MsgBox("Telefone da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(LogradouroNovaAssistenciaTF.Text)) Then
+            MsgBox("Logradouro do endereço da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(NumeroNovaAssistenciaTF.Text)) Then
+            MsgBox("Numero do endereço da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(CidadeNovaAssistenciaTF.Text)) Then
+            MsgBox("Cidade do endereço da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(EstadoNovaAssistenciaCB.Text)) Then
+            MsgBox("Estado do endereço da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(CEPNovaAssistenciaMTF.Text)) Then
+            MsgBox("CEP do endereço da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(TipoEnderecoNovaAssistenciaCB.Text)) Then
+            MsgBox("Tipo do endereço da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (fornecedorAtualNovaAssistencia Is Nothing OrElse String.IsNullOrWhiteSpace(FornecedorNovaAssistenciaTF.Text)) Then
+            MsgBox("Tipo do endereço da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        End If
+
+        Dim fornecedor As New Fornecedor(CNPJNovaAssistenciaMTF.Text, RazaoNovaAssistenciaTF.Text, FantasiaNovaAssistenciaTF.Text, TelefoneNovaAssistenciaMTF.Text, Now, TipoFornecedor.Assistencia, LogradouroNovaAssistenciaTF.Text, NumeroNovaAssistenciaTF.Text, BairroNovaAssistenciaTF.Text, CidadeNovaAssistenciaTF.Text, EstadoNovaAssistenciaCB.Text, CEPNovaAssistenciaMTF.Text, TipoEnderecoNovaAssistenciaCB.Text)
+        FornecedorBC.Insert(fornecedor)
+
+        fornecedorAtualNovaAssistencia.Assistencia = fornecedor
+
+        FornecedorBC.UpdateAssistencia(fornecedorAtualNovaAssistencia)
+
+        MsgBox("Inclusão de assistência e vinculação com o fornecedor realizada com sucesso.", vbInformation Or vbMsgBoxSetForeground)
+        LimparCamposNovaAssistencia()
+    End Sub
+
+    Private Sub LimparCamposNovaAssistencia()
+        CNPJNovaAssistenciaMTF.Text = ""
+        RazaoNovaAssistenciaTF.Text = ""
+        FantasiaNovaAssistenciaTF.Text = ""
+        TelefoneNovaAssistenciaMTF.Text = ""
+        LogradouroNovaAssistenciaTF.Text = ""
+        NumeroNovaAssistenciaTF.Text = ""
+        BairroNovaAssistenciaTF.Text = ""
+        CidadeNovaAssistenciaTF.Text = ""
+        EstadoNovaAssistenciaCB.Text = ""
+        CEPNovaAssistenciaMTF.Text = ""
+        TipoEnderecoNovaAssistenciaCB.Text = ""
+        FornecedorNovaAssistenciaTF.Text = ""
+        fornecedorAtualNovaAssistencia = Nothing
+    End Sub
+
+    Private Sub LimparCamposNovaAssistenciaBT_Click(sender As Object, e As EventArgs) Handles LimparCamposNovaAssistenciaBT.Click
+        LimparCamposNovaAssistencia()
+    End Sub
+
+    Private Sub ProcurarFornecedorNovaAssistenciaIMG_Click(sender As Object, e As EventArgs) Handles ProcurarFornecedorNovaAssistenciaIMG.Click
+        Dim busca As New BuscaFornecedor()
+        busca.Caller = "ControleFornecedorNovaAssistencia"
+        busca.Show()
+    End Sub
+
+    Public Sub PopulateFornecedorNovaAssistencia(fornecedor As Fornecedor)
+        fornecedorAtualNovaAssistencia = fornecedor
+        FornecedorNovaAssistenciaTF.Text = fornecedor.Cnpj & " - " & fornecedor.NomeFantasia
     End Sub
 End Class

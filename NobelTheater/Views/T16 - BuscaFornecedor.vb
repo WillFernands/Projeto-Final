@@ -32,6 +32,9 @@
         ElseIf (Caller = "ControleFornecedorAcompanharFornecedor") Then
             ControleFornecedor.PopulateFornecedorAcompanharFornecedor(fornecedor)
             Me.Close()
+        ElseIf (Caller = "ControleFornecedorNovaAssistencia") Then
+            ControleFornecedor.PopulateFornecedorNovaAssistencia(fornecedor)
+            Me.Close()
         End If
     End Sub
 
