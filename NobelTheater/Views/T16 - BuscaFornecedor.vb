@@ -29,6 +29,9 @@
         If (Caller = "ControleEstoque") Then
             ControleEstoque.PopulateFornecedor(fornecedor)
             Me.Close()
+        ElseIf (Caller = "ControleFornecedorAcompanharFornecedor") Then
+            ControleFornecedor.PopulateFornecedorAcompanharFornecedor(fornecedor)
+            Me.Close()
         End If
     End Sub
 

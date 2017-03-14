@@ -56,27 +56,10 @@ Partial Class ControleFornecedor
         Me.RazaoSociaNovoFornecedorTF = New System.Windows.Forms.TextBox()
         Me.RazaoSocialNovoFornecedorLB = New System.Windows.Forms.Label()
         Me.CNPJNovoFornecedorLB = New System.Windows.Forms.Label()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.EnderecosDT = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Quantidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecoTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CEP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Remover = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.RazaoSocialAcompanharFornecedorLB = New System.Windows.Forms.Label()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.SelecionarFornecedorTF = New System.Windows.Forms.TextBox()
-        Me.SalvarAlteracoesBT = New System.Windows.Forms.Button()
+        Me.AcompanharFornecedorTab = New System.Windows.Forms.TabPage()
+        Me.SelecionarFornecedorAcompanharFornecedorIMG = New System.Windows.Forms.PictureBox()
+        Me.FornecedorAcompanharFornecedorTF = New System.Windows.Forms.TextBox()
+        Me.SalvarAcompanharFornecedorBT = New System.Windows.Forms.Button()
         Me.SelecionarFornecedorLB = New System.Windows.Forms.Label()
         Me.NovaAssistenciaTP = New System.Windows.Forms.TabPage()
         Me.BairroAssistenciaTF = New System.Windows.Forms.TextBox()
@@ -167,14 +150,37 @@ Partial Class ControleFornecedor
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TelefoneAcompanharFornecedorMTF = New System.Windows.Forms.MaskedTextBox()
+        Me.CNPJAcompanharFornecedorMTF = New System.Windows.Forms.MaskedTextBox()
+        Me.CEPAcompanharFornecedorMTF = New System.Windows.Forms.MaskedTextBox()
+        Me.TipoFornecedorAcompanharFornecedorCB = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.EstadoAcompanharFornecedorCB = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TipoEnderecoAcompanharFornecedorCB = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.BairroAcompanharFornecedorTF = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.CidadeAcompanharFornecedorTF = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.NumeroAcompanharFornecedorTF = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.LogradouroAcompanharFornecedorTF = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.FantasiaAcompanharFornecedorTF = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.RazaoAcompanharFornecedorTF = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.NovoFornecedorTP.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
-        CType(Me.EnderecosDT, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.AcompanharFornecedorTab.SuspendLayout()
+        CType(Me.SelecionarFornecedorAcompanharFornecedorIMG, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NovaAssistenciaTP.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -241,7 +247,7 @@ Partial Class ControleFornecedor
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.NovoFornecedorTP)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.AcompanharFornecedorTab)
         Me.TabControl1.Controls.Add(Me.NovaAssistenciaTP)
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Location = New System.Drawing.Point(9, 10)
@@ -501,194 +507,76 @@ Partial Class ControleFornecedor
         Me.CNPJNovoFornecedorLB.TabIndex = 0
         Me.CNPJNovoFornecedorLB.Text = "CNPJ:"
         '
-        'TabPage2
+        'AcompanharFornecedorTab
         '
-        Me.TabPage2.Controls.Add(Me.CheckBox1)
-        Me.TabPage2.Controls.Add(Me.TextBox6)
-        Me.TabPage2.Controls.Add(Me.Label8)
-        Me.TabPage2.Controls.Add(Me.EnderecosDT)
-        Me.TabPage2.Controls.Add(Me.TextBox3)
-        Me.TabPage2.Controls.Add(Me.Label6)
-        Me.TabPage2.Controls.Add(Me.TextBox2)
-        Me.TabPage2.Controls.Add(Me.TextBox1)
-        Me.TabPage2.Controls.Add(Me.RazaoSocialAcompanharFornecedorLB)
-        Me.TabPage2.Controls.Add(Me.PictureBox7)
-        Me.TabPage2.Controls.Add(Me.SelecionarFornecedorTF)
-        Me.TabPage2.Controls.Add(Me.SalvarAlteracoesBT)
-        Me.TabPage2.Controls.Add(Me.SelecionarFornecedorLB)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(685, 359)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Acompanhar Fornecedor"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.AcompanharFornecedorTab.Controls.Add(Me.TelefoneAcompanharFornecedorMTF)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.CNPJAcompanharFornecedorMTF)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.CEPAcompanharFornecedorMTF)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.TipoFornecedorAcompanharFornecedorCB)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.Label1)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.EstadoAcompanharFornecedorCB)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.Label2)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.TipoEnderecoAcompanharFornecedorCB)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.Label3)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.BairroAcompanharFornecedorTF)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.Label4)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.CidadeAcompanharFornecedorTF)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.Label5)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.Label6)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.NumeroAcompanharFornecedorTF)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.Label7)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.LogradouroAcompanharFornecedorTF)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.Label8)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.Label9)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.FantasiaAcompanharFornecedorTF)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.Label10)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.RazaoAcompanharFornecedorTF)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.Label11)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.Label12)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.SelecionarFornecedorAcompanharFornecedorIMG)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.FornecedorAcompanharFornecedorTF)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.SalvarAcompanharFornecedorBT)
+        Me.AcompanharFornecedorTab.Controls.Add(Me.SelecionarFornecedorLB)
+        Me.AcompanharFornecedorTab.Location = New System.Drawing.Point(4, 22)
+        Me.AcompanharFornecedorTab.Name = "AcompanharFornecedorTab"
+        Me.AcompanharFornecedorTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.AcompanharFornecedorTab.Size = New System.Drawing.Size(685, 359)
+        Me.AcompanharFornecedorTab.TabIndex = 1
+        Me.AcompanharFornecedorTab.Text = "Acompanhar Fornecedor"
+        Me.AcompanharFornecedorTab.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'SelecionarFornecedorAcompanharFornecedorIMG
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(439, 123)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(188, 17)
-        Me.CheckBox1.TabIndex = 36
-        Me.CheckBox1.Text = "Víncular como assistência técnica"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.SelecionarFornecedorAcompanharFornecedorIMG.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SelecionarFornecedorAcompanharFornecedorIMG.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.SelecionarFornecedorAcompanharFornecedorIMG.Location = New System.Drawing.Point(649, 19)
+        Me.SelecionarFornecedorAcompanharFornecedorIMG.Name = "SelecionarFornecedorAcompanharFornecedorIMG"
+        Me.SelecionarFornecedorAcompanharFornecedorIMG.Size = New System.Drawing.Size(27, 20)
+        Me.SelecionarFornecedorAcompanharFornecedorIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.SelecionarFornecedorAcompanharFornecedorIMG.TabIndex = 25
+        Me.SelecionarFornecedorAcompanharFornecedorIMG.TabStop = False
         '
-        'TextBox6
+        'FornecedorAcompanharFornecedorTF
         '
-        Me.TextBox6.Location = New System.Drawing.Point(124, 124)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(168, 20)
-        Me.TextBox6.TabIndex = 35
+        Me.FornecedorAcompanharFornecedorTF.Enabled = False
+        Me.FornecedorAcompanharFornecedorTF.Location = New System.Drawing.Point(126, 19)
+        Me.FornecedorAcompanharFornecedorTF.Name = "FornecedorAcompanharFornecedorTF"
+        Me.FornecedorAcompanharFornecedorTF.Size = New System.Drawing.Size(517, 20)
+        Me.FornecedorAcompanharFornecedorTF.TabIndex = 24
         '
-        'Label8
+        'SalvarAcompanharFornecedorBT
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(3, 127)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(52, 13)
-        Me.Label8.TabIndex = 34
-        Me.Label8.Text = "Telefone:"
-        '
-        'EnderecosDT
-        '
-        Me.EnderecosDT.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.EnderecosDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.EnderecosDT.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn3, Me.Quantidade, Me.PrecoTotal, Me.Estado, Me.CEP, Me.Tipo, Me.Remover})
-        Me.EnderecosDT.Location = New System.Drawing.Point(13, 151)
-        Me.EnderecosDT.Name = "EnderecosDT"
-        Me.EnderecosDT.RowHeadersVisible = False
-        Me.EnderecosDT.Size = New System.Drawing.Size(661, 168)
-        Me.EnderecosDT.TabIndex = 33
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Logradouro"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 150
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Número"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        Me.DataGridViewTextBoxColumn3.Width = 50
-        '
-        'Quantidade
-        '
-        Me.Quantidade.HeaderText = "Bairro"
-        Me.Quantidade.Name = "Quantidade"
-        Me.Quantidade.ReadOnly = True
-        Me.Quantidade.Width = 75
-        '
-        'PrecoTotal
-        '
-        Me.PrecoTotal.HeaderText = "Cidade"
-        Me.PrecoTotal.Name = "PrecoTotal"
-        Me.PrecoTotal.ReadOnly = True
-        Me.PrecoTotal.Width = 75
-        '
-        'Estado
-        '
-        Me.Estado.HeaderText = "Estado"
-        Me.Estado.Name = "Estado"
-        Me.Estado.ReadOnly = True
-        Me.Estado.Width = 50
-        '
-        'CEP
-        '
-        Me.CEP.HeaderText = "CEP"
-        Me.CEP.Name = "CEP"
-        Me.CEP.ReadOnly = True
-        Me.CEP.Width = 75
-        '
-        'Tipo
-        '
-        Me.Tipo.HeaderText = "Tipo"
-        Me.Tipo.Name = "Tipo"
-        Me.Tipo.ReadOnly = True
-        Me.Tipo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Tipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Remover
-        '
-        Me.Remover.HeaderText = "Remover"
-        Me.Remover.Name = "Remover"
-        Me.Remover.ReadOnly = True
-        Me.Remover.Width = 75
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(124, 87)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(503, 20)
-        Me.TextBox3.TabIndex = 30
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(3, 90)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(37, 13)
-        Me.Label6.TabIndex = 29
-        Me.Label6.Text = "CNPJ:"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Enabled = False
-        Me.TextBox2.Location = New System.Drawing.Point(124, 50)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(41, 20)
-        Me.TextBox2.TabIndex = 28
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(171, 50)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(456, 20)
-        Me.TextBox1.TabIndex = 27
-        '
-        'RazaoSocialAcompanharFornecedorLB
-        '
-        Me.RazaoSocialAcompanharFornecedorLB.AutoSize = True
-        Me.RazaoSocialAcompanharFornecedorLB.Location = New System.Drawing.Point(3, 53)
-        Me.RazaoSocialAcompanharFornecedorLB.Name = "RazaoSocialAcompanharFornecedorLB"
-        Me.RazaoSocialAcompanharFornecedorLB.Size = New System.Drawing.Size(73, 13)
-        Me.RazaoSocialAcompanharFornecedorLB.TabIndex = 26
-        Me.RazaoSocialAcompanharFornecedorLB.Text = "Razão Social:"
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.Image = Global.NobelTheater.My.Resources.Resources.Busca
-        Me.PictureBox7.Location = New System.Drawing.Point(635, 13)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(27, 20)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox7.TabIndex = 25
-        Me.PictureBox7.TabStop = False
-        '
-        'SelecionarFornecedorTF
-        '
-        Me.SelecionarFornecedorTF.Enabled = False
-        Me.SelecionarFornecedorTF.Location = New System.Drawing.Point(126, 13)
-        Me.SelecionarFornecedorTF.Name = "SelecionarFornecedorTF"
-        Me.SelecionarFornecedorTF.Size = New System.Drawing.Size(503, 20)
-        Me.SelecionarFornecedorTF.TabIndex = 24
-        '
-        'SalvarAlteracoesBT
-        '
-        Me.SalvarAlteracoesBT.Location = New System.Drawing.Point(280, 325)
-        Me.SalvarAlteracoesBT.Name = "SalvarAlteracoesBT"
-        Me.SalvarAlteracoesBT.Size = New System.Drawing.Size(125, 23)
-        Me.SalvarAlteracoesBT.TabIndex = 22
-        Me.SalvarAlteracoesBT.Text = "Salvar Alterações"
-        Me.SalvarAlteracoesBT.UseVisualStyleBackColor = True
+        Me.SalvarAcompanharFornecedorBT.Location = New System.Drawing.Point(280, 317)
+        Me.SalvarAcompanharFornecedorBT.Name = "SalvarAcompanharFornecedorBT"
+        Me.SalvarAcompanharFornecedorBT.Size = New System.Drawing.Size(125, 23)
+        Me.SalvarAcompanharFornecedorBT.TabIndex = 22
+        Me.SalvarAcompanharFornecedorBT.Text = "Salvar Alterações"
+        Me.SalvarAcompanharFornecedorBT.UseVisualStyleBackColor = True
         '
         'SelecionarFornecedorLB
         '
         Me.SelecionarFornecedorLB.AutoSize = True
-        Me.SelecionarFornecedorLB.Location = New System.Drawing.Point(3, 16)
+        Me.SelecionarFornecedorLB.Location = New System.Drawing.Point(3, 22)
         Me.SelecionarFornecedorLB.Name = "SelecionarFornecedorLB"
         Me.SelecionarFornecedorLB.Size = New System.Drawing.Size(117, 13)
         Me.SelecionarFornecedorLB.TabIndex = 19
@@ -1414,6 +1302,214 @@ Partial Class ControleFornecedor
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
+        'TelefoneAcompanharFornecedorMTF
+        '
+        Me.TelefoneAcompanharFornecedorMTF.Enabled = False
+        Me.TelefoneAcompanharFornecedorMTF.Location = New System.Drawing.Point(78, 145)
+        Me.TelefoneAcompanharFornecedorMTF.Name = "TelefoneAcompanharFornecedorMTF"
+        Me.TelefoneAcompanharFornecedorMTF.Size = New System.Drawing.Size(157, 20)
+        Me.TelefoneAcompanharFornecedorMTF.TabIndex = 53
+        '
+        'CNPJAcompanharFornecedorMTF
+        '
+        Me.CNPJAcompanharFornecedorMTF.Enabled = False
+        Me.CNPJAcompanharFornecedorMTF.Location = New System.Drawing.Point(78, 61)
+        Me.CNPJAcompanharFornecedorMTF.Name = "CNPJAcompanharFornecedorMTF"
+        Me.CNPJAcompanharFornecedorMTF.Size = New System.Drawing.Size(157, 20)
+        Me.CNPJAcompanharFornecedorMTF.TabIndex = 52
+        '
+        'CEPAcompanharFornecedorMTF
+        '
+        Me.CEPAcompanharFornecedorMTF.Enabled = False
+        Me.CEPAcompanharFornecedorMTF.Location = New System.Drawing.Point(78, 271)
+        Me.CEPAcompanharFornecedorMTF.Name = "CEPAcompanharFornecedorMTF"
+        Me.CEPAcompanharFornecedorMTF.Size = New System.Drawing.Size(157, 20)
+        Me.CEPAcompanharFornecedorMTF.TabIndex = 51
+        '
+        'TipoFornecedorAcompanharFornecedorCB
+        '
+        Me.TipoFornecedorAcompanharFornecedorCB.Enabled = False
+        Me.TipoFornecedorAcompanharFornecedorCB.FormattingEnabled = True
+        Me.TipoFornecedorAcompanharFornecedorCB.Location = New System.Drawing.Point(510, 145)
+        Me.TipoFornecedorAcompanharFornecedorCB.Name = "TipoFornecedorAcompanharFornecedorCB"
+        Me.TipoFornecedorAcompanharFornecedorCB.Size = New System.Drawing.Size(166, 21)
+        Me.TipoFornecedorAcompanharFornecedorCB.TabIndex = 50
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(401, 148)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(103, 13)
+        Me.Label1.TabIndex = 49
+        Me.Label1.Text = "Tipo de Fornecedor:"
+        '
+        'EstadoAcompanharFornecedorCB
+        '
+        Me.EstadoAcompanharFornecedorCB.Enabled = False
+        Me.EstadoAcompanharFornecedorCB.FormattingEnabled = True
+        Me.EstadoAcompanharFornecedorCB.Location = New System.Drawing.Point(589, 229)
+        Me.EstadoAcompanharFornecedorCB.Name = "EstadoAcompanharFornecedorCB"
+        Me.EstadoAcompanharFornecedorCB.Size = New System.Drawing.Size(87, 21)
+        Me.EstadoAcompanharFornecedorCB.TabIndex = 48
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(413, 274)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(95, 13)
+        Me.Label2.TabIndex = 47
+        Me.Label2.Text = "Tipo de Endereço:"
+        '
+        'TipoEnderecoAcompanharFornecedorCB
+        '
+        Me.TipoEnderecoAcompanharFornecedorCB.Enabled = False
+        Me.TipoEnderecoAcompanharFornecedorCB.FormattingEnabled = True
+        Me.TipoEnderecoAcompanharFornecedorCB.Location = New System.Drawing.Point(514, 271)
+        Me.TipoEnderecoAcompanharFornecedorCB.Name = "TipoEnderecoAcompanharFornecedorCB"
+        Me.TipoEnderecoAcompanharFornecedorCB.Size = New System.Drawing.Size(162, 21)
+        Me.TipoEnderecoAcompanharFornecedorCB.TabIndex = 46
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(8, 274)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(31, 13)
+        Me.Label3.TabIndex = 45
+        Me.Label3.Text = "CEP:"
+        '
+        'BairroAcompanharFornecedorTF
+        '
+        Me.BairroAcompanharFornecedorTF.Enabled = False
+        Me.BairroAcompanharFornecedorTF.Location = New System.Drawing.Point(78, 229)
+        Me.BairroAcompanharFornecedorTF.Name = "BairroAcompanharFornecedorTF"
+        Me.BairroAcompanharFornecedorTF.Size = New System.Drawing.Size(157, 20)
+        Me.BairroAcompanharFornecedorTF.TabIndex = 44
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(8, 232)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(37, 13)
+        Me.Label4.TabIndex = 43
+        Me.Label4.Text = "Bairro:"
+        '
+        'CidadeAcompanharFornecedorTF
+        '
+        Me.CidadeAcompanharFornecedorTF.Enabled = False
+        Me.CidadeAcompanharFornecedorTF.Location = New System.Drawing.Point(294, 229)
+        Me.CidadeAcompanharFornecedorTF.Name = "CidadeAcompanharFornecedorTF"
+        Me.CidadeAcompanharFornecedorTF.Size = New System.Drawing.Size(167, 20)
+        Me.CidadeAcompanharFornecedorTF.TabIndex = 42
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(245, 232)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(43, 13)
+        Me.Label5.TabIndex = 41
+        Me.Label5.Text = "Cidade:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(540, 232)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(43, 13)
+        Me.Label6.TabIndex = 40
+        Me.Label6.Text = "Estado:"
+        '
+        'NumeroAcompanharFornecedorTF
+        '
+        Me.NumeroAcompanharFornecedorTF.Enabled = False
+        Me.NumeroAcompanharFornecedorTF.Location = New System.Drawing.Point(589, 187)
+        Me.NumeroAcompanharFornecedorTF.Name = "NumeroAcompanharFornecedorTF"
+        Me.NumeroAcompanharFornecedorTF.Size = New System.Drawing.Size(87, 20)
+        Me.NumeroAcompanharFornecedorTF.TabIndex = 39
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(561, 190)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(22, 13)
+        Me.Label7.TabIndex = 38
+        Me.Label7.Text = "Nº:"
+        '
+        'LogradouroAcompanharFornecedorTF
+        '
+        Me.LogradouroAcompanharFornecedorTF.Enabled = False
+        Me.LogradouroAcompanharFornecedorTF.Location = New System.Drawing.Point(78, 187)
+        Me.LogradouroAcompanharFornecedorTF.Name = "LogradouroAcompanharFornecedorTF"
+        Me.LogradouroAcompanharFornecedorTF.Size = New System.Drawing.Size(477, 20)
+        Me.LogradouroAcompanharFornecedorTF.TabIndex = 37
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(8, 190)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(64, 13)
+        Me.Label8.TabIndex = 36
+        Me.Label8.Text = "Logradouro:"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(8, 148)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(52, 13)
+        Me.Label9.TabIndex = 35
+        Me.Label9.Text = "Telefone:"
+        '
+        'FantasiaAcompanharFornecedorTF
+        '
+        Me.FantasiaAcompanharFornecedorTF.Enabled = False
+        Me.FantasiaAcompanharFornecedorTF.Location = New System.Drawing.Point(78, 103)
+        Me.FantasiaAcompanharFornecedorTF.Name = "FantasiaAcompanharFornecedorTF"
+        Me.FantasiaAcompanharFornecedorTF.Size = New System.Drawing.Size(598, 20)
+        Me.FantasiaAcompanharFornecedorTF.TabIndex = 34
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(8, 106)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(50, 13)
+        Me.Label10.TabIndex = 33
+        Me.Label10.Text = "Fantasia:"
+        '
+        'RazaoAcompanharFornecedorTF
+        '
+        Me.RazaoAcompanharFornecedorTF.Enabled = False
+        Me.RazaoAcompanharFornecedorTF.Location = New System.Drawing.Point(321, 61)
+        Me.RazaoAcompanharFornecedorTF.Name = "RazaoAcompanharFornecedorTF"
+        Me.RazaoAcompanharFornecedorTF.Size = New System.Drawing.Size(355, 20)
+        Me.RazaoAcompanharFornecedorTF.TabIndex = 32
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(242, 64)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(73, 13)
+        Me.Label11.TabIndex = 31
+        Me.Label11.Text = "Razão Social:"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label12.Location = New System.Drawing.Point(8, 64)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(37, 13)
+        Me.Label12.TabIndex = 30
+        Me.Label12.Text = "CNPJ:"
+        '
         'ControleFornecedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1432,10 +1528,9 @@ Partial Class ControleFornecedor
         Me.TabControl1.ResumeLayout(False)
         Me.NovoFornecedorTP.ResumeLayout(False)
         Me.NovoFornecedorTP.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
-        CType(Me.EnderecosDT, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.AcompanharFornecedorTab.ResumeLayout(False)
+        Me.AcompanharFornecedorTab.PerformLayout()
+        CType(Me.SelecionarFornecedorAcompanharFornecedorIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.NovaAssistenciaTP.ResumeLayout(False)
         Me.NovaAssistenciaTP.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
@@ -1451,7 +1546,7 @@ Partial Class ControleFornecedor
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents NovoFornecedorTP As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents AcompanharFornecedorTab As System.Windows.Forms.TabPage
     Friend WithEvents NovaAssistenciaTP As System.Windows.Forms.TabPage
     Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
@@ -1490,27 +1585,10 @@ Partial Class ControleFornecedor
     Friend WithEvents ClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NovoClienteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AcompanharClienteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PictureBox7 As System.Windows.Forms.PictureBox
-    Friend WithEvents SelecionarFornecedorTF As System.Windows.Forms.TextBox
-    Friend WithEvents SalvarAlteracoesBT As System.Windows.Forms.Button
+    Friend WithEvents SelecionarFornecedorAcompanharFornecedorIMG As System.Windows.Forms.PictureBox
+    Friend WithEvents FornecedorAcompanharFornecedorTF As System.Windows.Forms.TextBox
+    Friend WithEvents SalvarAcompanharFornecedorBT As System.Windows.Forms.Button
     Friend WithEvents SelecionarFornecedorLB As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents RazaoSocialAcompanharFornecedorLB As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents EnderecosDT As System.Windows.Forms.DataGridView
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Quantidade As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents PrecoTotal As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Estado As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CEP As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Tipo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Remover As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents CNPJNovoFornecedorLB As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
@@ -1593,4 +1671,28 @@ Partial Class ControleFornecedor
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents VincularFornecedorTF As TextBox
     Friend WithEvents VincularFornecedorLB As Label
+    Friend WithEvents TelefoneAcompanharFornecedorMTF As MaskedTextBox
+    Friend WithEvents CNPJAcompanharFornecedorMTF As MaskedTextBox
+    Friend WithEvents CEPAcompanharFornecedorMTF As MaskedTextBox
+    Friend WithEvents TipoFornecedorAcompanharFornecedorCB As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents EstadoAcompanharFornecedorCB As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TipoEnderecoAcompanharFornecedorCB As ComboBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents BairroAcompanharFornecedorTF As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents CidadeAcompanharFornecedorTF As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents NumeroAcompanharFornecedorTF As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents LogradouroAcompanharFornecedorTF As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents FantasiaAcompanharFornecedorTF As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents RazaoAcompanharFornecedorTF As TextBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label12 As Label
 End Class
