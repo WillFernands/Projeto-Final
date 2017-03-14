@@ -175,13 +175,6 @@ Partial Class ControleEstoque
         Me.PictureBox14 = New System.Windows.Forms.PictureBox()
         Me.PictureBox15 = New System.Windows.Forms.PictureBox()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.ProdutoAssistencia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ClienteProdutoAssistencia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataEnvioAssistencia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ResponsavelAssistencia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EditarProdutoAssistencia = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.RemoverProdutoAssistencia = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.FimDT = New System.Windows.Forms.DateTimePicker()
         Me.InicioDT = New System.Windows.Forms.DateTimePicker()
@@ -224,6 +217,46 @@ Partial Class ControleEstoque
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BuscarTodosProdutosEnviadosAssistenciaRB = New System.Windows.Forms.RadioButton()
+        Me.BuscarIDdeEnvioRB = New System.Windows.Forms.RadioButton()
+        Me.BuscarPorIDEnvioTF = New System.Windows.Forms.TextBox()
+        Me.BuscarPorProdutoRB = New System.Windows.Forms.RadioButton()
+        Me.BuscarPorClienteRB = New System.Windows.Forms.RadioButton()
+        Me.IDProdutoTF = New System.Windows.Forms.TextBox()
+        Me.BuscarPorProdutoTF = New System.Windows.Forms.TextBox()
+        Me.BuscarPorClienteTF = New System.Windows.Forms.TextBox()
+        Me.ProdutosEnviadosAssistenciaDG = New System.Windows.Forms.DataGridView()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.IDProdutoAssistencia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StatusProdutoAssistencia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ClienteProdutoAssistencia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataDeEnvioAssistencia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.VerProdutosAssistencia = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.FinalizarSolicitacaoEnvioAssistencia = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
+        Me.QuantidadeNumberUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.CodigoProdutoEnvioAssistenciaTB = New System.Windows.Forms.TextBox()
+        Me.SelecionarProdutoEnvioAssistenciaTB = New System.Windows.Forms.TextBox()
+        Me.SelecionarProdutoEnvioAssistenciaLB = New System.Windows.Forms.Label()
+        Me.SelecionarClienteEnvioAssistenciaTB = New System.Windows.Forms.TextBox()
+        Me.SelecionarClienteEnvioAssistenciaLB = New System.Windows.Forms.Label()
+        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox16 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox17 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox18 = New System.Windows.Forms.PictureBox()
+        Me.SelecionarAssistenciaTB = New System.Windows.Forms.TextBox()
+        Me.SelecionarAssistenciaLB = New System.Windows.Forms.Label()
+        Me.PictureBox19 = New System.Windows.Forms.PictureBox()
+        Me.EnviarProdutoAssistenciaDG = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewButtonColumn4 = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.EnviarParaAssistenciaBT = New System.Windows.Forms.Button()
+        Me.LimparBT = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -268,9 +301,21 @@ Partial Class ControleEstoque
         CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage6.SuspendLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage5.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.ProdutosEnviadosAssistenciaDG, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage3.SuspendLayout()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.QuantidadeNumberUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EnviarProdutoAssistenciaDG, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -341,6 +386,7 @@ Partial Class ControleEstoque
         Me.ControleEstoqueTab.Controls.Add(Me.ProdutosEmprestadosTab)
         Me.ControleEstoqueTab.Controls.Add(Me.TabPage6)
         Me.ControleEstoqueTab.Controls.Add(Me.TabPage5)
+        Me.ControleEstoqueTab.Controls.Add(Me.TabPage3)
         Me.ControleEstoqueTab.Location = New System.Drawing.Point(9, 10)
         Me.ControleEstoqueTab.Name = "ControleEstoqueTab"
         Me.ControleEstoqueTab.SelectedIndex = 0
@@ -1685,7 +1731,17 @@ Partial Class ControleEstoque
         '
         'TabPage6
         '
-        Me.TabPage6.Controls.Add(Me.DataGridView2)
+        Me.TabPage6.Controls.Add(Me.BuscarTodosProdutosEnviadosAssistenciaRB)
+        Me.TabPage6.Controls.Add(Me.BuscarIDdeEnvioRB)
+        Me.TabPage6.Controls.Add(Me.BuscarPorIDEnvioTF)
+        Me.TabPage6.Controls.Add(Me.BuscarPorProdutoRB)
+        Me.TabPage6.Controls.Add(Me.BuscarPorClienteRB)
+        Me.TabPage6.Controls.Add(Me.IDProdutoTF)
+        Me.TabPage6.Controls.Add(Me.BuscarPorProdutoTF)
+        Me.TabPage6.Controls.Add(Me.BuscarPorClienteTF)
+        Me.TabPage6.Controls.Add(Me.ProdutosEnviadosAssistenciaDG)
+        Me.TabPage6.Controls.Add(Me.PictureBox5)
+        Me.TabPage6.Controls.Add(Me.PictureBox9)
         Me.TabPage6.Location = New System.Drawing.Point(4, 22)
         Me.TabPage6.Name = "TabPage6"
         Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
@@ -1693,60 +1749,6 @@ Partial Class ControleEstoque
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Produtos Enviados a Assistência"
         Me.TabPage6.UseVisualStyleBackColor = True
-        '
-        'DataGridView2
-        '
-        Me.DataGridView2.AllowUserToAddRows = False
-        Me.DataGridView2.AllowUserToDeleteRows = False
-        Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProdutoAssistencia, Me.ClienteProdutoAssistencia, Me.DataEnvioAssistencia, Me.ResponsavelAssistencia, Me.EditarProdutoAssistencia, Me.RemoverProdutoAssistencia})
-        Me.DataGridView2.Location = New System.Drawing.Point(6, 6)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.ReadOnly = True
-        Me.DataGridView2.RowHeadersVisible = False
-        Me.DataGridView2.Size = New System.Drawing.Size(673, 323)
-        Me.DataGridView2.TabIndex = 22
-        '
-        'ProdutoAssistencia
-        '
-        Me.ProdutoAssistencia.HeaderText = "Produto"
-        Me.ProdutoAssistencia.Name = "ProdutoAssistencia"
-        Me.ProdutoAssistencia.ReadOnly = True
-        '
-        'ClienteProdutoAssistencia
-        '
-        Me.ClienteProdutoAssistencia.HeaderText = "Cliente"
-        Me.ClienteProdutoAssistencia.Name = "ClienteProdutoAssistencia"
-        Me.ClienteProdutoAssistencia.ReadOnly = True
-        '
-        'DataEnvioAssistencia
-        '
-        Me.DataEnvioAssistencia.HeaderText = "Data de Envio"
-        Me.DataEnvioAssistencia.Name = "DataEnvioAssistencia"
-        Me.DataEnvioAssistencia.ReadOnly = True
-        '
-        'ResponsavelAssistencia
-        '
-        Me.ResponsavelAssistencia.HeaderText = "Responsável"
-        Me.ResponsavelAssistencia.Name = "ResponsavelAssistencia"
-        Me.ResponsavelAssistencia.ReadOnly = True
-        '
-        'EditarProdutoAssistencia
-        '
-        Me.EditarProdutoAssistencia.HeaderText = "Editar"
-        Me.EditarProdutoAssistencia.Name = "EditarProdutoAssistencia"
-        Me.EditarProdutoAssistencia.ReadOnly = True
-        Me.EditarProdutoAssistencia.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.EditarProdutoAssistencia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'RemoverProdutoAssistencia
-        '
-        Me.RemoverProdutoAssistencia.HeaderText = "Remover"
-        Me.RemoverProdutoAssistencia.Name = "RemoverProdutoAssistencia"
-        Me.RemoverProdutoAssistencia.ReadOnly = True
-        Me.RemoverProdutoAssistencia.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.RemoverProdutoAssistencia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         '
         'TabPage5
         '
@@ -2041,6 +2043,386 @@ Partial Class ControleEstoque
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
+        'BuscarTodosProdutosEnviadosAssistenciaRB
+        '
+        Me.BuscarTodosProdutosEnviadosAssistenciaRB.AutoSize = True
+        Me.BuscarTodosProdutosEnviadosAssistenciaRB.Location = New System.Drawing.Point(417, 11)
+        Me.BuscarTodosProdutosEnviadosAssistenciaRB.Name = "BuscarTodosProdutosEnviadosAssistenciaRB"
+        Me.BuscarTodosProdutosEnviadosAssistenciaRB.Size = New System.Drawing.Size(255, 17)
+        Me.BuscarTodosProdutosEnviadosAssistenciaRB.TabIndex = 62
+        Me.BuscarTodosProdutosEnviadosAssistenciaRB.Text = "Buscar todos os produtos enviados a assistência"
+        Me.BuscarTodosProdutosEnviadosAssistenciaRB.UseVisualStyleBackColor = True
+        '
+        'BuscarIDdeEnvioRB
+        '
+        Me.BuscarIDdeEnvioRB.AutoSize = True
+        Me.BuscarIDdeEnvioRB.Location = New System.Drawing.Point(16, 11)
+        Me.BuscarIDdeEnvioRB.Name = "BuscarIDdeEnvioRB"
+        Me.BuscarIDdeEnvioRB.Size = New System.Drawing.Size(134, 17)
+        Me.BuscarIDdeEnvioRB.TabIndex = 61
+        Me.BuscarIDdeEnvioRB.Text = "Busca por ID de envio:"
+        Me.BuscarIDdeEnvioRB.UseVisualStyleBackColor = True
+        '
+        'BuscarPorIDEnvioTF
+        '
+        Me.BuscarPorIDEnvioTF.Location = New System.Drawing.Point(198, 10)
+        Me.BuscarPorIDEnvioTF.Name = "BuscarPorIDEnvioTF"
+        Me.BuscarPorIDEnvioTF.Size = New System.Drawing.Size(67, 20)
+        Me.BuscarPorIDEnvioTF.TabIndex = 60
+        '
+        'BuscarPorProdutoRB
+        '
+        Me.BuscarPorProdutoRB.AutoSize = True
+        Me.BuscarPorProdutoRB.Location = New System.Drawing.Point(16, 85)
+        Me.BuscarPorProdutoRB.Name = "BuscarPorProdutoRB"
+        Me.BuscarPorProdutoRB.Size = New System.Drawing.Size(115, 17)
+        Me.BuscarPorProdutoRB.TabIndex = 59
+        Me.BuscarPorProdutoRB.Text = "Busca por produto:"
+        Me.BuscarPorProdutoRB.UseVisualStyleBackColor = True
+        '
+        'BuscarPorClienteRB
+        '
+        Me.BuscarPorClienteRB.AutoSize = True
+        Me.BuscarPorClienteRB.Location = New System.Drawing.Point(16, 48)
+        Me.BuscarPorClienteRB.Name = "BuscarPorClienteRB"
+        Me.BuscarPorClienteRB.Size = New System.Drawing.Size(110, 17)
+        Me.BuscarPorClienteRB.TabIndex = 58
+        Me.BuscarPorClienteRB.Text = "Busca por cliente:"
+        Me.BuscarPorClienteRB.UseVisualStyleBackColor = True
+        '
+        'IDProdutoTF
+        '
+        Me.IDProdutoTF.Enabled = False
+        Me.IDProdutoTF.Location = New System.Drawing.Point(602, 86)
+        Me.IDProdutoTF.Name = "IDProdutoTF"
+        Me.IDProdutoTF.Size = New System.Drawing.Size(37, 20)
+        Me.IDProdutoTF.TabIndex = 57
+        '
+        'BuscarPorProdutoTF
+        '
+        Me.BuscarPorProdutoTF.Enabled = False
+        Me.BuscarPorProdutoTF.Location = New System.Drawing.Point(198, 86)
+        Me.BuscarPorProdutoTF.Name = "BuscarPorProdutoTF"
+        Me.BuscarPorProdutoTF.Size = New System.Drawing.Size(398, 20)
+        Me.BuscarPorProdutoTF.TabIndex = 55
+        '
+        'BuscarPorClienteTF
+        '
+        Me.BuscarPorClienteTF.Enabled = False
+        Me.BuscarPorClienteTF.Location = New System.Drawing.Point(198, 48)
+        Me.BuscarPorClienteTF.Name = "BuscarPorClienteTF"
+        Me.BuscarPorClienteTF.Size = New System.Drawing.Size(441, 20)
+        Me.BuscarPorClienteTF.TabIndex = 53
+        '
+        'ProdutosEnviadosAssistenciaDG
+        '
+        Me.ProdutosEnviadosAssistenciaDG.AllowUserToAddRows = False
+        Me.ProdutosEnviadosAssistenciaDG.AllowUserToDeleteRows = False
+        Me.ProdutosEnviadosAssistenciaDG.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ProdutosEnviadosAssistenciaDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ProdutosEnviadosAssistenciaDG.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDProdutoAssistencia, Me.StatusProdutoAssistencia, Me.ClienteProdutoAssistencia, Me.DataDeEnvioAssistencia, Me.VerProdutosAssistencia, Me.FinalizarSolicitacaoEnvioAssistencia})
+        Me.ProdutosEnviadosAssistenciaDG.Location = New System.Drawing.Point(12, 116)
+        Me.ProdutosEnviadosAssistenciaDG.Name = "ProdutosEnviadosAssistenciaDG"
+        Me.ProdutosEnviadosAssistenciaDG.ReadOnly = True
+        Me.ProdutosEnviadosAssistenciaDG.RowHeadersVisible = False
+        Me.ProdutosEnviadosAssistenciaDG.Size = New System.Drawing.Size(661, 209)
+        Me.ProdutosEnviadosAssistenciaDG.TabIndex = 52
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox5.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.PictureBox5.Location = New System.Drawing.Point(645, 86)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 56
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox9.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.PictureBox9.Location = New System.Drawing.Point(645, 48)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox9.TabIndex = 54
+        Me.PictureBox9.TabStop = False
+        '
+        'IDProdutoAssistencia
+        '
+        Me.IDProdutoAssistencia.HeaderText = "ID"
+        Me.IDProdutoAssistencia.Name = "IDProdutoAssistencia"
+        Me.IDProdutoAssistencia.ReadOnly = True
+        Me.IDProdutoAssistencia.Width = 50
+        '
+        'StatusProdutoAssistencia
+        '
+        Me.StatusProdutoAssistencia.HeaderText = "Status"
+        Me.StatusProdutoAssistencia.Name = "StatusProdutoAssistencia"
+        Me.StatusProdutoAssistencia.ReadOnly = True
+        Me.StatusProdutoAssistencia.Width = 75
+        '
+        'ClienteProdutoAssistencia
+        '
+        Me.ClienteProdutoAssistencia.HeaderText = "Cliente"
+        Me.ClienteProdutoAssistencia.Name = "ClienteProdutoAssistencia"
+        Me.ClienteProdutoAssistencia.ReadOnly = True
+        Me.ClienteProdutoAssistencia.Width = 150
+        '
+        'DataDeEnvioAssistencia
+        '
+        Me.DataDeEnvioAssistencia.HeaderText = "Data de Envio"
+        Me.DataDeEnvioAssistencia.Name = "DataDeEnvioAssistencia"
+        Me.DataDeEnvioAssistencia.ReadOnly = True
+        Me.DataDeEnvioAssistencia.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataDeEnvioAssistencia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.DataDeEnvioAssistencia.Width = 150
+        '
+        'VerProdutosAssistencia
+        '
+        Me.VerProdutosAssistencia.HeaderText = "Ver Produtos"
+        Me.VerProdutosAssistencia.Name = "VerProdutosAssistencia"
+        Me.VerProdutosAssistencia.ReadOnly = True
+        '
+        'FinalizarSolicitacaoEnvioAssistencia
+        '
+        Me.FinalizarSolicitacaoEnvioAssistencia.HeaderText = "Finalizar Solicitação"
+        Me.FinalizarSolicitacaoEnvioAssistencia.Name = "FinalizarSolicitacaoEnvioAssistencia"
+        Me.FinalizarSolicitacaoEnvioAssistencia.ReadOnly = True
+        Me.FinalizarSolicitacaoEnvioAssistencia.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.FinalizarSolicitacaoEnvioAssistencia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.FinalizarSolicitacaoEnvioAssistencia.Width = 125
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.LimparBT)
+        Me.TabPage3.Controls.Add(Me.EnviarParaAssistenciaBT)
+        Me.TabPage3.Controls.Add(Me.EnviarProdutoAssistenciaDG)
+        Me.TabPage3.Controls.Add(Me.PictureBox18)
+        Me.TabPage3.Controls.Add(Me.SelecionarAssistenciaTB)
+        Me.TabPage3.Controls.Add(Me.SelecionarAssistenciaLB)
+        Me.TabPage3.Controls.Add(Me.PictureBox19)
+        Me.TabPage3.Controls.Add(Me.PictureBox10)
+        Me.TabPage3.Controls.Add(Me.QuantidadeNumberUpDown)
+        Me.TabPage3.Controls.Add(Me.CodigoProdutoEnvioAssistenciaTB)
+        Me.TabPage3.Controls.Add(Me.SelecionarProdutoEnvioAssistenciaTB)
+        Me.TabPage3.Controls.Add(Me.SelecionarProdutoEnvioAssistenciaLB)
+        Me.TabPage3.Controls.Add(Me.SelecionarClienteEnvioAssistenciaTB)
+        Me.TabPage3.Controls.Add(Me.SelecionarClienteEnvioAssistenciaLB)
+        Me.TabPage3.Controls.Add(Me.PictureBox11)
+        Me.TabPage3.Controls.Add(Me.PictureBox12)
+        Me.TabPage3.Controls.Add(Me.PictureBox16)
+        Me.TabPage3.Controls.Add(Me.PictureBox17)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(685, 335)
+        Me.TabPage3.TabIndex = 11
+        Me.TabPage3.Text = "Enviar Produto a Assistência"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'PictureBox10
+        '
+        Me.PictureBox10.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
+        Me.PictureBox10.Location = New System.Drawing.Point(4, 17)
+        Me.PictureBox10.Name = "PictureBox10"
+        Me.PictureBox10.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox10.TabIndex = 55
+        Me.PictureBox10.TabStop = False
+        '
+        'QuantidadeNumberUpDown
+        '
+        Me.QuantidadeNumberUpDown.Location = New System.Drawing.Point(562, 56)
+        Me.QuantidadeNumberUpDown.Name = "QuantidadeNumberUpDown"
+        Me.QuantidadeNumberUpDown.Size = New System.Drawing.Size(42, 20)
+        Me.QuantidadeNumberUpDown.TabIndex = 53
+        Me.QuantidadeNumberUpDown.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'CodigoProdutoEnvioAssistenciaTB
+        '
+        Me.CodigoProdutoEnvioAssistenciaTB.Enabled = False
+        Me.CodigoProdutoEnvioAssistenciaTB.Location = New System.Drawing.Point(519, 55)
+        Me.CodigoProdutoEnvioAssistenciaTB.Name = "CodigoProdutoEnvioAssistenciaTB"
+        Me.CodigoProdutoEnvioAssistenciaTB.Size = New System.Drawing.Size(37, 20)
+        Me.CodigoProdutoEnvioAssistenciaTB.TabIndex = 52
+        '
+        'SelecionarProdutoEnvioAssistenciaTB
+        '
+        Me.SelecionarProdutoEnvioAssistenciaTB.Enabled = False
+        Me.SelecionarProdutoEnvioAssistenciaTB.Location = New System.Drawing.Point(159, 55)
+        Me.SelecionarProdutoEnvioAssistenciaTB.Name = "SelecionarProdutoEnvioAssistenciaTB"
+        Me.SelecionarProdutoEnvioAssistenciaTB.Size = New System.Drawing.Size(355, 20)
+        Me.SelecionarProdutoEnvioAssistenciaTB.TabIndex = 49
+        '
+        'SelecionarProdutoEnvioAssistenciaLB
+        '
+        Me.SelecionarProdutoEnvioAssistenciaLB.AutoSize = True
+        Me.SelecionarProdutoEnvioAssistenciaLB.Location = New System.Drawing.Point(35, 58)
+        Me.SelecionarProdutoEnvioAssistenciaLB.Name = "SelecionarProdutoEnvioAssistenciaLB"
+        Me.SelecionarProdutoEnvioAssistenciaLB.Size = New System.Drawing.Size(100, 13)
+        Me.SelecionarProdutoEnvioAssistenciaLB.TabIndex = 48
+        Me.SelecionarProdutoEnvioAssistenciaLB.Text = "Selecionar Produto:"
+        '
+        'SelecionarClienteEnvioAssistenciaTB
+        '
+        Me.SelecionarClienteEnvioAssistenciaTB.Enabled = False
+        Me.SelecionarClienteEnvioAssistenciaTB.Location = New System.Drawing.Point(159, 21)
+        Me.SelecionarClienteEnvioAssistenciaTB.Name = "SelecionarClienteEnvioAssistenciaTB"
+        Me.SelecionarClienteEnvioAssistenciaTB.Size = New System.Drawing.Size(441, 20)
+        Me.SelecionarClienteEnvioAssistenciaTB.TabIndex = 46
+        '
+        'SelecionarClienteEnvioAssistenciaLB
+        '
+        Me.SelecionarClienteEnvioAssistenciaLB.AutoSize = True
+        Me.SelecionarClienteEnvioAssistenciaLB.Location = New System.Drawing.Point(35, 24)
+        Me.SelecionarClienteEnvioAssistenciaLB.Name = "SelecionarClienteEnvioAssistenciaLB"
+        Me.SelecionarClienteEnvioAssistenciaLB.Size = New System.Drawing.Size(95, 13)
+        Me.SelecionarClienteEnvioAssistenciaLB.TabIndex = 45
+        Me.SelecionarClienteEnvioAssistenciaLB.Text = "Selecionar Cliente:"
+        '
+        'PictureBox11
+        '
+        Me.PictureBox11.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox11.Image = Global.NobelTheater.My.Resources.Resources.Confirmar
+        Me.PictureBox11.Location = New System.Drawing.Point(641, 56)
+        Me.PictureBox11.Name = "PictureBox11"
+        Me.PictureBox11.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox11.TabIndex = 54
+        Me.PictureBox11.TabStop = False
+        '
+        'PictureBox12
+        '
+        Me.PictureBox12.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
+        Me.PictureBox12.Location = New System.Drawing.Point(3, 51)
+        Me.PictureBox12.Name = "PictureBox12"
+        Me.PictureBox12.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox12.TabIndex = 51
+        Me.PictureBox12.TabStop = False
+        '
+        'PictureBox16
+        '
+        Me.PictureBox16.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox16.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.PictureBox16.Location = New System.Drawing.Point(608, 55)
+        Me.PictureBox16.Name = "PictureBox16"
+        Me.PictureBox16.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox16.TabIndex = 50
+        Me.PictureBox16.TabStop = False
+        '
+        'PictureBox17
+        '
+        Me.PictureBox17.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox17.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.PictureBox17.Location = New System.Drawing.Point(608, 17)
+        Me.PictureBox17.Name = "PictureBox17"
+        Me.PictureBox17.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox17.TabIndex = 47
+        Me.PictureBox17.TabStop = False
+        '
+        'PictureBox18
+        '
+        Me.PictureBox18.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
+        Me.PictureBox18.Location = New System.Drawing.Point(3, 89)
+        Me.PictureBox18.Name = "PictureBox18"
+        Me.PictureBox18.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox18.TabIndex = 59
+        Me.PictureBox18.TabStop = False
+        '
+        'SelecionarAssistenciaTB
+        '
+        Me.SelecionarAssistenciaTB.Enabled = False
+        Me.SelecionarAssistenciaTB.Location = New System.Drawing.Point(161, 90)
+        Me.SelecionarAssistenciaTB.Name = "SelecionarAssistenciaTB"
+        Me.SelecionarAssistenciaTB.Size = New System.Drawing.Size(441, 20)
+        Me.SelecionarAssistenciaTB.TabIndex = 57
+        '
+        'SelecionarAssistenciaLB
+        '
+        Me.SelecionarAssistenciaLB.AutoSize = True
+        Me.SelecionarAssistenciaLB.Location = New System.Drawing.Point(35, 93)
+        Me.SelecionarAssistenciaLB.Name = "SelecionarAssistenciaLB"
+        Me.SelecionarAssistenciaLB.Size = New System.Drawing.Size(125, 13)
+        Me.SelecionarAssistenciaLB.TabIndex = 56
+        Me.SelecionarAssistenciaLB.Text = "Selecionar a Assistência:"
+        '
+        'PictureBox19
+        '
+        Me.PictureBox19.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox19.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.PictureBox19.Location = New System.Drawing.Point(608, 90)
+        Me.PictureBox19.Name = "PictureBox19"
+        Me.PictureBox19.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox19.TabIndex = 58
+        Me.PictureBox19.TabStop = False
+        '
+        'EnviarProdutoAssistenciaDG
+        '
+        Me.EnviarProdutoAssistenciaDG.AllowUserToAddRows = False
+        Me.EnviarProdutoAssistenciaDG.AllowUserToDeleteRows = False
+        Me.EnviarProdutoAssistenciaDG.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.EnviarProdutoAssistenciaDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.EnviarProdutoAssistenciaDG.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn22, Me.DataGridViewTextBoxColumn25, Me.DataGridViewTextBoxColumn27, Me.DataGridViewButtonColumn4})
+        Me.EnviarProdutoAssistenciaDG.Location = New System.Drawing.Point(6, 116)
+        Me.EnviarProdutoAssistenciaDG.Name = "EnviarProdutoAssistenciaDG"
+        Me.EnviarProdutoAssistenciaDG.ReadOnly = True
+        Me.EnviarProdutoAssistenciaDG.RowHeadersVisible = False
+        Me.EnviarProdutoAssistenciaDG.Size = New System.Drawing.Size(673, 184)
+        Me.EnviarProdutoAssistenciaDG.TabIndex = 60
+        '
+        'DataGridViewTextBoxColumn22
+        '
+        Me.DataGridViewTextBoxColumn22.HeaderText = "Codigo"
+        Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
+        Me.DataGridViewTextBoxColumn22.ReadOnly = True
+        Me.DataGridViewTextBoxColumn22.Width = 50
+        '
+        'DataGridViewTextBoxColumn25
+        '
+        Me.DataGridViewTextBoxColumn25.HeaderText = "Nome"
+        Me.DataGridViewTextBoxColumn25.Name = "DataGridViewTextBoxColumn25"
+        Me.DataGridViewTextBoxColumn25.ReadOnly = True
+        Me.DataGridViewTextBoxColumn25.Width = 450
+        '
+        'DataGridViewTextBoxColumn27
+        '
+        Me.DataGridViewTextBoxColumn27.HeaderText = "Qtde"
+        Me.DataGridViewTextBoxColumn27.Name = "DataGridViewTextBoxColumn27"
+        Me.DataGridViewTextBoxColumn27.ReadOnly = True
+        Me.DataGridViewTextBoxColumn27.Width = 50
+        '
+        'DataGridViewButtonColumn4
+        '
+        Me.DataGridViewButtonColumn4.HeaderText = "Remover"
+        Me.DataGridViewButtonColumn4.Name = "DataGridViewButtonColumn4"
+        Me.DataGridViewButtonColumn4.ReadOnly = True
+        '
+        'EnviarParaAssistenciaBT
+        '
+        Me.EnviarParaAssistenciaBT.Location = New System.Drawing.Point(219, 306)
+        Me.EnviarParaAssistenciaBT.Name = "EnviarParaAssistenciaBT"
+        Me.EnviarParaAssistenciaBT.Size = New System.Drawing.Size(135, 23)
+        Me.EnviarParaAssistenciaBT.TabIndex = 61
+        Me.EnviarParaAssistenciaBT.Text = "Enviar para Assistência"
+        Me.EnviarParaAssistenciaBT.UseVisualStyleBackColor = True
+        '
+        'LimparBT
+        '
+        Me.LimparBT.Location = New System.Drawing.Point(360, 306)
+        Me.LimparBT.Name = "LimparBT"
+        Me.LimparBT.Size = New System.Drawing.Size(75, 23)
+        Me.LimparBT.TabIndex = 62
+        Me.LimparBT.Text = "Limpar"
+        Me.LimparBT.UseVisualStyleBackColor = True
+        '
         'ControleEstoque
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2105,11 +2487,25 @@ Partial Class ControleEstoque
         CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage6.ResumeLayout(False)
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage6.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.ProdutosEnviadosAssistenciaDG, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.QuantidadeNumberUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EnviarProdutoAssistenciaDG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2236,13 +2632,6 @@ Partial Class ControleEstoque
     Friend WithEvents DeLB As Label
     Friend WithEvents AteLB As Label
     Friend WithEvents GerarRelatorioCompraBT As Button
-    Friend WithEvents DataGridView2 As DataGridView
-    Friend WithEvents ProdutoAssistencia As DataGridViewTextBoxColumn
-    Friend WithEvents ClienteProdutoAssistencia As DataGridViewTextBoxColumn
-    Friend WithEvents DataEnvioAssistencia As DataGridViewTextBoxColumn
-    Friend WithEvents ResponsavelAssistencia As DataGridViewTextBoxColumn
-    Friend WithEvents EditarProdutoAssistencia As DataGridViewButtonColumn
-    Friend WithEvents RemoverProdutoAssistencia As DataGridViewButtonColumn
     Friend WithEvents BuscarClienteEmprestarProdutoIMG As PictureBox
     Friend WithEvents ClienteEmprestarProdutoTF As TextBox
     Friend WithEvents ClienteEmprestimoLB As Label
@@ -2316,4 +2705,44 @@ Partial Class ControleEstoque
     Friend WithEvents DataEmprestimo As DataGridViewTextBoxColumn
     Friend WithEvents VerProdutos As DataGridViewButtonColumn
     Friend WithEvents FinalizarSolicitacao As DataGridViewButtonColumn
+    Friend WithEvents BuscarTodosProdutosEnviadosAssistenciaRB As RadioButton
+    Friend WithEvents BuscarIDdeEnvioRB As RadioButton
+    Friend WithEvents BuscarPorIDEnvioTF As TextBox
+    Friend WithEvents BuscarPorProdutoRB As RadioButton
+    Friend WithEvents BuscarPorClienteRB As RadioButton
+    Friend WithEvents IDProdutoTF As TextBox
+    Friend WithEvents BuscarPorProdutoTF As TextBox
+    Friend WithEvents BuscarPorClienteTF As TextBox
+    Friend WithEvents ProdutosEnviadosAssistenciaDG As DataGridView
+    Friend WithEvents IDProdutoAssistencia As DataGridViewTextBoxColumn
+    Friend WithEvents StatusProdutoAssistencia As DataGridViewTextBoxColumn
+    Friend WithEvents ClienteProdutoAssistencia As DataGridViewTextBoxColumn
+    Friend WithEvents DataDeEnvioAssistencia As DataGridViewTextBoxColumn
+    Friend WithEvents VerProdutosAssistencia As DataGridViewButtonColumn
+    Friend WithEvents FinalizarSolicitacaoEnvioAssistencia As DataGridViewButtonColumn
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents PictureBox9 As PictureBox
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents LimparBT As Button
+    Friend WithEvents EnviarParaAssistenciaBT As Button
+    Friend WithEvents EnviarProdutoAssistenciaDG As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn22 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn25 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn27 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewButtonColumn4 As DataGridViewButtonColumn
+    Friend WithEvents PictureBox18 As PictureBox
+    Friend WithEvents SelecionarAssistenciaTB As TextBox
+    Friend WithEvents SelecionarAssistenciaLB As Label
+    Friend WithEvents PictureBox19 As PictureBox
+    Friend WithEvents PictureBox10 As PictureBox
+    Friend WithEvents QuantidadeNumberUpDown As NumericUpDown
+    Friend WithEvents CodigoProdutoEnvioAssistenciaTB As TextBox
+    Friend WithEvents SelecionarProdutoEnvioAssistenciaTB As TextBox
+    Friend WithEvents SelecionarProdutoEnvioAssistenciaLB As Label
+    Friend WithEvents SelecionarClienteEnvioAssistenciaTB As TextBox
+    Friend WithEvents SelecionarClienteEnvioAssistenciaLB As Label
+    Friend WithEvents PictureBox11 As PictureBox
+    Friend WithEvents PictureBox12 As PictureBox
+    Friend WithEvents PictureBox16 As PictureBox
+    Friend WithEvents PictureBox17 As PictureBox
 End Class

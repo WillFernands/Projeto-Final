@@ -663,4 +663,8 @@
     Private Sub PagamentosDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles PagamentosDT.CellContentClick
 
     End Sub
+
+    Private Sub AcompanharCotacaoTab_Click(sender As Object, e As EventArgs) Handles AcompanharCotacaoTab.Click
+
+    End Sub
 End Class
