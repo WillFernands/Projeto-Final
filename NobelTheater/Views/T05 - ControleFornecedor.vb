@@ -2,6 +2,8 @@
 
     Private fornecedorAtual As Fornecedor
     Private fornecedorAtualNovaAssistencia As Fornecedor
+    Private assistenciaAtual As Fornecedor
+    Private fornecedorVincular As Fornecedor
 
     Private Sub ControleFornecedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TipoNovoFornecedorCB.Items.Add(TipoFornecedor.Fornecedor)
@@ -227,14 +229,15 @@
             MsgBox("Tipo do endereço da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
         ElseIf (fornecedorAtualNovaAssistencia Is Nothing OrElse String.IsNullOrWhiteSpace(FornecedorNovaAssistenciaTF.Text)) Then
-            MsgBox("Tipo do endereço da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            MsgBox("Fornecedor não vinculado à Assistência", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
         End If
 
-        Dim fornecedor As New Fornecedor(CNPJNovaAssistenciaMTF.Text, RazaoNovaAssistenciaTF.Text, FantasiaNovaAssistenciaTF.Text, TelefoneNovaAssistenciaMTF.Text, Now, TipoFornecedor.Assistencia, LogradouroNovaAssistenciaTF.Text, NumeroNovaAssistenciaTF.Text, BairroNovaAssistenciaTF.Text, CidadeNovaAssistenciaTF.Text, EstadoNovaAssistenciaCB.Text, CEPNovaAssistenciaMTF.Text, TipoEnderecoNovaAssistenciaCB.Text)
-        FornecedorBC.Insert(fornecedor)
+        Dim assistencia As New Fornecedor(CNPJNovaAssistenciaMTF.Text, RazaoNovaAssistenciaTF.Text, FantasiaNovaAssistenciaTF.Text, TelefoneNovaAssistenciaMTF.Text, Now, TipoFornecedor.Assistencia, LogradouroNovaAssistenciaTF.Text, NumeroNovaAssistenciaTF.Text, BairroNovaAssistenciaTF.Text, CidadeNovaAssistenciaTF.Text, EstadoNovaAssistenciaCB.Text, CEPNovaAssistenciaMTF.Text, TipoEnderecoNovaAssistenciaCB.Text)
+        assistencia.Assistencia = assistencia
+        FornecedorBC.Insert(assistencia)
 
-        fornecedorAtualNovaAssistencia.Assistencia = fornecedor
+        fornecedorAtualNovaAssistencia.Assistencia = assistencia
 
         FornecedorBC.UpdateAssistencia(fornecedorAtualNovaAssistencia)
 
@@ -271,5 +274,132 @@
     Public Sub PopulateFornecedorNovaAssistencia(fornecedor As Fornecedor)
         fornecedorAtualNovaAssistencia = fornecedor
         FornecedorNovaAssistenciaTF.Text = fornecedor.Cnpj & " - " & fornecedor.NomeFantasia
+    End Sub
+
+    Private Sub SelecionarAssistenciaAcompanharAssistenciaIMG_Click(sender As Object, e As EventArgs) Handles SelecionarAssistenciaAcompanharAssistenciaIMG.Click
+        Dim busca As New BuscaFornecedor()
+        busca.Caller = "ControleFornecedorAssistenciaAcompanharAssistencia"
+        busca.Show()
+    End Sub
+
+    Private Sub SelecionarFornecedorAcompanharAssistenciaIMG_Click(sender As Object, e As EventArgs) Handles SelecionarFornecedorAcompanharAssistenciaIMG.Click
+        Dim busca As New BuscaFornecedor()
+        busca.Caller = "ControleFornecedorFornecedorAcompanharAssistencia"
+        busca.Show()
+    End Sub
+
+    Public Sub PopulateFornecedorAcompanharAssistencia(fornecedor As Fornecedor)
+        fornecedorVincular = fornecedor
+        FornecedorAcompanharAssistenciaTF.Text = fornecedor.Cnpj & " - " & fornecedor.NomeFantasia
+    End Sub
+
+    Public Sub PopulateAssistenciaAcompanharAssistencia(assistencia As Fornecedor)
+        assistenciaAtual = assistencia
+        AssistenciaAcompanharAssistenciaTF.Text = assistenciaAtual.Cnpj & " - " & assistenciaAtual.NomeFantasia
+
+        RazaoAcompanharAssistenciaTF.Enabled = True
+        FantasiaAcompanharAssistenciaTF.Enabled = True
+        TelefoneAcompanharAssistenciaMTF.Enabled = True
+        LogradouroAcompanharAssistenciaTF.Enabled = True
+        NumeroAcompanharAssistenciaTF.Enabled = True
+        BairroAcompanharAssistenciaTF.Enabled = True
+        CidadeAcompanharAssistenciaTF.Enabled = True
+        EstadoAcompanharAssistenciaCB.Enabled = True
+        CEPAcompanharAssistenciaMTF.Enabled = True
+        TipoEnderecoAcompanharAssistenciaCB.Enabled = True
+
+        CNPJAcompanharAssistenciaMTF.Text = assistenciaAtual.Cnpj
+        RazaoAcompanharAssistenciaTF.Text = assistenciaAtual.RazaoSocial
+        FantasiaAcompanharAssistenciaTF.Text = assistenciaAtual.NomeFantasia
+        TelefoneAcompanharAssistenciaMTF.Text = assistenciaAtual.Telefone
+        LogradouroAcompanharAssistenciaTF.Text = assistenciaAtual.Logradouro
+        NumeroAcompanharAssistenciaTF.Text = assistenciaAtual.Numero
+        BairroAcompanharAssistenciaTF.Text = assistenciaAtual.Bairro
+        CidadeAcompanharAssistenciaTF.Text = assistenciaAtual.Cidade
+        EstadoAcompanharAssistenciaCB.Text = assistenciaAtual.Estado
+        CEPAcompanharAssistenciaMTF.Text = assistenciaAtual.Cep
+        TipoEnderecoAcompanharAssistenciaCB.Text = assistenciaAtual.TipoEndereco
+
+    End Sub
+
+    Private Sub SalvarAcompanharAssistenciaBT_Click(sender As Object, e As EventArgs) Handles SalvarAcompanharAssistenciaBT.Click
+        If (String.IsNullOrWhiteSpace(RazaoAcompanharAssistenciaTF.Text)) Then
+            MsgBox("Razão social da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(FantasiaAcompanharAssistenciaTF.Text)) Then
+            MsgBox("Nome fantasia da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(TelefoneAcompanharAssistenciaMTF.Text)) Then
+            MsgBox("Telefone da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(LogradouroAcompanharAssistenciaTF.Text)) Then
+            MsgBox("Logradouro do endereço da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(NumeroAcompanharAssistenciaTF.Text)) Then
+            MsgBox("Numero do endereço da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(CidadeAcompanharAssistenciaTF.Text)) Then
+            MsgBox("Cidade do endereço da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(EstadoAcompanharAssistenciaCB.Text)) Then
+            MsgBox("Estado do endereço da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(CEPAcompanharAssistenciaMTF.Text)) Then
+            MsgBox("CEP do endereço da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(TipoEnderecoAcompanharAssistenciaCB.Text)) Then
+            MsgBox("Tipo do endereço da Assistência não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        End If
+
+        assistenciaAtual.RazaoSocial = RazaoAcompanharAssistenciaTF.Text
+        assistenciaAtual.NomeFantasia = FantasiaAcompanharAssistenciaTF.Text
+        assistenciaAtual.Telefone = TelefoneAcompanharAssistenciaMTF.Text
+        assistenciaAtual.Logradouro = LogradouroAcompanharAssistenciaTF.Text
+        assistenciaAtual.Numero = NumeroAcompanharAssistenciaTF.Text
+        assistenciaAtual.Bairro = BairroAcompanharAssistenciaTF.Text
+        assistenciaAtual.Cidade = CidadeAcompanharAssistenciaTF.Text
+        assistenciaAtual.Estado = EstadoAcompanharAssistenciaCB.Text
+        assistenciaAtual.Cep = CEPAcompanharAssistenciaMTF.Text
+        assistenciaAtual.TipoEndereco = TipoEnderecoAcompanharAssistenciaCB.Text
+
+        FornecedorBC.Update(assistenciaAtual)
+
+        If (fornecedorVincular IsNot Nothing) Then
+            fornecedorVincular.Assistencia = assistenciaAtual
+            FornecedorBC.UpdateAssistencia(fornecedorVincular)
+        End If
+
+        MsgBox("Atualização de assistência realizada com sucesso.", vbInformation Or vbMsgBoxSetForeground)
+        LimparCamposAcompanharAssistencia()
+    End Sub
+
+    Private Sub LimparCamposAcompanharAssistencia()
+        AssistenciaAcompanharAssistenciaTF.Text = ""
+        CNPJAcompanharAssistenciaMTF.Text = ""
+        RazaoAcompanharAssistenciaTF.Text = ""
+        FantasiaAcompanharAssistenciaTF.Text = ""
+        TelefoneAcompanharAssistenciaMTF.Text = ""
+        LogradouroAcompanharAssistenciaTF.Text = ""
+        NumeroAcompanharAssistenciaTF.Text = ""
+        BairroAcompanharAssistenciaTF.Text = ""
+        CidadeAcompanharAssistenciaTF.Text = ""
+        EstadoAcompanharAssistenciaCB.Text = ""
+        CEPAcompanharAssistenciaMTF.Text = ""
+        TipoEnderecoAcompanharAssistenciaCB.Text = ""
+        FornecedorAcompanharAssistenciaTF.Text = ""
+        fornecedorVincular = Nothing
+        assistenciaAtual = Nothing
+
+        RazaoAcompanharAssistenciaTF.Enabled = False
+        FantasiaAcompanharAssistenciaTF.Enabled = False
+        TelefoneAcompanharAssistenciaMTF.Enabled = False
+        LogradouroAcompanharAssistenciaTF.Enabled = False
+        NumeroAcompanharAssistenciaTF.Enabled = False
+        BairroAcompanharAssistenciaTF.Enabled = False
+        CidadeAcompanharAssistenciaTF.Enabled = False
+        EstadoAcompanharAssistenciaCB.Enabled = False
+        CEPAcompanharAssistenciaMTF.Enabled = False
+        TipoEnderecoAcompanharAssistenciaCB.Enabled = False
     End Sub
 End Class

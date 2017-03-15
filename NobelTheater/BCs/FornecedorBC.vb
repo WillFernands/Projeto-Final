@@ -71,6 +71,10 @@ Public Class FornecedorBC
         Return FornecedorDAO.FindAll()
     End Function
 
+    Public Shared Function FindAssistencias() As List(Of Fornecedor)
+        Return FornecedorDAO.FindAssistencias()
+    End Function
+
     Public Shared Function FindByRazaoSocial(razao As String) As Fornecedor
         Return FornecedorDAO.FindByRazaoSocial(razao)
     End Function
