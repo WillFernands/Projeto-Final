@@ -105,7 +105,7 @@
         supervisorAtual = func
     End Sub
 
-    Private Sub AcompanharFuncionarioDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles AcompanharFuncionarioDT.CellContentClick
+    Private Sub AcompanharFuncionarioDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
 
     End Sub
 

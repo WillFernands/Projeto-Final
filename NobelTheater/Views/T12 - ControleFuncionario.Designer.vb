@@ -64,30 +64,6 @@ Partial Class ControleFuncionario
         Me.EstadoNovoFuncionarioCB = New System.Windows.Forms.ComboBox()
         Me.CEPNovoFuncionarioTF = New System.Windows.Forms.TextBox()
         Me.AcompanharFuncionarioTP = New System.Windows.Forms.TabPage()
-        Me.CPFAcompanharFuncionarioMT = New System.Windows.Forms.MaskedTextBox()
-        Me.TelefoneAcompanharFuncionarioTF = New System.Windows.Forms.TextBox()
-        Me.TelefoneAcompanharFuncionarioLB = New System.Windows.Forms.Label()
-        Me.AcompanharFuncionarioDT = New System.Windows.Forms.DataGridView()
-        Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CPF = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cargo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Supervisor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Perfil = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Telefone = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Quantidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecoTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CEP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Salario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Remover = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.CPFAcompanharFuncionarioLB = New System.Windows.Forms.Label()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.SelecionarFuncionarioTF = New System.Windows.Forms.TextBox()
-        Me.SalvarAcompanharFuncionarioBT = New System.Windows.Forms.Button()
-        Me.SelecionarFuncionarioLB = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.OpcoesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -124,6 +100,39 @@ Partial Class ControleFuncionario
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DadosProfFuncGB = New System.Windows.Forms.GroupBox()
+        Me.FuncionarioAcompanharFuncLB = New System.Windows.Forms.Label()
+        Me.NomeFuncionarioAcompanharFuncTF = New System.Windows.Forms.TextBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.MatriculaFuncionarioAcompanharFuncTF = New System.Windows.Forms.TextBox()
+        Me.CPFAcompanharFuncLB = New System.Windows.Forms.Label()
+        Me.CPFAcompanharFuncMT = New System.Windows.Forms.MaskedTextBox()
+        Me.DataContratacaoAcompanharFuncLB = New System.Windows.Forms.Label()
+        Me.CargoAcompanharFuncLB = New System.Windows.Forms.Label()
+        Me.PerfilAcompanharFuncLB = New System.Windows.Forms.Label()
+        Me.DataContratacaoAcompanharFuncTF = New System.Windows.Forms.TextBox()
+        Me.CargoAcompanharFuncCB = New System.Windows.Forms.ComboBox()
+        Me.PerfilAcompanharFuncCB = New System.Windows.Forms.ComboBox()
+        Me.DadosPessoaisAcompanharFuncGB = New System.Windows.Forms.GroupBox()
+        Me.VerSalariosAcompanharFuncBT = New System.Windows.Forms.Button()
+        Me.TelefoneAcompanharFuncLB = New System.Windows.Forms.Label()
+        Me.CEPAcompanharFuncLB = New System.Windows.Forms.Label()
+        Me.LogradouroAcompanharFuncLB = New System.Windows.Forms.Label()
+        Me.NumeroAcompanharFuncLB = New System.Windows.Forms.Label()
+        Me.BairroAcompanharFuncLB = New System.Windows.Forms.Label()
+        Me.CidadeAcompanharFuncLB = New System.Windows.Forms.Label()
+        Me.EstadoAcompanharFuncLB = New System.Windows.Forms.Label()
+        Me.TipoEnderecoAcompanharFuncLB = New System.Windows.Forms.Label()
+        Me.TelefoneAcompanharFuncTF = New System.Windows.Forms.TextBox()
+        Me.CEPAcompanharFuncTF = New System.Windows.Forms.TextBox()
+        Me.LogradouroAcompanharFuncTF = New System.Windows.Forms.TextBox()
+        Me.NumeroAcompanharFuncTF = New System.Windows.Forms.TextBox()
+        Me.BairroAcompanharFuncTF = New System.Windows.Forms.TextBox()
+        Me.CidadeAcompanharFuncTF = New System.Windows.Forms.TextBox()
+        Me.EstadoAcompanharFuncCB = New System.Windows.Forms.ComboBox()
+        Me.TipoEnderecoAcompanharFuncCB = New System.Windows.Forms.ComboBox()
+        Me.SalvarAcompanharFuncBT = New System.Windows.Forms.Button()
+        Me.LimparAcompanharFuncBT = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -133,9 +142,10 @@ Partial Class ControleFuncionario
         CType(Me.SupervisorIMG, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DadosPessoaisNovoFuncionarioGB.SuspendLayout()
         Me.AcompanharFuncionarioTP.SuspendLayout()
-        CType(Me.AcompanharFuncionarioDT, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
+        Me.DadosProfFuncGB.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DadosPessoaisAcompanharFuncGB.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -524,15 +534,10 @@ Partial Class ControleFuncionario
         '
         'AcompanharFuncionarioTP
         '
-        Me.AcompanharFuncionarioTP.Controls.Add(Me.CPFAcompanharFuncionarioMT)
-        Me.AcompanharFuncionarioTP.Controls.Add(Me.TelefoneAcompanharFuncionarioTF)
-        Me.AcompanharFuncionarioTP.Controls.Add(Me.TelefoneAcompanharFuncionarioLB)
-        Me.AcompanharFuncionarioTP.Controls.Add(Me.AcompanharFuncionarioDT)
-        Me.AcompanharFuncionarioTP.Controls.Add(Me.CPFAcompanharFuncionarioLB)
-        Me.AcompanharFuncionarioTP.Controls.Add(Me.PictureBox7)
-        Me.AcompanharFuncionarioTP.Controls.Add(Me.SelecionarFuncionarioTF)
-        Me.AcompanharFuncionarioTP.Controls.Add(Me.SalvarAcompanharFuncionarioBT)
-        Me.AcompanharFuncionarioTP.Controls.Add(Me.SelecionarFuncionarioLB)
+        Me.AcompanharFuncionarioTP.Controls.Add(Me.LimparAcompanharFuncBT)
+        Me.AcompanharFuncionarioTP.Controls.Add(Me.SalvarAcompanharFuncBT)
+        Me.AcompanharFuncionarioTP.Controls.Add(Me.DadosPessoaisAcompanharFuncGB)
+        Me.AcompanharFuncionarioTP.Controls.Add(Me.DadosProfFuncGB)
         Me.AcompanharFuncionarioTP.Location = New System.Drawing.Point(4, 22)
         Me.AcompanharFuncionarioTP.Name = "AcompanharFuncionarioTP"
         Me.AcompanharFuncionarioTP.Padding = New System.Windows.Forms.Padding(3)
@@ -540,178 +545,6 @@ Partial Class ControleFuncionario
         Me.AcompanharFuncionarioTP.TabIndex = 1
         Me.AcompanharFuncionarioTP.Text = "Acompanhar Funcionário"
         Me.AcompanharFuncionarioTP.UseVisualStyleBackColor = True
-        '
-        'CPFAcompanharFuncionarioMT
-        '
-        Me.CPFAcompanharFuncionarioMT.Location = New System.Drawing.Point(126, 52)
-        Me.CPFAcompanharFuncionarioMT.Name = "CPFAcompanharFuncionarioMT"
-        Me.CPFAcompanharFuncionarioMT.Size = New System.Drawing.Size(503, 20)
-        Me.CPFAcompanharFuncionarioMT.TabIndex = 2
-        '
-        'TelefoneAcompanharFuncionarioTF
-        '
-        Me.TelefoneAcompanharFuncionarioTF.Location = New System.Drawing.Point(126, 91)
-        Me.TelefoneAcompanharFuncionarioTF.Name = "TelefoneAcompanharFuncionarioTF"
-        Me.TelefoneAcompanharFuncionarioTF.Size = New System.Drawing.Size(168, 20)
-        Me.TelefoneAcompanharFuncionarioTF.TabIndex = 3
-        '
-        'TelefoneAcompanharFuncionarioLB
-        '
-        Me.TelefoneAcompanharFuncionarioLB.AutoSize = True
-        Me.TelefoneAcompanharFuncionarioLB.Location = New System.Drawing.Point(3, 94)
-        Me.TelefoneAcompanharFuncionarioLB.Name = "TelefoneAcompanharFuncionarioLB"
-        Me.TelefoneAcompanharFuncionarioLB.Size = New System.Drawing.Size(52, 13)
-        Me.TelefoneAcompanharFuncionarioLB.TabIndex = 46
-        Me.TelefoneAcompanharFuncionarioLB.Text = "Telefone:"
-        '
-        'AcompanharFuncionarioDT
-        '
-        Me.AcompanharFuncionarioDT.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.AcompanharFuncionarioDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.AcompanharFuncionarioDT.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nome, Me.CPF, Me.Cargo, Me.Supervisor, Me.Perfil, Me.Telefone, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn3, Me.Quantidade, Me.PrecoTotal, Me.Estado, Me.CEP, Me.Tipo, Me.Salario, Me.Remover})
-        Me.AcompanharFuncionarioDT.Cursor = System.Windows.Forms.Cursors.Default
-        Me.AcompanharFuncionarioDT.Location = New System.Drawing.Point(14, 128)
-        Me.AcompanharFuncionarioDT.Name = "AcompanharFuncionarioDT"
-        Me.AcompanharFuncionarioDT.RowHeadersVisible = False
-        Me.AcompanharFuncionarioDT.Size = New System.Drawing.Size(661, 168)
-        Me.AcompanharFuncionarioDT.TabIndex = 4
-        '
-        'Nome
-        '
-        Me.Nome.HeaderText = "Nome"
-        Me.Nome.Name = "Nome"
-        '
-        'CPF
-        '
-        Me.CPF.HeaderText = "CPF"
-        Me.CPF.Name = "CPF"
-        '
-        'Cargo
-        '
-        Me.Cargo.HeaderText = "Cargo"
-        Me.Cargo.Name = "Cargo"
-        '
-        'Supervisor
-        '
-        Me.Supervisor.HeaderText = "Supervisor"
-        Me.Supervisor.Name = "Supervisor"
-        '
-        'Perfil
-        '
-        Me.Perfil.HeaderText = "Perfil"
-        Me.Perfil.Name = "Perfil"
-        '
-        'Telefone
-        '
-        Me.Telefone.HeaderText = "Telefone"
-        Me.Telefone.Name = "Telefone"
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Logradouro"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 150
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Número"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        Me.DataGridViewTextBoxColumn3.Width = 50
-        '
-        'Quantidade
-        '
-        Me.Quantidade.HeaderText = "Bairro"
-        Me.Quantidade.Name = "Quantidade"
-        Me.Quantidade.ReadOnly = True
-        Me.Quantidade.Width = 75
-        '
-        'PrecoTotal
-        '
-        Me.PrecoTotal.HeaderText = "Cidade"
-        Me.PrecoTotal.Name = "PrecoTotal"
-        Me.PrecoTotal.ReadOnly = True
-        Me.PrecoTotal.Width = 75
-        '
-        'Estado
-        '
-        Me.Estado.HeaderText = "Estado"
-        Me.Estado.Name = "Estado"
-        Me.Estado.ReadOnly = True
-        Me.Estado.Width = 50
-        '
-        'CEP
-        '
-        Me.CEP.HeaderText = "CEP"
-        Me.CEP.Name = "CEP"
-        Me.CEP.ReadOnly = True
-        Me.CEP.Width = 75
-        '
-        'Tipo
-        '
-        Me.Tipo.HeaderText = "Tipo"
-        Me.Tipo.Name = "Tipo"
-        Me.Tipo.ReadOnly = True
-        Me.Tipo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Tipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Salario
-        '
-        Me.Salario.HeaderText = "Salario"
-        Me.Salario.Name = "Salario"
-        '
-        'Remover
-        '
-        Me.Remover.HeaderText = "Remover"
-        Me.Remover.Name = "Remover"
-        Me.Remover.ReadOnly = True
-        Me.Remover.Width = 75
-        '
-        'CPFAcompanharFuncionarioLB
-        '
-        Me.CPFAcompanharFuncionarioLB.AutoSize = True
-        Me.CPFAcompanharFuncionarioLB.Location = New System.Drawing.Point(3, 55)
-        Me.CPFAcompanharFuncionarioLB.Name = "CPFAcompanharFuncionarioLB"
-        Me.CPFAcompanharFuncionarioLB.Size = New System.Drawing.Size(30, 13)
-        Me.CPFAcompanharFuncionarioLB.TabIndex = 43
-        Me.CPFAcompanharFuncionarioLB.Text = "CPF:"
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.Image = Global.NobelTheater.My.Resources.Resources.Busca
-        Me.PictureBox7.Location = New System.Drawing.Point(635, 13)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(27, 20)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox7.TabIndex = 39
-        Me.PictureBox7.TabStop = False
-        '
-        'SelecionarFuncionarioTF
-        '
-        Me.SelecionarFuncionarioTF.Enabled = False
-        Me.SelecionarFuncionarioTF.Location = New System.Drawing.Point(126, 13)
-        Me.SelecionarFuncionarioTF.Name = "SelecionarFuncionarioTF"
-        Me.SelecionarFuncionarioTF.Size = New System.Drawing.Size(503, 20)
-        Me.SelecionarFuncionarioTF.TabIndex = 1
-        '
-        'SalvarAcompanharFuncionarioBT
-        '
-        Me.SalvarAcompanharFuncionarioBT.Location = New System.Drawing.Point(284, 304)
-        Me.SalvarAcompanharFuncionarioBT.Name = "SalvarAcompanharFuncionarioBT"
-        Me.SalvarAcompanharFuncionarioBT.Size = New System.Drawing.Size(125, 23)
-        Me.SalvarAcompanharFuncionarioBT.TabIndex = 5
-        Me.SalvarAcompanharFuncionarioBT.Text = "Salvar Alterações"
-        Me.SalvarAcompanharFuncionarioBT.UseVisualStyleBackColor = True
-        '
-        'SelecionarFuncionarioLB
-        '
-        Me.SelecionarFuncionarioLB.AutoSize = True
-        Me.SelecionarFuncionarioLB.Location = New System.Drawing.Point(3, 16)
-        Me.SelecionarFuncionarioLB.Name = "SelecionarFuncionarioLB"
-        Me.SelecionarFuncionarioLB.Size = New System.Drawing.Size(118, 13)
-        Me.SelecionarFuncionarioLB.TabIndex = 36
-        Me.SelecionarFuncionarioLB.Text = "Selecionar Funcionário:"
         '
         'MenuStrip1
         '
@@ -942,6 +775,310 @@ Partial Class ControleFuncionario
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
+        'DadosProfFuncGB
+        '
+        Me.DadosProfFuncGB.Controls.Add(Me.VerSalariosAcompanharFuncBT)
+        Me.DadosProfFuncGB.Controls.Add(Me.PerfilAcompanharFuncCB)
+        Me.DadosProfFuncGB.Controls.Add(Me.CargoAcompanharFuncCB)
+        Me.DadosProfFuncGB.Controls.Add(Me.DataContratacaoAcompanharFuncTF)
+        Me.DadosProfFuncGB.Controls.Add(Me.PerfilAcompanharFuncLB)
+        Me.DadosProfFuncGB.Controls.Add(Me.CargoAcompanharFuncLB)
+        Me.DadosProfFuncGB.Controls.Add(Me.DataContratacaoAcompanharFuncLB)
+        Me.DadosProfFuncGB.Controls.Add(Me.CPFAcompanharFuncMT)
+        Me.DadosProfFuncGB.Controls.Add(Me.CPFAcompanharFuncLB)
+        Me.DadosProfFuncGB.Controls.Add(Me.MatriculaFuncionarioAcompanharFuncTF)
+        Me.DadosProfFuncGB.Controls.Add(Me.PictureBox2)
+        Me.DadosProfFuncGB.Controls.Add(Me.NomeFuncionarioAcompanharFuncTF)
+        Me.DadosProfFuncGB.Controls.Add(Me.FuncionarioAcompanharFuncLB)
+        Me.DadosProfFuncGB.Location = New System.Drawing.Point(6, 6)
+        Me.DadosProfFuncGB.Name = "DadosProfFuncGB"
+        Me.DadosProfFuncGB.Size = New System.Drawing.Size(673, 109)
+        Me.DadosProfFuncGB.TabIndex = 0
+        Me.DadosProfFuncGB.TabStop = False
+        Me.DadosProfFuncGB.Text = "Dados Profissionais"
+        '
+        'FuncionarioAcompanharFuncLB
+        '
+        Me.FuncionarioAcompanharFuncLB.AutoSize = True
+        Me.FuncionarioAcompanharFuncLB.Location = New System.Drawing.Point(6, 26)
+        Me.FuncionarioAcompanharFuncLB.Name = "FuncionarioAcompanharFuncLB"
+        Me.FuncionarioAcompanharFuncLB.Size = New System.Drawing.Size(65, 13)
+        Me.FuncionarioAcompanharFuncLB.TabIndex = 0
+        Me.FuncionarioAcompanharFuncLB.Text = "Funcionário:"
+        '
+        'NomeFuncionarioAcompanharFuncTF
+        '
+        Me.NomeFuncionarioAcompanharFuncTF.Location = New System.Drawing.Point(183, 23)
+        Me.NomeFuncionarioAcompanharFuncTF.Name = "NomeFuncionarioAcompanharFuncTF"
+        Me.NomeFuncionarioAcompanharFuncTF.Size = New System.Drawing.Size(445, 20)
+        Me.NomeFuncionarioAcompanharFuncTF.TabIndex = 1
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox2.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.PictureBox2.Location = New System.Drawing.Point(634, 23)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 20
+        Me.PictureBox2.TabStop = False
+        '
+        'MatriculaFuncionarioAcompanharFuncTF
+        '
+        Me.MatriculaFuncionarioAcompanharFuncTF.Location = New System.Drawing.Point(77, 23)
+        Me.MatriculaFuncionarioAcompanharFuncTF.Name = "MatriculaFuncionarioAcompanharFuncTF"
+        Me.MatriculaFuncionarioAcompanharFuncTF.Size = New System.Drawing.Size(100, 20)
+        Me.MatriculaFuncionarioAcompanharFuncTF.TabIndex = 21
+        '
+        'CPFAcompanharFuncLB
+        '
+        Me.CPFAcompanharFuncLB.AutoSize = True
+        Me.CPFAcompanharFuncLB.Location = New System.Drawing.Point(6, 53)
+        Me.CPFAcompanharFuncLB.Name = "CPFAcompanharFuncLB"
+        Me.CPFAcompanharFuncLB.Size = New System.Drawing.Size(30, 13)
+        Me.CPFAcompanharFuncLB.TabIndex = 22
+        Me.CPFAcompanharFuncLB.Text = "CPF:"
+        '
+        'CPFAcompanharFuncMT
+        '
+        Me.CPFAcompanharFuncMT.Location = New System.Drawing.Point(77, 50)
+        Me.CPFAcompanharFuncMT.Name = "CPFAcompanharFuncMT"
+        Me.CPFAcompanharFuncMT.Size = New System.Drawing.Size(199, 20)
+        Me.CPFAcompanharFuncMT.TabIndex = 23
+        '
+        'DataContratacaoAcompanharFuncLB
+        '
+        Me.DataContratacaoAcompanharFuncLB.AutoSize = True
+        Me.DataContratacaoAcompanharFuncLB.Location = New System.Drawing.Point(282, 53)
+        Me.DataContratacaoAcompanharFuncLB.Name = "DataContratacaoAcompanharFuncLB"
+        Me.DataContratacaoAcompanharFuncLB.Size = New System.Drawing.Size(109, 13)
+        Me.DataContratacaoAcompanharFuncLB.TabIndex = 24
+        Me.DataContratacaoAcompanharFuncLB.Text = "Data de Contratação:"
+        '
+        'CargoAcompanharFuncLB
+        '
+        Me.CargoAcompanharFuncLB.AutoSize = True
+        Me.CargoAcompanharFuncLB.Location = New System.Drawing.Point(6, 80)
+        Me.CargoAcompanharFuncLB.Name = "CargoAcompanharFuncLB"
+        Me.CargoAcompanharFuncLB.Size = New System.Drawing.Size(38, 13)
+        Me.CargoAcompanharFuncLB.TabIndex = 25
+        Me.CargoAcompanharFuncLB.Text = "Cargo:"
+        '
+        'PerfilAcompanharFuncLB
+        '
+        Me.PerfilAcompanharFuncLB.AutoSize = True
+        Me.PerfilAcompanharFuncLB.Location = New System.Drawing.Point(282, 80)
+        Me.PerfilAcompanharFuncLB.Name = "PerfilAcompanharFuncLB"
+        Me.PerfilAcompanharFuncLB.Size = New System.Drawing.Size(33, 13)
+        Me.PerfilAcompanharFuncLB.TabIndex = 26
+        Me.PerfilAcompanharFuncLB.Text = "Perfil:"
+        '
+        'DataContratacaoAcompanharFuncTF
+        '
+        Me.DataContratacaoAcompanharFuncTF.Location = New System.Drawing.Point(397, 50)
+        Me.DataContratacaoAcompanharFuncTF.Name = "DataContratacaoAcompanharFuncTF"
+        Me.DataContratacaoAcompanharFuncTF.Size = New System.Drawing.Size(231, 20)
+        Me.DataContratacaoAcompanharFuncTF.TabIndex = 27
+        '
+        'CargoAcompanharFuncCB
+        '
+        Me.CargoAcompanharFuncCB.FormattingEnabled = True
+        Me.CargoAcompanharFuncCB.Location = New System.Drawing.Point(77, 77)
+        Me.CargoAcompanharFuncCB.Name = "CargoAcompanharFuncCB"
+        Me.CargoAcompanharFuncCB.Size = New System.Drawing.Size(199, 21)
+        Me.CargoAcompanharFuncCB.TabIndex = 28
+        '
+        'PerfilAcompanharFuncCB
+        '
+        Me.PerfilAcompanharFuncCB.FormattingEnabled = True
+        Me.PerfilAcompanharFuncCB.Location = New System.Drawing.Point(397, 77)
+        Me.PerfilAcompanharFuncCB.Name = "PerfilAcompanharFuncCB"
+        Me.PerfilAcompanharFuncCB.Size = New System.Drawing.Size(147, 21)
+        Me.PerfilAcompanharFuncCB.TabIndex = 29
+        '
+        'DadosPessoaisAcompanharFuncGB
+        '
+        Me.DadosPessoaisAcompanharFuncGB.Controls.Add(Me.TipoEnderecoAcompanharFuncCB)
+        Me.DadosPessoaisAcompanharFuncGB.Controls.Add(Me.EstadoAcompanharFuncCB)
+        Me.DadosPessoaisAcompanharFuncGB.Controls.Add(Me.CidadeAcompanharFuncTF)
+        Me.DadosPessoaisAcompanharFuncGB.Controls.Add(Me.BairroAcompanharFuncTF)
+        Me.DadosPessoaisAcompanharFuncGB.Controls.Add(Me.NumeroAcompanharFuncTF)
+        Me.DadosPessoaisAcompanharFuncGB.Controls.Add(Me.LogradouroAcompanharFuncTF)
+        Me.DadosPessoaisAcompanharFuncGB.Controls.Add(Me.CEPAcompanharFuncTF)
+        Me.DadosPessoaisAcompanharFuncGB.Controls.Add(Me.TelefoneAcompanharFuncTF)
+        Me.DadosPessoaisAcompanharFuncGB.Controls.Add(Me.TipoEnderecoAcompanharFuncLB)
+        Me.DadosPessoaisAcompanharFuncGB.Controls.Add(Me.EstadoAcompanharFuncLB)
+        Me.DadosPessoaisAcompanharFuncGB.Controls.Add(Me.CidadeAcompanharFuncLB)
+        Me.DadosPessoaisAcompanharFuncGB.Controls.Add(Me.BairroAcompanharFuncLB)
+        Me.DadosPessoaisAcompanharFuncGB.Controls.Add(Me.NumeroAcompanharFuncLB)
+        Me.DadosPessoaisAcompanharFuncGB.Controls.Add(Me.LogradouroAcompanharFuncLB)
+        Me.DadosPessoaisAcompanharFuncGB.Controls.Add(Me.CEPAcompanharFuncLB)
+        Me.DadosPessoaisAcompanharFuncGB.Controls.Add(Me.TelefoneAcompanharFuncLB)
+        Me.DadosPessoaisAcompanharFuncGB.Location = New System.Drawing.Point(6, 121)
+        Me.DadosPessoaisAcompanharFuncGB.Name = "DadosPessoaisAcompanharFuncGB"
+        Me.DadosPessoaisAcompanharFuncGB.Size = New System.Drawing.Size(673, 149)
+        Me.DadosPessoaisAcompanharFuncGB.TabIndex = 1
+        Me.DadosPessoaisAcompanharFuncGB.TabStop = False
+        Me.DadosPessoaisAcompanharFuncGB.Text = "Dados Pessoais"
+        '
+        'VerSalariosAcompanharFuncBT
+        '
+        Me.VerSalariosAcompanharFuncBT.Location = New System.Drawing.Point(553, 75)
+        Me.VerSalariosAcompanharFuncBT.Name = "VerSalariosAcompanharFuncBT"
+        Me.VerSalariosAcompanharFuncBT.Size = New System.Drawing.Size(75, 23)
+        Me.VerSalariosAcompanharFuncBT.TabIndex = 30
+        Me.VerSalariosAcompanharFuncBT.Text = "Ver Salários"
+        Me.VerSalariosAcompanharFuncBT.UseVisualStyleBackColor = True
+        '
+        'TelefoneAcompanharFuncLB
+        '
+        Me.TelefoneAcompanharFuncLB.AutoSize = True
+        Me.TelefoneAcompanharFuncLB.Location = New System.Drawing.Point(6, 29)
+        Me.TelefoneAcompanharFuncLB.Name = "TelefoneAcompanharFuncLB"
+        Me.TelefoneAcompanharFuncLB.Size = New System.Drawing.Size(52, 13)
+        Me.TelefoneAcompanharFuncLB.TabIndex = 0
+        Me.TelefoneAcompanharFuncLB.Text = "Telefone:"
+        '
+        'CEPAcompanharFuncLB
+        '
+        Me.CEPAcompanharFuncLB.AutoSize = True
+        Me.CEPAcompanharFuncLB.Location = New System.Drawing.Point(394, 29)
+        Me.CEPAcompanharFuncLB.Name = "CEPAcompanharFuncLB"
+        Me.CEPAcompanharFuncLB.Size = New System.Drawing.Size(31, 13)
+        Me.CEPAcompanharFuncLB.TabIndex = 1
+        Me.CEPAcompanharFuncLB.Text = "CEP:"
+        '
+        'LogradouroAcompanharFuncLB
+        '
+        Me.LogradouroAcompanharFuncLB.AutoSize = True
+        Me.LogradouroAcompanharFuncLB.Location = New System.Drawing.Point(6, 56)
+        Me.LogradouroAcompanharFuncLB.Name = "LogradouroAcompanharFuncLB"
+        Me.LogradouroAcompanharFuncLB.Size = New System.Drawing.Size(64, 13)
+        Me.LogradouroAcompanharFuncLB.TabIndex = 2
+        Me.LogradouroAcompanharFuncLB.Text = "Logradouro:"
+        '
+        'NumeroAcompanharFuncLB
+        '
+        Me.NumeroAcompanharFuncLB.AutoSize = True
+        Me.NumeroAcompanharFuncLB.Location = New System.Drawing.Point(529, 56)
+        Me.NumeroAcompanharFuncLB.Name = "NumeroAcompanharFuncLB"
+        Me.NumeroAcompanharFuncLB.Size = New System.Drawing.Size(47, 13)
+        Me.NumeroAcompanharFuncLB.TabIndex = 3
+        Me.NumeroAcompanharFuncLB.Text = "Número:"
+        '
+        'BairroAcompanharFuncLB
+        '
+        Me.BairroAcompanharFuncLB.AutoSize = True
+        Me.BairroAcompanharFuncLB.Location = New System.Drawing.Point(6, 83)
+        Me.BairroAcompanharFuncLB.Name = "BairroAcompanharFuncLB"
+        Me.BairroAcompanharFuncLB.Size = New System.Drawing.Size(37, 13)
+        Me.BairroAcompanharFuncLB.TabIndex = 4
+        Me.BairroAcompanharFuncLB.Text = "Bairro:"
+        '
+        'CidadeAcompanharFuncLB
+        '
+        Me.CidadeAcompanharFuncLB.AutoSize = True
+        Me.CidadeAcompanharFuncLB.Location = New System.Drawing.Point(282, 83)
+        Me.CidadeAcompanharFuncLB.Name = "CidadeAcompanharFuncLB"
+        Me.CidadeAcompanharFuncLB.Size = New System.Drawing.Size(43, 13)
+        Me.CidadeAcompanharFuncLB.TabIndex = 5
+        Me.CidadeAcompanharFuncLB.Text = "Cidade:"
+        '
+        'EstadoAcompanharFuncLB
+        '
+        Me.EstadoAcompanharFuncLB.AutoSize = True
+        Me.EstadoAcompanharFuncLB.Location = New System.Drawing.Point(529, 83)
+        Me.EstadoAcompanharFuncLB.Name = "EstadoAcompanharFuncLB"
+        Me.EstadoAcompanharFuncLB.Size = New System.Drawing.Size(43, 13)
+        Me.EstadoAcompanharFuncLB.TabIndex = 6
+        Me.EstadoAcompanharFuncLB.Text = "Estado:"
+        '
+        'TipoEnderecoAcompanharFuncLB
+        '
+        Me.TipoEnderecoAcompanharFuncLB.AutoSize = True
+        Me.TipoEnderecoAcompanharFuncLB.Location = New System.Drawing.Point(6, 110)
+        Me.TipoEnderecoAcompanharFuncLB.Name = "TipoEnderecoAcompanharFuncLB"
+        Me.TipoEnderecoAcompanharFuncLB.Size = New System.Drawing.Size(95, 13)
+        Me.TipoEnderecoAcompanharFuncLB.TabIndex = 7
+        Me.TipoEnderecoAcompanharFuncLB.Text = "Tipo de Endereço:"
+        '
+        'TelefoneAcompanharFuncTF
+        '
+        Me.TelefoneAcompanharFuncTF.Location = New System.Drawing.Point(76, 26)
+        Me.TelefoneAcompanharFuncTF.Name = "TelefoneAcompanharFuncTF"
+        Me.TelefoneAcompanharFuncTF.Size = New System.Drawing.Size(200, 20)
+        Me.TelefoneAcompanharFuncTF.TabIndex = 8
+        '
+        'CEPAcompanharFuncTF
+        '
+        Me.CEPAcompanharFuncTF.Location = New System.Drawing.Point(430, 26)
+        Me.CEPAcompanharFuncTF.Name = "CEPAcompanharFuncTF"
+        Me.CEPAcompanharFuncTF.Size = New System.Drawing.Size(237, 20)
+        Me.CEPAcompanharFuncTF.TabIndex = 9
+        '
+        'LogradouroAcompanharFuncTF
+        '
+        Me.LogradouroAcompanharFuncTF.Location = New System.Drawing.Point(77, 53)
+        Me.LogradouroAcompanharFuncTF.Name = "LogradouroAcompanharFuncTF"
+        Me.LogradouroAcompanharFuncTF.Size = New System.Drawing.Size(446, 20)
+        Me.LogradouroAcompanharFuncTF.TabIndex = 10
+        '
+        'NumeroAcompanharFuncTF
+        '
+        Me.NumeroAcompanharFuncTF.Location = New System.Drawing.Point(582, 53)
+        Me.NumeroAcompanharFuncTF.Name = "NumeroAcompanharFuncTF"
+        Me.NumeroAcompanharFuncTF.Size = New System.Drawing.Size(85, 20)
+        Me.NumeroAcompanharFuncTF.TabIndex = 11
+        '
+        'BairroAcompanharFuncTF
+        '
+        Me.BairroAcompanharFuncTF.Location = New System.Drawing.Point(76, 80)
+        Me.BairroAcompanharFuncTF.Name = "BairroAcompanharFuncTF"
+        Me.BairroAcompanharFuncTF.Size = New System.Drawing.Size(200, 20)
+        Me.BairroAcompanharFuncTF.TabIndex = 12
+        '
+        'CidadeAcompanharFuncTF
+        '
+        Me.CidadeAcompanharFuncTF.Location = New System.Drawing.Point(331, 80)
+        Me.CidadeAcompanharFuncTF.Name = "CidadeAcompanharFuncTF"
+        Me.CidadeAcompanharFuncTF.Size = New System.Drawing.Size(192, 20)
+        Me.CidadeAcompanharFuncTF.TabIndex = 13
+        '
+        'EstadoAcompanharFuncCB
+        '
+        Me.EstadoAcompanharFuncCB.FormattingEnabled = True
+        Me.EstadoAcompanharFuncCB.Location = New System.Drawing.Point(582, 80)
+        Me.EstadoAcompanharFuncCB.Name = "EstadoAcompanharFuncCB"
+        Me.EstadoAcompanharFuncCB.Size = New System.Drawing.Size(85, 21)
+        Me.EstadoAcompanharFuncCB.TabIndex = 14
+        '
+        'TipoEnderecoAcompanharFuncCB
+        '
+        Me.TipoEnderecoAcompanharFuncCB.FormattingEnabled = True
+        Me.TipoEnderecoAcompanharFuncCB.Location = New System.Drawing.Point(107, 107)
+        Me.TipoEnderecoAcompanharFuncCB.Name = "TipoEnderecoAcompanharFuncCB"
+        Me.TipoEnderecoAcompanharFuncCB.Size = New System.Drawing.Size(416, 21)
+        Me.TipoEnderecoAcompanharFuncCB.TabIndex = 15
+        '
+        'SalvarAcompanharFuncBT
+        '
+        Me.SalvarAcompanharFuncBT.Location = New System.Drawing.Point(227, 306)
+        Me.SalvarAcompanharFuncBT.Name = "SalvarAcompanharFuncBT"
+        Me.SalvarAcompanharFuncBT.Size = New System.Drawing.Size(123, 23)
+        Me.SalvarAcompanharFuncBT.TabIndex = 2
+        Me.SalvarAcompanharFuncBT.Text = "Salvar Alterações"
+        Me.SalvarAcompanharFuncBT.UseVisualStyleBackColor = True
+        '
+        'LimparAcompanharFuncBT
+        '
+        Me.LimparAcompanharFuncBT.Location = New System.Drawing.Point(356, 306)
+        Me.LimparAcompanharFuncBT.Name = "LimparAcompanharFuncBT"
+        Me.LimparAcompanharFuncBT.Size = New System.Drawing.Size(75, 23)
+        Me.LimparAcompanharFuncBT.TabIndex = 3
+        Me.LimparAcompanharFuncBT.Text = "Limpar:"
+        Me.LimparAcompanharFuncBT.UseVisualStyleBackColor = True
+        '
         'ControleFuncionario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -966,11 +1103,13 @@ Partial Class ControleFuncionario
         Me.DadosPessoaisNovoFuncionarioGB.ResumeLayout(False)
         Me.DadosPessoaisNovoFuncionarioGB.PerformLayout()
         Me.AcompanharFuncionarioTP.ResumeLayout(False)
-        Me.AcompanharFuncionarioTP.PerformLayout()
-        CType(Me.AcompanharFuncionarioDT, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.DadosProfFuncGB.ResumeLayout(False)
+        Me.DadosProfFuncGB.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.DadosPessoaisAcompanharFuncGB.ResumeLayout(False)
+        Me.DadosPessoaisAcompanharFuncGB.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1053,28 +1192,37 @@ Partial Class ControleFuncionario
     Friend WithEvents SupervisorNovoFuncionarioTF As TextBox
     Friend WithEvents SupervisorNovoFuncionarioLB As Label
     Friend WithEvents SupervisorIMG As PictureBox
-    Friend WithEvents TelefoneAcompanharFuncionarioTF As TextBox
-    Friend WithEvents TelefoneAcompanharFuncionarioLB As Label
-    Friend WithEvents AcompanharFuncionarioDT As DataGridView
-    Friend WithEvents CPFAcompanharFuncionarioLB As Label
-    Friend WithEvents PictureBox7 As PictureBox
-    Friend WithEvents SelecionarFuncionarioTF As TextBox
-    Friend WithEvents SalvarAcompanharFuncionarioBT As Button
-    Friend WithEvents SelecionarFuncionarioLB As Label
-    Friend WithEvents CPFAcompanharFuncionarioMT As MaskedTextBox
-    Friend WithEvents Nome As DataGridViewTextBoxColumn
-    Friend WithEvents CPF As DataGridViewTextBoxColumn
-    Friend WithEvents Cargo As DataGridViewTextBoxColumn
-    Friend WithEvents Supervisor As DataGridViewTextBoxColumn
-    Friend WithEvents Perfil As DataGridViewTextBoxColumn
-    Friend WithEvents Telefone As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents Quantidade As DataGridViewTextBoxColumn
-    Friend WithEvents PrecoTotal As DataGridViewTextBoxColumn
-    Friend WithEvents Estado As DataGridViewTextBoxColumn
-    Friend WithEvents CEP As DataGridViewTextBoxColumn
-    Friend WithEvents Tipo As DataGridViewTextBoxColumn
-    Friend WithEvents Salario As DataGridViewTextBoxColumn
-    Friend WithEvents Remover As DataGridViewButtonColumn
+    Friend WithEvents DadosProfFuncGB As GroupBox
+    Friend WithEvents PerfilAcompanharFuncCB As ComboBox
+    Friend WithEvents CargoAcompanharFuncCB As ComboBox
+    Friend WithEvents DataContratacaoAcompanharFuncTF As TextBox
+    Friend WithEvents PerfilAcompanharFuncLB As Label
+    Friend WithEvents CargoAcompanharFuncLB As Label
+    Friend WithEvents DataContratacaoAcompanharFuncLB As Label
+    Friend WithEvents CPFAcompanharFuncMT As MaskedTextBox
+    Friend WithEvents CPFAcompanharFuncLB As Label
+    Friend WithEvents MatriculaFuncionarioAcompanharFuncTF As TextBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents NomeFuncionarioAcompanharFuncTF As TextBox
+    Friend WithEvents FuncionarioAcompanharFuncLB As Label
+    Friend WithEvents DadosPessoaisAcompanharFuncGB As GroupBox
+    Friend WithEvents LimparAcompanharFuncBT As Button
+    Friend WithEvents SalvarAcompanharFuncBT As Button
+    Friend WithEvents TipoEnderecoAcompanharFuncCB As ComboBox
+    Friend WithEvents EstadoAcompanharFuncCB As ComboBox
+    Friend WithEvents CidadeAcompanharFuncTF As TextBox
+    Friend WithEvents BairroAcompanharFuncTF As TextBox
+    Friend WithEvents NumeroAcompanharFuncTF As TextBox
+    Friend WithEvents LogradouroAcompanharFuncTF As TextBox
+    Friend WithEvents CEPAcompanharFuncTF As TextBox
+    Friend WithEvents TelefoneAcompanharFuncTF As TextBox
+    Friend WithEvents TipoEnderecoAcompanharFuncLB As Label
+    Friend WithEvents EstadoAcompanharFuncLB As Label
+    Friend WithEvents CidadeAcompanharFuncLB As Label
+    Friend WithEvents BairroAcompanharFuncLB As Label
+    Friend WithEvents NumeroAcompanharFuncLB As Label
+    Friend WithEvents LogradouroAcompanharFuncLB As Label
+    Friend WithEvents CEPAcompanharFuncLB As Label
+    Friend WithEvents TelefoneAcompanharFuncLB As Label
+    Friend WithEvents VerSalariosAcompanharFuncBT As Button
 End Class
