@@ -35,7 +35,7 @@ Public Class SalarioDAO
 
         strSQL.Append("SELECT valor, inicio, fim, motivo FROM Salarios ")
         strSQL.Append("WHERE matriculaFuncionario = @matricula ")
-        strSQL.Append("ORDER BY dataRegistro DESC")
+        strSQL.Append("ORDER BY inicio ASC")
 
         conn.AddParameter("@matricula", funcionario.Matricula)
 
@@ -49,13 +49,29 @@ Public Class SalarioDAO
             Dim salario As New Salario()
             salario.Valor = CDbl(row.Item("valor"))
             salario.Inicio = CDate(row.Item("inicio"))
-            salario.Fim = CDate(row.Item("fim"))
-            salario.Motivo = CType(CDate(row.Item("motivo")), String)
+            If (IsDBNull(row.Item("fim"))) Then
+                salario.Fim = Nothing
+            Else : salario.Fim = CDate(row.Item("fim"))
+            End If
+            salario.Motivo = CStr(row.Item("motivo"))
             salario.funcionario = funcionario
             salarios.Add(salario)
         Next
 
         Return salarios
+
+    End Function
+
+    'OK
+    Public Function DeleteByMatricula(funcionario As Funcionario) As Boolean
+
+        If (funcionario Is Nothing) Then Return False
+
+        Dim conn As New Connection
+
+        conn.AddParameter("@matricula", funcionario.Matricula)
+
+        Return conn.ExecuteCommand("DELETE Salarios WHERE matriculaFuncionario = @matricula;")
 
     End Function
 

@@ -187,6 +187,7 @@ Public Class FuncionarioDAO
             funcionario.DataRevogacao = CDate(dt.Rows(0).Item("dataRevogacao"))
         End If
         funcionario.Supervisor = FindSupervisorByMatricula(CLng(dt.Rows(0).Item("matriculaSupervisor")))
+        funcionario.Salarios = SalarioBC.FindByMatricula(funcionario)
         Return funcionario
 
     End Function
@@ -232,6 +233,7 @@ Public Class FuncionarioDAO
                 funcionario.DataRevogacao = CDate(dt.Rows(0).Item("dataRevogacao"))
             End If
             funcionario.Supervisor = supervisor
+            funcionario.Salarios = SalarioBC.FindByMatricula(funcionario)
             funcionarios.Add(funcionario)
         Next
 
@@ -280,6 +282,7 @@ Public Class FuncionarioDAO
                 funcionario.DataRevogacao = CDate(dt.Rows(0).Item("dataRevogacao"))
             End If
             funcionario.Supervisor = supervisor
+            funcionario.Salarios = SalarioBC.FindByMatricula(funcionario)
             funcionarios.Add(funcionario)
         Next
 
@@ -318,6 +321,7 @@ Public Class FuncionarioDAO
                 funcionario.DataRevogacao = CDate(dt.Rows(0).Item("dataRevogacao"))
             End If
             funcionario.Supervisor = FindSupervisorByMatricula(CLng(dt.Rows(0).Item("matriculaSupervisor")))
+            funcionario.Salarios = SalarioBC.FindByMatricula(funcionario)
             funcionarios.Add(funcionario)
         Next
 
@@ -358,6 +362,7 @@ Public Class FuncionarioDAO
             funcionario.DataRevogacao = CDate(dt.Rows(0).Item("dataRevogacao"))
         End If
         funcionario.Supervisor = FindSupervisorByMatricula(CLng(dt.Rows(0).Item("matriculaSupervisor")))
+        funcionario.Salarios = SalarioBC.FindByMatricula(funcionario)
 
         Return funcionario
 
@@ -396,6 +401,7 @@ Public Class FuncionarioDAO
             funcionario.DataRevogacao = CDate(dt.Rows(0).Item("dataRevogacao"))
         End If
         funcionario.Supervisor = funcionario
+        funcionario.Salarios = SalarioBC.FindByMatricula(funcionario)
 
         Return funcionario
 

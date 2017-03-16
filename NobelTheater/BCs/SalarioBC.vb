@@ -28,4 +28,8 @@ Public Class SalarioBC
         Return salarioDAO.FindByMatricula(funcionario)
     End Function
 
+    Public Shared Function DeleteByMatricula(funcionario As Funcionario) As Boolean
+        Return salarioDAO.DeleteByMatricula(funcionario)
+    End Function
+
 End Class

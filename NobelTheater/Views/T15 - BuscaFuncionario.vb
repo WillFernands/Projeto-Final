@@ -5,7 +5,7 @@
     Private funcionarios As List(Of Funcionario)
 
     Private Sub BuscaFuncionario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If (Caller = "ControleAcessos" OrElse Caller = "RecuperarHistorico") Then
+        If (Caller = "ControleAcessos" OrElse Caller = "RecuperarHistorico" OrElse Caller = "ControleFuncionario") Then
             funcionarios = FuncionarioBC.FindBySupervisor(MenuPrincipal.funcionarioLogado)
         ElseIf (Caller = "NovoFuncionario") Then
             funcionarios = FuncionarioBC.FindAll()
@@ -38,6 +38,9 @@
             Me.Close()
         ElseIf (Caller = "NovoFuncionario") Then
             ControleFuncionario.PopulateSupervisor(funcionario)
+            Me.Close()
+        ElseIf (Caller = "ControleFuncionario") Then
+            ControleFuncionario.PopulateFuncionario(funcionario)
             Me.Close()
         End If
     End Sub

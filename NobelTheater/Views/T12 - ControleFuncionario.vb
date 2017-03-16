@@ -1,6 +1,7 @@
 ﻿Public Class ControleFuncionario
 
     Private supervisorAtual As Funcionario
+    Private funcionarioAtual As Funcionario
 
     Private Sub ControleFuncionario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         NomeTF.Text = "Nome: " & MenuPrincipal.funcionarioLogado.Nome
@@ -105,15 +106,129 @@
         supervisorAtual = func
     End Sub
 
-    Private Sub AcompanharFuncionarioDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+    Public Sub PopulateFuncionario(func As Funcionario)
+        LimparCamposAcompanharFunc()
+        MatriculaFuncionarioAcompanharFuncTF.Text = func.Matricula
+        FuncionarioAcompanharFuncTF.Text = func.Nome
+        funcionarioAtual = func
+        NomeFuncionarioAcompanharFuncTF.Text = func.Nome
+        CPFAcompanharFuncMT.Text = func.Cpf
+        DataContratacaoAcompanharFuncTF.Text = func.DataContratacao
+        CargoAcompanharFuncCB.Text = func.Cargo
+        TelefoneAcompanharFuncTF.Text = func.Telefone
+        LogradouroAcompanharFuncTF.Text = func.Logradouro
+        NumeroAcompanharFuncTF.Text = func.Numero
+        BairroAcompanharFuncTF.Text = func.Bairro
+        CidadeAcompanharFuncTF.Text = func.Cidade
+        EstadoAcompanharFuncCB.Text = func.Estado
+        CEPAcompanharFuncTF.Text = func.Cep
+        TipoEnderecoAcompanharFuncCB.Text = func.TipoEndereco
+
+        NomeFuncionarioAcompanharFuncTF.Enabled = True
+        CPFAcompanharFuncMT.Enabled = True
+        CargoAcompanharFuncCB.Enabled = True
+        TelefoneAcompanharFuncTF.Enabled = True
+        NumeroAcompanharFuncTF.Enabled = True
+        BairroAcompanharFuncTF.Enabled = True
+        CidadeAcompanharFuncTF.Enabled = True
+        EstadoAcompanharFuncCB.Enabled = True
+        CEPAcompanharFuncTF.Enabled = True
+        TipoEnderecoAcompanharFuncCB.Enabled = True
+        VerSalariosAcompanharFuncBT.Enabled = True
+        SalvarAcompanharFuncBT.Enabled = True
+    End Sub
+
+    Private Sub LimparCamposAcompanharFunc()
+        MatriculaFuncionarioAcompanharFuncTF.Text = ""
+        FuncionarioAcompanharFuncTF.Text = ""
+        funcionarioAtual = Nothing
+        NomeFuncionarioAcompanharFuncTF.Text = ""
+        CPFAcompanharFuncMT.Text = ""
+        DataContratacaoAcompanharFuncTF.Text = ""
+        CargoAcompanharFuncCB.Text = ""
+        TelefoneAcompanharFuncTF.Text = ""
+        LogradouroAcompanharFuncTF.Text = ""
+        NumeroAcompanharFuncTF.Text = ""
+        BairroAcompanharFuncTF.Text = ""
+        CidadeAcompanharFuncTF.Text = ""
+        EstadoAcompanharFuncCB.Text = ""
+        CEPAcompanharFuncTF.Text = ""
+        TipoEnderecoAcompanharFuncCB.Text = ""
+
+        NomeFuncionarioAcompanharFuncTF.Enabled = False
+        CPFAcompanharFuncMT.Enabled = False
+        CargoAcompanharFuncCB.Enabled = False
+        TelefoneAcompanharFuncTF.Enabled = False
+        NumeroAcompanharFuncTF.Enabled = False
+        BairroAcompanharFuncTF.Enabled = False
+        CidadeAcompanharFuncTF.Enabled = False
+        EstadoAcompanharFuncCB.Enabled = False
+        CEPAcompanharFuncTF.Enabled = False
+        TipoEnderecoAcompanharFuncCB.Enabled = False
+        VerSalariosAcompanharFuncBT.Enabled = False
+        SalvarAcompanharFuncBT.Enabled = False
 
     End Sub
 
-    Private Sub DadosPessoaisNovoFuncionarioGB_Enter(sender As Object, e As EventArgs) Handles DadosPessoaisNovoFuncionarioGB.Enter
-
+    Private Sub SelecionarFuncionarioIMG_Click(sender As Object, e As EventArgs) Handles SelecionarFuncionarioIMG.Click
+        Dim busca As New BuscaFuncionario()
+        busca.Caller = "ControleFuncionario"
+        busca.Show()
     End Sub
 
-    Protected Overrides Sub Finalize()
-        MyBase.Finalize()
+    Private Sub SalvarAcompanharFuncBT_Click(sender As Object, e As EventArgs) Handles SalvarAcompanharFuncBT.Click
+        If (String.IsNullOrWhiteSpace(NomeFuncionarioAcompanharFuncTF.Text)) Then
+            MsgBox("Nome do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(CPFAcompanharFuncMT.Text)) Then
+            MsgBox("CPF do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(TelefoneAcompanharFuncTF.Text)) Then
+            MsgBox("Telefone do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(CEPAcompanharFuncTF.Text)) Then
+            MsgBox("CEP do endereço do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(LogradouroAcompanharFuncTF.Text)) Then
+            MsgBox("Logradouro do endereço do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(NumeroAcompanharFuncTF.Text)) Then
+            MsgBox("Numero do endereço do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(CidadeAcompanharFuncTF.Text)) Then
+            MsgBox("Cidade do endereço do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(EstadoAcompanharFuncCB.Text)) Then
+            MsgBox("Estado do endereço do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(TipoEnderecoAcompanharFuncCB.Text)) Then
+            MsgBox("Tipo do endereço do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(CargoAcompanharFuncCB.Text)) Then
+            MsgBox("Cargo do funcionário não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        End If
+
+        funcionarioAtual.Nome = NomeFuncionarioAcompanharFuncTF.Text
+        funcionarioAtual.Cpf = CPFAcompanharFuncMT.Text
+        funcionarioAtual.Cargo = CargoAcompanharFuncCB.Text
+        funcionarioAtual.Telefone = TelefoneAcompanharFuncTF.Text
+        funcionarioAtual.Logradouro = LogradouroAcompanharFuncTF.Text
+        funcionarioAtual.Numero = NumeroAcompanharFuncTF.Text
+        funcionarioAtual.Bairro = BairroAcompanharFuncTF.Text
+        funcionarioAtual.Cidade = CidadeAcompanharFuncTF.Text
+        funcionarioAtual.Estado = EstadoAcompanharFuncCB.Text
+        funcionarioAtual.Cep = CEPAcompanharFuncTF.Text
+        funcionarioAtual.TipoEndereco = TipoEnderecoAcompanharFuncCB.Text
+
+        FuncionarioBC.Update(funcionarioAtual)
+        MsgBox("Atualização realizada com sucesso.", vbInformation Or vbMsgBoxSetForeground)
+        LimparCamposAcompanharFunc()
+    End Sub
+
+    Private Sub VerSalariosAcompanharFuncBT_Click(sender As Object, e As EventArgs) Handles VerSalariosAcompanharFuncBT.Click
+        Dim view As New VerSalarios()
+        view.FuncionarioAtual = funcionarioAtual
+        view.Show()
     End Sub
 End Class

@@ -119,19 +119,6 @@ Partial Class ControleVendas
         Me.ClienteNomeVisitaLB = New System.Windows.Forms.Label()
         Me.ClienteDocumentoVisitaLB = New System.Windows.Forms.Label()
         Me.SelecionarPorAcompanharVisitaLB = New System.Windows.Forms.Label()
-        Me.EnviarProdutoAssistenciaTP = New System.Windows.Forms.TabPage()
-        Me.LimparProdutoAssistenciaBT = New System.Windows.Forms.Button()
-        Me.EnviarProdutoAssistenciaBT = New System.Windows.Forms.Button()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.SelecionarAssistenciaTF = New System.Windows.Forms.TextBox()
-        Me.SelecionarProdutoEnvioAssistenciaTF = New System.Windows.Forms.TextBox()
-        Me.ResponsavelEnvioProdutoAssistenciaTF = New System.Windows.Forms.TextBox()
-        Me.DataEnvioProdutoAssistenciaTF = New System.Windows.Forms.TextBox()
-        Me.DataEnvioProdutoAssistenciaLB = New System.Windows.Forms.Label()
-        Me.ResponsavelEnvioProdutoAssistenciaLB = New System.Windows.Forms.Label()
-        Me.SelecionarAssistenciaLB = New System.Windows.Forms.Label()
-        Me.SelecionarProdutoEnvioAssistenciaLB = New System.Windows.Forms.Label()
         Me.ExtrairRelatoriosVendasTP = New System.Windows.Forms.TabPage()
         Me.FimDT = New System.Windows.Forms.DateTimePicker()
         Me.InicioDT = New System.Windows.Forms.DateTimePicker()
@@ -200,9 +187,6 @@ Partial Class ControleVendas
         CType(Me.InfoVisitaTecnicaDG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.EnviarProdutoAssistenciaTP.SuspendLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ExtrairRelatoriosVendasTP.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -270,7 +254,6 @@ Partial Class ControleVendas
         Me.TabControl1.Controls.Add(Me.VendarEmAndamentoTP)
         Me.TabControl1.Controls.Add(Me.AcompanharVendaTP)
         Me.TabControl1.Controls.Add(Me.VisualizarInfoVisitaTP)
-        Me.TabControl1.Controls.Add(Me.EnviarProdutoAssistenciaTP)
         Me.TabControl1.Controls.Add(Me.ExtrairRelatoriosVendasTP)
         Me.TabControl1.Location = New System.Drawing.Point(9, 10)
         Me.TabControl1.Name = "TabControl1"
@@ -1068,134 +1051,6 @@ Partial Class ControleVendas
         Me.SelecionarPorAcompanharVisitaLB.TabIndex = 0
         Me.SelecionarPorAcompanharVisitaLB.Text = "Selecionar por:"
         '
-        'EnviarProdutoAssistenciaTP
-        '
-        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.LimparProdutoAssistenciaBT)
-        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.EnviarProdutoAssistenciaBT)
-        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.PictureBox4)
-        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.PictureBox2)
-        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.SelecionarAssistenciaTF)
-        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.SelecionarProdutoEnvioAssistenciaTF)
-        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.ResponsavelEnvioProdutoAssistenciaTF)
-        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.DataEnvioProdutoAssistenciaTF)
-        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.DataEnvioProdutoAssistenciaLB)
-        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.ResponsavelEnvioProdutoAssistenciaLB)
-        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.SelecionarAssistenciaLB)
-        Me.EnviarProdutoAssistenciaTP.Controls.Add(Me.SelecionarProdutoEnvioAssistenciaLB)
-        Me.EnviarProdutoAssistenciaTP.Location = New System.Drawing.Point(4, 22)
-        Me.EnviarProdutoAssistenciaTP.Name = "EnviarProdutoAssistenciaTP"
-        Me.EnviarProdutoAssistenciaTP.Padding = New System.Windows.Forms.Padding(3)
-        Me.EnviarProdutoAssistenciaTP.Size = New System.Drawing.Size(685, 335)
-        Me.EnviarProdutoAssistenciaTP.TabIndex = 7
-        Me.EnviarProdutoAssistenciaTP.Text = "Enviar Produto a Assistência"
-        Me.EnviarProdutoAssistenciaTP.UseVisualStyleBackColor = True
-        '
-        'LimparProdutoAssistenciaBT
-        '
-        Me.LimparProdutoAssistenciaBT.Location = New System.Drawing.Point(351, 117)
-        Me.LimparProdutoAssistenciaBT.Name = "LimparProdutoAssistenciaBT"
-        Me.LimparProdutoAssistenciaBT.Size = New System.Drawing.Size(75, 23)
-        Me.LimparProdutoAssistenciaBT.TabIndex = 20
-        Me.LimparProdutoAssistenciaBT.Text = "Limpar"
-        Me.LimparProdutoAssistenciaBT.UseVisualStyleBackColor = True
-        '
-        'EnviarProdutoAssistenciaBT
-        '
-        Me.EnviarProdutoAssistenciaBT.Location = New System.Drawing.Point(270, 117)
-        Me.EnviarProdutoAssistenciaBT.Name = "EnviarProdutoAssistenciaBT"
-        Me.EnviarProdutoAssistenciaBT.Size = New System.Drawing.Size(75, 23)
-        Me.EnviarProdutoAssistenciaBT.TabIndex = 19
-        Me.EnviarProdutoAssistenciaBT.Text = "Enviar"
-        Me.EnviarProdutoAssistenciaBT.UseVisualStyleBackColor = True
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox4.Image = Global.NobelTheater.My.Resources.Resources.Busca
-        Me.PictureBox4.Location = New System.Drawing.Point(615, 62)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(27, 20)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 18
-        Me.PictureBox4.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox2.Image = Global.NobelTheater.My.Resources.Resources.Busca
-        Me.PictureBox2.Location = New System.Drawing.Point(615, 22)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(27, 20)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 17
-        Me.PictureBox2.TabStop = False
-        '
-        'SelecionarAssistenciaTF
-        '
-        Me.SelecionarAssistenciaTF.Location = New System.Drawing.Point(145, 62)
-        Me.SelecionarAssistenciaTF.Name = "SelecionarAssistenciaTF"
-        Me.SelecionarAssistenciaTF.Size = New System.Drawing.Size(464, 20)
-        Me.SelecionarAssistenciaTF.TabIndex = 7
-        '
-        'SelecionarProdutoEnvioAssistenciaTF
-        '
-        Me.SelecionarProdutoEnvioAssistenciaTF.Location = New System.Drawing.Point(145, 22)
-        Me.SelecionarProdutoEnvioAssistenciaTF.Name = "SelecionarProdutoEnvioAssistenciaTF"
-        Me.SelecionarProdutoEnvioAssistenciaTF.Size = New System.Drawing.Size(464, 20)
-        Me.SelecionarProdutoEnvioAssistenciaTF.TabIndex = 6
-        '
-        'ResponsavelEnvioProdutoAssistenciaTF
-        '
-        Me.ResponsavelEnvioProdutoAssistenciaTF.Location = New System.Drawing.Point(87, 293)
-        Me.ResponsavelEnvioProdutoAssistenciaTF.Name = "ResponsavelEnvioProdutoAssistenciaTF"
-        Me.ResponsavelEnvioProdutoAssistenciaTF.ReadOnly = True
-        Me.ResponsavelEnvioProdutoAssistenciaTF.Size = New System.Drawing.Size(363, 20)
-        Me.ResponsavelEnvioProdutoAssistenciaTF.TabIndex = 5
-        '
-        'DataEnvioProdutoAssistenciaTF
-        '
-        Me.DataEnvioProdutoAssistenciaTF.Location = New System.Drawing.Point(540, 293)
-        Me.DataEnvioProdutoAssistenciaTF.Name = "DataEnvioProdutoAssistenciaTF"
-        Me.DataEnvioProdutoAssistenciaTF.ReadOnly = True
-        Me.DataEnvioProdutoAssistenciaTF.Size = New System.Drawing.Size(126, 20)
-        Me.DataEnvioProdutoAssistenciaTF.TabIndex = 4
-        '
-        'DataEnvioProdutoAssistenciaLB
-        '
-        Me.DataEnvioProdutoAssistenciaLB.AutoSize = True
-        Me.DataEnvioProdutoAssistenciaLB.Location = New System.Drawing.Point(456, 296)
-        Me.DataEnvioProdutoAssistenciaLB.Name = "DataEnvioProdutoAssistenciaLB"
-        Me.DataEnvioProdutoAssistenciaLB.Size = New System.Drawing.Size(78, 13)
-        Me.DataEnvioProdutoAssistenciaLB.TabIndex = 3
-        Me.DataEnvioProdutoAssistenciaLB.Text = "Data de Envio:"
-        '
-        'ResponsavelEnvioProdutoAssistenciaLB
-        '
-        Me.ResponsavelEnvioProdutoAssistenciaLB.AutoSize = True
-        Me.ResponsavelEnvioProdutoAssistenciaLB.Location = New System.Drawing.Point(6, 296)
-        Me.ResponsavelEnvioProdutoAssistenciaLB.Name = "ResponsavelEnvioProdutoAssistenciaLB"
-        Me.ResponsavelEnvioProdutoAssistenciaLB.Size = New System.Drawing.Size(75, 13)
-        Me.ResponsavelEnvioProdutoAssistenciaLB.TabIndex = 2
-        Me.ResponsavelEnvioProdutoAssistenciaLB.Text = "Responsável: "
-        '
-        'SelecionarAssistenciaLB
-        '
-        Me.SelecionarAssistenciaLB.AutoSize = True
-        Me.SelecionarAssistenciaLB.Location = New System.Drawing.Point(6, 65)
-        Me.SelecionarAssistenciaLB.Name = "SelecionarAssistenciaLB"
-        Me.SelecionarAssistenciaLB.Size = New System.Drawing.Size(122, 13)
-        Me.SelecionarAssistenciaLB.TabIndex = 1
-        Me.SelecionarAssistenciaLB.Text = "Selecione a Assistência:"
-        '
-        'SelecionarProdutoEnvioAssistenciaLB
-        '
-        Me.SelecionarProdutoEnvioAssistenciaLB.AutoSize = True
-        Me.SelecionarProdutoEnvioAssistenciaLB.Location = New System.Drawing.Point(6, 25)
-        Me.SelecionarProdutoEnvioAssistenciaLB.Name = "SelecionarProdutoEnvioAssistenciaLB"
-        Me.SelecionarProdutoEnvioAssistenciaLB.Size = New System.Drawing.Size(106, 13)
-        Me.SelecionarProdutoEnvioAssistenciaLB.TabIndex = 0
-        Me.SelecionarProdutoEnvioAssistenciaLB.Text = "Selecione o Produto:"
-        '
         'ExtrairRelatoriosVendasTP
         '
         Me.ExtrairRelatoriosVendasTP.Controls.Add(Me.FimDT)
@@ -1532,10 +1387,6 @@ Partial Class ControleVendas
         CType(Me.InfoVisitaTecnicaDG, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.EnviarProdutoAssistenciaTP.ResumeLayout(False)
-        Me.EnviarProdutoAssistenciaTP.PerformLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ExtrairRelatoriosVendasTP.ResumeLayout(False)
         Me.ExtrairRelatoriosVendasTP.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
@@ -1577,7 +1428,6 @@ Partial Class ControleVendas
     Friend WithEvents VerPgto As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents AcompanharVendaTP As System.Windows.Forms.TabPage
     Friend WithEvents VisualizarInfoVisitaTP As System.Windows.Forms.TabPage
-    Friend WithEvents EnviarProdutoAssistenciaTP As System.Windows.Forms.TabPage
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents OpcoesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SairToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -1646,18 +1496,6 @@ Partial Class ControleVendas
     Friend WithEvents ClienteNomeVisitaLB As Label
     Friend WithEvents ClienteDocumentoVisitaLB As Label
     Friend WithEvents SelecionarPorAcompanharVisitaLB As Label
-    Friend WithEvents LimparProdutoAssistenciaBT As Button
-    Friend WithEvents EnviarProdutoAssistenciaBT As Button
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents SelecionarAssistenciaTF As TextBox
-    Friend WithEvents SelecionarProdutoEnvioAssistenciaTF As TextBox
-    Friend WithEvents ResponsavelEnvioProdutoAssistenciaTF As TextBox
-    Friend WithEvents DataEnvioProdutoAssistenciaTF As TextBox
-    Friend WithEvents DataEnvioProdutoAssistenciaLB As Label
-    Friend WithEvents ResponsavelEnvioProdutoAssistenciaLB As Label
-    Friend WithEvents SelecionarAssistenciaLB As Label
-    Friend WithEvents SelecionarProdutoEnvioAssistenciaLB As Label
     Friend WithEvents FimDT As DateTimePicker
     Friend WithEvents InicioDT As DateTimePicker
     Friend WithEvents DeLB As Label
