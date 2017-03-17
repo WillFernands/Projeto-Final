@@ -59,24 +59,30 @@ Partial Class InserirParecerObra
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.SalvarParecerBT = New System.Windows.Forms.Button()
-        Me.MotivoVisitaParecerObraCB = New System.Windows.Forms.ComboBox()
+        Me.MotivoVisitaCB = New System.Windows.Forms.ComboBox()
         Me.MotivoVisitaParecerObraLB = New System.Windows.Forms.Label()
-        Me.DescricaoParecerObraTF = New System.Windows.Forms.TextBox()
-        Me.ClienteParecerObraTF = New System.Windows.Forms.TextBox()
+        Me.ParecerObraTF = New System.Windows.Forms.TextBox()
+        Me.VendaTF = New System.Windows.Forms.TextBox()
         Me.ClienteParecerObraLB = New System.Windows.Forms.Label()
         Me.DescricaoParecerObraLB = New System.Windows.Forms.Label()
         Me.SupervisorResponsavelTF = New System.Windows.Forms.TextBox()
         Me.SupervisorResponsavelLB = New System.Windows.Forms.Label()
+        Me.PerfilTF = New System.Windows.Forms.Label()
+        Me.MatriculaTF = New System.Windows.Forms.Label()
+        Me.NomeTF = New System.Windows.Forms.Label()
+        Me.FornecedorIMG = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.ClienteTF = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        CType(Me.FornecedorIMG, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -310,41 +316,14 @@ Partial Class InserirParecerObra
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.PerfilTF)
+        Me.Panel1.Controls.Add(Me.MatriculaTF)
+        Me.Panel1.Controls.Add(Me.NomeTF)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Location = New System.Drawing.Point(12, 39)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(705, 100)
         Me.Panel1.TabIndex = 12
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(140, 72)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(180, 13)
-        Me.Label5.TabIndex = 3
-        Me.Label5.Text = "Perfil de Acesso: Supervisor de Obra"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(140, 44)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(88, 13)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Matrícula: 03250"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(140, 16)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(172, 13)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Nome: Ricardo Conceição Almeida"
         '
         'PictureBox1
         '
@@ -358,11 +337,15 @@ Partial Class InserirParecerObra
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.ClienteTF)
+        Me.Panel2.Controls.Add(Me.PictureBox2)
+        Me.Panel2.Controls.Add(Me.FornecedorIMG)
         Me.Panel2.Controls.Add(Me.SalvarParecerBT)
-        Me.Panel2.Controls.Add(Me.MotivoVisitaParecerObraCB)
+        Me.Panel2.Controls.Add(Me.MotivoVisitaCB)
         Me.Panel2.Controls.Add(Me.MotivoVisitaParecerObraLB)
-        Me.Panel2.Controls.Add(Me.DescricaoParecerObraTF)
-        Me.Panel2.Controls.Add(Me.ClienteParecerObraTF)
+        Me.Panel2.Controls.Add(Me.ParecerObraTF)
+        Me.Panel2.Controls.Add(Me.VendaTF)
         Me.Panel2.Controls.Add(Me.ClienteParecerObraLB)
         Me.Panel2.Controls.Add(Me.DescricaoParecerObraLB)
         Me.Panel2.Controls.Add(Me.SupervisorResponsavelTF)
@@ -381,52 +364,52 @@ Partial Class InserirParecerObra
         Me.SalvarParecerBT.Text = "Finalizar Parecer"
         Me.SalvarParecerBT.UseVisualStyleBackColor = True
         '
-        'MotivoVisitaParecerObraCB
+        'MotivoVisitaCB
         '
-        Me.MotivoVisitaParecerObraCB.FormattingEnabled = True
-        Me.MotivoVisitaParecerObraCB.Location = New System.Drawing.Point(143, 107)
-        Me.MotivoVisitaParecerObraCB.Name = "MotivoVisitaParecerObraCB"
-        Me.MotivoVisitaParecerObraCB.Size = New System.Drawing.Size(523, 21)
-        Me.MotivoVisitaParecerObraCB.TabIndex = 3
+        Me.MotivoVisitaCB.FormattingEnabled = True
+        Me.MotivoVisitaCB.Location = New System.Drawing.Point(143, 135)
+        Me.MotivoVisitaCB.Name = "MotivoVisitaCB"
+        Me.MotivoVisitaCB.Size = New System.Drawing.Size(523, 21)
+        Me.MotivoVisitaCB.TabIndex = 3
         '
         'MotivoVisitaParecerObraLB
         '
         Me.MotivoVisitaParecerObraLB.AutoSize = True
-        Me.MotivoVisitaParecerObraLB.Location = New System.Drawing.Point(15, 110)
+        Me.MotivoVisitaParecerObraLB.Location = New System.Drawing.Point(15, 138)
         Me.MotivoVisitaParecerObraLB.Name = "MotivoVisitaParecerObraLB"
         Me.MotivoVisitaParecerObraLB.Size = New System.Drawing.Size(85, 13)
         Me.MotivoVisitaParecerObraLB.TabIndex = 6
         Me.MotivoVisitaParecerObraLB.Text = "Motivo da Visita:"
         '
-        'DescricaoParecerObraTF
+        'ParecerObraTF
         '
-        Me.DescricaoParecerObraTF.Location = New System.Drawing.Point(143, 152)
-        Me.DescricaoParecerObraTF.Multiline = True
-        Me.DescricaoParecerObraTF.Name = "DescricaoParecerObraTF"
-        Me.DescricaoParecerObraTF.Size = New System.Drawing.Size(523, 105)
-        Me.DescricaoParecerObraTF.TabIndex = 4
+        Me.ParecerObraTF.Location = New System.Drawing.Point(143, 182)
+        Me.ParecerObraTF.Multiline = True
+        Me.ParecerObraTF.Name = "ParecerObraTF"
+        Me.ParecerObraTF.Size = New System.Drawing.Size(523, 72)
+        Me.ParecerObraTF.TabIndex = 4
         '
-        'ClienteParecerObraTF
+        'VendaTF
         '
-        Me.ClienteParecerObraTF.Enabled = False
-        Me.ClienteParecerObraTF.Location = New System.Drawing.Point(143, 62)
-        Me.ClienteParecerObraTF.Name = "ClienteParecerObraTF"
-        Me.ClienteParecerObraTF.Size = New System.Drawing.Size(523, 20)
-        Me.ClienteParecerObraTF.TabIndex = 2
+        Me.VendaTF.Enabled = False
+        Me.VendaTF.Location = New System.Drawing.Point(143, 58)
+        Me.VendaTF.Name = "VendaTF"
+        Me.VendaTF.Size = New System.Drawing.Size(473, 20)
+        Me.VendaTF.TabIndex = 2
         '
         'ClienteParecerObraLB
         '
         Me.ClienteParecerObraLB.AutoSize = True
-        Me.ClienteParecerObraLB.Location = New System.Drawing.Point(15, 65)
+        Me.ClienteParecerObraLB.Location = New System.Drawing.Point(15, 61)
         Me.ClienteParecerObraLB.Name = "ClienteParecerObraLB"
-        Me.ClienteParecerObraLB.Size = New System.Drawing.Size(42, 13)
+        Me.ClienteParecerObraLB.Size = New System.Drawing.Size(41, 13)
         Me.ClienteParecerObraLB.TabIndex = 0
-        Me.ClienteParecerObraLB.Text = "Cliente:"
+        Me.ClienteParecerObraLB.Text = "Venda:"
         '
         'DescricaoParecerObraLB
         '
         Me.DescricaoParecerObraLB.AutoSize = True
-        Me.DescricaoParecerObraLB.Location = New System.Drawing.Point(15, 155)
+        Me.DescricaoParecerObraLB.Location = New System.Drawing.Point(15, 185)
         Me.DescricaoParecerObraLB.Name = "DescricaoParecerObraLB"
         Me.DescricaoParecerObraLB.Size = New System.Drawing.Size(99, 13)
         Me.DescricaoParecerObraLB.TabIndex = 2
@@ -437,7 +420,7 @@ Partial Class InserirParecerObra
         Me.SupervisorResponsavelTF.Enabled = False
         Me.SupervisorResponsavelTF.Location = New System.Drawing.Point(143, 17)
         Me.SupervisorResponsavelTF.Name = "SupervisorResponsavelTF"
-        Me.SupervisorResponsavelTF.Size = New System.Drawing.Size(523, 20)
+        Me.SupervisorResponsavelTF.Size = New System.Drawing.Size(473, 20)
         Me.SupervisorResponsavelTF.TabIndex = 1
         '
         'SupervisorResponsavelLB
@@ -448,6 +431,72 @@ Partial Class InserirParecerObra
         Me.SupervisorResponsavelLB.Size = New System.Drawing.Size(125, 13)
         Me.SupervisorResponsavelLB.TabIndex = 0
         Me.SupervisorResponsavelLB.Text = "Supervisor Responsável:"
+        '
+        'PerfilTF
+        '
+        Me.PerfilTF.AutoSize = True
+        Me.PerfilTF.Location = New System.Drawing.Point(140, 72)
+        Me.PerfilTF.Name = "PerfilTF"
+        Me.PerfilTF.Size = New System.Drawing.Size(86, 13)
+        Me.PerfilTF.TabIndex = 12
+        Me.PerfilTF.Text = "Perfil de Acesso:"
+        '
+        'MatriculaTF
+        '
+        Me.MatriculaTF.AutoSize = True
+        Me.MatriculaTF.Location = New System.Drawing.Point(140, 44)
+        Me.MatriculaTF.Name = "MatriculaTF"
+        Me.MatriculaTF.Size = New System.Drawing.Size(55, 13)
+        Me.MatriculaTF.TabIndex = 11
+        Me.MatriculaTF.Text = "Matrícula:"
+        '
+        'NomeTF
+        '
+        Me.NomeTF.AutoSize = True
+        Me.NomeTF.Location = New System.Drawing.Point(140, 16)
+        Me.NomeTF.Name = "NomeTF"
+        Me.NomeTF.Size = New System.Drawing.Size(38, 13)
+        Me.NomeTF.TabIndex = 10
+        Me.NomeTF.Text = "Nome:"
+        '
+        'FornecedorIMG
+        '
+        Me.FornecedorIMG.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FornecedorIMG.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.FornecedorIMG.Location = New System.Drawing.Point(639, 17)
+        Me.FornecedorIMG.Name = "FornecedorIMG"
+        Me.FornecedorIMG.Size = New System.Drawing.Size(27, 20)
+        Me.FornecedorIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.FornecedorIMG.TabIndex = 17
+        Me.FornecedorIMG.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox2.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.PictureBox2.Location = New System.Drawing.Point(639, 58)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 18
+        Me.PictureBox2.TabStop = False
+        '
+        'ClienteTF
+        '
+        Me.ClienteTF.Enabled = False
+        Me.ClienteTF.Location = New System.Drawing.Point(143, 96)
+        Me.ClienteTF.Name = "ClienteTF"
+        Me.ClienteTF.Size = New System.Drawing.Size(473, 20)
+        Me.ClienteTF.TabIndex = 19
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(15, 99)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(42, 13)
+        Me.Label1.TabIndex = 20
+        Me.Label1.Text = "Cliente:"
         '
         'InserirParecerObra
         '
@@ -467,6 +516,8 @@ Partial Class InserirParecerObra
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.FornecedorIMG, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -508,18 +559,22 @@ Partial Class InserirParecerObra
     Friend WithEvents NovoClienteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AcompanharClienteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents DescricaoParecerObraTF As System.Windows.Forms.TextBox
-    Friend WithEvents ClienteParecerObraTF As System.Windows.Forms.TextBox
+    Friend WithEvents ParecerObraTF As System.Windows.Forms.TextBox
+    Friend WithEvents VendaTF As System.Windows.Forms.TextBox
     Friend WithEvents ClienteParecerObraLB As System.Windows.Forms.Label
     Friend WithEvents DescricaoParecerObraLB As System.Windows.Forms.Label
     Friend WithEvents SupervisorResponsavelTF As System.Windows.Forms.TextBox
     Friend WithEvents SupervisorResponsavelLB As System.Windows.Forms.Label
-    Friend WithEvents MotivoVisitaParecerObraCB As System.Windows.Forms.ComboBox
+    Friend WithEvents MotivoVisitaCB As System.Windows.Forms.ComboBox
     Friend WithEvents MotivoVisitaParecerObraLB As System.Windows.Forms.Label
     Friend WithEvents SalvarParecerBT As System.Windows.Forms.Button
+    Friend WithEvents PerfilTF As Label
+    Friend WithEvents MatriculaTF As Label
+    Friend WithEvents NomeTF As Label
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents FornecedorIMG As PictureBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents ClienteTF As TextBox
 End Class

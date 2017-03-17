@@ -6,12 +6,16 @@
     Private produtoCotacaoAtual As Produto
     Private produtoEmprestimoAtual As Produto
     Private produtoEmprestimo As Produto
+    Private produtoEnvioAssistencia As Produto
     Private itensCotados As New List(Of ItemCotado)
     Private itensEmprestimos As New List(Of ItemEmprestimo)
+    Private itensOrdem As New List(Of ItemOrdem)
     Private cotacaoAtual As Cotacao
     Private compraAtual As NotaFiscalCompra
     Private clienteAtual As Cliente
     Private clienteEmprestimo As Cliente
+    Private clienteEnvioAssistencia As Cliente
+    Private assistenciaEnvioAssistencia As Fornecedor
 
     Private Sub ControleEstoque_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         NomeTF.Text = "Nome: " & MenuPrincipal.funcionarioLogado.Nome
@@ -660,11 +664,117 @@
         End If
     End Sub
 
-    Private Sub PagamentosDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles PagamentosDT.CellContentClick
-
+    Private Sub SelecionarClienteEnvioAssistenciaIMG_Click(sender As Object, e As EventArgs) Handles SelecionarClienteEnvioAssistenciaIMG.Click
+        Dim busca As New BuscaCliente()
+        busca.Caller = "ControleEstoqueEnvioAssistencia"
+        busca.Show()
     End Sub
 
-    Private Sub AcompanharCotacaoTab_Click(sender As Object, e As EventArgs) Handles AcompanharCotacaoTab.Click
+    Public Sub PopulateClienteEnvioAssistencia(cliente As ClientePF)
+        clienteEnvioAssistencia = cliente
+        ClienteEnvioAssistenciaTB.Text = cliente.CPF & " - " & cliente.Nome
+    End Sub
 
+    Public Sub PopulateClienteEnvioAssistencia(cliente As ClientePJ)
+        clienteEnvioAssistencia = cliente
+        ClienteEnvioAssistenciaTB.Text = cliente.CNPJ & " - " & cliente.Nome
+    End Sub
+
+    Private Sub SelecionarAssistenciaEnvioAssistenciaIMG_Click(sender As Object, e As EventArgs) Handles SelecionarAssistenciaEnvioAssistenciaIMG.Click
+        Dim busca As New BuscaFornecedor()
+        busca.Caller = "ControleEstoqueEnvioAssistencia"
+        busca.Show()
+    End Sub
+
+    Public Sub PopulateAssistenciaEnvioAssistencia(assistencia As Fornecedor)
+        assistenciaEnvioAssistencia = assistencia
+        AssistenciaEnvioAssistenciaTF.Text = assistencia.Cnpj & " - " & assistencia.NomeFantasia
+    End Sub
+
+    Public Sub PopulateProdutoEnvioAssistencia(produto As Produto)
+        produtoEnvioAssistencia = produto
+        ProdutoEnvioAssistenciaTF.Text = produtoEnvioAssistencia.Nome
+        CodigoProdutoEnvioAssistenciaTF.Text = produtoEnvioAssistencia.Codigo
+    End Sub
+
+    Private Sub ConfirmarProdutoEnvioAssistenciaIMG_Click(sender As Object, e As EventArgs) Handles ConfirmarProdutoEnvioAssistenciaIMG.Click
+        Dim item As New ItemOrdem(QtdeProdutoEnvioAssistenciaTF.Value, Now, Nothing, Nothing, Nothing, produtoEnvioAssistencia)
+        Dim itemInserido As ItemOrdem = itensOrdem.Find(Function(itemOrdem As ItemOrdem) itemOrdem.Produto.Codigo = item.Produto.Codigo)
+        If (itemInserido Is Nothing) Then
+            itensOrdem.Add(item)
+            RefreshDTProdutoOrdem()
+            produtoEnvioAssistencia = Nothing
+            QtdeProdutoEnvioAssistenciaTF.Value = 1
+            CodigoProdutoEnvioAssistenciaTF.Text = ""
+            ProdutoEnvioAssistenciaTF.Text = ""
+        End If
+    End Sub
+
+    Private Sub SelecionarProdutoEnvioAssistenciaIMG_Click(sender As Object, e As EventArgs) Handles SelecionarProdutoEnvioAssistenciaIMG.Click
+        Dim busca As New BuscaProduto()
+        busca.Caller = "ControleEstoqueEnvioAssistencia"
+        busca.Show()
+    End Sub
+
+    Private Sub RefreshDTProdutoOrdem()
+        ProdutosOrdemDT.Rows.Clear()
+
+        For Each item As ItemOrdem In itensOrdem
+            Dim list As New List(Of Object)
+            list.Add(item.Produto.Codigo) : list.Add(item.Produto.Nome) : list.Add(item.Quantidade) : list.Add("Remover Produto")
+            ProdutosOrdemDT.Rows.Add(list.ToArray())
+        Next
+
+        ProdutosOrdemDT.Sort(ProdutosOrdemDT.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
+    End Sub
+
+    Private Sub ProdutosOrdemDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ProdutosOrdemDT.CellContentClick
+        If (ProdutosOrdemDT.SelectedCells Is Nothing) Then Exit Sub
+
+        If (ProdutosOrdemDT.SelectedCells.Item(0).Value = "Remover Produto" AndAlso e.ColumnIndex = 3) Then
+            Dim item As ItemOrdem = itensOrdem.Find(Function(itemOrdem As ItemOrdem) itemOrdem.Produto.Codigo = ProdutosOrdemDT.Item(0, e.RowIndex).Value)
+            itensOrdem.Remove(item)
+            RefreshDTProdutoOrdem()
+            Exit Sub
+        End If
+    End Sub
+
+    Private Sub EnviarParaAssistenciaBT_Click(sender As Object, e As EventArgs) Handles EnviarParaAssistenciaBT.Click
+        If (String.IsNullOrWhiteSpace(ClienteEnvioAssistenciaTB.Text) OrElse clienteEnvioAssistencia Is Nothing) Then
+            MsgBox("Cliente não selecionado", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (itensOrdem Is Nothing OrElse itensOrdem.Count = 0) Then
+            MsgBox("Ordem sem produtos", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(AssistenciaEnvioAssistenciaTF.Text) OrElse assistenciaEnvioAssistencia Is Nothing) Then
+            MsgBox("Assistência não selecionada", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        End If
+
+        Dim ordem As New OrdemServico(assistenciaEnvioAssistencia, clienteEnvioAssistencia, Now, StatusOrdem.Criada)
+        ordem.Id = OrdemServicoBC.Insert(ordem)
+
+        If (ordem.Id = 0) Then
+            MsgBox("Um problema ocorreu durante a criação da ordem", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        End If
+        ordem.ItensOrdem = itensOrdem
+        For Each item As ItemOrdem In ordem.ItensOrdem
+            item.OrdemServico = ordem
+
+            If (ItemOrdemBC.Insert(item) = False) Then
+                MsgBox("Um problema ocorreu durante a criação de um item da ordem", vbInformation Or vbMsgBoxSetForeground)
+                Exit Sub
+            End If
+        Next
+
+        MsgBox("Ordem Criada com sucesso !!", vbInformation Or vbMsgBoxSetForeground)
+        clienteEnvioAssistencia = Nothing
+        ClienteEnvioAssistenciaTB.Text = ""
+        assistenciaEnvioAssistencia = Nothing
+        AssistenciaEnvioAssistenciaTF.Text = ""
+        produtoEnvioAssistencia = Nothing
+        itensOrdem = New List(Of ItemOrdem)
+        ProdutosOrdemDT.Rows.Clear()
     End Sub
 End Class

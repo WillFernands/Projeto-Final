@@ -5,7 +5,7 @@ Public Class OrdemServico
     Private _dataSolicitacao As Date
     Private _status As String
 
-    Private _fornecedor As Fornecedor
+    Private _assistencia As Fornecedor
     Private _cliente As Cliente
 
     Private _itensOrdem As List(Of ItemOrdem)
@@ -14,9 +14,8 @@ Public Class OrdemServico
 
     End Sub
 
-    Public Sub New(id As Long, fornecedor As Fornecedor, cliente As Cliente, dataSolicitacao As Date, status As String)
-        _id = id
-        _fornecedor = fornecedor
+    Public Sub New(assistencia As Fornecedor, cliente As Cliente, dataSolicitacao As Date, status As String)
+        _assistencia = assistencia
         _cliente = cliente
         _dataSolicitacao = dataSolicitacao
         _status = status
@@ -34,10 +33,10 @@ Public Class OrdemServico
 
     Public Property Fornecedor As Fornecedor
         Get
-            Return _fornecedor
+            Return _assistencia
         End Get
         Set(value As Fornecedor)
-            _fornecedor = value
+            _assistencia = value
         End Set
     End Property
 

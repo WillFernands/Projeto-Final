@@ -6,19 +6,22 @@ Imports System.Text
 Public Class OrdemServicoDAO
 
     'OK
-    Public Function Insert(ByVal ordem As OrdemServico) As Boolean
+    Public Function Insert(ByVal ordem As OrdemServico) As Long
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
         strSQL.Append("INSERT INTO OrdensServicos(cnpjFornecedor, idCliente, dataSolicitacao, statusOrdem) ")
         strSQL.Append("VALUES(@cnpj, @idCliente, @data, @status);")
 
-        conn.AddParameter("@cnpj", ordem.Fornecedor.CNPJ)
+        conn.AddParameter("@cnpj", ordem.Fornecedor.Cnpj)
         conn.AddParameter("@idCliente", ordem.Cliente.ID)
         conn.AddParameter("@data", ordem.DataSolicitacao)
         conn.AddParameter("@status", ordem.Status)
 
-        Return conn.ExecuteCommand(strSQL.ToString)
+        If (conn.ExecuteCommand(strSQL.ToString) = False) Then Return 0
+
+        conn = New Connection
+        Return CLng(conn.ExecuteScalar("SELECT IDENT_CURRENT('OrdensServicos')"))
 
     End Function
 
@@ -87,6 +90,31 @@ Public Class OrdemServicoDAO
             ordem.ID = CLng(row.Item("id"))
             ordem.DataSolicitacao = CDate(row.Item("dataSolicitacao"))
             ordem.Fornecedor = fornecedor
+            ordem.Cliente = ClienteBC.FindByID(CLng(row.Item("idCliente")))
+            ordem.Status = CStr(row.Item("statusOrdem"))
+            ordens.Add(ordem)
+        Next
+
+        Return ordens
+
+    End Function
+
+    'OK
+    Public Function FindAll() As List(Of OrdemServico)
+
+        Dim conn As New Connection
+
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM OrdensServicos;")
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of OrdemServico)
+
+        Dim ordens As New List(Of OrdemServico)
+
+        For Each row As DataRow In dt.Rows
+            Dim ordem As New OrdemServico()
+            ordem.Id = CLng(row.Item("id"))
+            ordem.DataSolicitacao = CDate(row.Item("dataSolicitacao"))
+            ordem.Fornecedor = FornecedorBC.FindByCNPJ(CStr(row.Item("cnpjFornecedor")))
             ordem.Cliente = ClienteBC.FindByID(CLng(row.Item("idCliente")))
             ordem.Status = CStr(row.Item("statusOrdem"))
             ordens.Add(ordem)

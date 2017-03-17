@@ -17,7 +17,6 @@ Public Class OrdemServicoBC
         If (ClienteBC.Validate(ordemServico.Cliente) = False) Then Return False
 
         If (ordemServico.ItensOrdem Is Nothing) Then Return False
-        If (ordemServico.ItensOrdem.Count = 0) Then Return False
 
         For Each item As ItemOrdem In ordemServico.ItensOrdem
             If (ItemOrdemBC.Validate(item) = False) Then Return False
@@ -26,11 +25,11 @@ Public Class OrdemServicoBC
         Return True
     End Function
 
-    Public Shared Function Insert(ordemServico As OrdemServico) As Boolean
+    Public Shared Function Insert(ordemServico As OrdemServico) As Long
         If (OrdemServicoBC.Validate(ordemServico)) Then
             Return ordemServicoDAO.Insert(ordemServico)
         End If
-        Return False
+        Return 0
     End Function
 
     Public Shared Function UpdateStatus(ordemServico As OrdemServico) As Boolean

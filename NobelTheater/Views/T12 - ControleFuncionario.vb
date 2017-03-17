@@ -12,6 +12,9 @@
         TipoEnderecoNovoFuncionarioCB.Items.AddRange(TipoEndereco.GetTiposList().ToArray())
         CargoNovoFuncionarioCB.Items.AddRange(TipoCargo.GetTiposList().ToArray())
         PerfilNovoFuncionarioCB.Items.AddRange(TipoPerfilFuncionario.GetTiposList().ToArray())
+        EstadoAcompanharFuncCB.Items.AddRange(EstadosEnum.GetEstadosList().ToArray())
+        TipoEnderecoAcompanharFuncCB.Items.AddRange(TipoEndereco.GetTiposList().ToArray())
+        CargoAcompanharFuncCB.Items.AddRange(TipoCargo.GetTiposList().ToArray())
         NumeroNovoFuncionarioTF.Text = "S/N"
         EstadoNovoFuncionarioCB.Text = "PR"
         SalarioNovoFuncionarioTF.Text = "0.00"

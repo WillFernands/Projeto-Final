@@ -65,6 +65,8 @@
         'SQLTableManager.CreateSolicitacoesEmprestimos()
         'SQLTableManager.DropItensEmprestimos()
         'SQLTableManager.CreateItensEmprestimos()
+        'SQLTableManager.CreateOrdensServicos()
+        'SQLTableManager.CreateItensOrdens()
     End Sub
 
     Private Sub OK_Click(sender As Object, e As EventArgs) Handles LogarBT.Click

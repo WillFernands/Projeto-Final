@@ -44,6 +44,9 @@
         ElseIf (Caller = "ControleEstoqueProdutosEmprestados") Then
             ControleEstoque.PopulateProdutoEmprestimo(produto)
             Me.Close()
+        ElseIf (Caller = "ControleEstoqueEnvioAssistencia") Then
+            ControleEstoque.PopulateProdutoEnvioAssistencia(produto)
+            Me.Close()
         End If
 
     End Sub

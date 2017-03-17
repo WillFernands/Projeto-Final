@@ -10,15 +10,13 @@ Public Class ItemOrdemDAO
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("INSERT INTO ItensOrdens(codigoProduto, idOrdem, quantidade, dataEntrega, dataRecebimento, dataDevolucao) ")
-        strSQL.Append("VALUES(@codigo, @idOrdem, @quantidade, @dataEntrega, @dataRecebimento, @dataDevolucao);")
+        strSQL.Append("INSERT INTO ItensOrdens(codigoProduto, idOrdem, quantidade, dataEntrega) ")
+        strSQL.Append("VALUES(@codigo, @idOrdem, @quantidade, @dataEntrega);")
 
         conn.AddParameter("@codigo", item.Produto.Codigo)
         conn.AddParameter("@idOrdem", item.OrdemServico.Id)
         conn.AddParameter("@quantidade", item.Quantidade)
         conn.AddParameter("@dataEntrega", item.DataEntrega)
-        conn.AddParameter("@dataRecebimento", item.DataRecebimento)
-        conn.AddParameter("@dataDevolucao", item.DataDevolucao)
 
         Return conn.ExecuteCommand(strSQL.ToString)
 

@@ -7,6 +7,8 @@
     Private Sub BuscaFornecedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If (Caller = "ControleFornecedorAssistenciaAcompanharAssistencia") Then
             fornecedores = FornecedorBC.FindAssistencias()
+        ElseIf (Caller = "ControleEstoqueEnvioAssistencia") Then
+            fornecedores = FornecedorBC.FindAll().FindAll(Function(forn As Fornecedor) forn.TipoFornecedor <> TipoFornecedor.Fornecedor)
         Else
             fornecedores = FornecedorBC.FindAll().FindAll(Function(forn As Fornecedor) forn.TipoFornecedor <> TipoFornecedor.Assistencia)
         End If
@@ -45,6 +47,9 @@
             Me.Close()
         ElseIf (Caller = "ControleFornecedorFornecedorAcompanharAssistencia") Then
             ControleFornecedor.PopulateFornecedorAcompanharAssistencia(fornecedor)
+            Me.Close()
+        ElseIf (Caller = "ControleEstoqueEnvioAssistencia") Then
+            ControleEstoque.PopulateAssistenciaEnvioAssistencia(fornecedor)
             Me.Close()
         End If
     End Sub
