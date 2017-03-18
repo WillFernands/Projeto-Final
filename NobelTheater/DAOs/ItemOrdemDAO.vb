@@ -51,5 +51,40 @@ Public Class ItemOrdemDAO
 
     End Function
 
+    'OK
+    Public Function UpdateDatas(ByVal item As ItemOrdem) As Boolean
+        Dim conn As New Connection
+        Dim strSQL As New StringBuilder
+
+        strSQL.Append("UPDATE ItensOrdens ")
+        strSQL.Append("SET dataRecebimento = @dataRecebimento, ")
+        strSQL.Append("dataDevolucao = @dataDevolucao ")
+        strSQL.Append("WHERE codigoProduto = @codigo ")
+        strSQL.Append("AND idOrdem = @idOrdem ")
+        strSQL.Append("AND dataEntrega = @dataEntrega;")
+
+        conn.AddParameter("@dataRecebimento", item.DataRecebimento)
+        conn.AddParameter("@dataDevolucao", item.DataDevolucao)
+        conn.AddParameter("@codigo", item.Produto.Codigo)
+        conn.AddParameter("@idOrdem", item.OrdemServico.Id)
+        conn.AddParameter("@dataEntrega", item.DataEntrega)
+
+        Return conn.ExecuteCommand(strSQL.ToString)
+
+    End Function
+
+    'OK
+    Public Function DeleteByOrdem(ordem As OrdemServico) As Boolean
+
+        If (ordem Is Nothing) Then Return False
+
+        Dim conn As New Connection
+
+        conn.AddParameter("@idOrdem", ordem.Id)
+
+        Return conn.ExecuteCommand("DELETE ItensOrdens WHERE idOrdem = @idOrdem;")
+
+    End Function
+
 End Class
 

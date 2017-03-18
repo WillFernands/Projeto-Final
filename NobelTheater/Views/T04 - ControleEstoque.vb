@@ -7,6 +7,7 @@
     Private produtoEmprestimoAtual As Produto
     Private produtoEmprestimo As Produto
     Private produtoEnvioAssistencia As Produto
+    Private produtoAtualAssistencia As Produto
     Private itensCotados As New List(Of ItemCotado)
     Private itensEmprestimos As New List(Of ItemEmprestimo)
     Private itensOrdem As New List(Of ItemOrdem)
@@ -16,6 +17,7 @@
     Private clienteEmprestimo As Cliente
     Private clienteEnvioAssistencia As Cliente
     Private assistenciaEnvioAssistencia As Fornecedor
+    Private clienteAtualAssistencia As Cliente
 
     Private Sub ControleEstoque_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         NomeTF.Text = "Nome: " & MenuPrincipal.funcionarioLogado.Nome
@@ -578,6 +580,47 @@
         RefreshDTProdutosEmprestados()
     End Sub
 
+    Private Sub ProdutosEnviadosAssistenciaTab_Enter(sender As Object, e As EventArgs) Handles ProdutosEnviadosAssistenciaTab.Enter
+        BuscaAllAssistenciaRB.Checked = True
+        RefreshDTProdutosEnviadosAssistencia()
+    End Sub
+
+    Private Sub RefreshDTProdutosEnviadosAssistencia()
+        ProdutosEnviadosAssistenciaDT.Rows.Clear()
+
+        If (BuscaAllAssistenciaRB.Checked) Then
+            For Each ordem As OrdemServico In OrdemServicoBC.FindAll()
+                Dim list As New List(Of Object)
+                list.Add(ordem.Id) : list.Add(ordem.Status) : list.Add(ordem.Cliente.ID & " - " & ordem.Cliente.Nome) : list.Add(ordem.DataSolicitacao) : list.Add("Ver produtos") : list.Add("Finalizar")
+                ProdutosEnviadosAssistenciaDT.Rows.Add(list.ToArray())
+            Next
+        ElseIf (BuscaIDAssistenciaRB.Checked AndAlso String.IsNullOrWhiteSpace(BuscaIDAssistenciaTF.Text) = False) Then
+            Dim ordem As OrdemServico = OrdemServicoBC.FindByID(BuscaIDAssistenciaTF.Text)
+            Dim list As New List(Of Object)
+            list.Add(ordem.Id) : list.Add(ordem.Status) : list.Add(ordem.Cliente.ID & " - " & ordem.Cliente.Nome) : list.Add(ordem.DataSolicitacao) : list.Add("Ver produtos") : list.Add("Finalizar")
+            ProdutosEnviadosAssistenciaDT.Rows.Add(list.ToArray())
+        ElseIf (BuscaClienteAssistenciaRB.Checked AndAlso String.IsNullOrWhiteSpace(BuscaClienteAssistenciaTF.Text) = False) Then
+            For Each ordem As OrdemServico In OrdemServicoBC.FindByCliente(clienteAtualAssistencia)
+                Dim list As New List(Of Object)
+                list.Add(ordem.Id) : list.Add(ordem.Status) : list.Add(ordem.Cliente.ID & " - " & ordem.Cliente.Nome) : list.Add(ordem.DataSolicitacao) : list.Add("Ver produtos") : list.Add("Finalizar")
+                ProdutosEnviadosAssistenciaDT.Rows.Add(list.ToArray())
+            Next
+        ElseIf (BuscaProdutoAssistenciaRB.Checked AndAlso String.IsNullOrWhiteSpace(BuscaProdutoAssistenciaTF.Text) = False) Then
+            For Each ordem As OrdemServico In OrdemServicoBC.FindAll()
+                For Each item As ItemOrdem In ordem.ItensOrdem
+                    If (item.Produto.Codigo = produtoAtualAssistencia.Codigo) Then
+                        Dim list As New List(Of Object)
+                        list.Add(ordem.Id) : list.Add(ordem.Status) : list.Add(ordem.Cliente.ID & " - " & ordem.Cliente.Nome) : list.Add(ordem.DataSolicitacao) : list.Add("Ver produtos") : list.Add("Finalizar")
+                        ProdutosEnviadosAssistenciaDT.Rows.Add(list.ToArray())
+                        Continue For
+                    End If
+                Next
+            Next
+        End If
+
+        ProdutosEmprestadosDT.Sort(ProdutosEmprestadosDT.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
+    End Sub
+
     Private Sub RefreshDTProdutosEmprestados()
         ProdutosEmprestadosDT.Rows.Clear()
 
@@ -612,6 +655,22 @@
         End If
 
         ProdutosEmprestadosDT.Sort(ProdutosEmprestadosDT.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
+    End Sub
+
+    Private Sub BuscaAllAssistenciaRB_CheckedChanged(sender As Object, e As EventArgs) Handles BuscaAllAssistenciaRB.CheckedChanged
+        RefreshDTProdutosEnviadosAssistencia()
+    End Sub
+
+    Private Sub BuscaIDAssistenciaRB_CheckedChanged(sender As Object, e As EventArgs) Handles BuscaIDAssistenciaRB.CheckedChanged, BuscaIDAssistenciaTF.TextChanged
+        RefreshDTProdutosEnviadosAssistencia()
+    End Sub
+
+    Private Sub BuscaClienteAssistenciaRB_CheckedChanged(sender As Object, e As EventArgs) Handles BuscaClienteAssistenciaRB.CheckedChanged, BuscaClienteAssistenciaTF.TextChanged
+        RefreshDTProdutosEnviadosAssistencia()
+    End Sub
+
+    Private Sub BuscaProdutoAssistenciaRB_CheckedChanged(sender As Object, e As EventArgs) Handles BuscaProdutoAssistenciaRB.CheckedChanged, BuscaProdutoAssistenciaTF.TextChanged
+        RefreshDTProdutosEnviadosAssistencia()
     End Sub
 
     Private Sub BuscaAllRB_CheckedChanged(sender As Object, e As EventArgs) Handles BuscaAllRB.CheckedChanged
@@ -776,5 +835,56 @@
         produtoEnvioAssistencia = Nothing
         itensOrdem = New List(Of ItemOrdem)
         ProdutosOrdemDT.Rows.Clear()
+    End Sub
+
+    Private Sub SelecionarClienteAtualEnvioAssistenciaIMG_Click(sender As Object, e As EventArgs) Handles SelecionarClienteAtualEnvioAssistenciaIMG.Click
+        Dim busca As New BuscaCliente()
+        busca.Caller = "ControleEstoqueClienteAtualEnvioAssistencia"
+        busca.Show()
+    End Sub
+
+    Private Sub SelecionarProdutoAtualEnvioAssistenciaIMG_Click(sender As Object, e As EventArgs) Handles SelecionarProdutoAtualEnvioAssistenciaIMG.Click
+        Dim busca As New BuscaProduto()
+        busca.Caller = "ControleEstoqueProdutoAtualEnvioAssistencia"
+        busca.Show()
+    End Sub
+
+    Public Sub PopulateClienteAtualEnvioAssistencia(cliente As ClientePF)
+        clienteAtualAssistencia = cliente
+        BuscaClienteAssistenciaTF.Text = cliente.CPF & " - " & cliente.Nome
+    End Sub
+
+    Public Sub PopulateClienteAtualEnvioAssistencia(cliente As ClientePJ)
+        clienteAtualAssistencia = cliente
+        BuscaClienteAssistenciaTF.Text = cliente.CNPJ & " - " & cliente.Nome
+    End Sub
+
+    Public Sub PopulateProdutoAtualEnvioAssistencia(produto As Produto)
+        produtoAtualAssistencia = produto
+        BuscaProdutoAssistenciaTF.Text = produtoAtualAssistencia.Nome
+        BuscaCodigoProdutoAssistenciaTF.Text = produtoAtualAssistencia.Codigo
+    End Sub
+
+    Private Sub ProdutosEnviadosAssistenciaDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ProdutosEnviadosAssistenciaDT.CellContentClick
+        If (ProdutosEnviadosAssistenciaDT.SelectedCells Is Nothing OrElse e.RowIndex = -1) Then Exit Sub
+
+        If (e.ColumnIndex = 4 AndAlso ProdutosEnviadosAssistenciaDT.SelectedCells.Item(0).Value = "Ver produtos") Then
+            Dim visualizacao As New VerItensOrdem()
+            visualizacao.ProdutosList = OrdemServicoBC.FindByID(ProdutosEnviadosAssistenciaDT.Item(0, e.RowIndex).Value).ItensOrdem
+            visualizacao.Show()
+        ElseIf (e.ColumnIndex = 5 AndAlso ProdutosEnviadosAssistenciaDT.SelectedCells.Item(0).Value = "Finalizar") Then
+            If (MsgBox("Essa ação encerrará a ordem e encerrar os produtos com a data de hoje, continuar ?", vbYesNo Or vbInformation Or vbMsgBoxSetForeground) = vbYes) Then
+                Dim ordem As OrdemServico = OrdemServicoBC.FindByID(ProdutosEnviadosAssistenciaDT.Item(0, e.RowIndex).Value)
+                ordem.Status = StatusOrdem.Finalizada
+                For Each item As ItemOrdem In ordem.ItensOrdem
+                    If (item.DataRecebimento = Nothing) Then item.DataRecebimento = Now
+                    If (item.DataDevolucao = Nothing) Then item.DataDevolucao = Now
+                    item.OrdemServico = ordem
+                    ItemOrdemBC.UpdateDatas(item)
+                Next
+                OrdemServicoBC.UpdateStatus(ordem)
+                RefreshDTProdutosEnviadosAssistencia()
+            End If
+        End If
     End Sub
 End Class

@@ -51,4 +51,8 @@ Public Class OrdemServicoBC
         Return ordemServicoDAO.FindByFornecedor(fornecedor)
     End Function
 
+    Public Shared Function FindAll() As List(Of OrdemServico)
+        Return ordemServicoDAO.FindAll()
+    End Function
+
 End Class

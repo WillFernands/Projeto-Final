@@ -22,8 +22,19 @@ Public Class ItemOrdemBC
         Return False
     End Function
 
+    Public Shared Function UpdateDatas(itemOrdem As ItemOrdem) As Boolean
+        If (ItemOrdemBC.Validate(itemOrdem)) Then
+            Return itemOrdemDAO.UpdateDatas(itemOrdem)
+        End If
+        Return False
+    End Function
+
     Public Shared Function FindByOrdem(ordem As OrdemServico) As List(Of ItemOrdem)
         Return itemOrdemDAO.FindByOrdem(ordem)
+    End Function
+
+    Public Shared Function DeleteByOrdem(ordem As OrdemServico) As Boolean
+        Return itemOrdemDAO.DeleteByOrdem(ordem)
     End Function
 
 End Class
