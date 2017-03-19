@@ -516,7 +516,7 @@ Partial Class ControleEstoque
         Me.ProdutosDT.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ProdutosDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ProdutosDT.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn3, Me.Quantidade, Me.PrecoTotal, Me.Remover})
-        Me.ProdutosDT.Location = New System.Drawing.Point(18, 92)
+        Me.ProdutosDT.Location = New System.Drawing.Point(12, 92)
         Me.ProdutosDT.Name = "ProdutosDT"
         Me.ProdutosDT.ReadOnly = True
         Me.ProdutosDT.RowHeadersVisible = False

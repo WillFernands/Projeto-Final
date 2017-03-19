@@ -119,4 +119,15 @@ Public Class NotaFiscalVenda
             _visitasTecnicas = value
         End Set
     End Property
+
+    Public ReadOnly Property ValorTotal As Double
+        Get
+            Dim valor As Double
+            For Each item As ItemVendido In ItensVendidos
+                valor += item.Produto.PrecoUnit * item.Quantidade
+            Next
+
+            Return valor
+        End Get
+    End Property
 End Class
