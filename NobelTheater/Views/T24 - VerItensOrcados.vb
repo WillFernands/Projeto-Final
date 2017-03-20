@@ -1,15 +1,14 @@
-﻿Public Class VerItensCotados
+﻿Public Class VerItensOrcados
+    Public ProdutosList As List(Of ItemOrcado)
 
-    Public ProdutosList As List(Of ItemCotado)
-
-    Private Sub VerItensCotados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub VerItensOrcados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         RefreshDTProdutos()
     End Sub
 
     Private Sub RefreshDTProdutos()
         ProdutosDT.Rows.Clear()
 
-        For Each item As ItemCotado In ProdutosList
+        For Each item As ItemOrcado In ProdutosList
             Dim list As New List(Of Object)
             list.Add(item.Produto.Codigo) : list.Add(item.Produto.Nome) : list.Add(item.Produto.Descricao) : list.Add(item.Produto.PrecoUnit) : list.Add(item.Quantidade) : list.Add(item.Produto.PrecoUnit * CInt(item.Quantidade)) : list.Add("Remover Produto")
             ProdutosDT.Rows.Add(list.ToArray())

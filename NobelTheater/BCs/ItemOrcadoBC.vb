@@ -25,4 +25,8 @@ Public Class ItemOrcadoBC
         Return itemOrcadoDAO.FindByOrcamento(orcamento)
     End Function
 
+    Public Shared Function DeleteByOrcamento(orcamento As Orcamento) As Boolean
+        Return itemOrcadoDAO.DeleteByOrcamento(orcamento)
+    End Function
+
 End Class

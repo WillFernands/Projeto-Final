@@ -18,7 +18,7 @@ Public Class Orcamento
     Public Sub New(dataOrcamento As Date, vendedor As Funcionario, cliente As Cliente, itensOrcados As List(Of ItemOrcado))
         _vendedor = vendedor
         _cliente = cliente
-        _status = StatusVenda.OrcamentoPendente
+        _status = StatusOrcamento.Pendente
         _dataOrcamento = dataOrcamento
         _itensOrcados = itensOrcados
     End Sub

@@ -9,9 +9,10 @@ Public Class ItemVendido
 
     End Sub
 
-    Public Sub New(quantidade As Integer, produto As Produto)
+    Public Sub New(produto As Produto, NotaFiscal As NotaFiscalVenda, quantidade As Integer)
         _produto = produto
         _quantidade = quantidade
+        _notaFiscal = NotaFiscal
     End Sub
 
     Public Property Produto As Produto

@@ -71,6 +71,31 @@ Public Class OrcamentoDAO
     End Function
 
     'OK
+    Public Function FindAll() As List(Of Orcamento)
+
+        Dim conn As New Connection
+
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM Orcamentos;")
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of Orcamento)
+
+        Dim orcamentos As New List(Of Orcamento)
+
+        For Each row As DataRow In dt.Rows
+            Dim orcamento As New Orcamento()
+            orcamento.Id = CLng(row.Item("id"))
+            orcamento.DataOrcamento = CDate(row.Item("dataOrcamento"))
+            orcamento.Vendedor = FuncionarioBC.FindByMatricula(CLng(row.Item("matriculaVendedor")))
+            orcamento.Cliente = ClienteBC.FindByID(CLng(row.Item("idCliente")))
+            orcamento.Status = CStr(row.Item("statusOrcamento"))
+            orcamentos.Add(orcamento)
+        Next
+
+        Return orcamentos
+
+    End Function
+
+    'OK
     Public Function FindByVendedor(vendedor As Funcionario) As List(Of Orcamento)
 
         If (vendedor Is Nothing) Then Return Nothing

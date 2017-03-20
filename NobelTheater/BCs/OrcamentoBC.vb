@@ -44,4 +44,8 @@ Public Class OrcamentoBC
         Return orcamentoDAO.FindByVendedor(vendedor)
     End Function
 
+    Public Shared Function FindAll() As List(Of Orcamento)
+        Return orcamentoDAO.FindAll()
+    End Function
+
 End Class

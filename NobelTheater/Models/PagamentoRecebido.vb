@@ -14,7 +14,6 @@ Public Class PagamentoRecebido
 
     End Sub
 
-
     Public Sub New(status As String, valor As Double, data As Date, tipo As String, notaFiscal As NotaFiscalVenda)
         _status = status
         _valor = valor

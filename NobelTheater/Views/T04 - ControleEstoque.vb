@@ -208,7 +208,7 @@
         RefreshDTCompras()
     End Sub
 
-    Private Sub CotacoesAndamentoTab_GotFocus(sender As Object, e As EventArgs) Handles CotacoesAndamentoTab.Enter
+    Private Sub CotacoesAndamentoTab_Enter(sender As Object, e As EventArgs) Handles CotacoesAndamentoTab.Enter
         RefreshDTCotacoes()
     End Sub
 
@@ -403,13 +403,12 @@
 
             ControleEstoqueTab.SelectTab(5)
 
-            'Aguardar a criação dos componentes em Acompanhar Compra
         Else : MsgBox("Cotação Atualizada com sucesso !!", vbInformation Or vbMsgBoxSetForeground)
         End If
 
     End Sub
 
-    Private Sub PictureBox8_Click_1(sender As Object, e As EventArgs) Handles PictureBox8.Click
+    Private Sub PictureBox8_Click_1(sender As Object, e As EventArgs) Handles SelecionarProdutoAcompanharCotacaoIMG.Click
         Dim busca As New BuscaProduto()
         busca.Caller = "ControleEstoqueProdutoCotacao"
         busca.Show()
@@ -521,20 +520,20 @@
             DataEmissaoAcompanharCompraTF.Text = compraAtual.EmissaoNF
             DataAprovacaoAcompanharCompraTF.Text = compraAtual.DataAprovacao
             StatusCompraAcompanharCompraCB.Text = compraAtual.Status
-            RefreshDTPagamentos()
+            RefreshDTPagamentosAcompanharCompra()
         End If
     End Sub
 
-    Private Sub RefreshDTPagamentos()
-        PagamentosDT.Rows.Clear()
+    Private Sub RefreshDTPagamentosAcompanharCompra()
+        PagamentosAcompanharCompraDT.Rows.Clear()
 
         For Each pgto As PagamentoEfetuado In compraAtual.Pagamentos
             Dim list As New List(Of Object)
             list.Add(pgto.ID) : list.Add(pgto.Data) : list.Add(pgto.Tipo) : list.Add(pgto.Status) : list.Add(pgto.Valor) : list.Add("Remover Pgto")
-            PagamentosDT.Rows.Add(list.ToArray())
+            PagamentosAcompanharCompraDT.Rows.Add(list.ToArray())
         Next
 
-        PagamentosDT.Sort(PagamentosDT.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
+        PagamentosAcompanharCompraDT.Sort(PagamentosAcompanharCompraDT.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
     End Sub
 
     Private Sub ComprasDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ComprasDT.CellContentClick
@@ -566,7 +565,7 @@
         DataPagamentoTF.Text = ""
         TipoPagamentoCB.Text = ""
         ValorPgtoTF.Text = ""
-        PagamentosDT.Rows.Clear()
+        PagamentosAcompanharCompraDT.Rows.Clear()
     End Sub
 
     Private Sub VerItensAcompanharCompraBT_Click(sender As Object, e As EventArgs) Handles VerItensAcompanharCompraBT.Click
@@ -885,6 +884,17 @@
                 OrdemServicoBC.UpdateStatus(ordem)
                 RefreshDTProdutosEnviadosAssistencia()
             End If
+        End If
+    End Sub
+
+    Private Sub PagamentosAcompanharCompraDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles PagamentosAcompanharCompraDT.CellContentClick
+        If (PagamentosAcompanharCompraDT.SelectedCells Is Nothing) Then Exit Sub
+
+        If (PagamentosAcompanharCompraDT.SelectedCells.Item(0).Value = "Remover Pgto" AndAlso e.ColumnIndex = 5) Then
+            Dim pgto As PagamentoEfetuado = compraAtual.Pagamentos.Find(Function(pgtoEfetuado As PagamentoEfetuado) pgtoEfetuado.ID = PagamentosAcompanharCompraDT.Item(0, e.RowIndex).Value)
+            compraAtual.Pagamentos.Remove(pgto)
+            RefreshDTPagamentosAcompanharCompra()
+            Exit Sub
         End If
     End Sub
 End Class

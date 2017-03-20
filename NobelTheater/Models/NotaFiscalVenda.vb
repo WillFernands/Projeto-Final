@@ -10,7 +10,7 @@ Public Class NotaFiscalVenda
     Private _numeroNF As String
     Private _emissaoNF As Date
 
-    Private _Orcamento As Orcamento
+    Private _orcamento As Orcamento
 
     Private _pagamentosRecebidos As New List(Of PagamentoRecebido)
     Private _visitasTecnicas As New List(Of VisitaTecnica)
@@ -20,14 +20,12 @@ Public Class NotaFiscalVenda
 
     End Sub
 
-    Public Sub New(id As Long, status As String, dataAprovacao As Date, dataFinalObra As Date, numeroNF As String, emissaoNF As Date, Orcamento As Orcamento)
-        _id = id
+    Public Sub New(status As String, dataAprovacao As Date, numeroNF As String, emissaoNF As Date, Orcamento As Orcamento)
         _status = status
         _dataAprovacao = dataAprovacao
-        _dataFinalObra = dataFinalObra
         _numeroNF = numeroNF
         _emissaoNF = emissaoNF
-        _Orcamento = Orcamento
+        _orcamento = Orcamento
     End Sub
 
     Public Property Id As Long
@@ -86,10 +84,10 @@ Public Class NotaFiscalVenda
 
     Public Property Orcamento As Orcamento
         Get
-            Return _Orcamento
+            Return _orcamento
         End Get
         Set(value As Orcamento)
-            _Orcamento = value
+            _orcamento = value
         End Set
     End Property
 

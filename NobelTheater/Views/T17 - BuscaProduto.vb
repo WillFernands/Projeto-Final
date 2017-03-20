@@ -50,6 +50,9 @@
         ElseIf (Caller = "ControleEstoqueProdutoAtualEnvioAssistencia") Then
             ControleEstoque.PopulateProdutoAtualEnvioAssistencia(produto)
             Me.Close()
+        ElseIf (Caller = "ControleVendasProdutoAcompanharOrcamento") Then
+            ControleVendas.PopulateProdutoAcompanharOrcamento(produto)
+            Me.Close()
         End If
 
     End Sub

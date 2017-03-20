@@ -48,5 +48,18 @@ Public Class ItemOrcadoDAO
 
     End Function
 
+    'OK
+    Public Function DeleteByOrcamento(orcamento As Orcamento) As Boolean
+
+        If (orcamento Is Nothing) Then Return False
+
+        Dim conn As New Connection
+
+        conn.AddParameter("@idOrcamento", orcamento.Id)
+
+        Return conn.ExecuteCommand("DELETE FROM ItensOrcados WHERE idOrcamento = @idOrcamento;")
+
+    End Function
+
 End Class
 
