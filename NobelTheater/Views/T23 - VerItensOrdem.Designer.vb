@@ -39,6 +39,7 @@ Partial Class VerItensOrdem
         Me.DataEmissaoNFCotacaoLB = New System.Windows.Forms.Label()
         Me.DataDevolucaoTF = New System.Windows.Forms.TextBox()
         Me.SalvarItensBT = New System.Windows.Forms.Button()
+        Me.CodigoAtualTF = New System.Windows.Forms.TextBox()
         CType(Me.ProdutosDT, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusGB.SuspendLayout()
         CType(Me.AtualizarProdutoIMG, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -186,11 +187,20 @@ Partial Class VerItensOrdem
         Me.SalvarItensBT.Text = "Salvar Alterações"
         Me.SalvarItensBT.UseVisualStyleBackColor = True
         '
+        'CodigoAtualTF
+        '
+        Me.CodigoAtualTF.Enabled = False
+        Me.CodigoAtualTF.Location = New System.Drawing.Point(17, 37)
+        Me.CodigoAtualTF.Name = "CodigoAtualTF"
+        Me.CodigoAtualTF.Size = New System.Drawing.Size(42, 20)
+        Me.CodigoAtualTF.TabIndex = 33
+        '
         'VerItensOrdem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(777, 391)
+        Me.Controls.Add(Me.CodigoAtualTF)
         Me.Controls.Add(Me.SalvarItensBT)
         Me.Controls.Add(Me.StatusGB)
         Me.Controls.Add(Me.ProdutosDT)
@@ -201,6 +211,7 @@ Partial Class VerItensOrdem
         Me.StatusGB.PerformLayout()
         CType(Me.AtualizarProdutoIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -221,4 +232,5 @@ Partial Class VerItensOrdem
     Friend WithEvents DataDevolucaoTF As TextBox
     Friend WithEvents AtualizarProdutoIMG As PictureBox
     Friend WithEvents SalvarItensBT As Button
+    Friend WithEvents CodigoAtualTF As TextBox
 End Class

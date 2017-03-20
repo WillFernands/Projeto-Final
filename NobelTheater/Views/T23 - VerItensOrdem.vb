@@ -34,8 +34,18 @@
     Private Sub AtualizarProdutoIMG_Click(sender As Object, e As EventArgs) Handles AtualizarProdutoIMG.Click
         Dim item = OrdemAtual.ItensOrdem.Find(Function(itemOrdem As ItemOrdem) itemOrdem.Produto.Codigo = itemAtual.Produto.Codigo)
         OrdemAtual.ItensOrdem.Remove(item)
+        If (String.IsNullOrWhiteSpace(DataDevolucaoTF.Text) = False) Then
+            itemAtual.DataDevolucao = CDate(DataDevolucaoTF.Text)
+        End If
+        If (String.IsNullOrWhiteSpace(DataRecebimentoTF.Text) = False) Then
+            itemAtual.DataRecebimento = CDate(DataRecebimentoTF.Text)
+        End If
         OrdemAtual.ItensOrdem.Add(itemAtual)
         OrdemAtual.ItensOrdem.Sort()
+        DataRecebimentoTF.Text = ""
+        DataDevolucaoTF.Text = ""
+        CodigoAtualTF.Text = ""
+        DataEntregaTF.Text = ""
         RefreshDTProdutos()
     End Sub
 
@@ -43,6 +53,7 @@
         ItemOrdemBC.DeleteByOrdem(OrdemAtual)
         For Each item As ItemOrdem In OrdemAtual.ItensOrdem
             ItemOrdemBC.Insert(item)
+            ItemOrdemBC.UpdateDatas(item)
         Next
         MsgBox("Itens atualizados", vbMsgBoxSetForeground Or vbInformation)
     End Sub
@@ -50,6 +61,10 @@
     Private Sub ProdutosDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ProdutosDT.CellContentClick
         If (ProdutosDT.SelectedCells Is Nothing OrElse e.ColumnIndex = -1) Then Exit Sub
         itemAtual = OrdemAtual.ItensOrdem.Find(Function(itemOrdem As ItemOrdem) itemOrdem.Produto.Codigo = ProdutosDT.Item(0, e.RowIndex).Value)
+        DataEntregaTF.Text = itemAtual.DataEntrega
+        CodigoAtualTF.Text = itemAtual.Produto.Codigo
+        If (itemAtual.DataRecebimento <> Nothing) Then DataRecebimentoTF.Text = itemAtual.DataRecebimento
+        If (itemAtual.DataDevolucao <> Nothing) Then DataDevolucaoTF.Text = itemAtual.DataDevolucao
     End Sub
 
 End Class

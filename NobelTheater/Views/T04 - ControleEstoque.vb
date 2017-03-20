@@ -870,7 +870,7 @@
 
         If (e.ColumnIndex = 4 AndAlso ProdutosEnviadosAssistenciaDT.SelectedCells.Item(0).Value = "Ver produtos") Then
             Dim visualizacao As New VerItensOrdem()
-            visualizacao.ProdutosList = OrdemServicoBC.FindByID(ProdutosEnviadosAssistenciaDT.Item(0, e.RowIndex).Value).ItensOrdem
+            visualizacao.OrdemAtual = OrdemServicoBC.FindByID(ProdutosEnviadosAssistenciaDT.Item(0, e.RowIndex).Value)
             visualizacao.Show()
         ElseIf (e.ColumnIndex = 5 AndAlso ProdutosEnviadosAssistenciaDT.SelectedCells.Item(0).Value = "Finalizar") Then
             If (MsgBox("Essa ação encerrará a ordem e encerrar os produtos com a data de hoje, continuar ?", vbYesNo Or vbInformation Or vbMsgBoxSetForeground) = vbYes) Then

@@ -30,7 +30,7 @@ Public Class ItemOrdemDAO
 
         conn.AddParameter("@idOrdem", ordem.ID)
 
-        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM ItensOrcados WHERE idOrdem = @idOrdem;")
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM ItensOrdens WHERE idOrdem = @idOrdem;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of ItemOrdem)
 
@@ -42,8 +42,14 @@ Public Class ItemOrdemDAO
             item.OrdemServico = ordem
             item.Quantidade = CInt(row.Item("quantidade"))
             item.DataEntrega = CDate(row.Item("dataEntrega"))
-            item.DataRecebimento = CDate(row.Item("dataRecebimento"))
-            item.DataDevolucao = CDate(row.Item("dataDevolucao"))
+            If (IsDBNull(row.Item("dataRecebimento")) = False) Then
+                item.DataRecebimento = CDate(row.Item("dataRecebimento"))
+            Else item.DataRecebimento = Nothing
+            End If
+            If (IsDBNull(row.Item("dataDevolucao")) = False) Then
+                item.DataDevolucao = CDate(row.Item("dataDevolucao"))
+            Else item.DataDevolucao = Nothing
+            End If
             itens.Add(item)
         Next
 
