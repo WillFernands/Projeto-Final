@@ -7,11 +7,14 @@
     Private vendaAtual As NotaFiscalVenda
     Private itensOrcados As New List(Of ItemOrcado)
     Private visitaAtual As VisitaTecnica
+    'Private hiddenTabs As New List(Of TabPage)
 
     Private Sub ControleEstoque_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         NomeTF.Text = "Nome: " & MenuPrincipal.funcionarioLogado.Nome
         MatriculaTF.Text = "Matricula: " & MenuPrincipal.funcionarioLogado.Matricula
         PerfilTF.Text = "Perfil: " & MenuPrincipal.funcionarioLogado.Perfil
+        'hiddenTabs.Add(ControleVendasTabControl.TabPages.Item("AcompanharOrcamentoTab"))
+        'ControleVendasTabControl.TabPages.RemoveByKey("AcompanharOrcamentoTab")
     End Sub
 
     Private Sub ClienteIMG_Click(sender As Object, e As EventArgs) Handles ClienteIMG.Click
@@ -127,8 +130,9 @@
             If (MsgBox("Essa ação lhe redirecionará a aba de Acompanhar Orçamento, continuar ?", vbYesNo Or vbInformation Or vbMsgBoxSetForeground) = vbYes) Then
                 ClearAcompanharOrcamento()
                 orcamentoAtual = OrcamentoBC.FindByID(OrcamentosDT.Item(0, e.RowIndex).Value)
-                PopulateAcompanharOrcamento()
+                'ControleVendasTabControl.TabPages.Insert(2, hiddenTabs.Find(Function(page As TabPage) page.Name = "AcompanharOrcamentoTab"))
                 ControleVendasTabControl.SelectTab(2)
+                PopulateAcompanharOrcamento()
             End If
         End If
     End Sub

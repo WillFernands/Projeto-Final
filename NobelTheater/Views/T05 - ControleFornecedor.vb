@@ -6,6 +6,9 @@
     Private fornecedorVincular As Fornecedor
 
     Private Sub ControleFornecedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        NomeTF.Text = "Nome: " & MenuPrincipal.funcionarioLogado.Nome
+        MatriculaTF.Text = "Matricula: " & MenuPrincipal.funcionarioLogado.Matricula
+        PerfilTF.Text = "Perfil: " & MenuPrincipal.funcionarioLogado.Perfil
         TipoNovoFornecedorCB.Items.Add(TipoFornecedor.Fornecedor)
         TipoNovoFornecedorCB.Items.Add(TipoFornecedor.FornecedorAssistencia)
         TipoEnderecoNovoFornecedorCB.Items.AddRange(TipoEndereco.GetTiposList().ToArray())

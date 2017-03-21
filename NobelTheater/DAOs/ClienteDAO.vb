@@ -33,8 +33,8 @@ Public Class ClienteDAO
         strSQL.Append("UPDATE Clientes ")
         strSQL.Append("SET nome = @nome, ")
         strSQL.Append("telefone = @telefone, ")
-        strSQL.Append("dataCadastro = @dataCadastro, ")
-        strSQL.Append("WHERE idCliente = @idCliente;")
+        strSQL.Append("dataCadastro = @dataCadastro ")
+        strSQL.Append("WHERE id = @idCliente;")
 
         conn.AddParameter("@nome", cliente.Nome)
         conn.AddParameter("@telefone", cliente.Telefone)

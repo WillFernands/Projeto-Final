@@ -25,7 +25,7 @@ Partial Class ControleFornecedor
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PerfilTF = New System.Windows.Forms.Label()
         Me.MatriculaTF = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
+        Me.NomeTF = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -198,7 +198,7 @@ Partial Class ControleFornecedor
         '
         Me.Panel1.Controls.Add(Me.PerfilTF)
         Me.Panel1.Controls.Add(Me.MatriculaTF)
-        Me.Panel1.Controls.Add(Me.Label21)
+        Me.Panel1.Controls.Add(Me.NomeTF)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Location = New System.Drawing.Point(12, 32)
         Me.Panel1.Name = "Panel1"
@@ -223,14 +223,14 @@ Partial Class ControleFornecedor
         Me.MatriculaTF.TabIndex = 11
         Me.MatriculaTF.Text = "Matrícula:"
         '
-        'Label21
+        'NomeTF
         '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(140, 16)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(38, 13)
-        Me.Label21.TabIndex = 10
-        Me.Label21.Text = "Nome:"
+        Me.NomeTF.AutoSize = True
+        Me.NomeTF.Location = New System.Drawing.Point(140, 16)
+        Me.NomeTF.Name = "NomeTF"
+        Me.NomeTF.Size = New System.Drawing.Size(38, 13)
+        Me.NomeTF.TabIndex = 10
+        Me.NomeTF.Text = "Nome:"
         '
         'PictureBox1
         '
@@ -1691,7 +1691,7 @@ Partial Class ControleFornecedor
     Friend WithEvents TipoNovoFornecedorLB As Label
     Friend WithEvents PerfilTF As Label
     Friend WithEvents MatriculaTF As Label
-    Friend WithEvents Label21 As Label
+    Friend WithEvents NomeTF As Label
     Friend WithEvents CEPNovoFornecedorMTF As MaskedTextBox
     Friend WithEvents TelefoneNovoFornecedorMTF As MaskedTextBox
     Friend WithEvents CNPJNovoFornecedorMTF As MaskedTextBox

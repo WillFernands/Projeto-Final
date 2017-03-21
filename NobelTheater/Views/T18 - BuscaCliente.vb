@@ -56,6 +56,9 @@
             ElseIf (Caller = "ControleEstoqueClienteAtualEnvioAssistencia") Then
                 ControleEstoque.PopulateClienteAtualEnvioAssistencia(clientePF)
                 Me.Close()
+            ElseIf (Caller = "ControleCliente") Then
+                ControleCliente.PopulateCliente(clientePF)
+                Me.Close()
             End If
         ElseIf (PJRB.Checked) Then
             Dim clientePJ As ClientePJ = clientesPJ.Find(Function(cli As Cliente) cli.ID = id)
@@ -73,6 +76,9 @@
                 Me.Close()
             ElseIf (Caller = "ControleEstoqueClienteAtualEnvioAssistencia") Then
                 ControleEstoque.PopulateClienteAtualEnvioAssistencia(clientePJ)
+                Me.Close()
+            ElseIf (Caller = "ControleCliente") Then
+                ControleCliente.PopulateCliente(clientePJ)
                 Me.Close()
             End If
         End If

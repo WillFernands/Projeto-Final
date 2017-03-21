@@ -57,6 +57,7 @@ Public Class ClientePJDAO
             cliente.DataCadastro = CDate(row.Item("dataCadastro"))
             cliente.CNPJ = CStr(row.Item("cnpj"))
             cliente.RazaoSocial = CStr(row.Item("razaoSocial"))
+            cliente.Enderecos = EnderecoClienteBC.FindByCliente(cliente)
             clientes.Add(cliente)
         Next
 
@@ -88,6 +89,7 @@ Public Class ClientePJDAO
         cliente.DataCadastro = CDate(dt.Rows(0).Item("dataCadastro"))
         cliente.CNPJ = CStr(dt.Rows(0).Item("cnpj"))
         cliente.RazaoSocial = CStr(dt.Rows(0).Item("razaoSocial"))
+        cliente.Enderecos = EnderecoClienteBC.FindByCliente(cliente)
 
         Return cliente
     End Function
@@ -116,6 +118,7 @@ Public Class ClientePJDAO
         cliente.DataCadastro = CDate(dt.Rows(0).Item("dataCadastro"))
         cliente.CNPJ = CStr(dt.Rows(0).Item("cnpj"))
         cliente.RazaoSocial = CStr(dt.Rows(0).Item("razaoSocial"))
+        cliente.Enderecos = EnderecoClienteBC.FindByCliente(cliente)
 
         Return cliente
     End Function
@@ -144,6 +147,7 @@ Public Class ClientePJDAO
         cliente.DataCadastro = CDate(dt.Rows(0).Item("dataCadastro"))
         cliente.CNPJ = CStr(dt.Rows(0).Item("cnpj"))
         cliente.RazaoSocial = CStr(dt.Rows(0).Item("razaoSocial"))
+        cliente.Enderecos = EnderecoClienteBC.FindByCliente(cliente)
 
         Return cliente
     End Function
@@ -172,6 +176,7 @@ Public Class ClientePJDAO
         cliente.DataCadastro = CDate(dt.Rows(0).Item("dataCadastro"))
         cliente.CNPJ = CStr(dt.Rows(0).Item("cnpj"))
         cliente.RazaoSocial = CStr(dt.Rows(0).Item("razaoSocial"))
+        cliente.Enderecos = EnderecoClienteBC.FindByCliente(cliente)
 
         Return cliente
     End Function

@@ -54,6 +54,7 @@ Public Class ClientePFDAO
             cliente.Telefone = CStr(row.Item("Telefone"))
             cliente.DataCadastro = CDate(row.Item("DataCadastro"))
             cliente.CPF = CStr(row.Item("CPF"))
+            cliente.Enderecos = EnderecoClienteBC.FindByCliente(cliente)
             clientes.Add(cliente)
         Next
 
@@ -84,6 +85,7 @@ Public Class ClientePFDAO
         cliente.Telefone = CStr(dt.Rows(0).Item("Telefone"))
         cliente.DataCadastro = CDate(dt.Rows(0).Item("DataCadastro"))
         cliente.CPF = CStr(dt.Rows(0).Item("CPF"))
+        cliente.Enderecos = EnderecoClienteBC.FindByCliente(cliente)
 
         Return cliente
     End Function
@@ -111,6 +113,7 @@ Public Class ClientePFDAO
         cliente.Telefone = CStr(dt.Rows(0).Item("Telefone"))
         cliente.DataCadastro = CDate(dt.Rows(0).Item("DataCadastro"))
         cliente.CPF = CStr(dt.Rows(0).Item("CPF"))
+        cliente.Enderecos = EnderecoClienteBC.FindByCliente(cliente)
 
         Return cliente
     End Function
@@ -138,6 +141,7 @@ Public Class ClientePFDAO
         cliente.Telefone = CStr(dt.Rows(0).Item("Telefone"))
         cliente.DataCadastro = CDate(dt.Rows(0).Item("DataCadastro"))
         cliente.CPF = CStr(dt.Rows(0).Item("CPF"))
+        cliente.Enderecos = EnderecoClienteBC.FindByCliente(cliente)
 
         Return cliente
     End Function
