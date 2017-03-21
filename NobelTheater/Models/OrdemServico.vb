@@ -8,7 +8,7 @@ Public Class OrdemServico
     Private _assistencia As Fornecedor
     Private _cliente As Cliente
 
-    Private _itensOrdem As List(Of ItemOrdem)
+    Private _itens As List(Of ItemOrdem)
 
     Public Sub New()
 
@@ -19,7 +19,7 @@ Public Class OrdemServico
         _cliente = cliente
         _dataSolicitacao = dataSolicitacao
         _status = status
-        _itensOrdem = New List(Of ItemOrdem)
+        _itens = New List(Of ItemOrdem)
     End Sub
 
     Public Property Id As Long
@@ -67,12 +67,12 @@ Public Class OrdemServico
         End Set
     End Property
 
-    Public Property ItensOrdem As List(Of ItemOrdem)
+    Public Property Itens As List(Of ItemOrdem)
         Get
-            Return _itensOrdem
+            Return _itens
         End Get
         Set(value As List(Of ItemOrdem))
-            _itensOrdem = value
+            _itens = value
         End Set
     End Property
 End Class

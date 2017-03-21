@@ -91,7 +91,7 @@
             Exit Sub
         End If
 
-        For Each item As ItemOrcado In orcamento.ItensOrcados
+        For Each item As ItemOrcado In orcamento.Itens
             item.Orcamento = orcamento
             If (ItemOrcadoBC.Insert(item) = False) Then
                 MsgBox("Um problema ocorreu durante a criação de um item orçado", vbInformation Or vbMsgBoxSetForeground)
@@ -119,7 +119,7 @@
 
         If (e.ColumnIndex = 5 AndAlso OrcamentosDT.SelectedCells.Item(0).Value = "Ver Produtos") Then
             Dim visualizacao As New VerItensOrcados()
-            visualizacao.ProdutosList = OrcamentoBC.FindByID(OrcamentosDT.Item(0, e.RowIndex).Value).ItensOrcados
+            visualizacao.ProdutosList = OrcamentoBC.FindByID(OrcamentosDT.Item(0, e.RowIndex).Value).Itens
             visualizacao.Show()
             Exit Sub
         Else
@@ -166,7 +166,7 @@
         StatusOrcamentoCB.Text = orcamentoAtual.Status
         ProdutosAcompanharOrcamentoDT.Rows.Clear()
 
-        For Each item As ItemOrcado In orcamentoAtual.ItensOrcados
+        For Each item As ItemOrcado In orcamentoAtual.Itens
             Dim list As New List(Of Object)
             list.Add(item.Produto.Codigo) : list.Add(item.Produto.Nome) : list.Add(item.Produto.PrecoUnit) : list.Add(item.Quantidade) : list.Add(item.Produto.PrecoUnit * CInt(item.Quantidade)) : list.Add("Remover Produto")
             ProdutosAcompanharOrcamentoDT.Rows.Add(list.ToArray())
@@ -179,8 +179,8 @@
         If (ProdutosAcompanharOrcamentoDT.SelectedCells Is Nothing) Then Exit Sub
 
         If (ProdutosAcompanharOrcamentoDT.SelectedCells.Item(0).Value = "Remover Produto" AndAlso e.ColumnIndex = 5) Then
-            Dim item As ItemOrcado = orcamentoAtual.ItensOrcados.Find(Function(itemOrcado As ItemOrcado) itemOrcado.Produto.Codigo = ProdutosAcompanharOrcamentoDT.Item(0, e.RowIndex).Value)
-            orcamentoAtual.ItensOrcados.Remove(item)
+            Dim item As ItemOrcado = orcamentoAtual.Itens.Find(Function(itemOrcado As ItemOrcado) itemOrcado.Produto.Codigo = ProdutosAcompanharOrcamentoDT.Item(0, e.RowIndex).Value)
+            orcamentoAtual.Itens.Remove(item)
             RefreshDTProdutosAcompanharOrcamento()
             Exit Sub
         End If
@@ -189,7 +189,7 @@
     Private Sub RefreshDTProdutosAcompanharOrcamento()
         ProdutosAcompanharOrcamentoDT.Rows.Clear()
 
-        For Each item As ItemOrcado In orcamentoAtual.ItensOrcados
+        For Each item As ItemOrcado In orcamentoAtual.Itens
             Dim list As New List(Of Object)
             list.Add(item.Produto.Codigo) : list.Add(item.Produto.Nome) : list.Add(item.Produto.PrecoUnit) : list.Add(item.Quantidade) : list.Add(item.Produto.PrecoUnit * CInt(item.Quantidade)) : list.Add("Remover Produto")
             ProdutosAcompanharOrcamentoDT.Rows.Add(list.ToArray())
@@ -212,9 +212,9 @@
 
     Private Sub ConfimarProdutoAcompanharOrcamentoIMG_Click(sender As Object, e As EventArgs) Handles ConfimarProdutoAcompanharOrcamentoIMG.Click
         Dim item As New ItemOrcado(QtdeProdutoAcompanharOrcamentoTF.Value, produtoAcompanharOrcamento)
-        Dim itemInserido As ItemOrcado = orcamentoAtual.ItensOrcados.Find(Function(ItemOrcado As ItemOrcado) ItemOrcado.Produto.Codigo = item.Produto.Codigo)
+        Dim itemInserido As ItemOrcado = orcamentoAtual.Itens.Find(Function(ItemOrcado As ItemOrcado) ItemOrcado.Produto.Codigo = item.Produto.Codigo)
         If (itemInserido Is Nothing) Then
-            orcamentoAtual.ItensOrcados.Add(item)
+            orcamentoAtual.Itens.Add(item)
             RefreshDTProdutosAcompanharOrcamento()
             produtoAcompanharOrcamento = Nothing
             QtdeProdutoAcompanharOrcamentoTF.Value = 1
@@ -225,7 +225,7 @@
 
     Private Sub SalvarAcompanharOrcamentoBT_Click(sender As Object, e As EventArgs) Handles SalvarAcompanharOrcamentoBT.Click
         orcamentoAtual.Status = StatusOrcamentoCB.Text
-        If (orcamentoAtual.ItensOrcados Is Nothing OrElse orcamentoAtual.ItensOrcados.Count = 0) Then
+        If (orcamentoAtual.Itens Is Nothing OrElse orcamentoAtual.Itens.Count = 0) Then
             MsgBox("Cotação sem produtos", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
         ElseIf (orcamentoAtual.Status = StatusOrcamento.Aprovado) Then
@@ -245,7 +245,7 @@
 
         OrcamentoBC.UpdateStatus(orcamentoAtual)
 
-        For Each item As ItemOrcado In orcamentoAtual.ItensOrcados
+        For Each item As ItemOrcado In orcamentoAtual.Itens
             item.Orcamento = orcamentoAtual
 
             If (ItemOrcadoBC.Insert(item) = False) Then
@@ -260,12 +260,12 @@
             Dim nfVenda As New NotaFiscalVenda(StatusVenda.VendaEfetuada, Now, NumeroNFOrcamentoTF.Text, DataEmissaoNFOrcamentoTF.Text, orcamentoAtual)
             nfVenda.Id = NotaFiscalVendaBC.Insert(nfVenda)
 
-            For Each item As ItemOrcado In orcamentoAtual.ItensOrcados
+            For Each item As ItemOrcado In orcamentoAtual.Itens
                 Dim itemVendido As New ItemVendido(item.Produto, nfVenda, item.Quantidade)
-                nfVenda.ItensVendidos.Add(itemVendido)
+                nfVenda.Itens.Add(itemVendido)
             Next
 
-            For Each item As ItemVendido In nfVenda.ItensVendidos
+            For Each item As ItemVendido In nfVenda.Itens
                 ItemVendidoBC.Insert(item)
             Next
 
@@ -402,7 +402,7 @@
 
         If (e.ColumnIndex = 6 AndAlso VendasDT.SelectedCells.Item(0).Value = "Ver Produtos") Then
             Dim visualizacao As New VerItensVendidos()
-            visualizacao.ProdutosList = NotaFiscalVendaBC.FindByID(VendasDT.Item(0, e.RowIndex).Value).ItensVendidos
+            visualizacao.ProdutosList = NotaFiscalVendaBC.FindByID(VendasDT.Item(0, e.RowIndex).Value).Itens
             visualizacao.Show()
             Exit Sub
         Else
@@ -434,7 +434,7 @@
 
     Private Sub VerItensAcompanharVendaBT_Click(sender As Object, e As EventArgs) Handles VerItensAcompanharVendaBT.Click
         Dim visualizacao As New VerItensVendidos()
-        visualizacao.ProdutosList = NotaFiscalVendaBC.FindByID(vendaAtual.Id).ItensVendidos
+        visualizacao.ProdutosList = NotaFiscalVendaBC.FindByID(vendaAtual.Id).Itens
         visualizacao.Show()
     End Sub
 

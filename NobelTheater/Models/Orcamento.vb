@@ -9,7 +9,7 @@ Public Class Orcamento
 
     Private _cliente As Cliente
 
-    Private _itensOrcados As New List(Of ItemOrcado)
+    Private _itens As New List(Of ItemOrcado)
 
     Public Sub New()
 
@@ -20,7 +20,7 @@ Public Class Orcamento
         _cliente = cliente
         _status = StatusOrcamento.Pendente
         _dataOrcamento = dataOrcamento
-        _itensOrcados = itensOrcados
+        _itens = itensOrcados
     End Sub
 
 
@@ -69,12 +69,12 @@ Public Class Orcamento
         End Set
     End Property
 
-    Public Property ItensOrcados As List(Of ItemOrcado)
+    Public Property Itens As List(Of ItemOrcado)
         Get
-            Return _itensOrcados
+            Return _itens
         End Get
         Set(value As List(Of ItemOrcado))
-            _itensOrcados = value
+            _itens = value
         End Set
     End Property
 End Class

@@ -80,7 +80,7 @@ Public Class NotaFiscalCompraDAO
             notaFiscal.NumeroNF = CStr(row.Item("numeroNF"))
             notaFiscal.Cotacao = CotacaoBC.FindByID(CLng(row.Item("idCotacao")))
             notaFiscal.Pagamentos = PagamentoEfetuadoBC.FindByNotaFiscal(notaFiscal)
-            notaFiscal.Items = ItemCompradoBC.FindByNotaFiscal(notaFiscal)
+            notaFiscal.Itens = ItemCompradoBC.FindByNotaFiscal(notaFiscal)
             notasFiscais.Add(notaFiscal)
         Next
 
@@ -112,7 +112,7 @@ Public Class NotaFiscalCompraDAO
             notaFiscal.NumeroNF = CStr(row.Item("numeroNF"))
             notaFiscal.Cotacao = CotacaoBC.FindByID(CLng(row.Item("idCotacao")))
             notaFiscal.Pagamentos = PagamentoEfetuadoBC.FindByNotaFiscal(notaFiscal)
-            notaFiscal.Items = ItemCompradoBC.FindByNotaFiscal(notaFiscal)
+            notaFiscal.Itens = ItemCompradoBC.FindByNotaFiscal(notaFiscal)
             notasFiscais.Add(notaFiscal)
         Next
 
@@ -141,7 +141,7 @@ Public Class NotaFiscalCompraDAO
         notaFiscal.NumeroNF = CStr(dt.Rows(0).Item("numeroNF"))
         notaFiscal.Cotacao = CotacaoBC.FindByID(CLng(dt.Rows(0).Item("idCotacao")))
         notaFiscal.Pagamentos = PagamentoEfetuadoBC.FindByNotaFiscal(notaFiscal)
-        notaFiscal.Items = ItemCompradoBC.FindByNotaFiscal(notaFiscal)
+        notaFiscal.Itens = ItemCompradoBC.FindByNotaFiscal(notaFiscal)
 
         Return notaFiscal
 

@@ -63,7 +63,7 @@ Public Class OrdemServicoDAO
             ordem.Fornecedor = FornecedorBC.FindByCNPJ(CStr(row.Item("cnpjFornecedor")))
             ordem.Cliente = cliente
             ordem.Status = CStr(row.Item("statusOrdem"))
-            ordem.ItensOrdem = ItemOrdemBC.FindByOrdem(ordem)
+            ordem.Itens = ItemOrdemBC.FindByOrdem(ordem)
             ordens.Add(ordem)
         Next
 
@@ -93,7 +93,7 @@ Public Class OrdemServicoDAO
             ordem.Fornecedor = fornecedor
             ordem.Cliente = ClienteBC.FindByID(CLng(row.Item("idCliente")))
             ordem.Status = CStr(row.Item("statusOrdem"))
-            ordem.ItensOrdem = ItemOrdemBC.FindByOrdem(ordem)
+            ordem.Itens = ItemOrdemBC.FindByOrdem(ordem)
             ordens.Add(ordem)
         Next
 
@@ -119,7 +119,7 @@ Public Class OrdemServicoDAO
             ordem.Fornecedor = FornecedorBC.FindByCNPJ(CStr(row.Item("cnpjFornecedor")))
             ordem.Cliente = ClienteBC.FindByID(CLng(row.Item("idCliente")))
             ordem.Status = CStr(row.Item("statusOrdem"))
-            ordem.ItensOrdem = ItemOrdemBC.FindByOrdem(ordem)
+            ordem.Itens = ItemOrdemBC.FindByOrdem(ordem)
             ordens.Add(ordem)
         Next
 
@@ -146,7 +146,7 @@ Public Class OrdemServicoDAO
         ordem.Fornecedor = FornecedorBC.FindByCNPJ(CStr(dt.Rows(0).Item("cnpjFornecedor")))
         ordem.Cliente = ClienteBC.FindByID(CLng(dt.Rows(0).Item("idCliente")))
         ordem.Status = CStr(dt.Rows(0).Item("statusOrdem"))
-        ordem.ItensOrdem = ItemOrdemBC.FindByOrdem(ordem)
+        ordem.Itens = ItemOrdemBC.FindByOrdem(ordem)
 
         Return ordem
 

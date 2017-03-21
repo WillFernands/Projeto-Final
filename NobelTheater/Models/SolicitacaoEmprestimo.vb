@@ -7,7 +7,7 @@ Public Class SolicitacaoEmprestimo
 
     Private _cliente As Cliente
 
-    Private _itensEmprestimo As List(Of ItemEmprestimo)
+    Private _itens As List(Of ItemEmprestimo)
 
     Public Sub New()
 
@@ -17,7 +17,7 @@ Public Class SolicitacaoEmprestimo
         _dataSolicitacao = dataSolicitacao
         _cliente = cliente
         _status = StatusEmprestimo.Solicitado
-        _itensEmprestimo = itens
+        _itens = itens
     End Sub
 
     Public Property Id As Long
@@ -56,12 +56,12 @@ Public Class SolicitacaoEmprestimo
         End Set
     End Property
 
-    Public Property ItensEmprestimo As List(Of ItemEmprestimo)
+    Public Property Itens As List(Of ItemEmprestimo)
         Get
-            Return _itensEmprestimo
+            Return _itens
         End Get
         Set(value As List(Of ItemEmprestimo))
-            _itensEmprestimo = value
+            _itens = value
         End Set
     End Property
 End Class

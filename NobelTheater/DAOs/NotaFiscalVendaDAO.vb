@@ -87,7 +87,7 @@ Public Class NotaFiscalVendaDAO
             notaFiscal.Orcamento = OrcamentoBC.FindByID(CLng(row.Item("idOrcamento")))
             notaFiscal.VisitasTecnicas = VisitaTecnicaBC.FindByNotaFiscal(notaFiscal)
             notaFiscal.PagamentosRecebidos = PagamentoRecebidoBC.FindByNotaFiscal(notaFiscal)
-            notaFiscal.ItensVendidos = ItemVendidoBC.FindByNotaFiscal(notaFiscal)
+            notaFiscal.Itens = ItemVendidoBC.FindByNotaFiscal(notaFiscal)
             notasFiscais.Add(notaFiscal)
         Next
 
@@ -125,7 +125,7 @@ Public Class NotaFiscalVendaDAO
             notaFiscal.Orcamento = OrcamentoBC.FindByID(CLng(row.Item("idOrcamento")))
             notaFiscal.VisitasTecnicas = VisitaTecnicaBC.FindByNotaFiscal(notaFiscal)
             notaFiscal.PagamentosRecebidos = PagamentoRecebidoBC.FindByNotaFiscal(notaFiscal)
-            notaFiscal.ItensVendidos = ItemVendidoBC.FindByNotaFiscal(notaFiscal)
+            notaFiscal.Itens = ItemVendidoBC.FindByNotaFiscal(notaFiscal)
             notasFiscais.Add(notaFiscal)
         Next
 
@@ -161,7 +161,7 @@ Public Class NotaFiscalVendaDAO
         notaFiscal.Orcamento = OrcamentoBC.FindByID(CLng(dt.Rows(0).Item("idOrcamento")))
         notaFiscal.VisitasTecnicas = VisitaTecnicaBC.FindByNotaFiscal(notaFiscal)
         notaFiscal.PagamentosRecebidos = PagamentoRecebidoBC.FindByNotaFiscal(notaFiscal)
-        notaFiscal.ItensVendidos = ItemVendidoBC.FindByNotaFiscal(notaFiscal)
+        notaFiscal.Itens = ItemVendidoBC.FindByNotaFiscal(notaFiscal)
 
         Return notaFiscal
 

@@ -20,7 +20,7 @@ Public Class NotaFiscalCompraBC
 
         If (CotacaoBC.Validate(notaFiscalCompra.Cotacao) = False) Then Return False
 
-        For Each item As ItemComprado In notaFiscalCompra.Items
+        For Each item As ItemComprado In notaFiscalCompra.Itens
             If (ItemCompradoBC.Validate(item) = False) Then Return False
         Next
 

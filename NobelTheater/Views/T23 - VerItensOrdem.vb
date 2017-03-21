@@ -10,7 +10,7 @@
     Private Sub RefreshDTProdutos()
         ProdutosDT.Rows.Clear()
 
-        For Each item As ItemOrdem In OrdemAtual.ItensOrdem
+        For Each item As ItemOrdem In OrdemAtual.Itens
             Dim list As New List(Of Object)
             list.Add(item.Produto.Codigo) : list.Add(item.Produto.Nome) : list.Add(item.Produto.Descricao) : list.Add(item.Quantidade)
             If (item.DataEntrega = Nothing) Then
@@ -32,16 +32,16 @@
     End Sub
 
     Private Sub AtualizarProdutoIMG_Click(sender As Object, e As EventArgs) Handles AtualizarProdutoIMG.Click
-        Dim item = OrdemAtual.ItensOrdem.Find(Function(itemOrdem As ItemOrdem) itemOrdem.Produto.Codigo = itemAtual.Produto.Codigo)
-        OrdemAtual.ItensOrdem.Remove(item)
+        Dim item = OrdemAtual.Itens.Find(Function(itemOrdem As ItemOrdem) itemOrdem.Produto.Codigo = itemAtual.Produto.Codigo)
+        OrdemAtual.Itens.Remove(item)
         If (String.IsNullOrWhiteSpace(DataDevolucaoTF.Text) = False) Then
             itemAtual.DataDevolucao = CDate(DataDevolucaoTF.Text)
         End If
         If (String.IsNullOrWhiteSpace(DataRecebimentoTF.Text) = False) Then
             itemAtual.DataRecebimento = CDate(DataRecebimentoTF.Text)
         End If
-        OrdemAtual.ItensOrdem.Add(itemAtual)
-        OrdemAtual.ItensOrdem.Sort()
+        OrdemAtual.Itens.Add(itemAtual)
+        OrdemAtual.Itens.Sort()
         DataRecebimentoTF.Text = ""
         DataDevolucaoTF.Text = ""
         CodigoAtualTF.Text = ""
@@ -51,7 +51,7 @@
 
     Private Sub SalvarItensBT_Click(sender As Object, e As EventArgs) Handles SalvarItensBT.Click
         ItemOrdemBC.DeleteByOrdem(OrdemAtual)
-        For Each item As ItemOrdem In OrdemAtual.ItensOrdem
+        For Each item As ItemOrdem In OrdemAtual.Itens
             ItemOrdemBC.Insert(item)
             ItemOrdemBC.UpdateDatas(item)
         Next
@@ -60,7 +60,7 @@
 
     Private Sub ProdutosDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ProdutosDT.CellContentClick
         If (ProdutosDT.SelectedCells Is Nothing OrElse e.ColumnIndex = -1) Then Exit Sub
-        itemAtual = OrdemAtual.ItensOrdem.Find(Function(itemOrdem As ItemOrdem) itemOrdem.Produto.Codigo = ProdutosDT.Item(0, e.RowIndex).Value)
+        itemAtual = OrdemAtual.Itens.Find(Function(itemOrdem As ItemOrdem) itemOrdem.Produto.Codigo = ProdutosDT.Item(0, e.RowIndex).Value)
         DataEntregaTF.Text = itemAtual.DataEntrega
         CodigoAtualTF.Text = itemAtual.Produto.Codigo
         If (itemAtual.DataRecebimento <> Nothing) Then DataRecebimentoTF.Text = itemAtual.DataRecebimento

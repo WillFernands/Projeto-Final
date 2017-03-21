@@ -12,7 +12,7 @@ Public Class NotaFiscalCompra
     Private _cotacao As Cotacao
 
     Private _pagamentos As New List(Of PagamentoEfetuado)
-    Private _items As New List(Of ItemComprado)
+    Private _itens As New List(Of ItemComprado)
 
     Public Sub New(status As String, dataAprovacao As Date, numeroNF As String, emissaoNF As Date, cotacao As Cotacao)
         _status = status
@@ -44,12 +44,12 @@ Public Class NotaFiscalCompra
         End Set
     End Property
 
-    Property Items As List(Of ItemComprado)
+    Property Itens As List(Of ItemComprado)
         Get
-            Return _items
+            Return _itens
         End Get
         Set(value As List(Of ItemComprado))
-            _items = value
+            _itens = value
         End Set
     End Property
 
@@ -98,4 +98,14 @@ Public Class NotaFiscalCompra
         End Set
     End Property
 
+    Public ReadOnly Property ValorTotal As Double
+        Get
+            Dim valor As Double
+            For Each item As ItemComprado In Itens
+                valor += item.Produto.PrecoUnit * item.Quantidade
+            Next
+
+            Return valor
+        End Get
+    End Property
 End Class

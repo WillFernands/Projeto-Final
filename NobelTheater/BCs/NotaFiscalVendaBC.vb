@@ -20,9 +20,9 @@ Public Class NotaFiscalVendaBC
 
         If (OrcamentoBC.Validate(notaFiscalVenda.Orcamento) = False) Then Return False
 
-        If (notaFiscalVenda.ItensVendidos Is Nothing) Then Return False
+        If (notaFiscalVenda.Itens Is Nothing) Then Return False
 
-        For Each item As ItemVendido In notaFiscalVenda.ItensVendidos
+        For Each item As ItemVendido In notaFiscalVenda.Itens
             If (ItemVendidoBC.Validate(item) = False) Then Return False
         Next
 

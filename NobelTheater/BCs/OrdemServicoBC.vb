@@ -16,9 +16,9 @@ Public Class OrdemServicoBC
         If (FornecedorBC.Validate(ordemServico.Fornecedor) = False) Then Return False
         If (ClienteBC.Validate(ordemServico.Cliente) = False) Then Return False
 
-        If (ordemServico.ItensOrdem Is Nothing) Then Return False
+        If (ordemServico.Itens Is Nothing) Then Return False
 
-        For Each item As ItemOrdem In ordemServico.ItensOrdem
+        For Each item As ItemOrdem In ordemServico.Itens
             If (ItemOrdemBC.Validate(item) = False) Then Return False
         Next
 

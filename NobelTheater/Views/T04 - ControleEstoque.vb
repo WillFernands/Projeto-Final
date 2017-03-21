@@ -381,10 +381,10 @@
 
             For Each item As ItemCotado In cotacaoAtual.Itens
                 Dim itemComprado As New ItemComprado(item.Produto, nfCompra, item.Quantidade)
-                nfCompra.Items.Add(itemComprado)
+                nfCompra.Itens.Add(itemComprado)
             Next
 
-            For Each item As ItemComprado In nfCompra.Items
+            For Each item As ItemComprado In nfCompra.Itens
                 ItemCompradoBC.Insert(item)
             Next
 
@@ -490,7 +490,7 @@
             Exit Sub
         End If
 
-        For Each item As ItemEmprestimo In solicitacao.ItensEmprestimo
+        For Each item As ItemEmprestimo In solicitacao.Itens
             item.SolicitacaoEmprestimo = solicitacao
 
             If (ItemEmprestimoBC.Insert(item) = False) Then
@@ -543,7 +543,7 @@
 
         If (e.ColumnIndex = 6 AndAlso ComprasDT.SelectedCells.Item(0).Value = "Ver Produtos") Then
             Dim visualizacao As New VerItensComprados()
-            visualizacao.ProdutosList = NotaFiscalCompraBC.FindByID(ComprasDT.Item(0, e.RowIndex).Value).Items
+            visualizacao.ProdutosList = NotaFiscalCompraBC.FindByID(ComprasDT.Item(0, e.RowIndex).Value).Itens
             visualizacao.Show()
             Exit Sub
         Else
@@ -572,7 +572,7 @@
 
     Private Sub VerItensAcompanharCompraBT_Click(sender As Object, e As EventArgs) Handles VerItensAcompanharCompraBT.Click
         Dim visualizacao As New VerItensComprados()
-        visualizacao.ProdutosList = NotaFiscalCompraBC.FindByID(compraAtual.ID).Items
+        visualizacao.ProdutosList = NotaFiscalCompraBC.FindByID(compraAtual.ID).Itens
         visualizacao.Show()
     End Sub
 
@@ -608,7 +608,7 @@
             Next
         ElseIf (BuscaProdutoAssistenciaRB.Checked AndAlso String.IsNullOrWhiteSpace(BuscaProdutoAssistenciaTF.Text) = False) Then
             For Each ordem As OrdemServico In OrdemServicoBC.FindAll()
-                For Each item As ItemOrdem In ordem.ItensOrdem
+                For Each item As ItemOrdem In ordem.Itens
                     If (item.Produto.Codigo = produtoAtualAssistencia.Codigo) Then
                         Dim list As New List(Of Object)
                         list.Add(ordem.Id) : list.Add(ordem.Status) : list.Add(ordem.Cliente.ID & " - " & ordem.Cliente.Nome) : list.Add(ordem.DataSolicitacao) : list.Add("Ver produtos") : list.Add("Finalizar")
@@ -644,7 +644,7 @@
             Next
         ElseIf (BuscaProdutoRB.Checked AndAlso String.IsNullOrWhiteSpace(NomeProdutoEmprestimoTF.Text) = False) Then
             For Each solicitacao As SolicitacaoEmprestimo In SolicitacaoEmprestimoBC.FindAll()
-                For Each item As ItemEmprestimo In solicitacao.ItensEmprestimo
+                For Each item As ItemEmprestimo In solicitacao.Itens
                     If (item.Produto.Codigo = produtoEmprestimo.Codigo) Then
                         Dim list As New List(Of Object)
                         list.Add(solicitacao.Id) : list.Add(solicitacao.Status) : list.Add(solicitacao.Cliente.ID & " - " & solicitacao.Cliente.Nome) : list.Add(solicitacao.DataSolicitacao) : list.Add("Ver produtos") : list.Add("Finalizar")
@@ -707,13 +707,13 @@
 
         If (e.ColumnIndex = 4 AndAlso ProdutosEmprestadosDT.SelectedCells.Item(0).Value = "Ver produtos") Then
             Dim visualizacao As New VerItensEmprestados()
-            visualizacao.ProdutosList = SolicitacaoEmprestimoBC.FindByID(ProdutosEmprestadosDT.Item(0, e.RowIndex).Value).ItensEmprestimo
+            visualizacao.ProdutosList = SolicitacaoEmprestimoBC.FindByID(ProdutosEmprestadosDT.Item(0, e.RowIndex).Value).Itens
             visualizacao.Show()
         ElseIf (e.ColumnIndex = 5 AndAlso ProdutosEmprestadosDT.SelectedCells.Item(0).Value = "Finalizar") Then
             If (MsgBox("Essa ação encerrará a solicitação e atualizará os produtos ao estoque novamente, continuar ?", vbYesNo Or vbInformation Or vbMsgBoxSetForeground) = vbYes) Then
                 Dim solicitacao As SolicitacaoEmprestimo = SolicitacaoEmprestimoBC.FindByID(ProdutosEmprestadosDT.Item(0, e.RowIndex).Value)
                 solicitacao.Status = StatusEmprestimo.Finalizada
-                For Each item As ItemEmprestimo In solicitacao.ItensEmprestimo
+                For Each item As ItemEmprestimo In solicitacao.Itens
                     item.DataDevolucao = Now
                     item.SolicitacaoEmprestimo = solicitacao
                     ItemEmprestimoBC.UpdateDataDevolucao(item)
@@ -818,8 +818,8 @@
             MsgBox("Um problema ocorreu durante a criação da ordem", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
         End If
-        ordem.ItensOrdem = itensOrdem
-        For Each item As ItemOrdem In ordem.ItensOrdem
+        ordem.Itens = itensOrdem
+        For Each item As ItemOrdem In ordem.Itens
             item.OrdemServico = ordem
 
             If (ItemOrdemBC.Insert(item) = False) Then
@@ -877,7 +877,7 @@
             If (MsgBox("Essa ação encerrará a ordem e encerrar os produtos com a data de hoje, continuar ?", vbYesNo Or vbInformation Or vbMsgBoxSetForeground) = vbYes) Then
                 Dim ordem As OrdemServico = OrdemServicoBC.FindByID(ProdutosEnviadosAssistenciaDT.Item(0, e.RowIndex).Value)
                 ordem.Status = StatusOrdem.Finalizada
-                For Each item As ItemOrdem In ordem.ItensOrdem
+                For Each item As ItemOrdem In ordem.Itens
                     If (item.DataRecebimento = Nothing) Then item.DataRecebimento = Now
                     If (item.DataDevolucao = Nothing) Then item.DataDevolucao = Now
                     item.OrdemServico = ordem

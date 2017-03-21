@@ -14,7 +14,7 @@ Public Class NotaFiscalVenda
 
     Private _pagamentosRecebidos As New List(Of PagamentoRecebido)
     Private _visitasTecnicas As New List(Of VisitaTecnica)
-    Private _itensVendidos As New List(Of ItemVendido)
+    Private _itens As New List(Of ItemVendido)
 
     Public Sub New()
 
@@ -91,12 +91,12 @@ Public Class NotaFiscalVenda
         End Set
     End Property
 
-    Public Property ItensVendidos As List(Of ItemVendido)
+    Public Property Itens As List(Of ItemVendido)
         Get
-            Return _itensVendidos
+            Return _itens
         End Get
         Set(value As List(Of ItemVendido))
-            _itensVendidos = value
+            _itens = value
         End Set
     End Property
 
@@ -121,7 +121,7 @@ Public Class NotaFiscalVenda
     Public ReadOnly Property ValorTotal As Double
         Get
             Dim valor As Double
-            For Each item As ItemVendido In ItensVendidos
+            For Each item As ItemVendido In Itens
                 valor += item.Produto.PrecoUnit * item.Quantidade
             Next
 

@@ -15,10 +15,10 @@ Public Class SolicitacaoEmprestimoBC
 
         If (ClienteBC.Validate(solicitacaoEmprestimo.Cliente) = False) Then Return False
 
-        If (solicitacaoEmprestimo.ItensEmprestimo Is Nothing) Then Return False
-        If (solicitacaoEmprestimo.ItensEmprestimo.Count = 0) Then Return False
+        If (solicitacaoEmprestimo.Itens Is Nothing) Then Return False
+        If (solicitacaoEmprestimo.Itens.Count = 0) Then Return False
 
-        For Each item As ItemEmprestimo In solicitacaoEmprestimo.ItensEmprestimo
+        For Each item As ItemEmprestimo In solicitacaoEmprestimo.Itens
             If (ItemEmprestimoBC.Validate(item) = False) Then Return False
         Next
 
