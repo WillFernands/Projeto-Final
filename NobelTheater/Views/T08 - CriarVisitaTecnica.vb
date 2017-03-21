@@ -31,6 +31,13 @@
         Dim visita As New VisitaTecnica(Now, MotivoVisitaCB.Text, PrecoTF.Text, supervisorAtual, vendaAtual)
         If (VisitaTecnicaBC.Insert(visita)) Then
             MsgBox("Visita Tecnica criada", vbInformation Or vbMsgBoxSetForeground)
+            SupervisorResponsavelTF.Text = ""
+            ClienteTF.Text = ""
+            MotivoVisitaCB.Text = ""
+            PrecoTF.Text = ""
+            vendaAtual = Nothing
+            supervisorAtual = Nothing
+            Me.Hide()
         Else MsgBox("Um problema ocorreu durante a criação da visita técnica", vbInformation Or vbMsgBoxSetForeground)
         End If
     End Sub

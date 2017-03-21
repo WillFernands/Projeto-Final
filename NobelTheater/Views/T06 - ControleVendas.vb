@@ -6,6 +6,7 @@
     Private produtoAcompanharOrcamento As Produto
     Private vendaAtual As NotaFiscalVenda
     Private itensOrcados As New List(Of ItemOrcado)
+    Private visitaAtual As VisitaTecnica
 
     Private Sub ControleEstoque_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         NomeTF.Text = "Nome: " & MenuPrincipal.funcionarioLogado.Nome
@@ -297,6 +298,7 @@
     End Sub
 
     Private Sub AcompanharVendaTab_Enter(sender As Object, e As EventArgs) Handles AcompanharVendaTab.Enter
+        If (vendaAtual IsNot Nothing) Then vendaAtual = NotaFiscalVendaBC.FindByID(vendaAtual.Id)
         StatusVendaAcompanharVendaCB.Items.Clear()
         TipoPagamentoCB.Items.Clear()
         StatusVendaAcompanharVendaCB.Items.AddRange(StatusOrcamento.GetStatusList().ToArray)
@@ -416,7 +418,6 @@
 
     End Sub
 
-
     Private Sub ClearAcompanharVenda()
         vendaAtual = Nothing
         ClienteAcompanharVendaTF.Text = ""
@@ -441,5 +442,75 @@
     Private Sub CriarVisitaAcompanharVendaBT_Click(sender As Object, e As EventArgs) Handles CriarVisitaAcompanharVendaBT.Click
         CriarVisitaTecnica.PopulateVenda(vendaAtual)
         CriarVisitaTecnica.Show()
+    End Sub
+
+    Private Sub VisualizarVisitaBT_Click(sender As Object, e As EventArgs) Handles VisualizarVisitaBT.Click
+        vendaAtual = NotaFiscalVendaBC.FindByID(vendaAtual.Id)
+        ControleVendasTabControl.SelectTab(5)
+    End Sub
+
+    Private Sub VisualizarVisitasTab_Enter(sender As Object, e As EventArgs) Handles VisualizarVisitasTab.Enter
+        If (vendaAtual Is Nothing) Then
+            Exit Sub
+        Else vendaAtual = NotaFiscalVendaBC.FindByID(vendaAtual.Id)
+        End If
+        TipoVisitaCB.Items.Clear()
+        TipoVisitaCB.Items.AddRange(TipoVisita.GetTiposList().ToArray())
+        RefreshDTVisitas()
+    End Sub
+
+    Private Sub RefreshDTVisitas()
+        VisitasDT.Rows.Clear()
+
+        For Each visita As VisitaTecnica In vendaAtual.VisitasTecnicas
+            Dim list As New List(Of Object)
+            list.Add(visita.Data) : list.Add(visita.NotaFiscal.Orcamento.Cliente.ID & " - " & visita.NotaFiscal.Orcamento.Cliente.Nome) : list.Add(visita.Tipo) : list.Add(visita.Supervisor.Matricula & " - " & visita.Supervisor.Nome) : list.Add(visita.Preco)
+            VisitasDT.Rows.Add(list.ToArray())
+        Next
+    End Sub
+
+    Private Sub VisitasDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles VisitasDT.CellContentClick
+        If (VisitasDT.SelectedCells Is Nothing OrElse e.RowIndex = -1) Then Exit Sub
+
+        visitaAtual = vendaAtual.VisitasTecnicas(e.RowIndex)
+
+        ClearAcompanharVisita()
+        PopulateAcompanharVisita()
+
+    End Sub
+
+    Private Sub ClearAcompanharVisita()
+        SupervisorVisitaTF.Text = ""
+        ClienteVisitaTF.Text = ""
+        DataVisitaTF.Text = ""
+        TipoVisitaCB.Text = ""
+        PrecoVisitaTF.Text = ""
+        ParecerObraVisitaTF.Text = ""
+    End Sub
+
+    Private Sub PopulateAcompanharVisita()
+        SupervisorVisitaTF.Text = visitaAtual.Supervisor.Matricula & " - " & visitaAtual.Supervisor.Nome
+        ClienteVisitaTF.Text = visitaAtual.NotaFiscal.Orcamento.Cliente.ID & " - " & visitaAtual.NotaFiscal.Orcamento.Cliente.Nome
+        DataVisitaTF.Text = visitaAtual.Data
+        TipoVisitaCB.Text = visitaAtual.Tipo
+        PrecoVisitaTF.Text = visitaAtual.Preco
+        ParecerObraVisitaTF.Text = visitaAtual.ParecerObra
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles SalvarAlteracoesVisitaBT.Click
+        vendaAtual.VisitasTecnicas.Remove(visitaAtual)
+        visitaAtual.Data = DataVisitaTF.Text
+        visitaAtual.Tipo = TipoVisitaCB.Text
+        visitaAtual.Preco = PrecoVisitaTF.Text
+        vendaAtual.VisitasTecnicas.Add(visitaAtual)
+        VisitaTecnicaBC.DeleteByVenda(vendaAtual)
+
+        For Each visita As VisitaTecnica In vendaAtual.VisitasTecnicas
+            VisitaTecnicaBC.Insert(visita)
+        Next
+
+        ClearAcompanharVisita()
+        RefreshDTVisitas()
+        MsgBox("Visita Atualizada com sucesso !!", vbInformation Or vbMsgBoxSetForeground)
     End Sub
 End Class

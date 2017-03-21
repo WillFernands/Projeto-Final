@@ -1,5 +1,6 @@
 ﻿Option Explicit On
 Option Strict On
+Imports NobelTheater
 
 Public Class VisitaTecnicaBC
 
@@ -15,8 +16,6 @@ Public Class VisitaTecnicaBC
         If (TipoVisita.GetTiposList.Contains(visitaTecnica.Tipo) = False) Then Return False
 
         If (FuncionarioBC.Validate(visitaTecnica.Supervisor) = False) Then Return False
-
-        If (NotaFiscalVendaBC.Validate(visitaTecnica.NotaFiscal) = False) Then Return False
 
         If (visitaTecnica.Data = Nothing) Then Return False
         If (visitaTecnica.Data > Now) Then Return False
@@ -42,4 +41,7 @@ Public Class VisitaTecnicaBC
         Return visitaTecnicaDAO.FindByNotaFiscal(notaFiscal)
     End Function
 
+    Friend Shared Function DeleteByVenda(vendaAtual As NotaFiscalVenda) As Boolean
+        Return visitaTecnicaDAO.DeleteByVenda(vendaAtual)
+    End Function
 End Class
