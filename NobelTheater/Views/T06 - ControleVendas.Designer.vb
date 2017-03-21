@@ -26,16 +26,12 @@ Partial Class ControleVendas
         Me.PerfilTF = New System.Windows.Forms.Label()
         Me.MatriculaTF = New System.Windows.Forms.Label()
         Me.NomeTF = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ControleVendasTabControl = New System.Windows.Forms.TabControl()
         Me.CriarNovoOrcamentoTP = New System.Windows.Forms.TabPage()
         Me.FinalizarBT = New System.Windows.Forms.Button()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.ClienteIMG = New System.Windows.Forms.PictureBox()
         Me.SelecionarClienteNovoOrcamentoTF = New System.Windows.Forms.TextBox()
         Me.SelecionarClienteNovoOrcamentoLB = New System.Windows.Forms.Label()
-        Me.ConfirmaProdutoIMG = New System.Windows.Forms.PictureBox()
         Me.QtdeTF = New System.Windows.Forms.NumericUpDown()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -47,8 +43,6 @@ Partial Class ControleVendas
         Me.Quantidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrecoTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Remover = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.ProdutoOrcamentoIMG = New System.Windows.Forms.PictureBox()
         Me.SelecionarProdutoNovoOrcamentoTF = New System.Windows.Forms.TextBox()
         Me.SelecionarProdutoNovoOrcamentoLB = New System.Windows.Forms.Label()
         Me.OrcamentosAndamentoTab = New System.Windows.Forms.TabPage()
@@ -67,9 +61,6 @@ Partial Class ControleVendas
         Me.Label4 = New System.Windows.Forms.Label()
         Me.QtdeProdutoAcompanharOrcamentoTF = New System.Windows.Forms.NumericUpDown()
         Me.CodigoProdutoAcompanharOrcamentoTF = New System.Windows.Forms.TextBox()
-        Me.ConfimarProdutoAcompanharOrcamentoIMG = New System.Windows.Forms.PictureBox()
-        Me.SelecionarProdutoAcompanharOrcamentoIMG = New System.Windows.Forms.PictureBox()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.StatusGB = New System.Windows.Forms.GroupBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.StatusOrcamentoCB = New System.Windows.Forms.ComboBox()
@@ -86,19 +77,17 @@ Partial Class ControleVendas
         Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewButtonColumn6 = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.VendarEmAndamentoTP = New System.Windows.Forms.TabPage()
-        Me.VendasAndamentoDG = New System.Windows.Forms.DataGridView()
+        Me.VendasAndamentoTab = New System.Windows.Forms.TabPage()
+        Me.VendasDT = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataUltPgto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Fornecedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NotaFiscal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VerProd = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.VerPgto = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.AcompanharVendaTP = New System.Windows.Forms.TabPage()
+        Me.AcompanharVendaTab = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.ConfirmarProdutoAcompanharVendaIMG = New System.Windows.Forms.PictureBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.TipoPagamentoCB = New System.Windows.Forms.ComboBox()
         Me.Label20 = New System.Windows.Forms.Label()
@@ -146,8 +135,6 @@ Partial Class ControleVendas
         Me.ClienteNomeVisitaLB = New System.Windows.Forms.Label()
         Me.ClienteDocumentoVisitaLB = New System.Windows.Forms.Label()
         Me.SelecionarPorAcompanharVisitaLB = New System.Windows.Forms.Label()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.ExtrairRelatoriosVendasTP = New System.Windows.Forms.TabPage()
         Me.FimDT = New System.Windows.Forms.DateTimePicker()
         Me.InicioDT = New System.Windows.Forms.DateTimePicker()
@@ -190,40 +177,52 @@ Partial Class ControleVendas
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.ClienteIMG = New System.Windows.Forms.PictureBox()
+        Me.ConfirmaProdutoIMG = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.ProdutoOrcamentoIMG = New System.Windows.Forms.PictureBox()
+        Me.ConfimarProdutoAcompanharOrcamentoIMG = New System.Windows.Forms.PictureBox()
+        Me.SelecionarProdutoAcompanharOrcamentoIMG = New System.Windows.Forms.PictureBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.ConfirmarProdutoAcompanharVendaIMG = New System.Windows.Forms.PictureBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.ControleVendasTabControl.SuspendLayout()
         Me.CriarNovoOrcamentoTP.SuspendLayout()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ClienteIMG, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ConfirmaProdutoIMG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.QtdeTF, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProdutosDT, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProdutoOrcamentoIMG, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.OrcamentosAndamentoTab.SuspendLayout()
         CType(Me.OrcamentosDT, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AcompanharOrcamentoTab.SuspendLayout()
         CType(Me.QtdeProdutoAcompanharOrcamentoTF, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ConfimarProdutoAcompanharOrcamentoIMG, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SelecionarProdutoAcompanharOrcamentoIMG, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusGB.SuspendLayout()
         CType(Me.ProdutosAcompanharOrcamentoDT, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.VendarEmAndamentoTP.SuspendLayout()
-        CType(Me.VendasAndamentoDG, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.AcompanharVendaTP.SuspendLayout()
+        Me.VendasAndamentoTab.SuspendLayout()
+        CType(Me.VendasDT, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.AcompanharVendaTab.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.ConfirmarProdutoAcompanharVendaIMG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PagamentosAcompanharVendaDT, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.VisualizarInfoVisitaTP.SuspendLayout()
         CType(Me.InfoVisitaTecnicaDG, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ExtrairRelatoriosVendasTP.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClienteIMG, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ConfirmaProdutoIMG, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProdutoOrcamentoIMG, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ConfimarProdutoAcompanharOrcamentoIMG, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SelecionarProdutoAcompanharOrcamentoIMG, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ConfirmarProdutoAcompanharVendaIMG, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -264,16 +263,6 @@ Partial Class ControleVendas
         Me.NomeTF.TabIndex = 10
         Me.NomeTF.Text = "Nome:"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.NobelTheater.My.Resources.Resources.ControleDeVendasMain
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(116, 100)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.ControleVendasTabControl)
@@ -287,8 +276,8 @@ Partial Class ControleVendas
         Me.ControleVendasTabControl.Controls.Add(Me.CriarNovoOrcamentoTP)
         Me.ControleVendasTabControl.Controls.Add(Me.OrcamentosAndamentoTab)
         Me.ControleVendasTabControl.Controls.Add(Me.AcompanharOrcamentoTab)
-        Me.ControleVendasTabControl.Controls.Add(Me.VendarEmAndamentoTP)
-        Me.ControleVendasTabControl.Controls.Add(Me.AcompanharVendaTP)
+        Me.ControleVendasTabControl.Controls.Add(Me.VendasAndamentoTab)
+        Me.ControleVendasTabControl.Controls.Add(Me.AcompanharVendaTab)
         Me.ControleVendasTabControl.Controls.Add(Me.VisualizarInfoVisitaTP)
         Me.ControleVendasTabControl.Controls.Add(Me.ExtrairRelatoriosVendasTP)
         Me.ControleVendasTabControl.Location = New System.Drawing.Point(9, 10)
@@ -331,27 +320,6 @@ Partial Class ControleVendas
         Me.FinalizarBT.Text = "Finalizar Orçamento"
         Me.FinalizarBT.UseVisualStyleBackColor = True
         '
-        'PictureBox6
-        '
-        Me.PictureBox6.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
-        Me.PictureBox6.Location = New System.Drawing.Point(18, 16)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(27, 20)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox6.TabIndex = 17
-        Me.PictureBox6.TabStop = False
-        '
-        'ClienteIMG
-        '
-        Me.ClienteIMG.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ClienteIMG.Image = Global.NobelTheater.My.Resources.Resources.Busca
-        Me.ClienteIMG.Location = New System.Drawing.Point(619, 16)
-        Me.ClienteIMG.Name = "ClienteIMG"
-        Me.ClienteIMG.Size = New System.Drawing.Size(27, 20)
-        Me.ClienteIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ClienteIMG.TabIndex = 16
-        Me.ClienteIMG.TabStop = False
-        '
         'SelecionarClienteNovoOrcamentoTF
         '
         Me.SelecionarClienteNovoOrcamentoTF.Enabled = False
@@ -368,17 +336,6 @@ Partial Class ControleVendas
         Me.SelecionarClienteNovoOrcamentoLB.Size = New System.Drawing.Size(95, 13)
         Me.SelecionarClienteNovoOrcamentoLB.TabIndex = 14
         Me.SelecionarClienteNovoOrcamentoLB.Text = "Selecionar Cliente:"
-        '
-        'ConfirmaProdutoIMG
-        '
-        Me.ConfirmaProdutoIMG.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ConfirmaProdutoIMG.Image = Global.NobelTheater.My.Resources.Resources.Confirmar
-        Me.ConfirmaProdutoIMG.Location = New System.Drawing.Point(652, 61)
-        Me.ConfirmaProdutoIMG.Name = "ConfirmaProdutoIMG"
-        Me.ConfirmaProdutoIMG.Size = New System.Drawing.Size(27, 20)
-        Me.ConfirmaProdutoIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ConfirmaProdutoIMG.TabIndex = 13
-        Me.ConfirmaProdutoIMG.TabStop = False
         '
         'QtdeTF
         '
@@ -413,7 +370,6 @@ Partial Class ControleVendas
         Me.CodigoProdutoTF.Name = "CodigoProdutoTF"
         Me.CodigoProdutoTF.Size = New System.Drawing.Size(37, 20)
         Me.CodigoProdutoTF.TabIndex = 3
-        Me.CodigoProdutoTF.Text = "52"
         '
         'ProdutosDT
         '
@@ -467,27 +423,6 @@ Partial Class ControleVendas
         Me.Remover.HeaderText = "Remover"
         Me.Remover.Name = "Remover"
         Me.Remover.ReadOnly = True
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
-        Me.PictureBox3.Location = New System.Drawing.Point(18, 61)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(27, 20)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 6
-        Me.PictureBox3.TabStop = False
-        '
-        'ProdutoOrcamentoIMG
-        '
-        Me.ProdutoOrcamentoIMG.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ProdutoOrcamentoIMG.Image = Global.NobelTheater.My.Resources.Resources.Busca
-        Me.ProdutoOrcamentoIMG.Location = New System.Drawing.Point(619, 61)
-        Me.ProdutoOrcamentoIMG.Name = "ProdutoOrcamentoIMG"
-        Me.ProdutoOrcamentoIMG.Size = New System.Drawing.Size(27, 20)
-        Me.ProdutoOrcamentoIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ProdutoOrcamentoIMG.TabIndex = 5
-        Me.ProdutoOrcamentoIMG.TabStop = False
         '
         'SelecionarProdutoNovoOrcamentoTF
         '
@@ -579,13 +514,13 @@ Partial Class ControleVendas
         Me.AcompanharOrcamentoTab.Controls.Add(Me.Label4)
         Me.AcompanharOrcamentoTab.Controls.Add(Me.QtdeProdutoAcompanharOrcamentoTF)
         Me.AcompanharOrcamentoTab.Controls.Add(Me.CodigoProdutoAcompanharOrcamentoTF)
-        Me.AcompanharOrcamentoTab.Controls.Add(Me.ConfimarProdutoAcompanharOrcamentoIMG)
-        Me.AcompanharOrcamentoTab.Controls.Add(Me.SelecionarProdutoAcompanharOrcamentoIMG)
-        Me.AcompanharOrcamentoTab.Controls.Add(Me.PictureBox7)
         Me.AcompanharOrcamentoTab.Controls.Add(Me.StatusGB)
         Me.AcompanharOrcamentoTab.Controls.Add(Me.SalvarAcompanharOrcamentoBT)
         Me.AcompanharOrcamentoTab.Controls.Add(Me.ProdutosAcompanharOrcamentoDT)
         Me.AcompanharOrcamentoTab.Controls.Add(Me.Label3)
+        Me.AcompanharOrcamentoTab.Controls.Add(Me.ConfimarProdutoAcompanharOrcamentoIMG)
+        Me.AcompanharOrcamentoTab.Controls.Add(Me.SelecionarProdutoAcompanharOrcamentoIMG)
+        Me.AcompanharOrcamentoTab.Controls.Add(Me.PictureBox7)
         Me.AcompanharOrcamentoTab.Location = New System.Drawing.Point(4, 22)
         Me.AcompanharOrcamentoTab.Name = "AcompanharOrcamentoTab"
         Me.AcompanharOrcamentoTab.Padding = New System.Windows.Forms.Padding(3)
@@ -651,38 +586,6 @@ Partial Class ControleVendas
         Me.CodigoProdutoAcompanharOrcamentoTF.Name = "CodigoProdutoAcompanharOrcamentoTF"
         Me.CodigoProdutoAcompanharOrcamentoTF.Size = New System.Drawing.Size(37, 20)
         Me.CodigoProdutoAcompanharOrcamentoTF.TabIndex = 37
-        '
-        'ConfimarProdutoAcompanharOrcamentoIMG
-        '
-        Me.ConfimarProdutoAcompanharOrcamentoIMG.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ConfimarProdutoAcompanharOrcamentoIMG.Image = Global.NobelTheater.My.Resources.Resources.Confirmar
-        Me.ConfimarProdutoAcompanharOrcamentoIMG.Location = New System.Drawing.Point(646, 66)
-        Me.ConfimarProdutoAcompanharOrcamentoIMG.Name = "ConfimarProdutoAcompanharOrcamentoIMG"
-        Me.ConfimarProdutoAcompanharOrcamentoIMG.Size = New System.Drawing.Size(27, 20)
-        Me.ConfimarProdutoAcompanharOrcamentoIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ConfimarProdutoAcompanharOrcamentoIMG.TabIndex = 39
-        Me.ConfimarProdutoAcompanharOrcamentoIMG.TabStop = False
-        '
-        'SelecionarProdutoAcompanharOrcamentoIMG
-        '
-        Me.SelecionarProdutoAcompanharOrcamentoIMG.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.SelecionarProdutoAcompanharOrcamentoIMG.Image = Global.NobelTheater.My.Resources.Resources.Busca
-        Me.SelecionarProdutoAcompanharOrcamentoIMG.Location = New System.Drawing.Point(613, 66)
-        Me.SelecionarProdutoAcompanharOrcamentoIMG.Name = "SelecionarProdutoAcompanharOrcamentoIMG"
-        Me.SelecionarProdutoAcompanharOrcamentoIMG.Size = New System.Drawing.Size(27, 20)
-        Me.SelecionarProdutoAcompanharOrcamentoIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.SelecionarProdutoAcompanharOrcamentoIMG.TabIndex = 35
-        Me.SelecionarProdutoAcompanharOrcamentoIMG.TabStop = False
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
-        Me.PictureBox7.Location = New System.Drawing.Point(12, 66)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(27, 20)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox7.TabIndex = 36
-        Me.PictureBox7.TabStop = False
         '
         'StatusGB
         '
@@ -819,72 +722,67 @@ Partial Class ControleVendas
         Me.Label3.TabIndex = 40
         Me.Label3.Text = "Cliente:"
         '
-        'VendarEmAndamentoTP
+        'VendasAndamentoTab
         '
-        Me.VendarEmAndamentoTP.Controls.Add(Me.VendasAndamentoDG)
-        Me.VendarEmAndamentoTP.Location = New System.Drawing.Point(4, 22)
-        Me.VendarEmAndamentoTP.Name = "VendarEmAndamentoTP"
-        Me.VendarEmAndamentoTP.Padding = New System.Windows.Forms.Padding(3)
-        Me.VendarEmAndamentoTP.Size = New System.Drawing.Size(685, 335)
-        Me.VendarEmAndamentoTP.TabIndex = 2
-        Me.VendarEmAndamentoTP.Text = "Vendas em Andamento"
-        Me.VendarEmAndamentoTP.UseVisualStyleBackColor = True
+        Me.VendasAndamentoTab.Controls.Add(Me.VendasDT)
+        Me.VendasAndamentoTab.Location = New System.Drawing.Point(4, 22)
+        Me.VendasAndamentoTab.Name = "VendasAndamentoTab"
+        Me.VendasAndamentoTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.VendasAndamentoTab.Size = New System.Drawing.Size(685, 335)
+        Me.VendasAndamentoTab.TabIndex = 2
+        Me.VendasAndamentoTab.Text = "Vendas em Andamento"
+        Me.VendasAndamentoTab.UseVisualStyleBackColor = True
         '
-        'VendasAndamentoDG
+        'VendasDT
         '
-        Me.VendasAndamentoDG.AllowUserToAddRows = False
-        Me.VendasAndamentoDG.AllowUserToDeleteRows = False
-        Me.VendasAndamentoDG.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.VendasAndamentoDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.VendasAndamentoDG.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataUltPgto, Me.Fornecedor, Me.NotaFiscal, Me.VerProd, Me.VerPgto})
-        Me.VendasAndamentoDG.Location = New System.Drawing.Point(6, 6)
-        Me.VendasAndamentoDG.Name = "VendasAndamentoDG"
-        Me.VendasAndamentoDG.ReadOnly = True
-        Me.VendasAndamentoDG.RowHeadersVisible = False
-        Me.VendasAndamentoDG.Size = New System.Drawing.Size(673, 323)
-        Me.VendasAndamentoDG.TabIndex = 21
+        Me.VendasDT.AllowUserToAddRows = False
+        Me.VendasDT.AllowUserToDeleteRows = False
+        Me.VendasDT.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.VendasDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.VendasDT.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.Fornecedor, Me.NotaFiscal, Me.VerProd})
+        Me.VendasDT.Location = New System.Drawing.Point(6, 6)
+        Me.VendasDT.Name = "VendasDT"
+        Me.VendasDT.ReadOnly = True
+        Me.VendasDT.RowHeadersVisible = False
+        Me.VendasDT.Size = New System.Drawing.Size(673, 323)
+        Me.VendasDT.TabIndex = 21
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 50
         '
         'DataGridViewTextBoxColumn6
         '
         Me.DataGridViewTextBoxColumn6.HeaderText = "Data do Orçamento"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        Me.DataGridViewTextBoxColumn6.Width = 75
         '
         'DataGridViewTextBoxColumn7
         '
         Me.DataGridViewTextBoxColumn7.HeaderText = "Status da Venda"
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         Me.DataGridViewTextBoxColumn7.ReadOnly = True
-        Me.DataGridViewTextBoxColumn7.Width = 75
         '
         'DataGridViewTextBoxColumn8
         '
         Me.DataGridViewTextBoxColumn8.HeaderText = "Data Aprovação"
         Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
         Me.DataGridViewTextBoxColumn8.ReadOnly = True
-        Me.DataGridViewTextBoxColumn8.Width = 75
-        '
-        'DataUltPgto
-        '
-        Me.DataUltPgto.HeaderText = "Data Ult. Pgto"
-        Me.DataUltPgto.Name = "DataUltPgto"
-        Me.DataUltPgto.ReadOnly = True
-        Me.DataUltPgto.Width = 75
         '
         'Fornecedor
         '
         Me.Fornecedor.HeaderText = "Cliente"
         Me.Fornecedor.Name = "Fornecedor"
         Me.Fornecedor.ReadOnly = True
-        Me.Fornecedor.Width = 75
         '
         'NotaFiscal
         '
         Me.NotaFiscal.HeaderText = "NotaFiscal"
         Me.NotaFiscal.Name = "NotaFiscal"
         Me.NotaFiscal.ReadOnly = True
-        Me.NotaFiscal.Width = 75
         '
         'VerProd
         '
@@ -892,25 +790,19 @@ Partial Class ControleVendas
         Me.VerProd.Name = "VerProd"
         Me.VerProd.ReadOnly = True
         '
-        'VerPgto
+        'AcompanharVendaTab
         '
-        Me.VerPgto.HeaderText = "Ver Pagamentos"
-        Me.VerPgto.Name = "VerPgto"
-        Me.VerPgto.ReadOnly = True
-        '
-        'AcompanharVendaTP
-        '
-        Me.AcompanharVendaTP.Controls.Add(Me.GroupBox2)
-        Me.AcompanharVendaTP.Controls.Add(Me.SalvarVendaBT)
-        Me.AcompanharVendaTP.Controls.Add(Me.PagamentosAcompanharVendaDT)
-        Me.AcompanharVendaTP.Controls.Add(Me.GroupBox1)
-        Me.AcompanharVendaTP.Location = New System.Drawing.Point(4, 22)
-        Me.AcompanharVendaTP.Name = "AcompanharVendaTP"
-        Me.AcompanharVendaTP.Padding = New System.Windows.Forms.Padding(3)
-        Me.AcompanharVendaTP.Size = New System.Drawing.Size(685, 335)
-        Me.AcompanharVendaTP.TabIndex = 6
-        Me.AcompanharVendaTP.Text = "Acompanhar Venda"
-        Me.AcompanharVendaTP.UseVisualStyleBackColor = True
+        Me.AcompanharVendaTab.Controls.Add(Me.GroupBox2)
+        Me.AcompanharVendaTab.Controls.Add(Me.SalvarVendaBT)
+        Me.AcompanharVendaTab.Controls.Add(Me.PagamentosAcompanharVendaDT)
+        Me.AcompanharVendaTab.Controls.Add(Me.GroupBox1)
+        Me.AcompanharVendaTab.Location = New System.Drawing.Point(4, 22)
+        Me.AcompanharVendaTab.Name = "AcompanharVendaTab"
+        Me.AcompanharVendaTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.AcompanharVendaTab.Size = New System.Drawing.Size(685, 335)
+        Me.AcompanharVendaTab.TabIndex = 6
+        Me.AcompanharVendaTab.Text = "Acompanhar Venda"
+        Me.AcompanharVendaTab.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -926,17 +818,6 @@ Partial Class ControleVendas
         Me.GroupBox2.Size = New System.Drawing.Size(661, 38)
         Me.GroupBox2.TabIndex = 48
         Me.GroupBox2.TabStop = False
-        '
-        'ConfirmarProdutoAcompanharVendaIMG
-        '
-        Me.ConfirmarProdutoAcompanharVendaIMG.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ConfirmarProdutoAcompanharVendaIMG.Image = Global.NobelTheater.My.Resources.Resources.Confirmar
-        Me.ConfirmarProdutoAcompanharVendaIMG.Location = New System.Drawing.Point(602, 14)
-        Me.ConfirmarProdutoAcompanharVendaIMG.Name = "ConfirmarProdutoAcompanharVendaIMG"
-        Me.ConfirmarProdutoAcompanharVendaIMG.Size = New System.Drawing.Size(27, 20)
-        Me.ConfirmarProdutoAcompanharVendaIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ConfirmarProdutoAcompanharVendaIMG.TabIndex = 26
-        Me.ConfirmarProdutoAcompanharVendaIMG.TabStop = False
         '
         'Label19
         '
@@ -1337,28 +1218,6 @@ Partial Class ControleVendas
         Me.SelecionarPorAcompanharVisitaLB.TabIndex = 0
         Me.SelecionarPorAcompanharVisitaLB.Text = "Selecionar por:"
         '
-        'PictureBox8
-        '
-        Me.PictureBox8.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox8.Image = Global.NobelTheater.My.Resources.Resources.Busca
-        Me.PictureBox8.Location = New System.Drawing.Point(633, 77)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(27, 20)
-        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox8.TabIndex = 21
-        Me.PictureBox8.TabStop = False
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox5.Image = Global.NobelTheater.My.Resources.Resources.Busca
-        Me.PictureBox5.Location = New System.Drawing.Point(633, 46)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(27, 20)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 17
-        Me.PictureBox5.TabStop = False
-        '
         'ExtrairRelatoriosVendasTP
         '
         Me.ExtrairRelatoriosVendasTP.Controls.Add(Me.FimDT)
@@ -1652,6 +1511,134 @@ Partial Class ControleVendas
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.NobelTheater.My.Resources.Resources.ControleDeVendasMain
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(116, 100)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
+        Me.PictureBox6.Location = New System.Drawing.Point(18, 16)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox6.TabIndex = 17
+        Me.PictureBox6.TabStop = False
+        '
+        'ClienteIMG
+        '
+        Me.ClienteIMG.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ClienteIMG.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.ClienteIMG.Location = New System.Drawing.Point(619, 16)
+        Me.ClienteIMG.Name = "ClienteIMG"
+        Me.ClienteIMG.Size = New System.Drawing.Size(27, 20)
+        Me.ClienteIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ClienteIMG.TabIndex = 16
+        Me.ClienteIMG.TabStop = False
+        '
+        'ConfirmaProdutoIMG
+        '
+        Me.ConfirmaProdutoIMG.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ConfirmaProdutoIMG.Image = Global.NobelTheater.My.Resources.Resources.Confirmar
+        Me.ConfirmaProdutoIMG.Location = New System.Drawing.Point(652, 61)
+        Me.ConfirmaProdutoIMG.Name = "ConfirmaProdutoIMG"
+        Me.ConfirmaProdutoIMG.Size = New System.Drawing.Size(27, 20)
+        Me.ConfirmaProdutoIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ConfirmaProdutoIMG.TabIndex = 13
+        Me.ConfirmaProdutoIMG.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
+        Me.PictureBox3.Location = New System.Drawing.Point(18, 61)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 6
+        Me.PictureBox3.TabStop = False
+        '
+        'ProdutoOrcamentoIMG
+        '
+        Me.ProdutoOrcamentoIMG.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ProdutoOrcamentoIMG.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.ProdutoOrcamentoIMG.Location = New System.Drawing.Point(619, 61)
+        Me.ProdutoOrcamentoIMG.Name = "ProdutoOrcamentoIMG"
+        Me.ProdutoOrcamentoIMG.Size = New System.Drawing.Size(27, 20)
+        Me.ProdutoOrcamentoIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ProdutoOrcamentoIMG.TabIndex = 5
+        Me.ProdutoOrcamentoIMG.TabStop = False
+        '
+        'ConfimarProdutoAcompanharOrcamentoIMG
+        '
+        Me.ConfimarProdutoAcompanharOrcamentoIMG.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ConfimarProdutoAcompanharOrcamentoIMG.Image = Global.NobelTheater.My.Resources.Resources.Confirmar
+        Me.ConfimarProdutoAcompanharOrcamentoIMG.Location = New System.Drawing.Point(646, 66)
+        Me.ConfimarProdutoAcompanharOrcamentoIMG.Name = "ConfimarProdutoAcompanharOrcamentoIMG"
+        Me.ConfimarProdutoAcompanharOrcamentoIMG.Size = New System.Drawing.Size(27, 20)
+        Me.ConfimarProdutoAcompanharOrcamentoIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ConfimarProdutoAcompanharOrcamentoIMG.TabIndex = 39
+        Me.ConfimarProdutoAcompanharOrcamentoIMG.TabStop = False
+        '
+        'SelecionarProdutoAcompanharOrcamentoIMG
+        '
+        Me.SelecionarProdutoAcompanharOrcamentoIMG.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SelecionarProdutoAcompanharOrcamentoIMG.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.SelecionarProdutoAcompanharOrcamentoIMG.Location = New System.Drawing.Point(613, 66)
+        Me.SelecionarProdutoAcompanharOrcamentoIMG.Name = "SelecionarProdutoAcompanharOrcamentoIMG"
+        Me.SelecionarProdutoAcompanharOrcamentoIMG.Size = New System.Drawing.Size(27, 20)
+        Me.SelecionarProdutoAcompanharOrcamentoIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.SelecionarProdutoAcompanharOrcamentoIMG.TabIndex = 35
+        Me.SelecionarProdutoAcompanharOrcamentoIMG.TabStop = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
+        Me.PictureBox7.Location = New System.Drawing.Point(12, 66)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox7.TabIndex = 36
+        Me.PictureBox7.TabStop = False
+        '
+        'ConfirmarProdutoAcompanharVendaIMG
+        '
+        Me.ConfirmarProdutoAcompanharVendaIMG.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ConfirmarProdutoAcompanharVendaIMG.Image = Global.NobelTheater.My.Resources.Resources.Confirmar
+        Me.ConfirmarProdutoAcompanharVendaIMG.Location = New System.Drawing.Point(602, 14)
+        Me.ConfirmarProdutoAcompanharVendaIMG.Name = "ConfirmarProdutoAcompanharVendaIMG"
+        Me.ConfirmarProdutoAcompanharVendaIMG.Size = New System.Drawing.Size(27, 20)
+        Me.ConfirmarProdutoAcompanharVendaIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ConfirmarProdutoAcompanharVendaIMG.TabIndex = 26
+        Me.ConfirmarProdutoAcompanharVendaIMG.TabStop = False
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox8.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.PictureBox8.Location = New System.Drawing.Point(633, 77)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 21
+        Me.PictureBox8.TabStop = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox5.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.PictureBox5.Location = New System.Drawing.Point(633, 46)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(27, 20)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 17
+        Me.PictureBox5.TabStop = False
+        '
         'ControleVendas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1665,47 +1652,47 @@ Partial Class ControleVendas
         Me.Text = "Controle de Vendas"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.ControleVendasTabControl.ResumeLayout(False)
         Me.CriarNovoOrcamentoTP.ResumeLayout(False)
         Me.CriarNovoOrcamentoTP.PerformLayout()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ClienteIMG, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ConfirmaProdutoIMG, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.QtdeTF, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProdutosDT, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProdutoOrcamentoIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.OrcamentosAndamentoTab.ResumeLayout(False)
         CType(Me.OrcamentosDT, System.ComponentModel.ISupportInitialize).EndInit()
         Me.AcompanharOrcamentoTab.ResumeLayout(False)
         Me.AcompanharOrcamentoTab.PerformLayout()
         CType(Me.QtdeProdutoAcompanharOrcamentoTF, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ConfimarProdutoAcompanharOrcamentoIMG, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SelecionarProdutoAcompanharOrcamentoIMG, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusGB.ResumeLayout(False)
         Me.StatusGB.PerformLayout()
         CType(Me.ProdutosAcompanharOrcamentoDT, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.VendarEmAndamentoTP.ResumeLayout(False)
-        CType(Me.VendasAndamentoDG, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.AcompanharVendaTP.ResumeLayout(False)
+        Me.VendasAndamentoTab.ResumeLayout(False)
+        CType(Me.VendasDT, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.AcompanharVendaTab.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.ConfirmarProdutoAcompanharVendaIMG, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PagamentosAcompanharVendaDT, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.VisualizarInfoVisitaTP.ResumeLayout(False)
         Me.VisualizarInfoVisitaTP.PerformLayout()
         CType(Me.InfoVisitaTecnicaDG, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ExtrairRelatoriosVendasTP.ResumeLayout(False)
         Me.ExtrairRelatoriosVendasTP.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClienteIMG, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ConfirmaProdutoIMG, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProdutoOrcamentoIMG, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ConfimarProdutoAcompanharOrcamentoIMG, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SelecionarProdutoAcompanharOrcamentoIMG, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ConfirmarProdutoAcompanharVendaIMG, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1730,18 +1717,10 @@ Partial Class ControleVendas
     Friend WithEvents ProdutoOrcamentoIMG As System.Windows.Forms.PictureBox
     Friend WithEvents SelecionarProdutoNovoOrcamentoTF As System.Windows.Forms.TextBox
     Friend WithEvents SelecionarProdutoNovoOrcamentoLB As System.Windows.Forms.Label
-    Friend WithEvents VendarEmAndamentoTP As System.Windows.Forms.TabPage
-    Friend WithEvents VendasAndamentoDG As System.Windows.Forms.DataGridView
+    Friend WithEvents VendasAndamentoTab As System.Windows.Forms.TabPage
+    Friend WithEvents VendasDT As System.Windows.Forms.DataGridView
     Friend WithEvents ExtrairRelatoriosVendasTP As System.Windows.Forms.TabPage
-    Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataUltPgto As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Fornecedor As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents NotaFiscal As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents VerProd As System.Windows.Forms.DataGridViewButtonColumn
-    Friend WithEvents VerPgto As System.Windows.Forms.DataGridViewButtonColumn
-    Friend WithEvents AcompanharVendaTP As System.Windows.Forms.TabPage
+    Friend WithEvents AcompanharVendaTab As System.Windows.Forms.TabPage
     Friend WithEvents VisualizarInfoVisitaTP As System.Windows.Forms.TabPage
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents OpcoesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -1878,4 +1857,11 @@ Partial Class ControleVendas
     Friend WithEvents NumeroNFAcompanharVendaTF As TextBox
     Friend WithEvents ClienteAcompanharVendaTF As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents Fornecedor As DataGridViewTextBoxColumn
+    Friend WithEvents NotaFiscal As DataGridViewTextBoxColumn
+    Friend WithEvents VerProd As DataGridViewButtonColumn
 End Class

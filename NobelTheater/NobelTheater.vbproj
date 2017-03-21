@@ -348,6 +348,12 @@
     <Compile Include="Views\T24 - VerItensOrcados.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\T25 - VerItensVendidos.Designer.vb">
+      <DependentUpon>T25 - VerItensVendidos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\T25 - VerItensVendidos.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\T01 - LoginUsuario.resx">
@@ -427,6 +433,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\T24 - VerItensOrcados.resx">
       <DependentUpon>T24 - VerItensOrcados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\T25 - VerItensVendidos.resx">
+      <DependentUpon>T25 - VerItensVendidos.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

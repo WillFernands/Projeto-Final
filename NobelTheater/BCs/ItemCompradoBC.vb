@@ -24,4 +24,8 @@ Public Class ItemCompradoBC
         Return itemCompradoDAO.FindByNotaFiscal(notaFiscal)
     End Function
 
+    Public Shared Function DeleteByCompra(notaFiscal As NotaFiscalCompra) As Boolean
+        Return itemCompradoDAO.DeleteByCompra(notaFiscal)
+    End Function
+
 End Class

@@ -67,6 +67,16 @@
         'SQLTableManager.CreateItensEmprestimos()
         'SQLTableManager.CreateOrdensServicos()
         'SQLTableManager.CreateItensOrdens()
+        'SQLTableManager.DropNotasFiscaisVendas()
+        'SQLTableManager.CreateNotasFiscaisVendas()
+        'SQLTableManager.DropItensVendidos()
+        'SQLTableManager.CreateItensVendidos()
+        'SQLTableManager.DropPagamentosEfetuados()
+        'SQLTableManager.DropPagamentosRecebidos()
+        'SQLTableManager.CreatePagamentosEfetuados()
+        'SQLTableManager.CreatePagamentosRecebidos()
+        'SQLTableManager.DropVisitasTecnicas()
+        'SQLTableManager.CreateVisitasTecnicas()
     End Sub
 
     Private Sub OK_Click(sender As Object, e As EventArgs) Handles LogarBT.Click

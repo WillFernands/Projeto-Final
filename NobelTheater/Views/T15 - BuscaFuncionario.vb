@@ -9,6 +9,8 @@
             funcionarios = FuncionarioBC.FindBySupervisor(MenuPrincipal.funcionarioLogado)
         ElseIf (Caller = "NovoFuncionario") Then
             funcionarios = FuncionarioBC.FindAll()
+        ElseIf (Caller = "SupervisorCriarVisita") Then
+            funcionarios = FuncionarioBC.FindAll().FindAll(Function(func As Funcionario) func.Perfil = TipoPerfilFuncionario.SupervisorObra)
         End If
         PopulateList()
     End Sub
@@ -41,6 +43,9 @@
             Me.Close()
         ElseIf (Caller = "ControleFuncionario") Then
             ControleFuncionario.PopulateFuncionario(funcionario)
+            Me.Close()
+        ElseIf (Caller = "SupervisorCriarVisita") Then
+            CriarVisitaTecnica.PopulateSupervisor(funcionario)
             Me.Close()
         End If
     End Sub

@@ -10,12 +10,13 @@ Public Class VisitaTecnicaBC
         If (visitaTecnica Is Nothing) Then Return False
         If (visitaTecnica.NotaFiscal Is Nothing) Then Return False
 
-        If (String.IsNullOrWhiteSpace(visitaTecnica.ParecerObra)) Then Return False
         If (visitaTecnica.Preco = 0.0) Then Return False
 
         If (TipoVisita.GetTiposList.Contains(visitaTecnica.Tipo) = False) Then Return False
 
-        If (FuncionarioBC.Validate(visitaTecnica.Supervisor)) Then Return False
+        If (FuncionarioBC.Validate(visitaTecnica.Supervisor) = False) Then Return False
+
+        If (NotaFiscalVendaBC.Validate(visitaTecnica.NotaFiscal) = False) Then Return False
 
         If (visitaTecnica.Data = Nothing) Then Return False
         If (visitaTecnica.Data > Now) Then Return False

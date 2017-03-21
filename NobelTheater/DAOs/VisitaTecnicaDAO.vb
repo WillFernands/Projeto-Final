@@ -10,14 +10,13 @@ Public Class VisitaTecnicaDAO
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("INSERT INTO VisitasTecnicas(idNotaFiscal, dataVisita, tipo, preco, parecerObra, matriculaSupervisor) ")
-        strSQL.Append("VALUES(@idNotaFiscal, @data, @tipo, @preco, @parecerObra, @matriculaSupervisor);")
+        strSQL.Append("INSERT INTO VisitasTecnicas(idNotaFiscal, dataVisita, tipo, preco, matriculaSupervisor) ")
+        strSQL.Append("VALUES(@idNotaFiscal, @data, @tipo, @preco, @matriculaSupervisor);")
 
         conn.AddParameter("@idNotaFiscal", visita.NotaFiscal.ID)
         conn.AddParameter("@data", visita.Data)
         conn.AddParameter("@tipo", visita.Tipo)
         conn.AddParameter("@preco", visita.Preco)
-        conn.AddParameter("@parecerObra", visita.ParecerObra)
         conn.AddParameter("@matriculaSupervisor", visita.Supervisor.Matricula)
 
         Return conn.ExecuteCommand(strSQL.ToString)
@@ -66,7 +65,10 @@ Public Class VisitaTecnicaDAO
             visita.Data = CDate(row.Item("dataVisita"))
             visita.Tipo = CStr(row.Item("tipo"))
             visita.Preco = CDbl(row.Item("preco"))
-            visita.ParecerObra = CStr(row.Item("parecerObra"))
+            If (IsDBNull(row.Item("parecerObra"))) Then
+                visita.ParecerObra = ""
+            Else visita.ParecerObra = CStr(row.Item("parecerObra"))
+            End If
             visita.Supervisor = FuncionarioBC.FindByMatricula(CLng(row.Item("matriculaSupervisor")))
             visita.NotaFiscal = nota
             visitas.Add(visita)

@@ -248,7 +248,7 @@ Public Module SQLTableManager
         strSQL.Append("dataVisita DATETIME NOT NULL, ")
         strSQL.Append("tipo VARCHAR(20) Not NULL, ")
         strSQL.Append("preco FLOAT NOT NULL DEFAULT 0.0, ")
-        strSQL.Append("parecerObra VARCHAR(500) Not NULL, ")
+        strSQL.Append("parecerObra VARCHAR(500) NULL, ")
         strSQL.Append("matriculaSupervisor BIGINT NOT NULL, ")
         strSQL.Append("PRIMARY KEY (idNotaFiscal, dataVisita, tipo), ")
         strSQL.Append("CONSTRAINT VisitasTecnicas_FK FOREIGN KEY (idNotaFiscal) REFERENCES NotasFiscaisVendas (id), ")

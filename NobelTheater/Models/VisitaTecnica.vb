@@ -14,11 +14,10 @@ Public Class VisitaTecnica
 
     End Sub
 
-    Public Sub New(data As Date, tipo As String, preco As Double, parecerObra As String, supervisor As Funcionario, notaFiscal As NotaFiscalVenda)
+    Public Sub New(data As Date, tipo As String, preco As Double, supervisor As Funcionario, notaFiscal As NotaFiscalVenda)
         _data = data
         _tipo = tipo
         _preco = preco
-        _parecerObra = parecerObra
         _supervisor = supervisor
         _notaFiscal = notaFiscal
     End Sub

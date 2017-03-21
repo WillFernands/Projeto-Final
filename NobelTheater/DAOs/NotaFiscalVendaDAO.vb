@@ -6,19 +6,41 @@ Imports System.Text
 Public Class NotaFiscalVendaDAO
 
     'OK
-    Public Function Insert(ByVal notaFiscal As NotaFiscalVenda) As Boolean
+    Public Function Insert(ByVal notaFiscal As NotaFiscalVenda) As Long
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
-        strSQL.Append("INSERT INTO NotasFiscaisVendas(statusNF, emissaoNF, numeroNF, dataAprovacao, dataFinalObra, idOrcamento) ")
-        strSQL.Append("VALUES(@status, @emissao, @numero, @dataAprovacao, @dataFinalObra, @idOrcamento);")
+        strSQL.Append("INSERT INTO NotasFiscaisVendas(statusNF, emissaoNF, numeroNF, dataAprovacao, idOrcamento) ")
+        strSQL.Append("VALUES(@status, @emissao, @numero, @dataAprovacao, @idOrcamento);")
 
         conn.AddParameter("@status", notaFiscal.Status)
         conn.AddParameter("@emissao", notaFiscal.EmissaoNF)
         conn.AddParameter("@numero", notaFiscal.NumeroNF)
         conn.AddParameter("@dataAprovacao", notaFiscal.DataAprovacao)
-        conn.AddParameter("@dataFinalObra", notaFiscal.DataFinalObra)
-        conn.AddParameter("@idOrcamento", notaFiscal.Orcamento.ID)
+        conn.AddParameter("@idOrcamento", notaFiscal.Orcamento.Id)
+
+        If (conn.ExecuteCommand(strSQL.ToString) = False) Then Return 0
+
+        conn = New Connection
+        Return CLng(conn.ExecuteScalar("SELECT IDENT_CURRENT('NotasFiscaisVendas')"))
+
+    End Function
+
+    'OK
+    Public Function Update(ByVal notaFiscal As NotaFiscalVenda) As Boolean
+        Dim conn As New Connection
+        Dim strSQL As New StringBuilder
+
+        strSQL.Append("UPDATE NotasFiscaisVendas ")
+        strSQL.Append("SET statusNF = @status, ")
+        strSQL.Append("emissaoNF = @emissao, ")
+        strSQL.Append("numeroNF = @numero ")
+        strSQL.Append("WHERE id = @id;")
+
+        conn.AddParameter("@status", notaFiscal.Status)
+        conn.AddParameter("@emissao", notaFiscal.EmissaoNF)
+        conn.AddParameter("@numero", notaFiscal.NumeroNF)
+        conn.AddParameter("@id", notaFiscal.Id)
 
         Return conn.ExecuteCommand(strSQL.ToString)
 
@@ -30,7 +52,7 @@ Public Class NotaFiscalVendaDAO
         Dim strSQL As New StringBuilder
 
         strSQL.Append("UPDATE NotasFiscaisVendas ")
-        strSQL.Append("SET status = @status ")
+        strSQL.Append("SET statusNF = @status ")
         strSQL.Append("WHERE id = @id;")
 
         conn.AddParameter("@status", notaFiscal.Status)
@@ -39,6 +61,8 @@ Public Class NotaFiscalVendaDAO
         Return conn.ExecuteCommand(strSQL.ToString)
 
     End Function
+
+
 
     'OK
     Public Function FindAll() As List(Of NotaFiscalVenda)
@@ -53,7 +77,10 @@ Public Class NotaFiscalVendaDAO
             Dim notaFiscal As New NotaFiscalVenda()
             notaFiscal.ID = CLng(row.Item("id"))
             notaFiscal.DataAprovacao = CDate(row.Item("dataAprovacao"))
-            notaFiscal.DataFinalObra = CDate(row.Item("dataFinalObra"))
+            If (IsDBNull(row.Item("dataFinalObra"))) Then
+            Else notaFiscal.DataFinalObra = Nothing
+                notaFiscal.DataFinalObra = CDate(row.Item("dataFinalObra"))
+            End If
             notaFiscal.Status = CStr(row.Item("statusNF"))
             notaFiscal.EmissaoNF = CDate(row.Item("emissaoNF"))
             notaFiscal.NumeroNF = CStr(row.Item("numeroNF"))
@@ -77,7 +104,7 @@ Public Class NotaFiscalVendaDAO
 
         conn.AddParameter("@status", status)
 
-        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM NotasFiscaisVendas WHERE status = @status;")
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM NotasFiscaisVendas WHERE statusNF = @status;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of NotaFiscalVenda)
 
@@ -88,7 +115,10 @@ Public Class NotaFiscalVendaDAO
             Dim notaFiscal As New NotaFiscalVenda()
             notaFiscal.Id = CLng(row.Item("id"))
             notaFiscal.DataAprovacao = CDate(row.Item("dataAprovacao"))
-            notaFiscal.DataFinalObra = CDate(row.Item("dataFinalObra"))
+            If (IsDBNull(row.Item("dataFinalObra"))) Then
+            Else notaFiscal.DataFinalObra = Nothing
+                notaFiscal.DataFinalObra = CDate(row.Item("dataFinalObra"))
+            End If
             notaFiscal.Status = CStr(row.Item("statusNF"))
             notaFiscal.EmissaoNF = CDate(row.Item("emissaoNF"))
             notaFiscal.NumeroNF = CStr(row.Item("numeroNF"))
@@ -121,7 +151,10 @@ Public Class NotaFiscalVendaDAO
         Dim notaFiscal As New NotaFiscalVenda()
         notaFiscal.Id = CLng(dt.Rows(0).Item("id"))
         notaFiscal.DataAprovacao = CDate(dt.Rows(0).Item("dataAprovacao"))
-        notaFiscal.DataFinalObra = CDate(dt.Rows(0).Item("dataFinalObra"))
+        If (IsDBNull(dt.Rows(0).Item("dataFinalObra"))) Then
+        Else notaFiscal.DataFinalObra = Nothing
+            notaFiscal.DataFinalObra = CDate(dt.Rows(0).Item("dataFinalObra"))
+        End If
         notaFiscal.Status = CStr(dt.Rows(0).Item("statusNF"))
         notaFiscal.EmissaoNF = CDate(dt.Rows(0).Item("emissaoNF"))
         notaFiscal.NumeroNF = CStr(dt.Rows(0).Item("numeroNF"))

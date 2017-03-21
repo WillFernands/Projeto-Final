@@ -160,6 +160,7 @@
     End Sub
 
     Private Sub PopulateAcompanharOrcamento()
+        If (orcamentoAtual Is Nothing) Then Exit Sub
         ClienteAcompanharOrcamentoTF.Text = orcamentoAtual.Cliente.ID & " - " & orcamentoAtual.Cliente.Nome
         VendedorAcompanharOrcamentoTF.Text = orcamentoAtual.Vendedor.Matricula & " - " & orcamentoAtual.Vendedor.Nome
         StatusOrcamentoCB.Text = orcamentoAtual.Status
@@ -290,12 +291,20 @@
     End Sub
 
     Private Sub AcompanharOrcamentoTab_Enter(sender As Object, e As EventArgs) Handles AcompanharOrcamentoTab.Enter
-        StatusVendaAcompanharVendaCB.Items.AddRange(StatusVenda.GetStatusList().ToArray)
-        TipoPagamentoCB.Items.AddRange(TipoPagamento.GetTiposList().ToArray)
-        PopulateAcompanharVendaTab()
+        StatusOrcamentoCB.Items.Clear()
+        StatusOrcamentoCB.Items.AddRange(StatusOrcamento.GetStatusList().ToArray)
+        PopulateAcompanharOrcamento()
     End Sub
 
-    Private Sub PopulateAcompanharVendaTab()
+    Private Sub AcompanharVendaTab_Enter(sender As Object, e As EventArgs) Handles AcompanharVendaTab.Enter
+        StatusVendaAcompanharVendaCB.Items.Clear()
+        TipoPagamentoCB.Items.Clear()
+        StatusVendaAcompanharVendaCB.Items.AddRange(StatusOrcamento.GetStatusList().ToArray)
+        TipoPagamentoCB.Items.AddRange(TipoPagamento.GetTiposList().ToArray)
+        PopulateAcompanharVenda()
+    End Sub
+
+    Private Sub PopulateAcompanharVenda()
         If (vendaAtual IsNot Nothing) Then
             ClienteAcompanharVendaTF.Text = vendaAtual.Orcamento.Cliente.ID & " - " & vendaAtual.Orcamento.Cliente.Nome
             VendedorAcompanharVendaTF.Text = vendaAtual.Orcamento.Vendedor.Matricula & " - " & vendaAtual.Orcamento.Vendedor.Nome
@@ -329,5 +338,108 @@
             RefreshDTPagamentosAcompanharVenda()
             Exit Sub
         End If
+    End Sub
+
+    Private Sub ConfirmarProdutoAcompanharVendaIMG_Click(sender As Object, e As EventArgs) Handles ConfirmarProdutoAcompanharVendaIMG.Click
+        Dim pgto As New PagamentoRecebido(StatusPagamento.Finalizado, ValorPgtoTF.Text, DataPagamentoTF.Text, TipoPagamentoCB.Text, vendaAtual)
+        vendaAtual.PagamentosRecebidos.Add(pgto)
+        ValorPgtoTF.Text = ""
+        TipoPagamentoCB.Text = ""
+        DataPagamentoTF.Text = ""
+        RefreshDTPagamentosAcompanharVenda()
+    End Sub
+
+    Private Sub SalvarVendaBT_Click(sender As Object, e As EventArgs) Handles SalvarVendaBT.Click
+
+        If (String.IsNullOrWhiteSpace(NumeroNFAcompanharVendaTF.Text)) Then
+            MsgBox("Número da Nota Fiscal não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(DataEmissaoAcompanharVendaTF.Text)) Then
+            MsgBox("Data de emissão da Nota Fiscal não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(StatusVendaAcompanharVendaCB.Text)) Then
+            MsgBox("Status da nota fiscal não preenchida", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        End If
+
+        vendaAtual.Status = StatusVendaAcompanharVendaCB.Text
+        vendaAtual.NumeroNF = NumeroNFAcompanharVendaTF.Text
+        vendaAtual.EmissaoNF = DataEmissaoAcompanharVendaTF.Text
+
+        PagamentoRecebidoBC.DeleteByVenda(vendaAtual)
+
+        NotaFiscalVendaBC.Update(vendaAtual)
+
+        For Each pgto As PagamentoRecebido In vendaAtual.PagamentosRecebidos
+            pgto.NotaFiscal = vendaAtual
+
+            If (PagamentoRecebidoBC.Insert(pgto) = False) Then
+                MsgBox("Um problema ocorreu durante a criação de um pagamento", vbInformation Or vbMsgBoxSetForeground)
+                Exit Sub
+            End If
+        Next
+
+        MsgBox("Venda Atualizada com sucesso !!", vbInformation Or vbMsgBoxSetForeground)
+
+    End Sub
+
+    Private Sub VendasAndamentoTab_Enter(sender As Object, e As EventArgs) Handles VendasAndamentoTab.Enter
+        RefreshDTVendas()
+    End Sub
+
+    Private Sub RefreshDTVendas()
+        VendasDT.Rows.Clear()
+
+        For Each venda As NotaFiscalVenda In NotaFiscalVendaBC.FindAll()
+            Dim list As New List(Of Object)
+            list.Add(venda.Id) : list.Add(venda.Orcamento.DataOrcamento) : list.Add(venda.Status) : list.Add(venda.DataAprovacao) : list.Add(venda.Orcamento.Cliente.ID & " - " & venda.Orcamento.Cliente.Nome) : list.Add(venda.NumeroNF) : list.Add("Ver Produtos")
+            VendasDT.Rows.Add(list.ToArray())
+        Next
+    End Sub
+
+    Private Sub VendasDT_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles VendasDT.CellContentClick
+        If (VendasDT.SelectedCells Is Nothing OrElse e.RowIndex = -1) Then Exit Sub
+
+        If (e.ColumnIndex = 6 AndAlso VendasDT.SelectedCells.Item(0).Value = "Ver Produtos") Then
+            Dim visualizacao As New VerItensVendidos()
+            visualizacao.ProdutosList = NotaFiscalVendaBC.FindByID(VendasDT.Item(0, e.RowIndex).Value).ItensVendidos
+            visualizacao.Show()
+            Exit Sub
+        Else
+            If (MsgBox("Essa ação lhe redirecionará a aba de Acompanhar Venda, continuar ?", vbYesNo Or vbInformation Or vbMsgBoxSetForeground) = vbYes) Then
+                ClearAcompanharVenda()
+                vendaAtual = NotaFiscalVendaBC.FindByID(VendasDT.Item(0, e.RowIndex).Value)
+                PopulateAcompanharVenda()
+                ControleVendasTabControl.SelectTab(4)
+            End If
+        End If
+
+    End Sub
+
+
+    Private Sub ClearAcompanharVenda()
+        vendaAtual = Nothing
+        ClienteAcompanharVendaTF.Text = ""
+        VendedorAcompanharVendaTF.Text = ""
+        DataOrcamentoAcompanharVendaTF.Text = ""
+        NumeroNFAcompanharVendaTF.Text = ""
+        DataEmissaoAcompanharVendaTF.Text = ""
+        DataAprovacaoAcompanharVendaTF.Text = ""
+        StatusVendaAcompanharVendaCB.Text = ""
+        DataPagamentoTF.Text = ""
+        TipoPagamentoCB.Text = ""
+        ValorPgtoTF.Text = ""
+        PagamentosAcompanharVendaDT.Rows.Clear()
+    End Sub
+
+    Private Sub VerItensAcompanharVendaBT_Click(sender As Object, e As EventArgs) Handles VerItensAcompanharVendaBT.Click
+        Dim visualizacao As New VerItensVendidos()
+        visualizacao.ProdutosList = NotaFiscalVendaBC.FindByID(vendaAtual.Id).ItensVendidos
+        visualizacao.Show()
+    End Sub
+
+    Private Sub CriarVisitaAcompanharVendaBT_Click(sender As Object, e As EventArgs) Handles CriarVisitaAcompanharVendaBT.Click
+        CriarVisitaTecnica.PopulateVenda(vendaAtual)
+        CriarVisitaTecnica.Show()
     End Sub
 End Class

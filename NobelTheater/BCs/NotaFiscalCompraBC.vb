@@ -45,6 +45,13 @@ Public Class NotaFiscalCompraBC
         Return False
     End Function
 
+    Public Shared Function Update(notaFiscalCompra As NotaFiscalCompra) As Boolean
+        If (NotaFiscalCompraBC.Validate(notaFiscalCompra)) Then
+            Return notaFiscalCompraDAO.Update(notaFiscalCompra)
+        End If
+        Return False
+    End Function
+
     Public Shared Function FindByID(id As Long) As NotaFiscalCompra
         Return notaFiscalCompraDAO.FindByID(id)
     End Function

@@ -63,6 +63,7 @@ Public Class OrcamentoDAO
             orcamento.Vendedor = FuncionarioBC.FindByMatricula(CLng(row.Item("matriculaVendedor")))
             orcamento.Cliente = cliente
             orcamento.Status = CStr(row.Item("statusOrcamento"))
+            orcamento.ItensOrcados = ItemOrcadoBC.FindByOrcamento(orcamento)
             orcamentos.Add(orcamento)
         Next
 
@@ -88,6 +89,7 @@ Public Class OrcamentoDAO
             orcamento.Vendedor = FuncionarioBC.FindByMatricula(CLng(row.Item("matriculaVendedor")))
             orcamento.Cliente = ClienteBC.FindByID(CLng(row.Item("idCliente")))
             orcamento.Status = CStr(row.Item("statusOrcamento"))
+            orcamento.ItensOrcados = ItemOrcadoBC.FindByOrcamento(orcamento)
             orcamentos.Add(orcamento)
         Next
 
@@ -117,6 +119,7 @@ Public Class OrcamentoDAO
             orcamento.Vendedor = vendedor
             orcamento.Cliente = ClienteBC.FindByID(CLng(row.Item("idCliente")))
             orcamento.Status = CStr(row.Item("statusOrcamento"))
+            orcamento.ItensOrcados = ItemOrcadoBC.FindByOrcamento(orcamento)
             orcamentos.Add(orcamento)
         Next
 
@@ -143,6 +146,7 @@ Public Class OrcamentoDAO
         orcamento.Vendedor = FuncionarioBC.FindByMatricula(CLng(dt.Rows(0).Item("matriculaVendedor")))
         orcamento.Cliente = ClienteBC.FindByID(CLng(dt.Rows(0).Item("idCliente")))
         orcamento.Status = CStr(dt.Rows(0).Item("statusOrcamento"))
+        orcamento.ItensOrcados = ItemOrcadoBC.FindByOrcamento(orcamento)
 
         Return orcamento
 

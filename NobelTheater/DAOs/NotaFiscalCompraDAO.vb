@@ -27,12 +27,32 @@ Public Class NotaFiscalCompraDAO
     End Function
 
     'OK
+    Public Function Update(ByVal notaFiscal As NotaFiscalCompra) As Boolean
+        Dim conn As New Connection
+        Dim strSQL As New StringBuilder
+
+        strSQL.Append("UPDATE NotasFiscaisCompras ")
+        strSQL.Append("SET statusNF = @status, ")
+        strSQL.Append("emissaoNF = @emissao, ")
+        strSQL.Append("numeroNF = @numero ")
+        strSQL.Append("WHERE id = @id;")
+
+        conn.AddParameter("@status", notaFiscal.Status)
+        conn.AddParameter("@emissao", notaFiscal.EmissaoNF)
+        conn.AddParameter("@numero", notaFiscal.NumeroNF)
+        conn.AddParameter("@id", notaFiscal.ID)
+
+        Return conn.ExecuteCommand(strSQL.ToString)
+
+    End Function
+
+    'OK
     Public Function UpdateStatus(ByVal notaFiscal As NotaFiscalCompra) As Boolean
         Dim conn As New Connection
         Dim strSQL As New StringBuilder
 
         strSQL.Append("UPDATE NotasFiscaisCompras ")
-        strSQL.Append("SET status = @status ")
+        strSQL.Append("SET statusNF = @status ")
         strSQL.Append("WHERE id = @id;")
 
         conn.AddParameter("@status", notaFiscal.Status)
@@ -77,7 +97,7 @@ Public Class NotaFiscalCompraDAO
 
         conn.AddParameter("@status", status)
 
-        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM NotasFiscaisCompras WHERE status = @status;")
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM NotasFiscaisCompras WHERE statusNF = @status;")
 
         If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of NotaFiscalCompra)
 

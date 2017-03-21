@@ -24,4 +24,8 @@ Public Class ItemVendidoBC
         Return itemVendidoDAO.FindByNotaFiscal(notaFiscal)
     End Function
 
+    Public Shared Function DeleteByVenda(notaFiscal As NotaFiscalVenda) As Boolean
+        Return itemVendidoDAO.DeleteByVenda(notaFiscal)
+    End Function
+
 End Class

@@ -204,7 +204,7 @@
         End If
     End Sub
 
-    Private Sub ComprasAndamentoTab_GotFocus(sender As Object, e As EventArgs) Handles ComprasAndamentoTab.Enter
+    Private Sub ComprasAndamentoTab_Enter(sender As Object, e As EventArgs) Handles ComprasAndamentoTab.Enter
         RefreshDTCompras()
     End Sub
 
@@ -227,7 +227,7 @@
 
         For Each compra As NotaFiscalCompra In NotaFiscalCompraBC.FindAll()
             Dim list As New List(Of Object)
-            list.Add(compra.ID) : list.Add(compra.Cotacao.DataCotacao) : list.Add(compra.Status) : list.Add(compra.DataAprovacao) : list.Add(compra.Cotacao.Fornecedor.Cnpj & " - " & compra.Cotacao.Fornecedor.NomeFantasia) : list.Add(compra.NumeroNF) : list.Add("Ver Produtos") : list.Add("Ver Pagamentos")
+            list.Add(compra.ID) : list.Add(compra.Cotacao.DataCotacao) : list.Add(compra.Status) : list.Add(compra.DataAprovacao) : list.Add(compra.Cotacao.Fornecedor.Cnpj & " - " & compra.Cotacao.Fornecedor.NomeFantasia) : list.Add(compra.NumeroNF) : list.Add("Ver Produtos")
             ComprasDT.Rows.Add(list.ToArray())
         Next
     End Sub
@@ -282,6 +282,7 @@
     End Sub
 
     Private Sub AcompanharCotacaoTab_Enter(sender As Object, e As EventArgs) Handles AcompanharCotacaoTab.Enter
+        StatusCotacaoCB.Items.Clear()
         StatusCotacaoCB.Items.AddRange(StatusCotacao.GetStatusList().ToArray())
         EnableNFControls()
     End Sub
@@ -507,6 +508,7 @@
     End Sub
 
     Private Sub AcompanharCompraTab_Enter(sender As Object, e As EventArgs) Handles AcompanharCompraTab.Enter
+        StatusCompraAcompanharCompraCB.Items.Clear()
         StatusCompraAcompanharCompraCB.Items.AddRange(StatusCompra.GetStatusList().ToArray)
         TipoPagamentoCB.Items.AddRange(TipoPagamento.GetTiposList().ToArray)
         PopulateAcompanharCompraTab()
@@ -897,4 +899,47 @@
             Exit Sub
         End If
     End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Dim pgto As New PagamentoEfetuado(StatusPagamento.Finalizado, ValorPgtoTF.Text, DataPagamentoTF.Text, TipoPagamentoCB.Text, compraAtual)
+        compraAtual.Pagamentos.Add(pgto)
+        ValorPgtoTF.Text = ""
+        DataPagamentoTF.Text = ""
+        TipoPagamentoCB.Text = ""
+        RefreshDTPagamentosAcompanharCompra()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If (String.IsNullOrWhiteSpace(NumeroNFAcompanharCompraTF.Text)) Then
+            MsgBox("Número da Nota Fiscal não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(DataEmissaoAcompanharCompraTF.Text)) Then
+            MsgBox("Data de emissão da Nota Fiscal não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(StatusCompraAcompanharCompraCB.Text)) Then
+            MsgBox("Status da nota fiscal não preenchida", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        End If
+
+        compraAtual.NumeroNF = NumeroNFAcompanharCompraTF.Text
+        compraAtual.EmissaoNF = DataEmissaoAcompanharCompraTF.Text
+        compraAtual.Status = StatusCompraAcompanharCompraCB.Text
+
+        PagamentoEfetuadoBC.DeleteByCompra(compraAtual)
+
+        NotaFiscalCompraBC.Update(compraAtual)
+
+        For Each pgto As PagamentoEfetuado In compraAtual.Pagamentos
+            pgto.NotaFiscal = compraAtual
+
+            If (PagamentoEfetuadoBC.Insert(pgto) = False) Then
+                MsgBox("Um problema ocorreu durante a criação de um pagamento", vbInformation Or vbMsgBoxSetForeground)
+                Exit Sub
+            End If
+        Next
+
+        MsgBox("Compra Atualizada com sucesso !!", vbInformation Or vbMsgBoxSetForeground)
+
+    End Sub
+
 End Class

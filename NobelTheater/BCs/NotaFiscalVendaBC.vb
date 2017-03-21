@@ -21,7 +21,6 @@ Public Class NotaFiscalVendaBC
         If (OrcamentoBC.Validate(notaFiscalVenda.Orcamento) = False) Then Return False
 
         If (notaFiscalVenda.ItensVendidos Is Nothing) Then Return False
-        If (notaFiscalVenda.ItensVendidos.Count = 0) Then Return False
 
         For Each item As ItemVendido In notaFiscalVenda.ItensVendidos
             If (ItemVendidoBC.Validate(item) = False) Then Return False
@@ -43,16 +42,23 @@ Public Class NotaFiscalVendaBC
         Return True
     End Function
 
-    Public Shared Function Insert(notaFiscalVenda As NotaFiscalVenda) As Boolean
+    Public Shared Function Insert(notaFiscalVenda As NotaFiscalVenda) As Long
         If (NotaFiscalVendaBC.Validate(notaFiscalVenda)) Then
             Return notaFiscalVendaDAO.Insert(notaFiscalVenda)
         End If
-        Return False
+        Return 0
     End Function
 
     Public Shared Function UpdateStatus(notaFiscalVenda As NotaFiscalVenda) As Boolean
         If (NotaFiscalVendaBC.Validate(notaFiscalVenda)) Then
             Return notaFiscalVendaDAO.UpdateStatus(notaFiscalVenda)
+        End If
+        Return False
+    End Function
+
+    Public Shared Function Update(notaFiscalVenda As NotaFiscalVenda) As Boolean
+        If (NotaFiscalVendaBC.Validate(notaFiscalVenda)) Then
+            Return notaFiscalVendaDAO.Update(notaFiscalVenda)
         End If
         Return False
     End Function

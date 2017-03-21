@@ -34,4 +34,8 @@ Public Class PagamentoRecebidoBC
         Return pagamentoRecebidoDAO.FindByNotaFiscal(notaFiscal)
     End Function
 
+    Public Shared Function DeleteByVenda(notaFiscal As NotaFiscalVenda) As Boolean
+        Return pagamentoRecebidoDAO.DeleteByVenda(notaFiscal)
+    End Function
+
 End Class

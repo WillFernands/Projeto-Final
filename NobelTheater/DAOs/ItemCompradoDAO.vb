@@ -48,5 +48,18 @@ Public Class ItemCompradoDAO
 
     End Function
 
+    'OK
+    Public Function DeleteByCompra(compra As NotaFiscalCompra) As Boolean
+
+        If (compra Is Nothing) Then Return False
+
+        Dim conn As New Connection
+
+        conn.AddParameter("@idNotaFiscal", compra.ID)
+
+        Return conn.ExecuteCommand("DELETE FROM ItensComprados WHERE idNotaFiscal = @idNotaFiscal;")
+
+    End Function
+
 End Class
 
