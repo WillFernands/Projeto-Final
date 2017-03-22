@@ -79,6 +79,39 @@ Public Class VisitaTecnicaDAO
     End Function
 
     'OK
+    Public Function FindBySupervisor(supervisor As Funcionario) As List(Of VisitaTecnica)
+
+        If (supervisor Is Nothing) Then Return Nothing
+
+        Dim conn As New Connection
+
+        conn.AddParameter("@matricula", supervisor.Matricula)
+
+        Dim dt As DataTable = conn.ExecuteSelect("SELECT * FROM VisitasTecnicas WHERE matriculaSupervisor = @matricula;")
+
+        If (dt Is Nothing OrElse dt.Rows.Count = 0) Then Return New List(Of VisitaTecnica)
+
+        Dim visitas As New List(Of VisitaTecnica)
+
+        For Each row As DataRow In dt.Rows
+            Dim visita As New VisitaTecnica()
+            visita.Data = CDate(row.Item("dataVisita"))
+            visita.Tipo = CStr(row.Item("tipo"))
+            visita.Preco = CDbl(row.Item("preco"))
+            If (IsDBNull(row.Item("parecerObra"))) Then
+                visita.ParecerObra = ""
+            Else visita.ParecerObra = CStr(row.Item("parecerObra"))
+            End If
+            visita.Supervisor = supervisor
+            visita.NotaFiscal = NotaFiscalVendaBC.FindByID(CLng(row.Item("idNotaFiscal")))
+            visitas.Add(visita)
+        Next
+
+        Return visitas
+
+    End Function
+
+    'OK
     Public Function DeleteByVenda(venda As NotaFiscalVenda) As Boolean
 
         If (venda Is Nothing) Then Return False

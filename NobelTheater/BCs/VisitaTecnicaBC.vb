@@ -41,6 +41,10 @@ Public Class VisitaTecnicaBC
         Return visitaTecnicaDAO.FindByNotaFiscal(notaFiscal)
     End Function
 
+    Public Shared Function FindBySupervisor(supervisor As Funcionario) As List(Of VisitaTecnica)
+        Return visitaTecnicaDAO.FindBySupervisor(supervisor)
+    End Function
+
     Friend Shared Function DeleteByVenda(vendaAtual As NotaFiscalVenda) As Boolean
         Return visitaTecnicaDAO.DeleteByVenda(vendaAtual)
     End Function

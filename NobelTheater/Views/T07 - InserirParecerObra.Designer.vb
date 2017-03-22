@@ -59,30 +59,31 @@ Partial Class InserirParecerObra
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PerfilTF = New System.Windows.Forms.Label()
+        Me.MatriculaTF = New System.Windows.Forms.Label()
+        Me.NomeTF = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.ClienteTF = New System.Windows.Forms.TextBox()
         Me.SalvarParecerBT = New System.Windows.Forms.Button()
         Me.MotivoVisitaCB = New System.Windows.Forms.ComboBox()
         Me.MotivoVisitaParecerObraLB = New System.Windows.Forms.Label()
         Me.ParecerObraTF = New System.Windows.Forms.TextBox()
-        Me.VendaTF = New System.Windows.Forms.TextBox()
-        Me.ClienteParecerObraLB = New System.Windows.Forms.Label()
         Me.DescricaoParecerObraLB = New System.Windows.Forms.Label()
-        Me.SupervisorResponsavelTF = New System.Windows.Forms.TextBox()
-        Me.SupervisorResponsavelLB = New System.Windows.Forms.Label()
-        Me.PerfilTF = New System.Windows.Forms.Label()
-        Me.MatriculaTF = New System.Windows.Forms.Label()
-        Me.NomeTF = New System.Windows.Forms.Label()
-        Me.FornecedorIMG = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.ClienteTF = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.PrecoTF = New System.Windows.Forms.TextBox()
+        Me.PrecoLB = New System.Windows.Forms.Label()
+        Me.VisitasDT = New System.Windows.Forms.DataGridView()
+        Me.DataCol = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TipoCol = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecoCol = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        CType(Me.FornecedorIMG, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VisitasDT, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -325,113 +326,6 @@ Partial Class InserirParecerObra
         Me.Panel1.Size = New System.Drawing.Size(705, 100)
         Me.Panel1.TabIndex = 12
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.NobelTheater.My.Resources.Resources.ParecerDaObraMain
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(116, 100)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Controls.Add(Me.ClienteTF)
-        Me.Panel2.Controls.Add(Me.PictureBox2)
-        Me.Panel2.Controls.Add(Me.FornecedorIMG)
-        Me.Panel2.Controls.Add(Me.SalvarParecerBT)
-        Me.Panel2.Controls.Add(Me.MotivoVisitaCB)
-        Me.Panel2.Controls.Add(Me.MotivoVisitaParecerObraLB)
-        Me.Panel2.Controls.Add(Me.ParecerObraTF)
-        Me.Panel2.Controls.Add(Me.VendaTF)
-        Me.Panel2.Controls.Add(Me.ClienteParecerObraLB)
-        Me.Panel2.Controls.Add(Me.DescricaoParecerObraLB)
-        Me.Panel2.Controls.Add(Me.SupervisorResponsavelTF)
-        Me.Panel2.Controls.Add(Me.SupervisorResponsavelLB)
-        Me.Panel2.Location = New System.Drawing.Point(12, 138)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(705, 305)
-        Me.Panel2.TabIndex = 13
-        '
-        'SalvarParecerBT
-        '
-        Me.SalvarParecerBT.Location = New System.Drawing.Point(299, 269)
-        Me.SalvarParecerBT.Name = "SalvarParecerBT"
-        Me.SalvarParecerBT.Size = New System.Drawing.Size(106, 23)
-        Me.SalvarParecerBT.TabIndex = 11
-        Me.SalvarParecerBT.Text = "Finalizar Parecer"
-        Me.SalvarParecerBT.UseVisualStyleBackColor = True
-        '
-        'MotivoVisitaCB
-        '
-        Me.MotivoVisitaCB.FormattingEnabled = True
-        Me.MotivoVisitaCB.Location = New System.Drawing.Point(143, 135)
-        Me.MotivoVisitaCB.Name = "MotivoVisitaCB"
-        Me.MotivoVisitaCB.Size = New System.Drawing.Size(523, 21)
-        Me.MotivoVisitaCB.TabIndex = 3
-        '
-        'MotivoVisitaParecerObraLB
-        '
-        Me.MotivoVisitaParecerObraLB.AutoSize = True
-        Me.MotivoVisitaParecerObraLB.Location = New System.Drawing.Point(15, 138)
-        Me.MotivoVisitaParecerObraLB.Name = "MotivoVisitaParecerObraLB"
-        Me.MotivoVisitaParecerObraLB.Size = New System.Drawing.Size(85, 13)
-        Me.MotivoVisitaParecerObraLB.TabIndex = 6
-        Me.MotivoVisitaParecerObraLB.Text = "Motivo da Visita:"
-        '
-        'ParecerObraTF
-        '
-        Me.ParecerObraTF.Location = New System.Drawing.Point(143, 182)
-        Me.ParecerObraTF.Multiline = True
-        Me.ParecerObraTF.Name = "ParecerObraTF"
-        Me.ParecerObraTF.Size = New System.Drawing.Size(523, 72)
-        Me.ParecerObraTF.TabIndex = 4
-        '
-        'VendaTF
-        '
-        Me.VendaTF.Enabled = False
-        Me.VendaTF.Location = New System.Drawing.Point(143, 58)
-        Me.VendaTF.Name = "VendaTF"
-        Me.VendaTF.Size = New System.Drawing.Size(473, 20)
-        Me.VendaTF.TabIndex = 2
-        '
-        'ClienteParecerObraLB
-        '
-        Me.ClienteParecerObraLB.AutoSize = True
-        Me.ClienteParecerObraLB.Location = New System.Drawing.Point(15, 61)
-        Me.ClienteParecerObraLB.Name = "ClienteParecerObraLB"
-        Me.ClienteParecerObraLB.Size = New System.Drawing.Size(41, 13)
-        Me.ClienteParecerObraLB.TabIndex = 0
-        Me.ClienteParecerObraLB.Text = "Venda:"
-        '
-        'DescricaoParecerObraLB
-        '
-        Me.DescricaoParecerObraLB.AutoSize = True
-        Me.DescricaoParecerObraLB.Location = New System.Drawing.Point(15, 185)
-        Me.DescricaoParecerObraLB.Name = "DescricaoParecerObraLB"
-        Me.DescricaoParecerObraLB.Size = New System.Drawing.Size(99, 13)
-        Me.DescricaoParecerObraLB.TabIndex = 2
-        Me.DescricaoParecerObraLB.Text = "Descrição da Obra:"
-        '
-        'SupervisorResponsavelTF
-        '
-        Me.SupervisorResponsavelTF.Enabled = False
-        Me.SupervisorResponsavelTF.Location = New System.Drawing.Point(143, 17)
-        Me.SupervisorResponsavelTF.Name = "SupervisorResponsavelTF"
-        Me.SupervisorResponsavelTF.Size = New System.Drawing.Size(473, 20)
-        Me.SupervisorResponsavelTF.TabIndex = 1
-        '
-        'SupervisorResponsavelLB
-        '
-        Me.SupervisorResponsavelLB.AutoSize = True
-        Me.SupervisorResponsavelLB.Location = New System.Drawing.Point(15, 20)
-        Me.SupervisorResponsavelLB.Name = "SupervisorResponsavelLB"
-        Me.SupervisorResponsavelLB.Size = New System.Drawing.Size(125, 13)
-        Me.SupervisorResponsavelLB.TabIndex = 0
-        Me.SupervisorResponsavelLB.Text = "Supervisor Responsável:"
-        '
         'PerfilTF
         '
         Me.PerfilTF.AutoSize = True
@@ -459,44 +353,156 @@ Partial Class InserirParecerObra
         Me.NomeTF.TabIndex = 10
         Me.NomeTF.Text = "Nome:"
         '
-        'FornecedorIMG
+        'PictureBox1
         '
-        Me.FornecedorIMG.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.FornecedorIMG.Image = Global.NobelTheater.My.Resources.Resources.Busca
-        Me.FornecedorIMG.Location = New System.Drawing.Point(639, 17)
-        Me.FornecedorIMG.Name = "FornecedorIMG"
-        Me.FornecedorIMG.Size = New System.Drawing.Size(27, 20)
-        Me.FornecedorIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.FornecedorIMG.TabIndex = 17
-        Me.FornecedorIMG.TabStop = False
+        Me.PictureBox1.Image = Global.NobelTheater.My.Resources.Resources.ParecerDaObraMain
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(116, 100)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
-        'PictureBox2
+        'Panel2
         '
-        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox2.Image = Global.NobelTheater.My.Resources.Resources.Busca
-        Me.PictureBox2.Location = New System.Drawing.Point(639, 58)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(27, 20)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 18
-        Me.PictureBox2.TabStop = False
-        '
-        'ClienteTF
-        '
-        Me.ClienteTF.Enabled = False
-        Me.ClienteTF.Location = New System.Drawing.Point(143, 96)
-        Me.ClienteTF.Name = "ClienteTF"
-        Me.ClienteTF.Size = New System.Drawing.Size(473, 20)
-        Me.ClienteTF.TabIndex = 19
+        Me.Panel2.Controls.Add(Me.VisitasDT)
+        Me.Panel2.Controls.Add(Me.PrecoTF)
+        Me.Panel2.Controls.Add(Me.PrecoLB)
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.ClienteTF)
+        Me.Panel2.Controls.Add(Me.SalvarParecerBT)
+        Me.Panel2.Controls.Add(Me.MotivoVisitaCB)
+        Me.Panel2.Controls.Add(Me.MotivoVisitaParecerObraLB)
+        Me.Panel2.Controls.Add(Me.ParecerObraTF)
+        Me.Panel2.Controls.Add(Me.DescricaoParecerObraLB)
+        Me.Panel2.Location = New System.Drawing.Point(12, 138)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(705, 305)
+        Me.Panel2.TabIndex = 13
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(15, 99)
+        Me.Label1.Location = New System.Drawing.Point(15, 95)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(42, 13)
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "Cliente:"
+        '
+        'ClienteTF
+        '
+        Me.ClienteTF.Enabled = False
+        Me.ClienteTF.Location = New System.Drawing.Point(143, 92)
+        Me.ClienteTF.Name = "ClienteTF"
+        Me.ClienteTF.Size = New System.Drawing.Size(543, 20)
+        Me.ClienteTF.TabIndex = 19
+        '
+        'SalvarParecerBT
+        '
+        Me.SalvarParecerBT.Location = New System.Drawing.Point(299, 269)
+        Me.SalvarParecerBT.Name = "SalvarParecerBT"
+        Me.SalvarParecerBT.Size = New System.Drawing.Size(106, 23)
+        Me.SalvarParecerBT.TabIndex = 11
+        Me.SalvarParecerBT.Text = "Finalizar Parecer"
+        Me.SalvarParecerBT.UseVisualStyleBackColor = True
+        '
+        'MotivoVisitaCB
+        '
+        Me.MotivoVisitaCB.Enabled = False
+        Me.MotivoVisitaCB.FormattingEnabled = True
+        Me.MotivoVisitaCB.Location = New System.Drawing.Point(143, 122)
+        Me.MotivoVisitaCB.Name = "MotivoVisitaCB"
+        Me.MotivoVisitaCB.Size = New System.Drawing.Size(543, 21)
+        Me.MotivoVisitaCB.TabIndex = 3
+        '
+        'MotivoVisitaParecerObraLB
+        '
+        Me.MotivoVisitaParecerObraLB.AutoSize = True
+        Me.MotivoVisitaParecerObraLB.Location = New System.Drawing.Point(15, 125)
+        Me.MotivoVisitaParecerObraLB.Name = "MotivoVisitaParecerObraLB"
+        Me.MotivoVisitaParecerObraLB.Size = New System.Drawing.Size(85, 13)
+        Me.MotivoVisitaParecerObraLB.TabIndex = 6
+        Me.MotivoVisitaParecerObraLB.Text = "Motivo da Visita:"
+        '
+        'ParecerObraTF
+        '
+        Me.ParecerObraTF.Location = New System.Drawing.Point(143, 182)
+        Me.ParecerObraTF.Multiline = True
+        Me.ParecerObraTF.Name = "ParecerObraTF"
+        Me.ParecerObraTF.Size = New System.Drawing.Size(543, 72)
+        Me.ParecerObraTF.TabIndex = 4
+        '
+        'DescricaoParecerObraLB
+        '
+        Me.DescricaoParecerObraLB.AutoSize = True
+        Me.DescricaoParecerObraLB.Location = New System.Drawing.Point(15, 185)
+        Me.DescricaoParecerObraLB.Name = "DescricaoParecerObraLB"
+        Me.DescricaoParecerObraLB.Size = New System.Drawing.Size(99, 13)
+        Me.DescricaoParecerObraLB.TabIndex = 2
+        Me.DescricaoParecerObraLB.Text = "Descrição da Obra:"
+        '
+        'PrecoTF
+        '
+        Me.PrecoTF.Enabled = False
+        Me.PrecoTF.Location = New System.Drawing.Point(143, 152)
+        Me.PrecoTF.Name = "PrecoTF"
+        Me.PrecoTF.Size = New System.Drawing.Size(147, 20)
+        Me.PrecoTF.TabIndex = 21
+        '
+        'PrecoLB
+        '
+        Me.PrecoLB.AutoSize = True
+        Me.PrecoLB.Location = New System.Drawing.Point(15, 155)
+        Me.PrecoLB.Name = "PrecoLB"
+        Me.PrecoLB.Size = New System.Drawing.Size(38, 13)
+        Me.PrecoLB.TabIndex = 22
+        Me.PrecoLB.Text = "Preço:"
+        '
+        'VisitasDT
+        '
+        Me.VisitasDT.AllowUserToAddRows = False
+        Me.VisitasDT.AllowUserToDeleteRows = False
+        Me.VisitasDT.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.VisitasDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.VisitasDT.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataCol, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn3, Me.TipoCol, Me.PrecoCol})
+        Me.VisitasDT.Location = New System.Drawing.Point(18, 13)
+        Me.VisitasDT.Name = "VisitasDT"
+        Me.VisitasDT.ReadOnly = True
+        Me.VisitasDT.RowHeadersVisible = False
+        Me.VisitasDT.Size = New System.Drawing.Size(668, 66)
+        Me.VisitasDT.TabIndex = 23
+        '
+        'DataCol
+        '
+        Me.DataCol.HeaderText = "Data"
+        Me.DataCol.Name = "DataCol"
+        Me.DataCol.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Supervisor"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 175
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Cliente"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Width = 175
+        '
+        'TipoCol
+        '
+        Me.TipoCol.HeaderText = "Tipo"
+        Me.TipoCol.Name = "TipoCol"
+        Me.TipoCol.ReadOnly = True
+        '
+        'PrecoCol
+        '
+        Me.PrecoCol.HeaderText = "Preço"
+        Me.PrecoCol.Name = "PrecoCol"
+        Me.PrecoCol.ReadOnly = True
         '
         'InserirParecerObra
         '
@@ -516,8 +522,7 @@ Partial Class InserirParecerObra
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.FornecedorIMG, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VisitasDT, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -562,19 +567,21 @@ Partial Class InserirParecerObra
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents ParecerObraTF As System.Windows.Forms.TextBox
-    Friend WithEvents VendaTF As System.Windows.Forms.TextBox
-    Friend WithEvents ClienteParecerObraLB As System.Windows.Forms.Label
     Friend WithEvents DescricaoParecerObraLB As System.Windows.Forms.Label
-    Friend WithEvents SupervisorResponsavelTF As System.Windows.Forms.TextBox
-    Friend WithEvents SupervisorResponsavelLB As System.Windows.Forms.Label
     Friend WithEvents MotivoVisitaCB As System.Windows.Forms.ComboBox
     Friend WithEvents MotivoVisitaParecerObraLB As System.Windows.Forms.Label
     Friend WithEvents SalvarParecerBT As System.Windows.Forms.Button
     Friend WithEvents PerfilTF As Label
     Friend WithEvents MatriculaTF As Label
     Friend WithEvents NomeTF As Label
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents FornecedorIMG As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents ClienteTF As TextBox
+    Friend WithEvents PrecoTF As TextBox
+    Friend WithEvents PrecoLB As Label
+    Friend WithEvents VisitasDT As DataGridView
+    Friend WithEvents DataCol As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents TipoCol As DataGridViewTextBoxColumn
+    Friend WithEvents PrecoCol As DataGridViewTextBoxColumn
 End Class
