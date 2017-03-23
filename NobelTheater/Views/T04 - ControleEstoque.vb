@@ -277,7 +277,7 @@
         ProdutosAcompanharCotacaoDT.Sort(ProdutosAcompanharCotacaoDT.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
     End Sub
 
-    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
+    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click, PictureBox18.Click
         ControleFornecedor.Show()
     End Sub
 
@@ -942,4 +942,71 @@
 
     End Sub
 
+    Private Sub PictureBox13_Click(sender As Object, e As EventArgs) Handles PictureBox13.Click, PictureBox10.Click
+        ControleCliente.Show()
+    End Sub
+
+    Private Sub CriarProdutoTab_Enter(sender As Object, e As EventArgs) Handles CriarProdutoTab.Enter
+        TipoProdutoCB.Items.Clear()
+        TipoProdutoCB.Items.AddRange(TipoProduto.GetTiposList().ToArray())
+        UnidadeProdutoCB.Items.Clear()
+        UnidadeProdutoCB.Items.AddRange(UnidadeProduto.GetUnidadesList().ToArray())
+    End Sub
+
+    Private Sub LimparNovoProdutoBT_Click(sender As Object, e As EventArgs) Handles LimparNovoProdutoBT.Click
+        LimparProduto()
+    End Sub
+
+    Private Sub LimparProduto()
+        NomeNovoProdutoTF.Text = ""
+        PrecoUnitarioTF.Text = ""
+        TipoProdutoCB.Text = ""
+        UnidadeProdutoCB.Text = ""
+        DescriçãoTF.Text = ""
+        ImagemTF.Text = ""
+        ProdutoImagemIMG.Image = Nothing
+    End Sub
+
+    Private Sub SalvarNovoProdutoBT_Click(sender As Object, e As EventArgs) Handles SalvarNovoProdutoBT.Click
+        If (String.IsNullOrWhiteSpace(NomeNovoProdutoTF.Text)) Then
+            MsgBox("Nome do produto não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(PrecoUnitarioTF.Text)) Then
+            MsgBox("Preço unitário do produto não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(TipoProdutoCB.Text)) Then
+            MsgBox("Tipo do produto não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(UnidadeProdutoCB.Text)) Then
+            MsgBox("Unidade do produto não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        ElseIf (String.IsNullOrWhiteSpace(DescriçãoTF.Text)) Then
+            MsgBox("Descrição do produto não preenchido", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        End If
+
+        Dim produto As New Produto(NomeNovoProdutoTF.Text, PrecoUnitarioTF.Text, DescriçãoTF.Text, TipoProdutoCB.Text, UnidadeProdutoCB.Text)
+
+        If (String.IsNullOrWhiteSpace(ImagemTF.Text) = False) Then
+            produto.Imagem = ProdutoImagemIMG.Image
+        End If
+
+        If (ProdutoBC.Insert(produto) = False) Then
+            MsgBox("Um problema ocorreu durante a criação do produto", vbInformation Or vbMsgBoxSetForeground)
+            Exit Sub
+        End If
+
+        MsgBox("Produto incluido com sucesso !!", vbInformation Or vbMsgBoxSetForeground)
+        LimparProduto()
+    End Sub
+
+    Private Sub ProcurarArquivoBT_Click(sender As Object, e As EventArgs) Handles ProcurarArquivoBT.Click
+        OpenFileDialog1.ShowDialog()
+    End Sub
+
+    Private Sub OpenFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog1.FileOk
+        ImagemTF.Text = OpenFileDialog1.FileName
+        Dim image As New Bitmap(OpenFileDialog1.OpenFile())
+        ProdutoImagemIMG.Image = image
+    End Sub
 End Class

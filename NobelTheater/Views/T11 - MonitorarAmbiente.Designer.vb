@@ -22,12 +22,9 @@ Partial Class MonitorarAmbiente
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.VideoPB = New System.Windows.Forms.PictureBox()
+        Me.VideoIMG = New System.Windows.Forms.PictureBox()
         Me.IniciarStreamingBT = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -66,26 +63,31 @@ Partial Class MonitorarAmbiente
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        CType(Me.VideoPB, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SalvarImagemBT = New System.Windows.Forms.Button()
+        Me.PerfilTF = New System.Windows.Forms.Label()
+        Me.MatriculaTF = New System.Windows.Forms.Label()
+        Me.NomeTF = New System.Windows.Forms.Label()
+        Me.PararStreamingBT = New System.Windows.Forms.Button()
+        CType(Me.VideoIMG, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'VideoPB
+        'VideoIMG
         '
-        Me.VideoPB.Image = Global.NobelTheater.My.Resources.Resources.camblue
-        Me.VideoPB.Location = New System.Drawing.Point(4, 3)
-        Me.VideoPB.Name = "VideoPB"
-        Me.VideoPB.Size = New System.Drawing.Size(698, 327)
-        Me.VideoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.VideoPB.TabIndex = 0
-        Me.VideoPB.TabStop = False
+        Me.VideoIMG.Image = Global.NobelTheater.My.Resources.Resources.camblue
+        Me.VideoIMG.Location = New System.Drawing.Point(4, 3)
+        Me.VideoIMG.Name = "VideoIMG"
+        Me.VideoIMG.Size = New System.Drawing.Size(698, 327)
+        Me.VideoIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.VideoIMG.TabIndex = 0
+        Me.VideoIMG.TabStop = False
         '
         'IniciarStreamingBT
         '
-        Me.IniciarStreamingBT.Location = New System.Drawing.Point(303, 340)
+        Me.IniciarStreamingBT.Location = New System.Drawing.Point(166, 340)
         Me.IniciarStreamingBT.Name = "IniciarStreamingBT"
         Me.IniciarStreamingBT.Size = New System.Drawing.Size(99, 23)
         Me.IniciarStreamingBT.TabIndex = 1
@@ -94,41 +96,14 @@ Partial Class MonitorarAmbiente
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.PerfilTF)
+        Me.Panel1.Controls.Add(Me.MatriculaTF)
+        Me.Panel1.Controls.Add(Me.NomeTF)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Location = New System.Drawing.Point(12, 32)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(705, 100)
         Me.Panel1.TabIndex = 9
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(140, 72)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(149, 13)
-        Me.Label5.TabIndex = 3
-        Me.Label5.Text = "Perfil de Acesso: Patrocinador"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(140, 44)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(88, 13)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Matrícula: 00150"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(140, 16)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(120, 13)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Nome: Leonardo Nunes"
         '
         'PictureBox1
         '
@@ -142,7 +117,9 @@ Partial Class MonitorarAmbiente
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.VideoPB)
+        Me.Panel2.Controls.Add(Me.PararStreamingBT)
+        Me.Panel2.Controls.Add(Me.SalvarImagemBT)
+        Me.Panel2.Controls.Add(Me.VideoIMG)
         Me.Panel2.Controls.Add(Me.IniciarStreamingBT)
         Me.Panel2.Location = New System.Drawing.Point(12, 131)
         Me.Panel2.Name = "Panel2"
@@ -378,6 +355,51 @@ Partial Class MonitorarAmbiente
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
+        'SalvarImagemBT
+        '
+        Me.SalvarImagemBT.Location = New System.Drawing.Point(440, 340)
+        Me.SalvarImagemBT.Name = "SalvarImagemBT"
+        Me.SalvarImagemBT.Size = New System.Drawing.Size(99, 23)
+        Me.SalvarImagemBT.TabIndex = 2
+        Me.SalvarImagemBT.Text = "Salvar Imagem"
+        Me.SalvarImagemBT.UseVisualStyleBackColor = True
+        '
+        'PerfilTF
+        '
+        Me.PerfilTF.AutoSize = True
+        Me.PerfilTF.Location = New System.Drawing.Point(140, 72)
+        Me.PerfilTF.Name = "PerfilTF"
+        Me.PerfilTF.Size = New System.Drawing.Size(86, 13)
+        Me.PerfilTF.TabIndex = 15
+        Me.PerfilTF.Text = "Perfil de Acesso:"
+        '
+        'MatriculaTF
+        '
+        Me.MatriculaTF.AutoSize = True
+        Me.MatriculaTF.Location = New System.Drawing.Point(140, 44)
+        Me.MatriculaTF.Name = "MatriculaTF"
+        Me.MatriculaTF.Size = New System.Drawing.Size(55, 13)
+        Me.MatriculaTF.TabIndex = 14
+        Me.MatriculaTF.Text = "Matrícula:"
+        '
+        'NomeTF
+        '
+        Me.NomeTF.AutoSize = True
+        Me.NomeTF.Location = New System.Drawing.Point(140, 16)
+        Me.NomeTF.Name = "NomeTF"
+        Me.NomeTF.Size = New System.Drawing.Size(38, 13)
+        Me.NomeTF.TabIndex = 13
+        Me.NomeTF.Text = "Nome:"
+        '
+        'PararStreamingBT
+        '
+        Me.PararStreamingBT.Location = New System.Drawing.Point(303, 340)
+        Me.PararStreamingBT.Name = "PararStreamingBT"
+        Me.PararStreamingBT.Size = New System.Drawing.Size(99, 23)
+        Me.PararStreamingBT.TabIndex = 3
+        Me.PararStreamingBT.Text = "Parar Streaming"
+        Me.PararStreamingBT.UseVisualStyleBackColor = True
+        '
         'MonitorarAmbiente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -389,7 +411,7 @@ Partial Class MonitorarAmbiente
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "MonitorarAmbiente"
         Me.Text = "Monitorar Ambiente"
-        CType(Me.VideoPB, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VideoIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -400,12 +422,9 @@ Partial Class MonitorarAmbiente
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents VideoPB As System.Windows.Forms.PictureBox
+    Friend WithEvents VideoIMG As System.Windows.Forms.PictureBox
     Friend WithEvents IniciarStreamingBT As System.Windows.Forms.Button
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
@@ -444,4 +463,9 @@ Partial Class MonitorarAmbiente
     Friend WithEvents ClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NovoClienteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AcompanharClienteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SalvarImagemBT As Button
+    Friend WithEvents PerfilTF As Label
+    Friend WithEvents MatriculaTF As Label
+    Friend WithEvents NomeTF As Label
+    Friend WithEvents PararStreamingBT As Button
 End Class

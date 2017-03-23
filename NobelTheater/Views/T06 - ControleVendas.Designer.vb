@@ -131,6 +131,7 @@ Partial Class ControleVendas
         Me.DataPagamentoTF = New System.Windows.Forms.TextBox()
         Me.ValorPgtoTF = New System.Windows.Forms.TextBox()
         Me.VisualizarVisitasTab = New System.Windows.Forms.TabPage()
+        Me.TipoVisitaCB = New System.Windows.Forms.ComboBox()
         Me.VisitasDT = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -191,7 +192,6 @@ Partial Class ControleVendas
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TipoVisitaCB = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -1231,6 +1231,14 @@ Partial Class ControleVendas
         Me.VisualizarVisitasTab.Text = "Visualizar Visitas Tecnicas"
         Me.VisualizarVisitasTab.UseVisualStyleBackColor = True
         '
+        'TipoVisitaCB
+        '
+        Me.TipoVisitaCB.FormattingEnabled = True
+        Me.TipoVisitaCB.Location = New System.Drawing.Point(343, 176)
+        Me.TipoVisitaCB.Name = "TipoVisitaCB"
+        Me.TipoVisitaCB.Size = New System.Drawing.Size(121, 21)
+        Me.TipoVisitaCB.TabIndex = 50
+        '
         'VisitasDT
         '
         Me.VisitasDT.AllowUserToAddRows = False
@@ -1671,14 +1679,6 @@ Partial Class ControleVendas
         Me.AcompanharClienteToolStripMenuItem.Name = "AcompanharClienteToolStripMenuItem"
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
-        '
-        'TipoVisitaCB
-        '
-        Me.TipoVisitaCB.FormattingEnabled = True
-        Me.TipoVisitaCB.Location = New System.Drawing.Point(343, 176)
-        Me.TipoVisitaCB.Name = "TipoVisitaCB"
-        Me.TipoVisitaCB.Size = New System.Drawing.Size(121, 21)
-        Me.TipoVisitaCB.TabIndex = 50
         '
         'ControleVendas
         '

@@ -222,4 +222,18 @@ Public Module GenericUtils
         Return pass
     End Function
 
+    Public Function ConvertImage(ByVal img As Image) As Byte()
+
+        Dim stream As New MemoryStream
+        img.Save(stream, Imaging.ImageFormat.Jpeg)
+
+        Dim myBytes(CInt(stream.Length - 1)) As Byte
+        stream.Position = 0
+
+        stream.Read(myBytes, 0, CInt(stream.Length))
+
+        Return myBytes
+
+    End Function
+
 End Module

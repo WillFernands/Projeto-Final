@@ -1,7 +1,10 @@
-﻿Public Class LoginUsuario
+﻿Imports MjpegProcessor
+
+Public Class LoginUsuario
     Implements IMessageFilter 'Allows an application to capture a message before it is dispatched to a control or form
 
     Private errorCounter As Integer = 0
+    Private WithEvents decoder As New MjpegDecoder
     Public Shared secondsCount As Integer = 0 'Counts innactivity
 
     Public Function PreFilterMessage(ByRef m As Message) As Boolean Implements IMessageFilter.PreFilterMessage
@@ -169,12 +172,18 @@
 
             RegistroPontoBC.Insert(registro)
 
-            MsgBox("Ponto registrado com sucesso", vbInformation Or vbMsgBoxSetForeground)
 
+            decoder.ParseStream(New Uri("http://192.168.2.200/img/video.mjpeg"))
+            MsgBox("Ponto registrado com sucesso", vbInformation Or vbMsgBoxSetForeground)
         Else
             MsgBox("Funcionário não cadastrado", vbInformation Or vbMsgBoxSetForeground)
             Exit Sub
         End If
+    End Sub
+
+    Private Sub Decoder_FrameReady(sender As Object, e As FrameReadyEventArgs) Handles decoder.FrameReady
+        DirectCast(e.Bitmap, Image).Save("C:\Users\Leonardo\Desktop\teste " & Replace(Now, "/", "-") & ".jpeg")
+        decoder.StopStream()
     End Sub
 
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles EsqueciSenhaLL.LinkClicked

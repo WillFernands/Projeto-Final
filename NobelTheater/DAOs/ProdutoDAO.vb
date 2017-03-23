@@ -21,12 +21,15 @@ Public Class ProdutoDAO
 
         If (conn.ExecuteCommand(strSQL.ToString) = False) Then Return 0
 
-        If (produto.Imagem IsNot Nothing) Then
-            UpdateImage(produto)
-        End If
+
 
         conn = New Connection
-        Return CLng(conn.ExecuteScalar("SELECT IDENT_CURRENT('Produtos')"))
+
+        produto.Codigo = CLng(conn.ExecuteScalar("SELECT IDENT_CURRENT('Produtos')"))
+
+        If (produto.Imagem IsNot Nothing) Then UpdateImage(produto)
+
+        Return produto.Codigo
 
     End Function
 
@@ -60,7 +63,7 @@ Public Class ProdutoDAO
     Public Function UpdateImage(ByVal produto As Produto) As Boolean
         Dim conn As New Connection
 
-        conn.AddParameter("@imagem", produto.Imagem)
+        conn.AddParameter("@imagem", ConvertImage(produto.Imagem))
         conn.AddParameter("@codigo", produto.Codigo)
 
         Return conn.ExecuteCommand("UPDATE Produtos SET imagem = @imagem WHERE codigo = @codigo;")
@@ -86,7 +89,7 @@ Public Class ProdutoDAO
             produto.Tipo = CStr(row.Item("tipo"))
             produto.Unidade = CStr(row.Item("unidade"))
             If (IsDBNull(row.Item("imagem")) = False) Then
-                produto.Imagem = DirectCast(row.Item("imagem"), Image)
+                produto.Imagem = Image.FromStream(New IO.MemoryStream(DirectCast(row.Item("imagem"), Byte())))
             End If
             produtos.Add(produto)
         Next
@@ -116,7 +119,7 @@ Public Class ProdutoDAO
         produto.Tipo = CStr(dt.Rows(0).Item("tipo"))
         produto.Unidade = CStr(dt.Rows(0).Item("unidade"))
         If (IsDBNull(dt.Rows(0).Item("imagem")) = False) Then
-            produto.Imagem = DirectCast(dt.Rows(0).Item("imagem"), Image)
+            produto.Imagem = Image.FromStream(New IO.MemoryStream(DirectCast(row.Item("imagem"), Byte())))
         End If
         Return produto
 

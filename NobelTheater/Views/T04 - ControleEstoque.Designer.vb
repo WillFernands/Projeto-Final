@@ -29,7 +29,7 @@ Partial Class ControleEstoque
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ControleEstoqueTab = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.CriarCotacaoTab = New System.Windows.Forms.TabPage()
         Me.FinalizarBT = New System.Windows.Forms.Button()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.FornecedorIMG = New System.Windows.Forms.PictureBox()
@@ -51,7 +51,7 @@ Partial Class ControleEstoque
         Me.ProdutoCotacaoIMG = New System.Windows.Forms.PictureBox()
         Me.NomeProdutoTF = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.AlertasEstoqueTab = New System.Windows.Forms.TabPage()
         Me.AlertasDT = New System.Windows.Forms.DataGridView()
         Me.DataAlerta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -136,7 +136,7 @@ Partial Class ControleEstoque
         Me.Label15 = New System.Windows.Forms.Label()
         Me.DataEmissaoAcompanharCompraTF = New System.Windows.Forms.TextBox()
         Me.NumeroNFAcompanharCompraTF = New System.Windows.Forms.TextBox()
-        Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.EmprestarProdutoTab = New System.Windows.Forms.TabPage()
         Me.PictureBox13 = New System.Windows.Forms.PictureBox()
         Me.FinalizarEmprestimoBT = New System.Windows.Forms.Button()
         Me.QtdeEmprestarProdutoTF = New System.Windows.Forms.NumericUpDown()
@@ -174,7 +174,7 @@ Partial Class ControleEstoque
         Me.FinalizarSolicitacao = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.PictureBox14 = New System.Windows.Forms.PictureBox()
         Me.PictureBox15 = New System.Windows.Forms.PictureBox()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.EnviarProdutoAssistenciaTab = New System.Windows.Forms.TabPage()
         Me.EnviarParaAssistenciaBT = New System.Windows.Forms.Button()
         Me.ProdutosOrdemDT = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -214,12 +214,25 @@ Partial Class ControleEstoque
         Me.FinalizarSolicitacaoEnvioAssistencia = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.SelecionarProdutoAtualEnvioAssistenciaIMG = New System.Windows.Forms.PictureBox()
         Me.SelecionarClienteAtualEnvioAssistenciaIMG = New System.Windows.Forms.PictureBox()
-        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.ExtrairRelatoriosTab = New System.Windows.Forms.TabPage()
         Me.FimDT = New System.Windows.Forms.DateTimePicker()
         Me.InicioDT = New System.Windows.Forms.DateTimePicker()
         Me.DeLB = New System.Windows.Forms.Label()
         Me.AteLB = New System.Windows.Forms.Label()
         Me.GerarRelatorioCompraBT = New System.Windows.Forms.Button()
+        Me.CriarProdutoTab = New System.Windows.Forms.TabPage()
+        Me.TipoProdutoCB = New System.Windows.Forms.ComboBox()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.DescriçãoTF = New System.Windows.Forms.TextBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.PrecoUnitarioTF = New System.Windows.Forms.TextBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.LimparNovoProdutoBT = New System.Windows.Forms.Button()
+        Me.SalvarNovoProdutoBT = New System.Windows.Forms.Button()
+        Me.UnidadeProdutoCB = New System.Windows.Forms.ComboBox()
+        Me.UnidadeLB = New System.Windows.Forms.Label()
+        Me.NomeNovoProdutoTF = New System.Windows.Forms.TextBox()
+        Me.NomeLB = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.OpcoesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -256,11 +269,16 @@ Partial Class ControleEstoque
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.ImagemTF = New System.Windows.Forms.TextBox()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.ProcurarArquivoBT = New System.Windows.Forms.Button()
+        Me.ProdutoImagemIMG = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.ControleEstoqueTab.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
+        Me.CriarCotacaoTab.SuspendLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FornecedorIMG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConfirmaProdutoIMG, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -268,7 +286,7 @@ Partial Class ControleEstoque
         CType(Me.ProdutosDT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProdutoCotacaoIMG, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage2.SuspendLayout()
+        Me.AlertasEstoqueTab.SuspendLayout()
         CType(Me.AlertasDT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProdutoAlertaIMG, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CotacoesAndamentoTab.SuspendLayout()
@@ -287,7 +305,7 @@ Partial Class ControleEstoque
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PagamentosAcompanharCompraDT, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        Me.TabPage8.SuspendLayout()
+        Me.EmprestarProdutoTab.SuspendLayout()
         CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.QtdeEmprestarProdutoTF, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProdutosEmprestimoDT, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -299,7 +317,7 @@ Partial Class ControleEstoque
         CType(Me.ProdutosEmprestadosDT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage3.SuspendLayout()
+        Me.EnviarProdutoAssistenciaTab.SuspendLayout()
         CType(Me.ProdutosOrdemDT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SelecionarAssistenciaEnvioAssistenciaIMG, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -313,8 +331,10 @@ Partial Class ControleEstoque
         CType(Me.ProdutosEnviadosAssistenciaDT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SelecionarProdutoAtualEnvioAssistenciaIMG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SelecionarClienteAtualEnvioAssistenciaIMG, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage5.SuspendLayout()
+        Me.ExtrairRelatoriosTab.SuspendLayout()
+        Me.CriarProdutoTab.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.ProdutoImagemIMG, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -375,47 +395,48 @@ Partial Class ControleEstoque
         '
         'ControleEstoqueTab
         '
-        Me.ControleEstoqueTab.Controls.Add(Me.TabPage1)
-        Me.ControleEstoqueTab.Controls.Add(Me.TabPage2)
+        Me.ControleEstoqueTab.Controls.Add(Me.CriarCotacaoTab)
+        Me.ControleEstoqueTab.Controls.Add(Me.AlertasEstoqueTab)
         Me.ControleEstoqueTab.Controls.Add(Me.CotacoesAndamentoTab)
         Me.ControleEstoqueTab.Controls.Add(Me.AcompanharCotacaoTab)
         Me.ControleEstoqueTab.Controls.Add(Me.ComprasAndamentoTab)
         Me.ControleEstoqueTab.Controls.Add(Me.AcompanharCompraTab)
-        Me.ControleEstoqueTab.Controls.Add(Me.TabPage8)
+        Me.ControleEstoqueTab.Controls.Add(Me.EmprestarProdutoTab)
         Me.ControleEstoqueTab.Controls.Add(Me.ProdutosEmprestadosTab)
-        Me.ControleEstoqueTab.Controls.Add(Me.TabPage3)
+        Me.ControleEstoqueTab.Controls.Add(Me.EnviarProdutoAssistenciaTab)
         Me.ControleEstoqueTab.Controls.Add(Me.ProdutosEnviadosAssistenciaTab)
-        Me.ControleEstoqueTab.Controls.Add(Me.TabPage5)
+        Me.ControleEstoqueTab.Controls.Add(Me.ExtrairRelatoriosTab)
+        Me.ControleEstoqueTab.Controls.Add(Me.CriarProdutoTab)
         Me.ControleEstoqueTab.Location = New System.Drawing.Point(9, 10)
         Me.ControleEstoqueTab.Name = "ControleEstoqueTab"
         Me.ControleEstoqueTab.SelectedIndex = 0
         Me.ControleEstoqueTab.Size = New System.Drawing.Size(693, 361)
         Me.ControleEstoqueTab.TabIndex = 0
         '
-        'TabPage1
+        'CriarCotacaoTab
         '
-        Me.TabPage1.Controls.Add(Me.FinalizarBT)
-        Me.TabPage1.Controls.Add(Me.PictureBox6)
-        Me.TabPage1.Controls.Add(Me.FornecedorIMG)
-        Me.TabPage1.Controls.Add(Me.FornecedorTF)
-        Me.TabPage1.Controls.Add(Me.Label7)
-        Me.TabPage1.Controls.Add(Me.ConfirmaProdutoIMG)
-        Me.TabPage1.Controls.Add(Me.QtdeTF)
-        Me.TabPage1.Controls.Add(Me.Label6)
-        Me.TabPage1.Controls.Add(Me.Label2)
-        Me.TabPage1.Controls.Add(Me.CodigoProdutoTF)
-        Me.TabPage1.Controls.Add(Me.ProdutosDT)
-        Me.TabPage1.Controls.Add(Me.PictureBox3)
-        Me.TabPage1.Controls.Add(Me.ProdutoCotacaoIMG)
-        Me.TabPage1.Controls.Add(Me.NomeProdutoTF)
-        Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(685, 335)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Criar Nova Cotação"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.CriarCotacaoTab.Controls.Add(Me.FinalizarBT)
+        Me.CriarCotacaoTab.Controls.Add(Me.PictureBox6)
+        Me.CriarCotacaoTab.Controls.Add(Me.FornecedorIMG)
+        Me.CriarCotacaoTab.Controls.Add(Me.FornecedorTF)
+        Me.CriarCotacaoTab.Controls.Add(Me.Label7)
+        Me.CriarCotacaoTab.Controls.Add(Me.ConfirmaProdutoIMG)
+        Me.CriarCotacaoTab.Controls.Add(Me.QtdeTF)
+        Me.CriarCotacaoTab.Controls.Add(Me.Label6)
+        Me.CriarCotacaoTab.Controls.Add(Me.Label2)
+        Me.CriarCotacaoTab.Controls.Add(Me.CodigoProdutoTF)
+        Me.CriarCotacaoTab.Controls.Add(Me.ProdutosDT)
+        Me.CriarCotacaoTab.Controls.Add(Me.PictureBox3)
+        Me.CriarCotacaoTab.Controls.Add(Me.ProdutoCotacaoIMG)
+        Me.CriarCotacaoTab.Controls.Add(Me.NomeProdutoTF)
+        Me.CriarCotacaoTab.Controls.Add(Me.Label1)
+        Me.CriarCotacaoTab.Location = New System.Drawing.Point(4, 22)
+        Me.CriarCotacaoTab.Name = "CriarCotacaoTab"
+        Me.CriarCotacaoTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.CriarCotacaoTab.Size = New System.Drawing.Size(685, 335)
+        Me.CriarCotacaoTab.TabIndex = 0
+        Me.CriarCotacaoTab.Text = "Criar Nova Cotação"
+        Me.CriarCotacaoTab.UseVisualStyleBackColor = True
         '
         'FinalizarBT
         '
@@ -601,22 +622,22 @@ Partial Class ControleEstoque
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Selecionar Produto:"
         '
-        'TabPage2
+        'AlertasEstoqueTab
         '
-        Me.TabPage2.Controls.Add(Me.AlertasDT)
-        Me.TabPage2.Controls.Add(Me.CriarAlertaBT)
-        Me.TabPage2.Controls.Add(Me.Label9)
-        Me.TabPage2.Controls.Add(Me.ObservacaoTF)
-        Me.TabPage2.Controls.Add(Me.ProdutoAlertaTF)
-        Me.TabPage2.Controls.Add(Me.Label8)
-        Me.TabPage2.Controls.Add(Me.ProdutoAlertaIMG)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(685, 335)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Alertas de Estoque"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.AlertasEstoqueTab.Controls.Add(Me.AlertasDT)
+        Me.AlertasEstoqueTab.Controls.Add(Me.CriarAlertaBT)
+        Me.AlertasEstoqueTab.Controls.Add(Me.Label9)
+        Me.AlertasEstoqueTab.Controls.Add(Me.ObservacaoTF)
+        Me.AlertasEstoqueTab.Controls.Add(Me.ProdutoAlertaTF)
+        Me.AlertasEstoqueTab.Controls.Add(Me.Label8)
+        Me.AlertasEstoqueTab.Controls.Add(Me.ProdutoAlertaIMG)
+        Me.AlertasEstoqueTab.Location = New System.Drawing.Point(4, 22)
+        Me.AlertasEstoqueTab.Name = "AlertasEstoqueTab"
+        Me.AlertasEstoqueTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.AlertasEstoqueTab.Size = New System.Drawing.Size(685, 335)
+        Me.AlertasEstoqueTab.TabIndex = 1
+        Me.AlertasEstoqueTab.Text = "Alertas de Estoque"
+        Me.AlertasEstoqueTab.UseVisualStyleBackColor = True
         '
         'AlertasDT
         '
@@ -1359,30 +1380,30 @@ Partial Class ControleEstoque
         Me.NumeroNFAcompanharCompraTF.Size = New System.Drawing.Size(123, 20)
         Me.NumeroNFAcompanharCompraTF.TabIndex = 0
         '
-        'TabPage8
+        'EmprestarProdutoTab
         '
-        Me.TabPage8.Controls.Add(Me.PictureBox13)
-        Me.TabPage8.Controls.Add(Me.FinalizarEmprestimoBT)
-        Me.TabPage8.Controls.Add(Me.QtdeEmprestarProdutoTF)
-        Me.TabPage8.Controls.Add(Me.Label5)
-        Me.TabPage8.Controls.Add(Me.Label10)
-        Me.TabPage8.Controls.Add(Me.CodigoProdutoEmprestarProdutoTF)
-        Me.TabPage8.Controls.Add(Me.ProdutosEmprestimoDT)
-        Me.TabPage8.Controls.Add(Me.NomeProdutoEmprestarProdutoTF)
-        Me.TabPage8.Controls.Add(Me.Label14)
-        Me.TabPage8.Controls.Add(Me.ClienteEmprestarProdutoTF)
-        Me.TabPage8.Controls.Add(Me.ClienteEmprestimoLB)
-        Me.TabPage8.Controls.Add(Me.ConfirmarProdutoEmprestarProdutoIMG)
-        Me.TabPage8.Controls.Add(Me.PictureBox4)
-        Me.TabPage8.Controls.Add(Me.BuscarProdutoEmprestarProdutoIMG)
-        Me.TabPage8.Controls.Add(Me.BuscarClienteEmprestarProdutoIMG)
-        Me.TabPage8.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage8.Name = "TabPage8"
-        Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage8.Size = New System.Drawing.Size(685, 335)
-        Me.TabPage8.TabIndex = 7
-        Me.TabPage8.Text = "Emprestar Produto"
-        Me.TabPage8.UseVisualStyleBackColor = True
+        Me.EmprestarProdutoTab.Controls.Add(Me.PictureBox13)
+        Me.EmprestarProdutoTab.Controls.Add(Me.FinalizarEmprestimoBT)
+        Me.EmprestarProdutoTab.Controls.Add(Me.QtdeEmprestarProdutoTF)
+        Me.EmprestarProdutoTab.Controls.Add(Me.Label5)
+        Me.EmprestarProdutoTab.Controls.Add(Me.Label10)
+        Me.EmprestarProdutoTab.Controls.Add(Me.CodigoProdutoEmprestarProdutoTF)
+        Me.EmprestarProdutoTab.Controls.Add(Me.ProdutosEmprestimoDT)
+        Me.EmprestarProdutoTab.Controls.Add(Me.NomeProdutoEmprestarProdutoTF)
+        Me.EmprestarProdutoTab.Controls.Add(Me.Label14)
+        Me.EmprestarProdutoTab.Controls.Add(Me.ClienteEmprestarProdutoTF)
+        Me.EmprestarProdutoTab.Controls.Add(Me.ClienteEmprestimoLB)
+        Me.EmprestarProdutoTab.Controls.Add(Me.ConfirmarProdutoEmprestarProdutoIMG)
+        Me.EmprestarProdutoTab.Controls.Add(Me.PictureBox4)
+        Me.EmprestarProdutoTab.Controls.Add(Me.BuscarProdutoEmprestarProdutoIMG)
+        Me.EmprestarProdutoTab.Controls.Add(Me.BuscarClienteEmprestarProdutoIMG)
+        Me.EmprestarProdutoTab.Location = New System.Drawing.Point(4, 22)
+        Me.EmprestarProdutoTab.Name = "EmprestarProdutoTab"
+        Me.EmprestarProdutoTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.EmprestarProdutoTab.Size = New System.Drawing.Size(685, 335)
+        Me.EmprestarProdutoTab.TabIndex = 7
+        Me.EmprestarProdutoTab.Text = "Emprestar Produto"
+        Me.EmprestarProdutoTab.UseVisualStyleBackColor = True
         '
         'PictureBox13
         '
@@ -1728,32 +1749,32 @@ Partial Class ControleEstoque
         Me.PictureBox15.TabIndex = 41
         Me.PictureBox15.TabStop = False
         '
-        'TabPage3
+        'EnviarProdutoAssistenciaTab
         '
-        Me.TabPage3.Controls.Add(Me.EnviarParaAssistenciaBT)
-        Me.TabPage3.Controls.Add(Me.ProdutosOrdemDT)
-        Me.TabPage3.Controls.Add(Me.PictureBox18)
-        Me.TabPage3.Controls.Add(Me.AssistenciaEnvioAssistenciaTF)
-        Me.TabPage3.Controls.Add(Me.SelecionarAssistenciaLB)
-        Me.TabPage3.Controls.Add(Me.SelecionarAssistenciaEnvioAssistenciaIMG)
-        Me.TabPage3.Controls.Add(Me.PictureBox10)
-        Me.TabPage3.Controls.Add(Me.QtdeProdutoEnvioAssistenciaTF)
-        Me.TabPage3.Controls.Add(Me.CodigoProdutoEnvioAssistenciaTF)
-        Me.TabPage3.Controls.Add(Me.ProdutoEnvioAssistenciaTF)
-        Me.TabPage3.Controls.Add(Me.SelecionarProdutoEnvioAssistenciaLB)
-        Me.TabPage3.Controls.Add(Me.ClienteEnvioAssistenciaTB)
-        Me.TabPage3.Controls.Add(Me.SelecionarClienteEnvioAssistenciaLB)
-        Me.TabPage3.Controls.Add(Me.ConfirmarProdutoEnvioAssistenciaIMG)
-        Me.TabPage3.Controls.Add(Me.PictureBox12)
-        Me.TabPage3.Controls.Add(Me.SelecionarProdutoEnvioAssistenciaIMG)
-        Me.TabPage3.Controls.Add(Me.SelecionarClienteEnvioAssistenciaIMG)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(685, 335)
-        Me.TabPage3.TabIndex = 11
-        Me.TabPage3.Text = "Enviar Produto a Assistência"
-        Me.TabPage3.UseVisualStyleBackColor = True
+        Me.EnviarProdutoAssistenciaTab.Controls.Add(Me.EnviarParaAssistenciaBT)
+        Me.EnviarProdutoAssistenciaTab.Controls.Add(Me.ProdutosOrdemDT)
+        Me.EnviarProdutoAssistenciaTab.Controls.Add(Me.PictureBox18)
+        Me.EnviarProdutoAssistenciaTab.Controls.Add(Me.AssistenciaEnvioAssistenciaTF)
+        Me.EnviarProdutoAssistenciaTab.Controls.Add(Me.SelecionarAssistenciaLB)
+        Me.EnviarProdutoAssistenciaTab.Controls.Add(Me.SelecionarAssistenciaEnvioAssistenciaIMG)
+        Me.EnviarProdutoAssistenciaTab.Controls.Add(Me.PictureBox10)
+        Me.EnviarProdutoAssistenciaTab.Controls.Add(Me.QtdeProdutoEnvioAssistenciaTF)
+        Me.EnviarProdutoAssistenciaTab.Controls.Add(Me.CodigoProdutoEnvioAssistenciaTF)
+        Me.EnviarProdutoAssistenciaTab.Controls.Add(Me.ProdutoEnvioAssistenciaTF)
+        Me.EnviarProdutoAssistenciaTab.Controls.Add(Me.SelecionarProdutoEnvioAssistenciaLB)
+        Me.EnviarProdutoAssistenciaTab.Controls.Add(Me.ClienteEnvioAssistenciaTB)
+        Me.EnviarProdutoAssistenciaTab.Controls.Add(Me.SelecionarClienteEnvioAssistenciaLB)
+        Me.EnviarProdutoAssistenciaTab.Controls.Add(Me.ConfirmarProdutoEnvioAssistenciaIMG)
+        Me.EnviarProdutoAssistenciaTab.Controls.Add(Me.PictureBox12)
+        Me.EnviarProdutoAssistenciaTab.Controls.Add(Me.SelecionarProdutoEnvioAssistenciaIMG)
+        Me.EnviarProdutoAssistenciaTab.Controls.Add(Me.SelecionarClienteEnvioAssistenciaIMG)
+        Me.EnviarProdutoAssistenciaTab.Location = New System.Drawing.Point(4, 22)
+        Me.EnviarProdutoAssistenciaTab.Name = "EnviarProdutoAssistenciaTab"
+        Me.EnviarProdutoAssistenciaTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.EnviarProdutoAssistenciaTab.Size = New System.Drawing.Size(685, 335)
+        Me.EnviarProdutoAssistenciaTab.TabIndex = 11
+        Me.EnviarProdutoAssistenciaTab.Text = "Enviar Produto a Assistência"
+        Me.EnviarProdutoAssistenciaTab.UseVisualStyleBackColor = True
         '
         'EnviarParaAssistenciaBT
         '
@@ -2119,20 +2140,20 @@ Partial Class ControleEstoque
         Me.SelecionarClienteAtualEnvioAssistenciaIMG.TabIndex = 54
         Me.SelecionarClienteAtualEnvioAssistenciaIMG.TabStop = False
         '
-        'TabPage5
+        'ExtrairRelatoriosTab
         '
-        Me.TabPage5.Controls.Add(Me.FimDT)
-        Me.TabPage5.Controls.Add(Me.InicioDT)
-        Me.TabPage5.Controls.Add(Me.DeLB)
-        Me.TabPage5.Controls.Add(Me.AteLB)
-        Me.TabPage5.Controls.Add(Me.GerarRelatorioCompraBT)
-        Me.TabPage5.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(685, 335)
-        Me.TabPage5.TabIndex = 4
-        Me.TabPage5.Text = "Extrair Relatórios de Compras"
-        Me.TabPage5.UseVisualStyleBackColor = True
+        Me.ExtrairRelatoriosTab.Controls.Add(Me.FimDT)
+        Me.ExtrairRelatoriosTab.Controls.Add(Me.InicioDT)
+        Me.ExtrairRelatoriosTab.Controls.Add(Me.DeLB)
+        Me.ExtrairRelatoriosTab.Controls.Add(Me.AteLB)
+        Me.ExtrairRelatoriosTab.Controls.Add(Me.GerarRelatorioCompraBT)
+        Me.ExtrairRelatoriosTab.Location = New System.Drawing.Point(4, 22)
+        Me.ExtrairRelatoriosTab.Name = "ExtrairRelatoriosTab"
+        Me.ExtrairRelatoriosTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.ExtrairRelatoriosTab.Size = New System.Drawing.Size(685, 335)
+        Me.ExtrairRelatoriosTab.TabIndex = 4
+        Me.ExtrairRelatoriosTab.Text = "Extrair Relatórios de Compras"
+        Me.ExtrairRelatoriosTab.UseVisualStyleBackColor = True
         '
         'FimDT
         '
@@ -2182,6 +2203,133 @@ Partial Class ControleEstoque
         Me.GerarRelatorioCompraBT.TabIndex = 35
         Me.GerarRelatorioCompraBT.Text = "Gerar Relatório"
         Me.GerarRelatorioCompraBT.UseVisualStyleBackColor = True
+        '
+        'CriarProdutoTab
+        '
+        Me.CriarProdutoTab.Controls.Add(Me.ProdutoImagemIMG)
+        Me.CriarProdutoTab.Controls.Add(Me.ProcurarArquivoBT)
+        Me.CriarProdutoTab.Controls.Add(Me.ImagemTF)
+        Me.CriarProdutoTab.Controls.Add(Me.Label25)
+        Me.CriarProdutoTab.Controls.Add(Me.TipoProdutoCB)
+        Me.CriarProdutoTab.Controls.Add(Me.Label24)
+        Me.CriarProdutoTab.Controls.Add(Me.DescriçãoTF)
+        Me.CriarProdutoTab.Controls.Add(Me.Label23)
+        Me.CriarProdutoTab.Controls.Add(Me.PrecoUnitarioTF)
+        Me.CriarProdutoTab.Controls.Add(Me.Label22)
+        Me.CriarProdutoTab.Controls.Add(Me.LimparNovoProdutoBT)
+        Me.CriarProdutoTab.Controls.Add(Me.SalvarNovoProdutoBT)
+        Me.CriarProdutoTab.Controls.Add(Me.UnidadeProdutoCB)
+        Me.CriarProdutoTab.Controls.Add(Me.UnidadeLB)
+        Me.CriarProdutoTab.Controls.Add(Me.NomeNovoProdutoTF)
+        Me.CriarProdutoTab.Controls.Add(Me.NomeLB)
+        Me.CriarProdutoTab.Location = New System.Drawing.Point(4, 22)
+        Me.CriarProdutoTab.Name = "CriarProdutoTab"
+        Me.CriarProdutoTab.Size = New System.Drawing.Size(685, 335)
+        Me.CriarProdutoTab.TabIndex = 12
+        Me.CriarProdutoTab.Text = "Criar Novo Produto"
+        Me.CriarProdutoTab.UseVisualStyleBackColor = True
+        '
+        'TipoProdutoCB
+        '
+        Me.TipoProdutoCB.FormattingEnabled = True
+        Me.TipoProdutoCB.Location = New System.Drawing.Point(304, 83)
+        Me.TipoProdutoCB.Name = "TipoProdutoCB"
+        Me.TipoProdutoCB.Size = New System.Drawing.Size(130, 21)
+        Me.TipoProdutoCB.TabIndex = 56
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(255, 86)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(31, 13)
+        Me.Label24.TabIndex = 55
+        Me.Label24.Text = "Tipo:"
+        '
+        'DescriçãoTF
+        '
+        Me.DescriçãoTF.Location = New System.Drawing.Point(103, 136)
+        Me.DescriçãoTF.Multiline = True
+        Me.DescriçãoTF.Name = "DescriçãoTF"
+        Me.DescriçãoTF.Size = New System.Drawing.Size(455, 60)
+        Me.DescriçãoTF.TabIndex = 54
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(9, 138)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(58, 13)
+        Me.Label23.TabIndex = 53
+        Me.Label23.Text = "Descrição:"
+        '
+        'PrecoUnitarioTF
+        '
+        Me.PrecoUnitarioTF.Location = New System.Drawing.Point(103, 83)
+        Me.PrecoUnitarioTF.Name = "PrecoUnitarioTF"
+        Me.PrecoUnitarioTF.Size = New System.Drawing.Size(130, 20)
+        Me.PrecoUnitarioTF.TabIndex = 52
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(9, 86)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(77, 13)
+        Me.Label22.TabIndex = 51
+        Me.Label22.Text = "Preço Unitário:"
+        '
+        'LimparNovoProdutoBT
+        '
+        Me.LimparNovoProdutoBT.Location = New System.Drawing.Point(359, 273)
+        Me.LimparNovoProdutoBT.Name = "LimparNovoProdutoBT"
+        Me.LimparNovoProdutoBT.Size = New System.Drawing.Size(115, 23)
+        Me.LimparNovoProdutoBT.TabIndex = 50
+        Me.LimparNovoProdutoBT.Text = "Limpar Campos"
+        Me.LimparNovoProdutoBT.UseVisualStyleBackColor = True
+        '
+        'SalvarNovoProdutoBT
+        '
+        Me.SalvarNovoProdutoBT.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.SalvarNovoProdutoBT.Location = New System.Drawing.Point(210, 273)
+        Me.SalvarNovoProdutoBT.Name = "SalvarNovoProdutoBT"
+        Me.SalvarNovoProdutoBT.Size = New System.Drawing.Size(115, 23)
+        Me.SalvarNovoProdutoBT.TabIndex = 49
+        Me.SalvarNovoProdutoBT.Text = "Salvar Produto"
+        Me.SalvarNovoProdutoBT.UseVisualStyleBackColor = True
+        '
+        'UnidadeProdutoCB
+        '
+        Me.UnidadeProdutoCB.FormattingEnabled = True
+        Me.UnidadeProdutoCB.Location = New System.Drawing.Point(547, 83)
+        Me.UnidadeProdutoCB.Name = "UnidadeProdutoCB"
+        Me.UnidadeProdutoCB.Size = New System.Drawing.Size(130, 21)
+        Me.UnidadeProdutoCB.TabIndex = 48
+        '
+        'UnidadeLB
+        '
+        Me.UnidadeLB.AutoSize = True
+        Me.UnidadeLB.Location = New System.Drawing.Point(464, 86)
+        Me.UnidadeLB.Name = "UnidadeLB"
+        Me.UnidadeLB.Size = New System.Drawing.Size(50, 13)
+        Me.UnidadeLB.TabIndex = 40
+        Me.UnidadeLB.Text = "Unidade:"
+        '
+        'NomeNovoProdutoTF
+        '
+        Me.NomeNovoProdutoTF.Location = New System.Drawing.Point(103, 31)
+        Me.NomeNovoProdutoTF.Name = "NomeNovoProdutoTF"
+        Me.NomeNovoProdutoTF.Size = New System.Drawing.Size(574, 20)
+        Me.NomeNovoProdutoTF.TabIndex = 34
+        '
+        'NomeLB
+        '
+        Me.NomeLB.AutoSize = True
+        Me.NomeLB.Location = New System.Drawing.Point(9, 34)
+        Me.NomeLB.Name = "NomeLB"
+        Me.NomeLB.Size = New System.Drawing.Size(38, 13)
+        Me.NomeLB.TabIndex = 33
+        Me.NomeLB.Text = "Nome:"
         '
         'MenuStrip1
         '
@@ -2412,6 +2560,46 @@ Partial Class ControleEstoque
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'ImagemTF
+        '
+        Me.ImagemTF.Enabled = False
+        Me.ImagemTF.Location = New System.Drawing.Point(103, 224)
+        Me.ImagemTF.Name = "ImagemTF"
+        Me.ImagemTF.Size = New System.Drawing.Size(331, 20)
+        Me.ImagemTF.TabIndex = 58
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(9, 227)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(47, 13)
+        Me.Label25.TabIndex = 57
+        Me.Label25.Text = "Imagem:"
+        '
+        'ProcurarArquivoBT
+        '
+        Me.ProcurarArquivoBT.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.ProcurarArquivoBT.Location = New System.Drawing.Point(443, 222)
+        Me.ProcurarArquivoBT.Name = "ProcurarArquivoBT"
+        Me.ProcurarArquivoBT.Size = New System.Drawing.Size(115, 23)
+        Me.ProcurarArquivoBT.TabIndex = 59
+        Me.ProcurarArquivoBT.Text = "Procurar Arquivo"
+        Me.ProcurarArquivoBT.UseVisualStyleBackColor = True
+        '
+        'ProdutoImagemIMG
+        '
+        Me.ProdutoImagemIMG.Location = New System.Drawing.Point(567, 136)
+        Me.ProdutoImagemIMG.Name = "ProdutoImagemIMG"
+        Me.ProdutoImagemIMG.Size = New System.Drawing.Size(110, 108)
+        Me.ProdutoImagemIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ProdutoImagemIMG.TabIndex = 60
+        Me.ProdutoImagemIMG.TabStop = False
+        '
         'ControleEstoque
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2428,8 +2616,8 @@ Partial Class ControleEstoque
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.ControleEstoqueTab.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
+        Me.CriarCotacaoTab.ResumeLayout(False)
+        Me.CriarCotacaoTab.PerformLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FornecedorIMG, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConfirmaProdutoIMG, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2437,8 +2625,8 @@ Partial Class ControleEstoque
         CType(Me.ProdutosDT, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProdutoCotacaoIMG, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
+        Me.AlertasEstoqueTab.ResumeLayout(False)
+        Me.AlertasEstoqueTab.PerformLayout()
         CType(Me.AlertasDT, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProdutoAlertaIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CotacoesAndamentoTab.ResumeLayout(False)
@@ -2461,8 +2649,8 @@ Partial Class ControleEstoque
         CType(Me.PagamentosAcompanharCompraDT, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.TabPage8.ResumeLayout(False)
-        Me.TabPage8.PerformLayout()
+        Me.EmprestarProdutoTab.ResumeLayout(False)
+        Me.EmprestarProdutoTab.PerformLayout()
         CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.QtdeEmprestarProdutoTF, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProdutosEmprestimoDT, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2475,8 +2663,8 @@ Partial Class ControleEstoque
         CType(Me.ProdutosEmprestadosDT, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage3.ResumeLayout(False)
-        Me.TabPage3.PerformLayout()
+        Me.EnviarProdutoAssistenciaTab.ResumeLayout(False)
+        Me.EnviarProdutoAssistenciaTab.PerformLayout()
         CType(Me.ProdutosOrdemDT, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SelecionarAssistenciaEnvioAssistenciaIMG, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2491,10 +2679,13 @@ Partial Class ControleEstoque
         CType(Me.ProdutosEnviadosAssistenciaDT, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SelecionarProdutoAtualEnvioAssistenciaIMG, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SelecionarClienteAtualEnvioAssistenciaIMG, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage5.ResumeLayout(False)
-        Me.TabPage5.PerformLayout()
+        Me.ExtrairRelatoriosTab.ResumeLayout(False)
+        Me.ExtrairRelatoriosTab.PerformLayout()
+        Me.CriarProdutoTab.ResumeLayout(False)
+        Me.CriarProdutoTab.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.ProdutoImagemIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2503,8 +2694,8 @@ Partial Class ControleEstoque
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents ControleEstoqueTab As System.Windows.Forms.TabControl
-    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents CriarCotacaoTab As System.Windows.Forms.TabPage
+    Friend WithEvents AlertasEstoqueTab As System.Windows.Forms.TabPage
     Friend WithEvents ProdutoCotacaoIMG As System.Windows.Forms.PictureBox
     Friend WithEvents NomeProdutoTF As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
@@ -2529,10 +2720,10 @@ Partial Class ControleEstoque
     Friend WithEvents ComprasAndamentoTab As System.Windows.Forms.TabPage
     Friend WithEvents ComprasDT As System.Windows.Forms.DataGridView
     Friend WithEvents ProdutosEmprestadosTab As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage5 As System.Windows.Forms.TabPage
+    Friend WithEvents ExtrairRelatoriosTab As System.Windows.Forms.TabPage
     Friend WithEvents ProdutosEnviadosAssistenciaTab As System.Windows.Forms.TabPage
     Friend WithEvents AcompanharCompraTab As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage8 As System.Windows.Forms.TabPage
+    Friend WithEvents EmprestarProdutoTab As System.Windows.Forms.TabPage
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents OpcoesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SairToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -2705,7 +2896,7 @@ Partial Class ControleEstoque
     Friend WithEvents ProdutosEnviadosAssistenciaDT As DataGridView
     Friend WithEvents SelecionarProdutoAtualEnvioAssistenciaIMG As PictureBox
     Friend WithEvents SelecionarClienteAtualEnvioAssistenciaIMG As PictureBox
-    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents EnviarProdutoAssistenciaTab As TabPage
     Friend WithEvents EnviarParaAssistenciaBT As Button
     Friend WithEvents ProdutosOrdemDT As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn22 As DataGridViewTextBoxColumn
@@ -2733,4 +2924,22 @@ Partial Class ControleEstoque
     Friend WithEvents DataDeEnvioAssistencia As DataGridViewTextBoxColumn
     Friend WithEvents VerProdutosAssistencia As DataGridViewButtonColumn
     Friend WithEvents FinalizarSolicitacaoEnvioAssistencia As DataGridViewButtonColumn
+    Friend WithEvents CriarProdutoTab As TabPage
+    Friend WithEvents TipoProdutoCB As ComboBox
+    Friend WithEvents Label24 As Label
+    Friend WithEvents DescriçãoTF As TextBox
+    Friend WithEvents Label23 As Label
+    Friend WithEvents PrecoUnitarioTF As TextBox
+    Friend WithEvents Label22 As Label
+    Friend WithEvents LimparNovoProdutoBT As Button
+    Friend WithEvents SalvarNovoProdutoBT As Button
+    Friend WithEvents UnidadeProdutoCB As ComboBox
+    Friend WithEvents UnidadeLB As Label
+    Friend WithEvents NomeNovoProdutoTF As TextBox
+    Friend WithEvents NomeLB As Label
+    Friend WithEvents ProcurarArquivoBT As Button
+    Friend WithEvents ImagemTF As TextBox
+    Friend WithEvents Label25 As Label
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents ProdutoImagemIMG As PictureBox
 End Class

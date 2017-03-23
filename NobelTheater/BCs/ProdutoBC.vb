@@ -5,14 +5,13 @@ Public Class ProdutoBC
 
     Private Shared produtoDAO As New ProdutoDAO
 
-    Public Shared Function Validate(produto As Produto, Optional validateImage As Boolean = False) As Boolean
+    Public Shared Function Validate(produto As Produto) As Boolean
 
         If (produto Is Nothing) Then Return False
         If (String.IsNullOrWhiteSpace(produto.Nome)) Then Return False
         If (produto.PrecoUnit = 0.0) Then Return False
         If (String.IsNullOrWhiteSpace(produto.Descricao)) Then Return False
         If (TipoProduto.GetTiposList.Contains(produto.Tipo) = False) Then Return False
-        If (validateImage AndAlso produto.Imagem Is Nothing) Then Return False
         If (UnidadeProduto.GetUnidadesList.Contains(produto.Unidade) = False) Then Return False
 
         Return True
@@ -33,7 +32,7 @@ Public Class ProdutoBC
     End Function
 
     Public Shared Function UpdateImage(produto As Produto) As Boolean
-        If (ProdutoBC.Validate(produto, True)) Then
+        If (ProdutoBC.Validate(produto)) Then
             Return produtoDAO.UpdateImage(produto)
         End If
         Return False
