@@ -166,6 +166,7 @@
         Me.Select()
     End Sub
 
+#Region "Funções do Menu Superior"
     Private Sub SairToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SairToolStripMenuItem1.Click
         Application.Exit()
     End Sub
@@ -217,4 +218,62 @@
     Private Sub CriarNovoProdutoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CriarNovoProdutoToolStripMenuItem.Click
         ControleEstoque.SetFocusOnForm(11)
     End Sub
+
+    Private Sub NovoFornecedorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NovoFornecedorToolStripMenuItem.Click
+        ControleFornecedor.SetFocusOnForm(0)
+    End Sub
+
+    Private Sub AcompanharFornecedorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcompanharFornecedorToolStripMenuItem.Click
+        ControleFornecedor.SetFocusOnForm(1)
+    End Sub
+
+    Private Sub NovaAssistênciaTécnicaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NovaAssistênciaTécnicaToolStripMenuItem.Click
+        ControleFornecedor.SetFocusOnForm(2)
+    End Sub
+
+    Private Sub AcompanharAssistênciaTécnicaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcompanharAssistênciaTécnicaToolStripMenuItem.Click
+        ControleFornecedor.SetFocusOnForm(3)
+    End Sub
+
+    Private Sub NovoOrçamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NovoOrçamentoToolStripMenuItem.Click
+        ControleVendas.SetFocusOnForm(0)
+    End Sub
+
+    Private Sub OrçamentosEmAndamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrçamentosEmAndamentoToolStripMenuItem.Click
+        ControleVendas.SetFocusOnForm(1)
+    End Sub
+
+    Private Sub VendasEmAndamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VendasEmAndamentoToolStripMenuItem.Click
+        ControleVendas.SetFocusOnForm(3)
+    End Sub
+
+    Private Sub VisualizarVisitasTécnicasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisualizarVisitasTécnicasToolStripMenuItem.Click
+        ControleVendas.SetFocusOnForm(5)
+    End Sub
+
+    Private Sub RelatóriosDeVendasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RelatóriosDeVendasToolStripMenuItem.Click
+        ControleVendas.SetFocusOnForm(6)
+    End Sub
+
+    Private Sub RelatóriosDeBalançoDeCaixaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RelatóriosDeBalançoDeCaixaToolStripMenuItem.Click
+        BalancoDeCaixa.SetFocusOnForm()
+    End Sub
+
+    Private Sub MonitorarAmbienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MonitorarAmbienteToolStripMenuItem.Click
+        MonitorarAmbiente.SetFocusOnForm()
+    End Sub
+
+    Private Sub NovoFuncionárioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NovoFuncionárioToolStripMenuItem.Click
+        ControleFuncionario.SetFocusOnForm(0)
+    End Sub
+
+    Private Sub AcompanharFuncionárioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcompanharFuncionárioToolStripMenuItem.Click
+        ControleFuncionario.SetFocusOnForm(1)
+    End Sub
+
+    Private Sub SobreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SobreToolStripMenuItem.Click
+        MsgBox("Nobel HOME 2016-2017 © - Todos os direitos reservados - Versão 0.1", vbInformation Or vbMsgBoxSetForeground)
+    End Sub
+#End Region
+
 End Class
