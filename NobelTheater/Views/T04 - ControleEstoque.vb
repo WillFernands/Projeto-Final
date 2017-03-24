@@ -24,6 +24,47 @@
         MatriculaTF.Text = "Matricula: " & MenuPrincipal.funcionarioLogado.Matricula
         PerfilTF.Text = "Perfil: " & MenuPrincipal.funcionarioLogado.Perfil
 
+        Select Case MenuPrincipal.funcionarioLogado.Perfil
+            Case TipoPerfilFuncionario.AssistenteAdm
+                MonitoramentoToolStripMenuItem.Enabled = False
+                AcessosRevogadosToolStripMenuItem.Enabled = False
+                BalançoDeCaixaToolStripMenuItem.Enabled = False
+                FuncionáriosToolStripMenuItem.Enabled = False
+            Case TipoPerfilFuncionario.AssistenteCont
+                MonitoramentoToolStripMenuItem.Enabled = False
+                AcessosRevogadosToolStripMenuItem.Enabled = False
+                EstoqueToolStripMenuItem.Enabled = False
+                FornecedoresToolStripMenuItem.Enabled = False
+                VendasToolStripMenuItem.Enabled = False
+                FuncionáriosToolStripMenuItem.Enabled = False
+            Case TipoPerfilFuncionario.Gerente
+                MonitoramentoToolStripMenuItem.Enabled = False
+                BalançoDeCaixaToolStripMenuItem.Enabled = False
+            Case TipoPerfilFuncionario.SupervisorObra
+                MonitoramentoToolStripMenuItem.Enabled = False
+                AcessosRevogadosToolStripMenuItem.Enabled = False
+                EstoqueToolStripMenuItem.Enabled = False
+                FornecedoresToolStripMenuItem.Enabled = False
+                VendasToolStripMenuItem.Enabled = False
+                BalançoDeCaixaToolStripMenuItem.Enabled = False
+                FuncionáriosToolStripMenuItem.Enabled = False
+            Case TipoPerfilFuncionario.Tecnico
+                MonitoramentoToolStripMenuItem.Enabled = False
+                AcessosRevogadosToolStripMenuItem.Enabled = False
+                EstoqueToolStripMenuItem.Enabled = False
+                FornecedoresToolStripMenuItem.Enabled = False
+                VendasToolStripMenuItem.Enabled = False
+                BalançoDeCaixaToolStripMenuItem.Enabled = False
+                FuncionáriosToolStripMenuItem.Enabled = False
+            Case TipoPerfilFuncionario.Vendedor
+                MonitoramentoToolStripMenuItem.Enabled = False
+                AcessosRevogadosToolStripMenuItem.Enabled = False
+                EstoqueToolStripMenuItem.Enabled = False
+                FornecedoresToolStripMenuItem.Enabled = False
+                BalançoDeCaixaToolStripMenuItem.Enabled = False
+                FuncionáriosToolStripMenuItem.Enabled = False
+        End Select
+
         RefreshDTAlertas()
     End Sub
 
@@ -245,7 +286,7 @@
                 ClearAcompanharCotacao()
                 cotacaoAtual = CotacaoBC.FindByID(CotacoesDT.Item(0, e.RowIndex).Value)
                 PopulateAcompanharCotacao()
-                ControleEstoqueTab.SelectTab(3)
+                ControleEstoqueTabControl.SelectTab(3)
             End If
         End If
     End Sub
@@ -402,7 +443,7 @@
 
             compraAtual = nfCompra
 
-            ControleEstoqueTab.SelectTab(5)
+            ControleEstoqueTabControl.SelectTab(5)
 
         Else : MsgBox("Cotação Atualizada com sucesso !!", vbInformation Or vbMsgBoxSetForeground)
         End If
@@ -551,7 +592,7 @@
                 ClearAcompanharCompra()
                 compraAtual = NotaFiscalCompraBC.FindByID(ComprasDT.Item(0, e.RowIndex).Value)
                 PopulateAcompanharCompraTab()
-                ControleEstoqueTab.SelectTab(5)
+                ControleEstoqueTabControl.SelectTab(5)
             End If
         End If
     End Sub
@@ -1009,4 +1050,17 @@
         Dim image As New Bitmap(OpenFileDialog1.OpenFile())
         ProdutoImagemIMG.Image = image
     End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click, PictureBox7.Click, PictureBox4.Click, PictureBox12.Click
+        ControleEstoqueTabControl.SelectTab(11)
+    End Sub
+
+    Public Sub SetFocusOnForm(activeTab As Integer)
+        Me.Show()
+        Me.Select()
+        Try : ControleEstoqueTabControl.SelectTab(activeTab)
+        Catch ex As NullReferenceException
+        End Try
+    End Sub
+
 End Class

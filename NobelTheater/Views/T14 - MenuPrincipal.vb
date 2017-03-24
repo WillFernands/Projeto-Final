@@ -13,31 +13,63 @@
                 PermitirClientes(True) : PermitirFuncionarios(False) : PermitirEstoque(True)
                 PermitirFornecedores(True) : PermitirCaixa(False)
                 PermitirMonitoramento(False) : PermitirParecer(False)
+                MonitoramentoToolStripMenuItem.Enabled = False
+                AcessosRevogadosToolStripMenuItem.Enabled = False
+                BalançoDeCaixaToolStripMenuItem.Enabled = False
+                FuncionáriosToolStripMenuItem.Enabled = False
             Case TipoPerfilFuncionario.AssistenteCont
                 PermitirAcessos(False) : PermitirRecuperarPonto(True) : PermitirVenda(False)
                 PermitirClientes(False) : PermitirFuncionarios(False) : PermitirEstoque(False)
                 PermitirFornecedores(False) : PermitirCaixa(True)
                 PermitirMonitoramento(False) : PermitirParecer(False)
+                MonitoramentoToolStripMenuItem.Enabled = False
+                AcessosRevogadosToolStripMenuItem.Enabled = False
+                EstoqueToolStripMenuItem.Enabled = False
+                FornecedoresToolStripMenuItem.Enabled = False
+                VendasToolStripMenuItem.Enabled = False
+                FuncionáriosToolStripMenuItem.Enabled = False
             Case TipoPerfilFuncionario.Gerente
                 PermitirAcessos(True) : PermitirRecuperarPonto(True) : PermitirVenda(True)
                 PermitirClientes(True) : PermitirFuncionarios(True) : PermitirEstoque(True)
                 PermitirFornecedores(True) : PermitirCaixa(False)
                 PermitirMonitoramento(False) : PermitirParecer(False)
+                MonitoramentoToolStripMenuItem.Enabled = False
+                BalançoDeCaixaToolStripMenuItem.Enabled = False
             Case TipoPerfilFuncionario.SupervisorObra
                 PermitirAcessos(False) : PermitirRecuperarPonto(True) : PermitirVenda(False)
                 PermitirClientes(False) : PermitirFuncionarios(False) : PermitirEstoque(False)
                 PermitirFornecedores(False) : PermitirCaixa(False)
                 PermitirMonitoramento(False) : PermitirParecer(True)
+                MonitoramentoToolStripMenuItem.Enabled = False
+                AcessosRevogadosToolStripMenuItem.Enabled = False
+                EstoqueToolStripMenuItem.Enabled = False
+                FornecedoresToolStripMenuItem.Enabled = False
+                VendasToolStripMenuItem.Enabled = False
+                BalançoDeCaixaToolStripMenuItem.Enabled = False
+                FuncionáriosToolStripMenuItem.Enabled = False
             Case TipoPerfilFuncionario.Tecnico
                 PermitirAcessos(False) : PermitirRecuperarPonto(True) : PermitirVenda(False)
                 PermitirClientes(False) : PermitirFuncionarios(False) : PermitirEstoque(False)
                 PermitirFornecedores(False) : PermitirCaixa(False)
                 PermitirMonitoramento(False) : PermitirParecer(False)
+                MonitoramentoToolStripMenuItem.Enabled = False
+                AcessosRevogadosToolStripMenuItem.Enabled = False
+                EstoqueToolStripMenuItem.Enabled = False
+                FornecedoresToolStripMenuItem.Enabled = False
+                VendasToolStripMenuItem.Enabled = False
+                BalançoDeCaixaToolStripMenuItem.Enabled = False
+                FuncionáriosToolStripMenuItem.Enabled = False
             Case TipoPerfilFuncionario.Vendedor
                 PermitirAcessos(False) : PermitirRecuperarPonto(True) : PermitirVenda(True)
                 PermitirClientes(False) : PermitirFuncionarios(False) : PermitirEstoque(False)
                 PermitirFornecedores(False) : PermitirCaixa(False)
                 PermitirMonitoramento(False) : PermitirParecer(False)
+                MonitoramentoToolStripMenuItem.Enabled = False
+                AcessosRevogadosToolStripMenuItem.Enabled = False
+                EstoqueToolStripMenuItem.Enabled = False
+                FornecedoresToolStripMenuItem.Enabled = False
+                BalançoDeCaixaToolStripMenuItem.Enabled = False
+                FuncionáriosToolStripMenuItem.Enabled = False
             Case TipoPerfilFuncionario.Patrocinador
                 PermitirAcessos(True) : PermitirRecuperarPonto(True) : PermitirVenda(True)
                 PermitirClientes(True) : PermitirFuncionarios(True) : PermitirEstoque(True)
@@ -129,4 +161,60 @@
         InserirParecerObra.Show()
     End Sub
 
+    Public Sub SetFocusOnForm(activeTab As Integer)
+        Me.Show()
+        Me.Select()
+    End Sub
+
+    Private Sub SairToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SairToolStripMenuItem1.Click
+        Application.Exit()
+    End Sub
+
+    Private Sub GerenciarAcessosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GerenciarAcessosToolStripMenuItem.Click
+        ControleAcessos.SetFocusOnForm(0)
+    End Sub
+
+    Private Sub AcessosRevogadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcessosRevogadosToolStripMenuItem.Click
+        ControleAcessos.SetFocusOnForm(1)
+    End Sub
+
+    Private Sub NovaCotaçãoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NovaCotaçãoToolStripMenuItem.Click
+        ControleEstoque.SetFocusOnForm(0)
+    End Sub
+
+    Private Sub AlertasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AlertasToolStripMenuItem.Click
+        ControleEstoque.SetFocusOnForm(1)
+    End Sub
+
+    Private Sub CotaçõesEmAndamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CotaçõesEmAndamentoToolStripMenuItem.Click
+        ControleEstoque.SetFocusOnForm(2)
+    End Sub
+
+    Private Sub ComprasEmAndamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComprasEmAndamentoToolStripMenuItem.Click
+        ControleEstoque.SetFocusOnForm(4)
+    End Sub
+
+    Private Sub EmprestarProdutoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EmprestarProdutoToolStripMenuItem.Click
+        ControleEstoque.SetFocusOnForm(6)
+    End Sub
+
+    Private Sub ProdutosEmprestadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProdutosEmprestadosToolStripMenuItem.Click
+        ControleEstoque.SetFocusOnForm(7)
+    End Sub
+
+    Private Sub EnviarProdutoAAssistênciaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EnviarProdutoAAssistênciaToolStripMenuItem.Click
+        ControleEstoque.SetFocusOnForm(8)
+    End Sub
+
+    Private Sub ProdutosNaAssistênciaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProdutosNaAssistênciaToolStripMenuItem.Click
+        ControleEstoque.SetFocusOnForm(9)
+    End Sub
+
+    Private Sub RelatóriosDeComprasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RelatóriosDeComprasToolStripMenuItem.Click
+        ControleEstoque.SetFocusOnForm(10)
+    End Sub
+
+    Private Sub CriarNovoProdutoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CriarNovoProdutoToolStripMenuItem.Click
+        ControleEstoque.SetFocusOnForm(11)
+    End Sub
 End Class

@@ -7,6 +7,47 @@
         NomeTF.Text = "Nome: " & MenuPrincipal.funcionarioLogado.Nome
         MatriculaTF.Text = "Matricula: " & MenuPrincipal.funcionarioLogado.Matricula
         PerfilTF.Text = "Perfil: " & MenuPrincipal.funcionarioLogado.Perfil
+
+        Select Case MenuPrincipal.funcionarioLogado.Perfil
+            Case TipoPerfilFuncionario.AssistenteAdm
+                MonitoramentoToolStripMenuItem.Enabled = False
+                AcessosRevogadosToolStripMenuItem.Enabled = False
+                BalançoDeCaixaToolStripMenuItem.Enabled = False
+                FuncionáriosToolStripMenuItem.Enabled = False
+            Case TipoPerfilFuncionario.AssistenteCont
+                MonitoramentoToolStripMenuItem.Enabled = False
+                AcessosRevogadosToolStripMenuItem.Enabled = False
+                EstoqueToolStripMenuItem.Enabled = False
+                FornecedoresToolStripMenuItem.Enabled = False
+                VendasToolStripMenuItem.Enabled = False
+                FuncionáriosToolStripMenuItem.Enabled = False
+            Case TipoPerfilFuncionario.Gerente
+                MonitoramentoToolStripMenuItem.Enabled = False
+                BalançoDeCaixaToolStripMenuItem.Enabled = False
+            Case TipoPerfilFuncionario.SupervisorObra
+                MonitoramentoToolStripMenuItem.Enabled = False
+                AcessosRevogadosToolStripMenuItem.Enabled = False
+                EstoqueToolStripMenuItem.Enabled = False
+                FornecedoresToolStripMenuItem.Enabled = False
+                VendasToolStripMenuItem.Enabled = False
+                BalançoDeCaixaToolStripMenuItem.Enabled = False
+                FuncionáriosToolStripMenuItem.Enabled = False
+            Case TipoPerfilFuncionario.Tecnico
+                MonitoramentoToolStripMenuItem.Enabled = False
+                AcessosRevogadosToolStripMenuItem.Enabled = False
+                EstoqueToolStripMenuItem.Enabled = False
+                FornecedoresToolStripMenuItem.Enabled = False
+                VendasToolStripMenuItem.Enabled = False
+                BalançoDeCaixaToolStripMenuItem.Enabled = False
+                FuncionáriosToolStripMenuItem.Enabled = False
+            Case TipoPerfilFuncionario.Vendedor
+                MonitoramentoToolStripMenuItem.Enabled = False
+                AcessosRevogadosToolStripMenuItem.Enabled = False
+                EstoqueToolStripMenuItem.Enabled = False
+                FornecedoresToolStripMenuItem.Enabled = False
+                BalançoDeCaixaToolStripMenuItem.Enabled = False
+                FuncionáriosToolStripMenuItem.Enabled = False
+        End Select
     End Sub
 
 
@@ -292,5 +333,13 @@
         EstadoAcompanharClienteCB.Text = ""
         CEPAcompanharClienteTF.Text = ""
         TipoEnderecoAcompanharClienteCB.Text = ""
+    End Sub
+
+    Public Sub SetFocusOnForm(activeTab As Integer)
+        Me.Show()
+        Me.Select()
+        Try : ControleClienteTabControl.SelectTab(activeTab)
+        Catch ex As NullReferenceException
+        End Try
     End Sub
 End Class

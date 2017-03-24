@@ -94,6 +94,10 @@ Partial Class MenuPrincipal
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CotaçõesEmAndamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EmprestarProdutoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EnviarProdutoAAssistênciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CriarNovoProdutoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -523,19 +527,19 @@ Partial Class MenuPrincipal
         'SairToolStripMenuItem
         '
         Me.SairToolStripMenuItem.Name = "SairToolStripMenuItem"
-        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
+        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.SairToolStripMenuItem.Text = "Ajuda"
         '
         'SobreToolStripMenuItem
         '
         Me.SobreToolStripMenuItem.Name = "SobreToolStripMenuItem"
-        Me.SobreToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
+        Me.SobreToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.SobreToolStripMenuItem.Text = "Sobre"
         '
         'SairToolStripMenuItem1
         '
         Me.SairToolStripMenuItem1.Name = "SairToolStripMenuItem1"
-        Me.SairToolStripMenuItem1.Size = New System.Drawing.Size(104, 22)
+        Me.SairToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.SairToolStripMenuItem1.Text = "Sair"
         '
         'AcessosToolStripMenuItem
@@ -559,7 +563,7 @@ Partial Class MenuPrincipal
         '
         'EstoqueToolStripMenuItem
         '
-        Me.EstoqueToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NovaCotaçãoToolStripMenuItem, Me.AlertasToolStripMenuItem, Me.ComprasEmAndamentoToolStripMenuItem, Me.ProdutosEmprestadosToolStripMenuItem, Me.ProdutosNaAssistênciaToolStripMenuItem, Me.RelatóriosDeComprasToolStripMenuItem})
+        Me.EstoqueToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NovaCotaçãoToolStripMenuItem, Me.AlertasToolStripMenuItem, Me.CotaçõesEmAndamentoToolStripMenuItem, Me.ComprasEmAndamentoToolStripMenuItem, Me.EmprestarProdutoToolStripMenuItem, Me.ProdutosEmprestadosToolStripMenuItem, Me.EnviarProdutoAAssistênciaToolStripMenuItem, Me.ProdutosNaAssistênciaToolStripMenuItem, Me.RelatóriosDeComprasToolStripMenuItem, Me.CriarNovoProdutoToolStripMenuItem})
         Me.EstoqueToolStripMenuItem.Name = "EstoqueToolStripMenuItem"
         Me.EstoqueToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.EstoqueToolStripMenuItem.Text = "Estoque"
@@ -567,14 +571,14 @@ Partial Class MenuPrincipal
         'NovaCotaçãoToolStripMenuItem
         '
         Me.NovaCotaçãoToolStripMenuItem.Name = "NovaCotaçãoToolStripMenuItem"
-        Me.NovaCotaçãoToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
-        Me.NovaCotaçãoToolStripMenuItem.Text = "Nova Cotação"
+        Me.NovaCotaçãoToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
+        Me.NovaCotaçãoToolStripMenuItem.Text = "Criar Nova Cotação"
         '
         'AlertasToolStripMenuItem
         '
         Me.AlertasToolStripMenuItem.Name = "AlertasToolStripMenuItem"
-        Me.AlertasToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
-        Me.AlertasToolStripMenuItem.Text = "Alertas"
+        Me.AlertasToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
+        Me.AlertasToolStripMenuItem.Text = "Alertas de Estoque"
         '
         'ComprasEmAndamentoToolStripMenuItem
         '
@@ -585,19 +589,19 @@ Partial Class MenuPrincipal
         'ProdutosEmprestadosToolStripMenuItem
         '
         Me.ProdutosEmprestadosToolStripMenuItem.Name = "ProdutosEmprestadosToolStripMenuItem"
-        Me.ProdutosEmprestadosToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.ProdutosEmprestadosToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
         Me.ProdutosEmprestadosToolStripMenuItem.Text = "Produtos Emprestados"
         '
         'ProdutosNaAssistênciaToolStripMenuItem
         '
         Me.ProdutosNaAssistênciaToolStripMenuItem.Name = "ProdutosNaAssistênciaToolStripMenuItem"
-        Me.ProdutosNaAssistênciaToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.ProdutosNaAssistênciaToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
         Me.ProdutosNaAssistênciaToolStripMenuItem.Text = "Produtos na Assistência"
         '
         'RelatóriosDeComprasToolStripMenuItem
         '
         Me.RelatóriosDeComprasToolStripMenuItem.Name = "RelatóriosDeComprasToolStripMenuItem"
-        Me.RelatóriosDeComprasToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.RelatóriosDeComprasToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
         Me.RelatóriosDeComprasToolStripMenuItem.Text = "Relatórios de Compras"
         '
         'FornecedoresToolStripMenuItem
@@ -732,6 +736,30 @@ Partial Class MenuPrincipal
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
+        'CotaçõesEmAndamentoToolStripMenuItem
+        '
+        Me.CotaçõesEmAndamentoToolStripMenuItem.Name = "CotaçõesEmAndamentoToolStripMenuItem"
+        Me.CotaçõesEmAndamentoToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
+        Me.CotaçõesEmAndamentoToolStripMenuItem.Text = "Cotações em Andamento"
+        '
+        'EmprestarProdutoToolStripMenuItem
+        '
+        Me.EmprestarProdutoToolStripMenuItem.Name = "EmprestarProdutoToolStripMenuItem"
+        Me.EmprestarProdutoToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
+        Me.EmprestarProdutoToolStripMenuItem.Text = "Emprestar Produto"
+        '
+        'EnviarProdutoAAssistênciaToolStripMenuItem
+        '
+        Me.EnviarProdutoAAssistênciaToolStripMenuItem.Name = "EnviarProdutoAAssistênciaToolStripMenuItem"
+        Me.EnviarProdutoAAssistênciaToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
+        Me.EnviarProdutoAAssistênciaToolStripMenuItem.Text = "Enviar Produto a Assistência"
+        '
+        'CriarNovoProdutoToolStripMenuItem
+        '
+        Me.CriarNovoProdutoToolStripMenuItem.Name = "CriarNovoProdutoToolStripMenuItem"
+        Me.CriarNovoProdutoToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
+        Me.CriarNovoProdutoToolStripMenuItem.Text = "Criar Novo Produto"
+        '
         'MenuPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -855,4 +883,8 @@ Partial Class MenuPrincipal
     Friend WithEvents ClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NovoClienteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AcompanharClienteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CotaçõesEmAndamentoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EmprestarProdutoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EnviarProdutoAAssistênciaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CriarNovoProdutoToolStripMenuItem As ToolStripMenuItem
 End Class

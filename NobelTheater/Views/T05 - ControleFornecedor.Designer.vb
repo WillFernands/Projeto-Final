@@ -28,7 +28,7 @@ Partial Class ControleFornecedor
         Me.NomeTF = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.ControleFornecedoresTabControl = New System.Windows.Forms.TabControl()
         Me.NovoFornecedorTP = New System.Windows.Forms.TabPage()
         Me.TelefoneNovoFornecedorMTF = New System.Windows.Forms.MaskedTextBox()
         Me.CNPJNovoFornecedorMTF = New System.Windows.Forms.MaskedTextBox()
@@ -182,7 +182,7 @@ Partial Class ControleFornecedor
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
+        Me.ControleFornecedoresTabControl.SuspendLayout()
         Me.NovoFornecedorTP.SuspendLayout()
         Me.AcompanharFornecedorTab.SuspendLayout()
         CType(Me.SelecionarFornecedorAcompanharFornecedorIMG, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -244,23 +244,23 @@ Partial Class ControleFornecedor
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.TabControl1)
+        Me.Panel2.Controls.Add(Me.ControleFornecedoresTabControl)
         Me.Panel2.Location = New System.Drawing.Point(12, 131)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(705, 398)
         Me.Panel2.TabIndex = 6
         '
-        'TabControl1
+        'ControleFornecedoresTabControl
         '
-        Me.TabControl1.Controls.Add(Me.NovoFornecedorTP)
-        Me.TabControl1.Controls.Add(Me.AcompanharFornecedorTab)
-        Me.TabControl1.Controls.Add(Me.NovaAssistenciaTP)
-        Me.TabControl1.Controls.Add(Me.TabPage4)
-        Me.TabControl1.Location = New System.Drawing.Point(9, 10)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(693, 385)
-        Me.TabControl1.TabIndex = 0
+        Me.ControleFornecedoresTabControl.Controls.Add(Me.NovoFornecedorTP)
+        Me.ControleFornecedoresTabControl.Controls.Add(Me.AcompanharFornecedorTab)
+        Me.ControleFornecedoresTabControl.Controls.Add(Me.NovaAssistenciaTP)
+        Me.ControleFornecedoresTabControl.Controls.Add(Me.TabPage4)
+        Me.ControleFornecedoresTabControl.Location = New System.Drawing.Point(9, 10)
+        Me.ControleFornecedoresTabControl.Name = "ControleFornecedoresTabControl"
+        Me.ControleFornecedoresTabControl.SelectedIndex = 0
+        Me.ControleFornecedoresTabControl.Size = New System.Drawing.Size(693, 385)
+        Me.ControleFornecedoresTabControl.TabIndex = 0
         '
         'NovoFornecedorTP
         '
@@ -1599,7 +1599,7 @@ Partial Class ControleFornecedor
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
-        Me.TabControl1.ResumeLayout(False)
+        Me.ControleFornecedoresTabControl.ResumeLayout(False)
         Me.NovoFornecedorTP.ResumeLayout(False)
         Me.NovoFornecedorTP.PerformLayout()
         Me.AcompanharFornecedorTab.ResumeLayout(False)
@@ -1619,7 +1619,7 @@ Partial Class ControleFornecedor
 
     End Sub
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents ControleFornecedoresTabControl As System.Windows.Forms.TabControl
     Friend WithEvents NovoFornecedorTP As System.Windows.Forms.TabPage
     Friend WithEvents AcompanharFornecedorTab As System.Windows.Forms.TabPage
     Friend WithEvents NovaAssistenciaTP As System.Windows.Forms.TabPage

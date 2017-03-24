@@ -28,7 +28,7 @@ Partial Class ControleEstoque
         Me.NomeTF = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.ControleEstoqueTab = New System.Windows.Forms.TabControl()
+        Me.ControleEstoqueTabControl = New System.Windows.Forms.TabControl()
         Me.CriarCotacaoTab = New System.Windows.Forms.TabPage()
         Me.FinalizarBT = New System.Windows.Forms.Button()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
@@ -221,6 +221,10 @@ Partial Class ControleEstoque
         Me.AteLB = New System.Windows.Forms.Label()
         Me.GerarRelatorioCompraBT = New System.Windows.Forms.Button()
         Me.CriarProdutoTab = New System.Windows.Forms.TabPage()
+        Me.ProdutoImagemIMG = New System.Windows.Forms.PictureBox()
+        Me.ProcurarArquivoBT = New System.Windows.Forms.Button()
+        Me.ImagemTF = New System.Windows.Forms.TextBox()
+        Me.Label25 = New System.Windows.Forms.Label()
         Me.TipoProdutoCB = New System.Windows.Forms.ComboBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.DescriçãoTF = New System.Windows.Forms.TextBox()
@@ -270,14 +274,10 @@ Partial Class ControleEstoque
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.ImagemTF = New System.Windows.Forms.TextBox()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.ProcurarArquivoBT = New System.Windows.Forms.Button()
-        Me.ProdutoImagemIMG = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        Me.ControleEstoqueTab.SuspendLayout()
+        Me.ControleEstoqueTabControl.SuspendLayout()
         Me.CriarCotacaoTab.SuspendLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FornecedorIMG, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -333,8 +333,8 @@ Partial Class ControleEstoque
         CType(Me.SelecionarClienteAtualEnvioAssistenciaIMG, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ExtrairRelatoriosTab.SuspendLayout()
         Me.CriarProdutoTab.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
         CType(Me.ProdutoImagemIMG, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -387,31 +387,31 @@ Partial Class ControleEstoque
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.ControleEstoqueTab)
+        Me.Panel2.Controls.Add(Me.ControleEstoqueTabControl)
         Me.Panel2.Location = New System.Drawing.Point(12, 131)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(705, 374)
         Me.Panel2.TabIndex = 4
         '
-        'ControleEstoqueTab
+        'ControleEstoqueTabControl
         '
-        Me.ControleEstoqueTab.Controls.Add(Me.CriarCotacaoTab)
-        Me.ControleEstoqueTab.Controls.Add(Me.AlertasEstoqueTab)
-        Me.ControleEstoqueTab.Controls.Add(Me.CotacoesAndamentoTab)
-        Me.ControleEstoqueTab.Controls.Add(Me.AcompanharCotacaoTab)
-        Me.ControleEstoqueTab.Controls.Add(Me.ComprasAndamentoTab)
-        Me.ControleEstoqueTab.Controls.Add(Me.AcompanharCompraTab)
-        Me.ControleEstoqueTab.Controls.Add(Me.EmprestarProdutoTab)
-        Me.ControleEstoqueTab.Controls.Add(Me.ProdutosEmprestadosTab)
-        Me.ControleEstoqueTab.Controls.Add(Me.EnviarProdutoAssistenciaTab)
-        Me.ControleEstoqueTab.Controls.Add(Me.ProdutosEnviadosAssistenciaTab)
-        Me.ControleEstoqueTab.Controls.Add(Me.ExtrairRelatoriosTab)
-        Me.ControleEstoqueTab.Controls.Add(Me.CriarProdutoTab)
-        Me.ControleEstoqueTab.Location = New System.Drawing.Point(9, 10)
-        Me.ControleEstoqueTab.Name = "ControleEstoqueTab"
-        Me.ControleEstoqueTab.SelectedIndex = 0
-        Me.ControleEstoqueTab.Size = New System.Drawing.Size(693, 361)
-        Me.ControleEstoqueTab.TabIndex = 0
+        Me.ControleEstoqueTabControl.Controls.Add(Me.CriarCotacaoTab)
+        Me.ControleEstoqueTabControl.Controls.Add(Me.AlertasEstoqueTab)
+        Me.ControleEstoqueTabControl.Controls.Add(Me.CotacoesAndamentoTab)
+        Me.ControleEstoqueTabControl.Controls.Add(Me.AcompanharCotacaoTab)
+        Me.ControleEstoqueTabControl.Controls.Add(Me.ComprasAndamentoTab)
+        Me.ControleEstoqueTabControl.Controls.Add(Me.AcompanharCompraTab)
+        Me.ControleEstoqueTabControl.Controls.Add(Me.EmprestarProdutoTab)
+        Me.ControleEstoqueTabControl.Controls.Add(Me.ProdutosEmprestadosTab)
+        Me.ControleEstoqueTabControl.Controls.Add(Me.EnviarProdutoAssistenciaTab)
+        Me.ControleEstoqueTabControl.Controls.Add(Me.ProdutosEnviadosAssistenciaTab)
+        Me.ControleEstoqueTabControl.Controls.Add(Me.ExtrairRelatoriosTab)
+        Me.ControleEstoqueTabControl.Controls.Add(Me.CriarProdutoTab)
+        Me.ControleEstoqueTabControl.Location = New System.Drawing.Point(9, 10)
+        Me.ControleEstoqueTabControl.Name = "ControleEstoqueTabControl"
+        Me.ControleEstoqueTabControl.SelectedIndex = 0
+        Me.ControleEstoqueTabControl.Size = New System.Drawing.Size(693, 361)
+        Me.ControleEstoqueTabControl.TabIndex = 0
         '
         'CriarCotacaoTab
         '
@@ -449,6 +449,7 @@ Partial Class ControleEstoque
         '
         'PictureBox6
         '
+        Me.PictureBox6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox6.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
         Me.PictureBox6.Location = New System.Drawing.Point(18, 16)
         Me.PictureBox6.Name = "PictureBox6"
@@ -586,6 +587,7 @@ Partial Class ControleEstoque
         '
         'PictureBox3
         '
+        Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox3.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
         Me.PictureBox3.Location = New System.Drawing.Point(18, 61)
         Me.PictureBox3.Name = "PictureBox3"
@@ -1007,6 +1009,7 @@ Partial Class ControleEstoque
         '
         'PictureBox7
         '
+        Me.PictureBox7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox7.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
         Me.PictureBox7.Location = New System.Drawing.Point(12, 62)
         Me.PictureBox7.Name = "PictureBox7"
@@ -1407,6 +1410,7 @@ Partial Class ControleEstoque
         '
         'PictureBox13
         '
+        Me.PictureBox13.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox13.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
         Me.PictureBox13.Location = New System.Drawing.Point(9, 19)
         Me.PictureBox13.Name = "PictureBox13"
@@ -1546,6 +1550,7 @@ Partial Class ControleEstoque
         '
         'PictureBox4
         '
+        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox4.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
         Me.PictureBox4.Location = New System.Drawing.Point(9, 64)
         Me.PictureBox4.Name = "PictureBox4"
@@ -1828,6 +1833,7 @@ Partial Class ControleEstoque
         '
         'PictureBox18
         '
+        Me.PictureBox18.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox18.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
         Me.PictureBox18.Location = New System.Drawing.Point(6, 51)
         Me.PictureBox18.Name = "PictureBox18"
@@ -1866,6 +1872,7 @@ Partial Class ControleEstoque
         '
         'PictureBox10
         '
+        Me.PictureBox10.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox10.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
         Me.PictureBox10.Location = New System.Drawing.Point(6, 17)
         Me.PictureBox10.Name = "PictureBox10"
@@ -1937,6 +1944,7 @@ Partial Class ControleEstoque
         '
         'PictureBox12
         '
+        Me.PictureBox12.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox12.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
         Me.PictureBox12.Location = New System.Drawing.Point(6, 89)
         Me.PictureBox12.Name = "PictureBox12"
@@ -2228,6 +2236,42 @@ Partial Class ControleEstoque
         Me.CriarProdutoTab.TabIndex = 12
         Me.CriarProdutoTab.Text = "Criar Novo Produto"
         Me.CriarProdutoTab.UseVisualStyleBackColor = True
+        '
+        'ProdutoImagemIMG
+        '
+        Me.ProdutoImagemIMG.Location = New System.Drawing.Point(567, 136)
+        Me.ProdutoImagemIMG.Name = "ProdutoImagemIMG"
+        Me.ProdutoImagemIMG.Size = New System.Drawing.Size(110, 108)
+        Me.ProdutoImagemIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ProdutoImagemIMG.TabIndex = 60
+        Me.ProdutoImagemIMG.TabStop = False
+        '
+        'ProcurarArquivoBT
+        '
+        Me.ProcurarArquivoBT.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.ProcurarArquivoBT.Location = New System.Drawing.Point(443, 222)
+        Me.ProcurarArquivoBT.Name = "ProcurarArquivoBT"
+        Me.ProcurarArquivoBT.Size = New System.Drawing.Size(115, 23)
+        Me.ProcurarArquivoBT.TabIndex = 59
+        Me.ProcurarArquivoBT.Text = "Procurar Arquivo"
+        Me.ProcurarArquivoBT.UseVisualStyleBackColor = True
+        '
+        'ImagemTF
+        '
+        Me.ImagemTF.Enabled = False
+        Me.ImagemTF.Location = New System.Drawing.Point(103, 224)
+        Me.ImagemTF.Name = "ImagemTF"
+        Me.ImagemTF.Size = New System.Drawing.Size(331, 20)
+        Me.ImagemTF.TabIndex = 58
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(9, 227)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(47, 13)
+        Me.Label25.TabIndex = 57
+        Me.Label25.Text = "Imagem:"
         '
         'TipoProdutoCB
         '
@@ -2564,42 +2608,6 @@ Partial Class ControleEstoque
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'ImagemTF
-        '
-        Me.ImagemTF.Enabled = False
-        Me.ImagemTF.Location = New System.Drawing.Point(103, 224)
-        Me.ImagemTF.Name = "ImagemTF"
-        Me.ImagemTF.Size = New System.Drawing.Size(331, 20)
-        Me.ImagemTF.TabIndex = 58
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(9, 227)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(47, 13)
-        Me.Label25.TabIndex = 57
-        Me.Label25.Text = "Imagem:"
-        '
-        'ProcurarArquivoBT
-        '
-        Me.ProcurarArquivoBT.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.ProcurarArquivoBT.Location = New System.Drawing.Point(443, 222)
-        Me.ProcurarArquivoBT.Name = "ProcurarArquivoBT"
-        Me.ProcurarArquivoBT.Size = New System.Drawing.Size(115, 23)
-        Me.ProcurarArquivoBT.TabIndex = 59
-        Me.ProcurarArquivoBT.Text = "Procurar Arquivo"
-        Me.ProcurarArquivoBT.UseVisualStyleBackColor = True
-        '
-        'ProdutoImagemIMG
-        '
-        Me.ProdutoImagemIMG.Location = New System.Drawing.Point(567, 136)
-        Me.ProdutoImagemIMG.Name = "ProdutoImagemIMG"
-        Me.ProdutoImagemIMG.Size = New System.Drawing.Size(110, 108)
-        Me.ProdutoImagemIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ProdutoImagemIMG.TabIndex = 60
-        Me.ProdutoImagemIMG.TabStop = False
-        '
         'ControleEstoque
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2615,7 +2623,7 @@ Partial Class ControleEstoque
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
-        Me.ControleEstoqueTab.ResumeLayout(False)
+        Me.ControleEstoqueTabControl.ResumeLayout(False)
         Me.CriarCotacaoTab.ResumeLayout(False)
         Me.CriarCotacaoTab.PerformLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2683,9 +2691,9 @@ Partial Class ControleEstoque
         Me.ExtrairRelatoriosTab.PerformLayout()
         Me.CriarProdutoTab.ResumeLayout(False)
         Me.CriarProdutoTab.PerformLayout()
+        CType(Me.ProdutoImagemIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.ProdutoImagemIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2693,7 +2701,7 @@ Partial Class ControleEstoque
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents ControleEstoqueTab As System.Windows.Forms.TabControl
+    Friend WithEvents ControleEstoqueTabControl As System.Windows.Forms.TabControl
     Friend WithEvents CriarCotacaoTab As System.Windows.Forms.TabPage
     Friend WithEvents AlertasEstoqueTab As System.Windows.Forms.TabPage
     Friend WithEvents ProdutoCotacaoIMG As System.Windows.Forms.PictureBox

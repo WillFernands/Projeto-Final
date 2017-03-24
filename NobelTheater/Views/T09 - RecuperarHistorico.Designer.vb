@@ -64,7 +64,7 @@ Partial Class RecuperarHistorico
         Me.NomeTF = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.RecuperarHistoricoTabControl = New System.Windows.Forms.TabControl()
         Me.RecuperarHistoricoTP = New System.Windows.Forms.TabPage()
         Me.FimDT = New System.Windows.Forms.DateTimePicker()
         Me.InicioDT = New System.Windows.Forms.DateTimePicker()
@@ -89,7 +89,7 @@ Partial Class RecuperarHistorico
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
+        Me.RecuperarHistoricoTabControl.SuspendLayout()
         Me.RecuperarHistoricoTP.SuspendLayout()
         Me.RecuperarHistoricoFuncionariosTP.SuspendLayout()
         CType(Me.FuncionariosDT, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -375,21 +375,21 @@ Partial Class RecuperarHistorico
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.TabControl1)
+        Me.Panel2.Controls.Add(Me.RecuperarHistoricoTabControl)
         Me.Panel2.Location = New System.Drawing.Point(12, 138)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(705, 374)
         Me.Panel2.TabIndex = 7
         '
-        'TabControl1
+        'RecuperarHistoricoTabControl
         '
-        Me.TabControl1.Controls.Add(Me.RecuperarHistoricoTP)
-        Me.TabControl1.Controls.Add(Me.RecuperarHistoricoFuncionariosTP)
-        Me.TabControl1.Location = New System.Drawing.Point(9, 10)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(693, 361)
-        Me.TabControl1.TabIndex = 0
+        Me.RecuperarHistoricoTabControl.Controls.Add(Me.RecuperarHistoricoTP)
+        Me.RecuperarHistoricoTabControl.Controls.Add(Me.RecuperarHistoricoFuncionariosTP)
+        Me.RecuperarHistoricoTabControl.Location = New System.Drawing.Point(9, 10)
+        Me.RecuperarHistoricoTabControl.Name = "RecuperarHistoricoTabControl"
+        Me.RecuperarHistoricoTabControl.SelectedIndex = 0
+        Me.RecuperarHistoricoTabControl.Size = New System.Drawing.Size(693, 361)
+        Me.RecuperarHistoricoTabControl.TabIndex = 0
         '
         'RecuperarHistoricoTP
         '
@@ -610,7 +610,7 @@ Partial Class RecuperarHistorico
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
-        Me.TabControl1.ResumeLayout(False)
+        Me.RecuperarHistoricoTabControl.ResumeLayout(False)
         Me.RecuperarHistoricoTP.ResumeLayout(False)
         Me.RecuperarHistoricoTP.PerformLayout()
         Me.RecuperarHistoricoFuncionariosTP.ResumeLayout(False)
@@ -660,7 +660,7 @@ Partial Class RecuperarHistorico
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents RecuperarHistoricoTabControl As System.Windows.Forms.TabControl
     Friend WithEvents RecuperarHistoricoTP As System.Windows.Forms.TabPage
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents RecuperarHistoricoFuncionariosTP As System.Windows.Forms.TabPage

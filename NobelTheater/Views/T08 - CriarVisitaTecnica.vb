@@ -9,6 +9,47 @@
         NomeTF.Text = "Nome: " & MenuPrincipal.funcionarioLogado.Nome
         MatriculaTF.Text = "Matricula: " & MenuPrincipal.funcionarioLogado.Matricula
         PerfilTF.Text = "Perfil: " & MenuPrincipal.funcionarioLogado.Perfil
+
+        Select Case MenuPrincipal.funcionarioLogado.Perfil
+            Case TipoPerfilFuncionario.AssistenteAdm
+                MonitoramentoToolStripMenuItem.Enabled = False
+                AcessosRevogadosToolStripMenuItem.Enabled = False
+                BalançoDeCaixaToolStripMenuItem.Enabled = False
+                FuncionáriosToolStripMenuItem.Enabled = False
+            Case TipoPerfilFuncionario.AssistenteCont
+                MonitoramentoToolStripMenuItem.Enabled = False
+                AcessosRevogadosToolStripMenuItem.Enabled = False
+                EstoqueToolStripMenuItem.Enabled = False
+                FornecedoresToolStripMenuItem.Enabled = False
+                VendasToolStripMenuItem.Enabled = False
+                FuncionáriosToolStripMenuItem.Enabled = False
+            Case TipoPerfilFuncionario.Gerente
+                MonitoramentoToolStripMenuItem.Enabled = False
+                BalançoDeCaixaToolStripMenuItem.Enabled = False
+            Case TipoPerfilFuncionario.SupervisorObra
+                MonitoramentoToolStripMenuItem.Enabled = False
+                AcessosRevogadosToolStripMenuItem.Enabled = False
+                EstoqueToolStripMenuItem.Enabled = False
+                FornecedoresToolStripMenuItem.Enabled = False
+                VendasToolStripMenuItem.Enabled = False
+                BalançoDeCaixaToolStripMenuItem.Enabled = False
+                FuncionáriosToolStripMenuItem.Enabled = False
+            Case TipoPerfilFuncionario.Tecnico
+                MonitoramentoToolStripMenuItem.Enabled = False
+                AcessosRevogadosToolStripMenuItem.Enabled = False
+                EstoqueToolStripMenuItem.Enabled = False
+                FornecedoresToolStripMenuItem.Enabled = False
+                VendasToolStripMenuItem.Enabled = False
+                BalançoDeCaixaToolStripMenuItem.Enabled = False
+                FuncionáriosToolStripMenuItem.Enabled = False
+            Case TipoPerfilFuncionario.Vendedor
+                MonitoramentoToolStripMenuItem.Enabled = False
+                AcessosRevogadosToolStripMenuItem.Enabled = False
+                EstoqueToolStripMenuItem.Enabled = False
+                FornecedoresToolStripMenuItem.Enabled = False
+                BalançoDeCaixaToolStripMenuItem.Enabled = False
+                FuncionáriosToolStripMenuItem.Enabled = False
+        End Select
     End Sub
 
     Public Sub PopulateVenda(venda As NotaFiscalVenda)
@@ -59,5 +100,10 @@
             PrecoTF.Enabled = False
         Else PrecoTF.Enabled = True
         End If
+    End Sub
+
+    Public Sub SetFocusOnForm()
+        Me.Show()
+        Me.Select()
     End Sub
 End Class

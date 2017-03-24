@@ -119,7 +119,7 @@ Public Class ProdutoDAO
         produto.Tipo = CStr(dt.Rows(0).Item("tipo"))
         produto.Unidade = CStr(dt.Rows(0).Item("unidade"))
         If (IsDBNull(dt.Rows(0).Item("imagem")) = False) Then
-            produto.Imagem = Image.FromStream(New IO.MemoryStream(DirectCast(row.Item("imagem"), Byte())))
+            produto.Imagem = Image.FromStream(New IO.MemoryStream(DirectCast(dt.Rows(0).Item("imagem"), Byte())))
         End If
         Return produto
 

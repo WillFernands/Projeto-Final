@@ -28,7 +28,7 @@ Partial Class ControleCliente
         Me.NomeTF = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.ControleClienteTabControl = New System.Windows.Forms.TabControl()
         Me.NovoClienteTab = New System.Windows.Forms.TabPage()
         Me.RazaoSocialNovoClienteTF = New System.Windows.Forms.TextBox()
         Me.RazaoSocialNovoClienteLB = New System.Windows.Forms.Label()
@@ -123,7 +123,7 @@ Partial Class ControleCliente
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
+        Me.ControleClienteTabControl.SuspendLayout()
         Me.NovoClienteTab.SuspendLayout()
         Me.AcompanharClienteTab.SuspendLayout()
         CType(Me.SelecionarClienteIMG, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -180,21 +180,21 @@ Partial Class ControleCliente
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.TabControl1)
+        Me.Panel2.Controls.Add(Me.ControleClienteTabControl)
         Me.Panel2.Location = New System.Drawing.Point(12, 131)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(705, 374)
         Me.Panel2.TabIndex = 8
         '
-        'TabControl1
+        'ControleClienteTabControl
         '
-        Me.TabControl1.Controls.Add(Me.NovoClienteTab)
-        Me.TabControl1.Controls.Add(Me.AcompanharClienteTab)
-        Me.TabControl1.Location = New System.Drawing.Point(9, 10)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(693, 361)
-        Me.TabControl1.TabIndex = 0
+        Me.ControleClienteTabControl.Controls.Add(Me.NovoClienteTab)
+        Me.ControleClienteTabControl.Controls.Add(Me.AcompanharClienteTab)
+        Me.ControleClienteTabControl.Location = New System.Drawing.Point(9, 10)
+        Me.ControleClienteTabControl.Name = "ControleClienteTabControl"
+        Me.ControleClienteTabControl.SelectedIndex = 0
+        Me.ControleClienteTabControl.Size = New System.Drawing.Size(693, 361)
+        Me.ControleClienteTabControl.TabIndex = 0
         '
         'NovoClienteTab
         '
@@ -966,7 +966,7 @@ Partial Class ControleCliente
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
-        Me.TabControl1.ResumeLayout(False)
+        Me.ControleClienteTabControl.ResumeLayout(False)
         Me.NovoClienteTab.ResumeLayout(False)
         Me.NovoClienteTab.PerformLayout()
         Me.AcompanharClienteTab.ResumeLayout(False)
@@ -981,7 +981,7 @@ Partial Class ControleCliente
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents ControleClienteTabControl As System.Windows.Forms.TabControl
     Friend WithEvents NovoClienteTab As System.Windows.Forms.TabPage
     Friend WithEvents AcompanharClienteTab As System.Windows.Forms.TabPage
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip

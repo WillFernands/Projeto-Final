@@ -333,6 +333,7 @@ Partial Class ControleVendas
         '
         'PictureBox6
         '
+        Me.PictureBox6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox6.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
         Me.PictureBox6.Location = New System.Drawing.Point(18, 16)
         Me.PictureBox6.Name = "PictureBox6"
@@ -469,6 +470,7 @@ Partial Class ControleVendas
         '
         'PictureBox3
         '
+        Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox3.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
         Me.PictureBox3.Location = New System.Drawing.Point(18, 61)
         Me.PictureBox3.Name = "PictureBox3"
@@ -810,6 +812,7 @@ Partial Class ControleVendas
         '
         'PictureBox7
         '
+        Me.PictureBox7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox7.Image = Global.NobelTheater.My.Resources.Resources.Adicionar
         Me.PictureBox7.Location = New System.Drawing.Point(12, 66)
         Me.PictureBox7.Name = "PictureBox7"

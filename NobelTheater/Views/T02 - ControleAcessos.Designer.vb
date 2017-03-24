@@ -22,7 +22,7 @@ Partial Class ControleAcessos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.ControleAcessosTabControl = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.FuncionarioTF = New System.Windows.Forms.TextBox()
@@ -79,7 +79,7 @@ Partial Class ControleAcessos
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TabControl1.SuspendLayout()
+        Me.ControleAcessosTabControl.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
@@ -90,15 +90,15 @@ Partial Class ControleAcessos
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TabControl1
+        'ControleAcessosTabControl
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(3, 10)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(654, 361)
-        Me.TabControl1.TabIndex = 0
+        Me.ControleAcessosTabControl.Controls.Add(Me.TabPage1)
+        Me.ControleAcessosTabControl.Controls.Add(Me.TabPage2)
+        Me.ControleAcessosTabControl.Location = New System.Drawing.Point(3, 10)
+        Me.ControleAcessosTabControl.Name = "ControleAcessosTabControl"
+        Me.ControleAcessosTabControl.SelectedIndex = 0
+        Me.ControleAcessosTabControl.Size = New System.Drawing.Size(654, 361)
+        Me.ControleAcessosTabControl.TabIndex = 0
         '
         'TabPage1
         '
@@ -280,7 +280,7 @@ Partial Class ControleAcessos
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.TabControl1)
+        Me.Panel2.Controls.Add(Me.ControleAcessosTabControl)
         Me.Panel2.Location = New System.Drawing.Point(12, 131)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(660, 374)
@@ -527,7 +527,7 @@ Partial Class ControleAcessos
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "ControleAcessos"
         Me.Text = "Controle de Acesso"
-        Me.TabControl1.ResumeLayout(False)
+        Me.ControleAcessosTabControl.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
@@ -543,7 +543,7 @@ Partial Class ControleAcessos
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents ControleAcessosTabControl As System.Windows.Forms.TabControl
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents Button1 As System.Windows.Forms.Button

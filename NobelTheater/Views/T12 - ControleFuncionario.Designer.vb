@@ -26,12 +26,14 @@ Partial Class ControleFuncionario
         Me.PerfilTF = New System.Windows.Forms.Label()
         Me.MatriculaTF = New System.Windows.Forms.Label()
         Me.NomeTF = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.ControleFuncionarioTabControl = New System.Windows.Forms.TabControl()
         Me.NovoFuncionarioTP = New System.Windows.Forms.TabPage()
         Me.LimparNovoFuncionarioBT = New System.Windows.Forms.Button()
         Me.SalvarNovoFuncionarioBT = New System.Windows.Forms.Button()
         Me.DadosProfNovoFuncionarioGB = New System.Windows.Forms.GroupBox()
+        Me.SupervisorIMG = New System.Windows.Forms.PictureBox()
         Me.SupervisorNovoFuncionarioTF = New System.Windows.Forms.TextBox()
         Me.SupervisorNovoFuncionarioLB = New System.Windows.Forms.Label()
         Me.SalarioNovoFuncionarioTF = New System.Windows.Forms.TextBox()
@@ -90,6 +92,7 @@ Partial Class ControleFuncionario
         Me.CPFAcompanharFuncMT = New System.Windows.Forms.MaskedTextBox()
         Me.CPFAcompanharFuncLB = New System.Windows.Forms.Label()
         Me.MatriculaFuncionarioAcompanharFuncTF = New System.Windows.Forms.TextBox()
+        Me.SelecionarFuncionarioIMG = New System.Windows.Forms.PictureBox()
         Me.FuncionarioAcompanharFuncTF = New System.Windows.Forms.TextBox()
         Me.FuncionarioAcompanharFuncLB = New System.Windows.Forms.Label()
         Me.TelefoneAcompanharFuncLB = New System.Windows.Forms.Label()
@@ -129,22 +132,19 @@ Partial Class ControleFuncionario
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcompanharClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.SupervisorIMG = New System.Windows.Forms.PictureBox()
-        Me.SelecionarFuncionarioIMG = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
+        Me.ControleFuncionarioTabControl.SuspendLayout()
         Me.NovoFuncionarioTP.SuspendLayout()
         Me.DadosProfNovoFuncionarioGB.SuspendLayout()
+        CType(Me.SupervisorIMG, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DadosPessoaisNovoFuncionarioGB.SuspendLayout()
         Me.AcompanharFuncionarioTab.SuspendLayout()
         Me.EnderecoAcompanharFuncGB.SuspendLayout()
         Me.DadosProfFuncGB.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SupervisorIMG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SelecionarFuncionarioIMG, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -185,23 +185,33 @@ Partial Class ControleFuncionario
         Me.NomeTF.TabIndex = 7
         Me.NomeTF.Text = "Nome:"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.NobelTheater.My.Resources.Resources.ControleDeFuncionariosMain
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(116, 100)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.TabControl1)
+        Me.Panel2.Controls.Add(Me.ControleFuncionarioTabControl)
         Me.Panel2.Location = New System.Drawing.Point(12, 131)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(705, 374)
         Me.Panel2.TabIndex = 8
         '
-        'TabControl1
+        'ControleFuncionarioTabControl
         '
-        Me.TabControl1.Controls.Add(Me.NovoFuncionarioTP)
-        Me.TabControl1.Controls.Add(Me.AcompanharFuncionarioTab)
-        Me.TabControl1.Location = New System.Drawing.Point(9, 10)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(693, 361)
-        Me.TabControl1.TabIndex = 0
+        Me.ControleFuncionarioTabControl.Controls.Add(Me.NovoFuncionarioTP)
+        Me.ControleFuncionarioTabControl.Controls.Add(Me.AcompanharFuncionarioTab)
+        Me.ControleFuncionarioTabControl.Location = New System.Drawing.Point(9, 10)
+        Me.ControleFuncionarioTabControl.Name = "ControleFuncionarioTabControl"
+        Me.ControleFuncionarioTabControl.SelectedIndex = 0
+        Me.ControleFuncionarioTabControl.Size = New System.Drawing.Size(693, 361)
+        Me.ControleFuncionarioTabControl.TabIndex = 0
         '
         'NovoFuncionarioTP
         '
@@ -263,6 +273,17 @@ Partial Class ControleFuncionario
         Me.DadosProfNovoFuncionarioGB.TabIndex = 21
         Me.DadosProfNovoFuncionarioGB.TabStop = False
         Me.DadosProfNovoFuncionarioGB.Text = "Dados Profissionais do Funcionário"
+        '
+        'SupervisorIMG
+        '
+        Me.SupervisorIMG.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SupervisorIMG.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.SupervisorIMG.Location = New System.Drawing.Point(643, 58)
+        Me.SupervisorIMG.Name = "SupervisorIMG"
+        Me.SupervisorIMG.Size = New System.Drawing.Size(27, 20)
+        Me.SupervisorIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.SupervisorIMG.TabIndex = 19
+        Me.SupervisorIMG.TabStop = False
         '
         'SupervisorNovoFuncionarioTF
         '
@@ -796,6 +817,17 @@ Partial Class ControleFuncionario
         Me.MatriculaFuncionarioAcompanharFuncTF.Size = New System.Drawing.Size(100, 20)
         Me.MatriculaFuncionarioAcompanharFuncTF.TabIndex = 21
         '
+        'SelecionarFuncionarioIMG
+        '
+        Me.SelecionarFuncionarioIMG.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SelecionarFuncionarioIMG.Image = Global.NobelTheater.My.Resources.Resources.Busca
+        Me.SelecionarFuncionarioIMG.Location = New System.Drawing.Point(634, 23)
+        Me.SelecionarFuncionarioIMG.Name = "SelecionarFuncionarioIMG"
+        Me.SelecionarFuncionarioIMG.Size = New System.Drawing.Size(27, 20)
+        Me.SelecionarFuncionarioIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.SelecionarFuncionarioIMG.TabIndex = 20
+        Me.SelecionarFuncionarioIMG.TabStop = False
+        '
         'FuncionarioAcompanharFuncTF
         '
         Me.FuncionarioAcompanharFuncTF.Enabled = False
@@ -1051,38 +1083,6 @@ Partial Class ControleFuncionario
         Me.AcompanharClienteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AcompanharClienteToolStripMenuItem.Text = "Acompanhar Cliente"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.NobelTheater.My.Resources.Resources.ControleDeFuncionariosMain
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(116, 100)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'SupervisorIMG
-        '
-        Me.SupervisorIMG.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.SupervisorIMG.Image = Global.NobelTheater.My.Resources.Resources.Busca
-        Me.SupervisorIMG.Location = New System.Drawing.Point(643, 58)
-        Me.SupervisorIMG.Name = "SupervisorIMG"
-        Me.SupervisorIMG.Size = New System.Drawing.Size(27, 20)
-        Me.SupervisorIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.SupervisorIMG.TabIndex = 19
-        Me.SupervisorIMG.TabStop = False
-        '
-        'SelecionarFuncionarioIMG
-        '
-        Me.SelecionarFuncionarioIMG.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.SelecionarFuncionarioIMG.Image = Global.NobelTheater.My.Resources.Resources.Busca
-        Me.SelecionarFuncionarioIMG.Location = New System.Drawing.Point(634, 23)
-        Me.SelecionarFuncionarioIMG.Name = "SelecionarFuncionarioIMG"
-        Me.SelecionarFuncionarioIMG.Size = New System.Drawing.Size(27, 20)
-        Me.SelecionarFuncionarioIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.SelecionarFuncionarioIMG.TabIndex = 20
-        Me.SelecionarFuncionarioIMG.TabStop = False
-        '
         'ControleFuncionario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1096,12 +1096,14 @@ Partial Class ControleFuncionario
         Me.Text = "Controle de Funcionários"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
-        Me.TabControl1.ResumeLayout(False)
+        Me.ControleFuncionarioTabControl.ResumeLayout(False)
         Me.NovoFuncionarioTP.ResumeLayout(False)
         Me.NovoFuncionarioTP.PerformLayout()
         Me.DadosProfNovoFuncionarioGB.ResumeLayout(False)
         Me.DadosProfNovoFuncionarioGB.PerformLayout()
+        CType(Me.SupervisorIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DadosPessoaisNovoFuncionarioGB.ResumeLayout(False)
         Me.DadosPessoaisNovoFuncionarioGB.PerformLayout()
         Me.AcompanharFuncionarioTab.ResumeLayout(False)
@@ -1109,17 +1111,15 @@ Partial Class ControleFuncionario
         Me.EnderecoAcompanharFuncGB.PerformLayout()
         Me.DadosProfFuncGB.ResumeLayout(False)
         Me.DadosProfFuncGB.PerformLayout()
+        CType(Me.SelecionarFuncionarioIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SupervisorIMG, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SelecionarFuncionarioIMG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents ControleFuncionarioTabControl As System.Windows.Forms.TabControl
     Friend WithEvents NovoFuncionarioTP As System.Windows.Forms.TabPage
     Friend WithEvents AcompanharFuncionarioTab As System.Windows.Forms.TabPage
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
